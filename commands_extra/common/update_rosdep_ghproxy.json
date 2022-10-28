@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/common;sudo ./shell/update_rosdep_ghproxy.sh",
+            "desc": "用于解决rosdep udpate更新问题,使用代理方式",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "update_rosdep"
+        },
+        {
+            "command": "cd /home/ubuntu/commands/common;sudo ./shell/update_rosdep_ghproxy_recover.sh",
+            "desc": "恢复官方状态,不使用代理",
+            "id": "2",
+            "link": "点击'启动'按钮就可",
+            "name": "update_rosdep_recover"
+        }
+    ]
+}

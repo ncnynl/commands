@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": ". /usr/share/gazebo/setup.bash;ros2 launch walking_application cafe_world_v2.launch.py\n",
+            "desc": "启动仿真\n",
+            "id": "2",
+            "link": "点击'启动'按钮就可",
+            "name": "2-hospital_world_v2"
+        },
+        {
+            "command": "ros2 run walking_application run_inspection_v10.py\n",
+            "desc": "启动导航",
+            "id": "3",
+            "link": "点击'启动'按钮就可",
+            "name": "3-run_inspection_v10"
+        },
+        {
+            "command": "cd ~/tools/pyqt/cafe/;python3 cafe_front.py",
+            "desc": "启动咖啡店下单系统",
+            "id": "4",
+            "link": "点击'启动'按钮就可",
+            "name": "4-cafe_front"
+        }
+    ]
+}

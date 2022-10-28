@@ -1,0 +1,34 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_bringup robot.launch.py ",
+            "id": "1",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
+            "id": "2",
+            "name": "2-usb_camera"
+        },
+        {
+            "command": "ros2 launch walking_bringup d435i.launch.py",
+            "id": "3",
+            "name": "2-d435i"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup_v1.launch.py use_slam:=true ",
+            "id": "4",
+            "name": "3-navigation"
+        },
+        {
+            "command": "ros2 launch walking_follow follow_aruco_tf.launch.py",
+            "id": "5",
+            "name": "4-follow_aruco_tf"
+        },
+        {
+            "command": "ros2 run walking_follow follower_aruco_goal.py",
+            "id": "6",
+            "name": "5-follower_aruco_goal"
+        }
+    ]
+}

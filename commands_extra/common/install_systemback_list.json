@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "sudo add-apt-repository \"deb http://ppa.launchpad.net/nemh/systemback/ubuntu xenial main\"",
+            "desc": "添加仓库",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "repository"
+        },
+        {
+            "command": "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 382003C2C8B7B4AB813E915B14E4942973C62A1B",
+            "desc": "添加KEY",
+            "id": "2",
+            "link": "点击'启动'按钮就可",
+            "name": "key"
+        },
+        {
+            "command": "sudo apt update",
+            "desc": "更新软件清单",
+            "id": "3",
+            "link": "点击'启动'按钮就可",
+            "name": "update"
+        },
+        {
+            "command": "sudo apt install -y systemback",
+            "desc": "安装系统备份软件systemback",
+            "id": "4",
+            "link": "点击'启动'按钮就可",
+            "name": "systemback"
+        }
+    ]
+}

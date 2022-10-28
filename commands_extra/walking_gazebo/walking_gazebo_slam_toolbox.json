@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py ",
+            "desc": "",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_slam slam_toolbox.launch.py use_sim_time:=true",
+            "desc": "",
+            "id": "2",
+            "link": "点击'启动'按钮就可",
+            "name": "2-slam_toolbox"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py \n",
+            "desc": "",
+            "id": "3",
+            "link": "点击'启动'按钮就可",
+            "name": "3-keyboard"
+        }
+    ]
+}

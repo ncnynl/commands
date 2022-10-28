@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": ". /usr/share/gazebo/setup.bash;ros2 launch walking_application hospital_world_object_following.launch.py",
+            "desc": "启动仿真",
+            "id": "2",
+            "link": "点击'启动'按钮就可",
+            "name": "2-hospital_world"
+        },
+        {
+            "command": "ros2 topic pub -1 /goal_pose  geometry_msgs/PoseStamped '{ header: {stamp: {sec: 0, nanosec: 0}, frame_id: \"map\"}, pose: {position: {x: 5.0, y: 0.0, z: 0.25}, orientation: {w: 1.0}}} '",
+            "desc": "发布跟随的目标点",
+            "id": "3",
+            "link": "点击'启动'按钮就可",
+            "name": "3-goal_pose"
+        }
+    ]
+}

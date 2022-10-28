@@ -1,0 +1,23 @@
+{
+    "commands": [
+        {
+            "command": "ros2 run turtlesim turtlesim_node ",
+            "desc": "启动小乌龟",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202210/5512.html",
+            "name": "turtlesim_node"
+        },
+        {
+            "command": "ros2 topic pub --rate 1 /turtle1/cmd_vel geometry_msgs/msg/Twist \"{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}\"",
+            "desc": "启动画圆形命令",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202210/5512.html",
+            "name": "draw_circle"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-10-26"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": ". /usr/share/gazebo/setup.bash;ros2 launch walking_application warehouse_world_speed_limit_zones.launch.py",
+            "desc": "启动仿真",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202201/4996.html",
+            "name": "2-warehouse_world"
+        },
+        {
+            "command": "ros2 topic pub -1 /initialpose geometry_msgs/PoseWithCovarianceStamped '{ header: {stamp: {sec: 0, nanosec: 0}, frame_id: \"map\"}, pose: { pose: {position: {x: -3.7, y: 9.0, z: 0.0}, orientation: {w: 1.0}}, } }'",
+            "desc": "初始化起点",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202201/4996.html",
+            "name": "3-initialpose"
+        }
+    ]
+}

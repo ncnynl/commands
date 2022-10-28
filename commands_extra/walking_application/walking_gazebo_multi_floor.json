@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": ". /usr/share/gazebo/setup.bash;ros2 launch walking_application hospital_world_v1.launch.py",
+            "desc": "启动仿真, 加载第五层的地图",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202204/5174.html",
+            "name": "2-hospital_world_v1"
+        },
+        {
+            "command": "ros2 service call /map_server/load_map nav2_msgs/srv/LoadMap \"{map_url: /home/ubuntu/aiwalking_ws/src/walking_application/maps/cafe_world/cafe_world.yaml}\"",
+            "desc": "加载第二层的咖啡厅的新地图\n",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202204/5174.html",
+            "name": "3-load_map"
+        }
+    ]
+}

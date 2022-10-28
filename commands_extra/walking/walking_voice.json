@@ -1,0 +1,44 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_voice node.launch.py",
+            "id": "1",
+            "name": "1-node"
+        },
+        {
+            "command": "cd ~/tools/music/\n;echo \"It's such a beautiful day! Why are you in front of the computer?\" | text2wave  -o beautiful_day.wav",
+            "id": "2",
+            "name": "2-text2wave"
+        },
+        {
+            "command": "cd ~/tools/music/\n;arecord  -f cd test.wav",
+            "id": "3",
+            "name": "2-arecord"
+        },
+        {
+            "command": "ros2 launch walking_voice play.launch.py name:=/home/ubuntu/tools/music/beautiful_day.wav",
+            "id": "4",
+            "name": "3-beautiful_day"
+        },
+        {
+            "command": "ros2 launch walking_voice playbuiltin.launch.py num:=2",
+            "id": "5",
+            "name": "3-play"
+        },
+        {
+            "command": "ros2 launch walking_voice say.launch.py string:=\"Hello world\"",
+            "id": "6",
+            "name": "3-string"
+        },
+        {
+            "command": "ros2 launch walking_voice soundclient_example.launch.py ",
+            "id": "7",
+            "name": "3-example1"
+        },
+        {
+            "command": "ros2 launch walking_voice soundplay_action.launch.py",
+            "id": "8",
+            "name": "3-example2"
+        }
+    ]
+}

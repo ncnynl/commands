@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/ubuntu18.04; ./shell/update_python_to_3.8.sh",
+            "desc": "升级到python3.8",
+            "id": "1",
+            "link": "@ncnynl | 点击'启动'按钮,一键安装",
+            "name": "update python3.8"
+        }
+    ]
+}

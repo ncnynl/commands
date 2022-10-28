@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot4_viz view_robot.launch.py",
+            "desc": "启动 Rviz2",
+            "id": "1",
+            "link": "",
+            "name": "launch turtlebot4 rviz"
+        }
+    ]
+}

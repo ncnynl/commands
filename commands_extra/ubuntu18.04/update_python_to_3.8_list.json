@@ -1,0 +1,53 @@
+{
+    "commands": [
+        {
+            "command": "sudo apt update",
+            "desc": "",
+            "id": "1",
+            "link": "",
+            "name": "update"
+        },
+        {
+            "command": "sudo apt install software-properties-common",
+            "desc": "",
+            "id": "2",
+            "link": "",
+            "name": "properties"
+        },
+        {
+            "command": "sudo add-apt-repository ppa:deadsnakes/ppa",
+            "desc": "",
+            "id": "3",
+            "link": "",
+            "name": "repository"
+        },
+        {
+            "command": "sudo apt install python3.8",
+            "desc": "",
+            "id": "4",
+            "link": "",
+            "name": "install"
+        },
+        {
+            "command": "sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1",
+            "desc": "",
+            "id": "5",
+            "link": "",
+            "name": "alternatives"
+        },
+        {
+            "command": "sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2",
+            "desc": "",
+            "id": "6",
+            "link": "",
+            "name": "alternatives"
+        },
+        {
+            "command": "sudo update-alternatives --config python3",
+            "desc": "",
+            "id": "7",
+            "link": "",
+            "name": "config"
+        }
+    ]
+}

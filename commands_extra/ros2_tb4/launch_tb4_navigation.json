@@ -1,0 +1,37 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=off localization:=true map:=office.yaml",
+            "desc": "启动地图定位的导航模式",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202206/5287.html",
+            "name": "launch navigation with map"
+        },
+        {
+            "command": "ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=sync",
+            "desc": "启动异步建图的导航模式",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202206/5287.html",
+            "name": "launch navigation with sync slam"
+        },
+        {
+            "command": "ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=async",
+            "desc": "启动异步建图的导航模式",
+            "id": "3",
+            "link": "https://www.ncnynl.com/archives/202206/5287.html",
+            "name": "launch navigation with async slam"
+        },
+        {
+            "command": "ros2 launch turtlebot4_viz view_robot.launch.py",
+            "desc": "启动 Rviz ",
+            "id": "4",
+            "link": "https://www.ncnynl.com/archives/202206/5287.html",
+            "name": "launch view_robot"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-07-23"
+        }
+    ]
+}

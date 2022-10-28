@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "echo \"source /opt/ros/galactic/setup.bash\" >> ~/.bashrc",
+            "desc": "增加ros2到bashrc文件",
+            "id": "1",
+            "link": "@ncnynl | 点击'启动'按钮,一键增加",
+            "name": "config_ros2_galactic_to_bashrc"
+        }
+    ]
+}

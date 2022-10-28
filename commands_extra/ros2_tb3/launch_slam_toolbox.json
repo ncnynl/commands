@@ -1,0 +1,39 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot3_bringup robot.launch.py",
+            "desc": "启动TB3",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3"
+        },
+        {
+            "command": "ros2 launch slam_toolbox online_async_launch.py use_sim_time:=false",
+            "desc": "启动slam_toolbox",
+            "id": "2",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch slam_toolbox"
+        },
+        {
+            "command": "ros2 run turtlebot3_teleop teleop_keyboard",
+            "desc": "启动键盘控制",
+            "id": "4",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_teleop"
+        },
+        {
+            "command": "ros2 launch nav2_bringup rviz_launch.py",
+            "desc": "启动rviz2",
+            "id": "5",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch rviz2"
+        },
+        {
+            "command": "ros2 run nav2_map_server map_saver_cli -f ~/map --ros-args -p save_map_timeout:=10000",
+            "desc": "启动保存地图",
+            "id": "6",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch map_saver_cli"
+        }
+    ]
+}

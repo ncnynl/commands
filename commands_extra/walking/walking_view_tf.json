@@ -1,0 +1,19 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_bringup robot.launch.py ",
+            "id": "1",
+            "name": "1-robot"
+        },
+        {
+            "command": "cd ~; ros2 run tf2_tools view_frames ",
+            "id": "6",
+            "name": "2-view_frames"
+        },
+        {
+            "command": "cd ~; evince frames.pdf ",
+            "id": "7",
+            "name": "3-evince"
+        }
+    ]
+}

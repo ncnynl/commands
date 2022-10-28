@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": "5",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup.launch.py use_slam:=true  use_sim_time:=true",
+            "desc": "启动导航",
+            "id": "6",
+            "link": "点击'启动'按钮就可",
+            "name": "2-nav"
+        },
+        {
+            "command": "ros2 launch walking_openvino pipeline_object.launch.py",
+            "desc": "启动对象识别",
+            "id": "7",
+            "link": "点击'启动'按钮就可",
+            "name": "3-pipeline_object"
+        },
+        {
+            "command": "ros2 launch walking_bt bt_ros2.launch.py bt_xml:=$HOME/bt_ros2_ws/src/BT_ros2/bt_xml/bt_openvino.xml\n",
+            "desc": "启动任务",
+            "id": "8",
+            "link": "点击'启动'按钮就可",
+            "name": "4-bt"
+        }
+    ]
+}

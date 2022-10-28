@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot3_fake_node turtlebot3_fake_node.launch.py",
+            "desc": "",
+            "id": "1",
+            "link": "",
+            "name": "launch turtlebot3_fake_node"
+        },
+        {
+            "command": "ros2 run turtlebot3_teleop teleop_keyboard",
+            "desc": "",
+            "id": "2",
+            "link": "",
+            "name": "launch turtlebot3_teleop"
+        }
+    ]
+}

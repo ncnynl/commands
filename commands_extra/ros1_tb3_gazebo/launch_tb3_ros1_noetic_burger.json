@@ -1,0 +1,46 @@
+{
+    "commands": [
+        {
+            "command": "roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch",
+            "desc": "启动turtlebot3_empty_world",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/201707/1789.html",
+            "name": "launch turtlebot3_empty_world"
+        },
+        {
+            "command": "roslaunch turtlebot3_gazebo turtlebot3_world.launch",
+            "desc": "启动turtlebot3_world",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/201707/1789.html",
+            "name": "launch turtlebot3_world"
+        },
+        {
+            "command": "roslaunch turtlebot3_gazebo turtlebot3_house.launch",
+            "desc": "启动turtlebot3_house",
+            "id": "3",
+            "link": "https://www.ncnynl.com/archives/201707/1789.html",
+            "name": "launch turtlebot3_house"
+        },
+        {
+            "command": "roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch",
+            "desc": "启动turtlebot3_teleop_key",
+            "id": "4",
+            "link": "https://www.ncnynl.com/archives/201707/1789.html",
+            "name": "launch turtlebot3_teleop_key"
+        },
+        {
+            "command": "roslaunch turtlebot3_gazebo turtlebot3_simulation.launch",
+            "desc": "启动turtlebot3_simulation",
+            "id": "5",
+            "link": "https://www.ncnynl.com/archives/201707/1789.html",
+            "name": "launch turtlebot3_simulation"
+        },
+        {
+            "command": "roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch",
+            "desc": "启动turtlebot3_gazebo_rviz",
+            "id": "6",
+            "link": "https://www.ncnynl.com/archives/201707/1789.html",
+            "name": "launch turtlebot3_gazebo_rviz"
+        }
+    ]
+}

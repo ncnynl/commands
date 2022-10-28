@@ -1,0 +1,9 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_voice respeaker.launch.py",
+            "id": "1",
+            "name": "1-respeaker"
+        }
+    ]
+}

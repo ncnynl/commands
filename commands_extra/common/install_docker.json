@@ -1,0 +1,46 @@
+{
+    "commands": [
+        {
+            "command": "curl -sSL https://get.daocloud.io/docker | sh",
+            "desc": "使用国内daocloud 一键安装命令",
+            "id": "1",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install_docker_daocloud"
+        },
+        {
+            "command": "curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun",
+            "desc": "使用官方自动安装脚本 一键安装命令",
+            "id": "2",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install_docker"
+        },
+        {
+            "command": "apt-get autoremove docker docker-ce docker-engine  docker.io  containerd runc",
+            "desc": "卸载docker",
+            "id": "3",
+            "link": "点击'启动'按钮,一键卸载",
+            "name": "uninstall docker"
+        },
+        {
+            "command": "cd ~/commands/common; ./shell/update_docker_source.sh https://registry.docker-cn.com",
+            "desc": "更新docker源,解决更快下载docker文件问题",
+            "id": "4",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update docker source to registry.docker-cn.com"
+        },
+        {
+            "command": "cd ~/commands/common; ./shell/update_docker_source.sh http://hub-mirror.c.163.com",
+            "desc": "更新docker源,解决更快下载docker文件问题",
+            "id": "5",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update docker source to hub-mirror.c.163.com"
+        },
+        {
+            "command": "cd ~/commands/common; ./shell/update_docker_source.sh http://docker.mirrors.ustc.edu.cn",
+            "desc": "更新docker源,解决更快下载docker文件问题",
+            "id": "6",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update docker source to  docker.mirrors.ustc.edu.cn"
+        }
+    ]
+}

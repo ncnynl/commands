@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/common; ./shell/install_pyinstaller_shell.sh",
+            "desc": "",
+            "id": 0,
+            "link": "",
+            "name": "install_pyinstaller_shell"
+        }
+    ]
+}

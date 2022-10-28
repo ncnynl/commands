@@ -1,0 +1,9 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/common; sudo ./shell/install_systemback_shell.sh",
+            "id": 0,
+            "name": "install_systemback_shell"
+        }
+    ]
+}

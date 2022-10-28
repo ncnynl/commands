@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot4_ignition_bringup ignition.launch.py",
+            "desc": "启动turtlebot4 ignition ",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot4 ignition"
+        },
+        {
+            "command": "ros2 launch turtlebot4_ignition_bringup ignition.launch.py model:=lite",
+            "desc": "启动turtlebot4 ignition lite",
+            "id": "2",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot4 lite ignition"
+        },
+        {
+            "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard",
+            "desc": " 启动键盘",
+            "id": "3",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch teleop_twist_keyboard"
+        }
+    ]
+}

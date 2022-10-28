@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
+            "desc": "启动gezebo",
+            "id": "1",
+            "link": "",
+            "name": "launch turtlebot3 world"
+        },
+        {
+            "command": "ros2 run turtlebot3_gazebo turtlebot3_drive",
+            "desc": "执行自走避障程序",
+            "id": "2",
+            "link": "",
+            "name": "launch turtlebot3 drive "
+        }
+    ]
+}

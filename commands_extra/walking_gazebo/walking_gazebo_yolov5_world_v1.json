@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo yolov5_world_v1.launch.py",
+            "desc": "启动仿真",
+            "id": "31",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_yolov5 yolov5.launch.py image:=/depth_camera/image_raw\n",
+            "desc": "启动识别\n",
+            "id": "32",
+            "link": "点击'启动'按钮就可",
+            "name": "2-yolov5"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "启动键盘控制",
+            "id": "33",
+            "link": "点击'启动'按钮就可",
+            "name": "3-keyboard"
+        }
+    ]
+}

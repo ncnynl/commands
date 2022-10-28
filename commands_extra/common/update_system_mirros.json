@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/common; sudo ./shell/update_system_mirros.sh",
+            "desc": "更新系统源,运行后可以选择对应的系统源",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "update_system_mirros "
+        },
+        {
+            "command": "cd /home/ubuntu/commands/common; sudo ./shell/update_system_mirros2.sh  aliyun",
+            "desc": "更新系统源,指定阿里云的系统源",
+            "id": "2",
+            "link": "点击'启动'按钮就可",
+            "name": "update_system_mirros2"
+        }
+    ]
+}

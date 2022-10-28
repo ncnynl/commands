@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "roslaunch turtlebot3_gazebo turtlebot3_world.launch",
+            "desc": "启动burger",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/201707/1790.html",
+            "name": "launch turtlebot3_robot"
+        },
+        {
+            "command": "roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping",
+            "desc": "启动turtlebot3_slam",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/201707/1790.html",
+            "name": "launch turtlebot3_slam"
+        },
+        {
+            "command": "roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch",
+            "desc": "启动turtlebot3_teleop_key",
+            "id": "3",
+            "link": "",
+            "name": "launch turtlebot3_teleop_key"
+        },
+        {
+            "command": "rosrun map_server map_saver -f ~/map",
+            "desc": "启动map_saver",
+            "id": "4",
+            "link": "",
+            "name": "launch map_saver"
+        }
+    ]
+}

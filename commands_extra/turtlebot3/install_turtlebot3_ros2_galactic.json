@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/turtlebot3; ./shell/install_turtlebot3_ros2_galactic.sh",
+            "desc": "",
+            "id": 0,
+            "link": "",
+            "name": "install_turtlebot3_ros2_galactic"
+        }
+    ]
+}

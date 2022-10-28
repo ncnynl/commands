@@ -1,0 +1,23 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlesim multisim.launch.py",
+            "desc": "启动多个小乌龟 ",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202210/5512.html",
+            "name": "turtlesim_node12"
+        },
+        {
+            "command": "ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=/turtlesim1/turtle1/cmd_vel\n",
+            "desc": "启动键盘控制",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202210/5512.html",
+            "name": "turtle_teleop_key"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-10-26"
+        }
+    ]
+}

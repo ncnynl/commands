@@ -1,0 +1,14 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_bringup robot.launch.py ",
+            "id": "1",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup.launch.py map:=${HOME}/map/slam_toolbox.yaml    ",
+            "id": "2",
+            "name": "2-navigation"
+        }
+    ]
+}

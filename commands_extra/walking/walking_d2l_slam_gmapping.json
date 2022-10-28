@@ -1,0 +1,29 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_bringup robot.launch.py ",
+            "id": "1",
+            "name": "1-robot"
+        },
+        {
+            "command": "export  LASER_TYPE=\"d2l\";ros2 launch walking_slam gmapping.launch.py",
+            "id": "2",
+            "name": "2-cartographer"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "id": "3",
+            "name": "3-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_gmapping",
+            "id": "4",
+            "name": "4-save_map"
+        },
+        {
+            "command": "eog ~/map/d2l_gmapping.pgm",
+            "id": "5",
+            "name": "5-view_map"
+        }
+    ]
+}

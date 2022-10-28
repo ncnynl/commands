@@ -1,0 +1,14 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_bringup robot.launch.py ",
+            "id": "1",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup_v2.launch.py  slam_type:=rtabmap_rgbd",
+            "id": "2",
+            "name": "2-rtabmap_scan"
+        }
+    ]
+}

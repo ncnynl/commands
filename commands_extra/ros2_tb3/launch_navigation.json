@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot3_bringup robot.launch.py",
+            "desc": "启动TB3",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3"
+        },
+        {
+            "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml",
+            "desc": "启动navigation",
+            "id": "2",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch navigation"
+        },
+        {
+            "command": "ros2 run turtlebot3_teleop teleop_keyboard",
+            "desc": "启动键盘控制",
+            "id": "4",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_teleop"
+        }
+    ]
+}

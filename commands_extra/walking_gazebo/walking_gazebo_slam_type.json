@@ -1,0 +1,46 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "1-启动仿真",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "robot"
+        },
+        {
+            "command": "ros2 launch walking_slam slam.launch.py slam_type:=slam_toolbox use_sim_time:=true",
+            "desc": "2-启动slam_toolbox建图",
+            "id": "7",
+            "link": "点击'启动'按钮就可",
+            "name": "slam_toolbox"
+        },
+        {
+            "command": "ros2 launch walking_slam slam.launch.py slam_type:=gmapping use_sim_time:=true",
+            "desc": "3-启动gmapping建图",
+            "id": "13",
+            "link": "点击'启动'按钮就可",
+            "name": "gmapping"
+        },
+        {
+            "command": "ros2 launch walking_slam slam.launch.py slam_type:=cartographer use_sim_time:=true",
+            "desc": "4-启动cartographer建图",
+            "id": "14",
+            "link": "点击'启动'按钮就可",
+            "name": "cartographer"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "5-启动键盘控制",
+            "id": "15",
+            "link": "点击'启动'按钮就可",
+            "name": "teleop"
+        },
+        {
+            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/map",
+            "desc": "6-保持地图",
+            "id": "16",
+            "link": "点击'启动'按钮就可",
+            "name": "map"
+        }
+    ]
+}

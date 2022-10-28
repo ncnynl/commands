@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "sudo rm /var/cache/apt/archives/lock\n; sudo rm /var/lib/dpkg/lock ; sudo rm /var/lib/dpkg/lock-frontend ; sudo apt update ",
+            "desc": "解决安装时候出现lock锁定问题",
+            "id": "1",
+            "link": "点击'启动'按钮,一键清除",
+            "name": "clear apt lock"
+        }
+    ]
+}

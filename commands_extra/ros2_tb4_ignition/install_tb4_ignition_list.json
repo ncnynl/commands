@@ -1,0 +1,46 @@
+{
+    "commands": [
+        {
+            "command": "sudo apt install -y  wget python3-colcon-common-extensions python3-rosdep  python3-vcstool",
+            "desc": " 安装依赖",
+            "id": "1",
+            "link": "",
+            "name": "install dep"
+        },
+        {
+            "command": "sudo sh -c 'echo \"deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main\" > /etc/apt/sources.list.d/gazebo-stable.list'",
+            "desc": "添加gazebo源",
+            "id": "2",
+            "link": "",
+            "name": "add gazebo source"
+        },
+        {
+            "command": "wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -",
+            "desc": " 添加gazebo key",
+            "id": "3",
+            "link": "",
+            "name": "add gazebo key"
+        },
+        {
+            "command": "sudo apt-get update && sudo apt-get install ignition-edifice",
+            "desc": "安装ignition-edifice",
+            "id": "4",
+            "link": "",
+            "name": "install ignition"
+        },
+        {
+            "command": "sudo apt update",
+            "desc": "更新软件源",
+            "id": "5",
+            "link": "",
+            "name": "update"
+        },
+        {
+            "command": "sudo apt install ros-galactic-turtlebot4-simulator ros-galactic-irobot-create-nodes",
+            "desc": "安装turtlebot4_simulator",
+            "id": "6",
+            "link": "",
+            "name": "install turtlebot4 simulator"
+        }
+    ]
+}

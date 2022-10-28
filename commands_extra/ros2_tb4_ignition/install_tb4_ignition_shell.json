@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros2_tb4_ignition; ./shell/install_tb4_ignition_shell.sh",
+            "desc": "安装turtlebot4仿真环境",
+            "id": "1",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install_tb4_ignition_shell"
+        }
+    ]
+}
