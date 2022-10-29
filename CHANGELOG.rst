@@ -7,6 +7,7 @@ commands工具更新日志
 - 更新说明
 - 统一版本，有version.txt文件控制，更改后，所有地方版本统一
 - 编辑gazebo模型下载脚本
+- 增加安装systemback脚本，支持20.04备份系统
 
 1.1.7 (2022-10-27)
 - 增加ros_tutorials资源下载

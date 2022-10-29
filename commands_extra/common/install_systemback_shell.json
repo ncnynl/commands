@@ -1,9 +1,16 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/common; sudo ./shell/install_systemback_shell.sh",
+            "command": "cd /home/ubuntu/commands/common; ./shell/install_systemback_shell.sh",
+            "desc": "",
             "id": 0,
+            "link": "",
             "name": "install_systemback_shell"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-10-29"
         }
     ]
 }

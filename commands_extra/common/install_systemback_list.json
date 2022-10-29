@@ -1,14 +1,14 @@
 {
     "commands": [
         {
-            "command": "sudo add-apt-repository \"deb http://ppa.launchpad.net/nemh/systemback/ubuntu xenial main\"",
+            "command": "sudo sh -c 'echo \"deb [arch=amd64] http://mirrors.bwbot.org/ stable main\" > /etc/apt/sources.list.d/systemback.list'",
             "desc": "添加仓库",
             "id": "1",
             "link": "点击'启动'按钮就可",
             "name": "repository"
         },
         {
-            "command": "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 382003C2C8B7B4AB813E915B14E4942973C62A1B",
+            "command": "sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 50B2C005A67B264F",
             "desc": "添加KEY",
             "id": "2",
             "link": "点击'启动'按钮就可",
@@ -22,11 +22,16 @@
             "name": "update"
         },
         {
-            "command": "sudo apt install -y systemback",
+            "command": "sudo apt-get install systemback",
             "desc": "安装系统备份软件systemback",
             "id": "4",
             "link": "点击'启动'按钮就可",
             "name": "systemback"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-10-29"
         }
     ]
 }
