@@ -1,5 +1,13 @@
 commands工具更新日志
 
+1.1.8 (2022-10-29)
+- 清除旧文件
+- 编辑turtlebot3源码安装脚本
+- 增加更新extra的脚本
+- 更新说明
+- 统一版本，有version.txt文件控制，更改后，所有地方版本统一
+- 编辑gazebo模型下载脚本
+
 1.1.7 (2022-10-27)
 - 增加ros_tutorials资源下载
 - 增加geometry_tutorials资源下载

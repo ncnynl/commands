@@ -65,6 +65,7 @@ git clone -b galactic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/h
 
 # 编辑各个包
 echo "build workspace..."
+cd ~/ros2_tb3_ws/
 colcon build --symlink-install
 
 #run echo

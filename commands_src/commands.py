@@ -53,7 +53,7 @@ class WorkThread(QThread):
 class ui(QWidget):
     def __init__(self):
         super().__init__()
-        self.version = "1.1.7"
+        self.version = self.getVersion()
         self.last_edited = "2022-10-26"
         self.author = "ncnynl"
         self.email  = "1043931@qq.com"
@@ -92,6 +92,12 @@ class ui(QWidget):
 
         self.cwd = self.file_path
 
+    def getVersion(self):
+        self.version_file_path = os.path.expanduser('~') + '/tools/commands/version.txt'
+        f = open(self.version_file_path)
+        content = f.read()
+        f.close
+        return content
 
     def setupUI(self):
         self.setWindowTitle('ROS命令管理器(简称RCM) v'+self.version)
