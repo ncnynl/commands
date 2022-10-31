@@ -130,7 +130,7 @@ cd ~/tools/commands
 
 # copy commands.desktop to $USER/.local/share/applications
 # can not run , *.desktop launch by root. will not load ~/.bashrc
-# sudo cp commands.desktop $HOME/.local/share/applications/commands.desktop
+cp commands.desktop $HOME/.local/share/applications/commands.desktop
 
 echo -e "Install Finished"
 
