@@ -65,6 +65,7 @@ git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot
 # 编辑各个包, 如果编译出错，重新编译一次
 echo "build workspace..."
 cd ~/ros2_tb4_ws/
+rosdep install --from-path src -yi
 colcon build --symlink-install
 
 #run echo
