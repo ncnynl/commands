@@ -125,13 +125,13 @@ else
     echo -e "Install package failed"
 fi
 
-cd ~/tools/commands
+#install commands_extra
 ./install_extra.sh
 
-# copy commands.desktop to $USER/.local/share/applications
-# can not run , *.desktop launch by root. will not load ~/.bashrc
-cp commands.desktop $HOME/.local/share/applications/commands.desktop
+#install desktop
+./install_desktop.sh
 
-echo -e "Install Finished"
+
+echo -e "All Install Finished"
 
 

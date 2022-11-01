@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :ROS Commands Manager Install Script                #
+# Function :ROS Commands Install desktop file                  #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-10-20                                         #
@@ -21,30 +21,26 @@
 # Outputs:
 #    echo to stdout
 #######################################
-cd ~/tools/commands
+function install_desktop(){
 
-function install_package_extra(){
-    if [ ! -d ~/commands ]; then
-        sudo mkdir ~/commands
-        sudo chown -R $USER:$USER ~/commands
-    fi
-
-    rsync -a ~/tools/commands/commands_extra/* ~/commands/
-    sudo chown -R $USER:$USER ~/commands/
+    # copy commands.desktop to $USER/.local/share/applications
+    # can not run , *.desktop launch by root. will not load ~/.bashrc
+    cd ~/tools/commands 
+    cp commands.desktop $HOME/.local/share/applications/commands.desktop
 
     echo 0
 }
-re=$(install_package_extra)
+re=$(install_desktop)
 if [[ $re == 0 ]] ; then
-    echo -e "Install package extra succesfully!"
+    echo -e "Install Desktop succesfully!"
 else
-    echo -e "Install package extra failed"
+    echo -e "Install Desktop failed"
 fi
 
 # copy commands.desktop to $USER/.local/share/applications
 # can not run , *.desktop launch by root. will not load ~/.bashrc
 # sudo cp commands.desktop $HOME/.local/share/applications/commands.desktop
 
-echo -e "Install package extra Finished"
+echo -e "Install Desktop Finished"
 
 
