@@ -1,4 +1,6 @@
-<div align=center>![logo](commands.png)
+<div style="text-align: center">
+    <img src="commands.png">
+</div>
 
 #### 介绍
 
