@@ -74,24 +74,44 @@ commands
 
 #### 编译源码
 
+```
 cd ~/tools/commands/commands_src
+```
 - 编译
+
+```
 ./build
+```
 
 - 文件生成在dist，可以直接执行
+
+```
 ./dist/commands
+```
 
 #### 本地编译源码并进行安装
 
+```
 cd ~/tools/commands/
+```
+
 - 运行
+
+```
 ./install.sh
+```
 
 #### 编辑脚本后独立安装commans_exra目录下脚本
 
+```
 cd ~/tools/commands/
+```
+
 - 运行
+
+```
 ./install_extra.sh
+```
 
 #### 配置说明
 
