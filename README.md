@@ -1,4 +1,4 @@
-![logo](commands.png)
+<center>![logo](commands.png)</center>
 
 #### 介绍
 
