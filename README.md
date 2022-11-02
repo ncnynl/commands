@@ -1,4 +1,4 @@
-# commands
+![logo](commands.png)
 
 #### 介绍
 
@@ -13,10 +13,6 @@
 - RCM能支持添加ROS下载资源
 - RCM能支持分享自定义脚本库
 - RCM的代码开源，支持二次开发定制
-
-- RCM LOGO:
-
-![logo](commands.png)
 
 
 - 界面：
