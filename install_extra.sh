@@ -21,7 +21,7 @@
 # Outputs:
 #    echo to stdout
 #######################################
-cd ~/tools/commands
+
 
 function install_package_extra(){
     if [ ! -d ~/commands ]; then

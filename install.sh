@@ -126,10 +126,10 @@ else
 fi
 
 #install commands_extra
-./install_extra.sh
+~/tools/commands/install_extra.sh
 
 #install desktop
-./install_desktop.sh
+~/tools/commands/install_desktop.sh
 
 
 echo -e "All Install Finished"
