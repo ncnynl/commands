@@ -16,36 +16,46 @@
 #run mkdir
 
 # 新建目录
+if [ ! -f ~/.pip/pip.conf ];then
 
-mkdir ~/.pip
+    if [ ! -d ~/.pip ];then 
+        mkdir ~/.pip
+    fi 
 
-#run touch
+    #run touch
 
-# 新建文件
+    # 新建文件
+    if [ ! -f ~/.pip/pip.conf ];then 
+        touch ~/.pip/pip.conf 
+    fi
 
-touch ~/.pip/pip.conf 
+    #run echo
 
-#run echo
+    # 添加内容
 
-# 添加内容
+    echo "[global]" >> ~/.pip/pip.conf 
 
-echo "[global]" >> ~/.pip/pip.conf 
+    #run echo
 
-#run echo
+    # 添加内容
 
-# 添加内容
+    echo "index-url = http://pypi.douban.com/simple" >> ~/.pip/pip.conf 
 
-echo "index-url = http://pypi.douban.com/simple" >> ~/.pip/pip.conf 
+    #run echo
 
-#run echo
+    # 添加内容
 
-# 添加内容
+    echo "[install] " >> ~/.pip/pip.conf
 
-echo "[install] " >> ~/.pip/pip.conf
+    #run echo
 
-#run echo
+    # 添加内容
 
-# 添加内容
+    echo "trusted-host=pypi.douban.com" >> ~/.pip/pip.conf
 
-echo "trusted-host=pypi.douban.com" >> ~/.pip/pip.conf
+    echo "add pip.conf successfull"
 
+else
+    echo "pip.conf is configured , don't need do it again!"
+
+fi 
