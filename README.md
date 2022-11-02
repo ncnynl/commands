@@ -2,19 +2,42 @@
 
 #### 介绍
 
- - 通过命令管理器方便管理所有的ROS1/ROS2命令, 可以导出命令列表，导入命令列表
- - https://www.ncnynl.com/archives/202206/5316.html
+- ROS命令管理器，全称ROS Command Manager,简称RCM
+- RCM是一款简化ROS环境配置，ROS包安装，配置和启动，从而有效提高ROS学习和使用效率的工具
+- RCM能支持ubuntu20.04或以上的ubuntu系统
+- RCM能支持ROS1 noetic版本的rosrun / roslaunch命令运行
+- RCM能支持ROS2 galactic以上版本的ros2 run / ros2 launch命令运行
+- RCM能支持ubuntu系统命令的运行
+- RCM能支持APT包搜索，安装
+- RCM能支持自定义安装，配置，下载，启动脚本
+- RCM能支持添加ROS下载资源
+- RCM能支持分享自定义脚本库
+- RCM的代码开源，支持二次开发定制
+
+- RCM LOGO:
+
+![logo](commands.png)
+
+
+- 界面：
+
+![rcm](images/main.png)
+
 
 
  #### 使用说明参考
 
+开发灵感： 
+
+- https://www.ncnynl.com/archives/202206/5316.html
+
 安装说明: 
 
- - https://www.ncnynl.com/archives/202206/5317.html
+- https://www.ncnynl.com/archives/202206/5317.html
 
 使用说明: 
 
- - https://www.ncnynl.com/archives/202206/5320.html
+- https://www.ncnynl.com/archives/202206/5320.html 
 
 命令集目录说明: 
 
