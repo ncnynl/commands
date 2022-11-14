@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/common; ./shell/install_docker_compose.sh",
+            "desc": "安装Docker Compose",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202203/5109.html",
+            "name": "install_docker_compose"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-11-14"
+        }
+    ]
+}
