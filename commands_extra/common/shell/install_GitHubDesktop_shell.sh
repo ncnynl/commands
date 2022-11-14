@@ -34,6 +34,5 @@ sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb
 #run clear
 
 # 清除多余文件
-
 sudo rm  -r GitHubDesktop-linux-2.9.3-linux3.deb  wget-log
 
