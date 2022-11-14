@@ -1318,9 +1318,9 @@
         },
         {
             "command": "cd /home/ubuntu/commands/common; ./shell/install_GitHubDesktop_shell.sh",
-            "desc": "",
+            "desc": "安装github桌面版本",
             "id": 189,
-            "link": "",
+            "link": "点击'启动'按钮,一键安装",
             "name": "install_GitHubDesktop_shell"
         },
         {
