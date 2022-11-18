@@ -75,7 +75,7 @@ function commands_install(){
             do 
                 if [ -f $file ]; then
                     let i++
-                    if [ $i == $INPUT ] ; then 
+                    if [ $i == $1 ] ; then 
                         echo "$dir:"
                         echo "  $i - ${file##*/}"
                         CHOICE_C=$(echo -e "\n${BOLD}└ 上面是否是你安装的脚本名? [Y/n]${PLAIN}")
@@ -83,8 +83,10 @@ function commands_install(){
                         [ -z ${YN} ] && YN = Y
                         case $YN in 
                         [Yy] | [Yy][Ee][Ss])
-                            gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
-                            commands
+                            # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                            # commands
+                            #只能在终端执行
+                            ./$file
                             ;;
                         [Nn] | [Nn][Oo])
                             commands
@@ -132,18 +134,28 @@ function commands() {
     echo -e '#####################################################'
     echo -e '              以下脚本可供选择：'
     echo -e '#####################################################'
-    commands_list
-    echo -e '#####################################################'
-    CHOICE_A=$(echo -e "\n${BOLD}└ 请选择并输入你想安装的脚本ID：${PLAIN}")
-    read -p "${CHOICE_A}" INPUT
-    case $INPUT in 
+    case $1 in 
     [1-9]*)
-        commands_install
+        #执行脚本
+        commands_install $1
+        return 
         ;;
     *)
-        commands
+        #显示列表
+        commands_list
+        echo -e '#####################################################'
+        CHOICE_A=$(echo -e "\n${BOLD}└ 请选择并输入你想安装的脚本ID：${PLAIN}")
+        read -p "${CHOICE_A}" INPUT
+        case $INPUT in 
+        [1-9]*)
+            commands_install $INPUT
+            ;;
+        *)
+            commands
+            ;;
+        esac        
         ;;
     esac
 }
 cd ~/commands
-commands
+commands $1
