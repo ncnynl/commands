@@ -11,42 +11,35 @@
 ################################################################
 
 #######################################
-# Install Pakcage Extra
+# Install Deps
 # Globals: 
 #   None
 # Arguments:
 #   None
 # Return:
-#   None
+#   ubuntu
 # Outputs:
 #    echo to stdout
 #######################################
-
-
-function install_package_extra(){
-    if [ ! -d ~/commands ]; then
-        sudo mkdir ~/commands
-        sudo chown -R $USER:$USER ~/commands
-    fi
-
-    rsync -a ~/tools/commands/commands_extra/* ~/commands/
-    sudo chown -R $USER:$USER ~/commands/
-
-    #add commands shell
-    sudo ln -s ~/commands/cs.sh /usr/bin/cs
-    echo 0
+#python3 resource
+function config_python3_source()
+{
+    echo -e "Check pip.conf if exits, if not add !"
+    if [ ! -f ~/.pip/pip.conf ]; then
+        mkdir ~/.pip 
+        touch ~/.pip/pip.conf
+        echo "[global]" >> ~/.pip/pip.conf
+        echo "index-url=http://pypi.douban.com/simple" >> ~/.pip/pip.conf
+        echo "[install]" >> ~/.pip/pip.conf
+        echo "trusted-host=pypi.douban.com" >> ~/.pip/pip.conf    
+    fi      
 }
-re=$(install_package_extra)
-if [[ $re == 0 ]] ; then
-    echo -e "Install package extra succesfully!"
-else
-    echo -e "Install package extra failed"
-fi
+config_python3_source
 
-# copy commands.desktop to $USER/.local/share/applications
-# can not run , *.desktop launch by root. will not load ~/.bashrc
-# sudo cp commands.desktop $HOME/.local/share/applications/commands.desktop
+#install commands_extra
+~/tools/commands/install_extra.sh
 
-echo -e "Install package extra Finished"
+
+echo -e "All Install Finished"
 
 
