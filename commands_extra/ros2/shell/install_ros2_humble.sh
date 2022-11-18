@@ -47,7 +47,7 @@ sudo apt install -y python3-colcon-common-extensions python3-vcstool
 sudo apt install -y ros-$ros2_distro-rmw-cyclonedds-cpp
 
 # ros1_bridge
-sudo apt install -y ros-$ros2_distro-ros1-bridge
+# sudo apt install -y ros-$ros2_distro-ros1-bridge
 
 #add ros to bashrc
 sudo echo "source /opt/ros/$ros2_distro/setup.bash" >> ~/.bashrc
