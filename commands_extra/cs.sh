@@ -83,7 +83,8 @@ function commands_install(){
                         [ -z ${YN} ] && YN = Y
                         case $YN in 
                         [Yy] | [Yy][Ee][Ss])
-                            sudo bash -c $file
+                            gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                            commands
                             ;;
                         [Nn] | [Nn][Oo])
                             commands

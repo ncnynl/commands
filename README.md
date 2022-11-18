@@ -45,7 +45,7 @@
 #### 软件架构
 
 ```
-ubuntu 20.04 
+ubuntu 20.04 +
 ros2 galactic
 ros1 noetic
 python3.8 
@@ -56,7 +56,7 @@ pyqt5
 
 #### 在线安装教程
 
- - 一键安装
+ - 一键安装桌面版
 
 ```
 rm online.sh ; wget https://gitee.com/ncnynl/commands/raw/master/online.sh ; sudo chmod +x ./online.sh; ./online.sh
@@ -67,6 +67,19 @@ rm online.sh ; wget https://gitee.com/ncnynl/commands/raw/master/online.sh ; sud
 ```
 commands
 ```
+
+ - 一键安装命令行版
+
+```
+rm online_shell.sh ; wget https://gitee.com/ncnynl/commands/raw/master/online_shell.sh ; sudo chmod +x ./online_shell.sh; ./online_shell.sh
+```
+
+ - 新开终端,输入cs
+
+```
+cs
+```
+
 
 #### 编译源码
 
@@ -98,6 +111,8 @@ cd ~/tools/commands/
 ```
 
 #### 编辑脚本后独立安装commans_exra目录下脚本
+
+- 已整合为命令行版本，可以单独使用
 
 ```
 cd ~/tools/commands/
