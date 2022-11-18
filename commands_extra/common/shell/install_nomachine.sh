@@ -15,7 +15,6 @@
 #source check_linux_version.sh
 . ./shell/check_linux_version.sh
 
-return 
 function get_package_url()
 {
     link=""
