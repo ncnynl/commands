@@ -33,7 +33,10 @@ function install_package_extra(){
     sudo chown -R $USER:$USER ~/commands/
 
     #add commands shell
-    sudo ln -s ~/commands/cs.sh /usr/bin/cs
+    if [ ! -f /usr/bin/cs ] ; then
+        sudo ln -s ~/commands/cs.sh /usr/bin/cs
+    fi 
+
     echo 0
 }
 re=$(install_package_extra)
