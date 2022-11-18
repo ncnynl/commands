@@ -75,9 +75,13 @@ function commands_install(){
             do 
                 if [ -f $file ]; then
                     let i++
+
                     if [ $i == $1 ] ; then 
                         echo "$dir:"
                         echo "  $i - ${file##*/}"
+                        shell=${file#*/}
+                        path=$(dirname $file)
+                        folder=${path%/*}
                         CHOICE_C=$(echo -e "\n${BOLD}└ 上面是否是你安装的脚本名? [Y/n]${PLAIN}")
                         read -p "${CHOICE_C}" YN
                         [ -z ${YN} ] && YN = Y
@@ -86,7 +90,8 @@ function commands_install(){
                             # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
                             # commands
                             #只能在终端执行
-                            ./$file
+                            cd ~/commands/$folder
+                            ./$shell
                             ;;
                         [Nn] | [Nn][Oo])
                             commands
