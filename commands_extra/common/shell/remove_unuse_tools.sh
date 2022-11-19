@@ -13,10 +13,10 @@
 ################################################
 
 echo "remove libreoffice"
-sudo apt remove libreoffice-calc libreoffice-draw  libreoffice-impress libreoffice-writer  libreoffice-common
-sudo apt autoremove
-
+sudo apt remove libreoffice-calc libreoffice-draw  libreoffice-impress libreoffice-writer  libreoffice-common -y 
 
 echo "remove system tools"
-sudo apt remove unity-webapps-common thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines transmission-common gnome-orca gnome-sudoku deja-dup
+sudo apt remove unity-webapps-common thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines transmission-common gnome-orca gnome-sudoku deja-dup -y
 
+echo "autoremove"
+sudo apt autoremove -y
