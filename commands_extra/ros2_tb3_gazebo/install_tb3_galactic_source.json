@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros2_tb3_gazebo; ./shell/install_tb3_ros2_galactic.sh",
+            "command": "cd ~/commands/ros2_tb3_gazebo; ./shell/install_tb3_galactic_source.sh",
             "desc": "安装turtlebot3的galactic版本",
             "id": "1",
             "link": "点击'启动'按钮,一键安装",

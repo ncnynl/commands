@@ -14,14 +14,18 @@ ros2_distro=humble
 
 echo "Start to install ROS2 $ros2_distro"
 
+#update and upgrade first 
+sudo apt update 
+sudo apt upgrade 
+
 # Install ROS 2
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #apt source
-pwd=$(pwd)
-sudo sh -c "$pwd/../common/shell/update_system_mirros2.sh aliyun"
+# pwd=$(pwd)
+# sudo sh -c "$pwd/../common/shell/update_system_mirros2.sh aliyun"
 sudo apt update && sudo apt install -y curl gnupg2 lsb-release
 
 #ros2 source
@@ -30,9 +34,8 @@ sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/ke
 
 #install ros2
 sudo apt update
-sudo apt install -y ros-$ros2_distro-desktop
-sudo apt install -y python3-pip
-pip3 install -U argcomplete
+sudo apt install -y ros-$ros2_distro-desktop-full
+sudo apt install -y python3-argcomplete python3-pip 
 
 # Install ROS 2 RQT
 sudo apt install -y ros-$ros2_distro-rqt

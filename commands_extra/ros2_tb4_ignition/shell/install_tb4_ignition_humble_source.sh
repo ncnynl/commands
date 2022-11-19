@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_tb4_ignition_source.sh                              
+# Function : install_tb4_ignition_humble_source.sh                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-10-31                           
@@ -12,7 +12,7 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-#run ros2_tb4_ignition
+#目前还没完善测试
 
 
 # if installed ?
