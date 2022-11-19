@@ -16,7 +16,7 @@
 #https://askubuntu.com/questions/168069/problem-installing-vim
 
 echo "install git vim terminator ssh chromium-browser tree cheese "
-sudo apt install git vim terminator ssh chromium-browser tree cheese -y 
+sudo apt install wget curl git vim terminator ssh chromium-browser tree cheese -y 
 
 echo "install 录制工具"
 sudo apt install audacity simplescreenrecorder kazam vlc -y
