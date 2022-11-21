@@ -18,7 +18,7 @@
 
 # 
 
-sudo apt install ros-galactic-ros-ign 
+sudo apt install ros-galactic-ros-ign -y
 
 #run 
 

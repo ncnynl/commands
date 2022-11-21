@@ -16,7 +16,7 @@
 
 #run 
 
-sudo apt install ros-humble-ros-ign 
+sudo apt install ros-humble-ros-ign -y
 
 
 

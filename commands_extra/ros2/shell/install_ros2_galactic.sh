@@ -22,7 +22,7 @@ export LANG=en_US.UTF-8
 
 #apt source
 pwd=$(pwd)
-sudo sh -c "$pwd/../common/shell/update_system_mirros2.sh aliyun"
+sudo sh -c "$pwd/../common/shell/update_system_mirrors2.sh aliyun"
 sudo apt update && sudo apt install -y curl gnupg lsb-release
 
 #ros2 source

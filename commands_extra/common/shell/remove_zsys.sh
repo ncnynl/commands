@@ -12,6 +12,6 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 echo "remove zsys"
-sudo apt remove zsys
+sudo apt remove zsys -y
 
 
