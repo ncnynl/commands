@@ -15,7 +15,7 @@
 
 echo "ROS-EASY-OS22.04 Cubic ISO automation install script"
 echo "Not Yet Tested"
-exit 0 
+# exit 0 
 
 pwd=$(pwd)      
 echo "install humble"
