@@ -14,7 +14,7 @@
 ################################################
 #run ros2_tb3_ws
 echo "Not Yet Supported!"
-return 0
+exit 0
 
 
 # if installed ?

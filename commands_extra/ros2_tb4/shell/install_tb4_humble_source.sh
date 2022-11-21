@@ -13,7 +13,7 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 echo "Not Yet Supported!" 
-return 0
+exit 0
 
 
 # if installed ?
