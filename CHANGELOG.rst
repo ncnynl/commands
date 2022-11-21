@@ -5,6 +5,7 @@
 - 命令行版增加帮助功能  cs -h / cs help
 - 完成ROS-EASY系列脚本测试， ROS2安装，工具安装，多余文件清理等脚本测试
 - 增加下载igntion SubT model repo 下载脚本
+- 增加制作ROS-EASY镜像自动化脚本 install_ros2_easy_OS_22.04.sh
 
 1.2.1 (2022-11-19)
 - 完善脚本目录和脚本命令命名，使得RCM桌面版和命令行版的命令通用
