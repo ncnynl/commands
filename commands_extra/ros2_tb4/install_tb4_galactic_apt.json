@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros2_tb4_ignition; ./shell/install_tb4_ignition_galactic_apt.sh",
+            "command": "cd ~/commands/ros2_tb4; ./shell/install_tb4_galactic_apt.sh",
             "desc": "安装turtlebot4仿真环境",
             "id": "1",
             "link": "点击'启动'按钮,一键安装",

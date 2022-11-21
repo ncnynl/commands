@@ -32,7 +32,7 @@ getAbout() {
 
 getHelp(){
 	echo " $( bash superupdate.sh )"
-	ehco " - set sources from cdn-fastly "
+	echo " - set sources from cdn-fastly "
 	echo " $( bash superupdate.sh cn ) "
 	echo " - set sources from USTC "
 	echo " $( bash superupdate.sh 163 ) "

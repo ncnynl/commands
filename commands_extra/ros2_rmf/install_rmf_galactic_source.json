@@ -1,11 +1,11 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros2_rmf; ./shell/install_ros2_rmf_galactic_apt.sh",
-            "desc": "使用apt方式安装open-rmf",
+            "command": "cd ~/commands/ros2_rmf; ./shell/install_rmf_galactic_source.sh",
+            "desc": "用源码方式安装open-rmf",
             "id": "1",
             "link": "https://www.ncnynl.com/archives/202211/5665.html",
-            "name": "install_ros2_rmf_galactic_apt"
+            "name": "install_ros2_rmf_galactic_source"
         }
     ],
     "time": [
