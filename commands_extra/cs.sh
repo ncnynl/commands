@@ -176,7 +176,7 @@ function commands() {
     echo -e '|                                                   |'
     echo -e '|   =============================================   |'
     echo -e '|                                                   |'
-    echo -e '|         欢迎使用ROS命令管理器(RCM)命令行版        |'
+    echo -e "|        欢迎使用ROS命令管理器(RCM)命令行版         |"
     echo -e '|                                                   |'
     echo -e '|   =============================================   |'
     echo -e '|   作者:ncnynl                                     |'
@@ -229,7 +229,13 @@ function commands() {
         echo -e "              Upgrade RCM "
         echo -e '#####################################################'    
         . ~/commands/common/shell/upgrade_rcm.sh
-        ;;                          
+        ;;       
+    '-v'|'version')
+        current_version=$(cat ~/tools/commands/version.txt)
+        echo -e '#####################################################'
+        echo -e "      Current RCM Version: $current_version"
+        echo -e '#####################################################'    
+        ;;                             
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "        command interface to the RCM tools          "
@@ -243,7 +249,8 @@ function commands() {
         echo "-l | list:       List all script files and serial numbers"
         echo "-i | install:    Install apt packages"
         echo "-r | remove:     Remove apt packages"
-        echo "-u | upgrade:    upgrade rcm"
+        echo "-u | upgrade:    Upgrade RCM"
+        echo "-v | version:    Show RCM version"
         echo "id:              Provide the serial number to install"
         ;;             
     *)
