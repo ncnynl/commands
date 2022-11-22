@@ -212,6 +212,18 @@ function commands() {
         echo -e '#####################################################'    
         commands_list
         ;;    
+    '-i'|'install')
+        echo -e '#####################################################'
+        echo -e "              Install $2 "
+        echo -e '#####################################################'    
+        sudo apt install $2
+        ;;     
+    '-r'|'remove')
+        echo -e '#####################################################'
+        echo -e "              Remove $2 "
+        echo -e '#####################################################'    
+        sudo apt remove $2
+        ;;                   
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "        command interface to the RCM tools          "
@@ -223,6 +235,8 @@ function commands() {
         echo "-h | help:       Print this help text."
         echo "-s | search:     Search the script file by keyword"
         echo "-l | list:       List all script files and serial numbers"
+        echo "-i | install:    Install apt packages"
+        echo "-r | remove:     Remove apt packages"
         echo "id:              Provide the serial number to install"
         ;;             
     *)

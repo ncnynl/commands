@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : Check Python Version                            
+# Function : Check linux Version                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            
@@ -39,9 +39,9 @@ function get_system(){
 release=$(get_system)
 # echo $release
 
-if [[ ! $release ]] ; then
-    echo -e "This script can not be run in your system now!" && exit 1
-fi
+# if [[ ! $release ]] ; then
+#     echo -e "This script can not be run in your system now!" && exit 1
+# fi
 
 #######################################
 # Get System Version
@@ -64,9 +64,9 @@ function get_system_version(){
 
 version=$(get_system_version $release)
 # echo $version
-if [[ ! $version ]]; then
-    echo -e "This script can not be run in your system now!" && exit 1
-fi
+# if [[ ! $version ]]; then
+#     echo -e "This script can not be run in your system now!" && exit 1
+# fi
 
 
 #######################################
@@ -96,6 +96,6 @@ function get_cpu_version(){
 cpu_release=$(get_cpu_version)
 # echo $cpu_release
 
-if [[ ! $cpu_release ]] ; then
-    echo -e "This script can not be run in your system now!" && exit 1
-fi
+# if [[ ! $cpu_release ]] ; then
+#     echo -e "This script can not be run in your system now!" && exit 1
+# fi
