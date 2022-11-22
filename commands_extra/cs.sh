@@ -223,7 +223,13 @@ function commands() {
         echo -e "              Remove $2 "
         echo -e '#####################################################'    
         sudo apt remove $2
-        ;;                   
+        ;;  
+    '-u'|'upgrade')
+        echo -e '#####################################################'
+        echo -e "              Upgrade RCM "
+        echo -e '#####################################################'    
+        . ~/commands/common/shell/upgrade_rcm.sh
+        ;;                          
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "        command interface to the RCM tools          "
@@ -237,6 +243,7 @@ function commands() {
         echo "-l | list:       List all script files and serial numbers"
         echo "-i | install:    Install apt packages"
         echo "-r | remove:     Remove apt packages"
+        echo "-u | upgrade:    upgrade rcm"
         echo "id:              Provide the serial number to install"
         ;;             
     *)
