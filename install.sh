@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :ROS Commands Manager Install Script                #
+# Function :ROS Commands Manager Desktop Version               #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-10-20                                         #

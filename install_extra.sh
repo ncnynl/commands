@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :ROS Commands Manager Install Script                #
+# Function :ROS Commands Manager Shell Script                  #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-10-20                                         #
@@ -31,6 +31,10 @@ function install_package_extra(){
 
     rsync -a ~/tools/commands/commands_extra/* ~/commands/
     sudo chown -R $USER:$USER ~/commands/
+    #rm 
+    if [ -f /usr/bin/cs ]; then
+        sudo rm /usr/bin/cs
+    fi 
 
     #add commands shell
     if [ ! -f /usr/bin/cs ] ; then

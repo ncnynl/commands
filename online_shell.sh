@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :ROS Commands Manager Remote Install Script         #
+# Function :ROS Commands Manager Shell Version Remote Install  #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-11-18                                         #

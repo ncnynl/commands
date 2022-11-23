@@ -26,14 +26,20 @@ echo -e "Start to uninstall package $package to your system now!!!"
 #    echo to stdout
 #######################################
 function rm_package(){
+    #delete desktop version
     if [ -f /usr/bin/commands ]; then
         sudo rm -f /usr/bin/commands
     fi 
 
-
     if [  -d /usr/local/commands/ ]; then
         sudo rm -rf /usr/local/commands/
     fi 
+
+    #delete shell version
+    if [ -f /usr/bin/cs ]; then
+        sudo rm -f /usr/bin/cs
+    fi 
+
 
     echo 0
 }
@@ -55,7 +61,7 @@ fi
 # Outputs:
 #    echo to stdout
 #######################################
-#rm comands_extra
+#rm commands_extra
 # if [  -d ~/commands ]; then
 #   sudo rm -rf  ~/commands/
 # fi

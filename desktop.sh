@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Desktop                                            #
+# Function :Desktop Shell                                      #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-11-01                                         #
