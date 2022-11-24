@@ -16,7 +16,7 @@
 if ! grep -Fq "load_ros1.sh" ~/.bashrc
 then
     echo ". ~/commands/ros_easy/shell/load_ros1.sh" >> ~/.bashrc
-fi    echo "Init ros1 successfully! writed to ~/.bashrc"
+    echo "Init ros1 successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"
 fi
