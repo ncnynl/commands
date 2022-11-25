@@ -23,6 +23,13 @@ sudo apt-get install -y ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
   ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
 
+#gmapping
+sudo apt install ros-noetic-gmapping -y
+#karto
+sudo apt install ros-noetic-slam-karto -y 
+#hector
+sudo apt install ros-noetic-hector-slam -y
+#cartographer/source install
 
 #install turtlebot3
 sudo apt install -y ros-noetic-dynamixel-sdk
@@ -36,4 +43,7 @@ sudo apt install -y ros-noetic-turtlebot3-fake
 # echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros1_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
 
 # export TURTLEBOT3_MODEL
-echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
+if ! grep -Fq "TURTLEBOT3_MODEL" ~/.bashrc
+then
+  echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
+fi

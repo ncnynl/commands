@@ -17,6 +17,7 @@
 
 # echo $release
 # echo $version 
+# echo $ROS_DISTRO
 
 case $version in 
     "22.04")

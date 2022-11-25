@@ -3,6 +3,9 @@
 - 增加下载烧录工具balenaEther下载脚本
 - fix typos
 - 修复命令行版本的重复安装问题
+- 重命名ros1 noetic turtlebot3相关的脚本
+- 修改load_tb3.sh,自动判断加载turtlebot3的版本
+- 增加安装noetic cartographer脚本
 
 1.2.4 (2022-11-22)
 - 增加安装docker

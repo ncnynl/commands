@@ -15,9 +15,7 @@
 
 if [ -d /opt/ros/noetic ]; then
     source /opt/ros/noetic/setup.bash
-
     export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml
-    export TURTLEBOT3_MODEL="burger"
     export ROS_MASTER="http://localhost:11311"
     export ROS_HOSTNAME="localhost"
 fi

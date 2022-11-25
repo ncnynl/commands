@@ -69,17 +69,23 @@ cd ~/ros1_tb3_ws && catkin_make
 #run echo
 
 # 添加工作空间路径到bashrc文件
-
-echo 'source ~/ros1_tb3_ws/devel/setup.bash' >> ~/.bashrc
-
+if ! grep -Fq "ros1_tb3_ws" ~/.bashrc
+then
+    echo 'source ~/ros1_tb3_ws/devel/setup.bash' >> ~/.bashrc
+fi
 #run echo
 
 # export GAZEBO_MODEL_PATH
-echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros1_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
+if ! grep -Fq "turtlebot3_gazebo/models" ~/.bashrc
+then
+    echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros1_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
+fi
 
 # export TURTLEBOT3_MODEL
-echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
-
+if ! grep -Fq "TURTLEBOT3_MODEL" ~/.bashrc
+then
+    echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
+fi
 #run source
 
 # 加载工作空间到当前环境

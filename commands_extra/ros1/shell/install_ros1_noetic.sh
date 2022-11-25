@@ -10,6 +10,11 @@
 # URL: https://ncnynl.com                                      #
 ################################################################
 
+
+if [ -d /opt/ros/noetic ]; then
+    echo "ros1 noetic have installed!!" && exit 1
+fi
+
 ros1_distro=noetic
 
 echo "Start to install ROS1 $ros1_distro"

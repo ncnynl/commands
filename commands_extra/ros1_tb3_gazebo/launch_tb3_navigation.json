@@ -2,17 +2,22 @@
     "commands": [
         {
             "command": "roslaunch turtlebot3_gazebo turtlebot3_world.launch",
-            "desc": "启动burger",
+            "desc": "启动仿真burger",
             "id": "1",
             "link": "https://www.ncnynl.com/archives/201707/1791.html",
             "name": "launch turtlebot3_robot"
         },
         {
             "command": " roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml",
-            "desc": "启动turtlebot3_navigation",
+            "desc": "启动仿真导航",
             "id": "2",
             "link": "https://www.ncnynl.com/archives/201707/1791.html",
             "name": "launch turtlebot3_navigation"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-11-25"
         }
     ]
 }

@@ -2,45 +2,50 @@
     "commands": [
         {
             "command": "roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch",
-            "desc": "启动turtlebot3_empty_world",
+            "desc": "启动turtlebot3_empty_world场景",
             "id": "1",
             "link": "https://www.ncnynl.com/archives/201707/1789.html",
             "name": "launch turtlebot3_empty_world"
         },
         {
             "command": "roslaunch turtlebot3_gazebo turtlebot3_world.launch",
-            "desc": "启动turtlebot3_world",
+            "desc": "启动turtlebot3_world场景",
             "id": "2",
             "link": "https://www.ncnynl.com/archives/201707/1789.html",
             "name": "launch turtlebot3_world"
         },
         {
             "command": "roslaunch turtlebot3_gazebo turtlebot3_house.launch",
-            "desc": "启动turtlebot3_house",
+            "desc": "启动turtlebot3_house场景",
             "id": "3",
             "link": "https://www.ncnynl.com/archives/201707/1789.html",
             "name": "launch turtlebot3_house"
         },
         {
             "command": "roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch",
-            "desc": "启动turtlebot3_teleop_key",
+            "desc": "启动键盘控制",
             "id": "4",
             "link": "https://www.ncnynl.com/archives/201707/1789.html",
             "name": "launch turtlebot3_teleop_key"
         },
         {
             "command": "roslaunch turtlebot3_gazebo turtlebot3_simulation.launch",
-            "desc": "启动turtlebot3_simulation",
+            "desc": "启动自主行走仿真",
             "id": "5",
             "link": "https://www.ncnynl.com/archives/201707/1789.html",
             "name": "launch turtlebot3_simulation"
         },
         {
             "command": "roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch",
-            "desc": "启动turtlebot3_gazebo_rviz",
+            "desc": "启动rviz",
             "id": "6",
             "link": "https://www.ncnynl.com/archives/201707/1789.html",
             "name": "launch turtlebot3_gazebo_rviz"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-11-25"
         }
     ]
 }
