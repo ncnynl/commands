@@ -6,6 +6,7 @@
 - 重命名ros1 noetic turtlebot3相关的脚本
 - 修改load_tb3.sh,自动判断加载turtlebot3的版本
 - 增加安装noetic cartographer脚本
+- 修改安装脚本，避免交叉引用会自动退出
 
 1.2.4 (2022-11-22)
 - 增加安装docker
