@@ -16,9 +16,12 @@
 #https://askubuntu.com/questions/168069/problem-installing-vim
 
 echo "install git vim terminator ssh chromium-browser tree cheese "
-sudo apt install wget curl git vim terminator ssh chromium-browser tree cheese -y 
+sudo apt install wget curl git vim terminator ssh chromium-browser tree cheese mesa-utils -y 
 
-echo "install 录制工具"
+echo "install video and audio tools"
 sudo apt install audacity simplescreenrecorder kazam vlc -y
+
+echo "install database: mosquitto sqlite3"
+sudo apt install -y sqlite3  mosquitto mosquitto-clients -y
 
 

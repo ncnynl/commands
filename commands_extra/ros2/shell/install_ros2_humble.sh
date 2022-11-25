@@ -45,13 +45,30 @@ sudo apt install -y ros-$ros2_distro-rqt
 sudo apt install -y ros-$ros2_distro-turtlesim
 
 # Install ROS 2 build tools
-sudo apt install -y python3-colcon-common-extensions python3-vcstool
+sudo apt install -y \
+python3-colcon-common-extensions \
+python3-vcstool \
+python3-rosdep
 
 # RMW for ROS 2
 sudo apt install -y ros-$ros2_distro-rmw-cyclonedds-cpp
 
-# ros1_bridge
-# sudo apt install -y ros-$ros2_distro-ros1-bridge
+
+#install tf2 deps
+sudo apt install -y \
+ros-$ros2_distro-turtle-tf2-py \
+ros-$ros2_distro-tf2-tools \
+ros-$ros2_distro-tf-transformations
+
+#install ros2 bag deps
+sudo apt install -y \
+libroscpp-serialization0d \
+ros-$ros2_distro-nmea-msgs \
+ros-$ros2_distro-rosbag2-bag-v2-plugins  \
+ros-$ros2_distro-rosbag2-storage \
+ros-$ros2_distro-rosbag2-storage-default-plugins \
+ros-$ros2_distro-ros2bag \
+ros-$ros2_distro-rosbag2-transport 
 
 #add ros to bashrc
 sudo echo "source /opt/ros/$ros2_distro/setup.bash" >> ~/.bashrc
