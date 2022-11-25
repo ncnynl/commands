@@ -33,7 +33,7 @@ sudo apt install -y ros-noetic-turtlebot3-fake
 
 
 # export GAZEBO_MODEL_PATH
-echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros1_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
+# echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros1_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
 
 # export TURTLEBOT3_MODEL
 echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc

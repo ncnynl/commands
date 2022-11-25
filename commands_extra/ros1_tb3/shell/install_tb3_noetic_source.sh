@@ -19,11 +19,12 @@
 if [ -d ~/ros1_tb3_ws/src ]; then
     echo "Turtlebot3 have installed!!" && exit 1
 fi
+#install apt first 
+pwd=$(pwd)
+sudo sh -c "$pwd/../ros1_tb3_gazebo/shell/install_turtlebot3_ros1_noetic_apt.sh"
 
 # install dep
-
 sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
-sudo apt-get install ros-noetic-gazebo-* ros-noetic-cartographer ros-noetic-cartographer-ros ros-noetic-nav2-bringup ros-noetic-navigation2 ros-noetic-slam-toolbox
 
 # 新建工作空间
 mkdir -p ~/ros1_tb3_ws/src
