@@ -29,7 +29,9 @@ else
     sudo apt install -y ros-$ros1_distro-desktop-full
 
     # Install ROS 1 build tools
-    sudo apt install -y python3-rosdep python3-rosinstall-generator python3-vcstool build-essential
+    sudo apt install -y python3-rosdep python3-rospkg python3-rosinstall-generator python3-vcstool build-essential 
+
+    sudo apt install -y ros-$ros1_distro-rqt ros-$ros1_distro-rqt-common-plugins  ros-$ros1_distro-tf2-tools  ros-$ros1_distro-tf2-echo 
 
     #add ros to bashrc
     sudo echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc

@@ -24,7 +24,7 @@ sudo apt-get install -y ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
 
 #gmapping
-sudo apt install ros-noetic-gmapping -y
+sudo apt install ros-noetic-slam-gmapping -y
 #karto
 sudo apt install ros-noetic-slam-karto -y 
 #hector
