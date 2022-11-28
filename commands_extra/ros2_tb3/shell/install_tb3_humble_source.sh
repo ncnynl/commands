@@ -26,12 +26,12 @@ else
 
     sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
     sudo apt install -y ros-humble-gazebo-ros2-control \
-    ros-humble-gazebo-ros-pkgs \ 
-    ros-humble-gazebo-ros2-control-demos \ 
-    ros-humble-gazebo-dev \ 
-    ros-humble-gazebo-ros \ 
-    ros-humble-gazebo-plugins \ 
-    ros-humble-gazebo-msgs \ 
+    ros-humble-gazebo-ros-pkgs \
+    ros-humble-gazebo-ros2-control-demos \
+    ros-humble-gazebo-dev \
+    ros-humble-gazebo-ros \
+    ros-humble-gazebo-plugins \
+    ros-humble-gazebo-msgs \
     ros-humble-cartographer \
     ros-humble-cartographer-ros \
     ros-humble-nav2-bringup \
