@@ -147,3 +147,8 @@ echo "source /opt/ros/galactic/setup.bash" >> ~/.bashrc
 echo "source ~/walking_ws/install/local_setup.bash" >> ~/.bashrc
 ```
 
+#### git config: 
+
+
+git config --global user.name "ncnynl"
+git config --global user.email 104391@qq.com
