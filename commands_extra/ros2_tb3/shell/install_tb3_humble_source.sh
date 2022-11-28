@@ -79,6 +79,8 @@ else
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros2_tb3_ws/
+    rosdep update
+    rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
     colcon build --symlink-install
 
     #run echo
