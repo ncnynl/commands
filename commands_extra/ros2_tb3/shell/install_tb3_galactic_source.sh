@@ -71,24 +71,24 @@ else
 
     # 添加工作空间路径到bashrc文件
 
-    echo 'source ~/ros2_tb3_ws/install/setup.bash' >> ~/.bashrc
+    # echo 'source ~/ros2_tb3_ws/install/setup.bash' >> ~/.bashrc
 
     #run echo
 
     # 添加ROS_DOMAIN_ID到bashrc文件
 
-    echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc
+    # echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc
 
     # export GAZEBO_MODEL_PATH
-    echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
+    # echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
 
     # export TURTLEBOT3_MODEL
-    echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
+    # echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
 
     #run source
 
     # 加载工作空间到当前环境
-
+    sh -c "~/commands/ros_easy/shell/init_tb3.sh"
     source ~/.bashrc
 
 fi
