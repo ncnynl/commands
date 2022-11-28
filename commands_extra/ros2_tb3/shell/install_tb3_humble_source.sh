@@ -13,8 +13,8 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 #run ros2_tb3_ws
-echo "Not Yet Supported!"
-exit 0
+# echo "Not Yet Supported!"
+# exit 0
 
 
 # if installed ?
