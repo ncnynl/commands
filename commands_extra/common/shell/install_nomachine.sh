@@ -12,35 +12,42 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 
-#source check_linux_version.sh
-. ./shell/check_linux_version.sh
+if [ -f /etc/NX ];then 
+    echo "nomachine have installed!!" 
+else 
 
-function get_package_url()
-{
-    link=""
-    if [[ $release == "ubuntu"  && $cpu_release == "amd64" ]] ; then 
-        link="https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_amd64.deb"
-    elif [[ $release == "ubuntu"  && $cpu_release == "aarch64"  ]]; then 
-        link="https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_arm64.deb"
+    #source check_linux_version.sh
+    . ~/commands/common/shell/check_linux_version.sh
+
+    function get_package_url()
+    {
+        link=""
+        if [[ $release == "ubuntu"  && $cpu_release == "amd64" ]] ; then 
+            link="https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_amd64.deb"
+        elif [[ $release == "ubuntu"  && $cpu_release == "aarch64"  ]]; then 
+            link="https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_arm64.deb"
+        fi
+        echo $link
+    }
+    link=$(get_package_url)
+    # echo $version
+    if [[ ! $link ]]; then
+        echo -e "This script can not be run in your system now!" && exit 1
     fi
-    echo $link
-}
-link=$(get_package_url)
-# echo $version
-if [[ ! $link ]]; then
-    echo -e "This script can not be run in your system now!" && exit 1
+
+    # download 
+    function dowloand_package()
+    {
+        curl -fSL $link -o /tmp/nomachine.deb  
+    }
+    dowloand_package
+
+    # install nomachine 
+    function install_package()
+    {
+        sudo dpkg -i /tmp/nomachine.deb
+    }
+    install_package
+
+    echo "Congratulations, You have successfully installed"
 fi
-
-# download 
-function dowloand_package()
-{
-    curl -fSL $link -o /tmp/nomachine.deb  
-}
-dowloand_package
-
-# install nomachine 
-function install_package()
-{
-    sudo dpkg -i /tmp/nomachine.deb
-}
-install_package

@@ -38,6 +38,7 @@ pip3 install -U argcomplete
 
 # Install ROS 2 RQT
 sudo apt install -y ros-$ros2_distro-rqt
+sudo apt install -y ros-$ros2_distro-rqt-tf-tree
 
 # Install turtlesim for verification
 sudo apt install -y ros-$ros2_distro-turtlesim
