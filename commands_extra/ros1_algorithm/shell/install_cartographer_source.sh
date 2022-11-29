@@ -31,8 +31,12 @@ else
     #commit_id: cartographer ef00de2 
     #commit_id: cartographer_ros c138034 
 
-    echo "- git: {local-name: cartographer, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer.git', version: 'master'}
-    - git: {local-name: cartographer_ros, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer_ros.git', version: 'master'}" > cartographer_ros.rosinstall
+    echo "
+    - git: {local-name: cartographer, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer.git', version: 'master'}
+    - git: {local-name: cartographer_ros, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer_ros.git', version: 'master'} 
+    - git: {local-name: cartographer_turtlebot, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer_turtlebot.git', version: 'master'}
+    - git: {local-name: ceres-solver, uri: 'https://ghproxy.com/https://ceres-solver.googlesource.com/ceres-solver.git', version: '1.12.0rc4'}" 
+    | tee cartographer_ros.rosinstall
     wstool merge -t src cartographer_ros.rosinstall
     wstool update -t src
 
@@ -54,7 +58,7 @@ else
     #add to bashrc if not exits
     if ! grep -Fq "$workspace/install_isolated/setup.bash" ~/.bashrc
     then
-        echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+        echo ". ~/$workspace/install_isolated/setup.bash" >> ~/.bashrc
         echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
     else
         echo "Has been inited before! Please check ~/.bashrc"
