@@ -35,8 +35,7 @@ else
     - git: {local-name: cartographer, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer.git', version: 'master'}
     - git: {local-name: cartographer_ros, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer_ros.git', version: 'master'} 
     - git: {local-name: cartographer_turtlebot, uri: 'https://ghproxy.com/https://github.com/cartographer-project/cartographer_turtlebot.git', version: 'master'}
-    - git: {local-name: ceres-solver, uri: 'https://ghproxy.com/https://ceres-solver.googlesource.com/ceres-solver.git', version: '1.12.0rc4'}" 
-    | tee cartographer_ros.rosinstall
+    - git: {local-name: ceres-solver, uri: 'https://ghproxy.com/https://github.com/ceres-solver/ceres-solver.git', version: '1.12.0rc4'}" | tee cartographer_ros.rosinstall
     wstool merge -t src cartographer_ros.rosinstall
     wstool update -t src
 
