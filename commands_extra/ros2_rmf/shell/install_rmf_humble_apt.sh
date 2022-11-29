@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_rmf_panel.sh                              
+# Function : install_ros2_rmf_source_shell.sh                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            
@@ -12,21 +12,23 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
-#ubuntu20.04 have tested 
-#ubuntu22.04 not yet
+# https://github.com/open-rmf/rmf_demos/issues/166
+echo "Not Yet Supported!"
+exit 0
 
-#downlaod
-cd ~/ros2_rmf_ws/
-# git clone https://ghproxy.com/https://github.com/open-rmf/rmf-panel-js
-git clone https://gitee.com/ncnynl/rmf-panel-js
-cd rmf-panel-js
-#安装，需要花一定时间安装
-cd ~/ros2_rmf_ws/rmf-panel-js
-npm install --prefix rmf_panel
-npm run build --prefix rmf_panel
+#安装gazebo源 
+if [ ! -f /etc/apt/sources.list.d/gazebo-stable.list ];then
+    sudo apt update
+    sudo apt install -y wget
+    sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+    wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+fi 
 
-# launch
-# cd rmf_panel
-# python3 -m http.server 3000
-# open http://localhost:3000 on browser
+#rmf 
+
+#rmf demos
+sudo apt install -y ros-humble-rmf-demos-gz-classic
+
+
+
+

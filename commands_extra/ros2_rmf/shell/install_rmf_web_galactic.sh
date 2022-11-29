@@ -13,7 +13,7 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 echo "Not Yet Supported!"
-return 0        
+exit 0   
 #基于ubuntu20.04 galacitc版本安装需要指的版本
 #安装nvm
 # sudo apt update && sudo apt install curl
@@ -45,7 +45,7 @@ source ~/.bashrc
 
 #downlaod
 cd ~/ros2_rmf_ws/
-git clone https://ghproxy.com/https://github.com/open-rmf/rmf-web
+git clone -b galactic https://ghproxy.com/https://github.com/open-rmf/rmf-web
 cd rmf-web
 git checkout 5670bd9
 #安装，需要花一定时间安装

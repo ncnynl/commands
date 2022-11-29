@@ -39,7 +39,7 @@ else
 
     # 获取仓库列表
 
-    git clone https://ghproxy.com/https://github.com/turtlebot/turtlebot4_simulator.git
+    git clone -b humble https://ghproxy.com/https://github.com/turtlebot/turtlebot4_simulator.git
 
     #run import
     echo "this will take 10-30 min to download"
@@ -47,16 +47,16 @@ else
     # 下载仓库
     echo "Dowload from irobot_create_msgs "
 
-    git clone -b galactic https://ghproxy.com/https://github.com/iRobotEducation/irobot_create_msgs.git
+    git clone -b humble https://ghproxy.com/https://github.com/iRobotEducation/irobot_create_msgs.git
 
     echo "Dowload from create3_sim "
-    git clone -b galactic https://ghproxy.com/https://github.com/iRobotEducation/create3_sim.git
+    git clone -b main https://ghproxy.com/https://github.com/iRobotEducation/create3_sim.git
 
     echo "Dowload from turtlebot4 "
-    git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot4.git
+    git clone -b humble https://ghproxy.com/https://github.com/turtlebot/turtlebot4.git
 
     echo "Dowload from turtlebot4_desktop "
-    git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot4_desktop.git
+    git clone -b humble https://ghproxy.com/https://github.com/turtlebot/turtlebot4_desktop.git
 
     echo "Dowload from turtlebot4_tutorials "
     git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot4_tutorials.git

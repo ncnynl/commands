@@ -85,7 +85,7 @@ function commands_install(){
                             # commands
                             #只能在终端执行
                             cd ~/commands/$folder
-                            ./$shell
+                            ./$shell $2
                             ;;
                         [Nn] | [Nn][Oo])
                             commands
@@ -195,7 +195,7 @@ function commands() {
         echo -e '      The following script will be executed：        '
         echo -e '#####################################################'
         #执行脚本
-        commands_install $1
+        commands_install $1 $2
         return 
         ;;
     '-s'|'search')

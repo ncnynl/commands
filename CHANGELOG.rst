@@ -1,4 +1,8 @@
 ################# commands工具更新日志 #############
+1.2.6 (2022-11-23)
+- add cs.sh param $2
+- fixed update_ros2_source.sh 
+
 1.2.5 (2022-11-23)
 - 增加下载烧录工具balenaEther下载脚本
 - fix typos

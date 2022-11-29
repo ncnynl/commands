@@ -13,7 +13,7 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 echo "Not Yet Supported!"
-return 0
+exit 0
 #基于ubuntu22.04 humble版本安装需要指的版本
 #安装nvm和nodejs
 # sudo apt update && sudo apt install curl

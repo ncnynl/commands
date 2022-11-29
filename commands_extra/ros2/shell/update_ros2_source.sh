@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Update ROS2 Source                                 #
-# Platform :All Linux Based Platform                           #
+# Platform :All Linux Basudo sed Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-06-23                                         #
 # Author   :ncnynl                                             #
@@ -9,7 +9,6 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
-
 
 #set Key
 sudo apt-get update && sudo apt-get install curl gnupg lsb-release
@@ -53,7 +52,7 @@ function get_help(){
 }
 
 function update_init(){
-	[[ $EUID -ne 0 ]] && echo -e " ${RED}Error:${PLAIN} This script must be run as root!" && exit 1
+	# [[ $EUID -ne 0 ]] && echo -e " ${RED}Error:${PLAIN} This script must be run as root!" && exit 1
 
 	if cat /etc/issue | grep -Eqi "ubuntu"; then
 	  release="ubuntu"
@@ -73,50 +72,50 @@ function set_ubuntu(){
 	if [[ -f /etc/apt/sources.list.d/ros2-latest.list.bak ]]; then
 		echo -e " ${GREEN}ros2-latest.list.bak exists${PLAIN}"
 	else
-		[ -f /etc/apt/sources.list.d/ros2-latest.list ] && mv /etc/apt/sources.list.d/ros2-latest.list{,.bak}
+		[ -f /etc/apt/sources.list.d/ros2-latest.list ] && sudo mv /etc/apt/sources.list.d/ros2-latest.list{,.bak}
 	fi
 
-	[ -f /etc/apt/sources.list.d/ros2-latest.list ] && rm /etc/apt/sources.list.d/ros2-latest.list
+	[ -f /etc/apt/sources.list.d/ros2-latest.list ] && sudo rm /etc/apt/sources.list.d/ros2-latest.list
 
-	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu xenial main" >> /etc/apt/sources.list.d/ros2-latest.list
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu xenial main" | sudo tee  /etc/apt/sources.list.d/ros2-latest.list
 
-	[ "$ubuntuVersion" == '14.04' ] && sed -i 's/xenial/trusty/'g /etc/apt/sources.list.d/ros2-latest.list
+	[ "$ubuntuVersion" == '14.04' ] && sudo sed -i 's/xenial/trusty/'g /etc/apt/sources.list.d/ros2-latest.list
 	[ "$ubuntuVersion" == '16.06' ] && echo -n ""
-	[ "$ubuntuVersion" == '18.04' ] && sed -i 's/xenial/bionic/'g /etc/apt/sources.list.d/ros2-latest.list
-	[ "$ubuntuVersion" == '20.04' ] && sed -i 's/xenial/focal/'g /etc/apt/sources.list.d/ros2-latest.list
-	[ "$ubuntuVersion" == '21.04' ] && sed -i 's/xenial/hirsute/'g /etc/apt/sources.list.d/ros2-latest.list
-	[ "$ubuntuVersion" == '22.04' ] && sed -i 's/xenial/jammy/'g /etc/apt/sources.list.d/ros2-latest.list
+	[ "$ubuntuVersion" == '18.04' ] && sudo sed -i 's/xenial/bionic/'g /etc/apt/sources.list.d/ros2-latest.list
+	[ "$ubuntuVersion" == '20.04' ] && sudo sed -i 's/xenial/focal/'g /etc/apt/sources.list.d/ros2-latest.list
+	[ "$ubuntuVersion" == '21.04' ] && sudo sed -i 's/xenial/hirsute/'g /etc/apt/sources.list.d/ros2-latest.list
+	[ "$ubuntuVersion" == '22.04' ] && sudo sed -i 's/xenial/jammy/'g /etc/apt/sources.list.d/ros2-latest.list
 }
 
 function set_bfsu(){
 	echo -e "${GREEN}###set sources from mirrors.bfsu.edu.cn####${PLAIN}"	
-	sed -i 's/packages.ros.org/mirrors.bfsu.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
+	sudo sed -i 's/packages.ros.org/mirrors.bfsu.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
 }
 
 function set_ustc(){
 	echo -e "${GREEN}###set sources from mirrors.ustc.edu.cn####${PLAIN}"
-	sed -i 's/packages.ros.org/mirrors.ustc.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
+	sudo sed -i 's/packages.ros.org/mirrors.ustc.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
 }
 
 function set_sjtu(){
 	echo -e "${GREEN}###set sources from mirrors.sjtug.sjtu.edu.cn####${PLAIN}"
-	sed -i 's/packages.ros.org/mirrors.sjtug.sjtu.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
+	sudo sed -i 's/packages.ros.org/mirrors.sjtug.sjtu.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
 }
 
 function set_aliyun(){
 	echo -e "${GREEN}###set sources from mirrors.aliyun.com####${PLAIN}"		
-	sed -i 's/packages.ros.org/mirrors.aliyun.com/'g /etc/apt/sources.list.d/ros2-latest.list
+	sudo sed -i 's/packages.ros.org/mirrors.aliyun.com/'g /etc/apt/sources.list.d/ros2-latest.list
 }
 
 function set_tsinghua(){
 	echo -e "${GREEN}###set sources from mirrors.tuna.tsinghua.edu.cn####${PLAIN}"		
-	sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
+	sudo sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/'g /etc/apt/sources.list.d/ros2-latest.list
 }
 
 function restore(){
 	if [ -f /etc/apt/sources.list.d/ros2-latest.list.bak ]; then
-		rm /etc/apt/sources.list.d/ros2-latest.list
-		mv /etc/apt/sources.list.d/ros2-latest.list.bak /etc/apt/sources.list.d/ros2-latest.list
+		sudo rm /etc/apt/sources.list.d/ros2-latest.list
+		sudo mv /etc/apt/sources.list.d/ros2-latest.list.bak /etc/apt/sources.list.d/ros2-latest.list
 	fi
 	echo -e "${GREEN}###restore sources from backup file####${PLAIN}"
 }
@@ -145,7 +144,7 @@ function set_sources(){
 			   set_ubuntu;
                echo -e "${GREEN}###update source to packages.ros.org####${PLAIN}"
 			esac
-			apt-get update;;
+			sudo apt update;;
 	esac
 }
 
