@@ -13,7 +13,8 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 #base on 22.09 branch 
-echo "Not Yet Supported!"
+# https://github.com/open-rmf/rmf_demos.git
+# echo "Not Yet Supported!"
 
 if [ -d ~/ros2_rmf_ws ];then 
 	echo "rmf have installed" && exit 0

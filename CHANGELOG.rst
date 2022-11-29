@@ -2,6 +2,10 @@
 1.2.6 (2022-11-23)
 - add cs.sh param $2
 - fixed update_ros2_source.sh 
+- add ros1_sensor ros1_algorithm folder
+- add ros2_sensor ros2_algorithm folder 
+- add Open-RMF for humble source install scripts
+
 
 1.2.5 (2022-11-23)
 - 增加下载烧录工具balenaEther下载脚本
