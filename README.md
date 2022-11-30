@@ -124,6 +124,16 @@ cd ~/tools/commands/
 ./install_extra.sh
 ```
 
+#### How to add scripts to this repo
+
+- 1. fork repo
+- 2. add your scripts 
+- 3. submit the scripts to your repo
+- 4. pull request to this repo
+- 5. we will check your scripts 
+- 6. all ok , merge to this repo
+
+
 #### 配置说明
 
 
@@ -132,14 +142,15 @@ cd ~/tools/commands/
  - 添加ros1 路径，执行命令:
 
 ```
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+cs -s init_ros1
 ```
+ - under ros_easy folder , type the ID and enter
  - 添加ros2 路径，执行命令：
 
 ```
-echo "source /opt/ros/galactic/setup.bash" >> ~/.bashrc
+cs -s init_ros2
 ```
-
+ - under ros_easy folder , type the ID and enter
  - 对于自己的工作空间也需要添加到~/.bashrc里,要不找不到包.
  - 比如你自己的工作空间walking_ws ， 执行命令
 

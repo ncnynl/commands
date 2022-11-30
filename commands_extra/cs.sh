@@ -264,5 +264,6 @@ function commands() {
         ;;
     esac
 }
+source ~/.bashrc
 cd ~/commands
 commands $1 $2

@@ -34,7 +34,7 @@ fi
 sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
   -y
-python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator asyncio
+python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator 
 sudo apt-get install python3-colcon* -y
 
 
@@ -47,77 +47,77 @@ rosdep update
 #新建目录
 mkdir -p ~/ros2_rmf_ws/src
 cd ~/ros2_rmf_ws
-# wget https://raw.githubusercontent.com/open-rmf/rmf/release/22.09/rmf.repos
+# wget https://raw.githubusercontent.com/open-rmf/rmf/release/main/rmf.repos
 # rmf for 22.09
 echo "repositories:
   rmf/rmf_battery:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_battery.git
-    version: humble
+    version: main
   rmf/rmf_internal_msgs:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_internal_msgs.git
-    version: humble
+    version: main
   rmf/rmf_api_msgs:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_api_msgs.git
-    version: humble
+    version: main
   rmf/rmf_ros2:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_ros2.git
-    version: humble
+    version: main
   rmf/rmf_task:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_task.git
-    version: humble
+    version: main
   rmf/rmf_traffic:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic.git
-    version: humble
+    version: main
   rmf/rmf_utils:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_utils.git
-    version: humble
+    version: main
   rmf/ament_cmake_catch2:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/ament_cmake_catch2.git
-    version: humble
+    version: main
   rmf/rmf_visualization:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization.git
-    version: humble
+    version: main
   rmf/rmf_visualization_msgs:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization_msgs.git
-    version: humble
+    version: main
   rmf/rmf_building_map_msgs:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_building_map_msgs.git
-    version: humble
+    version: main
   rmf/rmf_simulation:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_simulation.git
-    version: humble
+    version: main
   rmf/rmf_traffic_editor:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic_editor.git
-    version: humble
+    version: main
   demonstrations/rmf_demos:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/rmf_demos.git
-    version: humble
+    version: main
   thirdparty/menge_vendor:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/menge_vendor.git
-    version: humble
+    version: master
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
-    version: humble
+    version: main
   thirdparty/pybind11_json_vendor:
     type: git
     url: https://ghproxy.com/https://github.com/open-rmf/pybind11_json_vendor.git
-    version: humble" > rmf.repos
+    version: main" > rmf.repos
 
 #下载源码 
 vcs import src < rmf.repos
@@ -148,7 +148,9 @@ cd ~/ros2_rmf_ws
 export CXX=clang++
 export CC=clang
 colcon build  --mixin release lld
-# colcon build --symlink-install --parallel-workers 1  --mixin release lld
+# colcon build --symlink-install --mixin release lld
+# colcon build --symlink-install --parallel-workers 1 
+# colcon build --symlink-install --parallel-workers 1 --cmake-args -DCMAKE_BUILD_TYPE=Release 
 
 
 

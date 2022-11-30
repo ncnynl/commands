@@ -19,12 +19,10 @@ if  [ -d $HOME/.nvm ]; then
     echo "nvm has installed "
 else
 
-    echo "install nodejs v18.2.1"
-    nvm install 18.2.1
+    echo "install nvm"
+    sudo apt update && sudo apt install curl
+    curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-    echo "install yarn"
-    npm install -g yarn 
-
-    echo "Congratulations, You have successfully installed"
+    echo "Congratulations, nvm have successfully installed"
 
 fi
