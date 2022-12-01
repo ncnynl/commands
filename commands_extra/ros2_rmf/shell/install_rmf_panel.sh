@@ -16,6 +16,12 @@
 #ubuntu20.04 have tested 
 #ubuntu22.04 not yet
 
+#install nodejs and npm
+if [ ! -f /usr/share/nodejs ];then
+    sh -c "~/commands/common/shell/install_nvm.sh"
+    sh -c "~/commands/common/shell/install_nodejs.sh"
+fi
+
 #downlaod
 cd ~/ros2_rmf_ws/
 # git clone https://ghproxy.com/https://github.com/open-rmf/rmf-panel-js

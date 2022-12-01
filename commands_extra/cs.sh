@@ -41,7 +41,7 @@ function commands_list(){
             do 
                 if [ -f $file ]; then
                     let i++
-                    echo "  $i - ${file##*/}"
+                    echo "  ID:$i - ${file##*/}"
                 fi
             done 
         fi 
@@ -72,7 +72,58 @@ function commands_install(){
 
                     if [ $i == $1 ] ; then 
                         echo "$dir:"
-                        echo "  $i - ${file##*/}"
+                        echo "  ID:$i - ${file##*/}"
+                        shell=${file#*/}
+                        path=$(dirname $file)
+                        folder=${path%/*}
+                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                        read -p "${CHOICE_C}" YN
+                        [ -z ${YN} ] && YN = Y
+                        case $YN in 
+                        [Yy] | [Yy][Ee][Ss])
+                            # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                            # commands
+                            #只能在终端执行
+                            cd ~/commands/$folder
+                            ./$shell $2
+                            ;;
+                        [Nn] | [Nn][Oo])
+                            commands
+                            ;;
+                        *)
+                            commands
+                            ;;
+                        esac  
+                    fi
+                fi
+            done 
+        fi 
+    done 
+}
+
+#######################################
+# commands_search_install
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_search_install(){
+    i=0
+    for dir in $(ls)
+    do
+        if [ -d $dir/shell ]; then 
+            
+            for file in $(ls $dir/shell/*)
+            do 
+                if [ -f $file ]; then
+                    let i++
+
+                    if [ $i == $1 ] ; then 
                         shell=${file#*/}
                         path=$(dirname $file)
                         folder=${path%/*}
@@ -113,7 +164,7 @@ function commands_install(){
 #    echo to stdout
 #######################################
 function commands_search(){
-    i=0
+    i=j=0
     for dir in $(ls)
     do
         if [ -d $dir/shell ]; then 
@@ -125,14 +176,24 @@ function commands_search(){
                     result=$(echo $file | grep "$1")
                     # echo $file 
                     # echo $1
-                    if [[ $result != "" ]] ; then 
+                    if [[ $result != "" ]] ; then
+                        let j++
+                        jid="$i"
                         echo "$dir:"
-                        echo "  $i - ${file##*/}"
+                        echo "  ID:$i - ${file##*/}"
                     fi
                 fi
             done 
         fi 
     done 
+
+    #if only one jump to  install
+    if [ $j == 1 ];then 
+        commands_search_install $jid
+    else
+        select_id
+    fi
+    
 }
 
 #######################################
@@ -203,8 +264,8 @@ function commands() {
         echo -e '              Alternative scripts：'
         echo -e '#####################################################'    
         commands_search $2
-        echo -e '#####################################################'
-        select_id       
+        # echo -e '#####################################################'
+        # select_id       
         ;;   
     '-l'|'list')
         echo -e '#####################################################'
@@ -264,5 +325,6 @@ function commands() {
         ;;
     esac
 }
+source ~/.bashrc
 cd ~/commands
 commands $1 $2

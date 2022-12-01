@@ -12,19 +12,16 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
         
-echo "install nvm and nodejs "
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#https://github.com/nvm-sh/nvm
-if  [ -d $HOME/.nvm ]; then 
-    echo "nvm has installed "
-else
 
-    echo "install nodejs v18.2.1"
-    nvm install 18.2.1
+echo "install nodejs v18.2.1"
+nvm install 18.2.1
 
-    echo "install yarn"
-    npm install -g yarn 
+echo "install yarn"
+npm install -g yarn 
 
-    echo "Congratulations, You have successfully installed"
+echo "Congratulations, nodejs and yarn have successfully installed"
 
-fi
