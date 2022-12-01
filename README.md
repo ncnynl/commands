@@ -46,7 +46,7 @@
 
 ```
 ubuntu 20.04 +
-ros2 galactic
+ros2 galactic+
 ros1 noetic
 python3.8 
 pyqt5

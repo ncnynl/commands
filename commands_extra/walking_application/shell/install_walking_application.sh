@@ -13,67 +13,68 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
         
+workspace=ros2_walking_app_ws
 
-#install dep 
-sudo apt install -y ros-galactic-robot-localization ros-galactic-slam-toolbox
-sudo apt install -y ros-galactic-navigation2 \
-ros-galactic-nav2-bringup  \
-ros-galactic-nav2-controller   \
-ros-galactic-nav2-planner  \
-ros-galactic-nav2-bt-navigator  \
-ros-galactic-nav2-recoveries  \
-ros-galactic-nav2-waypoint-follower  \
-ros-galactic-nav2-lifecycle-manager \
-ros-galactic-behaviortree-cpp-v3 \
-ros-galactic-nav2-rviz-plugins
+# 创建工作空间
+echo "workspace if exits ?"
+if [ ! -d ~/$workspace ];then 
+    mkdir -p ~/$workspace/src
+fi 
 
-sudo apt install -y ros-galactic-behaviortree-cpp-v3
-sudo apt install -y ros-galactic-cartographer-ros
-sudo apt install -y ros-galactic-transforms3d
-sudo apt install -y ros-galactic-ros2-control ros-galactic-ros2-controllers
-sudo apt install -y ros-galactic-navigation2
-sudo apt install -y ros-galactic-nav2-bringup
-sudo apt install -y ros-galactic-ompl
-sudo apt install -y ros-galactic-tf2-tools ros-galactic-tf-transformations
-sudo apt install -y ros-galactic-hardware-interface
+echo "software if installed ?"
+if [ -d ~/$workspace/src/walking_application ];then 
+    echo "walking_application have installed" && exit 0
+fi 
+
+echo "install rosdeps"
+sudo apt install -y ros-${ROS_DISTRO}-robot-localization ros-${ROS_DISTRO}-slam-toolbox
+sudo apt install -y ros-${ROS_DISTRO}-navigation2 \
+ros-${ROS_DISTRO}-nav2-bringup  \
+ros-${ROS_DISTRO}-nav2-controller   \
+ros-${ROS_DISTRO}-nav2-planner  \
+ros-${ROS_DISTRO}-nav2-bt-navigator  \
+ros-${ROS_DISTRO}-nav2-recoveries  \
+ros-${ROS_DISTRO}-nav2-waypoint-follower  \
+ros-${ROS_DISTRO}-nav2-lifecycle-manager \
+ros-${ROS_DISTRO}-behaviortree-cpp-v3 \
+ros-${ROS_DISTRO}-nav2-rviz-plugins
+
+sudo apt install -y ros-${ROS_DISTRO}-behaviortree-cpp-v3
+sudo apt install -y ros-${ROS_DISTRO}-cartographer-ros
+sudo apt install -y ros-${ROS_DISTRO}-transforms3d
+sudo apt install -y ros-${ROS_DISTRO}-ros2-control ros-${ROS_DISTRO}-ros2-controllers
+sudo apt install -y ros-${ROS_DISTRO}-navigation2
+sudo apt install -y ros-${ROS_DISTRO}-nav2-bringup
+sudo apt install -y ros-${ROS_DISTRO}-ompl
+sudo apt install -y ros-${ROS_DISTRO}-tf2-tools ros-${ROS_DISTRO}-tf-transformations
+sudo apt install -y ros-${ROS_DISTRO}-hardware-interface
 
 sudo apt install -y joystick
-sudo apt install -y ros-galactic-teleop-twist-keyboard
+sudo apt install -y ros-${ROS_DISTRO}-teleop-twist-keyboard
 sudo apt install -y xterm
-# 创建工作空间
 
-mkdir -p ~/ros2_walking_app_ws/src
 
-#run 
+echo "Download source"
+cd ~/$workspace/src 
+git clone -b ${ROS_DISTRO} https://gitee.com/ncnynl/walking_application
 
-# cd
-
-cd ~/ros2_walking_app_ws/src
-
-#run 
-
-# git clone
-
-git clone https://gitee.com/ncnynl/walking_application
-
-#run 
-
-# cd
-
-cd ~/ros2_walking_app_ws
-rosdep install -i --from-path src --rosdistro galactic -y
-#run 
-
-# colcon build
-
+# 编译代码
+echo "Compile source"
+cd ~/$workspace/
+rosdep install -i --from-path src --rosdistro ${ROS_DISTRO} -y
 colcon build --symlink-install
 
 
 #cp model to model
-cp -r ~/ros2_walking_app_ws/src/walking_application/models/* ~/.gazebo/models
+cp -r ~/$workspace/src/walking_application/models/* ~/.gazebo/models
 #run 
 
 # source
-
-echo "source ~/ros2_walking_app_ws/install/setup.bash" >> ~/.bashrc
+if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
+then
+    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+    echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
+else
+    echo "Has been inited before! Please check ~/.bashrc"
+fi
 

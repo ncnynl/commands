@@ -1,0 +1,450 @@
+- operation: Add
+  participant_description:
+    name: deliveryRobot_1
+    group: DeliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: deliveryRobot_2
+    group: DeliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: deliveryRobot_3
+    group: DeliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: tinyRobot1
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: tinyRobot2
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: cleanerBotA_1
+    group: cleanerBotA
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 1
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyBot_1
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: deliveryBot_1
+    group: deliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: cleanerBotA_2
+    group: cleanerBotA
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 1
+        - 1.2
+- operation: Add
+  participant_description:
+    name: caddy
+    group: caddy
+    responsiveness: Unresponsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 1.5
+        - 5
+- operation: Add
+  participant_description:
+    name: cleanerBotA_0
+    group: cleanerBotA
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 1
+        - 1.2
+- operation: Add
+  participant_description:
+    name: deliveryRobot_1
+    group: deliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: tinyRobot_0
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: deliveryRobot_2
+    group: deliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: tinyRobot_1
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: cleanerBotE_0
+    group: cleanerBotE
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 1
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyRobot_2
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: cleanerBotE_1
+    group: cleanerBotE
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 1
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyRobot_3
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: deliveryRobot_0
+    group: deliveryRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.59999999999999998
+        - 0.80000000000000004
+- operation: Add
+  participant_description:
+    name: tinyRobotTopRight
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: tinyRobotBottomLeft
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: tinyRobotBottomRight
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: tinyRobotTopLeft
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: tinyRobotD
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyRobotA
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyRobotB
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyRobotC
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 1.2
+- operation: Add
+  participant_description:
+    name: tinyRobot2
+    group: tinyRobot2
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
+- operation: Add
+  participant_description:
+    name: tinyRobot1
+    group: tinyRobot1
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: 0
+      vicinity:
+        type: Circle
+        index: 1
+      shape_context:
+        - 0.29999999999999999
+        - 0.5
