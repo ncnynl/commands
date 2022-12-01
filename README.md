@@ -125,13 +125,14 @@ cd ~/tools/commands/
 ```
 
 #### How to add scripts to this repo
-
-- 1. fork repo
-- 2. add your scripts 
-- 3. submit the scripts to your repo
-- 4. pull request to this repo
-- 5. we will check your scripts 
-- 6. all ok , merge to this repo
+#### 共享脚本代码
+ 
+- 1. fork repo / 克隆代码分支仓库
+- 2. add your scripts / 增加代码到自己的分支仓库
+- 3. submit the scripts to your repo / 提交代码到自己的分支仓库
+- 4. pull request to this repo / 推送变化代码到主仓库
+- 5. we will check your scripts / 审核相关代码
+- 6. all ok , merge to this repo / 合并到主仓库
 
 
 #### 配置说明
