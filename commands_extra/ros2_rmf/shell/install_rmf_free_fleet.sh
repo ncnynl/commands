@@ -46,6 +46,10 @@ git clone -b main https://ghproxy.com/https://github.com/open-rmf/free_fleet
 #have installed in rmf
 # git clone -b main https://ghproxy.com/https://github.com/open-rmf/rmf_internal_msgs 
 
+#for humble need fix from differential to nav2_amcl::DifferentialMotionModel
+if [ ${ROS_DISTRO} == "humble" ]; then
+  sed -i 's/differential/nav2_amcl::DifferentialMotionModel/'g ~/ros2_free_fleet_ws/src/free_fleet/ff_examples_ros2/params/turtlebot3_world_burger.yaml
+fi
 #rosdep
 cd ~/ros2_free_fleet_ws/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
