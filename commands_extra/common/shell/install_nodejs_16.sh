@@ -19,10 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 echo "install nodejs v18.12.1"
-nvm install 18.12.1
-
-echo "install yarn"
-npm install -g yarn 
+nvm install 16
 
 echo "Congratulations, nodejs and yarn have successfully installed"
 

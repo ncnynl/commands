@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs.sh                              
+# Function : install pnpm                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            
@@ -12,16 +12,18 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
         
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+echo "install pnpm "
 
+if  [ -f $HOME/.local/share/pnpm/pnpm ]; then 
+    echo "pnpm has installed "
+else
 
-echo "install nodejs v18.2.1"
-nvm install 18.2.1
+    echo "install pnpm"
+    sudo apt update && sudo apt install curl
+    curl -fsSL https://get.pnpm.io/install.sh | bash -
+    pnpm env use --global 18
 
-echo "install yarn"
-npm install -g yarn 
+    echo "Congratulations, pnpm have successfully installed"
 
-echo "Congratulations, nodejs and yarn have successfully installed"
+fi
 
