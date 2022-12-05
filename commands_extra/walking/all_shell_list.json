@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/walking;./shell/del.sh",
+            "desc": "",
+            "id": 1,
+            "link": "",
+            "name": "del.sh"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-12-05"
+        }
+    ]
+}
