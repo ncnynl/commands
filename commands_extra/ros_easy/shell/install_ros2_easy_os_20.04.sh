@@ -21,6 +21,9 @@ pwd=$(pwd)
 echo "install galactic"
 sudo sh -c "$pwd/../ros2/shell/install_ros2_galactic.sh"
 
+echo "install noetic"
+sudo sh -c "$pwd/../ros1/shell/install_ros1_noetic.sh"
+
 echo "install tools"
 sudo sh -c "$pwd/../common/shell/install_base_tools.sh"
 

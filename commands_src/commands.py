@@ -442,7 +442,7 @@ class ui(QWidget):
 
     def gen_commands_list(self):
         #get list
-        folds = []
+        folders = []
 
         file_path = ""
         for fold in os.listdir(self.file_path):
@@ -450,10 +450,10 @@ class ui(QWidget):
             sub_fold_path = self.file_path + "/" + sub_fold_name
 
             if os.path.isdir(sub_fold_path):
-                folds.append(sub_fold_name)        
+                folders.append(sub_fold_name)        
 
         all_files = []
-        for folder_name in folds:
+        for folder_name in folders:
             folder = self.file_path + "/" + folder_name
             files = [name for name in os.listdir(folder)
                     if os.path.isfile(os.path.join(folder, name))]     
@@ -501,6 +501,9 @@ class ui(QWidget):
 
         #save all
         self.write_commands_list(all)
+
+        #gen shell list
+        self.gen_shell_list()
 
         #return 
         return all
@@ -586,6 +589,98 @@ class ui(QWidget):
         
         return all
         
+        #gen all_shell_list for folder
+    def gen_shell_list(self):
+        #get list
+        folders = []
+
+        file_path = ""
+        for fold in os.listdir(self.file_path):
+            sub_fold_name = fold 
+            sub_fold_path = self.file_path + "/" + sub_fold_name
+
+            if os.path.isdir(sub_fold_path):
+                folders.append(sub_fold_name)        
+
+        for folder_name in folders:
+            folder = self.file_path + "/" + folder_name + "/shell"
+            if os.path.isdir(folder) : 
+                files = [name for name in os.listdir(folder)
+                        if os.path.isfile(os.path.join(folder, name))]     
+
+                if files : 
+                    all_commands = []
+                    all_descs = []
+                    all_links = []
+                    all_names = []
+                    all = []
+                    files.sort()
+                    for file_name in files:
+                        
+                        if "sh" not in file_name:
+                            continue 
+
+                        name    = file_name
+                        desc    = ""
+                        command = "cd ~/commands/" + folder_name + ";" + "./shell/" + file_name 
+                        link    = ""
+                                
+                        all_names.append(name)
+                        all_descs.append(desc)
+                        all_commands.append(command)
+                        all_links.append(link)
+
+                    all.append(all_names)
+                    all.append(all_descs)
+                    all.append(all_commands)
+                    all.append(all_links)
+
+                    #save all
+                    self.write_shell_list(folder_name, all)
+
+        #return 
+        return all
+
+    def write_shell_list(self, folder_name, all):
+        file_name = self.file_path + "/" + folder_name + "/all_shell_list.json"
+        # print(file_name)
+        f = QFile(file_name)
+        if not f.open(QIODevice.WriteOnly):
+            self.settext("\n open fail")
+            return 
+
+        content = QByteArray()
+        jsonArray1 = QJsonDocument.fromJson(content).array()
+        id=1
+        #get new waypoits info
+        for name in all[0]:
+            # print('ID：' + self.table.item(idx,0).text() + 'operate:' + self.table.cellWidget(idx,8).currentText())
+        
+            jsonItem = QJsonDocument.fromJson(content).object()
+            
+            index = all[0].index(name)   
+            jsonItem["id"]       = id
+            jsonItem["name"]     = name
+            jsonItem["desc"]     = all[1][index]
+            jsonItem["command"]  = all[2][index]
+            jsonItem["link"]     = all[3][index]
+            
+            jsonArray1.append(jsonItem)  
+            id=id+1 
+            
+        jsonArray2 = QJsonDocument.fromJson(content).object()
+        jsonArray2["commands"] = jsonArray1
+
+
+        jsonArray3 = QJsonDocument.fromJson(content).array()
+        jsonItem3 = QJsonDocument.fromJson(content).object()
+        jsonItem3["datetime"] = str(datetime.datetime.strftime(datetime.datetime.now(),'%Y-%m-%d'))
+        jsonArray3.append(jsonItem3)
+        jsonArray2["time"] = jsonArray3
+        
+        outputjson = QJsonDocument(jsonArray2).toJson(QJsonDocument.Indented)
+        f.write(outputjson)
+        f.close()  
 
     def search_apt_cache(self):
         # print("apt search")
