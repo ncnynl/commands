@@ -3,7 +3,7 @@
 - 增加-c参数查看脚本内容
 - 增加-e参数编辑脚本内容
 - 增加rmf_burger_maps安装脚本
-- 增加-b参数快速生成安装脚本
+- 增加-b参数快速生成安装脚本, 生成的脚本在commands_extra目录下，需要运行install_extra.sh才能使用cs -s xxxx找到并执行 
 
 1.2.8 (2022-12-05)
 - 增加桌面版脚本集自动生成对应的脚本列表 ~/commonads/folder/all_shell_list.json
