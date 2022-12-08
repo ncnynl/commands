@@ -197,6 +197,112 @@ function commands_search(){
 }
 
 #######################################
+# commands_edit
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_edit(){
+    i=0
+    for dir in $(ls)
+    do
+        if [ -d $dir/shell ]; then 
+            
+            for file in $(ls $dir/shell/*)
+            do 
+                if [ -f $file ]; then
+                    let i++
+
+                    if [ $i == $1 ] ; then 
+                        echo "$dir:"
+                        echo "  ID:$i - ${file##*/}"
+                        shell=${file#*/}
+                        path=$(dirname $file)
+                        folder=${path%/*}
+                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                        read -p "${CHOICE_C}" YN
+                        [ -z ${YN} ] && YN = Y
+                        case $YN in 
+                        [Yy] | [Yy][Ee][Ss])
+                            # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                            # commands
+                            #只能在终端执行
+                            cd ~/commands/$folder
+                            vim ./$shell
+                            ;;
+                        [Nn] | [Nn][Oo])
+                            commands
+                            ;;
+                        *)
+                            commands
+                            ;;
+                        esac  
+                    fi
+                fi
+            done 
+        fi 
+    done 
+}
+
+#######################################
+# commands_check
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_check(){
+    i=0
+    for dir in $(ls)
+    do
+        if [ -d $dir/shell ]; then 
+            
+            for file in $(ls $dir/shell/*)
+            do 
+                if [ -f $file ]; then
+                    let i++
+
+                    if [ $i == $1 ] ; then 
+                        echo "$dir:"
+                        echo "  ID:$i - ${file##*/}"
+                        shell=${file#*/}
+                        path=$(dirname $file)
+                        folder=${path%/*}
+                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                        read -p "${CHOICE_C}" YN
+                        [ -z ${YN} ] && YN = Y
+                        case $YN in 
+                        [Yy] | [Yy][Ee][Ss])
+                            # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                            # commands
+                            #只能在终端执行
+                            cd ~/commands/$folder
+                            cat ./$shell
+                            ;;
+                        [Nn] | [Nn][Oo])
+                            commands
+                            ;;
+                        *)
+                            commands
+                            ;;
+                        esac  
+                    fi
+                fi
+            done 
+        fi 
+    done 
+}
+
+#######################################
 # select_id
 # Globals: 
 #   None
@@ -220,6 +326,110 @@ function select_id()
         ;;
     esac        
 }
+
+
+#######################################
+# build install scripts
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_build()
+{
+    
+    CHOICE_A=$(echo -e "\n${BOLD} Please input file name like(install_xxx_xxx) ：${PLAIN}")
+    read -p "${CHOICE_A}" file_name
+    if [ ! $file_name ]; then
+        echo "file_name can not be null"
+        commands_build
+    fi
+
+    CHOICE_A=$(echo -e "\n${BOLD} Please input folder name in ~/commands/ like (common) ：${PLAIN}")
+    read -p "${CHOICE_A}" folder_name
+    if [ ! $folder_name ]; then
+        echo "folder_name can not be null"
+        commands_build
+    fi    
+
+    CHOICE_A=$(echo -e "\n${BOLD} Please input workspace name ：${PLAIN}")
+    read -p "${CHOICE_A}" workspace_ws
+    if [ ! $workspace_ws ]; then
+        echo "workspace_ws can not be null"
+        commands_build
+    fi  
+
+    CHOICE_A=$(echo -e "\n${BOLD} Please input soft name ：${PLAIN}")
+    read -p "${CHOICE_A}" soft_name
+    if [ ! $soft_name ]; then
+        echo "soft_name can not be null"
+        commands_build
+    fi  
+
+    CHOICE_A=$(echo -e "\n${BOLD} Please input soft url like(https://gitee.com/ncnynl/test.git) ：${PLAIN}")
+    read -p "${CHOICE_A}" soft_url
+    if [ ! $soft_url ]; then
+        echo "soft_url can not be null"
+        commands_build
+    fi  
+
+    CHOICE_A=$(echo -e "\n${BOLD} Please input soft branch ：${PLAIN}")
+    read -p "${CHOICE_A}" soft_branch
+    if [ ! $soft_branch ]; then
+        echo "soft_branch can not be null"
+        commands_build
+    fi  
+
+        
+    echo ""
+
+    if [ ! -d ~/tools/commands/commands_extra/$folder_name/shell/ ];then 
+        echo "$folder_name is not exits in ~/tools/commands/commands_extra, please create it manual first"
+    else
+        echo "Copy template to ~/tools/commands/commands_extra/$folder_name/shell/$file_name.sh"
+        file_path=~/tools/commands/commands_extra/$folder_name/shell/$file_name.sh
+        cp ~/tools/commands/commands_extra/common/shell/install_template.sh $file_path
+    fi
+
+    echo ""
+    echo "Replace ${file_name} to file "
+    sed -i "s/<file_name>/${file_name}/"g  ${file_path}
+
+    echo ""
+    date_str=$(date "+%Y-%m-%d")
+    echo "Replace ${date_str} to file "
+    sed -i "s/<date>/${date_str}/"g  ${file_path}
+
+
+    echo ""
+    echo "Replace ${workspace_ws} to file "
+    sed -i "s/<workspace_ws>/${workspace_ws}/"g  ${file_path}
+
+    echo ""
+    echo "Replace ${soft_name} to file "
+    sed -i "s/<soft_name>/${soft_name}/"g  ${file_path}
+
+    echo ""
+    echo "Replace ${soft_url} to file "    
+    sed -i "s#<soft_url>#${soft_url}#"  ${file_path}
+
+    echo ""
+    echo "Replace ${soft_branch} to file "    
+    sed -i "s/<soft_branch>/${soft_branch}/"g ${file_path}
+
+    echo ""
+    echo "Script is created , please use vscode to check and complete more"
+
+    echo ""   
+    echo "File path is:  ${file_path}"
+
+}
+
+
 #######################################
 # commands
 # Globals: 
@@ -296,7 +506,25 @@ function commands() {
         echo -e '#####################################################'
         echo -e "      Current RCM Version: $current_version"
         echo -e '#####################################################'    
-        ;;                             
+        ;;     
+    '-e'|'edit')
+        echo -e '#####################################################'
+        echo -e "              Edit File"
+        echo -e '#####################################################'    
+        commands_edit $2
+        ;;   
+    '-c'|'check')
+        echo -e '#####################################################'
+        echo -e "              View File Content "
+        echo -e '#####################################################'    
+        commands_check $2
+        ;;        
+    '-b'|'build')
+        echo -e '#####################################################'
+        echo -e "              Build install script "
+        echo -e '#####################################################'    
+        commands_build $2
+        ;;                                           
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "        command interface to the RCM tools          "
