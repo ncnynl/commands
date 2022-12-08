@@ -208,45 +208,52 @@ function commands_search(){
 #    echo to stdout
 #######################################
 function commands_edit(){
-    i=0
-    for dir in $(ls)
-    do
-        if [ -d $dir/shell ]; then 
-            
-            for file in $(ls $dir/shell/*)
-            do 
-                if [ -f $file ]; then
-                    let i++
+    case $1 in 
+    [1-9]*)   
+        i=0
+        for dir in $(ls)
+        do
+            if [ -d $dir/shell ]; then 
+                
+                for file in $(ls $dir/shell/*)
+                do 
+                    if [ -f $file ]; then
+                        let i++
 
-                    if [ $i == $1 ] ; then 
-                        echo "$dir:"
-                        echo "  ID:$i - ${file##*/}"
-                        shell=${file#*/}
-                        path=$(dirname $file)
-                        folder=${path%/*}
-                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
-                        read -p "${CHOICE_C}" YN
-                        [ -z ${YN} ] && YN = Y
-                        case $YN in 
-                        [Yy] | [Yy][Ee][Ss])
-                            # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
-                            # commands
-                            #只能在终端执行
-                            cd ~/commands/$folder
-                            vim ./$shell
-                            ;;
-                        [Nn] | [Nn][Oo])
-                            commands
-                            ;;
-                        *)
-                            commands
-                            ;;
-                        esac  
+                        if [ $i == $1 ] ; then 
+                            echo "$dir:"
+                            echo "  ID:$i - ${file##*/}"
+                            shell=${file#*/}
+                            path=$(dirname $file)
+                            folder=${path%/*}
+                            CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                            read -p "${CHOICE_C}" YN
+                            [ -z ${YN} ] && YN = Y
+                            case $YN in 
+                            [Yy] | [Yy][Ee][Ss])
+                                # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                                # commands
+                                #只能在终端执行
+                                cd ~/commands/$folder
+                                vim ./$shell
+                                ;;
+                            [Nn] | [Nn][Oo])
+                                commands
+                                ;;
+                            *)
+                                commands
+                                ;;
+                            esac  
+                        fi
                     fi
-                fi
-            done 
-        fi 
-    done 
+                done 
+            fi 
+        done 
+        ;;         
+    *)
+        echo "Please provide script ID"
+        ;;
+    esac      
 }
 
 #######################################
@@ -261,45 +268,53 @@ function commands_edit(){
 #    echo to stdout
 #######################################
 function commands_check(){
-    i=0
-    for dir in $(ls)
-    do
-        if [ -d $dir/shell ]; then 
-            
-            for file in $(ls $dir/shell/*)
-            do 
-                if [ -f $file ]; then
-                    let i++
+    case $1 in 
+    [1-9]*)
+        i=0
+        for dir in $(ls)
+        do
+            if [ -d $dir/shell ]; then 
+                
+                for file in $(ls $dir/shell/*)
+                do 
+                    if [ -f $file ]; then
+                        let i++
 
-                    if [ $i == $1 ] ; then 
-                        echo "$dir:"
-                        echo "  ID:$i - ${file##*/}"
-                        shell=${file#*/}
-                        path=$(dirname $file)
-                        folder=${path%/*}
-                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
-                        read -p "${CHOICE_C}" YN
-                        [ -z ${YN} ] && YN = Y
-                        case $YN in 
-                        [Yy] | [Yy][Ee][Ss])
-                            # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
-                            # commands
-                            #只能在终端执行
-                            cd ~/commands/$folder
-                            cat ./$shell
-                            ;;
-                        [Nn] | [Nn][Oo])
-                            commands
-                            ;;
-                        *)
-                            commands
-                            ;;
-                        esac  
+                        if [ $i == $1 ] ; then 
+                            echo "$dir:"
+                            echo "  ID:$i - ${file##*/}"
+                            shell=${file#*/}
+                            path=$(dirname $file)
+                            folder=${path%/*}
+                            CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                            read -p "${CHOICE_C}" YN
+                            [ -z ${YN} ] && YN = Y
+                            case $YN in 
+                            [Yy] | [Yy][Ee][Ss])
+                                # gnome-terminal -- bash -c "source ~/.bashrc; ./$file ;bash"
+                                # commands
+                                #只能在终端执行
+                                cd ~/commands/$folder
+                                cat ./$shell
+                                ;;
+                            [Nn] | [Nn][Oo])
+                                commands
+                                ;;
+                            *)
+                                commands
+                                ;;
+                            esac  
+                        fi
                     fi
-                fi
-            done 
-        fi 
-    done 
+                done 
+            fi 
+        done     
+        ;;         
+    *)
+        echo "Please provide script ID"
+        ;;
+    esac     
+
 }
 
 #######################################
