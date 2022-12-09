@@ -15,7 +15,7 @@
 
 echo ""
 echo "Set workspace"
-workspace=ros2_test_ws
+workspace=ros2_gazebo_ws
 
 echo ""
 echo "Set soft name"
