@@ -12,7 +12,8 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+# echo "Not Supported Yet!"
+# exit 0  
 echo ""
 echo "Set workspace"
 workspace=<workspace_ws>
@@ -51,13 +52,13 @@ rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 # 编译代码
 echo "Compile source"
 cd ~/$workspace/
-colcon build --symlink-install 
+catkin make
 
 
 echo "Add workspace to bashrc if not exits"
-if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
+if ! grep -Fq "$workspace/devel/setup.bash" ~/.bashrc
 then
-    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+    echo ". ~/$workspace/devel/setup.bash" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"

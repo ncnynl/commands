@@ -13,8 +13,8 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 #        
-echo "Not Yet Supported!"
-exit 0    
+# echo "Not  Supported Yet!"
+# exit 0    
 
 echo "set workspace"
 # workspace=workspace_ws

@@ -356,6 +356,17 @@ function select_id()
 #######################################
 function commands_build()
 {
+    CHOICE_A=$(echo -e "\n${BOLD} Please input ROS Version , only input ros1 Or ros2  ：${PLAIN}")
+    read -p "${CHOICE_A}" ros_version
+    case $ros_version in 
+    'ros1'|'ros2')
+        echo "You choose to build $ros_version packages"
+        ;;
+    *)
+        echo "ros_version can not be null and only value is ros1 Or ros2"
+        commands_build    
+        ;;
+    esac 
     
     CHOICE_A=$(echo -e "\n${BOLD} Please input file name like(install_xxx_xxx) ：${PLAIN}")
     read -p "${CHOICE_A}" file_name
@@ -378,7 +389,7 @@ function commands_build()
         commands_build
     fi  
 
-    CHOICE_A=$(echo -e "\n${BOLD} Please input soft name ：${PLAIN}")
+    CHOICE_A=$(echo -e "\n${BOLD} Please input soft name like ：${PLAIN}")
     read -p "${CHOICE_A}" soft_name
     if [ ! $soft_name ]; then
         echo "soft_name can not be null"
@@ -392,7 +403,7 @@ function commands_build()
         commands_build
     fi  
 
-    CHOICE_A=$(echo -e "\n${BOLD} Please input soft branch ：${PLAIN}")
+    CHOICE_A=$(echo -e "\n${BOLD} Please input soft branch like (master) ：${PLAIN}")
     read -p "${CHOICE_A}" soft_branch
     if [ ! $soft_branch ]; then
         echo "soft_branch can not be null"
@@ -407,7 +418,7 @@ function commands_build()
     else
         echo "Copy template to ~/tools/commands/commands_extra/$folder_name/shell/$file_name.sh"
         file_path=~/tools/commands/commands_extra/$folder_name/shell/$file_name.sh
-        cp ~/tools/commands/commands_extra/common/shell/install_template.sh $file_path
+        cp ~/tools/commands/commands_extra/$ros_version/shell/install_template.sh $file_path
     fi
 
     echo ""
