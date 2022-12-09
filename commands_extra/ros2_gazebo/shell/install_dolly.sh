@@ -13,6 +13,17 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 
+
+case $ROS_DISTRO in
+'foxy'|'galactic')
+    echo "install $ROS_DISTRO version for dolly"
+    ;; 
+*)
+    echo "$ROS_DISTRO version is not supported yet!"
+    exit 0 
+    ;; 
+esac 
+
 echo ""
 echo "Set workspace"
 workspace=ros2_gazebo_ws
@@ -40,7 +51,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b galactic https://ghproxy.com/https://github.com/chapulina/dolly
+git clone -b $ROS_DISTRO https://ghproxy.com/https://github.com/chapulina/dolly
 
 echo ""
 echo "Install rosdeps"
