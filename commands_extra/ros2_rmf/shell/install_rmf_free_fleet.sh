@@ -25,7 +25,7 @@ fi
 
 
 sudo apt update && sudo apt install \
-  git wget  \
+  git wget  qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
   python3-rosdep \
   python3-vcstool \
   python3-colcon-common-extensions \
