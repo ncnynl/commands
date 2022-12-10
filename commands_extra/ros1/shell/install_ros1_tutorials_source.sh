@@ -1,9 +1,9 @@
 #!/bin/bash
 ################################################
-# Function : <file_name>                        
+# Function : install_ros_tutorials_source                        
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                          
+# Date     : 2022-12-10                          
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -17,11 +17,11 @@
 # exit 0  
 echo ""
 echo "Set workspace"
-workspace=<workspace_ws>
+workspace=ros1_tutorials_ws
 
 echo ""
 echo "Set soft name"
-soft_name=<soft_name>
+soft_name=ros_tutorials
 
 echo ""
 echo "Workspace if exits ?"
@@ -42,7 +42,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b <soft_branch> <soft_url>
+git clone -b ${ROS_DISTRO}-devel https:://ghproxy.com/https://github.com/ros/ros_tutorials
 
 echo ""
 echo "Install rosdeps"

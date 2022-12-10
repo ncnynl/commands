@@ -7,7 +7,8 @@
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
-# Licnese: MIT                                 
+# Licnese: MIT                
+# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.                 
 # QQ Qun: 创客智造B群:926779095                                  
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               

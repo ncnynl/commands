@@ -1,14 +1,13 @@
 #!/bin/bash
 ################################################
-# Function : <file_name>                        
+# Function : install_navigation2_source                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                          
+# Date     : 2022-12-10                          
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
-# Licnese: MIT           
-# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.                      
+# Licnese: MIT                                 
 # QQ Qun: 创客智造B群:926779095                                  
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
@@ -17,11 +16,11 @@
 # exit 0  
 echo ""
 echo "Set workspace"
-workspace=<workspace_ws>
+workspace=ros2_navigation_ws
 
 echo ""
 echo "Set soft name"
-soft_name=<soft_name>
+soft_name=navigation2
 
 echo ""
 echo "Workspace if exits ?"
@@ -42,7 +41,17 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b <soft_branch> <soft_url>
+
+case ${ROS_DISTRO} in
+'foxy'|'eloquent'|'dashing'|'crystal')
+    branch="${ROS_DISTRO}-devel" 
+    ;;
+*)
+    branch="${ROS_DISTRO}"
+    ;;
+esac 
+echo "Choose branch is ${branch}"
+git clone -b ${branch} https://ghproxy.com/https://github.com/ros-planning/navigation2.git
 
 echo ""
 echo "Install rosdeps"
@@ -53,13 +62,13 @@ rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 # 编译代码
 echo "Compile source"
 cd ~/$workspace/
-catkin make
+colcon build --symlink-install 
 
 
 echo "Add workspace to bashrc if not exits"
-if ! grep -Fq "$workspace/devel/setup.bash" ~/.bashrc
+if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
 then
-    echo ". ~/$workspace/devel/setup.bash" >> ~/.bashrc
+    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"
