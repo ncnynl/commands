@@ -32,7 +32,8 @@ sudo apt update && sudo apt install \
   # maven default-jdk   # Uncomment to install dependencies for message generation
 
 #install qt5
-# sudo apt install  -y qt5-default
+# sudo apt install  -y qt5-default  not support on ubuntu22.04
+# replace to qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools  
 
 #cyclonedds-tools dds_idlc
 # sudo apt install cyclonedds-tools
