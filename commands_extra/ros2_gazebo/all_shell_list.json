@@ -1,0 +1,30 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_barista_ros2.sh",
+            "desc": "",
+            "id": 1,
+            "link": "",
+            "name": "install_barista_ros2.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_box_bot.sh",
+            "desc": "",
+            "id": 2,
+            "link": "",
+            "name": "install_box_bot.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_dolly.sh",
+            "desc": "",
+            "id": 3,
+            "link": "",
+            "name": "install_dolly.sh"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-12-13"
+        }
+    ]
+}
