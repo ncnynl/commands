@@ -57,3 +57,14 @@ make
 
 echo "Please continue to finished code"
 #How to use
+#for ubuntu 15.4.3.6  
+# cd ~/tools/n2n-3.0
+# sudo ./supernode -p 5000 -f -vvv -S1
+
+#for ubuntu A
+# cd ~/tools/n2n-3.0
+# sudo ./edge -a 10.0.0.3 -c g1 -k test -l 15.4.3.6:5000 -f -vvv -S1
+
+#for windows B
+# cd C:\n2n_v3_windows_x64_v3.1.1-16_r1200_static_by_heiye #need admin 
+# edge.exe -a 10.0.0.4 -c g1 -k test -l 15.4.3.6:5000 -vvv -S1
