@@ -37,6 +37,7 @@ fi
 
 echo ""
 echo "Install system deps"
+sudo apt install autogen autoconf -y
 
 # 下载源码
 echo ""
