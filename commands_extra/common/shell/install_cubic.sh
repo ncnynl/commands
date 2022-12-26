@@ -14,11 +14,18 @@
 ################################################
 
 #usage:https://www.ncnynl.com/archives/202210/5484.html
-#add ppa 
-
+echo "Add Cubic ppa" 
 sudo apt-add-repository ppa:cubic-wizard/release 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
 
 
-#install 
+echo "Install cubic"
 sudo apt update && sudo apt install cubic -y 
+
+echo "Create cubic folders"
+if [ ! ~/cubic/iso ];then
+    mkdir -p ~/cubic/iso
+    mkdir -p ~/cubic/build/
+fi 
+
+echo "Cubic Installed successfully!"
