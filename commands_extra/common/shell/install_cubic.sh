@@ -23,9 +23,12 @@ echo "Install cubic"
 sudo apt update && sudo apt install cubic -y 
 
 echo "Create cubic folders"
-if [ ! ~/cubic/iso ];then
+if [ ! -d ~/cubic/iso ];then
+    echo "iso folder for downloading ubuntu origin iso" 
     mkdir -p ~/cubic/iso
-    mkdir -p ~/cubic/build/
+
+    echo "build folder for creating custom new iso"
+    mkdir -p ~/cubic/build
 fi 
 
 echo "Cubic Installed successfully!"
