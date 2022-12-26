@@ -356,10 +356,10 @@ function select_id()
 #######################################
 function commands_build()
 {
-    CHOICE_A=$(echo -e "\n${BOLD} Please input ROS Version , only input ros1 Or ros2  ：${PLAIN}")
+    CHOICE_A=$(echo -e "\n${BOLD} Please input ROS Version , only input common, ros1 Or ros2  ：${PLAIN}")
     read -p "${CHOICE_A}" ros_version
     case $ros_version in 
-    'ros1'|'ros2')
+    'common'|'ros1'|'ros2')
         echo "You choose to build $ros_version packages"
         ;;
     *)
