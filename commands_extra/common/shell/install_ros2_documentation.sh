@@ -12,7 +12,8 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+echo "Not Supported Yet!"
+exit 0         
 # https://robots.ros.org/contributing/
 
 #####Procedure
