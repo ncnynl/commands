@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=Commands
 GenericName[zh_CN]=Commands
-Exec=gnome-terminal -- bash -c ~/tools/commands/desktop.sh
-Terminal=true
+Exec=/bin/bash -i -c $HOME/tools/commands/desktop.sh
+Terminal=False
 Icon=/usr/local/commands/commands.png
 Type=Application
 Categories=Development
