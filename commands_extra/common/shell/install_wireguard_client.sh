@@ -50,13 +50,24 @@ PrivateKey = $PRK
  
 ## Client ip address ##
 Address = 192.168.6.2/24
+
+## DNS server for WG client #
+## Syntax is
+## DNS = 1.1.1.1, 8.8.8.8
+## I am setting my VLAN's DNS but you can use Google, CF, IBM or anything that works with your WG #
+DNS = 8.8.8.8
  
 [Peer]
 ## Ubuntu 20.04 server public key ##
 PublicKey = $PUK
  
 ## set ACL ##
-AllowedIPs = 192.168.6.0/24
+#################################################
+## Allow remote server as gateway 
+## Edit/Update old AllowedIPs entry as follows 
+## Otherwise client won't show server's IP 
+#################################################
+AllowedIPs = 0.0.0.0/0
  
 ## Your Ubuntu 20.04 LTS server's public IPv4/IPv6 address and port ##
 Endpoint = $EP:41194

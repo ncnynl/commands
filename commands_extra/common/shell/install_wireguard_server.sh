@@ -48,7 +48,16 @@ ListenPort = 41194
  
 ## VPN server's private key i.e. /etc/wireguard/privatekey ##
 PrivateKey = $PRK
+
+#PostUp = /etc/wireguard/helper/add-nat-routing.sh
+#PostDown = /etc/wireguard/helper/remove-nat-routing.sh
+
+#[Peer]
+#My Linux Desktop 
+#PublicKey = My_Linux_Desktop_KEY
+#AllowedIPs = 192.168.6.0/24
 " | sudo tee /etc/wireguard/wg0.conf
+
 
 #if ufw start
 # sudo ufw status
