@@ -32,7 +32,7 @@ function install_package_extra(){
     rsync -a ~/tools/commands/commands_extra/* ~/commands/
     sudo chown -R $USER:$USER ~/commands/
     #rm 
-    if [ -f /usr/bin/cs ]; then
+    if [ -L /usr/bin/cs ]; then
         sudo rm /usr/bin/cs
     fi 
 
