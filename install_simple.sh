@@ -33,7 +33,7 @@ function commands_install(){
     FILE="$2.sh"
     URL=https://gitee.com/ncnynl/commands/raw/master/commands_extra/$1/shell/$FILE
     url_status=$(curl -s -m 5 -IL $URL|grep 200)
-    if [ $url_status == "" ];then
+    if [ "$url_status" == "" ];then
         echo "$URL is not exists, please check your folder and script name"
     else
         rm $FILE ; wget $URL; sudo chmod +x ./$FILE; sudo ./$FILE; rm $FILE
