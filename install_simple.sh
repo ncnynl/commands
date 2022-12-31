@@ -14,8 +14,8 @@
 
 
 #For simple script , you can execute the script like below 
-#rm install_simple.sh ; wget https://gitee.com/ncnynl/commands/raw/master/install_simple.sh ; sudo chmod +x ./install_simple.sh; sudo ./install_simple.sh common install_boot_repair
-#rm install_boot_repair.sh ; wget https://gitee.com/ncnynl/commands/raw/master/commands_extra/common/shell/install_boot_repair.sh ; sudo chmod +x ./install_boot_repair.sh; sudo ./install_boot_repair.sh 
+#First:  rm install_simple.sh ; wget https://gitee.com/ncnynl/commands/raw/master/install_simple.sh ; sudo chmod +x ./install_simple.sh; sudo ./install_simple.sh common install_boot_repair ; rm install_simple.sh 
+#second: rm install_boot_repair.sh ; wget https://gitee.com/ncnynl/commands/raw/master/commands_extra/common/shell/install_boot_repair.sh ; sudo chmod +x ./install_boot_repair.sh; sudo ./install_boot_repair.sh 
 
 
 #######################################
@@ -36,9 +36,9 @@ function commands_install(){
     if [ $url_status == "" ];then
         echo "$URL is not exists, please check your folder and script name"
     else
-        rm $FILE ; wget $URL; sudo chmod +x ./$FILE; sudo ./$FILE
+        rm $FILE ; wget $URL; sudo chmod +x ./$FILE; sudo ./$FILE; rm $FILE
+        echo "Script $FILE has executed successfully! "
     fi
-
 }
 commands_install $1 $2 
 
