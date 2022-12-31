@@ -36,7 +36,7 @@ function rm_package(){
     fi 
 
     #delete shell version
-    if [ -f /usr/bin/cs ]; then
+    if [ -L /usr/bin/cs ]; then
         sudo rm -f /usr/bin/cs
     fi 
 
