@@ -33,7 +33,7 @@ function get_system(){
     elif cat /proc/version | grep  -Eqi  "ubuntu"; then
         release="ubuntu"
     fi
-    echo "release:$release"
+    # echo "release:$release"
 }
 get_system
 
@@ -58,7 +58,7 @@ function get_system_version(){
     if [ $1 == "ubuntu" ]; then
         version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
     fi
-    echo "version:$version"
+    # echo "version:$version"
 }
 get_system_version $release
 # echo $version
@@ -87,6 +87,6 @@ function get_cpu_version(){
     elif [ $cpu == "aarch64" ]; then
         cpu_release="aarch64"
     fi
-    echo "cpu_release:$cpu_release"
+    # echo "cpu_release:$cpu_release"
 }
 get_cpu_version
