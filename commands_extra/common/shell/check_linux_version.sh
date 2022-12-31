@@ -24,19 +24,19 @@
 # Outputs:
 #    echo to stdout
 #######################################
+release=""
+version=""
+cpu_release=""
 function get_system(){
-    release=""
     if cat /etc/issue | grep -Eqi "ubuntu"; then
         release="ubuntu"
     elif cat /proc/version | grep  -Eqi  "ubuntu"; then
         release="ubuntu"
     fi
-
-    echo $release
+    echo "release:$release"
 }
+get_system
 
-
-release=$(get_system)
 # echo $release
 
 # if [[ ! $release ]] ; then
@@ -55,14 +55,12 @@ release=$(get_system)
 #    echo to stdout
 #######################################
 function get_system_version(){
-    version=""
     if [ $1 == "ubuntu" ]; then
         version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
     fi
-    echo $version
+    echo "version:$version"
 }
-
-version=$(get_system_version $release)
+get_system_version $release
 # echo $version
 # if [[ ! $version ]]; then
 #     echo -e "This script can not be run in your system now!" && exit 1
@@ -83,19 +81,12 @@ version=$(get_system_version $release)
 #######################################
 
 function get_cpu_version(){
-    cpu_release=""
     cpu=$(uname -a | awk -F " " '{print $(NF-1)}')
     if [ $cpu == "x86_64" ]; then
         cpu_release="amd64"
     elif [ $cpu == "aarch64" ]; then
         cpu_release="aarch64"
     fi
-    echo $cpu_release
+    echo "cpu_release:$cpu_release"
 }
-
-cpu_release=$(get_cpu_version)
-# echo $cpu_release
-
-# if [[ ! $cpu_release ]] ; then
-#     echo -e "This script can not be run in your system now!" && exit 1
-# fi
+get_cpu_version
