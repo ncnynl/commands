@@ -1098,7 +1098,7 @@ class ui(QWidget):
             print(new_version)
 
             if new_version not in self.version : 
-                reply = QMessageBox.question(self, '警告', '发现新版本, 是否需要执行升级？ 升级会自动先关闭commands', QMessageBox.Yes, QMessageBox.No)
+                reply = QMessageBox.question(self, '升级提示', '发现新版本, 是否需要执行升级？ 升级会自动先关闭commands', QMessageBox.Yes, QMessageBox.No)
                 if reply == QMessageBox.Yes:
 
                     #install 
@@ -1113,6 +1113,7 @@ class ui(QWidget):
                     self.settext('升级已经取消!')              
             else:
                 self.settext('目前' + self.version + '已经最新版本不需要更新!')
+                QMessageBox.information(self, '升级提示', '已经最新版本不需要更新!', QMessageBox.Yes)
 
         except IOError as e:
             print("IOError:",e) 
@@ -1140,7 +1141,9 @@ class ui(QWidget):
         self.load_folder()
         self.load_file("common")
         self.gen_commands_list() 
-        self.settext('命令集目录已经更新完成!')     
+        self.settext('命令集目录已经更新完成!')   
+        QMessageBox.information(self, '更新目录集提示', '命令集目录已经更新完成!', QMessageBox.Yes)  
+
 
 
     def load_commands(self):
