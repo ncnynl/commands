@@ -29,30 +29,44 @@
             "name": "install_ros2_humble.sh"
         },
         {
-            "command": "cd ~/commands/ros2;./shell/launch_turtlesim_node.sh",
+            "command": "cd ~/commands/ros2;./shell/install_ros2_turtorials_source.sh",
             "desc": "",
             "id": 5,
+            "link": "",
+            "name": "install_ros2_turtorials_source.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2;./shell/install_template.sh",
+            "desc": "",
+            "id": 6,
+            "link": "",
+            "name": "install_template.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2;./shell/launch_turtlesim_node.sh",
+            "desc": "",
+            "id": 7,
             "link": "",
             "name": "launch_turtlesim_node.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/launch_turtlesim_teleop_key.sh",
             "desc": "",
-            "id": 6,
+            "id": 8,
             "link": "",
             "name": "launch_turtlesim_teleop_key.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/update_ros2_source.sh",
             "desc": "",
-            "id": 7,
+            "id": 9,
             "link": "",
             "name": "update_ros2_source.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2022-12-05"
+            "datetime": "2023-01-01"
         }
     ]
 }

@@ -64,205 +64,261 @@
             "name": "install_base_tools.sh"
         },
         {
-            "command": "cd ~/commands/common;./shell/install_cubic.sh",
+            "command": "cd ~/commands/common;./shell/install_boot_repair.sh",
             "desc": "",
             "id": 10,
+            "link": "",
+            "name": "install_boot_repair.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_cubic.sh",
+            "desc": "",
+            "id": 11,
             "link": "",
             "name": "install_cubic.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_docker.sh",
             "desc": "",
-            "id": 11,
+            "id": 12,
             "link": "",
             "name": "install_docker.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_docker_compose.sh",
             "desc": "",
-            "id": 12,
+            "id": 13,
             "link": "",
             "name": "install_docker_compose.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_example_shell.sh",
             "desc": "",
-            "id": 13,
+            "id": 14,
             "link": "",
             "name": "install_example_shell.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_foxglove.sh",
             "desc": "",
-            "id": 14,
+            "id": 15,
             "link": "",
             "name": "install_foxglove.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_gitlfs.sh",
             "desc": "",
-            "id": 15,
+            "id": 16,
             "link": "",
             "name": "install_gitlfs.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_googlepinyin_shell.sh",
             "desc": "",
-            "id": 16,
+            "id": 17,
             "link": "",
             "name": "install_googlepinyin_shell.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_mosquitto.sh",
             "desc": "",
-            "id": 17,
+            "id": 18,
             "link": "",
             "name": "install_mosquitto.sh"
         },
         {
+            "command": "cd ~/commands/common;./shell/install_n2n.sh",
+            "desc": "",
+            "id": 19,
+            "link": "",
+            "name": "install_n2n.sh"
+        },
+        {
             "command": "cd ~/commands/common;./shell/install_nodejs.sh",
             "desc": "",
-            "id": 18,
+            "id": 20,
             "link": "",
             "name": "install_nodejs.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_nodejs_16.sh",
             "desc": "",
-            "id": 19,
+            "id": 21,
             "link": "",
             "name": "install_nodejs_16.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_nodejs_18.12.1.sh",
             "desc": "",
-            "id": 20,
+            "id": 22,
             "link": "",
             "name": "install_nodejs_18.12.1.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_nodejs_18.2.1.sh",
             "desc": "",
-            "id": 21,
+            "id": 23,
             "link": "",
             "name": "install_nodejs_18.2.1.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_nomachine.sh",
             "desc": "",
-            "id": 22,
+            "id": 24,
             "link": "",
             "name": "install_nomachine.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_nvm.sh",
             "desc": "",
-            "id": 23,
+            "id": 25,
             "link": "",
             "name": "install_nvm.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_pnpm.sh",
             "desc": "",
-            "id": 24,
+            "id": 26,
             "link": "",
             "name": "install_pnpm.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_pyinstaller_shell.sh",
             "desc": "",
-            "id": 25,
+            "id": 27,
             "link": "",
             "name": "install_pyinstaller_shell.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_robots_ros_org.sh",
             "desc": "",
-            "id": 26,
+            "id": 28,
             "link": "",
             "name": "install_robots_ros_org.sh"
         },
         {
+            "command": "cd ~/commands/common;./shell/install_ros2_documentation.sh",
+            "desc": "",
+            "id": 29,
+            "link": "",
+            "name": "install_ros2_documentation.sh"
+        },
+        {
             "command": "cd ~/commands/common;./shell/install_systemback_shell.sh",
             "desc": "",
-            "id": 27,
+            "id": 30,
             "link": "",
             "name": "install_systemback_shell.sh"
         },
         {
+            "command": "cd ~/commands/common;./shell/install_template.sh",
+            "desc": "",
+            "id": 31,
+            "link": "",
+            "name": "install_template.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_test_shell.sh",
+            "desc": "",
+            "id": 32,
+            "link": "",
+            "name": "install_test_shell.sh"
+        },
+        {
             "command": "cd ~/commands/common;./shell/install_vpn_clash.sh",
             "desc": "",
-            "id": 28,
+            "id": 33,
             "link": "",
             "name": "install_vpn_clash.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/install_vscode.sh",
             "desc": "",
-            "id": 29,
+            "id": 34,
             "link": "",
             "name": "install_vscode.sh"
         },
         {
+            "command": "cd ~/commands/common;./shell/install_wireguard_client.sh",
+            "desc": "",
+            "id": 35,
+            "link": "",
+            "name": "install_wireguard_client.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_wireguard_server.sh",
+            "desc": "",
+            "id": 36,
+            "link": "",
+            "name": "install_wireguard_server.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_wireguard_server_firewall.sh",
+            "desc": "",
+            "id": 37,
+            "link": "",
+            "name": "install_wireguard_server_firewall.sh"
+        },
+        {
             "command": "cd ~/commands/common;./shell/remove_unuse_tools.sh",
             "desc": "",
-            "id": 30,
+            "id": 38,
             "link": "",
             "name": "remove_unuse_tools.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/remove_zsys.sh",
             "desc": "",
-            "id": 31,
+            "id": 39,
             "link": "",
             "name": "remove_zsys.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/update_docker_source.sh",
             "desc": "",
-            "id": 32,
+            "id": 40,
             "link": "",
             "name": "update_docker_source.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/update_python_source_shell.sh",
             "desc": "",
-            "id": 33,
+            "id": 41,
             "link": "",
             "name": "update_python_source_shell.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/update_rosdep_tsinghua.sh",
             "desc": "",
-            "id": 34,
+            "id": 42,
             "link": "",
             "name": "update_rosdep_tsinghua.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/update_system_mirrors.sh",
             "desc": "",
-            "id": 35,
+            "id": 43,
             "link": "",
             "name": "update_system_mirrors.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/update_system_mirrors2.sh",
             "desc": "",
-            "id": 36,
+            "id": 44,
             "link": "",
             "name": "update_system_mirrors2.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/upgrade_rcm.sh",
             "desc": "",
-            "id": 37,
+            "id": 45,
             "link": "",
             "name": "upgrade_rcm.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2022-12-05"
+            "datetime": "2023-01-01"
         }
     ]
 }

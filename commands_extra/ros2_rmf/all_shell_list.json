@@ -1,46 +1,46 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_foxy_apt.sh",
+            "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_burger_maps.sh",
             "desc": "",
             "id": 1,
+            "link": "",
+            "name": "install_rmf_burger_maps.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_foxy_apt.sh",
+            "desc": "",
+            "id": 2,
             "link": "",
             "name": "install_rmf_foxy_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_free_fleet.sh",
             "desc": "",
-            "id": 2,
+            "id": 3,
             "link": "",
             "name": "install_rmf_free_fleet.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_apt.sh",
             "desc": "",
-            "id": 3,
+            "id": 4,
             "link": "",
             "name": "install_rmf_galactic_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_devel.sh",
             "desc": "",
-            "id": 4,
+            "id": 5,
             "link": "",
             "name": "install_rmf_galactic_devel.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_source.sh",
             "desc": "",
-            "id": 5,
-            "link": "",
-            "name": "install_rmf_galactic_source.sh"
-        },
-        {
-            "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_source1.sh",
-            "desc": "",
             "id": 6,
             "link": "",
-            "name": "install_rmf_galactic_source1.sh"
+            "name": "install_rmf_galactic_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_apt.sh",
@@ -108,7 +108,7 @@
     ],
     "time": [
         {
-            "datetime": "2022-12-05"
+            "datetime": "2023-01-01"
         }
     ]
 }

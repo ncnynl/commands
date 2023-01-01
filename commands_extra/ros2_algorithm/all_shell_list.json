@@ -13,11 +13,25 @@
             "id": 2,
             "link": "",
             "name": "install_cartographer_source.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_algorithm;./shell/install_multirobot_map_merge.sh",
+            "desc": "",
+            "id": 3,
+            "link": "",
+            "name": "install_multirobot_map_merge.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_algorithm;./shell/install_navigation2_source.sh",
+            "desc": "",
+            "id": 4,
+            "link": "",
+            "name": "install_navigation2_source.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2022-12-05"
+            "datetime": "2023-01-01"
         }
     ]
 }
