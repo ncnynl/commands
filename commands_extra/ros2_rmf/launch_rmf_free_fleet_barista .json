@@ -1,0 +1,100 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch barista_gazebo main_two_robots_turtleworld.launch.xml",
+            "desc": "启动仿真",
+            "id": "1",
+            "link": "",
+            "name": "main_two_robots_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_nav_barista_1_2_turtleworld.launch.xml",
+            "desc": "启动导航",
+            "id": "2",
+            "link": "",
+            "name": "start_nav_barista_1_2_turtleworld"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  freefleet_two_barista_turtleworld.launch.xml",
+            "desc": "启动freefleet",
+            "id": "3",
+            "link": "",
+            "name": "freefleet_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  simbatery_two_barista_turtleworld.launch.xml",
+            "desc": "启动电池仿真",
+            "id": "4",
+            "link": "",
+            "name": "simbatery_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_navigation_rviz.launch.xml",
+            "desc": "启动rviz",
+            "id": "5",
+            "link": "",
+            "name": "start_navigation_rviz"
+        },
+        {
+            "command": "ros2 run rqt_tf_tree rqt_tf_tree",
+            "desc": "查看TF ",
+            "id": "6",
+            "link": "",
+            "name": "rqt_tf_tree"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_1 -x 10 -y -8.39 --yaw 0.0 -i unique_task_id_100",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
+            "id": "7",
+            "link": "",
+            "name": "send_destination_request"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_1 -i unique_task_id_200 -p '[{\"x\": 10.5, \"y\": -8.78, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.2, \"y\": -9.7, \"yaw\": 1.57, \"level_name\": \"B1\"}, {\"x\": 9.3, \"y\": -11.1, \"yaw\": 3.14, \"level_name\": \"B1\"}, {\"x\": 7.84, \"y\": -9.05, \"yaw\": 4.71, \"level_name\": \"B1\"}]'",
+            "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
+            "id": "8",
+            "link": "",
+            "name": "send_path_request"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m pause -i unique_task_id_301",
+            "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
+            "id": "9",
+            "link": "",
+            "name": "send_mode_request_pause"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m resume -i unique_task_id_401",
+            "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
+            "id": "10",
+            "link": "",
+            "name": "send_mode_request_resume"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  barista_world_ff_server.launch.xml",
+            "desc": "启动ff server",
+            "id": "16",
+            "link": "",
+            "name": "barista_world_ff_server"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_1",
+            "desc": "启动ff client1",
+            "id": "17",
+            "link": "",
+            "name": "start_ff_client_barista1"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_2",
+            "desc": "启动ff client2",
+            "id": "18",
+            "link": "",
+            "name": "start_ff_client_barista2"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2023-01-02"
+        }
+    ]
+}

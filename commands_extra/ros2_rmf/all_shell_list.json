@@ -1,114 +1,121 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_burger_maps.sh",
+            "command": "cd ~/commands/ros2_rmf;./shell/install_free_fleet_barista.sh",
             "desc": "",
             "id": 1,
+            "link": "",
+            "name": "install_free_fleet_barista.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_burger_maps.sh",
+            "desc": "",
+            "id": 2,
             "link": "",
             "name": "install_rmf_burger_maps.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_foxy_apt.sh",
             "desc": "",
-            "id": 2,
+            "id": 3,
             "link": "",
             "name": "install_rmf_foxy_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_free_fleet.sh",
             "desc": "",
-            "id": 3,
+            "id": 4,
             "link": "",
             "name": "install_rmf_free_fleet.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_apt.sh",
             "desc": "",
-            "id": 4,
+            "id": 5,
             "link": "",
             "name": "install_rmf_galactic_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_devel.sh",
             "desc": "",
-            "id": 5,
+            "id": 6,
             "link": "",
             "name": "install_rmf_galactic_devel.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_source.sh",
             "desc": "",
-            "id": 6,
+            "id": 7,
             "link": "",
             "name": "install_rmf_galactic_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_apt.sh",
             "desc": "",
-            "id": 7,
+            "id": 8,
             "link": "",
             "name": "install_rmf_humble_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_main.sh",
             "desc": "",
-            "id": 8,
+            "id": 9,
             "link": "",
             "name": "install_rmf_humble_main.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_source.sh",
             "desc": "",
-            "id": 9,
+            "id": 10,
             "link": "",
             "name": "install_rmf_humble_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_model.sh",
             "desc": "",
-            "id": 10,
+            "id": 11,
             "link": "",
             "name": "install_rmf_model.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_panel.sh",
             "desc": "",
-            "id": 11,
+            "id": 12,
             "link": "",
             "name": "install_rmf_panel.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_traffic_editor_apt.sh",
             "desc": "",
-            "id": 12,
+            "id": 13,
             "link": "",
             "name": "install_rmf_traffic_editor_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_traffic_editor_source.sh",
             "desc": "",
-            "id": 13,
+            "id": 14,
             "link": "",
             "name": "install_rmf_traffic_editor_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_web_galactic.sh",
             "desc": "",
-            "id": 14,
+            "id": 15,
             "link": "",
             "name": "install_rmf_web_galactic.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_web_humble.sh",
             "desc": "",
-            "id": 15,
+            "id": 16,
             "link": "",
             "name": "install_rmf_web_humble.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2023-01-01"
+            "datetime": "2023-01-02"
         }
     ]
 }

@@ -1,0 +1,58 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch ff_examples_ros2 turtlebot3_world_ff_server.launch.xml",
+            "desc": "启动ff_server",
+            "id": "1",
+            "link": "",
+            "name": "turtlebot3_world_ff_server"
+        },
+        {
+            "command": "export TURTLEBOT3_MODEL=burger; ros2 launch ff_examples_ros2 turtlebot3_world_ff.launch.xml",
+            "desc": "启动ff仿真",
+            "id": "2",
+            "link": "",
+            "name": "turtlebot3_world_ff"
+        },
+        {
+            "command": "ros2 topic echo /fleet_states",
+            "desc": "查看fleet_states话题",
+            "id": "3",
+            "link": "",
+            "name": "fleet_states"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_destination_request.py -f turtlebot3 -r ros2_tb3_0 -x 1.725 -y -0.39 --yaw 0.0 -i unique_task_id_1",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行",
+            "id": "4",
+            "link": "",
+            "name": "send_destination_request"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_path_request.py -f turtlebot3 -r ros2_tb3_0 -i unique_task_id_2 -p '[{\"x\": 1.725, \"y\": -0.39, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 1.737, \"y\": 0.951, \"yaw\": 1.57, \"level_name\": \"B1\"}, {\"x\": -0.616, \"y\": 1.852, \"yaw\": 3.14, \"level_name\": \"B1\"}, {\"x\": -0.626, \"y\": -1.972, \"yaw\": 4.71, \"level_name\": \"B1\"}]' ",
+            "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
+            "id": "5",
+            "link": "",
+            "name": "send_path_request"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f turtlebot3 -r ros2_tb3_0 -m pause -i unique_task_id_3",
+            "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
+            "id": "6",
+            "link": "",
+            "name": "send_mode_request_pause"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f turtlebot3 -r ros2_tb3_0 -m resume -i unique_task_id_4",
+            "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
+            "id": "7",
+            "link": "",
+            "name": "send_mode_request_resume"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2023-01-02"
+        }
+    ]
+}
