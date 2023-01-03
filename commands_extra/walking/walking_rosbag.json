@@ -1,0 +1,34 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_bringup robot.launch.py ",
+            "id": "1",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_tools rosbag_laser.launch.py ",
+            "id": "2",
+            "name": "2-rosbag_laser"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py",
+            "id": "3",
+            "name": "3-keyboard"
+        },
+        {
+            "command": "cd ~/bag_files\n; ros2 bag record -o offline_mapping -a",
+            "id": "4",
+            "name": "4-record"
+        },
+        {
+            "command": "cd ~/bag_files;\nros2 bag play  offline_mapping ",
+            "id": "5",
+            "name": "5-play"
+        },
+        {
+            "command": "ros2 topic list ",
+            "id": "6",
+            "name": "6-list"
+        }
+    ]
+}

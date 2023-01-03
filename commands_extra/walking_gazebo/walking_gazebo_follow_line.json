@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo track.launch.py ",
+            "desc": "启动仿真",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 run walking_follow follower_node.py",
+            "desc": "启动跟随",
+            "id": "6",
+            "link": "点击'启动'按钮就可",
+            "name": "2-follow"
+        },
+        {
+            "command": "ros2 service call /start_follower std_srvs/srv/Empty",
+            "desc": "开始跟随",
+            "id": "7",
+            "link": "点击'启动'按钮就可",
+            "name": "3-start_follower"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py",
+            "desc": "如果出现停止,可以通过键盘重新调整",
+            "id": "8",
+            "link": "点击'启动'按钮就可",
+            "name": "4-teleop"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "date ",
+            "desc": "安装ROS1,默认使用阿里云的ROS源",
+            "id": "1",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install_ros1_noetic"
+        }
+    ]
+}

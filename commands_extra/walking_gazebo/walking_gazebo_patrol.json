@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py world_model:=follow.sdf",
+            "desc": "启动仿真",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_example patrol_server.launch.py",
+            "desc": "启动服务端",
+            "id": "6",
+            "link": "点击'启动'按钮就可",
+            "name": "2-patrol_server"
+        },
+        {
+            "command": "ros2 launch walking_example patrol_client.launch.py",
+            "desc": "启动客户端",
+            "id": "7",
+            "link": "点击'启动'按钮就可",
+            "name": "3-patrol_client"
+        }
+    ]
+}

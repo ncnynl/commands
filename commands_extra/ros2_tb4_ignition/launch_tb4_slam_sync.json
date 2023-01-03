@@ -1,0 +1,23 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot4_ignition_bringup ignition.launch.py slam:=sync nav2:=true rviz:=true",
+            "desc": "同步 SLAM",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch slam_sync"
+        },
+        {
+            "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard",
+            "desc": " 启动键盘",
+            "id": "2",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch teleop_twist_keyboard"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-11-01"
+        }
+    ]
+}

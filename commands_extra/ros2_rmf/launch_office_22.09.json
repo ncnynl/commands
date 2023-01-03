@@ -1,0 +1,30 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch rmf_demos_gz_classic office.launch.xml",
+            "desc": "启动office gazebo仿真",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202211/5668.html",
+            "name": "office gazebo"
+        },
+        {
+            "command": "ros2 launch rmf_demos_gz office.launch.xml",
+            "desc": "启动office ignition仿真",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202211/5668.html",
+            "name": "office ignition"
+        },
+        {
+            "command": "cd ~/ros2_rmf_ws/rmf-panel-js/; ./load_http.sh",
+            "desc": "启动panel面板",
+            "id": "3",
+            "link": "",
+            "name": "rmp-panel-js"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-11-30"
+        }
+    ]
+}

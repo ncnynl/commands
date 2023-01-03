@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "sudo apt-get install chrony",
+            "desc": "安装TB3",
+            "id": "1",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install chrony"
+        },
+        {
+            "command": "sudo apt-get install ntpdate",
+            "desc": "安装navigation",
+            "id": "2",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install ntpdate"
+        },
+        {
+            "command": "sudo ntpdate ntp.ubuntu.com",
+            "desc": "安装键盘控制",
+            "id": "3",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "update "
+        },
+        {
+            "command": "date",
+            "desc": "输出最新日期时间",
+            "id": "4",
+            "link": "点击'启动'按钮,一键输出",
+            "name": "launch date"
+        }
+    ]
+}

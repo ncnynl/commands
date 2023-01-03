@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh aliyun",
+            "desc": "更新ros2的软件源,使用阿里云的源",
+            "id": "12",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update_ros2_source_aliyun"
+        },
+        {
+            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh   tsinghua",
+            "desc": "更新ros2的软件源,使用清华大学的源",
+            "id": "13",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update_ros2_source_tsinghua"
+        },
+        {
+            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh   restore",
+            "desc": "更新ros2的软件源,使用官方的源",
+            "id": "14",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update_ros2_source_packages"
+        },
+        {
+            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh  bfsu",
+            "desc": "更新ros2的软件源,使用北京外国语大学的源",
+            "id": "15",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update_ros2_source_bfsu"
+        }
+    ]
+}

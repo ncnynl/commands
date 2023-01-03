@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 run turtlesim turtlesim_node",
+            "desc": "启动turtlesim_node",
+            "id": "1",
+            "link": "@ncnynl | 点击'启动'按钮,一键启动",
+            "name": "launch turtlesim_node"
+        },
+        {
+            "command": "ros2 run turtlesim turtle_teleop_key",
+            "desc": "启动turtle_teleop_key",
+            "id": "2",
+            "link": "@ncnynl | 点击'启动'按钮,一键启动",
+            "name": "launch turtle_teleop_key"
+        }
+    ]
+}

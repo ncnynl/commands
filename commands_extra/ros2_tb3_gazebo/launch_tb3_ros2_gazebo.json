@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot3_gazebo empty_world.launch.py",
+            "desc": "启动gazebo空地图",
+            "id": "1",
+            "link": "",
+            "name": "launch turtlebot3 empty "
+        },
+        {
+            "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
+            "desc": "启动gazebo world地图",
+            "id": "2",
+            "link": "",
+            "name": "launch turtlebot3 world"
+        },
+        {
+            "command": "ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py",
+            "desc": "启动gazebo house地图",
+            "id": "3",
+            "link": "",
+            "name": "launch turtlebot3 house"
+        }
+    ]
+}

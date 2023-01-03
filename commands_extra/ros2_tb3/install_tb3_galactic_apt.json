@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros2_tb3; ./shell/install_tb3_galactic_apt.sh",
+            "desc": "安装turtlebot3的galactic的apt版本",
+            "id": "4",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install_turtlebot3_ros2_galactic_apt"
+        }
+    ]
+}

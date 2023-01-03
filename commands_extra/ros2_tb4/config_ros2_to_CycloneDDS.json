@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "echo \"export CYCLONEDDS_URI=\\\"<CycloneDDS><Domain><General><DontRoute>true</></></></>\\\"\" >> ~/.bashrc ; echo \"Turtlebot4 CycloneDDS  Configurate finished!\"",
+            "desc": "PC 上配置 CycloneDDS",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202206/5268.html",
+            "name": "config CYCLONEDDS_URI"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-07-21"
+        }
+    ]
+}

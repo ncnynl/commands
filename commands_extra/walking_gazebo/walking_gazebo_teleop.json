@@ -1,0 +1,53 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py ",
+            "desc": "启动仿真环境",
+            "id": "1",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py  ",
+            "desc": "启动键盘控制，基于teleop_twist_keyboard修改",
+            "id": "7",
+            "link": "点击'启动'按钮就可",
+            "name": "2-teleop"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard_simple.launch.py",
+            "desc": "启动键盘控制，基于turtlebot3修改\n",
+            "id": "8",
+            "link": "点击'启动'按钮就可",
+            "name": "3-teleop"
+        },
+        {
+            "command": "ros2 launch walking_teleop teleop_key.launch.py   ",
+            "desc": "启动键盘控制，基于teleop_tools整合\n",
+            "id": "9",
+            "link": "点击'启动'按钮就可",
+            "name": "4-teleop"
+        },
+        {
+            "command": "ros2 launch walking_teleop teleop_mouse.launch.py ",
+            "desc": "启动鼠标控制，基于teleop_tools整合",
+            "id": "10",
+            "link": "点击'启动'按钮就可",
+            "name": "5-mouse"
+        },
+        {
+            "command": "ros2 launch walking_teleop teleop_joy.launch.py ",
+            "desc": "启动手柄控制，基于teleop_tools整合",
+            "id": "11",
+            "link": "点击'启动'按钮就可",
+            "name": "6-teleop_joy"
+        },
+        {
+            "command": "ros2 launch walking_teleop joy.launch.py ",
+            "desc": "启动手柄控制，基于joy包整合\n",
+            "id": "12",
+            "link": "点击'启动'按钮就可",
+            "name": "7-joy"
+        }
+    ]
+}

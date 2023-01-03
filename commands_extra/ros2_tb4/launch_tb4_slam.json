@@ -1,0 +1,37 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch turtlebot4_navigation slam_sync.launch.py",
+            "desc": "运行同步 SLAM ",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202206/5286.html",
+            "name": "launch slam_sync"
+        },
+        {
+            "command": "ros2 launch turtlebot4_navigation slam_async.launch.py",
+            "desc": "运行异步 SLAM",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202206/5286.html",
+            "name": "launch slam_async"
+        },
+        {
+            "command": "ros2 launch turtlebot4_viz view_robot.launch.py",
+            "desc": "启动 Rviz2",
+            "id": "3",
+            "link": "https://www.ncnynl.com/archives/202206/5286.html",
+            "name": "launch rviz2"
+        },
+        {
+            "command": "ros2 run nav2_map_server map_saver_cli -f office",
+            "desc": "保存地图",
+            "id": "4",
+            "link": "https://www.ncnynl.com/archives/202206/5286.html",
+            "name": "save map"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-07-22"
+        }
+    ]
+}

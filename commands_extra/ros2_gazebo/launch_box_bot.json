@@ -1,0 +1,72 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch box_bot_gazebo main.launch.xml",
+            "desc": "启动多机器人仿真",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202212/5782.html",
+            "name": "box_bot_gazebo"
+        },
+        {
+            "command": "ros2 launch box_bot_description start_rviz.launch.xml",
+            "desc": "启动rviz",
+            "id": "2",
+            "link": "",
+            "name": "start_rviz"
+        },
+        {
+            "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/box_bot_1/cmd_vel",
+            "desc": "启动box_bot_1机器人控制",
+            "id": "3",
+            "link": "",
+            "name": "box_bot_1"
+        },
+        {
+            "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/box_bot_2/cmd_vel",
+            "desc": "启动box_bot_2机器人控制",
+            "id": "4",
+            "link": "",
+            "name": "box_bot_2"
+        },
+        {
+            "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/box_bot_3/cmd_vel",
+            "desc": "启动box_bot_3机器人控制",
+            "id": "5",
+            "link": "",
+            "name": "box_bot_3"
+        },
+        {
+            "command": "ros2 run rqt_tf_tree rqt_tf_tree",
+            "desc": "查看TF ",
+            "id": "6",
+            "link": "",
+            "name": "rqt_tf_tree"
+        },
+        {
+            "command": "ros2 topic list",
+            "desc": "查看话题列表",
+            "id": "7",
+            "link": "",
+            "name": "topic_list"
+        },
+        {
+            "command": "ros2 topic echo /box_bot_1/odom",
+            "desc": "查看box_bot_1里程话题",
+            "id": "8",
+            "link": "",
+            "name": "ox_bot_1/odom"
+        },
+        {
+            "command": "ros2 topic echo /box_bot_1/cmd_vel",
+            "desc": "查看box_bot_1速度话题",
+            "id": "9",
+            "link": "",
+            "name": "box_bot_1/cmd_vel"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2023-01-01"
+        }
+    ]
+}

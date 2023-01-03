@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos air_pressure.launch.py",
+            "desc": "launch启动air_pressure",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202201/4945.html",
+            "name": " launch air_pressure"
+        },
+        {
+            "command": "ros2 topic echo /air_pressure --qos-reliability best_effort",
+            "desc": "",
+            "id": "6",
+            "link": "",
+            "name": " launch topic"
+        }
+    ]
+}

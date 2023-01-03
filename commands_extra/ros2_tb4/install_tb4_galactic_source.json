@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros2_tb4; ./shell/install_tb4_galactic_source.sh",
+            "desc": "源码安装turtlebot4仿真环境",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202210/5583.html",
+            "name": "install_tb4_simulator_source_shell"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-10-31"
+        }
+    ]
+}

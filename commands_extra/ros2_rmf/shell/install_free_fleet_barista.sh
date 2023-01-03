@@ -1,0 +1,67 @@
+#!/bin/bash
+################################################
+# Function : install_barista_ros2                      
+# Platform : ubuntu                                
+# Version  : 1.0                               
+# Date     : 2022-12-31                          
+# Author   : ncnynl                             
+# Contact  : 1043931@qq.com                              
+# URL: https://ncnynl.com                                   
+# Licnese: MIT                                 
+# QQ Qun: 创客智造B群:926779095                                  
+# QQ Qun: 创客智造C群:937347681                               
+# QQ Qun: 创客智造D群:562093920                               
+################################################
+#source from https://bitbucket.org/theconstructcore/barista_ros2_rmf_free_fleet branch:starbots-humble
+echo ""
+echo "Set workspace"
+workspace=ros2_free_fleet_barista_ws
+
+echo ""
+echo "Set soft name"
+soft_name=barista_ros2_rmf_free_fleet
+
+echo ""
+echo "Workspace if exits ?"
+if [ ! -d ~/$workspace ];then 
+    mkdir -p ~/$workspace/src
+fi 
+
+echo ""
+echo "Software if installed ?"
+if [ -d ~/$workspace/src/$soft_name ];then 
+    echo "$soft_name have installed" && exit 0
+fi 
+
+echo ""
+echo "Install system deps"
+
+# 下载源码
+echo ""
+echo "Download source"
+cd ~/$workspace/src
+git clone -b starbots-humble https://bitbucket.org/theconstructcore/barista_ros2_rmf_free_fleet 
+
+
+echo ""
+echo "Install rosdeps"
+cd ~/$workspace/
+rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
+
+
+# 编译代码
+echo "Compile source"
+cd ~/$workspace/
+colcon build --symlink-install 
+
+
+echo "Add workspace to bashrc if not exits"
+if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
+then
+    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+    echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
+else
+    echo "Has been inited before! Please check ~/.bashrc"
+fi
+
+#How to use

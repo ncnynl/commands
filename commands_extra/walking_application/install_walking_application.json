@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd /home/ubuntu/commands/walking_application; ./shell/install_walking_application.sh",
+            "desc": "",
+            "id": 0,
+            "link": "",
+            "name": "install_walking_application"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": ". /usr/share/gazebo/setup.bash;ros2 launch walking_application hospital_world_connect_to_charging_dock.launch.py",
+            "desc": "启动仿真",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202204/5175.html",
+            "name": "2-hospital_world_connect_to_charging_dock"
+        },
+        {
+            "command": "ros2 run walking_application full_battery_pub.py",
+            "desc": "发布满电量状态",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202204/5175.html",
+            "name": "3-full_battery_pub"
+        },
+        {
+            "command": "ros2 run walking_application low_battery_pub.py",
+            "desc": "发布低电量状态",
+            "id": "3",
+            "link": "https://www.ncnynl.com/archives/202204/5175.html",
+            "name": "4-low_battery_pub"
+        },
+        {
+            "command": "ros2 run walking_application charging_battery_pub.py",
+            "desc": "发布正在充电中状态",
+            "id": "4",
+            "link": "https://www.ncnynl.com/archives/202204/5175.html",
+            "name": "5-charging_battery_pub"
+        }
+    ]
+}

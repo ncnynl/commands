@@ -1,0 +1,86 @@
+{
+    "commands": [
+        {
+            "command": "sudo snap install code --classic",
+            "desc": "安装编辑器vscode",
+            "id": "1",
+            "link": "",
+            "name": "install vscode "
+        },
+        {
+            "command": "sudo apt install -y kazam",
+            "desc": "安装录屏软件kazam",
+            "id": "2",
+            "link": "",
+            "name": "install kazam"
+        },
+        {
+            "command": "sudo apt install -y cheese",
+            "desc": "安装摄像头软件cheese",
+            "id": "3",
+            "link": "",
+            "name": "install cheese"
+        },
+        {
+            "command": "sudo apt install -y terminator",
+            "desc": "安装终端分屏器Terminator",
+            "id": "4",
+            "link": "",
+            "name": "install Terminator"
+        },
+        {
+            "command": "sudo apt install -y shotcut",
+            "desc": "安装视频编缉器shotcut",
+            "id": "5",
+            "link": "",
+            "name": "install shotcut"
+        },
+        {
+            "command": "sudo apt install -y simplescreenrecorder",
+            "desc": "安装录屏软件simplescreenrecorder",
+            "id": "6",
+            "link": "",
+            "name": "install simplescreenrecorder"
+        },
+        {
+            "command": "sudo apt  install -y ansible ",
+            "desc": "安装软件配置，配置管理和应用程序部署工具Ansible",
+            "id": "7",
+            "link": "",
+            "name": "install ansible"
+        },
+        {
+            "command": "sudo apt install -y  festival festlex-cmu festlex-poslex festlex-oald ",
+            "desc": "安装语音合成器软件festival",
+            "id": "8",
+            "link": "",
+            "name": "install festival"
+        },
+        {
+            "command": "sudo apt install -y espeak-ng\n mbrola mbrola-en1  mbrola-cn1   mbrola-us1 mbrola-us2 mbrola-us3",
+            "desc": "安装语音合成器软件espeak",
+            "id": "9",
+            "link": "",
+            "name": "install espeak"
+        },
+        {
+            "command": "sudo snap install audacity ",
+            "desc": "安装音频编缉器audacity",
+            "id": "10",
+            "link": "",
+            "name": "install audacity"
+        },
+        {
+            "command": "sudo apt install obs-studio",
+            "desc": "OBS Studio 是免费的开源直播和屏幕录制软件",
+            "id": "11",
+            "link": "https://blog.csdn.net/zhouzying/article/details/79991289",
+            "name": "install obs"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-07-22"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py",
+            "desc": "启动雷达",
+            "id": "1",
+            "link": "@ncnynl | 点击'启动'按钮,一键启动",
+            "name": "launch lds"
+        },
+        {
+            "command": "cd  && rviz2 -d `colcon list --packages-select turtlebot3_description --paths-only`/rviz/model.rviz",
+            "desc": "启动RViz2",
+            "id": "2",
+            "link": "@ncnynl | 点击'启动'按钮,一键启动",
+            "name": "launch rviz2"
+        }
+    ]
+}

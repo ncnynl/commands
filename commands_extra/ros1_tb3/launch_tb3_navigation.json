@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "roslaunch turtlebot3_bringup turtlebot3_robot.launch",
+            "desc": "启动turtlebot3_robot",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_robot"
+        },
+        {
+            "command": "export TURTLEBOT3_MODEL=burger;roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml",
+            "desc": "启动turtlebot3_navigation",
+            "id": "6",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_navigation"
+        },
+        {
+            "command": "rosrun rviz rviz -d `rospack find turtlebot3_navigation`/rviz/turtlebot3_nav.rviz",
+            "desc": "启动rviz",
+            "id": "11",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch rviz"
+        }
+    ]
+}

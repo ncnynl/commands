@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py ",
+            "desc": "启动仿真环境\n",
+            "id": "7",
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup.launch.py use_sim_time:=true",
+            "desc": "启动导航,使用默认地图",
+            "id": "8",
+            "link": "点击'启动'按钮就可",
+            "name": "2-nav"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup.launch.py map:=${HOME}/map/map.yaml use_sim_time:=true",
+            "desc": "使用自己保持的地图",
+            "id": "9",
+            "link": "点击'启动'按钮就可",
+            "name": "3-nav"
+        }
+    ]
+}

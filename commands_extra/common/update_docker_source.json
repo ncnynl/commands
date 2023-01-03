@@ -1,0 +1,25 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/common; ./shell/update_docker_source.sh https://registry.docker-cn.com",
+            "desc": "更新docker源,解决更快下载docker文件问题",
+            "id": "1",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update docker source to registry.docker-cn.com"
+        },
+        {
+            "command": "cd ~/commands/common; ./shell/update_docker_source.sh http://hub-mirror.c.163.com",
+            "desc": "更新docker源,解决更快下载docker文件问题",
+            "id": "4",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update docker source to hub-mirror.c.163.com"
+        },
+        {
+            "command": "cd ~/commands/common; ./shell/update_docker_source.sh http://docker.mirrors.ustc.edu.cn",
+            "desc": "更新docker源,解决更快下载docker文件问题",
+            "id": "5",
+            "link": "点击'启动'按钮,一键更新",
+            "name": "update docker source to  docker.mirrors.ustc.edu.cn"
+        }
+    ]
+}

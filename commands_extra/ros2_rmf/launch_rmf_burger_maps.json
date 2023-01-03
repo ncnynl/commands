@@ -1,0 +1,23 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch rmf_burger_maps burger.launch.xml server_uri:=\"ws://localhost:7878\"",
+            "desc": "启动仿真",
+            "id": "1",
+            "link": "",
+            "name": "rmf_burger_maps"
+        },
+        {
+            "command": "cd ~/ros2_rmf_ws/rmf_panel\n; ./load_http.sh",
+            "desc": "启动rmf_panel",
+            "id": "2",
+            "link": "",
+            "name": "rmf_panel"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2023-01-02"
+        }
+    ]
+}

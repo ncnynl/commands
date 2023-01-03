@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "roslaunch turtlebot3_bringup turtlebot3_robot.launch",
+            "desc": "启动turtlebot3_robot",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_robot"
+        },
+        {
+            "command": "export TURTLEBOT3_MODEL=burger;roslaunch turtlebot3_slam turtlebot3_slam.launch ",
+            "desc": "启动turtlebot3_slam",
+            "id": "6",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_slam"
+        },
+        {
+            "command": "roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch",
+            "desc": "启动turtlebot3_teleop_key",
+            "id": "11",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch turtlebot3_teleop_key"
+        },
+        {
+            "command": "rosrun map_server map_saver -f ~/map",
+            "desc": "启动map_saver",
+            "id": "12",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "launch map_saver"
+        }
+    ]
+}
