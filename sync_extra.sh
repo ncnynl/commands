@@ -14,7 +14,7 @@
 function sync_extra()
 {
     echo "Begin to sync file to commands_extra!!"
-    rsync -azv ~/commands/* ~/tools/commands/commands_extra/
+    rsync -azv --exclude 'a_private_*' ~/commands/* ~/tools/commands/commands_extra/
     echo "Done!! Please submit to repo"
 }
 sync_extra
