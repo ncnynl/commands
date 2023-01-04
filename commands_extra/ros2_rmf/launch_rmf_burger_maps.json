@@ -9,7 +9,7 @@
         },
         {
             "command": "cd ~/ros2_rmf_ws/rmf_panel\n; ./load_http.sh",
-            "desc": "启动rmf_panel",
+            "desc": "启动rmf_panel 在终端下执行",
             "id": "2",
             "link": "",
             "name": "rmf_panel"

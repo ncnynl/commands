@@ -1,0 +1,86 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch  barista_rmf_gazebo start_rmf_multirobot_turtlebotworld.launch.xml server_uri:=\"ws://localhost:7878\"",
+            "desc": "启动RMF导航图",
+            "id": "1",
+            "link": "",
+            "name": "start_rmf_multirobot_turtlebotworld"
+        },
+        {
+            "command": "ros2 launch  barista_gazebo main_two_robots_turtleworld.launch.xml",
+            "desc": "启动多机仿真",
+            "id": "2",
+            "link": "",
+            "name": "main_two_robots_turtleworld"
+        },
+        {
+            "command": "ros2 launch  main_navigation start_nav_barista_1_2_turtleworld.launch.xml",
+            "desc": "启动多机导航",
+            "id": "3",
+            "link": "",
+            "name": "start_nav_barista_1_2_turtleworld"
+        },
+        {
+            "command": "ros2 launch  barista_ros2_ff freefleet_two_barista_turtleworld.launch.xml",
+            "desc": "启动FF server和FF client",
+            "id": "4",
+            "link": "",
+            "name": "freefleet_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 launch  barista_ros2_ff simbatery_two_barista_turtleworld.launch.xml",
+            "desc": "启动电池仿真",
+            "id": "5",
+            "link": "",
+            "name": "simbatery_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_1 -p target_1 -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到target_1",
+            "id": "6",
+            "link": "",
+            "name": "barista_1 to target_1"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_2 -p target_2 -n 1 --use_sim_time\n",
+            "desc": "barista_2巡逻到target_2",
+            "id": "7",
+            "link": "",
+            "name": "barista_2 to target_2"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_1 -p barista_1_charging_station -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到barista_1_charging_station",
+            "id": "8",
+            "link": "",
+            "name": "barista_1 to barista_1_charging_station"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_2 -p barista_2_charging_station -n 1 --use_sim_time",
+            "desc": "barista_2巡逻到barista_2_charging_station",
+            "id": "9",
+            "link": "",
+            "name": "barista_2 to barista_2_charging_station"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_1 -p spot_2 -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到spot_2",
+            "id": "10",
+            "link": "",
+            "name": "barista_1 to spot_2"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_2 -p spot_3 -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到spot_3 ",
+            "id": "11",
+            "link": "",
+            "name": "barista_2 tospot_3 "
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2023-01-04"
+        }
+    ]
+}

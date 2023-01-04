@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 #source from https://bitbucket.org/theconstructcore/barista_ros2_rmf_free_fleet branch:starbots-humble
+
+if [ $ROS_DISTRO -ne "humble" ];then 
+    echo "This repo just for humble" && exit 0
+fi 
 echo ""
 echo "Set workspace"
 workspace=ros2_free_fleet_barista_ws
@@ -40,7 +44,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b starbots-humble https://bitbucket.org/theconstructcore/barista_ros2_rmf_free_fleet 
+git clone -b humble https://gitee.com/ncnynl/free_fleet_barista 
 
 
 echo ""

@@ -47,54 +47,68 @@
             "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
             "id": "7",
             "link": "",
-            "name": "send_destination_request"
+            "name": "send_destination_request_1"
         },
         {
             "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_1 -i unique_task_id_200 -p '[{\"x\": 10.5, \"y\": -8.78, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.2, \"y\": -9.7, \"yaw\": 1.57, \"level_name\": \"B1\"}, {\"x\": 9.3, \"y\": -11.1, \"yaw\": 3.14, \"level_name\": \"B1\"}, {\"x\": 7.84, \"y\": -9.05, \"yaw\": 4.71, \"level_name\": \"B1\"}]'",
             "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
             "id": "8",
             "link": "",
-            "name": "send_path_request"
+            "name": "send_path_request_1"
         },
         {
             "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m pause -i unique_task_id_301",
             "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
             "id": "9",
             "link": "",
-            "name": "send_mode_request_pause"
+            "name": "send_mode_request_pause_1"
         },
         {
             "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m resume -i unique_task_id_401",
             "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
             "id": "10",
             "link": "",
-            "name": "send_mode_request_resume"
+            "name": "send_mode_request_resume_2"
         },
         {
             "command": "ros2 launch barista_ros2_ff  barista_world_ff_server.launch.xml",
             "desc": "启动ff server",
-            "id": "16",
+            "id": "11",
             "link": "",
             "name": "barista_world_ff_server"
         },
         {
             "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_1",
-            "desc": "启动ff client1",
-            "id": "17",
+            "desc": "启动ff client1,替代freefleet_two_barista_turtleworld",
+            "id": "12",
             "link": "",
             "name": "start_ff_client_barista1"
         },
         {
             "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_2",
-            "desc": "启动ff client2",
-            "id": "18",
+            "desc": "启动ff client2,替代freefleet_two_barista_turtleworld",
+            "id": "13",
             "link": "",
             "name": "start_ff_client_barista2"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_2 -x 10.246500 -y -11.054800 --yaw 0.0 -i 2",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
+            "id": "14",
+            "link": "",
+            "name": "send_destination_request_2"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_2 -i 6 -p '[{\"x\": 10.142500, \"y\": -7.412360, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 11.502300, \"y\": -9.180780, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.246500, \"y\": -11.054800, \"yaw\": 3.14, \"level_name\": \"B1\"}]'\n",
+            "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
+            "id": "15",
+            "link": "",
+            "name": "send_path_request_2"
         }
     ],
     "time": [
         {
-            "datetime": "2023-01-02"
+            "datetime": "2023-01-03"
         }
     ]
 }

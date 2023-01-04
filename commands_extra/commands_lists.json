@@ -3761,7 +3761,7 @@
         },
         {
             "command": "cd ~/ros2_rmf_ws/rmf_panel\n; ./load_http.sh",
-            "desc": "启动rmf_panel",
+            "desc": "启动rmf_panel 在终端下执行",
             "id": 538,
             "link": "",
             "name": "rmf_panel"
@@ -3886,697 +3886,697 @@
             "name": "send_mode_request_resume"
         },
         {
+            "command": "ros2 launch  barista_rmf_gazebo start_rmf_multirobot_turtlebotworld.launch.xml server_uri:=\"ws://localhost:7878\"",
+            "desc": "启动RMF导航图",
+            "id": 556,
+            "link": "",
+            "name": "start_rmf_multirobot_turtlebotworld"
+        },
+        {
             "command": "ros2 launch barista_gazebo main_two_robots_turtleworld.launch.xml",
             "desc": "启动2个机器人的仿真",
-            "id": 556,
+            "id": 557,
             "link": "",
             "name": "main_two_robots_turtleworld"
         },
         {
             "command": "ros2 launch main_navigation start_nav_barista_1_2_turtleworld.launch.xml",
             "desc": "同时启动1和2机器人导航",
-            "id": 557,
+            "id": 558,
             "link": "",
             "name": "start_nav_barista_1_2_turtleworld"
         },
         {
-            "command": "ros2 launch barista_ros2_ff  freefleet_two_barista_turtleworld.launch.xml",
-            "desc": "启动freefleet",
-            "id": 558,
+            "command": "ros2 launch  barista_ros2_ff freefleet_two_barista_turtleworld.launch.xml",
+            "desc": "启动FF server和FF client",
+            "id": 559,
             "link": "",
             "name": "freefleet_two_barista_turtleworld"
         },
         {
-            "command": "ros2 launch barista_ros2_ff  simbatery_two_barista_turtleworld.launch.xml",
+            "command": "ros2 launch  barista_ros2_ff simbatery_two_barista_turtleworld.launch.xml",
             "desc": "启动电池仿真",
-            "id": 559,
+            "id": 560,
+            "link": "",
+            "name": "simbatery_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_1 -p target_1 -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到target_1",
+            "id": 561,
+            "link": "",
+            "name": "barista_1 to target_1"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_2 -p target_2 -n 1 --use_sim_time\n",
+            "desc": "barista_2巡逻到target_2",
+            "id": 562,
+            "link": "",
+            "name": "barista_2 to target_2"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_1 -p barista_1_charging_station -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到barista_1_charging_station",
+            "id": 563,
+            "link": "",
+            "name": "barista_1 to barista_1_charging_station"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_2 -p barista_2_charging_station -n 1 --use_sim_time",
+            "desc": "barista_2巡逻到barista_2_charging_station",
+            "id": 564,
+            "link": "",
+            "name": "barista_2 to barista_2_charging_station"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_1 -p spot_2 -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到spot_2",
+            "id": 565,
+            "link": "",
+            "name": "barista_1 to spot_2"
+        },
+        {
+            "command": "ros2 run rmf_demos_tasks dispatch_patrol -F barista -R barista_2 -p spot_3 -n 1 --use_sim_time",
+            "desc": "barista_1巡逻到spot_3 ",
+            "id": 566,
+            "link": "",
+            "name": "barista_2 tospot_3 "
+        },
+        {
+            "command": "ros2 launch barista_gazebo main_two_robots_turtleworld.launch.xml",
+            "desc": "启动2个机器人的仿真",
+            "id": 567,
+            "link": "",
+            "name": "main_two_robots_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_nav_barista_1_2_turtleworld.launch.xml",
+            "desc": "同时启动1和2机器人导航",
+            "id": 568,
+            "link": "",
+            "name": "start_nav_barista_1_2_turtleworld"
+        },
+        {
+            "command": "ros2 launch  barista_ros2_ff freefleet_two_barista_turtleworld.launch.xml",
+            "desc": "启动FF server和FF client",
+            "id": 569,
+            "link": "",
+            "name": "freefleet_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 launch  barista_ros2_ff simbatery_two_barista_turtleworld.launch.xml",
+            "desc": "启动电池仿真",
+            "id": 570,
             "link": "",
             "name": "simbatery_two_barista_turtleworld"
         },
         {
             "command": "ros2 launch main_navigation start_navigation_rviz.launch.xml",
             "desc": "启动rviz",
-            "id": 560,
+            "id": 571,
             "link": "",
             "name": "start_navigation_rviz"
         },
         {
             "command": "ros2 run rqt_tf_tree rqt_tf_tree",
             "desc": "查看TF ",
-            "id": 561,
+            "id": 572,
             "link": "",
             "name": "rqt_tf_tree"
         },
         {
-            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_destination_request.py -f turtlebot3 -r ros2_tb3_0 -x 1.725 -y -0.39 --yaw 0.0 -i unique_task_id_1",
-            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行",
-            "id": 562,
+            "command": "ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_1 -x 10 -y -8.39 --yaw 0.0 -i unique_task_id_100",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
+            "id": 573,
             "link": "",
-            "name": "send_destination_request"
+            "name": "send_destination_request_1"
         },
         {
-            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_path_request.py -f turtlebot3 -r ros2_tb3_0 -i unique_task_id_2 -p '[{\"x\": 1.725, \"y\": -0.39, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 1.737, \"y\": 0.951, \"yaw\": 1.57, \"level_name\": \"B1\"}, {\"x\": -0.616, \"y\": 1.852, \"yaw\": 3.14, \"level_name\": \"B1\"}, {\"x\": -0.626, \"y\": -1.972, \"yaw\": 4.71, \"level_name\": \"B1\"}]' ",
+            "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_1 -i unique_task_id_200 -p '[{\"x\": 10.5, \"y\": -8.78, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.2, \"y\": -9.7, \"yaw\": 1.57, \"level_name\": \"B1\"}, {\"x\": 9.3, \"y\": -11.1, \"yaw\": 3.14, \"level_name\": \"B1\"}, {\"x\": 7.84, \"y\": -9.05, \"yaw\": 4.71, \"level_name\": \"B1\"}]'",
             "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
-            "id": 563,
+            "id": 574,
             "link": "",
-            "name": "send_path_request"
+            "name": "send_path_request_1"
         },
         {
-            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f turtlebot3 -r ros2_tb3_0 -m pause -i unique_task_id_3",
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m pause -i unique_task_id_301",
             "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
-            "id": 564,
+            "id": 575,
             "link": "",
-            "name": "send_mode_request_pause"
+            "name": "send_mode_request_pause_1"
         },
         {
-            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f turtlebot3 -r ros2_tb3_0 -m resume -i unique_task_id_4",
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m resume -i unique_task_id_401",
             "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
-            "id": 565,
+            "id": 576,
             "link": "",
-            "name": "send_mode_request_resume"
+            "name": "send_mode_request_resume_2"
         },
         {
             "command": "ros2 launch barista_ros2_ff  barista_world_ff_server.launch.xml",
             "desc": "启动ff server",
-            "id": 566,
+            "id": 577,
             "link": "",
             "name": "barista_world_ff_server"
         },
         {
             "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_1",
-            "desc": "启动ff client1",
-            "id": 567,
+            "desc": "启动ff client1,替代freefleet_two_barista_turtleworld",
+            "id": 578,
             "link": "",
             "name": "start_ff_client_barista1"
         },
         {
             "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_2",
-            "desc": "启动ff client2",
-            "id": 568,
+            "desc": "启动ff client2,替代freefleet_two_barista_turtleworld",
+            "id": 579,
             "link": "",
             "name": "start_ff_client_barista2"
         },
         {
+            "command": "ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_2 -x 10.246500 -y -11.054800 --yaw 0.0 -i 2",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
+            "id": 580,
+            "link": "",
+            "name": "send_destination_request_2"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_2 -i 6 -p '[{\"x\": 10.142500, \"y\": -7.412360, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 11.502300, \"y\": -9.180780, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.246500, \"y\": -11.054800, \"yaw\": 3.14, \"level_name\": \"B1\"}]'\n",
+            "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
+            "id": 581,
+            "link": "",
+            "name": "send_path_request_2"
+        },
+        {
+            "command": "ros2 launch barista_gazebo main_two_robots_turtleworld.launch.xml",
+            "desc": "启动2个机器人的仿真",
+            "id": 582,
+            "link": "",
+            "name": "main_two_robots_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_nav_barista_1_2_turtleworld.launch.xml",
+            "desc": "同时启动1和2机器人导航",
+            "id": 583,
+            "link": "",
+            "name": "start_nav_barista_1_2_turtleworld"
+        },
+        {
+            "command": "ros2 launch  barista_ros2_ff freefleet_two_barista_turtleworld.launch.xml",
+            "desc": "启动FF server和FF client",
+            "id": 584,
+            "link": "",
+            "name": "freefleet_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 launch  barista_ros2_ff simbatery_two_barista_turtleworld.launch.xml",
+            "desc": "启动电池仿真",
+            "id": 585,
+            "link": "",
+            "name": "simbatery_two_barista_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_navigation_rviz.launch.xml",
+            "desc": "启动rviz",
+            "id": 586,
+            "link": "",
+            "name": "start_navigation_rviz"
+        },
+        {
+            "command": "ros2 run rqt_tf_tree rqt_tf_tree",
+            "desc": "查看TF ",
+            "id": 587,
+            "link": "",
+            "name": "rqt_tf_tree"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_1 -x 10 -y -8.39 --yaw 0.0 -i unique_task_id_100",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
+            "id": 588,
+            "link": "",
+            "name": "send_destination_request_1"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_1 -i unique_task_id_200 -p '[{\"x\": 10.5, \"y\": -8.78, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.2, \"y\": -9.7, \"yaw\": 1.57, \"level_name\": \"B1\"}, {\"x\": 9.3, \"y\": -11.1, \"yaw\": 3.14, \"level_name\": \"B1\"}, {\"x\": 7.84, \"y\": -9.05, \"yaw\": 4.71, \"level_name\": \"B1\"}]'",
+            "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
+            "id": 589,
+            "link": "",
+            "name": "send_path_request_1"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m pause -i unique_task_id_301",
+            "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
+            "id": 590,
+            "link": "",
+            "name": "send_mode_request_pause_1"
+        },
+        {
+            "command": "source ~/.bashrc; ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m resume -i unique_task_id_401",
+            "desc": "模式请求,目前只支持暂停和恢复的,请在终端执行",
+            "id": 591,
+            "link": "",
+            "name": "send_mode_request_resume_2"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  barista_world_ff_server.launch.xml",
+            "desc": "启动ff server",
+            "id": 592,
+            "link": "",
+            "name": "barista_world_ff_server"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_1",
+            "desc": "启动ff client1,替代freefleet_two_barista_turtleworld",
+            "id": 593,
+            "link": "",
+            "name": "start_ff_client_barista1"
+        },
+        {
+            "command": "ros2 launch barista_ros2_ff  start_ff_client_barista.launch.xml barista_name:=barista_2",
+            "desc": "启动ff client2,替代freefleet_two_barista_turtleworld",
+            "id": 594,
+            "link": "",
+            "name": "start_ff_client_barista2"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_2 -x 10.246500 -y -11.054800 --yaw 0.0 -i 2",
+            "desc": "目的地请求，允许对机器人发出单一目的地命令,请在终端执行,重复执行需要ID加1 ",
+            "id": 595,
+            "link": "",
+            "name": "send_destination_request_2"
+        },
+        {
+            "command": "ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_2 -i 6 -p '[{\"x\": 10.142500, \"y\": -7.412360, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 11.502300, \"y\": -9.180780, \"yaw\": 0.0, \"level_name\": \"B1\"}, {\"x\": 10.246500, \"y\": -11.054800, \"yaw\": 3.14, \"level_name\": \"B1\"}]'\n",
+            "desc": "路径请求，请求机器人执行一串目标命令,请在终端执行",
+            "id": 596,
+            "link": "",
+            "name": "send_path_request_2"
+        },
+        {
             "command": "ros2 launch rmf_demos_gz triple_H.launch.xml",
             "desc": "启动triple_H仿真",
-            "id": 569,
+            "id": 597,
             "link": "https://www.ncnynl.com/archives/202211/5672.html",
             "name": "triple_H"
         },
         {
             "command": "ros2 launch rmf_demos  the_pedigree.launch.xml",
             "desc": "启动the_pedigree任务",
-            "id": 570,
+            "id": 598,
             "link": "https://www.ncnynl.com/archives/202211/5672.html",
             "name": "the_pedigree"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_free_fleet_barista.sh",
             "desc": "",
-            "id": 571,
+            "id": 599,
             "link": "",
             "name": "install_free_fleet_barista.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_burger_maps.sh",
             "desc": "",
-            "id": 572,
+            "id": 600,
             "link": "",
             "name": "install_rmf_burger_maps.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_foxy_apt.sh",
             "desc": "",
-            "id": 573,
+            "id": 601,
             "link": "",
             "name": "install_rmf_foxy_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_free_fleet.sh",
             "desc": "",
-            "id": 574,
+            "id": 602,
             "link": "",
             "name": "install_rmf_free_fleet.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_apt.sh",
             "desc": "",
-            "id": 575,
+            "id": 603,
             "link": "",
             "name": "install_rmf_galactic_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_devel.sh",
             "desc": "",
-            "id": 576,
+            "id": 604,
             "link": "",
             "name": "install_rmf_galactic_devel.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_galactic_source.sh",
             "desc": "",
-            "id": 577,
+            "id": 605,
             "link": "",
             "name": "install_rmf_galactic_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_apt.sh",
             "desc": "",
-            "id": 578,
+            "id": 606,
             "link": "",
             "name": "install_rmf_humble_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_main.sh",
             "desc": "",
-            "id": 579,
+            "id": 607,
             "link": "",
             "name": "install_rmf_humble_main.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_humble_source.sh",
             "desc": "",
-            "id": 580,
+            "id": 608,
             "link": "",
             "name": "install_rmf_humble_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_model.sh",
             "desc": "",
-            "id": 581,
+            "id": 609,
             "link": "",
             "name": "install_rmf_model.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_panel.sh",
             "desc": "",
-            "id": 582,
+            "id": 610,
             "link": "",
             "name": "install_rmf_panel.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_traffic_editor_apt.sh",
             "desc": "",
-            "id": 583,
+            "id": 611,
             "link": "",
             "name": "install_rmf_traffic_editor_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_traffic_editor_source.sh",
             "desc": "",
-            "id": 584,
+            "id": 612,
             "link": "",
             "name": "install_rmf_traffic_editor_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_web_galactic.sh",
             "desc": "",
-            "id": 585,
+            "id": 613,
             "link": "",
             "name": "install_rmf_web_galactic.sh"
         },
         {
             "command": "cd ~/commands/ros2_rmf;./shell/install_rmf_web_humble.sh",
             "desc": "",
-            "id": 586,
+            "id": 614,
             "link": "",
             "name": "install_rmf_web_humble.sh"
         },
         {
             "command": "ros2 launch rmf_demos_gz_classic office.launch.xml",
             "desc": "启动office gazebo仿真",
-            "id": 587,
+            "id": 615,
             "link": "https://www.ncnynl.com/archives/202211/5668.html",
             "name": "office gazebo"
         },
         {
             "command": "ros2 launch rmf_demos_gz office.launch.xml",
             "desc": "启动office ignition仿真",
-            "id": 588,
+            "id": 616,
             "link": "https://www.ncnynl.com/archives/202211/5668.html",
             "name": "office ignition"
         },
         {
             "command": "cd ~/ros2_rmf_ws/rmf-panel-js/; ./load_http.sh",
             "desc": "启动panel面板",
-            "id": 589,
+            "id": 617,
             "link": "https://www.ncnynl.com/archives/202211/5668.html",
             "name": "rmp-panel-js"
         },
         {
             "command": "cd ~/commands/ros2_rmf; ./shell/install_rmf_galactic_source.sh",
             "desc": "用源码方式安装open-rmf",
-            "id": 590,
+            "id": 618,
             "link": "https://www.ncnynl.com/archives/202211/5665.html",
             "name": "install_ros2_rmf_galactic_source"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 591,
+            "id": 619,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "ros2 launch walking_teleop joy.launch.py ",
             "desc": "",
-            "id": 592,
+            "id": 620,
             "link": "",
             "name": "2-joy"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 593,
+            "id": 621,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "ros2 launch walking_navigation bringup_v2.launch.py  slam_type:=rtabmap_rgbd",
             "desc": "",
-            "id": 594,
+            "id": 622,
             "link": "",
             "name": "2-rtabmap_scan"
         },
         {
             "command": "ros2 launch walking_slam cartographer.launch.py use_laser:=false",
             "desc": "",
-            "id": 595,
+            "id": 623,
             "link": "",
             "name": "1-slam"
         },
         {
             "command": "cd ~/bag_files;\nros2 bag play offline_mapping",
             "desc": "",
-            "id": 596,
+            "id": 624,
             "link": "",
             "name": "2-play"
         },
         {
             "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/offline_cartographer",
             "desc": "",
-            "id": 597,
+            "id": 625,
             "link": "",
             "name": "3-save_map"
         },
         {
             "command": "ros2 launch walking_bringup robot_calib.launch.py",
             "desc": "",
-            "id": 598,
+            "id": 626,
             "link": "",
             "name": "1-robot_calib"
         },
         {
             "command": "ros2 run walking_calib calibrate_angular.py",
             "desc": "",
-            "id": 599,
+            "id": 627,
             "link": "",
             "name": "2-calibrate_angular"
         },
         {
             "command": "ros2 topic echo /scan",
             "desc": "查看雷达信息",
-            "id": 600,
+            "id": 628,
             "link": "点击'启动'按钮就可",
             "name": "3-topic"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 601,
+            "id": 629,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
             "desc": "启动cartographer仿真",
-            "id": 602,
+            "id": 630,
             "link": "点击'启动'按钮就可",
             "name": "2-cartographer"
         },
         {
             "command": "ros2 launch walking_teleop keyboard.launch.py ",
             "desc": "启动键盘控制",
-            "id": 603,
+            "id": 631,
             "link": "点击'启动'按钮就可",
             "name": "3-keyboard"
         },
         {
             "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
             "desc": "",
-            "id": 604,
+            "id": 632,
             "link": "",
             "name": "4-save_map"
         },
         {
             "command": "eog ~/map/d2l_slam_toolbox.pgm",
             "desc": "",
-            "id": 605,
+            "id": 633,
             "link": "",
             "name": "5-view_map"
         },
         {
             "command": "ros2 launch walking_voice node.launch.py",
             "desc": "",
-            "id": 606,
+            "id": 634,
             "link": "",
             "name": "1-node"
         },
         {
             "command": "cd ~/tools/music/\n;echo \"It's such a beautiful day! Why are you in front of the computer?\" | text2wave  -o beautiful_day.wav",
             "desc": "",
-            "id": 607,
+            "id": 635,
             "link": "",
             "name": "2-text2wave"
         },
         {
             "command": "cd ~/tools/music/\n;arecord  -f cd test.wav",
             "desc": "",
-            "id": 608,
+            "id": 636,
             "link": "",
             "name": "2-arecord"
         },
         {
             "command": "ros2 launch walking_voice play.launch.py name:=/home/ubuntu/tools/music/beautiful_day.wav",
             "desc": "",
-            "id": 609,
+            "id": 637,
             "link": "",
             "name": "3-beautiful_day"
         },
         {
             "command": "ros2 launch walking_voice playbuiltin.launch.py num:=2",
             "desc": "",
-            "id": 610,
+            "id": 638,
             "link": "",
             "name": "3-play"
         },
         {
             "command": "ros2 launch walking_voice say.launch.py string:=\"Hello world\"",
             "desc": "",
-            "id": 611,
+            "id": 639,
             "link": "",
             "name": "3-string"
         },
         {
             "command": "ros2 launch walking_voice soundclient_example.launch.py ",
             "desc": "",
-            "id": 612,
+            "id": 640,
             "link": "",
             "name": "3-example1"
         },
         {
             "command": "ros2 launch walking_voice soundplay_action.launch.py",
             "desc": "",
-            "id": 613,
+            "id": 641,
             "link": "",
             "name": "3-example2"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 614,
+            "id": 642,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "cd ~; ros2 run tf2_tools view_frames ",
             "desc": "",
-            "id": 615,
+            "id": 643,
             "link": "",
             "name": "2-view_frames"
         },
         {
             "command": "cd ~; evince frames.pdf ",
             "desc": "",
-            "id": 616,
+            "id": 644,
             "link": "",
             "name": "3-evince"
         },
         {
             "command": "ros2 launch walking_tools test_imu.launch.py",
             "desc": "",
-            "id": 617,
+            "id": 645,
             "link": "",
             "name": "1-imu"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 618,
+            "id": 646,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
             "desc": "启动cartographer仿真",
-            "id": 619,
+            "id": 647,
             "link": "点击'启动'按钮就可",
             "name": "2-cartographer"
         },
         {
             "command": "ros2 launch walking_teleop keyboard.launch.py ",
             "desc": "启动键盘控制",
-            "id": 620,
+            "id": 648,
             "link": "点击'启动'按钮就可",
             "name": "3-keyboard"
         },
         {
             "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
             "desc": "",
-            "id": 621,
+            "id": 649,
             "link": "",
             "name": "4-save_map"
         },
         {
             "command": "eog ~/map/d2l_slam_toolbox.pgm",
             "desc": "",
-            "id": 622,
+            "id": 650,
             "link": "",
             "name": "5-view_map"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 623,
+            "id": 651,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "ros2 launch walking_slam slam_toolbox.launch.py use_sim_time:=true",
             "desc": "",
-            "id": 624,
+            "id": 652,
             "link": "点击'启动'按钮就可",
             "name": "2-slam_toolbox"
         },
         {
             "command": "ros2 launch walking_slam gmapping.launch.py use_sim_time:=true",
             "desc": "启动gmapping仿真",
-            "id": 625,
+            "id": 653,
             "link": "点击'启动'按钮就可",
             "name": "2-gmapping"
         },
         {
             "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
             "desc": "启动cartographer仿真",
-            "id": 626,
-            "link": "点击'启动'按钮就可",
-            "name": "2-cartographer"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 627,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
-            "desc": "",
-            "id": 628,
-            "link": "",
-            "name": "2-usb_camera"
-        },
-        {
-            "command": "ros2 launch walking_bringup d435i.launch.py",
-            "desc": "",
-            "id": 629,
-            "link": "",
-            "name": "2-d435i"
-        },
-        {
-            "command": "ros2 launch walking_navigation bringup_v1.launch.py use_slam:=true ",
-            "desc": "",
-            "id": 630,
-            "link": "",
-            "name": "3-navigation"
-        },
-        {
-            "command": "ros2 launch walking_follow follow_aruco_tf.launch.py",
-            "desc": "",
-            "id": 631,
-            "link": "",
-            "name": "4-follow_aruco_tf"
-        },
-        {
-            "command": "ros2 run walking_follow follower_aruco_goal.py",
-            "desc": "",
-            "id": 632,
-            "link": "",
-            "name": "5-follower_aruco_goal"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 633,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_slam slam_toolbox.launch.py use_sim_time:=true",
-            "desc": "",
-            "id": 634,
-            "link": "点击'启动'按钮就可",
-            "name": "2-slam_toolbox"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
-            "desc": "启动键盘控制",
-            "id": 635,
-            "link": "点击'启动'按钮就可",
-            "name": "3-keyboard"
-        },
-        {
-            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
-            "desc": "",
-            "id": 636,
-            "link": "",
-            "name": "4-save_map"
-        },
-        {
-            "command": "eog ~/map/d2l_slam_toolbox.pgm",
-            "desc": "",
-            "id": 637,
-            "link": "",
-            "name": "5-view_map"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 638,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_tools rosbag_laser.launch.py ",
-            "desc": "",
-            "id": 639,
-            "link": "",
-            "name": "2-rosbag_laser"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
-            "desc": "启动键盘控制",
-            "id": 640,
-            "link": "点击'启动'按钮就可",
-            "name": "3-keyboard"
-        },
-        {
-            "command": "cd ~/bag_files;ros2 bag record -a",
-            "desc": "录制全部包",
-            "id": 641,
-            "link": "点击'启动'按钮就可",
-            "name": "4-record"
-        },
-        {
-            "command": "cd ~/bag_files;\nros2 bag play  offline_mapping ",
-            "desc": "",
-            "id": 642,
-            "link": "",
-            "name": "5-play"
-        },
-        {
-            "command": "ros2 topic list ",
-            "desc": "",
-            "id": 643,
-            "link": "",
-            "name": "6-list"
-        },
-        {
-            "command": "ros2 launch walking_tools test_laser.launch.py",
-            "desc": "",
-            "id": 644,
-            "link": "",
-            "name": "1-laser"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 645,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
-            "desc": "启动cartographer仿真",
-            "id": 646,
-            "link": "点击'启动'按钮就可",
-            "name": "2-cartographer"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
-            "desc": "启动键盘控制",
-            "id": 647,
-            "link": "点击'启动'按钮就可",
-            "name": "3-keyboard"
-        },
-        {
-            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
-            "desc": "",
-            "id": 648,
-            "link": "",
-            "name": "4-save_map"
-        },
-        {
-            "command": "eog ~/map/d2l_slam_toolbox.pgm",
-            "desc": "",
-            "id": 649,
-            "link": "",
-            "name": "5-view_map"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 650,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_navigation bringup.launch.py map:=${HOME}/map/slam_toolbox.yaml    ",
-            "desc": "",
-            "id": 651,
-            "link": "",
-            "name": "2-navigation"
-        },
-        {
-            "command": "ros2 launch walking_slam cartographer.launch.py use_laser:=false",
-            "desc": "",
-            "id": 652,
-            "link": "",
-            "name": "1-slam"
-        },
-        {
-            "command": "cd ~/bag_files;\nros2 bag play offline_mapping",
-            "desc": "",
-            "id": 653,
-            "link": "",
-            "name": "2-play"
-        },
-        {
-            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/offline_cartographer",
-            "desc": "",
             "id": 654,
-            "link": "",
-            "name": "3-save_map"
+            "link": "点击'启动'按钮就可",
+            "name": "2-cartographer"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
@@ -4586,326 +4586,326 @@
             "name": "1-robot"
         },
         {
-            "command": "ros2 launch walking_slam gmapping.launch.py use_sim_time:=true",
-            "desc": "启动gmapping仿真",
+            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
+            "desc": "",
             "id": 656,
-            "link": "点击'启动'按钮就可",
-            "name": "2-gmapping"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
-            "desc": "启动键盘控制",
-            "id": 657,
-            "link": "点击'启动'按钮就可",
-            "name": "3-keyboard"
-        },
-        {
-            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
-            "desc": "",
-            "id": 658,
-            "link": "",
-            "name": "4-save_map"
-        },
-        {
-            "command": "eog ~/map/d2l_slam_toolbox.pgm",
-            "desc": "",
-            "id": 659,
-            "link": "",
-            "name": "5-view_map"
-        },
-        {
-            "command": "ros2 launch walking_bringup robot_calib.launch.py",
-            "desc": "",
-            "id": 660,
-            "link": "",
-            "name": "1-robot_calib"
-        },
-        {
-            "command": "ros2 run walking_calib calibrate_linear.py",
-            "desc": "",
-            "id": 661,
-            "link": "",
-            "name": "2-calibrate_linear"
-        },
-        {
-            "command": "ros2 topic echo /scan",
-            "desc": "查看雷达信息",
-            "id": 662,
-            "link": "点击'启动'按钮就可",
-            "name": "3-topic"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 663,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
-            "desc": "",
-            "id": 664,
-            "link": "",
-            "name": "2-keyboard"
-        },
-        {
-            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
-            "desc": "",
-            "id": 665,
-            "link": "",
-            "name": "3-usb_camera"
-        },
-        {
-            "command": "ros2 launch walking_bringup d435i.launch.py ",
-            "desc": "",
-            "id": 666,
-            "link": "",
-            "name": "3-d435i"
-        },
-        {
-            "command": "ros2 launch walking_yolov5 yolov5.launch.py",
-            "desc": "",
-            "id": 667,
-            "link": "",
-            "name": "4-yolov5"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 668,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
-            "desc": "",
-            "id": 669,
             "link": "",
             "name": "2-usb_camera"
         },
         {
             "command": "ros2 launch walking_bringup d435i.launch.py",
             "desc": "",
-            "id": 670,
+            "id": 657,
             "link": "",
             "name": "2-d435i"
         },
         {
             "command": "ros2 launch walking_navigation bringup_v1.launch.py use_slam:=true ",
             "desc": "",
-            "id": 671,
+            "id": 658,
             "link": "",
             "name": "3-navigation"
         },
         {
-            "command": "ros2 launch walking_visual rviz.launch.py",
+            "command": "ros2 launch walking_follow follow_aruco_tf.launch.py",
             "desc": "",
-            "id": 672,
+            "id": 659,
             "link": "",
-            "name": "4-rviz"
+            "name": "4-follow_aruco_tf"
         },
         {
-            "command": "ros2 launch walking_voice respeaker.launch.py",
+            "command": "ros2 run walking_follow follower_aruco_goal.py",
             "desc": "",
-            "id": 673,
+            "id": 660,
             "link": "",
-            "name": "1-respeaker"
+            "name": "5-follower_aruco_goal"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 674,
+            "id": 661,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
-            "command": "ros2 launch walking_bringup d435i.launch.py",
+            "command": "ros2 launch walking_slam slam_toolbox.launch.py use_sim_time:=true",
             "desc": "",
-            "id": 675,
-            "link": "",
-            "name": "2-d435i"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 676,
+            "id": 662,
             "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
-            "desc": "",
-            "id": 677,
-            "link": "",
-            "name": "2-usb_camera"
-        },
-        {
-            "command": "ros2 launch walking_bringup d435i.launch.py",
-            "desc": "",
-            "id": 678,
-            "link": "",
-            "name": "2-d435i"
-        },
-        {
-            "command": "ros2 run walking_panorama panorama --ros-args  --remap /camera/image:=/camera/color/image_raw",
-            "desc": "",
-            "id": 679,
-            "link": "",
-            "name": "3-panorama"
-        },
-        {
-            "command": "ros2 run rqt_image_view rqt_image_view",
-            "desc": "",
-            "id": 680,
-            "link": "",
-            "name": "4-rqt_image_view"
-        },
-        {
-            "command": "ros2 service call /take_pano walking_msgs/TakePanorama \"{mode: 0 , pano_angle: 360.0 , snap_interval: 10.0 , rot_vel: 0.1}\"",
-            "desc": "",
-            "id": 681,
-            "link": "",
-            "name": "5-take_pano"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 682,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
-            "desc": "",
-            "id": 683,
-            "link": "",
-            "name": "2-keyboard"
-        },
-        {
-            "command": "ros2 launch walking_teleop keyboard_simple.launch.py ",
-            "desc": "",
-            "id": 684,
-            "link": "",
-            "name": "2-keyboard_simple"
-        },
-        {
-            "command": "ros2 launch walking_teleop teleop_key.launch.py ",
-            "desc": "",
-            "id": 685,
-            "link": "",
-            "name": "2-teleop_key"
-        },
-        {
-            "command": "ros2 launch walking_teleop teleop_mouse.launch.py ",
-            "desc": "",
-            "id": 686,
-            "link": "",
-            "name": "2-teleop_mouse"
-        },
-        {
-            "command": "ros2 launch walking_tools test_usbcam.launch.py",
-            "desc": "",
-            "id": 687,
-            "link": "",
-            "name": "1-usbcam"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 688,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_navigation bringup_v2.launch.py  slam_type:=rtabmap_rgbd",
-            "desc": "",
-            "id": 689,
-            "link": "",
-            "name": "2-rtabmap_scan"
-        },
-        {
-            "command": "ros2 launch walking_gazebo world.launch.py",
-            "desc": "启动仿真",
-            "id": 690,
-            "link": "点击'启动'按钮就可",
-            "name": "1-robot"
-        },
-        {
-            "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
-            "desc": "启动cartographer仿真",
-            "id": 691,
-            "link": "点击'启动'按钮就可",
-            "name": "2-cartographer"
+            "name": "2-slam_toolbox"
         },
         {
             "command": "ros2 launch walking_teleop keyboard.launch.py ",
             "desc": "启动键盘控制",
-            "id": 692,
+            "id": 663,
             "link": "点击'启动'按钮就可",
             "name": "3-keyboard"
         },
         {
             "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
             "desc": "",
-            "id": 693,
+            "id": 664,
             "link": "",
             "name": "4-save_map"
         },
         {
             "command": "eog ~/map/d2l_slam_toolbox.pgm",
             "desc": "",
-            "id": 694,
+            "id": 665,
             "link": "",
             "name": "5-view_map"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 695,
+            "id": 666,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "command": "ros2 launch walking_tools rosbag_laser.launch.py ",
             "desc": "",
-            "id": 696,
+            "id": 667,
             "link": "",
-            "name": "2-keyboard"
+            "name": "2-rosbag_laser"
         },
         {
-            "command": "ros2 launch walking_tools test_odom_keyboard.launch.py",
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "启动键盘控制",
+            "id": 668,
+            "link": "点击'启动'按钮就可",
+            "name": "3-keyboard"
+        },
+        {
+            "command": "cd ~/bag_files;ros2 bag record -a",
+            "desc": "录制全部包",
+            "id": 669,
+            "link": "点击'启动'按钮就可",
+            "name": "4-record"
+        },
+        {
+            "command": "cd ~/bag_files;\nros2 bag play  offline_mapping ",
             "desc": "",
-            "id": 697,
+            "id": 670,
             "link": "",
-            "name": "1-odom"
+            "name": "5-play"
+        },
+        {
+            "command": "ros2 topic list ",
+            "desc": "",
+            "id": 671,
+            "link": "",
+            "name": "6-list"
+        },
+        {
+            "command": "ros2 launch walking_tools test_laser.launch.py",
+            "desc": "",
+            "id": 672,
+            "link": "",
+            "name": "1-laser"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 673,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
+            "desc": "启动cartographer仿真",
+            "id": 674,
+            "link": "点击'启动'按钮就可",
+            "name": "2-cartographer"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "启动键盘控制",
+            "id": 675,
+            "link": "点击'启动'按钮就可",
+            "name": "3-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
+            "desc": "",
+            "id": 676,
+            "link": "",
+            "name": "4-save_map"
+        },
+        {
+            "command": "eog ~/map/d2l_slam_toolbox.pgm",
+            "desc": "",
+            "id": 677,
+            "link": "",
+            "name": "5-view_map"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 678,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup.launch.py map:=${HOME}/map/slam_toolbox.yaml    ",
+            "desc": "",
+            "id": 679,
+            "link": "",
+            "name": "2-navigation"
         },
         {
             "command": "ros2 launch walking_slam cartographer.launch.py use_laser:=false",
             "desc": "",
-            "id": 698,
+            "id": 680,
             "link": "",
             "name": "1-slam"
         },
         {
             "command": "cd ~/bag_files;\nros2 bag play offline_mapping",
             "desc": "",
-            "id": 699,
+            "id": 681,
             "link": "",
             "name": "2-play"
         },
         {
             "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/offline_cartographer",
             "desc": "",
-            "id": 700,
+            "id": 682,
             "link": "",
             "name": "3-save_map"
         },
         {
-            "command": "cd ~/commands/walking;./shell/del.sh",
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 683,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_slam gmapping.launch.py use_sim_time:=true",
+            "desc": "启动gmapping仿真",
+            "id": 684,
+            "link": "点击'启动'按钮就可",
+            "name": "2-gmapping"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "启动键盘控制",
+            "id": 685,
+            "link": "点击'启动'按钮就可",
+            "name": "3-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
+            "desc": "",
+            "id": 686,
+            "link": "",
+            "name": "4-save_map"
+        },
+        {
+            "command": "eog ~/map/d2l_slam_toolbox.pgm",
+            "desc": "",
+            "id": 687,
+            "link": "",
+            "name": "5-view_map"
+        },
+        {
+            "command": "ros2 launch walking_bringup robot_calib.launch.py",
+            "desc": "",
+            "id": 688,
+            "link": "",
+            "name": "1-robot_calib"
+        },
+        {
+            "command": "ros2 run walking_calib calibrate_linear.py",
+            "desc": "",
+            "id": 689,
+            "link": "",
+            "name": "2-calibrate_linear"
+        },
+        {
+            "command": "ros2 topic echo /scan",
+            "desc": "查看雷达信息",
+            "id": 690,
+            "link": "点击'启动'按钮就可",
+            "name": "3-topic"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 691,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "",
+            "id": 692,
+            "link": "",
+            "name": "2-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
+            "desc": "",
+            "id": 693,
+            "link": "",
+            "name": "3-usb_camera"
+        },
+        {
+            "command": "ros2 launch walking_bringup d435i.launch.py ",
+            "desc": "",
+            "id": 694,
+            "link": "",
+            "name": "3-d435i"
+        },
+        {
+            "command": "ros2 launch walking_yolov5 yolov5.launch.py",
+            "desc": "",
+            "id": 695,
+            "link": "",
+            "name": "4-yolov5"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 696,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
+            "desc": "",
+            "id": 697,
+            "link": "",
+            "name": "2-usb_camera"
+        },
+        {
+            "command": "ros2 launch walking_bringup d435i.launch.py",
+            "desc": "",
+            "id": 698,
+            "link": "",
+            "name": "2-d435i"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup_v1.launch.py use_slam:=true ",
+            "desc": "",
+            "id": 699,
+            "link": "",
+            "name": "3-navigation"
+        },
+        {
+            "command": "ros2 launch walking_visual rviz.launch.py",
+            "desc": "",
+            "id": 700,
+            "link": "",
+            "name": "4-rviz"
+        },
+        {
+            "command": "ros2 launch walking_voice respeaker.launch.py",
             "desc": "",
             "id": 701,
             "link": "",
-            "name": "del.sh"
+            "name": "1-respeaker"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
@@ -4915,688 +4915,884 @@
             "name": "1-robot"
         },
         {
-            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "command": "ros2 launch walking_bringup d435i.launch.py",
             "desc": "",
             "id": 703,
             "link": "",
-            "name": "2-keyboard"
-        },
-        {
-            "command": "ros2 launch walking_tools test_d2l.launch.py ",
-            "desc": "",
-            "id": 704,
-            "link": "",
-            "name": "2-test_d2l"
+            "name": "2-d435i"
         },
         {
             "command": "ros2 launch walking_gazebo world.launch.py",
             "desc": "启动仿真",
-            "id": 705,
+            "id": 704,
             "link": "点击'启动'按钮就可",
             "name": "1-robot"
         },
         {
             "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
             "desc": "",
-            "id": 706,
+            "id": 705,
             "link": "",
             "name": "2-usb_camera"
         },
         {
             "command": "ros2 launch walking_bringup d435i.launch.py",
             "desc": "",
+            "id": 706,
+            "link": "",
+            "name": "2-d435i"
+        },
+        {
+            "command": "ros2 run walking_panorama panorama --ros-args  --remap /camera/image:=/camera/color/image_raw",
+            "desc": "",
             "id": 707,
+            "link": "",
+            "name": "3-panorama"
+        },
+        {
+            "command": "ros2 run rqt_image_view rqt_image_view",
+            "desc": "",
+            "id": 708,
+            "link": "",
+            "name": "4-rqt_image_view"
+        },
+        {
+            "command": "ros2 service call /take_pano walking_msgs/TakePanorama \"{mode: 0 , pano_angle: 360.0 , snap_interval: 10.0 , rot_vel: 0.1}\"",
+            "desc": "",
+            "id": 709,
+            "link": "",
+            "name": "5-take_pano"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 710,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "",
+            "id": 711,
+            "link": "",
+            "name": "2-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard_simple.launch.py ",
+            "desc": "",
+            "id": 712,
+            "link": "",
+            "name": "2-keyboard_simple"
+        },
+        {
+            "command": "ros2 launch walking_teleop teleop_key.launch.py ",
+            "desc": "",
+            "id": 713,
+            "link": "",
+            "name": "2-teleop_key"
+        },
+        {
+            "command": "ros2 launch walking_teleop teleop_mouse.launch.py ",
+            "desc": "",
+            "id": 714,
+            "link": "",
+            "name": "2-teleop_mouse"
+        },
+        {
+            "command": "ros2 launch walking_tools test_usbcam.launch.py",
+            "desc": "",
+            "id": 715,
+            "link": "",
+            "name": "1-usbcam"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 716,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_navigation bringup_v2.launch.py  slam_type:=rtabmap_rgbd",
+            "desc": "",
+            "id": 717,
+            "link": "",
+            "name": "2-rtabmap_scan"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 718,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_slam cartographer.launch.py use_sim_time:=true",
+            "desc": "启动cartographer仿真",
+            "id": 719,
+            "link": "点击'启动'按钮就可",
+            "name": "2-cartographer"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "启动键盘控制",
+            "id": 720,
+            "link": "点击'启动'按钮就可",
+            "name": "3-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/d2l_slam_toolbox",
+            "desc": "",
+            "id": 721,
+            "link": "",
+            "name": "4-save_map"
+        },
+        {
+            "command": "eog ~/map/d2l_slam_toolbox.pgm",
+            "desc": "",
+            "id": 722,
+            "link": "",
+            "name": "5-view_map"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 723,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "",
+            "id": 724,
+            "link": "",
+            "name": "2-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_tools test_odom_keyboard.launch.py",
+            "desc": "",
+            "id": 725,
+            "link": "",
+            "name": "1-odom"
+        },
+        {
+            "command": "ros2 launch walking_slam cartographer.launch.py use_laser:=false",
+            "desc": "",
+            "id": 726,
+            "link": "",
+            "name": "1-slam"
+        },
+        {
+            "command": "cd ~/bag_files;\nros2 bag play offline_mapping",
+            "desc": "",
+            "id": 727,
+            "link": "",
+            "name": "2-play"
+        },
+        {
+            "command": "ros2 launch walking_slam save_map.launch.py  map:=${HOME}/map/offline_cartographer",
+            "desc": "",
+            "id": 728,
+            "link": "",
+            "name": "3-save_map"
+        },
+        {
+            "command": "cd ~/commands/walking;./shell/del.sh",
+            "desc": "",
+            "id": 729,
+            "link": "",
+            "name": "del.sh"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 730,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_teleop keyboard.launch.py ",
+            "desc": "",
+            "id": 731,
+            "link": "",
+            "name": "2-keyboard"
+        },
+        {
+            "command": "ros2 launch walking_tools test_d2l.launch.py ",
+            "desc": "",
+            "id": 732,
+            "link": "",
+            "name": "2-test_d2l"
+        },
+        {
+            "command": "ros2 launch walking_gazebo world.launch.py",
+            "desc": "启动仿真",
+            "id": 733,
+            "link": "点击'启动'按钮就可",
+            "name": "1-robot"
+        },
+        {
+            "command": "ros2 launch walking_visual usb_camera_node.launch.py ",
+            "desc": "",
+            "id": 734,
+            "link": "",
+            "name": "2-usb_camera"
+        },
+        {
+            "command": "ros2 launch walking_bringup d435i.launch.py",
+            "desc": "",
+            "id": 735,
             "link": "",
             "name": "2-d435i"
         },
         {
             "command": "ros2 launch walking_navigation bringup_v1.launch.py use_slam:=true ",
             "desc": "",
-            "id": 708,
+            "id": 736,
             "link": "",
             "name": "3-navigation"
         },
         {
             "command": "ros2 run walking_follow follower_aruco.py",
             "desc": "",
-            "id": 709,
+            "id": 737,
             "link": "",
             "name": "4-follower_aruco"
         },
         {
             "command": "ros2 launch walking_visual rviz_follow.launch.py",
             "desc": "",
-            "id": 710,
+            "id": 738,
             "link": "",
             "name": "5-rviz_follow"
         },
         {
             "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml",
             "desc": "启动navigation",
-            "id": 711,
+            "id": 739,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch navigation"
         },
         {
             "command": "ros2 run walking_application nav_to_pose.py",
             "desc": "启动单点导航\n",
-            "id": 712,
+            "id": 740,
             "link": "https://www.ncnynl.com/archives/202201/4991.html",
             "name": "launch nav_to_pose"
         },
         {
             "command": "ros2 launch nav2_bringup rviz_launch.py",
             "desc": "启动rviz2",
-            "id": 713,
+            "id": 741,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch rviz2"
         },
         {
             "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml",
             "desc": "启动navigation",
-            "id": 714,
+            "id": 742,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch navigation"
         },
         {
             "command": "ros2 launch turtlebot4_ignition_bringup ignition.launch.py nav:=true slam:=off localization:=true world:=classroom map:=classroom.yaml",
             "desc": "启动导航指定不同地图",
-            "id": 715,
+            "id": 743,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch navigation2"
         },
         {
             "command": "ros2 launch nav2_bringup rviz_launch.py",
             "desc": "启动rviz2",
-            "id": 716,
+            "id": 744,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch rviz2"
         },
         {
             "command": "ros2 launch turtlebot4_navigation slam_sync.launch.py",
             "desc": "同步 SLAM",
-            "id": 717,
+            "id": 745,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch slam_sync"
         },
         {
             "command": "ros2 launch turtlebot4_navigation slam_async.launch.py",
             "desc": "异步 SLAM",
-            "id": 718,
+            "id": 746,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch slam_async"
         },
         {
             "command": "ros2 launch turtlebot4_navigation slam_sync.launch.py",
             "desc": "同步 SLAM",
-            "id": 719,
+            "id": 747,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch slam_sync"
         },
         {
             "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard",
             "desc": " 启动键盘",
-            "id": 720,
+            "id": 748,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch teleop_twist_keyboard"
         },
         {
             "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml",
             "desc": "启动navigation",
-            "id": 721,
+            "id": 749,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch navigation"
         },
         {
             "command": "ros2 run turtlebot4_python_tutorials nav_through_poses",
             "desc": "启动多点导航",
-            "id": 722,
+            "id": 750,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch nav_through_pose"
         },
         {
             "command": "ros2 launch nav2_bringup rviz_launch.py",
             "desc": "启动rviz2",
-            "id": 723,
+            "id": 751,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch rviz2"
         },
         {
             "command": "cd ~/commands/ros2_tb4_ignition;./shell/download_ignition_model_SubT.sh",
             "desc": "",
-            "id": 724,
+            "id": 752,
             "link": "",
             "name": "download_ignition_model_SubT.sh"
         },
         {
             "command": "ros2 launch turtlebot4_navigation slam_sync.launch.py",
             "desc": "同步 SLAM",
-            "id": 725,
+            "id": 753,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch slam_sync"
         },
         {
             "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard",
             "desc": " 启动键盘",
-            "id": 726,
+            "id": 754,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch teleop_twist_keyboard"
         },
         {
             "command": "ros2 launch turtlebot4_ignition_bringup ignition.launch.py",
             "desc": "启动turtlebot4 ignition ",
-            "id": 727,
+            "id": 755,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch turtlebot4 ignition"
         },
         {
             "command": "ros2 launch turtlebot4_ignition_bringup ignition.launch.py model:=lite",
             "desc": "启动turtlebot4 ignition lite",
-            "id": 728,
+            "id": 756,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch turtlebot4 lite ignition"
         },
         {
             "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard",
             "desc": " 启动键盘",
-            "id": 729,
+            "id": 757,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch teleop_twist_keyboard"
         },
         {
             "command": "ros2 launch turtlebot4_viz view_robot.launch.py",
             "desc": "启动 Rviz2",
-            "id": 730,
+            "id": 758,
             "link": "",
             "name": "launch turtlebot4 rviz"
         },
         {
             "command": "cd ~/commands/ros2; ./shell/close_template.sh",
             "desc": "关闭所有ROS1程序",
-            "id": 731,
+            "id": 759,
             "link": "@ncnynl | 点击'启动'按钮,一键关闭",
             "name": "close all launch"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh aliyun",
             "desc": "更新ros2的软件源,使用阿里云的源",
-            "id": 732,
+            "id": 760,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_aliyun"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh   tsinghua",
             "desc": "更新ros2的软件源,使用清华大学的源",
-            "id": 733,
+            "id": 761,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_tsinghua"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh   restore",
             "desc": "更新ros2的软件源,使用官方的源",
-            "id": 734,
+            "id": 762,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_packages"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh  bfsu",
             "desc": "更新ros2的软件源,使用北京外国语大学的源",
-            "id": 735,
+            "id": 763,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_bfsu"
         },
         {
             "command": "sudo apt install ros-galactic-cartographer",
             "desc": "安装谷歌的建图软件cartographer",
-            "id": 736,
+            "id": 764,
             "link": "@ncnynl | 点击'启动'按钮,一键安装",
             "name": "install_ros2_galacti_cartographer"
         },
         {
             "command": "ros2 run turtlesim turtlesim_node",
             "desc": "启动turtlesim_node",
-            "id": 737,
+            "id": 765,
             "link": "@ncnynl | 点击'启动'按钮,一键启动",
             "name": "launch turtlesim_node"
         },
         {
             "command": "ros2 run turtlesim turtle_teleop_key",
             "desc": "启动turtle_teleop_key",
-            "id": 738,
+            "id": 766,
             "link": "@ncnynl | 点击'启动'按钮,一键启动",
             "name": "launch turtle_teleop_key"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/install_ros2_galactic.sh ",
             "desc": "安装galactic,采用国内源,安装更顺畅",
-            "id": 739,
+            "id": 767,
             "link": "点击'启动'按钮,一键安装",
             "name": "install_ros2_galactic"
         },
         {
             "command": "rm -rf ~/.ros/log/* ; echo \"Clean ros2 log finished \"",
             "desc": "清除ROS2的日志文件",
-            "id": 740,
+            "id": 768,
             "link": "点击'启动'按钮,一键清除",
             "name": "clear ros2 log"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2; ./shell/install_ros2_humble.sh ",
             "desc": "安装humble,采用国内源,安装更顺畅",
-            "id": 741,
+            "id": 769,
             "link": "点击'启动'按钮,一键安装",
             "name": "install_ros2_humble"
         },
         {
             "command": "echo \"source /opt/ros/galactic/setup.bash\" >> ~/.bashrc",
             "desc": "增加ros2到bashrc文件",
-            "id": 742,
+            "id": 770,
             "link": "@ncnynl | 点击'启动'按钮,一键增加",
             "name": "config_ros2_galactic_to_bashrc"
         },
         {
             "command": "cd ~/commands/common;./shell/close_template.sh",
             "desc": "",
-            "id": 743,
+            "id": 771,
             "link": "",
             "name": "close_template.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/install_ros2_foxy.sh",
             "desc": "",
-            "id": 744,
+            "id": 772,
             "link": "",
             "name": "install_ros2_foxy.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/install_ros2_galactic.sh",
             "desc": "",
-            "id": 745,
+            "id": 773,
             "link": "",
             "name": "install_ros2_galactic.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/install_ros2_humble.sh",
             "desc": "",
-            "id": 746,
+            "id": 774,
             "link": "",
             "name": "install_ros2_humble.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/install_ros2_turtorials_source.sh",
             "desc": "",
-            "id": 747,
+            "id": 775,
             "link": "",
             "name": "install_ros2_turtorials_source.sh"
         },
         {
             "command": "cd ~/commands/ros1;./shell/install_template.sh",
             "desc": "",
-            "id": 748,
+            "id": 776,
             "link": "",
             "name": "install_template.sh"
         },
         {
             "command": "cd ~/commands/ros1;./shell/launch_turtlesim_node.sh",
             "desc": "",
-            "id": 749,
+            "id": 777,
             "link": "",
             "name": "launch_turtlesim_node.sh"
         },
         {
             "command": "cd ~/commands/ros1;./shell/launch_turtlesim_teleop_key.sh",
             "desc": "",
-            "id": 750,
+            "id": 778,
             "link": "",
             "name": "launch_turtlesim_teleop_key.sh"
         },
         {
             "command": "cd ~/commands/ros2;./shell/update_ros2_source.sh",
             "desc": "",
-            "id": 751,
+            "id": 779,
             "link": "",
             "name": "update_ros2_source.sh"
         },
         {
             "command": "ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=off localization:=true map:=office.yaml",
             "desc": "启动地图定位的导航模式",
-            "id": 752,
+            "id": 780,
             "link": "https://www.ncnynl.com/archives/202206/5287.html",
             "name": "launch navigation with map"
         },
         {
             "command": "ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=sync",
             "desc": "启动异步建图的导航模式",
-            "id": 753,
+            "id": 781,
             "link": "https://www.ncnynl.com/archives/202206/5287.html",
             "name": "launch navigation with sync slam"
         },
         {
             "command": "ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=async",
             "desc": "启动异步建图的导航模式",
-            "id": 754,
+            "id": 782,
             "link": "https://www.ncnynl.com/archives/202206/5287.html",
             "name": "launch navigation with async slam"
         },
         {
             "command": "ros2 launch turtlebot4_viz view_robot.launch.py",
             "desc": "启动 Rviz ",
-            "id": 755,
+            "id": 783,
             "link": "https://www.ncnynl.com/archives/202206/5287.html",
             "name": "launch view_robot"
         },
         {
             "command": "ros2 launch turtlebot4_navigation slam_sync.launch.py",
             "desc": "同步 SLAM",
-            "id": 756,
+            "id": 784,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch slam_sync"
         },
         {
             "command": "ros2 launch turtlebot4_navigation slam_async.launch.py",
             "desc": "异步 SLAM",
-            "id": 757,
+            "id": 785,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch slam_async"
         },
         {
             "command": "ros2 launch nav2_bringup rviz_launch.py",
             "desc": "启动rviz2",
-            "id": 758,
+            "id": 786,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch rviz2"
         },
         {
             "command": "ros2 run nav2_map_server map_saver_cli -f office",
             "desc": "保存地图",
-            "id": 759,
+            "id": 787,
             "link": "https://www.ncnynl.com/archives/202206/5286.html",
             "name": "save map"
         },
         {
             "command": "cd ~/commands/ros2_tb4; ./shell/install_tb4_galactic_apt.sh",
             "desc": "安装turtlebot4仿真环境",
-            "id": 760,
+            "id": 788,
             "link": "点击'启动'按钮,一键安装",
             "name": "install_tb4_ignition_shell"
         },
         {
             "command": "ros2 run tf2_tools view_frames ",
             "desc": "查看TF",
-            "id": 761,
+            "id": 789,
             "link": "",
             "name": "launch TF"
         },
         {
             "command": "evince frames.pdf",
             "desc": "查看TF",
-            "id": 762,
+            "id": 790,
             "link": "",
             "name": "launch evince"
         },
         {
             "command": "ros2 run teleop_twist_keyboard teleop_twist_keyboard",
             "desc": "运行键盘",
-            "id": 763,
+            "id": 791,
             "link": "https://www.ncnynl.com/archives/202206/5283.html",
             "name": "launch keyboard"
         },
         {
             "command": "ros2 launch turtlebot4_bringup joy_teleop.launch.py",
             "desc": "运行控制器",
-            "id": 764,
+            "id": 792,
             "link": "https://www.ncnynl.com/archives/202206/5283.html",
             "name": "launch joy_teleop"
         },
         {
             "command": "echo \"export CYCLONEDDS_URI=\\\"<CycloneDDS><Domain><General><DontRoute>true</></></></>\\\"\" >> ~/.bashrc ; echo \"Turtlebot4 CycloneDDS  Configurate finished!\"",
             "desc": "PC 上配置 CycloneDDS",
-            "id": 765,
+            "id": 793,
             "link": "https://www.ncnynl.com/archives/202206/5268.html",
             "name": "config CYCLONEDDS_URI"
         },
         {
             "command": "cd ~/commands/ros2_tb4; ./shell/install_tb4_galactic_source.sh",
             "desc": "源码安装turtlebot4仿真环境",
-            "id": 766,
+            "id": 794,
             "link": "https://www.ncnynl.com/archives/202210/5583.html",
             "name": "install_tb4_simulator_source_shell"
         },
         {
             "command": "cd ~/commands/ros2_tb4;./shell/install_tb4_galactic_apt.sh",
             "desc": "",
-            "id": 767,
+            "id": 795,
             "link": "",
             "name": "install_tb4_galactic_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_tb4;./shell/install_tb4_galactic_source.sh",
             "desc": "",
-            "id": 768,
+            "id": 796,
             "link": "",
             "name": "install_tb4_galactic_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_tb4;./shell/install_tb4_humble_apt.sh",
             "desc": "",
-            "id": 769,
+            "id": 797,
             "link": "",
             "name": "install_tb4_humble_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_tb4;./shell/install_tb4_humble_source.sh",
             "desc": "",
-            "id": 770,
+            "id": 798,
             "link": "",
             "name": "install_tb4_humble_source.sh"
         },
         {
             "command": "cd ~/.gazebo/",
             "desc": "进入~/.gazebo目录",
-            "id": 771,
+            "id": 799,
             "link": "",
             "name": "cd gazebo"
         },
         {
             "command": "git clone https://github.com/osrf/gazebo_models models",
             "desc": " 下载gazebo模型",
-            "id": 772,
+            "id": 800,
             "link": "",
             "name": "download gazebo model"
         },
         {
             "command": "rm -rf models/.git",
             "desc": "删除.git目录",
-            "id": 773,
+            "id": 801,
             "link": "",
             "name": "rm model git"
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
             "desc": "启动gezebo",
-            "id": 774,
+            "id": 802,
             "link": "",
             "name": "launch turtlebot3 world"
         },
         {
             "command": "ros2 run turtlebot3_gazebo turtlebot3_drive",
             "desc": "执行自走避障程序",
-            "id": 775,
+            "id": 803,
             "link": "",
             "name": "launch turtlebot3 drive "
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
             "desc": "启动gezebo",
-            "id": 776,
+            "id": 804,
             "link": "",
             "name": "launch turtlebot3 world"
         },
         {
             "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=/home/ubuntu/map.yaml",
             "desc": "导航",
-            "id": 777,
+            "id": 805,
             "link": "",
             "name": "launch turtlebot3 navigation"
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
             "desc": "启动gezebo",
-            "id": 778,
+            "id": 806,
             "link": "",
             "name": "launch turtlebot3 world"
         },
         {
             "command": "ros2 run turtlebot3_teleop teleop_keyboard",
             "desc": "启动键盘控制",
-            "id": 779,
+            "id": 807,
             "link": "",
             "name": "launch turtlebot3 teleop"
         },
         {
             "command": "ros2 launch turtlebot3_fake_node turtlebot3_fake_node.launch.py",
             "desc": "",
-            "id": 780,
+            "id": 808,
             "link": "",
             "name": "launch turtlebot3_fake_node"
         },
         {
             "command": "ros2 run turtlebot3_teleop teleop_keyboard",
             "desc": "启动键盘控制",
-            "id": 781,
+            "id": 809,
             "link": "点击'启动'按钮,一键启动",
             "name": "launch turtlebot3_teleop"
         },
         {
             "command": "ros2 launch turtlebot3_gazebo empty_world.launch.py",
             "desc": "启动gazebo空地图",
-            "id": 782,
+            "id": 810,
             "link": "",
             "name": "launch turtlebot3 empty "
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
             "desc": "启动gezebo",
-            "id": 783,
+            "id": 811,
             "link": "",
             "name": "launch turtlebot3 world"
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py",
             "desc": "启动gazebo house地图",
-            "id": 784,
+            "id": 812,
             "link": "",
             "name": "launch turtlebot3 house"
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py",
             "desc": "启动turtlebot3_house仿真",
-            "id": 785,
+            "id": 813,
             "link": "https://www.ncnynl.com/archives/202210/5578.html",
             "name": "turtlebot3_house"
         },
         {
             "command": "ros2 launch turtlebot3_bringup rviz2.launch.py",
             "desc": "启动rviz2",
-            "id": 786,
+            "id": 814,
             "link": "",
             "name": "rviz2"
         },
         {
             "command": "ros2 run turtlebot3_teleop teleop_keyboard",
             "desc": "启动teleop_keyboard",
-            "id": 787,
+            "id": 815,
             "link": "",
             "name": "teleop_keyboard"
         },
         {
             "command": "cd ~/commands/ros1_tb3_gazebo;./shell/download_gazebo_model_shell.sh",
             "desc": "",
-            "id": 788,
+            "id": 816,
             "link": "",
             "name": "download_gazebo_model_shell.sh"
         },
         {
             "command": "ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py",
             "desc": "启动gezebo",
-            "id": 789,
+            "id": 817,
             "link": "",
             "name": "launch turtlebot3 world"
         },
         {
             "command": "ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True",
             "desc": "运行建图",
-            "id": 790,
+            "id": 818,
             "link": "",
             "name": "launch turtlebot3 cartographer"
         },
         {
             "command": " ros2 run turtlebot3_teleop teleop_keyboard",
             "desc": "启动键盘",
-            "id": 791,
+            "id": 819,
             "link": "",
             "name": "launch turtlebot3 teleop "
         },
         {
             "command": "ros2 run nav2_map_server map_saver_cli -f ~/map",
             "desc": "保存地图",
-            "id": 792,
+            "id": 820,
             "link": "",
             "name": "map_saver_cli"
         },
         {
             "command": "cd /home/ubuntu/commands/ros2_tb3_gazebo; ./shell/download_gazebo_model_shell.sh",
             "desc": "下载gazebo模型",
-            "id": 793,
+            "id": 821,
             "link": "点击'启动'按钮,一键下载",
             "name": "download_gazebo_model_shell"
         },
         {
             "command": "cd ~/commands/ros2_webots;./shell/install_webots_galactic_apt.sh",
             "desc": "",
-            "id": 794,
+            "id": 822,
             "link": "",
             "name": "install_webots_galactic_apt.sh"
         },
         {
             "command": "cd ~/commands/ros2_webots;./shell/install_webots_humble_apt.sh",
             "desc": "",
-            "id": 795,
+            "id": 823,
             "link": "",
             "name": "install_webots_humble_apt.sh"
         },
         {
             "command": "cd ~/commands/ros1_algorithm;./shell/install_cartographer_apt.sh",
             "desc": "",
-            "id": 796,
+            "id": 824,
             "link": "",
             "name": "install_cartographer_apt.sh"
         },
         {
             "command": "cd ~/commands/ros1_algorithm;./shell/install_cartographer_source.sh",
             "desc": "",
-            "id": 797,
+            "id": 825,
             "link": "",
             "name": "install_cartographer_source.sh"
         },
         {
             "command": "cd ~/commands/ros2_algorithm;./shell/install_multirobot_map_merge.sh",
             "desc": "",
-            "id": 798,
+            "id": 826,
             "link": "",
             "name": "install_multirobot_map_merge.sh"
         },
         {
             "command": "cd ~/commands/ros2_algorithm;./shell/install_navigation2_source.sh",
             "desc": "",
-            "id": 799,
+            "id": 827,
             "link": "",
             "name": "install_navigation2_source.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2023-01-02"
+            "datetime": "2023-01-04"
         }
     ]
 }
