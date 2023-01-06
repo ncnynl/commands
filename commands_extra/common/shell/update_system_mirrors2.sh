@@ -99,11 +99,11 @@ setDebian(){
 	echo "deb http://cdn-fastly.deb.debian.org/debian/ jessie main non-free contrib" >>/etc/apt/sources.list
 	echo "deb http://cdn-fastly.deb.debian.org/debian/ jessie-updates main non-free contrib" >>/etc/apt/sources.list
 	echo "deb http://cdn-fastly.deb.debian.org/debian/ jessie-backports main non-free contrib" >>/etc/apt/sources.list
-	echo "deb-src http://cdn-fastly.deb.debian.org/debian/ jessie main non-free contrib" >>/etc/apt/sources.list
-	echo "deb-src http://cdn-fastly.deb.debian.org/debian/ jessie-updates main non-free contrib" >>/etc/apt/sources.list
-	echo "deb-src http://cdn-fastly.deb.debian.org/debian/ jessie-backports main non-free contrib" >>/etc/apt/sources.list
+	# echo "deb-src http://cdn-fastly.deb.debian.org/debian/ jessie main non-free contrib" >>/etc/apt/sources.list
+	# echo "deb-src http://cdn-fastly.deb.debian.org/debian/ jessie-updates main non-free contrib" >>/etc/apt/sources.list
+	# echo "deb-src http://cdn-fastly.deb.debian.org/debian/ jessie-backports main non-free contrib" >>/etc/apt/sources.list
 	echo "deb http://cdn-fastly.deb.debian.org/debian-security/ jessie/updates main non-free contrib" >>/etc/apt/sources.list
-	echo "deb-src http://cdn-fastly.deb.debian.org/debian-security/ jessie/updates main non-free contrib" >>/etc/apt/sources.list
+	# echo "deb-src http://cdn-fastly.deb.debian.org/debian-security/ jessie/updates main non-free contrib" >>/etc/apt/sources.list
 
 	[ "$debianVersion" == '7' ] && sed -i 's/jessie/wheezy/'g /etc/apt/sources.list
 	[ "$debianVersion" == '8' ] && echo -n ""
@@ -123,10 +123,10 @@ setUbuntu(){
 	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse" >>/etc/apt/sources.list
 	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >>/etc/apt/sources.list
 	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >>/etc/apt/sources.list
+	# echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse" >>/etc/apt/sources.list
+	# echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse" >>/etc/apt/sources.list
+	# echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >>/etc/apt/sources.list
+	# echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >>/etc/apt/sources.list
 
 	[ "$ubuntuVersion" == '14.04' ] && sed -i 's/xenial/trusty/'g /etc/apt/sources.list
 	[ "$ubuntuVersion" == '16.06' ] && echo -n ""
