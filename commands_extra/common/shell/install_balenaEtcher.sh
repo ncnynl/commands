@@ -16,6 +16,21 @@
 #https://github.com/balena-io/etcher/releases/tag/v1.10.1
 #https://github.com/balena-io/etcher/releases
 
+
+#deps 
+#for >= ubuntu 22.04
+if [ $version -ge "22.04" ];then 
+    sudo add-apt-repository universe
+    sudo apt install libfuse2
+else  #for < ubuntu 22.04
+    sudo apt install fuse libfuse2 
+    sudo modprobe fuse 
+    sudo groupadd fuse 
+
+    user="$(whoai)"
+    sudo usermod -a -G fuse $user 
+fi
+
 #version
 version=1.8.17
 filename=balenaEtcher-$version-x64.AppImage

@@ -20,6 +20,12 @@ COMPLETE='[\033[32mDone\033[0m]'
 WARN='[\033[33mWARN\033[0m]'
 ERROR='[\033[31mERROR\033[0m]'
 WORKING='[\033[34m*\033[0m]'
+
+SUDO_LIST=(
+update_system_mirrors.sh
+update_system_mirrors2.sh
+)
+
 #######################################
 # commands_list
 # Globals: 
@@ -85,7 +91,12 @@ function commands_install(){
                             # commands
                             #只能在终端执行
                             cd ~/commands/$folder
-                            ./$shell $2
+                            filename=${shell#*/}
+                            if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
+                                sudo ./$shell $2
+                            else 
+                                ./$shell $2
+                            fi
                             ;;
                         [Nn] | [Nn][Oo])
                             commands
@@ -136,7 +147,12 @@ function commands_search_install(){
                             # commands
                             #只能在终端执行
                             cd ~/commands/$folder
-                            ./$shell $2
+                            filename=${shell#*/}
+                            if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
+                                sudo ./$shell $2
+                            else 
+                                ./$shell $2
+                            fi
                             ;;
                         [Nn] | [Nn][Oo])
                             commands
