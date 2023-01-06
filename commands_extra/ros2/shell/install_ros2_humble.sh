@@ -14,6 +14,10 @@ ros2_distro=humble
 
 echo "Start to install ROS2 $ros2_distro"
 
+#apt source
+pwd=$(pwd)
+sudo sh -c "$pwd/../common/shell/update_system_mirrors2.sh aliyun"
+
 #update and upgrade first 
 sudo apt update 
 sudo apt upgrade 
@@ -24,11 +28,9 @@ sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-#apt source
-pwd=$(pwd)
-sudo sh -c "$pwd/../common/shell/update_system_mirrors2.sh aliyun"
+#key
 sudo apt update && sudo apt install -y curl gnupg lsb-release
-
+# sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 #ros2 source
 sudo curl -sSL https://mirrors.tuna.tsinghua.edu.cn/rosdistro/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.aliyun.com/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
