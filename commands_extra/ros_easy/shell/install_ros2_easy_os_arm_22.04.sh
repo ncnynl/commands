@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_easy_20.04.sh                              
+# Function : install_ros2_easy_22.04.sh                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            
@@ -13,16 +13,13 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 
-echo "ROS-EASY-OS-AMD 20.04 Cubic ISO automation install script"
+echo "ROS-EASY-OS-ARM 22.04 for RPI4 automation install script"
 echo "Not Yet Tested"
-exit 0 
+# exit 0 
 
 pwd=$(pwd)      
-echo "install galactic"
-sudo sh -c "$pwd/../ros2/shell/install_ros2_galactic.sh"
-
-echo "install noetic"
-sudo sh -c "$pwd/../ros1/shell/install_ros1_noetic.sh"
+echo "install humble"
+sudo sh -c "$pwd/../ros2/shell/install_ros2_humble.sh"
 
 echo "install tools"
 sudo sh -c "$pwd/../common/shell/install_base_tools.sh"
@@ -43,8 +40,7 @@ echo "remove zsys"
 sudo sh -c "$pwd/../common/shell/remove_zsys.sh"
 
 echo "install turtlebot3"
-sudo sh -c "$pwd/../ros2_tb3/shell/install_tb3_galactic_apt.sh"
+sudo sh -c "$pwd/../ros2_tb3/shell/install_tb3_humble_apt.sh"
 
 echo "install ignition"
-sudo sh -c "$pwd/../ros2_ignition/shell/install_ignition_galactic_apt.sh"
-
+sudo sh -c "$pwd/../ros2_ignition/shell/install_ignition_humble_apt.sh"

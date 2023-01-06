@@ -13,7 +13,7 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 
-echo "ROS-EASY-OS22.04 Cubic ISO automation install script"
+echo "ROS-EASY-OS-AMD 22.04 Cubic ISO automation install script"
 echo "Not Yet Tested"
 # exit 0 
 

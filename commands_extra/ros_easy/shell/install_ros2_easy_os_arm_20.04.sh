@@ -13,13 +13,16 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 
-echo "ROS-EASY-OS-AMD 20.04 Cubic ISO automation install script"
+echo "ROS-EASY-OS-ARM 20.04 For Navida NX automation install script"
 echo "Not Yet Tested"
 exit 0 
 
 pwd=$(pwd)      
-echo "install galactic"
-sudo sh -c "$pwd/../ros2/shell/install_ros2_galactic.sh"
+# echo "install galactic"
+# sudo sh -c "$pwd/../ros2/shell/install_ros2_galactic.sh"
+
+echo "install foxy"
+sudo sh -c "$pwd/../ros2/shell/install_ros2_foxy.sh"
 
 echo "install noetic"
 sudo sh -c "$pwd/../ros1/shell/install_ros1_noetic.sh"
@@ -43,8 +46,4 @@ echo "remove zsys"
 sudo sh -c "$pwd/../common/shell/remove_zsys.sh"
 
 echo "install turtlebot3"
-sudo sh -c "$pwd/../ros2_tb3/shell/install_tb3_galactic_apt.sh"
-
-echo "install ignition"
-sudo sh -c "$pwd/../ros2_ignition/shell/install_ignition_galactic_apt.sh"
-
+sudo sh -c "$pwd/../ros2_tb3/shell/install_tb3_foxy_apt.sh"
