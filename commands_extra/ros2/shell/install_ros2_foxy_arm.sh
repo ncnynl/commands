@@ -1,22 +1,18 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Humble                                #
+# Function :Install ROS2 Galactic                              #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
-# Date     :2022-07-08                                         #
+# Date     :2022-06-23                                         #
 # Author   :ncnynl                                             #
 # Contact  :1043931@qq.com                                     #
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
-#test for RPI4 ubuntu mate 22.04
-ros2_distro=humble
+#test for ubuntu 20.04 Xaver NX jetpack 5.0.2
+ros2_distro=foxy
 
 echo "Start to install ROS2 $ros2_distro"
-
-#update and upgrade first 
-# sudo apt update 
-# sudo apt upgrade 
 
 # Install ROS 2
 sudo apt update && sudo apt install locales
@@ -25,23 +21,23 @@ sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #apt source
+
 pwd=$(pwd)
 # sudo sh -c "$pwd/../common/shell/update_system_mirrors2.sh aliyun"
 sudo apt update && sudo apt install -y curl gnupg lsb-release
 
-# sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 #ros2 source
 sudo curl -sSL https://mirrors.tuna.tsinghua.edu.cn/rosdistro/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.aliyun.com/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
 
 #install ros2
 sudo apt update
-sudo apt install -y ros-$ros2_distro-desktop-full
-sudo apt install -y python3-argcomplete python3-pip 
+sudo apt install -y ros-$ros2_distro-desktop
+sudo apt install -y python3-pip
+pip3 install -U argcomplete
 
 # Install ROS 2 RQT
 sudo apt install -y ros-$ros2_distro-rqt
-sudo apt install -y ros-$ros2_distro-rqt-tf-tree
 
 # Install turtlesim for verification
 sudo apt install -y ros-$ros2_distro-turtlesim
@@ -66,7 +62,7 @@ ros-$ros2_distro-tf-transformations
 sudo apt install -y \
 libroscpp-serialization0d \
 ros-$ros2_distro-nmea-msgs \
-ros-$ros2_distro-rosbag2  \
+ros-$ros2_distro-rosbag2-bag-v2-plugins  \
 ros-$ros2_distro-rosbag2-storage \
 ros-$ros2_distro-rosbag2-storage-default-plugins \
 ros-$ros2_distro-ros2bag \
