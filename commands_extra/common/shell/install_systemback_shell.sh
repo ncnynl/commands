@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_systemback_shell.sh                              
+# Function : install systemback shell  
+# Desc     : 用于安装系统备份软件systemback的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-10-29 17:17:58                            

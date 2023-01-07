@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install arduino.sh                              
+# Function : install boot repair
+# Desc     : 用于安装修复软件boot-repair的脚本                               
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-31                            

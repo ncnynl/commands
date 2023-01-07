@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install mosquitto                              
+# Function : install mosquitto 
+# Desc     : 用于安装MQTT服务器mosquitto的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-28 19:14:02                            

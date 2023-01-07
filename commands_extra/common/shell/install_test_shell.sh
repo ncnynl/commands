@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_test_shell                        
+# Function : install test shell  
+# Desc     : 利用模板生成的测试脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-08                          

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install arduino.sh                              
+# Function : install arduino.sh   
+# Desc     : 用于安装arduino IDE的脚本                                
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-19                            

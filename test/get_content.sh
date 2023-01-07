@@ -1,14 +1,19 @@
 
 
 function while_read_desc(){
-    FILENAME="install.sh"
     while read LINE
     do
         if [[ "${LINE[@]}" =~ "Desc" ]];then
             echo $LINE
-            echo ${LINE#*:}
-            echo $LINE | sed -e 's/.*Desc\(.*\)#\1/g' 
+            new=${LINE#*:}
+            echo $new
+            desc=${new%*#}
+            echo $desc
         fi
-    done < $FILENAME
+    done < $1
 }
-while_read_desc
+
+file="~/tools/commands/test/install.sh"
+echo ${file##*/}
+folder=${path%/*}
+# while_read_desc $file

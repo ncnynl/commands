@@ -24,8 +24,8 @@ case $version in
         ros2_distro=humble
         ;;
     "20.04")
-        ros2_distro=galactic
-        # ros2_distro=foxy
+        # ros2_distro=galactic
+        ros2_distro=foxy
         ;;
     *);;
 esac

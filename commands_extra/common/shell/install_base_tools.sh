@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install vscode.sh                              
+# Function : install base tools 
+# Desc     : 用于安装基础便利软件的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

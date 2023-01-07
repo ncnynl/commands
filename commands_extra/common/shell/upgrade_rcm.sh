@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : upgrade_rcm.sh                              
+# Function : upgrade_rcm.sh   
+# Desc     : 用于升级RCM的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                       

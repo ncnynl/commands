@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_robots_ros_org.sh                              
+# Function : install wireguard client
+# Desc     : 用于安装异域局域网软件wireguard客户端的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                            

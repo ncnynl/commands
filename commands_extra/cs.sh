@@ -27,6 +27,30 @@ update_system_mirrors2.sh
 )
 
 #######################################
+# while_read_desc
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function while_read_desc(){
+    while read LINE
+    do
+        if [[ "${LINE[@]}" =~ "Desc" ]];then
+            # echo $LINE
+            new=${LINE#*:}
+            # echo $new
+            desc=${new%*#}
+            # echo $desc
+        fi
+    done < $1
+}
+
+#######################################
 # commands_list
 # Globals: 
 #   None
@@ -46,8 +70,12 @@ function commands_list(){
             for file in $(ls $dir/shell/*)
             do 
                 if [ -f $file ]; then
+                    file_full_path="$HOME/commands/$file"
+                    desc=""
+                    while_read_desc $file_full_path
                     let i++
                     echo "  ID:$i - ${file##*/}"
+                    echo "  ------------------------------------------${desc}"
                 fi
             done 
         fi 
@@ -76,9 +104,13 @@ function commands_install(){
                 if [ -f $file ]; then
                     let i++
 
-                    if [ $i == $1 ] ; then 
+                    if [ $i == $1 ] ; then
+                        file_full_path="$HOME/commands/$file"
+                        desc=""
+                        while_read_desc $file_full_path
                         echo "$dir:"
-                        echo "  ID:$i - ${file##*/}"
+                        echo "  ID:$i - ${file##*/}" 
+                        echo "  ------------------------------------------${desc}"
                         shell=${file#*/}
                         path=$(dirname $file)
                         folder=${path%/*}
@@ -193,10 +225,14 @@ function commands_search(){
                     # echo $file 
                     # echo $1
                     if [[ $result != "" ]] ; then
+                        file_full_path="$HOME/commands/$file"
+                        desc=""
+                        while_read_desc $file_full_path
                         let j++
                         jid="$i"
                         echo "$dir:"
                         echo "  ID:$i - ${file##*/}"
+                        echo "  ------------------------------------------${desc}"
                     fi
                 fi
             done 
@@ -237,8 +273,12 @@ function commands_edit(){
                         let i++
 
                         if [ $i == $1 ] ; then 
+                            file_full_path="$HOME/commands/$file"
+                            desc=""
+                            while_read_desc $file_full_path
                             echo "$dir:"
                             echo "  ID:$i - ${file##*/}"
+                            echo "  ------------------------------------------${desc}"
                             shell=${file#*/}
                             path=$(dirname $file)
                             folder=${path%/*}
@@ -297,8 +337,12 @@ function commands_check(){
                         let i++
 
                         if [ $i == $1 ] ; then 
+                            file_full_path="$HOME/commands/$file"
+                            desc=""
+                            while_read_desc $file_full_path                        
                             echo "$dir:"
                             echo "  ID:$i - ${file##*/}"
+                            echo "  ------------------------------------------${desc}"
                             shell=${file#*/}
                             path=$(dirname $file)
                             folder=${path%/*}

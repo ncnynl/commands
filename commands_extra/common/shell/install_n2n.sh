@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_n2n                        
+# Function : install n2n  
+# Desc     : 用于安装搭建异域局域网软件n2n的脚本                        
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-26                          

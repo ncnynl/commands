@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs.sh                              
+# Function : install nodejs 18.2.1 version 
+# Desc     : 用于安装nodejs18.2.1版本，yarn和管理器NVM软件的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

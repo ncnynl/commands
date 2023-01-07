@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_robots_ros_org.sh                              
+# Function : install robots ros org  
+# Desc     : 用于搭建robots.ros.org网站的脚本                                 
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                            

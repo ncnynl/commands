@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_vpn_class.sh                              
+# Function : install vpn class 
+# Desc     : 用于安装VPN软件class的脚本                               
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-14 17:17:58                            

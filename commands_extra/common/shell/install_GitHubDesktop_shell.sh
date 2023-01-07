@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_GitHubDesktop_shell.sh                              
+# Function : install GitHubDesktop shell   
+# Desc     : 用于安装github仓库管理软件GitHubDesktop的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 14:14:16                            

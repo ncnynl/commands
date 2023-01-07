@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs.sh                              
+# Function : install gitlfs       
+# Desc     : 用于安装github大文件管理gitlfs的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

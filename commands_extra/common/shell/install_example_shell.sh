@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_example_shell.sh                         
+# Function : install example shell       
+# Desc     : 用于生成脚本的模板                    
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                          

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_cubic.sh                              
+# Function : install cubic
+# Desc     : 用于安装自定义镜像软件Cubic的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

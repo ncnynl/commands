@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_robots_ros_org.sh                              
+# Function : install ros2 documentation 
+# Desc     : 用于搭建ROS2文档网站的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                            

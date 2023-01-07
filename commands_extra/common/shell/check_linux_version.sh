@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : Check linux Version                            
+# Function : Check linux Version  
+# Desc     : 用于检查系统，版本以及架构的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            

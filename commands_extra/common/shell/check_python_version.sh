@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : Check Python Version                            
+# Function : Check Python Version          
+# Desc     : 用于检查系统Python版本的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_robots_ros_org.sh                              
+# Function : install wireguard server firewall
+# Desc     : 用于配置异域局域网软件wireguard服务端防火墙的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                            

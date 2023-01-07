@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_pyinstaller_shell.sh                              
+# Function : install_pyinstaller_shell.sh  
+# Desc     : 用于安装python打包软件pyinstaller的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 16:17:10                            

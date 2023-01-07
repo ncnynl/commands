@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : update_python_source_shell.sh                              
+# Function : update python source shell  
+# Desc     : 用于更新Python源的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            

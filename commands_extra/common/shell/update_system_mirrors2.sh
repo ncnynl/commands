@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
-#
-# Description: Choose a faster mirror for Linux script
+################################################
+# Function : update system mirrors 2
+# Desc     : 用于简化版更新系统源的脚本                              
+# Platform : ubuntu                                
+# Version  : 1.0                               
+# Date     : 2022-06-24 15:17:32                            
+# Author   : ncnynl                             
+# Contact  : 1043931@qq.com                              
+# URL: https://ncnynl.com                                   
+# QQ Qun: 创客智造B群:926779095                                 
+# QQ Qun: 创客智造C群:937347681                                  
+# QQ Qun: 创客智造D群:562093920                               
+################################################
 #
 # Copyright (C) 2017 - 2018 Oldking <oooldking@gmail.com>
 #

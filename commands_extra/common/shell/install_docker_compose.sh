@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_docker_compose.sh                              
+# Function : install docker compose  
+# Desc     : 用于安装容器启动组docker-compose的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-10-29 17:17:58                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install pnpm                              
+# Function : install pnpm 
+# Desc     : 用于安装nodejs 18版本及管理工具pnpm的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

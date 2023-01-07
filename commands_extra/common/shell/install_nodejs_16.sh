@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs.sh                              
+# Function : install nodejs  16 version
+# Desc     : 用于安装nodejs和管理器NVM软件的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            
@@ -18,7 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-echo "install nodejs v18.12.1"
+echo "install nodejs v16"
 nvm install 16
 
 echo "Congratulations, nodejs and yarn have successfully installed"
