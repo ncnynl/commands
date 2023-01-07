@@ -63,7 +63,7 @@ ros-$ros2_distro-tf-transformations
 sudo apt install -y \
 libroscpp-serialization0d \
 ros-$ros2_distro-nmea-msgs \
-ros-$ros2_distro-rosbag2-bag-v2-plugins  \
+# ros-$ros2_distro-rosbag2-bag-v2-plugins  \
 ros-$ros2_distro-rosbag2-storage \
 ros-$ros2_distro-rosbag2-storage-default-plugins \
 ros-$ros2_distro-ros2bag \
