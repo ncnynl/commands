@@ -64,14 +64,14 @@ ros-$ros2_distro-tf2-tools \
 ros-$ros2_distro-tf-transformations
 
 #install ros2 bag deps
-sudo apt install -y \
-libroscpp-serialization0d \
-ros-$ros2_distro-nmea-msgs \
-ros-$ros2_distro-rosbag2  \
-ros-$ros2_distro-rosbag2-storage \
-ros-$ros2_distro-rosbag2-storage-default-plugins \
-ros-$ros2_distro-ros2bag \
-ros-$ros2_distro-rosbag2-transport 
+# sudo apt install -y \
+# libroscpp-serialization0d \
+# ros-$ros2_distro-nmea-msgs \
+# ros-$ros2_distro-rosbag2  \
+# ros-$ros2_distro-rosbag2-storage \
+# ros-$ros2_distro-rosbag2-storage-default-plugins \
+# ros-$ros2_distro-ros2bag \
+# ros-$ros2_distro-rosbag2-transport 
 
 #add ros to bashrc
 sudo echo "source /opt/ros/$ros2_distro/setup.bash" >> ~/.bashrc
