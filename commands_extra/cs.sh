@@ -51,6 +51,21 @@ function while_read_desc(){
 }
 
 #######################################
+# is_empty_dir
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function is_empty_dir(){ 
+    return `ls -A $1|wc -w`
+}
+
+#######################################
 # commands_list
 # Globals: 
 #   None
@@ -66,6 +81,10 @@ function commands_list(){
     for dir in $(ls)
     do
         if [ -d $dir/shell ]; then 
+            if is_empty_dir $dir/shell
+            then
+                continue 
+            fi
             echo "$dir:"
             for file in $(ls $dir/shell/*)
             do 
@@ -98,7 +117,10 @@ function commands_install(){
     for dir in $(ls)
     do
         if [ -d $dir/shell ]; then 
-            
+            if is_empty_dir $dir/shell
+            then
+                continue 
+            fi            
             for file in $(ls $dir/shell/*)
             do 
                 if [ -f $file ]; then
@@ -160,7 +182,10 @@ function commands_search_install(){
     for dir in $(ls)
     do
         if [ -d $dir/shell ]; then 
-            
+            if is_empty_dir $dir/shell
+            then
+                continue 
+            fi            
             for file in $(ls $dir/shell/*)
             do 
                 if [ -f $file ]; then
@@ -216,7 +241,10 @@ function commands_search(){
     for dir in $(ls)
     do
         if [ -d $dir/shell ]; then 
-            
+            if is_empty_dir $dir/shell
+            then
+                continue 
+            fi            
             for file in $(ls $dir/shell/*)
             do 
                 if [ -f $file ]; then
@@ -266,7 +294,10 @@ function commands_edit(){
         for dir in $(ls)
         do
             if [ -d $dir/shell ]; then 
-                
+                if is_empty_dir $dir/shell
+                then
+                    continue 
+                fi                
                 for file in $(ls $dir/shell/*)
                 do 
                     if [ -f $file ]; then
@@ -330,7 +361,10 @@ function commands_check(){
         for dir in $(ls)
         do
             if [ -d $dir/shell ]; then 
-                
+                if is_empty_dir $dir/shell
+                then
+                    continue 
+                fi                
                 for file in $(ls $dir/shell/*)
                 do 
                     if [ -f $file ]; then
