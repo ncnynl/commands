@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : init_rmf.sh                              
+# Function : init free fleet     
+# Desc     : 用于初始化free_fleet车管管理环境的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

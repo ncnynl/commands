@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_dolly                        
+# Function : install_dolly   
+# Desc     : 用于源码方式安装ROS2版dolly仿真的脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-09                          

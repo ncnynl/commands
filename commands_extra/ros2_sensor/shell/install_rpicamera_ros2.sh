@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_rpicamera_ros2.sh                         
+# Function : install_rpicamera_ros2.sh 
+# Desc     : 用于源码方式安装ROS2版树莓派摄像头驱动的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                             

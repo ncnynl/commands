@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Install ROS2 Humble                                #
+# Desc     : 用于AMD架构下安装ROS2 Humble版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-07-08                                         #

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_webots_galactic_apt.sh                              
+# Function : install webots humble apt   
+# Desc     : 用于APT方式安装ROS2 humble版仿真软件webots的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 02:39:30                            

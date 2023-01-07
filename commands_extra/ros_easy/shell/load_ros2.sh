@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_ros2.sh                              
+# Function : load ros2  
+# Desc     : 用于加载ROS2的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

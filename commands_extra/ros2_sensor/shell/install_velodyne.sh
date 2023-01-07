@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_velodyne.sh                         
+# Function : install velodyne 
+# Desc     : 用于源码方式安装ROS2版多线激光雷达velodyne驱动的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                          

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_barista_ros2                      
+# Function : install barista ros2   
+# Desc     : 用于源码方式安装ROS2 humble版车队管理free_fleet_barista的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-31                          

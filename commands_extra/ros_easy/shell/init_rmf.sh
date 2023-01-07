@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : init_rmf.sh                              
+# Function : init rmf
+# Desc     : 用于初始化RMF多智能体框架环境的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

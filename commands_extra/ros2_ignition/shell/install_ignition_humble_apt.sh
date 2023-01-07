@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ignition_humble_apt.sh                              
+# Function : install_ignition_humble_apt.sh     
+# Desc     : 用于APT方式安装ROS2 humble版仿真软件ignition的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-19                            

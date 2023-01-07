@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : init_tb3.sh                              
+# Function : init tb3
+# Desc     : 用于初始化Turtlebot3环境的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

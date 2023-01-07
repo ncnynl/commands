@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_rmf_web_20.04.sh                              
+# Function : install ros2 rmf web 20.04   
+# Desc     : 用于源码方式安装RMF-WEB 20.04/galactic版的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            

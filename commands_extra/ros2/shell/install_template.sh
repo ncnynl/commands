@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : <file_name>                        
+# Function : <file_name>  
+# Desc     : <file_desc>                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : <date>                          

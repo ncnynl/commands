@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Update ROS1 Source                                 #
+# Desc     : 用于更新ROS1源的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-06-23                                         #

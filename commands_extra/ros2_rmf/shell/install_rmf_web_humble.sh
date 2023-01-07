@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_rmf_web_22.04.sh                              
+# Function : install ros2 rmf_web 22.04   
+# Desc     : 用于源码方式安装RMF-WEB 22.04/humble版的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install rmf traffic editor apt                              
+# Function : install rmf traffic editor apt  
+# Desc     : 用于APT方式安装RMF地图编辑器traffic editor的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            

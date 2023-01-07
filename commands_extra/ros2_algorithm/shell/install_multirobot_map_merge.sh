@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_multirobot_map_merge                        
+# Function : install_multirobot_map_merge    
+# Desc     : 用于源码方式安装ROS2版地图合并和边缘探索算法m-explore的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-10                          

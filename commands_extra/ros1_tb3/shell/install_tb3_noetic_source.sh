@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_turtlebot3_ros1_noetic_source.sh                              
+# Function : install turtlebot3 ros1 noetic source 
+# Desc     : 用于源码方式安装ROS1版本Turtlebot3的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-30 15:25:09                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros_tutorials_source                        
+# Function : install ros tutorials source 
+# Desc     : 用于搭建ROS1 Noetic官方教程例程工作空间的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-10                          

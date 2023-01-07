@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_easy_22.04.sh                              
+# Function : install ros2 easy arm 22.04  
+# Desc     : 用于制作ROS-EASY-OS-ARM 22.04镜像自动化脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

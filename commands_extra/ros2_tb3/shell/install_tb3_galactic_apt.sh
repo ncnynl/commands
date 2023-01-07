@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Humble                                #
+# Function :Install ROS2 Galactic                                #
+# Desc     : 用于APT方式安装ROS2 Galactic版Turtlebot3的脚本  
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-07-08                                         #
@@ -10,7 +11,7 @@
 # URL: https://ncnynl.com                                      #
 ################################################################
 
-ros2_distro=humble
+ros2_distro=galactic
 
 echo "Start to install turtlebot3 ROS2 $ros2_distro version"
 

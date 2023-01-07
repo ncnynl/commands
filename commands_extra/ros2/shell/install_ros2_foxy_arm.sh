@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Galactic                              #
+# Function :Install ROS2 Foxy                              #
+# Desc     : 用于ARM架构下安装ROS2 Foxy版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-06-23                                         #

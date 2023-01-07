@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_pointcloud_to_laserscan.sh                         
+# Function : install pointcloud to laserscan     
+# Desc     : 用于源码方式安装点云转激光软件的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                             

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_tb4_ignition_source.sh                              
+# Function : install tb4 ignition source  
+# Desc     : 用于源码方式安装ROS2 Galactic版ignition仿真及TB4仿真程序的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-10-31                           

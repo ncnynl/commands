@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_tutorial_ros2_code_ws.sh                              
+# Function : install tutorial ros2 code ws
+# Desc     : 用于构建学习ROS2 C++和Python代码工作空间的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

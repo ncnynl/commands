@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_imu_m0_shell.sh                              
+# Function : install imu m0 shell  
+# Desc     : 用于源码方式安装ROS1版本惯性导航razor_imu_m0驱动的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-03 02:27:37                            

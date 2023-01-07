@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_rmf_panel.sh                              
+# Function : install_rmf_panel.sh 
+# Desc     : 用于安装RMF WEB管理rmf-panel-js的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            

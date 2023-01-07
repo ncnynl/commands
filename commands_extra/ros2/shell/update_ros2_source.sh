@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Update ROS2 Source                                 #
+# Desc     : 用于更新ROS2源的脚本
 # Platform :All Linux Basudo sed Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-06-23                                         #

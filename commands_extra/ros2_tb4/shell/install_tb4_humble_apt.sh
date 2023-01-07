@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_tb4_ignition_humble_apt.sh                              
+# Function : install tb4 ignition humble apt   
+# Desc     : 用于APT方式安装ROS2 humble版ignition仿真及TB4仿真程序的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 02:39:30                            

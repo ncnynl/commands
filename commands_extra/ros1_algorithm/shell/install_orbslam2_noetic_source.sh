@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Install ROS1 Noetic ORB_SLAM2                      #
+# Desc     : 用于源码方式安装ROS1 Noetic版本视觉建图算法ORB_SLAM2的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-11-30                                         #

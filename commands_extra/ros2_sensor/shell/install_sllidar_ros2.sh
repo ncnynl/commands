@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_sllidar_ros2.sh                         
+# Function : install sllidar ros2 
+# Desc     : 用于源码方式安装ROS2版单线激光雷达sllidar驱动的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                             

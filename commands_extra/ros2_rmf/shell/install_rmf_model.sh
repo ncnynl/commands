@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_rmf_source_shell.sh                              
+# Function : install ros2 rmf model shell  
+# Desc     : 用于配置RMF模型的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_turtorial_ros2_tf2_ws.sh                              
+# Function : install turtorial ros2 tf2 ws 
+# Desc     : 用于构建学习ROS2 TF2代码工作空间的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

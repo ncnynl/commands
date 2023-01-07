@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : config_date_shell.sh                              
+# Function : config date shell  
+# Desc     : 用于安装时间同步软件chrony/ntpdate并完成初次时间同步的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 21:25:53                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_walking_application.sh                              
+# Function : install walking application     
+# Desc     : 用于源码方式安装ROS2版仿真软件walking application的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-03 03:06:24                            

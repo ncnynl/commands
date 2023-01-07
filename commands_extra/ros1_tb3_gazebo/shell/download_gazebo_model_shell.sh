@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : download_gazebo_model_shell.sh                              
+# Function : download_gazebo_model_shell.sh 
+# Desc     : 用于下载Gazebo所有模型的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 01:45:01                            

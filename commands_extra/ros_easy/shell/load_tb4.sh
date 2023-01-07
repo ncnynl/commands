@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_tb4.sh                              
+# Function : load tb4 
+# Desc     : 用于加载ROS1/ROS2 Turtlebot4工作空间的脚本                               
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

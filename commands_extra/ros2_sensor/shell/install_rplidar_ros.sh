@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_rplidar_ros                         
+# Function : install rplidar ros2  
+# Desc     : 用于源码方式安装ROS2版单线激光雷达RPlidar驱动的脚本                        
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-08                             

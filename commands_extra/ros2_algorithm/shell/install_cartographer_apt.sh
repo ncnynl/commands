@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_cartographer_apt.sh                         
+# Function : install_cartographer_apt.sh    
+# Desc     : 用于APT方式安装ROS2版激光建图算法cartographer的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                              
 # Date     : 2022-11-29                          

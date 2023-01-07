@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_turtorials_source                        
+# Function : install_ros2_turtorials_source   
+# Desc     : 用于搭建ROS2官方例程工作空间的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-10                          

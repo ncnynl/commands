@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Install ROS1 Noetic Cartographer                               #
+# Desc     : 用于安装ROS1 Noetic版本建图算法Cartographer的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-06-23                                         #

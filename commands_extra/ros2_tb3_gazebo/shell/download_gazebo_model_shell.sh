@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : download_gazebo_model_shell.sh                              
+# Function : download gazebo model shell 
+# Desc     : 用于安装ROS2 Gazebo模型的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 01:45:01                            

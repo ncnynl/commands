@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_rmf.sh                              
+# Function : load rmf 
+# Desc     : 用于加载RMF的脚本                                 
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

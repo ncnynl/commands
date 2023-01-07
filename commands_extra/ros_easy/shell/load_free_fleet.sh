@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_free_fleet.sh                              
+# Function : load_free_fleet.sh  
+# Desc     : 用于加载free_fleet的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

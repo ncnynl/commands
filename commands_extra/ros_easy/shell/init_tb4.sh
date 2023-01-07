@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : init_tb4.sh                              
+# Function : init tb4  
+# Desc     : 用于初始化Turtlebot4环境的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ublox_gps                        
+# Function : install_ublox_gps    
+# Desc     : 用于源码方式安装ROS1版本GPS ublox-gps驱动的脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-09                          

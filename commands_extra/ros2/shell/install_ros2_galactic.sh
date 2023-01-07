@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Install ROS2 Galactic                              #
+# Desc     : 用于AMD架构下安装ROS2 Galactic版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2022-06-23                                         #

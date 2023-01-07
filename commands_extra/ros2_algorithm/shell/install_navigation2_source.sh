@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_navigation2_source                       
+# Function : install_navigation2_source 
+# Desc     : 用于源码方式安装ROS2版Navigation2的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-10                          
