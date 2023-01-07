@@ -64,10 +64,10 @@ sudo apt install -y \
 libroscpp-serialization0d \
 ros-$ros2_distro-nmea-msgs \
 # ros-$ros2_distro-rosbag2-bag-v2-plugins  \
-ros-$ros2_distro-rosbag2-storage \
-ros-$ros2_distro-rosbag2-storage-default-plugins \
-ros-$ros2_distro-ros2bag \
-ros-$ros2_distro-rosbag2-transport 
+# ros-$ros2_distro-rosbag2-storage \
+# ros-$ros2_distro-rosbag2-storage-default-plugins \
+# ros-$ros2_distro-ros2bag \
+# ros-$ros2_distro-rosbag2-transport 
 
 #add ros to bashrc
 sudo echo "source /opt/ros/$ros2_distro/setup.bash" >> ~/.bashrc
