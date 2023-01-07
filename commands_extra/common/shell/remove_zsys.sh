@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : remove zsys  
-# Desc     : 用于删除zsys软件的脚本                             
+# Function : remove_zsys  
+# Desc     : 用于删除多余软件的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

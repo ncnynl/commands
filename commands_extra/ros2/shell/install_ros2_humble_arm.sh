@@ -16,8 +16,8 @@ ros2_distro=humble
 echo "Start to install ROS2 $ros2_distro"
 
 #update and upgrade first 
-# sudo apt update 
-# sudo apt upgrade 
+sudo apt update 
+sudo apt upgrade 
 
 # Install ROS 2
 sudo apt update && sudo apt install locales
