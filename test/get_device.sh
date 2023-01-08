@@ -49,14 +49,17 @@ function sd_system_backup(){
     if [ ! $package_name ]; then
         sd_system_backup
     else
-        echo "Your package name is: $dev_name"
+        echo "Your package name is: $package_name"
     fi 
 
-
-    path="$PWD/$package_name-"`date +%Y-%m-%d`.gz
-    echo $path 
-    echo "Start backup $dev_name to $path"
-    sudo dd bs=4M if=$dev_name | gzip > $path 
+    folder="$HOME/tools"
+    if [ ! -d $folder  ];then 
+        sudo mkdir -p $folder
+    fi
+    
+    file_name="$folder/$package_name-"`date +%Y-%m-%d`.gz
+    echo "Start backup $dev_name to $file_name"
+    # sudo dd bs=4M if=$dev_name | gzip > $file_name 
 
 }
 

@@ -53,7 +53,7 @@ function sd_system_recover(){
     fi 
 
     echo "Start recover $package_name  to $dev_name"
-    sudo gzip -dc $package_name | dd bs=4M of=$dev_name
+    sudo gzip -dc $package_name | sudo dd bs=4M of=$dev_name
 
 }
 
