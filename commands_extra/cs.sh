@@ -512,7 +512,7 @@ function commands_build()
     else
         echo "Copy template to ~/tools/commands/commands_extra/$folder_name/shell/$file_name.sh"
         file_path=~/tools/commands/commands_extra/$folder_name/shell/$file_name.sh
-        cp ~/tools/commands/commands_extra/$ros_version/shell/install_template.sh $file_path
+        cp ~/tools/commands/commands_extra/$ros_version/shell/install_template.sh.tl $file_path
     fi
 
     echo ""
