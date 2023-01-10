@@ -86,7 +86,7 @@ function commands_list(){
                 continue 
             fi
             echo "$dir:"
-            for file in $(ls $dir/shell/*)
+            for file in $(ls $dir/shell/*.sh)
             do 
                 if [ -f $file ]; then
                     file_full_path="$HOME/commands/$file"
@@ -121,7 +121,7 @@ function commands_install(){
             then
                 continue 
             fi            
-            for file in $(ls $dir/shell/*)
+            for file in $(ls $dir/shell/*.sh)
             do 
                 if [ -f $file ]; then
                     let i++
@@ -186,7 +186,7 @@ function commands_search_install(){
             then
                 continue 
             fi            
-            for file in $(ls $dir/shell/*)
+            for file in $(ls $dir/shell/*.sh)
             do 
                 if [ -f $file ]; then
                     let i++
@@ -245,7 +245,7 @@ function commands_search(){
             then
                 continue 
             fi            
-            for file in $(ls $dir/shell/*)
+            for file in $(ls $dir/shell/*.sh)
             do 
                 if [ -f $file ]; then
                     let i++
@@ -298,7 +298,7 @@ function commands_edit(){
                 then
                     continue 
                 fi                
-                for file in $(ls $dir/shell/*)
+                for file in $(ls $dir/shell/*.sh)
                 do 
                     if [ -f $file ]; then
                         let i++
@@ -365,7 +365,7 @@ function commands_check(){
                 then
                     continue 
                 fi                
-                for file in $(ls $dir/shell/*)
+                for file in $(ls $dir/shell/*.sh)
                 do 
                     if [ -f $file ]; then
                         let i++
