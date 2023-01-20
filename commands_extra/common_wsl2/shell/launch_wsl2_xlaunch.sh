@@ -22,15 +22,14 @@
 #     exit 0
 # fi
 
-# replace="export DISPLAY=$win_ip:0.0"
+replace="export DISPLAY=:0.0"
 
-# if ! grep -Fq "export DISPLAY" ~/.bashrc
-# then
-#     echo $replace >> ~/.bashrc
-# else
-#     sed -i "s/^.*DISPLAY=.*$/$replace/g" ~/.bashrc 
-# fi
-# echo "Start xfce4"
-# source ~/.bashrc
+if ! grep -Fq "export DISPLAY" ~/.bashrc
+then
+    echo $replace >> ~/.bashrc
+else
+    sed -i "s/^.*DISPLAY=.*$/$replace/g" ~/.bashrc 
+fi
+echo "Start xfce4"
 export DISPLAY=:0.0
 startxfce4
