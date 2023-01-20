@@ -10,6 +10,12 @@
 # URL: https://ncnynl.com                                      #
 ################################################################
 
+# Fix error while loading shared libraries: libQt5Core.so.5
+# https://github.com/dnschneid/crouton/wiki/Fix-error-while-loading-shared-libraries:-libQt5Core.so.5
+# https://superuser.com/questions/1347723/arch-on-wsl-libqt5core-so-5-not-found-despite-being-installed
+# whereis libQt5Core.so.5
+# sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+
 #######################################
 # build src
 # Globals: 
