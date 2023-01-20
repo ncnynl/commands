@@ -26,6 +26,9 @@ function install_desktop(){
     # copy commands.desktop to $USER/.local/share/applications
     # can not run , *.desktop launch by root. will not load ~/.bashrc
     cd ~/tools/commands 
+    if [ ! -d $HOME/.local/share/applications ]; then 
+        mkdir -p $HOME/.local/share/applications/
+    fi
     cp commands.desktop $HOME/.local/share/applications/commands.desktop
 
     echo 0
