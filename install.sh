@@ -23,7 +23,8 @@
 #######################################
 function install_deps()
 {
-    sudo apt-get update | sudo apt-get install -y gnome-terminal python3-pip python3-pyqt5 
+    sudo apt-get update 
+    sudo apt-get install -y gnome-terminal python3-pip python3-pyqt5 
 }
 echo -e "Install system deps!"
 install_deps
@@ -44,13 +45,13 @@ function config_python3_source()
 config_python3_source
 
 #python3 resource
-function config_venv()
-{
-    echo -e "Check venv if exits, if not add !"
-    if [ ! -d ~/tools/commands/venv ]; then
-        virtualenv -p python3 venv
-    fi
-}
+# function config_venv()
+# {
+#     echo -e "Check venv if exits, if not add !"
+#     if [ ! -d ~/tools/commands/venv ]; then
+#         virtualenv -p python3 venv
+#     fi
+# }
 # config_venv
 
 #install commands_src
