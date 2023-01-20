@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install turtlebot3 ros2 galactic   
-# Desc     : 用于源码方式安装ROS2 Galactic版Turtlebot3的脚本                           
+# Desc     : 用于源码方式安装ROS2 Galactic版Turtlebot3的脚本    
+# Website  : https://www.ncnynl.com/archives/202210/5574.html                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-30 15:25:09                            

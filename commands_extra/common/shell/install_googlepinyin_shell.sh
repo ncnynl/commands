@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install googlepinyin shell  
-# Desc     : 用于安装谷歌输入法googlepinyin的脚本                               
+# Desc     : 用于安装谷歌输入法googlepinyin的脚本     
+# Website  : https://www.ncnynl.com/archives/202210/5511.html                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

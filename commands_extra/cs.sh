@@ -47,6 +47,14 @@ function while_read_desc(){
             desc=${new%*#}
             # echo $desc
         fi
+
+        if [[ "${LINE[@]}" =~ "Website" ]];then
+            # echo $LINE
+            new=${LINE#*:}
+            # echo $new
+            website=${new%*#}
+            # echo $desc
+        fi        
     done < $1
 }
 
@@ -91,10 +99,12 @@ function commands_list(){
                 if [ -f $file ]; then
                     file_full_path="$HOME/commands/$file"
                     desc=""
+                    website=""
                     while_read_desc $file_full_path
                     let i++
                     echo "  ID:$i - ${file##*/}"
                     echo "  ------------------------------------------${desc}"
+                    echo "  ------------------------------------------${website}"
                 fi
             done 
         fi 
@@ -129,10 +139,12 @@ function commands_install(){
                     if [ $i == $1 ] ; then
                         file_full_path="$HOME/commands/$file"
                         desc=""
+                        website=""
                         while_read_desc $file_full_path
                         echo "$dir:"
                         echo "  ID:$i - ${file##*/}" 
                         echo "  ------------------------------------------${desc}"
+                        echo "  ------------------------------------------${website}"
                         shell=${file#*/}
                         path=$(dirname $file)
                         folder=${path%/*}
@@ -255,12 +267,14 @@ function commands_search(){
                     if [[ $result != "" ]] ; then
                         file_full_path="$HOME/commands/$file"
                         desc=""
+                        website=""
                         while_read_desc $file_full_path
                         let j++
                         jid="$i"
                         echo "$dir:"
                         echo "  ID:$i - ${file##*/}"
                         echo "  ------------------------------------------${desc}"
+                        echo "  ------------------------------------------${website}"
                     fi
                 fi
             done 
@@ -306,10 +320,12 @@ function commands_edit(){
                         if [ $i == $1 ] ; then 
                             file_full_path="$HOME/commands/$file"
                             desc=""
+                            website=""
                             while_read_desc $file_full_path
                             echo "$dir:"
                             echo "  ID:$i - ${file##*/}"
                             echo "  ------------------------------------------${desc}"
+                            echo "  ------------------------------------------${website}"
                             shell=${file#*/}
                             path=$(dirname $file)
                             folder=${path%/*}
@@ -373,10 +389,12 @@ function commands_check(){
                         if [ $i == $1 ] ; then 
                             file_full_path="$HOME/commands/$file"
                             desc=""
+                            website=""
                             while_read_desc $file_full_path                        
                             echo "$dir:"
                             echo "  ID:$i - ${file##*/}"
                             echo "  ------------------------------------------${desc}"
+                            echo "  ------------------------------------------${website}"
                             shell=${file#*/}
                             path=$(dirname $file)
                             folder=${path%/*}

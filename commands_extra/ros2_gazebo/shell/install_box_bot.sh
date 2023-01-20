@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install_box_bot     
-# Desc     : 用于源码方式安装ROS2版box-bot多机仿真控制的脚本                   
+# Desc     : 用于源码方式安装ROS2版box-bot多机仿真控制的脚本
+# Website  : https://www.ncnynl.com/archives/202212/5782.html
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-09                          

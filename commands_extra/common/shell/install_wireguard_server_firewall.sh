@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install wireguard server firewall
-# Desc     : 用于配置异域局域网软件wireguard服务端防火墙的脚本                              
+# Desc     : 用于配置异域局域网软件wireguard服务端防火墙的脚本    
+# Website  : https://www.ncnynl.com/archives/202212/5812.html                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                            

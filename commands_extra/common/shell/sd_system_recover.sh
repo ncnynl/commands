@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
-# Function : sd system backup  
-# Desc     : 用于把压缩的GZ镜像系统并恢复到SD卡                           
+# Function : sd system recover  
+# Desc     : 用于把压缩的GZ镜像系统并恢复到SD卡  
+# Website  : https://www.ncnynl.com/archives/202301/5816.html
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

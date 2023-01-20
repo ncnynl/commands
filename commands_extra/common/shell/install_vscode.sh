@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install vscode 
-# Desc     : 用于安装编辑器VSCODE的脚本                               
+# Desc     : 用于安装编辑器VSCODE的脚本
+# Website  : https://www.ncnynl.com/archives/202212/5813.html                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

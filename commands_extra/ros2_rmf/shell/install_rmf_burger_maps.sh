@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install rmf burger maps  
-# Desc     : 用于源码方式安装ROS2 humble版自定义Burger地图RMF导航包的脚本                       
+# Desc     : 用于源码方式安装ROS2 humble版自定义Burger地图RMF导航包的脚本
+# Website  : https://www.ncnynl.com/archives/202212/5781.html                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-08                          

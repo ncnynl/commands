@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install wsl2 bridge   
-# Desc     : 用于生成WSL2系统桥接脚本，WSL2的IP配置脚本和取消桥接脚本的脚本                           
+# Desc     : 用于生成WSL2系统桥接脚本，WSL2的IP配置脚本和取消桥接脚本的脚本
+# Website  : https://www.ncnynl.com/archives/202301/5823.html                             
 # Platform : WSL2 ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-01-10                             

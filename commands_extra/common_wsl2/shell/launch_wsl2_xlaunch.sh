@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : launch wsl2 xface4   
-# Desc     : 用于自动配置和启动xfce的脚本                           
+# Desc     : 用于自动配置和启动xfce的脚本 
+# Website  : https://www.ncnynl.com/archives/202301/5820.html                          
 # Platform : WSL2 ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-01-10                             

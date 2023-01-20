@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : sd system backup  
-# Desc     : 用于DD备份SD卡的系统并进行gz压缩                            
+# Desc     : 用于DD备份SD卡的系统并进行gz压缩 
+# Website  : https://www.ncnynl.com/archives/202301/5815.html                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            

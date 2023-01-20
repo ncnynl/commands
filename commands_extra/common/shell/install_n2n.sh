@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install n2n  
-# Desc     : 用于安装搭建异域局域网软件n2n的脚本                        
+# Desc     : 用于安装搭建异域局域网软件n2n的脚本  
+# Website  : https://www.ncnynl.com/archives/202205/5233.html                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-12-26                          
@@ -16,7 +17,6 @@
 ################################################
 # echo "Not Supported Yet!"
 # exit 0  
-echo "Website: https://www.ncnynl.com/archives/202205/5233.html"
 echo "Set workspace"
 workspace=tools
 

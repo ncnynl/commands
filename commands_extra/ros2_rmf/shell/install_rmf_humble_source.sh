@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : install ros2 rmf source shell
-# Desc     : 用于源码方式安装ROS2 humble版RMF框架的脚本                            
+# Desc     : 用于源码方式安装ROS2 humble版RMF框架的脚本  
+# Website  : https://www.ncnynl.com/archives/202211/5751.html                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            
