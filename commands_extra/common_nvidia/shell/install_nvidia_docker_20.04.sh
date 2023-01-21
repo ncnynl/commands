@@ -28,12 +28,17 @@ function install_nvidia_docker()
 
     sudo apt install -y nvidia-docker2
 
+    sudo groupadd docker			# 有则不用创建
+    sudo usermod -aG docker $USER	# USER 为加入 docker 组的用户
+    newgrp docker					# 刷新 docker 组
+    # docker run hello-world			# 测试无 root 权限能否使用 docker
+
     # sudo systemctl restart docker
     sudo service docker restart
     sudo service docker start 
     echo "Test this for nvidia docker"
-    sudo docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
-    
+    docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
+
 }
 install_nvidia_docker
 
