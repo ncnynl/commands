@@ -16,14 +16,14 @@
 ################################################
 
 # echo "Config bashrc ...."
-# CHOICE_A=$(echo -e "Please input your windows ip, Check with ipconfig from powershell (Like: 192.168.1.105)：")
-# read -p "${CHOICE_A}" win_ip
-# if [ -z "${win_ip}" ]; then
-#     echo "win_ip can not be null"
-#     exit 0
-# fi
+CHOICE_A=$(echo -e "Please input your windows ip, Check with ipconfig from powershell (Like: 192.168.1.105)：")
+read -p "${CHOICE_A}" win_ip
+if [ -z "${win_ip}" ]; then
+    echo "win_ip can not be null"
+    exit 0
+fi
 
-replace="export DISPLAY=:0.0"
+replace="export DISPLAY=${win_ip}:0.0"
 
 if ! grep -Fq "export DISPLAY" ~/.bashrc
 then
@@ -32,5 +32,5 @@ else
     sed -i "s/^.*DISPLAY=.*$/$replace/g" ~/.bashrc 
 fi
 echo "Start xfce4"
-export DISPLAY=:0.0
+export DISPLAY=${win_ip}:0.0
 startxfce4
