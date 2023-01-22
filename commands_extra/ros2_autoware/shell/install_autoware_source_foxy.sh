@@ -88,8 +88,14 @@ function install_autoware_source()
     rm -rf build/ install/ log/
 
     pip install gitpython==3.1.14
+
     # SPINNAKER SDK not found, so spinnaker_camera_nodes could not be built.
     # https://www.flir.com/support-center/iis/machine-vision/downloads/spinnaker-sdk-and-firmware-download/
+    # spinnaker-3.0.0.118-amd64-pkg.tar.gz
+    # tar -zxvf     spinnaker-3.0.0.118-amd64-pkg.tar.gz
+    # cd spinnaker-3.0.0.118-amd64
+    # ./install_spinnaker.sh
+
     sudo apt install ros-foxy-filters
     sudo apt install ros-foxy-tvm-vendor
     sudo apt install ros-foxy-ackermann-msgs
@@ -147,6 +153,12 @@ function install_autoware_source()
 
     #for pcap
     sudo apt install libpcap0.8-dev
+
+    #   apollo_lidar_segmentation not found, skipping package.
+    #   Neural network not found, skipping package.
+
+    # Argument QP_SOLVER not set, using default of QPOASES
+    # QP solver QPOASES is not recommended!
     
     # #To build all packages in Autoware.Auto, navigate into the AutowareAuto directory and run
     # colcon build
