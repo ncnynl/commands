@@ -15,6 +15,13 @@
 ################################################
 # https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-ade.html
 # https://ade-cli.readthedocs.io/en/latest/install.html#linux-x86-64-and-aarch64
+
+# issue 
+# [rviz2]: InvalidParametersException: Window with name 'OgreWindow(0)' already exists in GLRenderSystem::_createRenderWindow
+# https://answers.ros.org/question/373765/rviz2-does-not-open-in-ubuntu-2004-docker-ade-image/
+# https://github.com/ros2/rviz/issues/753
+# https://github.com/osrf/docker_images/issues/105
+# https://github.com/NVIDIA/nvidia-docker/issues/11#issuecomment-356802940
 echo "Install autoware ade version ...."
 
 function install_autoware_ade()

@@ -41,7 +41,6 @@ function install_autoware_source()
     fi 
 
 
-
     #host
     export ROS_DISTRO=foxy
     echo $ROS_DISTRO
@@ -58,7 +57,9 @@ function install_autoware_source()
     source ~/.bashrc
 
     #安装Autoware.Auto依赖的ROS2的其它包，rosdep会自动搜索安装
-    cd ~
+    mkdir -p ~/adehome
+    cd ~/adehome
+    touch .adehome
     git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git
     cd AutowareAuto
     vcs import < autoware.auto.$ROS_DISTRO.repos
@@ -71,88 +72,50 @@ function install_autoware_source()
 
     #目的是切换想要安装的autoware版本，如果不切换master将使用最新分支
     #Checkout the latest release by checking out the corresponding tag or release branch.
-    # git checkout tags/1.0.0 -b release-1.0.0
+    git checkout tags/1.0.0 -b release-1.0.0
 
     # If running tests or demos, also pull binary files with
     git lfs pull --exclude="" --include="*"
 
+    #共享环境变量
+    cd ~
+    cp ~/.bashrc ~/.bashrc.bk
+    mv ~/.bashrc ~/adehome/.bashrc
+    ln -s ~/adehome/.bashrc
+
     # Troubleshooting
     # https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-no-ade.html
-    export COLCON_DEFAULTS_FILE=$HOME/AutowareAuto/tools/ade_image/colcon-defaults.yaml
-
     sudo apt purge -y ros-foxy-autoware-auto-msgs
     sudo apt purge -y ros-foxy-acado-vendor
     sudo apt install -y ros-foxy-acado-vendor
 
-    cd ~/AutowareAuto
-    rm -rf build/ install/ log/
+    #打开一个干净的ade容器进行编译
+    #Open Docker, only if is not running
+    if curl -s --unix-socket /var/run/docker.sock http/_ping 2>&1 >/dev/null
+    then
+        echo "Docker Deamon is running"
+    else
+        echo "Docker Deamon is not running"
+        sudo service docker start 
+    fi
 
-    pip install gitpython==3.1.14
-    # SPINNAKER SDK not found, so spinnaker_camera_nodes could not be built.
-    # https://www.flir.com/support-center/iis/machine-vision/downloads/spinnaker-sdk-and-firmware-download/
-    sudo apt install ros-foxy-filters
-    sudo apt install ros-foxy-tvm-vendor
-    sudo apt install ros-foxy-ackermann-msgs
-    # https://osqp.org/docs/get_started/sources.
-    if [ ! -d /usr/local/include/osqp ]; then
-        pwd=$(pwd)
-        sudo sh -c "$pwd/../ros2_autoware/shell/install_osqp.sh"         
-    fi    
+    cd ~/adehome/AutowareAuto
+    ade stop
+    sudo ade update-cli
+    ade --rc .aderc-amd64-foxy-lgsvl start --update --enter
 
-    sudo apt install ros-foxy-osqp-vendor
+    #inside ade
+    echo "Please see install script base ros2_autoware_source_foxy.sh to install left inside ade!!!"
+    # export COLCON_DEFAULTS_FILE=/usr/local/etc/colcon-defaults.yaml
+    # echo "export COLCON_DEFAULTS_FILE=/usr/local/etc/colcon-defaults.yaml" >> ~/.bashrc
+    # cd AutowareAuto
+    # rm -rf build/ install/ log/
 
-    if [ ! -d ~/AutowareAuto/src/external/grid_map ]; then
-        cd ~/AutowareAuto/src/external/
-        git clone -b foxy-devel https://ghproxy.com/https://github.com/ANYbotics/grid_map
-    fi    
-
-    #googletest ament_add_google_benchmark
-    #   Unknown CMake command "ament_add_google_benchmark".
-    # -- Installing: /usr/local/include/benchmark
-    if [ ! -d /usr/local/include/benchmark ]; then
-        pwd=$(pwd)
-        sudo sh -c "$pwd/../ros2_autoware/shell/install_google_benchmark.sh"           
-    fi     
-
-    sudo apt install ros-foxy-octomap
-    sudo apt install ros-foxy-octomap-msgs 
-    sudo apt install ros-foxy-nav2-costmap-2d
-    sudo apt install ros-foxy-point-cloud-msg-wrapper
-
-    # \\wsl$\Ubuntu-20.04\home\ubuntu\AutowareAuto\src\planning\costmap_generator\package.xml
-    # GridMapRosConverter.hpp: No such file or directory
-    #    23 | #include "grid_map_cv/grid_map_cv.hpp" 
-    #   <depend>grid_map_cv</depend>
-
-    #    28 | #include <raptor_dbw_msgs/msg/accelerator_pedal_cmd.hpp>
-    sudo apt install ros-foxy-raptor-dbw-msgs
-    
-    # \\wsl$\Ubuntu-20.04\home\ubuntu\AutowareAuto\src\drivers\ne_raptor_interface\CMakeLists.
-    # kill test
-
-
-    # --- stderr: filter_node_base
-    # ** WARNING ** io features related to openni will be disabled
-    # ** WARNING ** io features related to openni2 will be disabled
-    # ** WARNING ** io features related to pcap will be disabled
-    # ** WARNING ** io features related to png will be disabled
-    # ** WARNING ** io features related to libusb-1.0 will be disabled
-    # ** WARNING ** visualization features related to openni will be disabled
-    # ** WARNING ** visualization features related to openni2 will be disabled
-    # ** WARNING ** apps features related to openni will be disabled
-    # ---
-
-    #openni2_camera
-    # git clone -b ros2 https://ghproxy.com/https://github.com/mikeferguson/openni2_camera
-
-    #for pcap
-    sudo apt install libpcap0.8-dev
-    
     # #To build all packages in Autoware.Auto, navigate into the AutowareAuto directory and run
     # colcon build
-    colcon build --cmake-args -DBUILD_TESTING=OFF
-    colcon test
-    colcon test-result --verbose
+    # colcon test
+    # colcon test-result --verbose
+
 }
 
 install_autoware_source

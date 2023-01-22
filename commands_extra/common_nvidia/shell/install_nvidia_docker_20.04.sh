@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install nvidia docker   
+# Function : install nvidia docker v2   
 # Desc     : 用于安装nvidia docker的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
@@ -16,7 +16,7 @@
 
 echo "Install Nvidia docker...."
 
-function install_nvidia_docker()
+function install_nvidia_docker_v2()
 {
     
     # distribution=$(. /etc/os-release;echo $ID$VERSION_ID) 
@@ -40,5 +40,5 @@ function install_nvidia_docker()
     docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 
 }
-install_nvidia_docker
+install_nvidia_docker_v2
 
