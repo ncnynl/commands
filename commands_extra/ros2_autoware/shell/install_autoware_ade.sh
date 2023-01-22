@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install autoware   
-# Desc     : 用于安装autoware的脚本                           
+# Function : install autoware ade  
+# Desc     : 用于安装autoware ade版本的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-01-21                             
@@ -15,9 +15,9 @@
 ################################################
 # https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-ade.html
 # https://ade-cli.readthedocs.io/en/latest/install.html#linux-x86-64-and-aarch64
-echo "Install autoware ...."
+echo "Install autoware ade version ...."
 
-function install_autoware()
+function install_autoware_ade()
 {
 
     echo "Build adehome"
@@ -42,5 +42,5 @@ function install_autoware()
 
 }
 
-install_autoware
+install_autoware_ade
 
