@@ -23,8 +23,10 @@ else
     echo "Install electron-packager"
     npm install --save-dev electron-packager
 
-    echo "Init project"
+    echo "Init project to $HOME/tools"
     # Clone this repository
+    cd $HOME/tools
+    
     git clone https://ghproxy.com/https://github.com/electron/electron-quick-start
     # Go into the repository
     cd electron-quick-start
