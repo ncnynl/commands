@@ -22,8 +22,7 @@ else
 
     echo "install nvm"
     sudo apt update && sudo apt install curl
-    curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
+    curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh  | sed  "s/https:\/\//https:\/\/ghproxy.com\/https:\/\//"g | bash 
     echo "Congratulations, nvm have successfully installed"
 
 fi
