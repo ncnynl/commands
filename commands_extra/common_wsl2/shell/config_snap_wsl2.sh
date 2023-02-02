@@ -1,8 +1,8 @@
 #!/bin/bash
 ################################################
-# Function : launch wsl2 xface4   
-# Desc     : 用于自动配置和启动xfce的脚本 
-# Website  : https://www.ncnynl.com/archives/202301/5820.html                          
+# Function : config snap for wsl2    
+# Desc     : 用于配置在wsl2下使用snap的脚本 
+# Website  : https://github.com/microsoft/WSL/issues/5126                       
 # Platform : WSL2 ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-01-10                             
@@ -16,21 +16,9 @@
 ################################################
 
 # echo "Config bashrc ...."
-CHOICE_A=$(echo -e "Please input your windows ip, Check with ipconfig from powershell (Like: 192.168.1.105)：")
-read -p "${CHOICE_A}" win_ip
-if [ -z "${win_ip}" ]; then
-    echo "win_ip can not be null"
-    exit 0
-fi
+sudo apt-get update && sudo apt-get install -yqq daemonize dbus-user-session fontconfig
+sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME
 
-replace="export DISPLAY=${win_ip}:0.0"
 
-if ! grep -Fq "export DISPLAY" ~/.bashrc
-then
-    echo $replace >> ~/.bashrc
-else
-    sed -i "s/^.*DISPLAY=.*$/$replace/g" ~/.bashrc 
-fi
-echo "Start xfce4"
-export DISPLAY=${win_ip}:0.0
-startxfce4
+

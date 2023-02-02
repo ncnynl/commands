@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : install flutter linux version
-# Desc     : 用于安装flutter的脚本                           
+# Desc     : 用于源码安装flutter的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-02-01                         
@@ -16,6 +16,7 @@
 # https://docs.flutter.dev/community/china
 # https://flutter.cn/docs/get-started/install/linux
 
+echo "Install flutter source"
 cd $HOME/tools
 
 git clone https://ghproxy.com/https://github.com/flutter/flutter.git -b stable
