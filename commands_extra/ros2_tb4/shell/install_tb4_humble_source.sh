@@ -70,17 +70,17 @@
     fi
     # fix msg/dock.hpp to msg/dock_status.hpp
     #fix msg::Dock to msg::DockStatus
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/include/irobot_create_nodes/robot_state.hpp
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/src/robot_state.cpp
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_ignition/irobot_create_ignition_toolbox/src/sensors/ir_opcode.cpp
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_ignition/irobot_create_ignition_toolbox/include/irobot_create_ignition_toolbox/sensors/ir_opcode.hpp
-    # /home/ubuntu/ros2_tb4_ws/src//home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_gazebo/irobot_create_gazebo_plugins/include/irobot_create_gazebo_plugins/gazebo_ros_docking_status.hpp
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_gazebo/irobot_create_gazebo_plugins/src/gazebo_ros_docking_status.cpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/include/irobot_create_nodes/robot_state.hpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/src/robot_state.cpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_ignition/irobot_create_ignition_toolbox/src/sensors/ir_opcode.cpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_ignition/irobot_create_ignition_toolbox/include/irobot_create_ignition_toolbox/sensors/ir_opcode.hpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_gazebo/irobot_create_gazebo_plugins/include/irobot_create_gazebo_plugins/gazebo_ros_docking_status.hpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_gazebo/irobot_create_gazebo_plugins/src/gazebo_ros_docking_status.cpp
 
     # fix action/dock_servo.hpp to action/dock.hpp
     # fix action::DockServo to action::Dock 
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/include/irobot_create_nodes/motion_control/docking_behavior.hpp
-    # /home/ubuntu/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/src/motion_control/docking_behavior.cpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/include/irobot_create_nodes/motion_control/docking_behavior.hpp
+    # ~/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/src/motion_control/docking_behavior.cpp
 
     if [ ${ROS_DISTRO} == "humble" ]; then
         sed -i 's/msg\/dock.hpp/msg\/dock_status.hpp/'g ~/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/include/irobot_create_nodes/robot_state.hpp

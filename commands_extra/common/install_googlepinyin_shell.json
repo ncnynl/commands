@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_googlepinyin_shell.sh",
+            "command": "cd ~/commands/common; ./shell/install_googlepinyin_shell.sh",
             "desc": "安装谷歌拼音输入法",
             "id": "1",
             "link": "@ncnynl | 点击'启动'按钮,一键安装",

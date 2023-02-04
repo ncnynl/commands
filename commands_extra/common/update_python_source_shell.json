@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/common;  ./shell/update_python_source_shell.sh",
+            "command": "cd ~/commands/common;  ./shell/update_python_source_shell.sh",
             "desc": "更新python源,使用豆瓣的源",
             "id": "1",
             "link": "点击'启动'按钮就可",

@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/check_echo_shell.sh",
+            "command": "cd ~/commands/common; ./shell/check_echo_shell.sh",
             "desc": "",
             "id": 0,
             "link": "",

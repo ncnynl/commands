@@ -42,7 +42,7 @@ else
     ./build.sh
     #echo "ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/ros1_vslam_ws/ORB_SLAM2/Examples/ROS" >> ~/.bashrc
     #export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/home/cx/cxapp/catkin_ws/src/ORB_SLAM2/Examples/ROS
-    #export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/home/ubuntu/ros1_vslam_ws/ORB_SLAM2/Examples/ROS
+    #export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/ros1_vslam_ws/ORB_SLAM2/Examples/ROS
 
 
     #add to bashrc if not exits

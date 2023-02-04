@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/ros2_ignition; ./shell/install_ignition_galactic.sh",
+            "command": "cd ~/commands/ros2_ignition; ./shell/install_ignition_galactic.sh",
             "desc": "安装Ignition整合ros2",
             "id": "1",
             "link": "https://www.ncnynl.com/archives/202201/4917.html",

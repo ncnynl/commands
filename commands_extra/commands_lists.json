@@ -78,35 +78,35 @@
             "name": "launch roscore"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh aliyun",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh aliyun",
             "desc": "更新ros1的软件源,使用阿里云的源",
             "id": 12,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_aliyun"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh tsinghua",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh tsinghua",
             "desc": "更新ros1的软件源,使用清华大学的源",
             "id": 13,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_tsinghua"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh bfsu",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh bfsu",
             "desc": "更新ros1的软件源,使用北京外国语大学的源",
             "id": 14,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_bfsu"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh sjtu",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh sjtu",
             "desc": "更新ros1的软件源,使用上海交通大学源",
             "id": 15,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_sjtu"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh ustc",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh ustc",
             "desc": "更新ros1的软件源,使用中国科学技术大学源",
             "id": 16,
             "link": "点击'启动'按钮,一键更新",
@@ -134,7 +134,7 @@
             "name": "install_ros1_noetic"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1; ./shell/config_ros1_network_shell.sh",
+            "command": "cd ~/commands/ros1; ./shell/config_ros1_network_shell.sh",
             "desc": "",
             "id": 20,
             "link": "",
@@ -904,7 +904,7 @@
             "name": "launch rostopic echo"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1_sensor; ./shell/install_imu_m0_shell.sh",
+            "command": "cd ~/commands/ros1_sensor; ./shell/install_imu_m0_shell.sh",
             "desc": "",
             "id": 130,
             "link": "",
@@ -1345,7 +1345,7 @@
             "name": "3-nav"
         },
         {
-            "command": "cd /home/ubuntu/commands/walking_application; ./shell/install_walking_application.sh",
+            "command": "cd ~/commands/walking_application; ./shell/install_walking_application.sh",
             "desc": "",
             "id": 193,
             "link": "",
@@ -1429,7 +1429,7 @@
             "name": "2-hospital_world_v1"
         },
         {
-            "command": "ros2 service call /map_server/load_map nav2_msgs/srv/LoadMap \"{map_url: /home/ubuntu/aiwalking_ws/src/walking_application/maps/cafe_world/cafe_world.yaml}\"",
+            "command": "ros2 service call /map_server/load_map nav2_msgs/srv/LoadMap \"{map_url: ~/aiwalking_ws/src/walking_application/maps/cafe_world/cafe_world.yaml}\"",
             "desc": "加载第二层的咖啡厅的新地图\n",
             "id": 205,
             "link": "https://www.ncnynl.com/archives/202204/5174.html",
@@ -1576,7 +1576,7 @@
             "name": "clear"
         },
         {
-            "command": "cd /home/ubuntu/commands/common;  ./shell/update_rosdep_tsinghua.sh",
+            "command": "cd ~/commands/common;  ./shell/update_rosdep_tsinghua.sh",
             "desc": "用于解决rosdep update问题,使用清华源来替代官方源, 推荐使用",
             "id": 226,
             "link": "点击'启动'按钮就可, 之后rosdep update不会再报错",
@@ -1632,7 +1632,7 @@
             "name": "check_template"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/check_python_version.sh ",
+            "command": "cd ~/commands/common; ./shell/check_python_version.sh ",
             "desc": "检测python的版本",
             "id": 234,
             "link": "点击'启动'按钮,一键检测",
@@ -1702,14 +1702,14 @@
             "name": "echo 2"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/check_echo_shell.sh",
+            "command": "cd ~/commands/common; ./shell/check_echo_shell.sh",
             "desc": "",
             "id": 244,
             "link": "",
             "name": "check_echo_shell"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_googlepinyin_shell.sh",
+            "command": "cd ~/commands/common; ./shell/install_googlepinyin_shell.sh",
             "desc": "安装谷歌拼音输入法",
             "id": 245,
             "link": "@ncnynl | 点击'启动'按钮,一键安装",
@@ -1807,14 +1807,14 @@
             "name": "systemback"
         },
         {
-            "command": "cd /home/ubuntu/commands/common;  ./shell/update_python_source_shell.sh",
+            "command": "cd ~/commands/common;  ./shell/update_python_source_shell.sh",
             "desc": "更新python源,使用豆瓣的源",
             "id": 259,
             "link": "点击'启动'按钮就可",
             "name": "update_python_source_shell"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_docker_compose.sh",
+            "command": "cd ~/commands/common; ./shell/install_docker_compose.sh",
             "desc": "安装Docker Compose",
             "id": 260,
             "link": "https://www.ncnynl.com/archives/202203/5109.html",
@@ -1863,7 +1863,7 @@
             "name": "echo 6"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_GitHubDesktop_shell.sh",
+            "command": "cd ~/commands/common; ./shell/install_GitHubDesktop_shell.sh",
             "desc": "安装github桌面版本",
             "id": 267,
             "link": "点击'启动'按钮,一键安装",
@@ -1877,7 +1877,7 @@
             "name": "launch_template"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_systemback_shell.sh",
+            "command": "cd ~/commands/common; ./shell/install_systemback_shell.sh",
             "desc": "",
             "id": 269,
             "link": "",
@@ -1968,14 +1968,14 @@
             "name": "install obs"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; sudo ./shell/update_system_mirrors.sh",
+            "command": "cd ~/commands/common; sudo ./shell/update_system_mirrors.sh",
             "desc": "更新系统源,运行后可以选择对应的系统源",
             "id": 282,
             "link": "点击'启动'按钮就可",
             "name": "update_system_mirrors "
         },
         {
-            "command": "cd /home/ubuntu/commands/common; sudo ./shell/update_system_mirrors2.sh  aliyun",
+            "command": "cd ~/commands/common; sudo ./shell/update_system_mirrors2.sh  aliyun",
             "desc": "更新系统源,指定阿里云的系统源",
             "id": 283,
             "link": "点击'启动'按钮就可",
@@ -2332,7 +2332,7 @@
             "name": "config_template"
         },
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_pyinstaller_shell.sh",
+            "command": "cd ~/commands/common; ./shell/install_pyinstaller_shell.sh",
             "desc": "",
             "id": 334,
             "link": "",
@@ -2367,7 +2367,7 @@
             "name": " launch Ignition"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2_ignition; ./shell/install_ignition_galactic.sh",
+            "command": "cd ~/commands/ros2_ignition; ./shell/install_ignition_galactic.sh",
             "desc": "安装Ignition整合ros2",
             "id": 339,
             "link": "https://www.ncnynl.com/archives/202201/4917.html",
@@ -3228,7 +3228,7 @@
             "name": "2-hospital_world_v1"
         },
         {
-            "command": "ros2 service call /map_server/load_map nav2_msgs/srv/LoadMap \"{map_url: /home/ubuntu/aiwalking_ws/src/walking_application/maps/cafe_world/cafe_world.yaml}\"",
+            "command": "ros2 service call /map_server/load_map nav2_msgs/srv/LoadMap \"{map_url: ~/aiwalking_ws/src/walking_application/maps/cafe_world/cafe_world.yaml}\"",
             "desc": "加载第二层的咖啡厅的新地图\n",
             "id": 462,
             "link": "https://www.ncnynl.com/archives/202204/5174.html",
@@ -4348,7 +4348,7 @@
             "name": "2-arecord"
         },
         {
-            "command": "ros2 launch walking_voice play.launch.py name:=/home/ubuntu/tools/music/beautiful_day.wav",
+            "command": "ros2 launch walking_voice play.launch.py name:=~/tools/music/beautiful_day.wav",
             "desc": "",
             "id": 622,
             "link": "",
@@ -5209,28 +5209,28 @@
             "name": "close all launch"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh aliyun",
+            "command": "cd ~/commands/ros2;sudo ./shell/update_ros2_source.sh aliyun",
             "desc": "更新ros2的软件源,使用阿里云的源",
             "id": 745,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_aliyun"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh   tsinghua",
+            "command": "cd ~/commands/ros2;sudo ./shell/update_ros2_source.sh   tsinghua",
             "desc": "更新ros2的软件源,使用清华大学的源",
             "id": 746,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_tsinghua"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh   restore",
+            "command": "cd ~/commands/ros2;sudo ./shell/update_ros2_source.sh   restore",
             "desc": "更新ros2的软件源,使用官方的源",
             "id": 747,
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros2_source_packages"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/update_ros2_source.sh  bfsu",
+            "command": "cd ~/commands/ros2;sudo ./shell/update_ros2_source.sh  bfsu",
             "desc": "更新ros2的软件源,使用北京外国语大学的源",
             "id": 748,
             "link": "点击'启动'按钮,一键更新",
@@ -5258,7 +5258,7 @@
             "name": "launch turtle_teleop_key"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2;sudo ./shell/install_ros2_galactic.sh ",
+            "command": "cd ~/commands/ros2;sudo ./shell/install_ros2_galactic.sh ",
             "desc": "安装galactic,采用国内源,安装更顺畅",
             "id": 752,
             "link": "点击'启动'按钮,一键安装",
@@ -5272,7 +5272,7 @@
             "name": "clear ros2 log"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2; ./shell/install_ros2_humble.sh ",
+            "command": "cd ~/commands/ros2; ./shell/install_ros2_humble.sh ",
             "desc": "安装humble,采用国内源,安装更顺畅",
             "id": 754,
             "link": "点击'启动'按钮,一键安装",
@@ -5524,7 +5524,7 @@
             "name": "launch turtlebot3 world"
         },
         {
-            "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=/home/ubuntu/map.yaml",
+            "command": "ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=~/map.yaml",
             "desc": "导航",
             "id": 790,
             "link": "",
@@ -5636,7 +5636,7 @@
             "name": "map_saver_cli"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros2_tb3_gazebo; ./shell/download_gazebo_model_shell.sh",
+            "command": "cd ~/commands/ros2_tb3_gazebo; ./shell/download_gazebo_model_shell.sh",
             "desc": "下载gazebo模型",
             "id": 806,
             "link": "点击'启动'按钮,一键下载",

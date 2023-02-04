@@ -29,6 +29,24 @@ sudo snap install android-studio --classic
 
 flutter config --android-studio-dir /snap/android-studio/current/android-studio
 
+echo "Install androidsdk"
+# https://stackoverflow.com/questions/34556884/how-to-install-android-sdk-on-ubuntu
+sudo snap install androidsdk
+
+flutter config --android-sdk $HOME/AndroidSDK
+
+androidsdk "platform-tools" "platforms;android-32" "build-tools;30.0.3" "cmdline-tools;latest"
+
+# echo "add path to bashrc"
+# echo 'export PUB_HOSTED_URL=https://pub.flutter-io.cn' >> ~/.bashrc 
+# echo 'export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn' >> ~/.bashrc 
+# echo 'export FLUTTER_GIT_URL=https://ghproxy.com/https://github.com/flutter/flutter.git' >> ~/.bashrc 
+
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+# export FLUTTER_GIT_URL=https://ghproxy.com/https://github.com/flutter/flutter.git
+export FLUTTER_GIT_URL=https://github.com/flutter/flutter.git
+
 flutter doctor --android-licenses
 
 # switch to dev branch
@@ -41,6 +59,10 @@ flutter config --enable-linux-desktop
 # flutter config --enable-macos-desktop
 # enable Windows toolchain
 # flutter config --enable-windows-desktop
+
+# https://stackoverflow.com/questions/51281702/unable-to-find-bundled-java-version-on-flutter
+# Unable to find bundled Java version
+# cd ~/android-studio/ && ln -s jbr jre
 
 flutter doctor
 

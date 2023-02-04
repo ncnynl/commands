@@ -59,7 +59,7 @@ git clone -b main https://ghproxy.com/https://github.com/open-rmf/rmf-web
 cd ~/ros2_rmf_ws/rmf-web
 
 # pnpm
-export PNPM_HOME="/home/ubuntu/.local/share/pnpm"
+export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 pnpm env use --global 18

@@ -15,7 +15,7 @@
 ################################################
 #source from https://bitbucket.org/theconstructcore/barista_ros2_rmf_free_fleet branch:starbots-humble
 
-if [ $ROS_DISTRO -ne "humble" ];then 
+if [ "$ROS_DISTRO" -ne "humble" ];then 
     echo "This repo just for humble" && exit 0
 fi 
 echo ""

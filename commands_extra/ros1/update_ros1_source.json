@@ -1,35 +1,35 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh aliyun",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh aliyun",
             "desc": "更新ros1的软件源,使用阿里云的源",
             "id": "1",
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_aliyun"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh tsinghua",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh tsinghua",
             "desc": "更新ros1的软件源,使用清华大学的源",
             "id": "2",
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_tsinghua"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh bfsu",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh bfsu",
             "desc": "更新ros1的软件源,使用北京外国语大学的源",
             "id": "3",
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_bfsu"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh sjtu",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh sjtu",
             "desc": "更新ros1的软件源,使用上海交通大学源",
             "id": "4",
             "link": "点击'启动'按钮,一键更新",
             "name": "update_ros1_source_sjtu"
         },
         {
-            "command": "cd /home/ubuntu/commands/ros1;sudo ./shell/update_ros1_source.sh ustc",
+            "command": "cd ~/commands/ros1;sudo ./shell/update_ros1_source.sh ustc",
             "desc": "更新ros1的软件源,使用中国科学技术大学源",
             "id": "5",
             "link": "点击'启动'按钮,一键更新",

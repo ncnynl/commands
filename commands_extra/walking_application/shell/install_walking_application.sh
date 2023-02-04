@@ -17,6 +17,12 @@
         
 workspace=ros2_walking_app_ws
 
+echo $ROS_DISTRO;
+
+if [ "galactic" != "$ROS_DISTRO" ] 
+then 
+    echo "This repo just for galactic" && exit 0
+fi 
 # 创建工作空间
 echo "workspace if exits ?"
 if [ ! -d ~/$workspace ];then 
