@@ -238,6 +238,64 @@ function commands_search_install(){
 }
 
 #######################################
+# commands_search_install rightnow without prompt
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_si(){
+    if [ ! $1 ];then 
+        echo "Shell name can not be null"
+        exit 0
+    fi 
+
+    i=j=0
+    for dir in $(ls)
+    do
+        if [ -d $dir/shell ]; then 
+            if is_empty_dir $dir/shell
+            then
+                continue 
+            fi            
+            for file in $(ls $dir/shell/*.sh)
+            do 
+                if [ -f $file ]; then
+                    let i++
+                    result=$(echo $file | grep "$1")
+                    # echo $file 
+                    # echo $1
+                    if [[ $result != "" ]] ; then
+                        let j++
+                        shell=${file#*/}
+                        path=$(dirname $file)
+                        folder=${path%/*}
+                    fi
+                fi
+            done 
+        fi 
+    done 
+
+    #if only one jump to  install
+    if [ $j == 1 ];then 
+        cd ~/commands/$folder
+        filename=${shell#*/}
+        if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
+            sudo ./$shell $2
+        else 
+            ./$shell $2
+        fi
+    else
+        echo "Don't have shell with name ${filename}"
+    fi
+    
+}
+
+#######################################
 # commands_search
 # Globals: 
 #   None
@@ -567,6 +625,37 @@ function commands_build()
 
 }
 
+#######################################
+# header 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function header(){
+    if [ $1 != "-si" ]; then 
+        echo -e '+---------------------------------------------------+'
+        echo -e '|                                                   |'
+        echo -e '|   =============================================   |'
+        echo -e '|                                                   |'
+        echo -e "|        欢迎使用ROS命令管理器(RCM)命令行版         |"
+        echo -e '|                                                   |'
+        echo -e '|   =============================================   |'
+        echo -e '|   作者:ncnynl                                     |'
+        echo -e '|   邮箱:1043931@qq.com                             |'
+        echo -e '|   网站:https://ncnynl.com                         |'
+        echo -e '|   更新:2022-11-18                                 |'
+        echo -e '|   创客智造B群:926779095                           |'
+        echo -e '|   创客智造C群:937347681                           |'
+        echo -e '|   创客智造D群:562093920                           |'
+        echo -e '+---------------------------------------------------+'
+        echo -e ''
+    fi
+}
 
 #######################################
 # commands
@@ -581,23 +670,7 @@ function commands_build()
 #######################################
 function commands() {
     clear
-    echo -e '+---------------------------------------------------+'
-    echo -e '|                                                   |'
-    echo -e '|   =============================================   |'
-    echo -e '|                                                   |'
-    echo -e "|        欢迎使用ROS命令管理器(RCM)命令行版         |"
-    echo -e '|                                                   |'
-    echo -e '|   =============================================   |'
-    echo -e '|   作者:ncnynl                                     |'
-    echo -e '|   邮箱:1043931@qq.com                             |'
-    echo -e '|   网站:https://ncnynl.com                         |'
-    echo -e '|   更新:2022-11-18                                 |'
-    echo -e '|   创客智造B群:926779095                           |'
-    echo -e '|   创客智造C群:937347681                           |'
-    echo -e '|   创客智造D群:562093920                           |'
-    echo -e '+---------------------------------------------------+'
-    echo -e ''
-
+    header $1
     case $1 in 
     [1-9]*)
         echo -e '#####################################################'
@@ -615,6 +688,11 @@ function commands() {
         # echo -e '#####################################################'
         # select_id       
         ;;   
+    '-si'|'search-install')
+        commands_si $2
+        # echo -e '#####################################################'
+        # select_id       
+        ;;          
     '-l'|'list')
         echo -e '#####################################################'
         echo -e '              Alternative scripts：'
