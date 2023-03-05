@@ -751,6 +751,7 @@ function commands() {
         echo "  "
         echo "-h | help:       Print this help text."
         echo "-s | search:     Search the script file by keyword"
+        echo "-si | search-install:     Search the script file and install rightnow"
         echo "-l | list:       List all script files and serial numbers"
         echo "-i | install:    Install apt packages"
         echo "-r | remove:     Remove apt packages"
