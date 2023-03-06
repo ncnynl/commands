@@ -10,9 +10,7 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
-
-#!/bin/bash
-# simple script menu
+alias GETTEXT='gettext "commands"'
 
 function diskspace {
 	clear
@@ -55,7 +53,7 @@ do
 		memusage ;;
 	*)
 		clear
-		echo "Sorry, wrong selection" ;;
+		echo "$(GETTEXT "Sorry, wrong selection")" ;;
 	esac
 	echo -en "\n\n\t\t\tHit any key to continue"
 	read -n 1 line
