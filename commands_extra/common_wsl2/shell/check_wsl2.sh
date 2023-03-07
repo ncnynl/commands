@@ -19,7 +19,7 @@ echo "$(gettext "Check wsl2 system")"
 
 function check_wsl()
 {
-    result=$(uname -a | grep "Microsoft")
+    result=$(uname -a | grep "WSL2")
     if [[ "$result" != "" ]]
     then
         echo "System is WSL2 "
