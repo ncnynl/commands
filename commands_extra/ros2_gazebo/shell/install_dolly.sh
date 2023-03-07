@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_dolly   
+# Function : Install dolly simulator  
 # Desc     : 用于源码方式安装ROS2版dolly仿真的脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install dolly simulator")"
 
 case $ROS_DISTRO in
 'foxy'|'galactic')

@@ -12,6 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Close Commands")"
+
 PidFind(){   
     PIDCOUNT=`ps -ef | grep $1 | grep -v "grep" | grep -v $0 | grep -v "close_commands"  | awk '{print $2}' | wc -l`;  
     echo "Found process num: ${PIDCOUNT} "

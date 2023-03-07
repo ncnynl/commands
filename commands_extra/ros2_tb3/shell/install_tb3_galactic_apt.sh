@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Galactic                                #
+# Function :Install ROS2 Galactic turtlebot3 apt version       #
 # Desc     : 用于APT方式安装ROS2 Galactic版Turtlebot3的脚本
 # Website  : https://www.ncnynl.com/archives/202210/5574.html  
 # Platform :All Linux Based Platform                           #
@@ -11,6 +11,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 Galactic turtlebot3 apt version")"
 
 ros2_distro=galactic
 

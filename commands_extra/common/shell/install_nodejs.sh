@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs newest version 
+# Function : Install nodejs newest version 
 # Desc     : 用于安装默认最新nodejs版本，yarn和管理器NVM软件的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install nodejs newest version")" 
 
 if  [ ! -d $HOME/.nvm ]; then 
     echo "Please install nvm first 'cs -s install_nvm' "

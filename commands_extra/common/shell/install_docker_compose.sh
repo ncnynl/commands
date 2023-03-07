@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install docker compose  
+# Function : Install docker compose  
 # Desc     : 用于安装容器启动组docker-compose的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install docker compose")"  
+
 #安装最新版本的docker compose
 #下载
 

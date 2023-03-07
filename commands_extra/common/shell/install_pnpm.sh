@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install pnpm 
+# Function : Install pnpm 
 # Desc     : 用于安装nodejs 18版本及管理工具pnpm的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,8 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
-echo "install pnpm "
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install pnpm")"         
 
 if  [ -f $HOME/.local/share/pnpm/pnpm ]; then 
     echo "pnpm has installed "

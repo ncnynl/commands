@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install rmf burger maps  
+# Function : Install rmf burger maps  
 # Desc     : 用于源码方式安装ROS2 humble版自定义Burger地图RMF导航包的脚本
 # Website  : https://www.ncnynl.com/archives/202212/5781.html                       
 # Platform : ubuntu                                
@@ -14,6 +14,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install rmf burger maps")" 
 
 echo ""
 echo "Set workspace"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ################################################
-# Function : update docker source  
+# Function : Update docker source  
 # Desc     : 用于更新docker源的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update docker source")" 
+
 set -e
 
 if [ -z "$1" ]

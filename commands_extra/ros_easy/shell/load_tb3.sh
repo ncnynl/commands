@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : load tb3
+# Function : Load turtlebot3
 # Desc     : 用于加载ROS1/ROS2 Turtlebot3工作空间的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Load turtlebot3")"
+
 
 case "$ROS_DISTRO" in
     "noetic")

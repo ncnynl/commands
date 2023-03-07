@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install vscode 
+# Function : Install vscode 
 # Desc     : 用于安装编辑器VSCODE的脚本
 # Website  : https://www.ncnynl.com/archives/202212/5813.html                              
 # Platform : ubuntu                                
@@ -13,8 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
-echo "install vscode "
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install vscode")"  
 
 sudo apt-get install wget gpg -y 
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install nvidia docker v2   
+# Function : Install nvidia docker 20.04   
 # Desc     : 用于安装nvidia docker的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install nvidia docker 20.04")"
 
 echo "Install Nvidia docker...."
 

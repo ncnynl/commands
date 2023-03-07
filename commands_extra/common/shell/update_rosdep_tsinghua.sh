@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : update rosdep tsinghua  
+# Function : Update rosdep tsinghua  
 # Desc     : 用于更新rodep源的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update rosdep tsinghua")"       
+
 sudo apt update 
 # install dep
 

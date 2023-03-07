@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 documentation 
+# Function : Install ros2 documentation 
 # Desc     : 用于搭建ROS2文档网站的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ros2 documentation")"   
 echo "Not Supported Yet!"
 exit 0         
 # https://robots.ros.org/contributing/

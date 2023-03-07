@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : init free fleet     
+# Function : Init free fleet     
 # Desc     : 用于初始化free_fleet车管管理环境的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Init free fleet")"
+
 
 if ! grep -Fq "load_free_fleet.sh" ~/.bashrc
 then

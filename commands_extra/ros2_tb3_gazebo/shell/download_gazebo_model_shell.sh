@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : download gazebo model shell 
+# Function : Download ROS2 gazebo model shell 
 # Desc     : 用于安装ROS2 Gazebo模型的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Download ROS2 gazebo model shell")"
 
 #run cd gazebo
 

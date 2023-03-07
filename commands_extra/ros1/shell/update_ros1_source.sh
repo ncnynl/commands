@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Update ROS1 Source                                 #
+# Function : Update ROS1 Source                                 #
 # Desc     : 用于更新ROS1源的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update ROS1 Source")"
 
 #set Key
 sudo apt-get update && sudo apt-get install curl gnupg lsb-release

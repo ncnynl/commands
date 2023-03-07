@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install nvm  
+# Function : Install nvm  
 # Desc     : 用于安装nodejs管理工具NVM的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,8 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
-echo "install nvm and nodejs "
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install nvm")" 
 
 #https://github.com/nvm-sh/nvm
 if  [ -d $HOME/.nvm ]; then 

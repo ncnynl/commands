@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install velodyne 
+# Function : Install ROS2 velodyne 
 # Desc     : 用于源码方式安装ROS2版多线激光雷达velodyne驱动的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,11 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 velodyne")"
+
+
 #        
 echo "Not Yet Supported!"
 exit 0    

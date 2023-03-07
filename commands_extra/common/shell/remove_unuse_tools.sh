@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : remove_unuse_tools 
+# Function : Remove unuse tools 
 # Desc     : 用于删除多余软件的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Remove unuse tools")"  
 
 echo "remove libreoffice"
 sudo apt remove libreoffice-calc libreoffice-draw  libreoffice-impress libreoffice-writer  libreoffice-common -y 

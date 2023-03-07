@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install wsl2 bridge   
+# Function : Install wsl2 bridge   
 # Desc     : 用于生成WSL2系统桥接脚本，WSL2的IP配置脚本和取消桥接脚本的脚本
 # Website  : https://www.ncnynl.com/archives/202301/5823.html                             
 # Platform : WSL2 ubuntu                                
@@ -14,7 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install wsl2 bridge")"
+
 function build_wsl_bridge(){
 
     echo "Build wsl-bridge ......"

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install turtorial ros2 tf2 ws 
+# Function : Install turtorial ros2 tf2 ws 
 # Desc     : 用于构建学习ROS2 TF2代码工作空间的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install turtorial ros2 tf2 ws")"
 
 if [ ! -d ~/ros2_tf2_ws ]; then
     cd ~

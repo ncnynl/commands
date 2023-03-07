@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install wsl2 xface4   
+# Function : Install wsl2 xface4   
 # Desc     : 用于安装WSL2桌面的脚本  
 # Website  : https://www.ncnynl.com/archives/202301/5820.html                           
 # Platform : WSL2 ubuntu                                
@@ -14,6 +14,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install wsl2 xface4")"
 
 echo "Install xfce4...."
 

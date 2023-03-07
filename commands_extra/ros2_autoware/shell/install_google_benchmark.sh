@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install google benchmark   
+# Function : Install google benchmark   
 # Desc     : 用于安装google benchmark的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install google benchmark")"
 
 # https://github.com/osqp/osqp/releases/download/v0.6.2/complete_sources.tar.gz
 # https://osqp.org/docs/get_started/sources.html#install-the-binaries

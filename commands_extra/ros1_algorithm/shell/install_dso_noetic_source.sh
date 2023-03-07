@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS1 Noetic ORB_SLAM2")"
 
 workspace=ros1_vslam_ws
 

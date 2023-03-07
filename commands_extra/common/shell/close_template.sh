@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : Close Commands           
+# Function : Close Commands tempalte          
 # Desc     : 用于关闭RCM打开的脚本模板                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Close Commands tempalte")"
 PidFind(){   
     PIDCOUNT=`ps -ef | grep $1 | grep -v "grep" | grep -v $0 | awk '{print $2}' | wc -l`;  
     echo "Found process num: ${PIDCOUNT} "

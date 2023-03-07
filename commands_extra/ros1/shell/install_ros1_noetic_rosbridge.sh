@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ros-noetic-rosbridge-suite")"
 
 echo "Install ros-noetic-rosbridge-suite"
 

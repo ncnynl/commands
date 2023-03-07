@@ -14,6 +14,7 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands
+echo "$(gettext "Check linux Version")"
 #######################################
 # Get System Version
 # Globals: 
@@ -25,7 +26,6 @@ export TEXTDOMAIN=commands
 # Outputs:
 #    echo to stdout
 #######################################
-
 release=""
 version=""
 cpu_release=""

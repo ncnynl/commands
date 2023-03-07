@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install wireguard server   
+# Function : Install wireguard server   
 # Desc     : 用于安装异域局域网软件wireguard服务端的脚本                  
 # Website  : https://www.ncnynl.com/archives/202212/5812.html         
 # Platform : ubuntu                                
@@ -14,6 +14,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install wireguard server")"  
 # https://www.cyberciti.biz/faq/ubuntu-20-04-set-up-wireguard-vpn-server/
 # https://www.wireguard.com/quickstart/
 # echo "Not Supported Yet!"

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install tb4 ignition source  
+# Function : Install ROS2 galactic turtlebot4 and ignition source version  
 # Desc     : 用于源码方式安装ROS2 Galactic版ignition仿真及TB4仿真程序的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 galactic turtlebot4 and ignition source version")"
+
 #run ros2_tb4_ignition
 
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 rmf web 20.04   
+# Function : Install ROS2 galactic RM-web 20.04 source version  
 # Desc     : 用于源码方式安装RMF-WEB 20.04/galactic版的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 galactic RMF-web 20.04 source version")"
+
 echo "Not Yet Supported!"
 exit 0   
 #基于ubuntu20.04 galacitc版本安装需要指的版本

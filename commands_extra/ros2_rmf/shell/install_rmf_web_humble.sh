@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 rmf_web 22.04   
+# Function : Install ROS2 humble RMF-web 22.04 source version  
 # Desc     : 用于源码方式安装RMF-WEB 22.04/humble版的脚本   
 # Website  : https://www.ncnynl.com/archives/202212/5775.html                         
 # Platform : ubuntu                                
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble RMF-web 22.04 source version")"
+
 # echo "Not Yet Supported!"
 # exit 0
 #基于ubuntu22.04 humble版本安装需要指的版本

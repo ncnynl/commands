@@ -12,6 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Check Python Version")"
 
 PY3_VERSION=`python3 -V 2>&1|awk '{print $2}'|awk -F '.' '{print $1}'`
 

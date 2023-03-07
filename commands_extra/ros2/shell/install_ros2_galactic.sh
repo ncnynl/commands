@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Galactic                              #
+# Function : Install ROS2 Foxy AMD version                     #
 # Desc     : 用于AMD架构下安装ROS2 Galactic版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 Foxy AMD version")"
 
 ros2_distro=galactic
 

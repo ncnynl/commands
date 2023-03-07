@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros tutorials source 
+# Function : Install ros tutorials source 
 # Desc     : 用于搭建ROS1 Noetic官方教程例程工作空间的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ros tutorials source")"
+
 # echo "Not Supported Yet!"
 # exit 0  
 echo ""

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install cuda 12.0 wsl ubuntu   
+# Function : Install cuda 12.0 wsl2 ubuntu   
 # Desc     : 用于wsl上安装cuda toolkit的脚本 
 # Website  : https://www.ncnynl.com/archives/202301/5826.html                          
 # Platform : WSL2 ubuntu                                
@@ -14,6 +14,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install cuda 12.0 wsl2 ubuntu")"
 
 echo "Install  Cuda 12.0 toolkit ， this will take a long time to download cuda wsl ubuntu ...."
 

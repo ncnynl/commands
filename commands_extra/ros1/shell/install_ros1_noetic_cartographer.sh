@@ -10,7 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS1 Noetic Cartographer")"
 
 if [ -d ~/ros1_carto_ws ]; then
     echo "ros1 noetic cartographer have installed!!" 

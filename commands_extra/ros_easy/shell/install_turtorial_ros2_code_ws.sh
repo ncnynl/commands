@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install tutorial ros2 code ws
+# Function : Install tutorial ros2 code ws
 # Desc     : 用于构建学习ROS2 C++和Python代码工作空间的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install tutorial ros2 code ws")"
 
 if [ ! -d ~/ros2_code_ws ]; then
     cd ~

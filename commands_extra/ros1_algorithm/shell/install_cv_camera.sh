@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install cv camera
+# Function : Install cv camera
 # Desc     : 用于源码方式安装ROS1版本ros opencv相机驱动cv_camera的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                              
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install cv camera")"
 #        
 # echo "Not Yet Supported!"
 # exit 0    

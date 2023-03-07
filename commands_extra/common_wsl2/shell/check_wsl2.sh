@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : check wsl2 system   
+# Function : Check wsl2 system   
 # Desc     : 用于检查是否WSL2系统的脚本                           
 # Platform : WSL2 ubuntu                                
 # Version  : 1.0                               
@@ -13,8 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
-echo "Check if wsl2...."
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Check wsl2 system")"
 
 function check_wsl()
 {

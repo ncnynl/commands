@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS1 Noetic Cartographer                               #
+# Function : Install ROS1 Noetic Cartographer source version   #
 # Desc     : 用于源码方式安装ROS1版本激光建图算法cartographer的脚本  
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS1 Noetic Cartographer source version")"
 
 workspace=ros1_cartographer_ws
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_multirobot_map_merge    
+# Function : Install ROS2 multirobot map merge    
 # Desc     : 用于源码方式安装ROS2版地图合并和边缘探索算法m-explore的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 multirobot map merge")"
+
 # echo "Not Supported Yet!"
 # exit 0  
 echo ""

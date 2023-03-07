@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 easy arm 22.04  
+# Function : Install ros2 easy arm 22.04  
 # Desc     : 用于制作ROS-EASY-OS-ARM 22.04镜像自动化脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ros2 easy arm 22.04")"
 
 echo "ROS-EASY-OS-ARM 22.04 for RPI4 automation install script"
 echo "Not Yet Tested"

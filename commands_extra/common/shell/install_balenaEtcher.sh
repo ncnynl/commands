@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : check_echo_shell.sh   
+# Function : Install balenaEtcher   
 # Desc     : 用于安装烧录软件balenaEtcher的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install balenaEtcher")"           
 #https://github.com/balena-io/etcher/releases/tag/v1.10.1
 #https://github.com/balena-io/etcher/releases
 

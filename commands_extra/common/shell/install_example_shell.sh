@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : install example shell       
+# Function : Install example shell template          
 # Desc     : 用于生成脚本的模板                    
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2022-11-29                          
+# Date     : 2022-11-29                       
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install example shell template")"
+
 #        
 # echo "Not  Supported Yet!"
 # exit 0    

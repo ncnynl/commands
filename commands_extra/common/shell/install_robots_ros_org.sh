@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install robots ros org  
+# Function : Install robots ros org  
 # Desc     : 用于搭建robots.ros.org网站的脚本                                 
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install robots ros org")"          
 # https://robots.ros.org/contributing/
 
 #####Procedure

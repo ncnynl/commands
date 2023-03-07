@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install barista ros2   
+# Function : Install barista ros2 source version  
 # Desc     : 用于源码方式安装ROS2 humble版车队管理free_fleet_barista的脚本                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install barista ros2 source version")" 
+
 #source from https://bitbucket.org/theconstructcore/barista_ros2_rmf_free_fleet branch:starbots-humble
 
 if [ "$ROS_DISTRO" -ne "humble" ];then 

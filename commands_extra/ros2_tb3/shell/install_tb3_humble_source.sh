@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install turtlebot3 ros2 humble 
+# Function : Install ROS2 humble turtlebot3 source version 
 # Desc     : 用于源码方式安装ROS2 Humble版Turtlebot3的脚本  
 # Website  : https://www.ncnynl.com/archives/202210/5574.html                           
 # Platform : ubuntu                                
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble turtlebot3 source version")"
+
 #run ros2_tb3_ws
 # echo "Not Yet Supported!"
 # exit 0

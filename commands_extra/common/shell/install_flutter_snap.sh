@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install flutter snap version
+# Function : Install flutter snap version
 # Desc     : 用于snap方式安装flutter的脚本     
 # Website  : https://ubuntu.com/blog/getting-started-with-flutter-on-ubuntu                         
 # Platform : ubuntu                                
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install flutter snap version")"
 # https://www.cyberithub.com/how-to-install-flutter-on-ubuntu-20-04-lts-focal-fossa/
 # https://docs.flutter.dev/community/china
 # https://flutter.cn/docs/get-started/install/linux

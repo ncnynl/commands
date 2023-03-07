@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : load_free_fleet.sh  
+# Function : Load free fleet  
 # Desc     : 用于加载free_fleet的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Load free fleet")"
 
 if [ -d ~/ros2_free_fleet_ws ]; then
     source ~/ros2_free_fleet_ws/install/local_setup.bash

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install foxglove  
+# Function : Install foxglove  
 # Desc     : 用于安装ROS话题浏览工具foxglove-studio的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,7 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install foxglove")"
 
 #https://github.com/foxglove/studio
 # https://foxglove.dev/docs/studio/connection/ros1

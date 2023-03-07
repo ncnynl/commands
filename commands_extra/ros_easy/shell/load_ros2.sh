@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : load ros2  
+# Function : Load ROS2  
 # Desc     : 用于加载ROS2的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Load ROS2")"
 
 . ~/commands/common/shell/check_linux_version.sh
 

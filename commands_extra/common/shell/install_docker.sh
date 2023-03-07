@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install docker compose 
+# Function : Install docker 
 # Desc     : 用于安装容器docker的脚本                               
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install docker")"
         
 echo "Install Curl"
 sudo apt isntall curl -y 

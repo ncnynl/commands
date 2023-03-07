@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Update ROS2 Source                                 #
+# Function : Update ROS2 Source                                 #
 # Desc     : 用于更新ROS2源的脚本
 # Platform :All Linux Basudo sed Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update ROS2 Source")"
 
 #set Key
 sudo apt-get update && sudo apt-get install curl gnupg lsb-release

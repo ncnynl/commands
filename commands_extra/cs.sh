@@ -42,13 +42,22 @@ update_system_mirrors2.sh
 function while_read_desc(){
     while read LINE
     do
+        if [[ "${LINE[@]}" =~ "Function" ]];then
+            # echo $LINE
+            new=${LINE#*:}
+            # echo $new
+            #remove space
+            func=`echo ${new%*#}`
+            # echo $func
+        fi  
+
         if [[ "${LINE[@]}" =~ "Desc" ]];then
             # echo $LINE
             new=${LINE#*:}
             # echo $new
             desc=${new%*#}
             # echo $desc
-        fi
+        fi           
 
         if [[ "${LINE[@]}" =~ "Website" ]];then
             # echo $LINE
@@ -101,11 +110,12 @@ function commands_list(){
                 if [ -f $file ]; then
                     file_full_path="$HOME/commands/$file"
                     desc=""
+                    func=""
                     website=""
                     while_read_desc $file_full_path
                     let i++
                     echo "  ID:$i - ${file##*/}"
-                    echo "  ------------------------------------------${desc}"
+                    echo "  ------------------------------------------$(gettext "${func}")"
                     echo "  ------------------------------------------${website}"
                 fi
             done 
@@ -141,16 +151,17 @@ function commands_install(){
                     if [ $i == $1 ] ; then
                         file_full_path="$HOME/commands/$file"
                         desc=""
+                        func=""
                         website=""
                         while_read_desc $file_full_path
                         echo "$dir:"
                         echo "  ID:$i - ${file##*/}" 
-                        echo "  ------------------------------------------${desc}"
+                        echo "  ------------------------------------------$(gettext "${func}")"
                         echo "  ------------------------------------------${website}"
                         shell=${file#*/}
                         path=$(dirname $file)
                         folder=${path%/*}
-                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                        CHOICE_C=$(echo -e "\n${BOLD}└ $(gettext "Whether to execute the script")? [Y/n]${PLAIN}")
                         read -p "${CHOICE_C}" YN
                         [ -z ${YN} ] && YN = Y
                         case $YN in 
@@ -209,7 +220,7 @@ function commands_search_install(){
                         shell=${file#*/}
                         path=$(dirname $file)
                         folder=${path%/*}
-                        CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                        CHOICE_C=$(echo -e "\n${BOLD}└ $(gettext "Whether to execute the script")? [Y/n]${PLAIN}")
                         read -p "${CHOICE_C}" YN
                         [ -z ${YN} ] && YN = Y
                         case $YN in 
@@ -327,13 +338,14 @@ function commands_search(){
                     if [[ $result != "" ]] ; then
                         file_full_path="$HOME/commands/$file"
                         desc=""
+                        func=""
                         website=""
                         while_read_desc $file_full_path
                         let j++
                         jid="$i"
                         echo "$dir:"
                         echo "  ID:$i - ${file##*/}"
-                        echo "  ------------------------------------------${desc}"
+                        echo "  ------------------------------------------$(gettext "${func}")"
                         echo "  ------------------------------------------${website}"
                     fi
                 fi
@@ -380,16 +392,17 @@ function commands_edit(){
                         if [ $i == $1 ] ; then 
                             file_full_path="$HOME/commands/$file"
                             desc=""
+                            func=""
                             website=""
                             while_read_desc $file_full_path
                             echo "$dir:"
                             echo "  ID:$i - ${file##*/}"
-                            echo "  ------------------------------------------${desc}"
+                            echo "  ------------------------------------------$(gettext "${func}")"
                             echo "  ------------------------------------------${website}"
                             shell=${file#*/}
                             path=$(dirname $file)
                             folder=${path%/*}
-                            CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                            CHOICE_C=$(echo -e "\n${BOLD}└ $(gettext "Whether to execute the script")? [Y/n]${PLAIN}")
                             read -p "${CHOICE_C}" YN
                             [ -z ${YN} ] && YN = Y
                             case $YN in 
@@ -449,16 +462,17 @@ function commands_check(){
                         if [ $i == $1 ] ; then 
                             file_full_path="$HOME/commands/$file"
                             desc=""
+                            func=""
                             website=""
                             while_read_desc $file_full_path                        
                             echo "$dir:"
                             echo "  ID:$i - ${file##*/}"
-                            echo "  ------------------------------------------${desc}"
+                            echo "  ------------------------------------------$(gettext "${func}")"
                             echo "  ------------------------------------------${website}"
                             shell=${file#*/}
                             path=$(dirname $file)
                             folder=${path%/*}
-                            CHOICE_C=$(echo -e "\n${BOLD}└ Whether to execute the script? [Y/n]${PLAIN}")
+                            CHOICE_C=$(echo -e "\n${BOLD}└ $(gettext "Whether to execute the script")? [Y/n]${PLAIN}")
                             read -p "${CHOICE_C}" YN
                             [ -z ${YN} ] && YN = Y
                             case $YN in 
@@ -502,7 +516,7 @@ function commands_check(){
 #######################################
 function select_id()
 {
-    CHOICE_A=$(echo -e "\n${BOLD}└ Please select the script ID to be executed：${PLAIN}")
+    CHOICE_A=$(echo -e "\n${BOLD}└ $(gettext "Please select the script ID to be executed")：${PLAIN}")
     read -p "${CHOICE_A}" INPUT
     case $INPUT in 
     [1-9]*)
@@ -643,6 +657,9 @@ function commands_i18n(){
     'zh_CN')
         SETLANG="zh_CN.UTF-8"
         ;;
+    'zh_TW')
+        SETLANG="zh_TW.UTF-8"
+        ;;        
     *)
         SETLANG="en_US.UTF-8"
         ;;
@@ -676,16 +693,16 @@ function header(){
         echo -e '|                                                   |'
         echo -e '|   =============================================   |'
         echo -e '|                                                   |'
-        echo -e "|        欢迎使用ROS命令管理器(RCM)命令行版         |"
+        echo -e "|         $(gettext "Welcome to ROS Commands Manager CLI")       |"
         echo -e '|                                                   |'
         echo -e '|   =============================================   |'
-        echo -e '|   作者:ncnynl                                     |'
-        echo -e '|   邮箱:1043931@qq.com                             |'
-        echo -e '|   网站:https://ncnynl.com                         |'
-        echo -e '|   更新:2022-11-18                                 |'
-        echo -e '|   创客智造B群:926779095                           |'
-        echo -e '|   创客智造C群:937347681                           |'
-        echo -e '|   创客智造D群:562093920                           |'
+        echo -e "|   $(gettext "Author"):ncnynl                                   |"
+        echo -e "|   $(gettext "Email"):1043931@qq.com                            |"
+        echo -e "|   $(gettext "Website"):https://ncnynl.com                      |"
+        echo -e "|   $(gettext "Date"):2022-11-18                                 |"
+        echo -e "|   $(gettext "QQ Qun B"):926779095                              |"
+        echo -e "|   $(gettext "QQ Qun C"):937347681                              |"
+        echo -e "|   $(gettext "QQ Qun D"):562093920                              |"
         echo -e '+---------------------------------------------------+'
         echo -e ''
     fi
@@ -708,7 +725,7 @@ function commands() {
     case $1 in 
     [1-9]*)
         echo -e '#####################################################'
-        echo -e "      $(gettext "The following script will be executed")     "
+        echo -e "########$(gettext "The following script will be executed")     "
         echo -e '#####################################################'
         #执行脚本
         commands_install $1 $2
@@ -716,7 +733,7 @@ function commands() {
         ;;
     '-s'|'search')
         echo -e '#####################################################'
-        echo -e "             $(gettext "Alternative scripts") "
+        echo -e "########$(gettext "Alternative scripts") "
         echo -e '#####################################################'    
         commands_search $2
         # echo -e '#####################################################'
@@ -729,61 +746,61 @@ function commands() {
         ;;          
     '-l'|'list')
         echo -e '#####################################################'
-        echo -e "              $(gettext "Alternative scripts")："
+        echo -e "########$(gettext "Alternative scripts")"
         echo -e '#####################################################'    
         commands_list
         ;;    
     '-i'|'install')
         echo -e '#####################################################'
-        echo -e "              $(gettext "Install") $2 "
+        echo -e "########$(gettext "Install") $2 "
         echo -e '#####################################################'    
         sudo apt install $2
         ;;     
     '-r'|'remove')
         echo -e '#####################################################'
-        echo -e "              $(gettext "Remove") $2 "
+        echo -e "########$(gettext "Remove") $2 "
         echo -e '#####################################################'    
         sudo apt remove $2
         ;;  
     '-u'|'upgrade')
         echo -e '#####################################################'
-        echo -e "              $(gettext "Upgrade RCM") "
+        echo -e "########$(gettext "Upgrade RCM") "
         echo -e '#####################################################'    
         . ~/commands/common/shell/upgrade_rcm.sh
         ;;       
     '-v'|'version')
         current_version=$(cat ~/tools/commands/version.txt)
         echo -e '#####################################################'
-        echo -e "      $(gettext "Current RCM Version"): $current_version"
+        echo -e "########$(gettext "Current RCM Version"): $current_version"
         echo -e '#####################################################'    
         ;;     
     '-e'|'edit')
         echo -e '#####################################################'
-        echo -e "              $(gettext "Edit File") "
+        echo -e "########$(gettext "Edit File") "
         echo -e '#####################################################'    
         commands_edit $2
         ;;   
     '-c'|'check')
         echo -e '#####################################################'
-        echo -e "              $(gettext "View File Content") "
+        echo -e "########$(gettext "View File Content") "
         echo -e '#####################################################'    
         commands_check $2
         ;;        
     '-b'|'build')
         echo -e '#####################################################'
-        echo -e "              $(gettext "Build install script") "
+        echo -e "########$(gettext "Build install script") "
         echo -e '#####################################################'    
         commands_build $2
         ;;    
     '-L'|'language')
         echo -e '#####################################################'
-        echo -e "              $(gettext "select language") "
+        echo -e "########$(gettext "select language") "
         echo -e '#####################################################'    
         commands_i18n $2
         ;;                                                  
     '-h'|'help')
         echo -e '#####################################################'
-        echo -e "        $(gettext "command interface to the RCM tools")  "
+        echo -e "########$(gettext "commands help to the RCM tools")  "
         echo -e '#####################################################'
         echo "$(gettext  "Usage"): cs [options] [keyword]"
         echo "  "
@@ -805,7 +822,7 @@ function commands() {
         ;;             
     *)
         echo -e '#####################################################'
-        echo -e "              $(gettext "Alternative scripts")："
+        echo -e "########$(gettext "Alternative scripts")"
         echo -e '#####################################################'    
         #显示列表
         commands_list

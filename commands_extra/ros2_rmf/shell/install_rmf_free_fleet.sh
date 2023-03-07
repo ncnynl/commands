@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 rmf web 22.04 
+# Function : Install ROS2 rmf web 22.04 
 # Desc     : 用于源码方式安装ROS2 humble版FreeFLeet的脚本
 # Website  : https://www.ncnynl.com/archives/202212/5777.html
 # Platform : ubuntu                                
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 rmf web 22.04")"
+
 # https://github.com/open-rmf/free_fleet
 # echo "Not Yet Supported!"
 # exit 0        

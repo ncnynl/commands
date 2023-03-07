@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ################################################
-# Function : update system mirrors 2
-# Desc     : 用于简化版更新系统源的脚本                              
+# Function : Update system mirrors shell 2
+# Desc     : 用于简化版更新系统源的脚本2                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            
@@ -12,6 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update system mirrors shell 2")"  
+
 #
 # Copyright (C) 2017 - 2018 Oldking <oooldking@gmail.com>
 #

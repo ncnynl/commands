@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install gitlfs       
+# Function : Install gitlfs       
 # Desc     : 用于安装github大文件管理gitlfs的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,7 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install gitlfs")"
 
 #https://github.com/git-lfs/git-lfs
 # https://github.com/git-lfs/git-lfs/releases

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install wireguard client
+# Function : Install wireguard client
 # Desc     : 用于安装异域局域网软件wireguard客户端的脚本   
 # Website  : https://www.ncnynl.com/archives/202212/5812.html                           
 # Platform : ubuntu                                
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install wireguard client")"  
+
 # echo "Not Supported Yet!"
 # exit 0         
 #for ubuntu20.04 / 22.04

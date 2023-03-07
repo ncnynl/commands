@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install chrome linux version
+# Function : Install chrome linux version
 # Desc     : 用于deb方式安装chrome的脚本     
 # Website  : https://itsfoss.com/install-chrome-ubuntu/                       
 # Platform : ubuntu                                
@@ -13,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install chrome linux version")"  
 
 echo "Install chrome from deb"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 cartographer                          #
+# Function :Install ROS2 cartographer source version           #
 # Desc     : 用于源码方式安装ROS2版激光建图算法cartographer的脚本   
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,9 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 cartographer source version")"
 
 workspace=ros2_cartographer_ws
 

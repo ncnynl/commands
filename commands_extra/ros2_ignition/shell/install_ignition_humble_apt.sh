@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_ignition_humble_apt.sh     
+# Function : Install ignition humble apt version     
 # Desc     : 用于APT方式安装ROS2 humble版仿真软件ignition的脚本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ignition humble apt version")" 
 
 #run 
 

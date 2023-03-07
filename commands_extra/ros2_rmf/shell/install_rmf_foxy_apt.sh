@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 rmf source shell   
+# Function : Install ROS2 rmf source shell   
 # Desc     : 用于源码方式安装ROS2 foxy版RMF框架的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 rmf source shell")" 
+
 echo "Not Yet Supported!"
 exit 0        
 

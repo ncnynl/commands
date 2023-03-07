@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : sd system recover  
+# Function : SD system recover  
 # Desc     : 用于把压缩的GZ镜像系统并恢复到SD卡  
 # Website  : https://www.ncnynl.com/archives/202301/5816.html
 # Platform : ubuntu                                
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "SD system recover")" 
+
 # sudo dd bs=4M if=/dev/sdb | gzip > /home/your_username/image`date +%d%m%y`.gz
 # sudo gzip -dc /home/your_username/image.gz | dd bs=4M of=/dev/sdb
 function sd_system_recover(){

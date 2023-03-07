@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs  16 version
+# Function : Install nodejs 16 version
 # Desc     : 用于安装nodejs和管理器NVM软件的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,7 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install nodejs 16 version")" 
         
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

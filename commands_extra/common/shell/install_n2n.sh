@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install n2n  
+# Function : Install n2n  
 # Desc     : 用于安装搭建异域局域网软件n2n的脚本  
 # Website  : https://www.ncnynl.com/archives/202205/5233.html                      
 # Platform : ubuntu                                
@@ -15,6 +15,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install n2n")" 
 # echo "Not Supported Yet!"
 # exit 0  
 echo "Set workspace"

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install electron
+# Function : Install electron
 # Desc     : 用于安装electron的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install electron")"
+
 
 if  [ ! -d $HOME/.nvm ]; then 
     echo "Please install nvm first 'cs -s install_nvm' "

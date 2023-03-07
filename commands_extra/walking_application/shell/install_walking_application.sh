@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install walking application     
+# Function : Install ROS2 walking_application     
 # Desc     : 用于源码方式安装ROS2版仿真软件walking application的脚本 
 # Website  : https://www.ncnynl.com/archives/202212/5761.html                         
 # Platform : ubuntu                                
@@ -14,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 walking_application")"
+
         
 workspace=ros2_walking_app_ws
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install flutter keyboard  
+# Function : Install flutter keyboard  
 # Desc     : 用于安装flutter APP 控制开发环境                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install flutter keyboard")"
 # https://github.com/Rongix/ros_remote_controller        
 
 #先安装ros1 
@@ -48,10 +50,10 @@ sudo apt install ros-noetic-joy \
 
 # 安装turtlebot3
 echo "install turtlebot3 simluation"
-cs -s install_tb3_noetic_apt.sh
+cs -si install_tb3_noetic_apt.sh
 
 # 安装cv_camera
-cs -s install_cv_camera.sh
+cs -si install_cv_camera.sh
 
 # rosbridge-server
 sudo apt install ros-noetic-rosbridge-server

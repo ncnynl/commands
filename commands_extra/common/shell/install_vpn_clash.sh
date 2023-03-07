@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install vpn class 
-# Desc     : 用于安装VPN软件class的脚本                               
+# Function : Install vpn clash 
+# Desc     : 用于安装VPN软件clash的脚本                               
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-14 17:17:58                            
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install vpn clash")"  
+
 #https://mahongfei.com/1776.html
 #https://github.com/Fndroid/clash_for_windows_pkg/releases
 #安装最新版本的vpn clash for ubuntu

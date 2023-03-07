@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : update system mirrors 
+# Function : Update system mirrors 
 # Desc     : 用于交互版更新系统源的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -12,6 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update system mirrors")"  
+
 ## Author: SuperManito
 ## Modified: 2022-02-22
 ## License: GPL-2.0

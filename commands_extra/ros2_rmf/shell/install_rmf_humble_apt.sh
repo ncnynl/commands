@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ros2 rmf source shell   
+# Function : Install ROS2 humble rmf apt version   
 # Desc     : 用于APT方式安装ROS2 humble版RMF框架的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble rmf apt version")"
+
 # https://github.com/open-rmf/rmf_demos/issues/166
 echo "Not Yet Supported!"
 exit 0

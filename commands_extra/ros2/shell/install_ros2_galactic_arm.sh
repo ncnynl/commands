@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Galactic                              #
+# Function :Install ROS2 Galactic ARM version                  #
 # Desc     : 用于ARM架构下安装ROS2 Galactic版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,10 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 Foxy ARM version")"
+
 #test for ubuntu 20.04 Xaver NX jetpack 5.0.2
 ros2_distro=galactic
 

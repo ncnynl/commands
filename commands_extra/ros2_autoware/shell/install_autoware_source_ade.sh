@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install autoware source  
+# Function : Install autoware source veresion  
 # Desc     : 用于安装autoware源码版本的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install autoware source version")"
+
 # https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-ade.html
 # https://ade-cli.readthedocs.io/en/latest/install.html#linux-x86-64-and-aarch64
 # https://www.php.cn/blog/detail/35668.

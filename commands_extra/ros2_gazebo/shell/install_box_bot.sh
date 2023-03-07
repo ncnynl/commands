@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install_box_bot     
+# Function : Install box_bot     
 # Desc     : 用于源码方式安装ROS2版box-bot多机仿真控制的脚本
 # Website  : https://www.ncnynl.com/archives/202212/5782.html
 # Platform : ubuntu                                
@@ -14,6 +14,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install box_bot")"
 
 echo ""
 echo "Set workspace"

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 Humble                                #
+# Function :Install ROS2 Humble ARM version                    #
 # Desc     : 用于ARM架构下安装ROS2 Humble版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -10,6 +10,10 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 Humble ARM version")"
+
 #test for RPI4 ubuntu mate 22.04
 ros2_distro=humble
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install tb4 ignition humble apt   
+# Function : Install ROS2 humble turtlebot4 and ignition apt version   
 # Desc     : 用于APT方式安装ROS2 humble版ignition仿真及TB4仿真程序的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble turtlebot4 and ignition apt version")"
+
 echo "Not Yet Supported!" 
 exit 0
 

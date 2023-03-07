@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install osqp   
+# Function : Install osqp   
 # Desc     : 用于安装osqp的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
@@ -13,11 +13,12 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install osqp")"
 
 # https://github.com/osqp/osqp/releases/download/v0.6.2/complete_sources.tar.gz
 # https://osqp.org/docs/get_started/sources.html#install-the-binaries
-
-echo "Install osqp ...."
 
 function install_osqp()
 {

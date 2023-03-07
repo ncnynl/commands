@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install ade   
+# Function : Install ade   
 # Desc     : 用于安装ade的脚本                           
 # Platform : WSL2 / ubuntu                                
 # Version  : 1.0                               
@@ -13,8 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ade")"
 
-echo "Install ade ...."
 
 function install_ade()
 {

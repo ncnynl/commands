@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install flutter linux version
+# Function : Install flutter linux source version
 # Desc     : 用于源码安装flutter的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -15,6 +15,9 @@
 # https://www.cyberithub.com/how-to-install-flutter-on-ubuntu-20-04-lts-focal-fossa/
 # https://docs.flutter.dev/community/china
 # https://flutter.cn/docs/get-started/install/linux
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install flutter linux source version")"
 
 echo "Install flutter source"
 cd $HOME/tools

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install Anaconda3   
+# Function : Install Anaconda3-2022.10-Linux-x86_64   
 # Desc     : 用于安装Anaconda3的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -14,9 +14,9 @@
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
 # https://www.anaconda.com/products/distribution#Downloads
-
-
-echo "Install Anaconda3-2022.10-Linux-x86_64 ..."
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install Anaconda3-2022.10-Linux-x86_64")"
 
 cd ~
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : install imu m0 shell  
+# Function : Install imu m0 shell  
 # Desc     : 用于源码方式安装ROS1版本惯性导航razor_imu_m0驱动的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -13,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install imu m0 shell")"
 
 #run install  serial
 
