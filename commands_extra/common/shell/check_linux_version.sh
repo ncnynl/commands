@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : Check linux Version  
-# Desc     : 用于检查系统，版本以及架构的脚本                             
+# Desc     : 用于检查系统，版本以及架构的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            
@@ -12,8 +12,8 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands
 #######################################
 # Get System Version
 # Globals: 
@@ -25,6 +25,7 @@
 # Outputs:
 #    echo to stdout
 #######################################
+
 release=""
 version=""
 cpu_release=""

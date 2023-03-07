@@ -60,9 +60,11 @@ config_python3_source
 #install commands_extra
 ~/tools/commands/install_extra.sh
 
+#install i18n
+~/tools/commands/install_i18n.sh
+
 #install desktop
 ~/tools/commands/install_desktop.sh
-
 
 echo -e "All Install Finished"
 

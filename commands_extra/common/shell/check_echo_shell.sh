@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : check_echo_shell.sh   
+# Function : check echo shell   
 # Desc     : 用于检测RCM是否正常工作的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               

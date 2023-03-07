@@ -1,0 +1,118 @@
+# Chinese translations for commands_i package.
+# Copyright (C) 2023 THE commands_i'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the commands_i package.
+#  <1043931@qq.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: commands_i 18n\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-06 18:08+0800\n"
+"PO-Revision-Date: 2023-03-06 18:34+0800\n"
+"Last-Translator:  <1043931@qq.com>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../commands_extra/cs.sh:679
+msgid "The following script will be executed"
+msgstr ""
+
+#: ../commands_extra/cs.sh:687 ../commands_extra/cs.sh:700
+#: ../commands_extra/cs.sh:776
+msgid "Alternative scripts"
+msgstr ""
+
+#: ../commands_extra/cs.sh:706
+msgid "Install"
+msgstr ""
+
+#: ../commands_extra/cs.sh:712
+msgid "Remove"
+msgstr ""
+
+#: ../commands_extra/cs.sh:718 ../commands_extra/cs.sh:770
+msgid "Upgrade RCM"
+msgstr ""
+
+#: ../commands_extra/cs.sh:725
+msgid "Current RCM Version"
+msgstr ""
+
+#: ../commands_extra/cs.sh:730
+msgid "Edit File"
+msgstr ""
+
+#: ../commands_extra/cs.sh:736
+msgid "View File Content"
+msgstr ""
+
+#: ../commands_extra/cs.sh:742
+msgid "Build install script"
+msgstr ""
+
+#: ../commands_extra/cs.sh:748
+msgid "select language"
+msgstr ""
+
+#: ../commands_extra/cs.sh:754
+msgid "command interface to the RCM tools"
+msgstr ""
+
+#: ../commands_extra/cs.sh:756
+msgid "Usage"
+msgstr ""
+
+#: ../commands_extra/cs.sh:758
+msgid "List of available options"
+msgstr ""
+
+#: ../commands_extra/cs.sh:760
+msgid "Print this help text"
+msgstr ""
+
+#: ../commands_extra/cs.sh:761
+msgid "Search the script file by keyword"
+msgstr ""
+
+#: ../commands_extra/cs.sh:762
+msgid "Search the script file and install rightnow"
+msgstr ""
+
+#: ../commands_extra/cs.sh:763
+msgid "List all script files and serial numbers"
+msgstr ""
+
+#: ../commands_extra/cs.sh:764
+msgid "Select language with zh_CN, en"
+msgstr ""
+
+#: ../commands_extra/cs.sh:765
+msgid "Install apt packages"
+msgstr ""
+
+#: ../commands_extra/cs.sh:766
+msgid "Remove apt packages"
+msgstr ""
+
+#: ../commands_extra/cs.sh:767
+msgid "Edit script through vim"
+msgstr ""
+
+#: ../commands_extra/cs.sh:768
+msgid "Check script through cat"
+msgstr ""
+
+#: ../commands_extra/cs.sh:769
+msgid "Build install script through template"
+msgstr ""
+
+#: ../commands_extra/cs.sh:771
+msgid "Show RCM version"
+msgstr ""
+
+#: ../commands_extra/cs.sh:772
+msgid "Provide the serial number to install"
+msgstr ""

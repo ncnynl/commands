@@ -9,6 +9,8 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands
 RED='\033[31m'
 GREEN='\033[32m'
 YELLOW='\033[33m'
@@ -626,6 +628,38 @@ function commands_build()
 }
 
 #######################################
+# commands_i18n  
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_i18n(){
+    case $1 in 
+    'zh_CN')
+        SETLANG="zh_CN.UTF-8"
+        ;;
+    *)
+        SETLANG="en_US.UTF-8"
+        ;;
+    esac 
+
+    echo "Add $SETLANG to bashrc if not exits"
+    if ! grep -Fq "export LANG=" ~/.bashrc
+    then
+        echo "export LANG=$SETLANG" >> ~/.bashrc
+    else
+        sed -i "s/LANG=.*UTF-8/LANG=$SETLANG/"g ~/.bashrc
+    fi 
+
+    echo "$SETLANG have added successfully! please source ~/.bashrc"
+}
+
+#######################################
 # header 
 # Globals: 
 #   None
@@ -674,7 +708,7 @@ function commands() {
     case $1 in 
     [1-9]*)
         echo -e '#####################################################'
-        echo -e '      The following script will be executed：        '
+        echo -e "      $(gettext "The following script will be executed")     "
         echo -e '#####################################################'
         #执行脚本
         commands_install $1 $2
@@ -682,7 +716,7 @@ function commands() {
         ;;
     '-s'|'search')
         echo -e '#####################################################'
-        echo -e '              Alternative scripts：'
+        echo -e "             $(gettext "Alternative scripts") "
         echo -e '#####################################################'    
         commands_search $2
         # echo -e '#####################################################'
@@ -695,76 +729,83 @@ function commands() {
         ;;          
     '-l'|'list')
         echo -e '#####################################################'
-        echo -e '              Alternative scripts：'
+        echo -e "              $(gettext "Alternative scripts")："
         echo -e '#####################################################'    
         commands_list
         ;;    
     '-i'|'install')
         echo -e '#####################################################'
-        echo -e "              Install $2 "
+        echo -e "              $(gettext "Install") $2 "
         echo -e '#####################################################'    
         sudo apt install $2
         ;;     
     '-r'|'remove')
         echo -e '#####################################################'
-        echo -e "              Remove $2 "
+        echo -e "              $(gettext "Remove") $2 "
         echo -e '#####################################################'    
         sudo apt remove $2
         ;;  
     '-u'|'upgrade')
         echo -e '#####################################################'
-        echo -e "              Upgrade RCM "
+        echo -e "              $(gettext "Upgrade RCM") "
         echo -e '#####################################################'    
         . ~/commands/common/shell/upgrade_rcm.sh
         ;;       
     '-v'|'version')
         current_version=$(cat ~/tools/commands/version.txt)
         echo -e '#####################################################'
-        echo -e "      Current RCM Version: $current_version"
+        echo -e "      $(gettext "Current RCM Version"): $current_version"
         echo -e '#####################################################'    
         ;;     
     '-e'|'edit')
         echo -e '#####################################################'
-        echo -e "              Edit File"
+        echo -e "              $(gettext "Edit File") "
         echo -e '#####################################################'    
         commands_edit $2
         ;;   
     '-c'|'check')
         echo -e '#####################################################'
-        echo -e "              View File Content "
+        echo -e "              $(gettext "View File Content") "
         echo -e '#####################################################'    
         commands_check $2
         ;;        
     '-b'|'build')
         echo -e '#####################################################'
-        echo -e "              Build install script "
+        echo -e "              $(gettext "Build install script") "
         echo -e '#####################################################'    
         commands_build $2
-        ;;                                           
+        ;;    
+    '-L'|'language')
+        echo -e '#####################################################'
+        echo -e "              $(gettext "select language") "
+        echo -e '#####################################################'    
+        commands_i18n $2
+        ;;                                                  
     '-h'|'help')
         echo -e '#####################################################'
-        echo -e "        command interface to the RCM tools          "
+        echo -e "        $(gettext "command interface to the RCM tools")  "
         echo -e '#####################################################'
-        echo "Usage: cs [options] [keyword]"
+        echo "$(gettext  "Usage"): cs [options] [keyword]"
         echo "  "
-        echo "List of available options:"
+        echo "$(gettext "List of available options"):"
         echo "  "
-        echo "-h | help:       Print this help text."
-        echo "-s | search:     Search the script file by keyword"
-        echo "-si | search-install:     Search the script file and install rightnow"
-        echo "-l | list:       List all script files and serial numbers"
-        echo "-i | install:    Install apt packages"
-        echo "-r | remove:     Remove apt packages"
-        echo "-e | edit:       Edit script through vim"
-        echo "-c | check:      Check script through cat"
-        echo "-b | build:      Build install script through template"                        
-        echo "-u | upgrade:    Upgrade RCM"
-        echo "-v | version:    Show RCM version"
-        echo "id:              Provide the serial number to install"
+        echo "-h | help:       $(gettext "Print this help text")."
+        echo "-s | search:     $(gettext "Search the script file by keyword")"
+        echo "-si | search-install:     $(gettext "Search the script file and install rightnow")"
+        echo "-l | list:       $(gettext "List all script files and serial numbers")"
+        echo "-L | language:   $(gettext "Select language with zh_CN, en")"
+        echo "-i | install:    $(gettext "Install apt packages")"
+        echo "-r | remove:     $(gettext "Remove apt packages") "
+        echo "-e | edit:       $(gettext "Edit script through vim") "
+        echo "-c | check:      $(gettext "Check script through cat") "
+        echo "-b | build:      $(gettext "Build install script through template")"                        
+        echo "-u | upgrade:    $(gettext "Upgrade RCM")"
+        echo "-v | version:    $(gettext "Show RCM version") "
+        echo "id:              $(gettext "Provide the serial number to install")"
         ;;             
     *)
         echo -e '#####################################################'
-        echo -e '              Alternative scripts：'
+        echo -e "              $(gettext "Alternative scripts")："
         echo -e '#####################################################'    
         #显示列表
         commands_list

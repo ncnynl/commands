@@ -1,0 +1,119 @@
+# English translations for commands_i package.
+# Copyright (C) 2023 THE commands_i'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the commands_i package.
+#  <1043931@qq.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: commands_i 18n\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-06 18:08+0800\n"
+"PO-Revision-Date: 2023-03-06 18:32+0800\n"
+"Last-Translator:  <1043931@qq.com>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../commands_extra/cs.sh:679
+msgid "The following script will be executed"
+msgstr "The following script will be executed"
+
+#: ../commands_extra/cs.sh:687 ../commands_extra/cs.sh:700
+#: ../commands_extra/cs.sh:776
+msgid "Alternative scripts"
+msgstr "Alternative scripts"
+
+#: ../commands_extra/cs.sh:706
+msgid "Install"
+msgstr "Install"
+
+#: ../commands_extra/cs.sh:712
+msgid "Remove"
+msgstr "Remove"
+
+#: ../commands_extra/cs.sh:718 ../commands_extra/cs.sh:770
+msgid "Upgrade RCM"
+msgstr "Upgrade RCM"
+
+#: ../commands_extra/cs.sh:725
+msgid "Current RCM Version"
+msgstr "Current RCM Version"
+
+#: ../commands_extra/cs.sh:730
+msgid "Edit File"
+msgstr "Edit File"
+
+#: ../commands_extra/cs.sh:736
+msgid "View File Content"
+msgstr "View File Content"
+
+#: ../commands_extra/cs.sh:742
+msgid "Build install script"
+msgstr "Build install script"
+
+#: ../commands_extra/cs.sh:748
+msgid "select language"
+msgstr "select language"
+
+#: ../commands_extra/cs.sh:754
+msgid "command interface to the RCM tools"
+msgstr "command interface to the RCM tools"
+
+#: ../commands_extra/cs.sh:756
+msgid "Usage"
+msgstr "Usage"
+
+#: ../commands_extra/cs.sh:758
+msgid "List of available options"
+msgstr "List of available options"
+
+#: ../commands_extra/cs.sh:760
+msgid "Print this help text"
+msgstr "Print this help text"
+
+#: ../commands_extra/cs.sh:761
+msgid "Search the script file by keyword"
+msgstr "Search the script file by keyword"
+
+#: ../commands_extra/cs.sh:762
+msgid "Search the script file and install rightnow"
+msgstr "Search the script file and install rightnow"
+
+#: ../commands_extra/cs.sh:763
+msgid "List all script files and serial numbers"
+msgstr "List all script files and serial numbers"
+
+#: ../commands_extra/cs.sh:764
+msgid "Select language with zh_CN, en"
+msgstr "Select language with zh_CN, en"
+
+#: ../commands_extra/cs.sh:765
+msgid "Install apt packages"
+msgstr "Install apt packages"
+
+#: ../commands_extra/cs.sh:766
+msgid "Remove apt packages"
+msgstr "Remove apt packages"
+
+#: ../commands_extra/cs.sh:767
+msgid "Edit script through vim"
+msgstr "Edit script through vim"
+
+#: ../commands_extra/cs.sh:768
+msgid "Check script through cat"
+msgstr "Check script through cat"
+
+#: ../commands_extra/cs.sh:769
+msgid "Build install script through template"
+msgstr "Build install script through template"
+
+#: ../commands_extra/cs.sh:771
+msgid "Show RCM version"
+msgstr "Show RCM version"
+
+#: ../commands_extra/cs.sh:772
+msgid "Provide the serial number to install"
+msgstr "Provide the serial number to install"

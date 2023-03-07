@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################
-# Function :Language             #
-# Desc     :测试多语言                                    #
+# Function :i18n gen zh_CN            #
+# Desc     :gen language zh_CN                              #
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
 # Date     :2023-03-06                                         #
@@ -10,26 +10,17 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
+echo "set UTF-8"
+sed -i "s/charset=CHARSET/charset=UTF-8/"g  ../commands.pot
 
-alias GETTEXT='gettext "commands"'
-alias ll="ls -la"
+echo "msginit handle"
+msginit -i ../commands.pot -o commands.po -l en
 
-HELLO_WORLD=$(GETTEXT "Hello")
-echo "$HELLO_WORLD"
+echo "msgfmt handle"
+msgfmt -o commands.mo commands.po
 
-echo "$(GETTEXT "Press any key to continue")"
+echo "cp to locale"
+sudo cp commands.mo /usr/share/locale/en/LC_MESSAGES/
 
-ll 
+echo "done!!"
 
-# xgettext -o commands.pot -L Shell --keyword=GETTEXT lang.sh menu.sh
-# xgettext -o commands.pot -L Shell --keyword=GETTEXT lang.sh menu.sh
-
-# msginit -i commands.pot -o commands.po -l zh_CN
-
-# msgfmt -o commands.mo commands.po
-
-# sudo cp commands.mo /usr/share/locale/zh_CN/LC_MESSAGES/
-
-
-# export LANG=zh_CN.UTF-8
-# export LANG=en_US.UTF-8

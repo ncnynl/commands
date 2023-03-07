@@ -1,7 +1,7 @@
 #!/bin/bash
 export TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN=test.sh
-echo "$(gettext -s hello)"
+export TEXTDOMAIN=commands
+echo "$(gettext "hello")"
 
 # msgfmt -o test.sh.mo test.sh.zh_CN.po
 # sudo mv test.sh.mo /usr/share/locale/zh_CN/LC_MESSAGES/
@@ -14,6 +14,14 @@ echo "$(gettext -s hello)"
 
 # export LANG=zh_CN.UTF-8
 
-# export LANG=en_US.UTF-8
+# export LANG=
 
 # export LC_ALL="it_IT.UTF-8"
+
+# locale
+
+# sudo locale-gen "en_HK.UTF-8"
+
+# sudo locale-gen "zh_CN.UTF-8"
+
+# sudo dpkg-reconfigure locales
