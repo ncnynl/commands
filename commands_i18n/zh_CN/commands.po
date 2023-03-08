@@ -132,8 +132,8 @@ msgid "List all script files and serial numbers"
 msgstr "列出所有的脚本及序号"
 
 #: /home/ubuntu/tools/commands/commands_extra/cs.sh:813
-msgid "Select language with zh_CN, en"
-msgstr "选择语言，可选中文zh_CN,繁体zh_TW,英文en"
+msgid "Select language with en cn tw cz de es fr hu it jp kr pl br ru"
+msgstr "选择语言，可选中文cn,繁体tw,英文en"
 
 #: /home/ubuntu/tools/commands/commands_extra/cs.sh:814
 msgid "Install apt packages"

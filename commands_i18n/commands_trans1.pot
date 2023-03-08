@@ -1,0 +1,177 @@
+Whether to execute the script
+Please select the script ID to be executed
+Welcome to ROS Commands Manager CLI
+Author
+Email
+Website
+Date
+QQ Qun B
+QQ Qun C
+QQ Qun D
+The following script will be executed
+Alternative scripts
+Install
+Remove
+Upgrade RCM
+Current RCM Version
+Edit File
+View File Content
+Build install script
+select language
+command interface to the RCM tools
+Usage
+List of available options
+Print this help text
+Search the script file by keyword
+Search the script file and install rightnow
+List all script files and serial numbers
+Select language with zh_CN, en
+Install apt packages
+Remove apt packages
+Edit script through vim
+Check script through cat
+Build install script through template
+Show RCM version
+Provide the serial number to install
+Check echo shell
+Test First
+Test Second
+Test Three
+Test Four
+Test Five
+Test Six
+Test Seven
+Check linux Version
+Check Python Version
+Close Commands
+Close Commands tempalte
+Install Anaconda3-2022.10-Linux-x86_64
+Install arduino
+Install balenaEtcher
+Install base tools
+Install boot repair
+Install chrome linux version
+Install cubic
+Install docker compose
+Install docker
+Install electron
+Install example shell template
+Install flutter snap version
+Install flutter linux source version
+Install foxglove
+Install GitHubDesktop shell
+Install gitlfs
+Install googlepinyin shell
+Install mosquitto
+Install n2n
+Install nodejs 16 version
+Install nodejs 18.12.1 version
+Install nodejs 18.2.1 version
+Install nodejs newest version
+Install nomachine
+Install nvm
+Install pnpm
+Install pyinstaller shell
+Install robots ros org
+Install ros2 documentation
+Install systemback shell
+Install test shell
+Install vpn clash
+Install vscode
+Install wireguard client
+Install wireguard server firewall
+Install wireguard server
+Remove unuse tools
+Remove zsys
+SD system backup
+SD system recover
+Update docker source
+Update python source shell
+Update rosdep tsinghua
+Update system mirrors shell 2
+Update system mirrors
+Install nvidia docker 20.04
+Check wsl2 system
+Config snap for wsl2
+Install cuda 12.0 wsl2 ubuntu
+Install wsl2 bridge
+Install wsl2 xface4
+Config date shell
+Config ros1 network shell
+Install flutter keyboard
+Install ROS1 Noetic
+Install ROS1 Noetic Cartographer
+Install ros-noetic-rosbridge-suite
+Install ros tutorials source
+Launch turtlesim
+Launch turtlesim teleop key
+Update ROS1 Source
+Install cartographer apt version
+Install ROS1 Noetic Cartographer source version
+Install cv camera
+Install ROS1 Noetic ORB_SLAM2
+Install imu m0 shell
+Install ublox GPS
+Install turtlebot3 ROS1 noetic apt
+Install turtlebot3 ROS1 noetic source
+Download gazebo model shell
+Install ROS2 Foxy ARM version
+Install ROS2 Foxy AMD version
+Install ROS2 Humble ARM version
+Install ROS2 Humble AMD version
+Install ROS2 turtorials source
+Launch ROS2 turtlesim
+Launch ROS2 turtlesim teleop key
+Update ROS2 Source
+Install ROS2 cartographer source version
+Install ROS2 multirobot map merge
+Install ROS2 navigation2 source version
+Install ade
+Install autoware ade version
+Install autoware source version
+Install autoware source foxy version
+Install google benchmark
+Install osqp
+Install barista_ros2 navigation branch
+Install barista_ros2 startbots branch
+Install box_bot
+Install dolly simulator
+Install ROS2 ignition shell
+Install ignition humble apt version
+Install ignition humble source version
+Install barista ros2 source version
+Install rmf burger maps
+Install ROS2 rmf source shell
+Install ROS2 rmf web 22.04
+Install ROS2 galactic rmf apt version
+Install ROS2 galactic rmf source version
+Install ROS2 galactic rmf source version 21.09 branch
+Install ROS2 humble rmf apt version
+Install ROS2 humble rmf apt version humble-main branch
+Install ROS2 humble rmf apt version humble branch
+Install ros2 rmf model shell
+Install rmf web panel
+Install rmf traffic editor apt version
+Install rmf traffic editor source version
+Install ROS2 galactic RMF-web 20.04 source version
+Install ROS2 humble RMF-web 22.04 source version
+Install ROS2 pointcloud_to_laserscan
+Install ROS2 rpicamera_ros2
+Install ROS2 rplidar_ros2
+Install ROS2 sllidar_ros2
+Install ROS2 velodyne
+Install ROS2 Foxy Turtlebot3 apt version
+Install ROS2 Foxy turtlebot3 source version
+Install ROS2 Galactic turtlebot3 apt version
+Install ROS2 Galactic turtlebot3 source version
+Install ROS2 humble turtlebot3 apt version
+Install ROS2 humble turtlebot3 source version
+Download ROS2 gazebo model shell
+Install ROS2 galactic turtlebot4 ignition apt version
+Install ROS2 galactic turtlebot4 and ignition source version
+Install ROS2 humble turtlebot4 and ignition apt version
+Install ROS2 humble turtlebot4 and ignition source version
+Download ROS2 ignition model shell 
+Install ROS2 galactic webots apt version
+Install ROS2 humble webots  apt version
+Init free fleet

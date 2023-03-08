@@ -1,197 +1,588 @@
-Whether to execute the script
-Please select the script ID to be executed
-Welcome to ROS Commands Manager CLI
-Author
-Email
-Website
-Date
-QQ Qun B
-QQ Qun C
-QQ Qun D
-The following script will be executed
-Alternative scripts
-Install
-Remove
-Upgrade RCM
-Current RCM Version
-Edit File
-View File Content
-Build install script
-select language
-command interface to the RCM tools
-Usage
-List of available options
-Print this help text
-Search the script file by keyword
-Search the script file and install rightnow
-List all script files and serial numbers
-Select language with zh_CN, en
-Install apt packages
-Remove apt packages
-Edit script through vim
-Check script through cat
-Build install script through template
-Show RCM version
-Provide the serial number to install
-Check echo shell
-Test First
-Test Second
-Test Three
-Test Four
-Test Five
-Test Six
-Test Seven
-Check linux Version
-Check Python Version
-Close Commands
-Close Commands tempalte
-Install Anaconda3-2022.10-Linux-x86_64
-Install arduino
-Install balenaEtcher
-Install base tools
-Install boot repair
-Install chrome linux version
-Install cubic
-Install docker compose
-Install docker
-Install electron
-Install example shell template
-Install flutter snap version
-Install flutter linux source version
-Install foxglove
-Install GitHubDesktop shell
-Install gitlfs
-Install googlepinyin shell
-Install mosquitto
-Install n2n
-Install nodejs 16 version
-Install nodejs 18.12.1 version
-Install nodejs 18.2.1 version
-Install nodejs newest version
-Install nomachine
-Install nvm
-Install pnpm
-Install pyinstaller shell
-Install robots ros org
-Install ros2 documentation
-Install systemback shell
-Install test shell
-Install vpn clash
-Install vscode
-Install wireguard client
-Install wireguard server firewall
-Install wireguard server
-Remove unuse tools
-Remove zsys
-SD system backup
-SD system recover
-Update docker source
-Update python source shell
-Update rosdep tsinghua
-Update system mirrors shell 2
-Update system mirrors
-Install nvidia docker 20.04
-Check wsl2 system
-Config snap for wsl2
-Install cuda 12.0 wsl2 ubuntu
-Install wsl2 bridge
-Install wsl2 xface4
-Config date shell
-Config ros1 network shell
-Install flutter keyboard
-Install ROS1 Noetic
-Install ROS1 Noetic Cartographer
-Install ros-noetic-rosbridge-suite
-Install ros tutorials source
-Launch turtlesim
-Launch turtlesim teleop key
-Update ROS1 Source
-Install cartographer apt version
-Install ROS1 Noetic Cartographer source version
-Install cv camera
-Install ROS1 Noetic ORB_SLAM2
-Install imu m0 shell
-Install ublox GPS
-Install turtlebot3 ROS1 noetic apt
-Install turtlebot3 ROS1 noetic source
-Download gazebo model shell
-Install ROS2 Foxy ARM version
-Install ROS2 Foxy AMD version
-Install ROS2 Humble ARM version
-Install ROS2 Humble AMD version
-Install ROS2 turtorials source
-Launch ROS2 turtlesim
-Launch ROS2 turtlesim teleop key
-Update ROS2 Source
-Install ROS2 cartographer source version
-Install ROS2 multirobot map merge
-Install ROS2 navigation2 source version
-Install ade
-Install autoware ade version
-Install autoware source version
-Install autoware source foxy version
-Install google benchmark
-Install osqp
-Install barista_ros2 navigation branch
-Install barista_ros2 startbots branch
-Install box_bot
-Install dolly simulator
-Install ROS2 ignition shell
-Install ignition humble apt version
-Install ignition humble source version
-Install barista ros2 source version
-Install rmf burger maps
-Install ROS2 rmf source shell
-Install ROS2 rmf web 22.04
-Install ROS2 galactic rmf apt version
-Install ROS2 galactic rmf source version
-Install ROS2 galactic rmf source version 21.09 branch
-Install ROS2 humble rmf apt version
-Install ROS2 humble rmf apt version humble-main branch
-Install ROS2 humble rmf apt version humble branch
-Install ros2 rmf model shell
-Install rmf web panel
 
-Install rmf traffic editor apt version
-Install rmf traffic editor source version
-Install ROS2 galactic RMF-web 20.04 source version
-Install ROS2 humble RMF-web 22.04 source version
-Install ROS2 pointcloud_to_laserscan
-Install ROS2 rpicamera_ros2
-Install ROS2 rplidar_ros2
-Install ROS2 sllidar_ros2
-Install ROS2 velodyne
-Install ROS2 Foxy Turtlebot3 apt version
-Install ROS2 Foxy turtlebot3 source version
-Install ROS2 Galactic turtlebot3 apt version
-Install ROS2 Galactic turtlebot3 source version
-Install ROS2 humble turtlebot3 apt version
-Install ROS2 humble turtlebot3 source version
-Download ROS2 gazebo model shell
-Install ROS2 galactic turtlebot4 ignition apt version
-Install ROS2 galactic turtlebot4 and ignition source version
-Install ROS2 humble turtlebot4 and ignition apt version
-Install ROS2 humble turtlebot4 and ignition source version
-Download ROS2 ignition model shell 
-Install ROS2 galactic webots apt version
-Install ROS2 humble webots  apt version
-Init free fleet
-Init rmf
-Init ROS1
-Init ROS2
-Init turtlebot3
-Init turtlebot4
-Install ros2 easy 20.04
-Install ros2 easy 22.04
-Install ros2 easy arm 20.04
-Install ros2 easy arm 22.04
-Install tutorial ros2 code ws
-Install tutorial ros2 launch ws
-Install turtorial ros2 tf2 ws
-Load free fleet
-Load RMF
-Load ROS1
-Load ROS2
-Load turtlebot3
-Load turtlebot4
-Install ROS2 walking_application
+msgid "Whether to execute the script"
+msgstr ""
+
+msgid "Please select the script ID to be executed"
+msgstr ""
+
+msgid "Welcome to ROS Commands Manager CLI"
+msgstr ""
+
+msgid "Author"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Website"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "QQ Qun B"
+msgstr ""
+
+msgid "QQ Qun C"
+msgstr ""
+
+msgid "QQ Qun D"
+msgstr ""
+
+msgid "The following script will be executed"
+msgstr ""
+
+msgid "Alternative scripts"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Upgrade RCM"
+msgstr ""
+
+msgid "Current RCM Version"
+msgstr ""
+
+msgid "Edit File"
+msgstr ""
+
+msgid "View File Content"
+msgstr ""
+
+msgid "Build install script"
+msgstr ""
+
+msgid "select language"
+msgstr ""
+
+msgid "command interface to the RCM tools"
+msgstr ""
+
+msgid "Usage"
+msgstr ""
+
+msgid "List of available options"
+msgstr ""
+
+msgid "Print this help text"
+msgstr ""
+
+msgid "Search the script file by keyword"
+msgstr ""
+
+msgid "Search the script file and install rightnow"
+msgstr ""
+
+msgid "List all script files and serial numbers"
+msgstr ""
+
+msgid "Select language with zh_CN, en"
+msgstr ""
+
+msgid "Install apt packages"
+msgstr ""
+
+msgid "Remove apt packages"
+msgstr ""
+
+msgid "Edit script through vim"
+msgstr ""
+
+msgid "Check script through cat"
+msgstr ""
+
+msgid "Build install script through template"
+msgstr ""
+
+msgid "Show RCM version"
+msgstr ""
+
+msgid "Provide the serial number to install"
+msgstr ""
+
+msgid "Check echo shell"
+msgstr ""
+
+msgid "Test First"
+msgstr ""
+
+msgid "Test Second"
+msgstr ""
+
+msgid "Test Three"
+msgstr ""
+
+msgid "Test Four"
+msgstr ""
+
+msgid "Test Five"
+msgstr ""
+
+msgid "Test Six"
+msgstr ""
+
+msgid "Test Seven"
+msgstr ""
+
+msgid "Check linux Version"
+msgstr ""
+
+msgid "Check Python Version"
+msgstr ""
+
+msgid "Close Commands"
+msgstr ""
+
+msgid "Close Commands tempalte"
+msgstr ""
+
+msgid "Install Anaconda3-2022.10-Linux-x86_64"
+msgstr ""
+
+msgid "Install arduino"
+msgstr ""
+
+msgid "Install balenaEtcher"
+msgstr ""
+
+msgid "Install base tools"
+msgstr ""
+
+msgid "Install boot repair"
+msgstr ""
+
+msgid "Install chrome linux version"
+msgstr ""
+
+msgid "Install cubic"
+msgstr ""
+
+msgid "Install docker compose"
+msgstr ""
+
+msgid "Install docker"
+msgstr ""
+
+msgid "Install electron"
+msgstr ""
+
+msgid "Install example shell template"
+msgstr ""
+
+msgid "Install flutter snap version"
+msgstr ""
+
+msgid "Install flutter linux source version"
+msgstr ""
+
+msgid "Install foxglove"
+msgstr ""
+
+msgid "Install GitHubDesktop shell"
+msgstr ""
+
+msgid "Install gitlfs"
+msgstr ""
+
+msgid "Install googlepinyin shell"
+msgstr ""
+
+msgid "Install mosquitto"
+msgstr ""
+
+msgid "Install n2n"
+msgstr ""
+
+msgid "Install nodejs 16 version"
+msgstr ""
+
+msgid "Install nodejs 18.12.1 version"
+msgstr ""
+
+msgid "Install nodejs 18.2.1 version"
+msgstr ""
+
+msgid "Install nodejs newest version"
+msgstr ""
+
+msgid "Install nomachine"
+msgstr ""
+
+msgid "Install nvm"
+msgstr ""
+
+msgid "Install pnpm"
+msgstr ""
+
+msgid "Install pyinstaller shell"
+msgstr ""
+
+msgid "Install robots ros org"
+msgstr ""
+
+msgid "Install ros2 documentation"
+msgstr ""
+
+msgid "Install systemback shell"
+msgstr ""
+
+msgid "Install test shell"
+msgstr ""
+
+msgid "Install vpn clash"
+msgstr ""
+
+msgid "Install vscode"
+msgstr ""
+
+msgid "Install wireguard client"
+msgstr ""
+
+msgid "Install wireguard server firewall"
+msgstr ""
+
+msgid "Install wireguard server"
+msgstr ""
+
+msgid "Remove unuse tools"
+msgstr ""
+
+msgid "Remove zsys"
+msgstr ""
+
+msgid "SD system backup"
+msgstr ""
+
+msgid "SD system recover"
+msgstr ""
+
+msgid "Update docker source"
+msgstr ""
+
+msgid "Update python source shell"
+msgstr ""
+
+msgid "Update rosdep tsinghua"
+msgstr ""
+
+msgid "Update system mirrors shell 2"
+msgstr ""
+
+msgid "Update system mirrors"
+msgstr ""
+
+msgid "Install nvidia docker 20.04"
+msgstr ""
+
+msgid "Check wsl2 system"
+msgstr ""
+
+msgid "Config snap for wsl2"
+msgstr ""
+
+msgid "Install cuda 12.0 wsl2 ubuntu"
+msgstr ""
+
+msgid "Install wsl2 bridge"
+msgstr ""
+
+msgid "Install wsl2 xface4"
+msgstr ""
+
+msgid "Config date shell"
+msgstr ""
+
+msgid "Config ros1 network shell"
+msgstr ""
+
+msgid "Install flutter keyboard"
+msgstr ""
+
+msgid "Install ROS1 Noetic"
+msgstr ""
+
+msgid "Install ROS1 Noetic Cartographer"
+msgstr ""
+
+msgid "Install ros-noetic-rosbridge-suite"
+msgstr ""
+
+msgid "Install ros tutorials source"
+msgstr ""
+
+msgid "Launch turtlesim"
+msgstr ""
+
+msgid "Launch turtlesim teleop key"
+msgstr ""
+
+msgid "Update ROS1 Source"
+msgstr ""
+
+msgid "Install cartographer apt version"
+msgstr ""
+
+msgid "Install ROS1 Noetic Cartographer source version"
+msgstr ""
+
+msgid "Install cv camera"
+msgstr ""
+
+msgid "Install ROS1 Noetic ORB_SLAM2"
+msgstr ""
+
+msgid "Install imu m0 shell"
+msgstr ""
+
+msgid "Install ublox GPS"
+msgstr ""
+
+msgid "Install turtlebot3 ROS1 noetic apt"
+msgstr ""
+
+msgid "Install turtlebot3 ROS1 noetic source"
+msgstr ""
+
+msgid "Download gazebo model shell"
+msgstr ""
+
+msgid "Install ROS2 Foxy ARM version"
+msgstr ""
+
+msgid "Install ROS2 Foxy AMD version"
+msgstr ""
+
+msgid "Install ROS2 Humble ARM version"
+msgstr ""
+
+msgid "Install ROS2 Humble AMD version"
+msgstr ""
+
+msgid "Install ROS2 turtorials source"
+msgstr ""
+
+msgid "Launch ROS2 turtlesim"
+msgstr ""
+
+msgid "Launch ROS2 turtlesim teleop key"
+msgstr ""
+
+msgid "Update ROS2 Source"
+msgstr ""
+
+msgid "Install ROS2 cartographer source version"
+msgstr ""
+
+msgid "Install ROS2 multirobot map merge"
+msgstr ""
+
+msgid "Install ROS2 navigation2 source version"
+msgstr ""
+
+msgid "Install ade"
+msgstr ""
+
+msgid "Install autoware ade version"
+msgstr ""
+
+msgid "Install autoware source version"
+msgstr ""
+
+msgid "Install autoware source foxy version"
+msgstr ""
+
+msgid "Install google benchmark"
+msgstr ""
+
+msgid "Install osqp"
+msgstr ""
+
+msgid "Install barista_ros2 navigation branch"
+msgstr ""
+
+msgid "Install barista_ros2 startbots branch"
+msgstr ""
+
+msgid "Install box_bot"
+msgstr ""
+
+msgid "Install dolly simulator"
+msgstr ""
+
+msgid "Install ROS2 ignition shell"
+msgstr ""
+
+msgid "Install ignition humble apt version"
+msgstr ""
+
+msgid "Install ignition humble source version"
+msgstr ""
+
+msgid "Install barista ros2 source version"
+msgstr ""
+
+msgid "Install rmf burger maps"
+msgstr ""
+
+msgid "Install ROS2 rmf source shell"
+msgstr ""
+
+msgid "Install ROS2 rmf web 22.04"
+msgstr ""
+
+msgid "Install ROS2 galactic rmf apt version"
+msgstr ""
+
+msgid "Install ROS2 galactic rmf source version"
+msgstr ""
+
+msgid "Install ROS2 galactic rmf source version 21.09 branch"
+msgstr ""
+
+msgid "Install ROS2 humble rmf apt version"
+msgstr ""
+
+msgid "Install ROS2 humble rmf apt version humble-main branch"
+msgstr ""
+
+msgid "Install ROS2 humble rmf apt version humble branch"
+msgstr ""
+
+msgid "Install ros2 rmf model shell"
+msgstr ""
+
+msgid "Install rmf web panel"
+msgstr ""
+
+msgid "Install rmf traffic editor apt version"
+msgstr ""
+
+msgid "Install rmf traffic editor source version"
+msgstr ""
+
+msgid "Install ROS2 galactic RMF-web 20.04 source version"
+msgstr ""
+
+msgid "Install ROS2 humble RMF-web 22.04 source version"
+msgstr ""
+
+msgid "Install ROS2 pointcloud_to_laserscan"
+msgstr ""
+
+msgid "Install ROS2 rpicamera_ros2"
+msgstr ""
+
+msgid "Install ROS2 rplidar_ros2"
+msgstr ""
+
+msgid "Install ROS2 sllidar_ros2"
+msgstr ""
+
+msgid "Install ROS2 velodyne"
+msgstr ""
+
+msgid "Install ROS2 Foxy Turtlebot3 apt version"
+msgstr ""
+
+msgid "Install ROS2 Foxy turtlebot3 source version"
+msgstr ""
+
+msgid "Install ROS2 Galactic turtlebot3 apt version"
+msgstr ""
+
+msgid "Install ROS2 Galactic turtlebot3 source version"
+msgstr ""
+
+msgid "Install ROS2 humble turtlebot3 apt version"
+msgstr ""
+
+msgid "Install ROS2 humble turtlebot3 source version"
+msgstr ""
+
+msgid "Download ROS2 gazebo model shell"
+msgstr ""
+
+msgid "Install ROS2 galactic turtlebot4 ignition apt version"
+msgstr ""
+
+msgid "Install ROS2 galactic turtlebot4 and ignition source version"
+msgstr ""
+
+msgid "Install ROS2 humble turtlebot4 and ignition apt version"
+msgstr ""
+
+msgid "Install ROS2 humble turtlebot4 and ignition source version"
+msgstr ""
+
+msgid "Download ROS2 ignition model shell "
+msgstr ""
+
+msgid "Install ROS2 galactic webots apt version"
+msgstr ""
+
+msgid "Install ROS2 humble webots  apt version"
+msgstr ""
+
+msgid "Init free fleet"
+msgstr ""
+
+msgid "Init rmf"
+msgstr ""
+
+msgid "Init ROS1"
+msgstr ""
+
+msgid "Init ROS2"
+msgstr ""
+
+msgid "Init turtlebot3"
+msgstr ""
+
+msgid "Init turtlebot4"
+msgstr ""
+
+msgid "Install ros2 easy 20.04"
+msgstr ""
+
+msgid "Install ros2 easy 22.04"
+msgstr ""
+
+msgid "Install ros2 easy arm 20.04"
+msgstr ""
+
+msgid "Install ros2 easy arm 22.04"
+msgstr ""
+
+msgid "Install tutorial ros2 code ws"
+msgstr ""
+
+msgid "Install tutorial ros2 launch ws"
+msgstr ""
+
+msgid "Install turtorial ros2 tf2 ws"
+msgstr ""
+
+msgid "Load free fleet"
+msgstr ""
+
+msgid "Load RMF"
+msgstr ""
+
+msgid "Load ROS1"
+msgstr ""
+
+msgid "Load ROS2"
+msgstr ""
+
+msgid "Load turtlebot3"
+msgstr ""
+
+msgid "Load turtlebot4"
+msgstr ""
+
+msgid "Install ROS2 walking_application"
+msgstr ""
