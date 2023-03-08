@@ -40,6 +40,17 @@ support_lang=(
 zh_CN
 zh_TW
 en
+cs
+de_DE
+es
+fr_FR
+hu
+it
+ja
+ko
+pl
+pt
+ru
 )
 function install_i18n(){
     for lang in ${support_lang[@]} 

@@ -654,12 +654,48 @@ function commands_build()
 #######################################
 function commands_i18n(){
     case $1 in 
-    'zh_CN')
+    'cn') #简体中文
         SETLANG="zh_CN.UTF-8"
         ;;
-    'zh_TW')
+    'tw') #繁体中文
         SETLANG="zh_TW.UTF-8"
-        ;;        
+        ;;
+    'en') #英语
+        SETLANG="en_US.UTF-8"
+        ;;
+    'cz')
+        SETLANG="cs_CZ.UTF-8"
+        ;;   
+    'de')
+        SETLANG="de_DE.UTF-8"
+        ;;
+    'es')
+        SETLANG="es_ES.UTF-8"
+        ;;
+    'fr')
+        SETLANG="fr_FR.UTF-8"
+        ;;
+    'hu')
+        SETLANG="hu_HU.UTF-8"
+        ;;  
+    'it')
+        SETLANG="it_IT.UTF-8"
+        ;;
+    'jp')
+        SETLANG="ja_JP.UTF-8"
+        ;;
+    'kr')
+        SETLANG="ko_KR.UTF-8"
+        ;;
+    'pl')
+        SETLANG="pl_PL.UTF-8"
+        ;;         
+    'br')
+        SETLANG="pt_BR.UTF-8"
+        ;;  
+    'ru')
+        SETLANG="ru_RU.UTF-8"
+        ;;                                                
     *)
         SETLANG="en_US.UTF-8"
         ;;
@@ -810,7 +846,7 @@ function commands() {
         echo "-s | search:     $(gettext "Search the script file by keyword")"
         echo "-si | search-install:     $(gettext "Search the script file and install rightnow")"
         echo "-l | list:       $(gettext "List all script files and serial numbers")"
-        echo "-L | language:   $(gettext "Select language with zh_CN, en")"
+        echo "-L | language:   $(gettext "Select language with en cn tw cz de es fr hu it jp kr pl br ru")"
         echo "-i | install:    $(gettext "Install apt packages")"
         echo "-r | remove:     $(gettext "Remove apt packages") "
         echo "-e | edit:       $(gettext "Edit script through vim") "
