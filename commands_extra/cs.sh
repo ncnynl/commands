@@ -664,36 +664,58 @@ function commands_i18n(){
         SETLANG="en_US.UTF-8"
         ;;
     'cz')
+        echo "Not Yet Support!"
+        exit 0
         SETLANG="cs_CZ.UTF-8"
         ;;   
     'de')
+        echo "Not Yet Support!"
+        exit 0
         SETLANG="de_DE.UTF-8"
         ;;
     'es')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="es_ES.UTF-8"
         ;;
     'fr')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="fr_FR.UTF-8"
         ;;
     'hu')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="hu_HU.UTF-8"
         ;;  
     'it')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="it_IT.UTF-8"
         ;;
     'jp')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="ja_JP.UTF-8"
         ;;
     'kr')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="ko_KR.UTF-8"
         ;;
     'pl')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="pl_PL.UTF-8"
         ;;         
     'br')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="pt_BR.UTF-8"
         ;;  
     'ru')
+        echo "Not Yet Support!"
+        exit 0    
         SETLANG="ru_RU.UTF-8"
         ;;                                                
     *)
