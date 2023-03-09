@@ -25,17 +25,9 @@
 # sudo locale-gen "zh_TW.UTF-8"
 # sudo dpkg-reconfigure locales
 
-#######################################
-# Install i18n
-# Globals: 
-#   None
-# Arguments:
-#   None
-# Return:
-#   None
-# Outputs:
-#    echo to stdout
-#######################################
+#for i18n
+sudo apt install gettext 
+#language lists
 support_lang=(
 zh_CN
 zh_TW
@@ -52,6 +44,18 @@ pl
 pt
 ru
 )
+
+#######################################
+# Install i18n
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
 function install_i18n(){
     for lang in ${support_lang[@]} 
     do

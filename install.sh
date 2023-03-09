@@ -23,8 +23,8 @@
 #######################################
 function install_deps()
 {
-    sudo apt-get update 
-    sudo apt-get install -y gnome-terminal python3-pip python3-pyqt5 
+    sudo apt update 
+    sudo apt install -y gnome-terminal python3-pip python3-pyqt5 
 }
 echo -e "Install system deps!"
 install_deps
