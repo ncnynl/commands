@@ -727,8 +727,10 @@ function commands_i18n(){
     if ! grep -Fq "export LANG=" ~/.bashrc
     then
         echo "export LANG=$SETLANG" >> ~/.bashrc
+        echo "export LC_ALL=$SETLANG" >> ~/.bashrc
     else
         sed -i "s/LANG=.*UTF-8/LANG=$SETLANG/"g ~/.bashrc
+        sed -i "s/LC_ALL=.*UTF-8/LC_ALL=$SETLANG/"g ~/.bashrc
     fi 
 
     echo "$SETLANG have added successfully! please source ~/.bashrc"
