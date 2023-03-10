@@ -35,12 +35,12 @@ fi
 
 echo ""
 echo "Install system deps"
-sudo apt install ros-humble-gazebo-ros-pkgs
-sudo apt install ros-humble-ros2-control
-sudo apt install ros-humble-ros2-controllers
-sudo apt install ros-humble-navigation2
-sudo apt install ros-humble-nav2-bringup
-sudo apt install ros-humble-cartographer-ros
+sudo apt install ros-humble-gazebo-ros-pkgs -y
+sudo apt install ros-humble-ros2-control -y
+sudo apt install ros-humble-ros2-controllers -y
+sudo apt install ros-humble-navigation2 -y
+sudo apt install ros-humble-nav2-bringup -y
+sudo apt install ros-humble-cartographer-ros -y
 
 # 下载源码
 echo ""
