@@ -64,9 +64,10 @@ echo "Add workspace to bashrc if not exits"
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
 then
     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_omni_ws/src/gazebo_simulation/models/" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"
 fi
-
 #How to use
+# ros2 launch gazebo_simulation cartographer_slam.launch.py
