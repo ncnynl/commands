@@ -14,11 +14,19 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+# https://github.com/TixiaoShan/LIO-SAM/tree/ros2
+
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ros2 lio_sam gazebo shell")"
 # echo "Not Supported Yet!"
 # exit 0  
+# for humble
+cs -rv "humble,foxy"
+if [ 1 == $? ];then 
+    exit 0
+fi
+
 echo ""
 echo "Set workspace"
 workspace=ros2_lio_sam_ws
@@ -47,7 +55,10 @@ sudo apt install ros-humble-gazebo-ros-pkgs -y
 sudo apt install ros-humble-gazebo-ros -y
 sudo apt install ros-humble-ros2-control -y
 sudo apt install ros-humble-ros2-controllers -y
-
+sudo apt install ros-humble-perception-pcl \
+  	   ros-humble-pcl-msgs \
+  	   ros-humble-vision-opencv \
+  	   ros-humble-xacro
 
 # 下载源码
 echo ""

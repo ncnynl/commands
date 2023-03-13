@@ -737,6 +737,38 @@ function commands_i18n(){
 }
 
 #######################################
+# commands_ros_version
+# need to check ros version
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_ros_version()
+{
+    VERSION_LIST=$1
+    echo "Support To : $VERSION_LIST"
+    
+    if [ $ROS_DISTRO != "" ];then    
+        echo "Current Version Is: ${ROS_DISTRO}"
+        if [[ "${VERSION_LIST[@]}" =~ "${ROS_DISTRO}" ]];then
+            echo "You have the right version for ROS ${ROS_DISTRO}"
+        else
+            echo "You don't have the right verion for ROS ${ROS_DISTRO}"
+            exit 1
+        fi 
+    else
+        echo "You don't have installed the right verion for ROS or Don't have source ros folder yet!"
+        exit 1
+    fi 
+    exit 0
+}
+
+#######################################
 # header 
 # Globals: 
 #   None
@@ -857,7 +889,11 @@ function commands() {
         echo -e "########$(gettext "select language") "
         echo -e '#####################################################'    
         commands_i18n $2
-        ;;                                                  
+        ;;   
+    '-rv'|'ros_version')
+        commands_ros_version $2
+        return $?
+        ;;                                                        
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "########$(gettext "commands help to the RCM tools")  "
