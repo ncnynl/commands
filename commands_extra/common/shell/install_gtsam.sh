@@ -18,10 +18,10 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install gtsam from PPA")"
 
-#test for 20.04
+#test for 22.04
 
 echo "Add PPA"
-sudo add-apt-repository ppa:borglab/gtsam-release-4.0
+sudo add-apt-repository ppa:borglab/gtsam-release-4.1
 
 echo "update"
 sudo apt update  # not necessary since Bionic

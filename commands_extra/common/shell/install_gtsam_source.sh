@@ -22,6 +22,7 @@ echo "$(gettext "Install gtsam from source")"
 echo "Install deps"
 sudo apt-get install libboost-all-dev -y
 sudo apt-get install cmake -y
+sudo apt-get install libtbb-dev -y 
 
 echo "Donlowad from github"
 echo "if tools exits?"
@@ -35,9 +36,14 @@ git clone  -b 4.1.0 https://ghproxy.com/https://github.com/borglab/gtsam
 # 编译代码
 echo "Compile source"
 cd ~/tools/gtsam
+
+#disable TBB from CMakelist.txt
+# find_package(TBB 4.4 COMPONENTS tbb tbbmalloc)
+
+#build
 mkdir build
 cd build
-cmake ..
+cmake -DGTSAM_WITH_TBB=OFF ..
 make install
 
 echo "gtsam have installed successfully!"
