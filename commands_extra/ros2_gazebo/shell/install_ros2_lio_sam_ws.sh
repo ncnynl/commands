@@ -33,6 +33,13 @@ if [ -d ~/$workspace/src/$soft_name ];then
     echo "$soft_name have installed" && exit 0
 fi 
 
+# sudo snap install cloudcompare 
+# cs -si install cloudcompare
+
+#install gtsam
+# https://gtsam.org/get_started/
+# cs -si install_gtsam_source.sh
+
 echo ""
 echo "Install system deps"
 sudo apt install python3-colcon-common-extensions -y
@@ -41,11 +48,6 @@ sudo apt install ros-humble-gazebo-ros -y
 sudo apt install ros-humble-ros2-control -y
 sudo apt install ros-humble-ros2-controllers -y
 
-# sudo snap install cloudcompare 
-# cs -si install cloudcompare
-#install gtsam
-# https://gtsam.org/get_started/
-# cs -si install_gtsam_source.sh
 
 # 下载源码
 echo ""
