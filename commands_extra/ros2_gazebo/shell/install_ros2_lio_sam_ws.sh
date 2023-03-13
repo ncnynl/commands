@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : Install ros2 Omni wheel gazebo car shell  
-# Desc     : 源码安装全向轮仿真小车的脚本                      
+# Function : Install ros2 lio_sam gazebo shell  
+# Desc     : 源码安装lio_sam并实现多线雷达仿真建图脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          
@@ -16,16 +16,16 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install ros2 Omni wheel gazebo car shell")"
+echo "$(gettext "Install ros2 lio_sam gazebo shell")"
 # echo "Not Supported Yet!"
 # exit 0  
 echo ""
 echo "Set workspace"
-workspace=ros2_omni_ws
+workspace=ros2_lio_sam_ws
 
 echo ""
 echo "Set soft name"
-soft_name=omni_control
+soft_name=robot_gazebo
 
 echo ""
 echo "Software if installed ?"
@@ -35,18 +35,23 @@ fi
 
 echo ""
 echo "Install system deps"
+sudo apt install python3-colcon-common-extensions -y
 sudo apt install ros-humble-gazebo-ros-pkgs -y
+sudo apt install ros-humble-gazebo-ros -y
 sudo apt install ros-humble-ros2-control -y
 sudo apt install ros-humble-ros2-controllers -y
-sudo apt install ros-humble-navigation2 -y
-sudo apt install ros-humble-nav2-bringup -y
-sudo apt install ros-humble-cartographer-ros -y
+
+# sudo snap install cloudcompare 
+cs -si install cloudcompare
+#install gtsam
+# https://gtsam.org/get_started/
+cs -si install_gtsam.sh
 
 # 下载源码
 echo ""
 echo "Download source"
 cd ~
-git clone  http://gitee.com/ncnynl/ros2_omni_ws
+git clone  http://gitee.com/ncnynl/ros2_lio_sam_ws
 
 echo ""
 echo "Install rosdeps"
@@ -64,15 +69,13 @@ echo "Add workspace to bashrc if not exits"
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
 then
     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
-    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_omni_ws/src/gazebo_simulation/models/" >> ~/.bashrc
+    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_lio_sam_ws/src/robot_gazebo/models/" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"
 fi
 #How to use
-# ros2 launch gazebo_simulation cartographer_slam.launch.py
-# ros2 run nav2_map_server map_saver_cli -f omni_map
-# ros2 launch gazebo_simulation gazebo_sim_launch_rf2o.py
-# ros2 run teleop_twist_keyboard teleop_twist_keyboard
-# ros2 control list_hardware_interfaces
-# ros2 control list_controllers
+# ros2 launch robot_gazebo robot_sim.launch.py
+# ros2 launch lio_sam run.launch.py
+# /home/ubuntu/Dowloads/LOAM
+# cloudcompare open cloudGlobal.pcd file
