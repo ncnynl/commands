@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : Install gtsam from PPA
-# Desc     : 通过PPA安装gtsam C++库的脚本                       
+# Function : Install gtsam from source
+# Desc     : 通过源码安装gtsam C++库的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2022-12-10                          
+# Date     : 2023-03-13                          
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -16,15 +16,29 @@
 # https://gtsam.org/get_started/
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install gtsam from PPA")"
+echo "$(gettext "Install gtsam from source")"
 
-#test for 20.04
 
-echo "Add PPA"
-sudo add-apt-repository ppa:borglab/gtsam-release-4.0
+echo "Install deps"
+sudo apt-get install libboost-all-dev -y
+sudo apt-get install cmake -y
 
-echo "update"
-sudo apt update  # not necessary since Bionic
+echo "Donlowad from github"
+echo "if tools exits?"
+if [ ! -d ~/tools ];then 
+    mkdir ~/tools
+fi 
 
-echo "Install"
-sudo apt install libgtsam-dev libgtsam-unstable-dev
+cd ~/tools 
+git clone  -b 4.1.0 https://ghproxy.com/https://github.com/borglab/gtsam
+
+# 编译代码
+echo "Compile source"
+cd ~/tools/gtsam
+mkdir build
+cd build
+cmake ..
+make install
+
+echo "gtsam have installed successfully!"
+
