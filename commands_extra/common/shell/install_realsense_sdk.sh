@@ -13,12 +13,17 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-# https://gtsam.org/get_started/
-#not yet support!
+# https://github.com/IntelRealSense/librealsense
 
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install intel realsense SDK source")"
+
+# for ubuntu 22.04, 20.04
+cs -uv "20.04,22.04"
+if [ 1 == $? ]; then 
+    exit 
+fi
 
 echo "Install deps"
 
