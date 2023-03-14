@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : Install ros2 realsense rgbd navigation2 gazebo shell  
-# Desc     : 源码安装realsense rgbd相机实现仿真导航脚本                      
+# Function : Install ros2 segway gazebo shell  
+# Desc     : 源码安装ros2 segway仿真脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          
@@ -18,7 +18,7 @@
 
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install ros2 realsense rgbd navigation2 gazebo shell")"
+echo "$(gettext "Install ros2 segway gazebo shell")"
 # echo "Not Supported Yet!"
 # exit 0  
 # for humble
@@ -29,11 +29,11 @@ fi
 
 echo ""
 echo "Set workspace"
-workspace=ros2_rs_nav_ws
+workspace=ros2_segway_ws
 
 echo ""
 echo "Set soft name"
-soft_name=gazebo_simulation
+soft_name=segway_gazebo
 
 echo ""
 echo "Software if installed ?"
@@ -41,26 +41,18 @@ if [ -d ~/$workspace/src/$soft_name ];then
     echo "$soft_name have installed" && exit 0
 fi 
 
-#install realsense
-# https://github.com/IntelRealSense/librealsense
-# cs -si install_realsense_sdk.sh
-
 echo ""
 echo "Install system deps"
 sudo apt install ros-humble-gazebo-ros-pkgs -y
 sudo apt install ros-humble-gazebo-ros -y
 sudo apt install ros-humble-ros2-control -y
 sudo apt install ros-humble-ros2-controllers -y
-sudo apt install ros-humble-diagnostic-updater -y
-sudo apt install ros-humble-nav2-bringup -y
-sudo apt install ros-humble-navigation2 -y
-sudo apt install ros-humble-rtabmap-ros -y
 
 # 下载源码
 echo ""
 echo "Download source"
 cd ~
-git clone  http://gitee.com/ncnynl/ros2_rs_nav_ws
+git clone  http://gitee.com/ncnynl/ros2_segway_ws
 
 echo ""
 echo "Install rosdeps"
@@ -78,10 +70,10 @@ echo "Add workspace to bashrc if not exits"
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
 then
     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
-    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_rs_nav_ws/src/gazebo_simulation/models/" >> ~/.bashrc
+    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_segway_ws/src/segway_gazebo/models/" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"
 fi
 #How to use
-# ros2 launch gazebo_simulation gazebo_sim_launch_vo.py
+# ros2 launch segway_gazebo segway_sim.launch.py
