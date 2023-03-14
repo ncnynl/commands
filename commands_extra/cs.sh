@@ -769,6 +769,39 @@ function commands_ros_version()
 }
 
 #######################################
+# commands_ubuntu_version
+# need to check ros version
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_ubuntu_version()
+{
+    VERSION_LIST=$1
+    echo "Support System Version To : $VERSION_LIST"
+    current_version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+    if [ $ROS_DISTRO != "" ];then    
+        echo "Current Version Is: ${current_version}"
+        if [[ "${VERSION_LIST[@]}" =~ "${current_version}" ]];then
+            echo "You have the right version for ubuntu ${current_version}"
+        else
+            echo "You don't have the right verion for ubuntu ${current_version}"
+            exit 1
+        fi 
+    else
+        echo "You don't have installed the right verion for ubuntu!"
+        exit 1
+    fi 
+    exit 0
+}
+
+
+#######################################
 # header 
 # Globals: 
 #   None
@@ -893,7 +926,11 @@ function commands() {
     '-rv'|'ros_version')
         commands_ros_version $2
         return $?
-        ;;                                                        
+        ;;   
+    '-uv'|'ubuntu_version')
+        commands_ubuntu_version $2
+        return $?
+        ;;                                                                
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "########$(gettext "commands help to the RCM tools")  "
