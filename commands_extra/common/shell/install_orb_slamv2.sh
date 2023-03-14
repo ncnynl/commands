@@ -35,12 +35,6 @@ if [ ! -d ~/$workspace ];then
 fi 
 
 echo ""
-echo "Software if installed ?"
-if [ -d ~/$workspace ];then 
-    echo "$soft_name have installed" && exit 0
-fi 
-
-echo ""
 echo "Install system deps"
 # sudo apt-get install libpython2.7-dev libboost-filesystem-dev libboost-dev libboost-thread-dev libglew-dev libblas-dev liblapack-dev
 # sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev build-essential
