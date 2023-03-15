@@ -25,3 +25,8 @@ echo "$(gettext "hello")"
 # sudo locale-gen "zh_CN.UTF-8"
 
 # sudo dpkg-reconfigure locales
+
+file_name="/home/ubuntu/commands/ros_easy/shell/load_ros4.sh"
+# sed -i -e "/$file_name/d" ./del_string.txt
+echo $file_name
+echo ${file_name##*/}

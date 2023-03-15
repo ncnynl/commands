@@ -250,6 +250,106 @@ function commands_search_install(){
     done 
 }
 
+
+#######################################
+# commands_search_source
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_search_source(){
+    i=j=0
+    dir="ros_easy"
+    shell_list=()
+    for file in $(ls ./$dir/shell/load_*.sh)
+    do 
+        if [ -f $file ]; then
+            let i++
+            result=$(echo $file | grep "$1")
+            # echo $file 
+            # echo $1
+            if [[ $result != "" ]] ; then
+                file_full_path="$HOME/commands/$file"
+                shell=${file#*/}
+                # echo $shell
+                desc=""
+                func=""
+                website=""
+                while_read_desc $file_full_path
+                let j++
+                jid="$i"
+                shell_list[$i]="$HOME/commands/$shell"
+                echo "$dir:"
+                echo "  ID:$i - ${file##*/}"
+                echo "  ------------------------------------------$(gettext "${func}")"
+                echo "  ------------------------------------------${website}"
+            fi
+        fi
+    done
+    # echo ${shell_list[@]}
+    if [ $j == 1 ]; then 
+        CHOICE_C=$(echo -e "\n${BOLD}└ $(gettext "Whether to source the file")? [Y/n]${PLAIN}")
+        read -p "${CHOICE_C}" YN
+        [ -z ${YN} ] && YN = Y
+        case $YN in 
+        [Yy] | [Yy][Ee][Ss])
+            file_name=${shell_list[$jid]}
+            # echo $file_name
+            if [ -f $file_name ]; then 
+                echo "Source The File: $file_name"
+                source $file_name
+            fi
+            ;;
+        *)
+            commands -ss
+            ;;
+        esac  
+    else 
+        CHOICE_A=$(echo -e "\n${BOLD}└ $(gettext "Please select the script ID to source ")：${PLAIN}")
+        read -p "${CHOICE_A}" INPUT
+        if [ "" != $INPUT ]; then 
+            file_name=${shell_list[$INPUT]}
+            # echo $file_name
+            if [ -f $file_name ]; then 
+                echo "Source The File: $file_name"
+                source $file_name
+            fi
+        else
+            commands -ss 
+        fi 
+    fi
+
+    #if add or del from bashrc
+    if [ $2 ];then 
+        if [ $2 == "-del" ]; then 
+            if  grep -Fq "$file_name" ~/.bashrc
+            then
+                file_string=${file_name##*/}
+                sed -i -e "/$file_string/d" ~/.bashrc
+                echo "Deleted successfully!"
+            else
+                echo "Don't has been added before! Please check ~/.bashrc"
+            fi
+        fi 
+
+        if [ $2 == '-add' ]; then 
+            if ! grep -Fq "$file_name" ~/.bashrc
+            then
+                # echo $file_name
+                echo ". $file_name" >> ~/.bashrc
+                echo "Added successfully! writed to ~/.bashrc"
+            else
+                echo "Has been Added before! Please check ~/.bashrc"
+            fi
+        fi 
+    fi
+}
+
 #######################################
 # commands_search_install rightnow without prompt
 # Globals: 
@@ -864,7 +964,7 @@ function commands() {
         # echo -e '#####################################################'
         # select_id       
         ;;   
-    '-si'|'search-install')
+    '-si'|'search_install')
         commands_si $2
         # echo -e '#####################################################'
         # select_id       
@@ -930,7 +1030,14 @@ function commands() {
     '-uv'|'ubuntu_version')
         commands_ubuntu_version $2
         return $?
-        ;;                                                                
+        ;;  
+    '-ss'|'search_source')
+        echo -e '#####################################################'
+        echo -e "########$(gettext "Select load file to source") "
+        echo -e '#####################################################'   
+        commands_search_source $2 $3
+        ;;      
+                                                                         
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "########$(gettext "commands help to the RCM tools")  "
@@ -941,7 +1048,8 @@ function commands() {
         echo "  "
         echo "-h | help:       $(gettext "Print this help text")."
         echo "-s | search:     $(gettext "Search the script file by keyword")"
-        echo "-si | search-install:     $(gettext "Search the script file and install rightnow")"
+        echo "-si | search_install:     $(gettext "Search the script file and install rightnow")"
+        echo "-ss | search_source:   $(gettext "Source config file such as 'cs -ss ros2 -add | -del' , -add add to ~/.bashrc, -del delete from ~/.bashrc")"        
         echo "-l | list:       $(gettext "List all script files and serial numbers")"
         echo "-L | language:   $(gettext "Select language with en cn tw cz de es fr hu it jp kr pl br ru")"
         echo "-i | install:    $(gettext "Install apt packages")"
@@ -966,4 +1074,4 @@ function commands() {
 }
 source ~/.bashrc
 cd ~/commands
-commands $1 $2
+commands $1 $2 $3 $4 $5
