@@ -337,8 +337,10 @@ function commands_search_source(){
 
     #if add or del from bashrc
     if [ $2 ];then 
+        file_string=${file_name##*/}
         if [ $2 == "-del" ]; then 
-            if  grep -Fq "$file_name" ~/.bashrc
+            
+            if  grep -Fq "$file_string" ~/.bashrc
             then
                 file_string=${file_name##*/}
                 sed -i -e "/$file_string/d" ~/.bashrc
@@ -349,7 +351,7 @@ function commands_search_source(){
         fi 
 
         if [ $2 == '-add' ]; then 
-            if ! grep -Fq "$file_name" ~/.bashrc
+            if ! grep -Fq "$file_string" ~/.bashrc
             then
                 # echo $file_name
                 echo ". $file_name" >> ~/.bashrc
