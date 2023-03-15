@@ -29,7 +29,12 @@ case $version in
         ;;
     "20.04")
         # ros2_distro=galactic
-        ros2_distro=foxy
+        #if galactic exits , use first, if always use foxy, please change it
+        if [ -d /opt/ros/galactic ]; then
+            ros2_distro=galactic 
+        else
+            ros2_distro=foxy
+        fi 
         ;;
     *);;
 esac
