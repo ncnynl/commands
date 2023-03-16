@@ -74,14 +74,19 @@ cd ~/$workspace/
 colcon build --symlink-install 
 
 
-echo "Add workspace to bashrc if not exits"
-if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
-then
-    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
-    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_rs_nav_ws/src/gazebo_simulation/models/" >> ~/.bashrc
-    echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-else
-    echo "Has been inited before! Please check ~/.bashrc"
-fi
+# echo "Add workspace to bashrc if not exits"
+# if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
+# then
+#     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+#     echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_rs_nav_ws/src/gazebo_simulation/models/" >> ~/.bashrc
+#     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
+# else
+#     echo "Has been inited before! Please check ~/.bashrc"
+# fi
+
+cs -ss ros2_rs_nav_ws -add 
 #How to use
 # ros2 launch gazebo_simulation gazebo_sim_launch_vo.py
+# ros2 run teleop_twist_keyboard teleop_twist_keyboard
+# ros2 run rqt_tf_tree rqt_tf_tree 
+# 

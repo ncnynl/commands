@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : Install ros2 segway gazebo shell  
-# Desc     : 源码安装ros2 segway仿真脚本                      
+# Desc     : 源码安装ros2 segway平衡车仿真脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          
@@ -65,15 +65,17 @@ echo "Compile source"
 cd ~/$workspace/
 colcon build --symlink-install 
 
+# add to ~/.bashrc
+cs -ss load_ros2_segwary_ws -add
 
-echo "Add workspace to bashrc if not exits"
-if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
-then
-    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
-    echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_segway_ws/src/segway_gazebo/models/" >> ~/.bashrc
-    echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-else
-    echo "Has been inited before! Please check ~/.bashrc"
-fi
+# echo "Add workspace to bashrc if not exits"
+# if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
+# then
+#     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+#     echo "export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_segway_ws/src/segway_gazebo/models/" >> ~/.bashrc
+#     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
+# else
+#     echo "Has been inited before! Please check ~/.bashrc"
+# fi
 #How to use
 # ros2 launch segway_gazebo segway_sim.launch.py
