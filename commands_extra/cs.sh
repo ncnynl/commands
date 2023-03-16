@@ -854,6 +854,29 @@ function commands_i18n(){
 }
 
 #######################################
+# commands_domain_id  
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_domain_id(){
+    echo "Add ROS_DOMAIN_ID $1 to bashrc if not exits"
+    if ! grep -Fq "export ROS_DOMAIN_ID=" ~/.bashrc
+    then
+        echo "export ROS_DOMAIN_ID=$1" >> ~/.bashrc
+    else
+        sed -i "s/ROS_DOMAIN_ID=.*/ROS_DOMAIN_ID=$1/"g ~/.bashrc
+    fi 
+
+    echo "ROS_DOMAIN_ID $1 have added successfully! please source ~/.bashrc"
+}
+
+#######################################
 # commands_ros_version
 # need to check ros version
 # Globals: 
@@ -1054,7 +1077,12 @@ function commands() {
         echo -e '#####################################################'   
         commands_search_source $2 $3
         ;;      
-                                                                         
+    '-id'|'domain_id')
+        echo -e '#####################################################'
+        echo -e "########$(gettext "Set Domain ID") "
+        echo -e '#####################################################'   
+        commands_domain_id $2 
+        ;;                                                                          
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "########$(gettext "commands help to the RCM tools")  "
@@ -1067,6 +1095,7 @@ function commands() {
         echo "-s | search:     $(gettext "Search the script file by keyword")"
         echo "-si | search_install:     $(gettext "Search the script file and install rightnow")"
         echo "-ss | search_source:   $(gettext "Source config file such as 'cs -ss ros2 -add | -del' , -add add to ~/.bashrc, -del delete from ~/.bashrc")"        
+        echo "-id | domain_id:   $(gettext "Set doamin id")"        
         echo "-l | list:       $(gettext "List all script files and serial numbers")"
         echo "-L | language:   $(gettext "Select language with en cn tw cz de es fr hu it jp kr pl br ru")"
         echo "-i | install:    $(gettext "Install apt packages")"

@@ -28,7 +28,7 @@ workspace=ros2_free_fleet_barista_ws
 
 echo ""
 echo "Set soft name"
-soft_name=barista_ros2_rmf_free_fleet
+soft_name=free_fleet_barista
 
 echo ""
 echo "Workspace if exits ?"

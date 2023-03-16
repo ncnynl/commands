@@ -66,7 +66,7 @@ cd ~/$workspace/
 colcon build --symlink-install 
 
 # add to ~/.bashrc
-cs -ss load_ros2_segwary_ws -add
+cs -ss load_ros2_segway_ws -add
 
 # echo "Add workspace to bashrc if not exits"
 # if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
@@ -77,5 +77,7 @@ cs -ss load_ros2_segwary_ws -add
 # else
 #     echo "Has been inited before! Please check ~/.bashrc"
 # fi
+
 #How to use
 # ros2 launch segway_gazebo segway_sim.launch.py
+# ros2 run teleop_twist_keyboard teleop_twist_keyboard 
