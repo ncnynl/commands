@@ -25,7 +25,7 @@ case "$ROS_DISTRO" in
             export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros1_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models
 
         fi
-        export ROS_DOMAIN_ID=30 #TURTLEBOT3
+        # export ROS_DOMAIN_ID=30 #TURTLEBOT3
         export TURTLEBOT3_MODEL=burger
         export LDS_MODEL=LDS-02 #LDS-01/LDS-02
         ;;
@@ -34,7 +34,7 @@ case "$ROS_DISTRO" in
             source ~/ros2_tb3_ws/install/setup.bash
             export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models
         fi
-        export ROS_DOMAIN_ID=30 #TURTLEBOT3
+        # export ROS_DOMAIN_ID=30 #TURTLEBOT3
         export TURTLEBOT3_MODEL=burger
         export LDS_MODEL=LDS-02 #LDS-01/LDS-02
         ;;
