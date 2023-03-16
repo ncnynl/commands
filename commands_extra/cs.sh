@@ -940,6 +940,44 @@ function commands_ubuntu_version()
     exit 0
 }
 
+#######################################
+# commands_ubuntu_platform
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function commands_ubuntu_platform()
+{
+    # x86_64(amd) | aarch64(arm)
+    VERSION_LIST=$1
+    echo "Support System Version To : $VERSION_LIST"
+    current_cpu=$(uname -m)
+    if [ $current_cpu == "x86_64" ]; then
+        cpu_release="amd"
+    elif [ $current_cpu == "aarch64" ]; then
+        cpu_release="arm"
+    fi
+
+    if [ $ROS_DISTRO != "" ];then    
+        echo "Current Version Is: ${cpu_release}"
+        if [[ "${VERSION_LIST[@]}" =~ "${cpu_release}" ]];then
+            echo "You have the right version for ubuntu ${cpu_release}"
+        else
+            echo "You don't have the right verion for ubuntu ${cpu_release}"
+            exit 1
+        fi 
+    else
+        echo "You don't have installed the right verion for ubuntu!"
+        exit 1
+    fi 
+    exit 0    
+}
+
 
 #######################################
 # header 
@@ -1071,6 +1109,10 @@ function commands() {
         commands_ubuntu_version $2
         return $?
         ;;  
+    '-up'|'ubuntu_platform')
+        commands_ubuntu_platform $2
+        return $?
+        ;;          
     '-ss'|'search_source')
         echo -e '#####################################################'
         echo -e "########$(gettext "Select load file to source") "
