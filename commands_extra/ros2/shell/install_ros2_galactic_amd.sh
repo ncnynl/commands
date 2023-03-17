@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function : Install ROS2 Foxy AMD version                     #
+# Function : Install ROS2 Galactic AMD version                     #
 # Desc     : 用于AMD架构下安装ROS2 Galactic版本的脚本
 # Platform :All Linux Based Platform                           #
 # Version  :1.0                                                #
@@ -12,7 +12,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install ROS2 Foxy AMD version")"
+echo "$(gettext "Install ROS2 Galactic AMD version")"
 
 ros2_distro=galactic
 

@@ -12,7 +12,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install ROS2 Foxy ARM version")"
+echo "$(gettext "Install ROS2 Galactic ARM version")"
 
 #test for ubuntu 20.04 Xaver NX jetpack 5.0.2
 ros2_distro=galactic
