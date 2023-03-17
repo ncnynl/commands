@@ -120,7 +120,9 @@ function commands_list(){
                     let i++
                     echo "  ID:$i - ${file##*/}"
                     echo "  ------------------------------------------$(gettext "${func}")"
+                    if [ $website ]; then
                     echo "  ------------------------------------------${website}"
+                    fi 
                 fi
             done 
         fi 
@@ -165,7 +167,9 @@ function commands_install(){
                         echo "$dir:"
                         echo "  ID:$i - ${file##*/}" 
                         echo "  ------------------------------------------$(gettext "${func}")"
+                        if [ $website ]; then
                         echo "  ------------------------------------------${website}"
+                        fi
                         shell=${file#*/}
                         path=$(dirname $file)
                         folder=${path%/*}
@@ -298,7 +302,6 @@ function commands_search_source(){
                 echo "$dir:"
                 echo "  ID:$i - ${file##*/}"
                 echo "  ------------------------------------------$(gettext "${func}")"
-                echo "  ------------------------------------------${website}"
             fi
         fi
     done

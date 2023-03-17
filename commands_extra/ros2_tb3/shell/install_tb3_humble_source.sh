@@ -83,6 +83,8 @@ else
     echo "Dowload from hls_lfcd_lds_driver "
     git clone -b humble-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
 
+    echo "Dowload from ld08_driver "
+    git clone -b humble-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/ld08_driver.git
 
     #run colcon
 
