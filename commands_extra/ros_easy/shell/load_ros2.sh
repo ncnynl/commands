@@ -17,7 +17,26 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Load ROS2")"
 
-. ~/commands/common/shell/check_linux_version.sh
+# . ~/commands/common/shell/check_linux_version.sh
+release=""
+version=""
+function get_system(){
+    if cat /etc/issue | grep -Eqi "ubuntu"; then
+        release="ubuntu"
+    elif cat /proc/version | grep  -Eqi  "ubuntu"; then
+        release="ubuntu"
+    fi
+    # echo "release:$release"
+}
+get_system
+
+function get_system_version(){
+    if [ $1 == "ubuntu" ]; then
+        version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+    fi
+    # echo "version:$version"
+}
+get_system_version $release
 
 # echo $release
 # echo $version 
