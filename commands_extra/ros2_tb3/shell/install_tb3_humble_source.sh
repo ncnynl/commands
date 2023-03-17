@@ -29,7 +29,7 @@ if [ -d ~/ros2_tb3_ws/src ]; then
 else
     # install dep
 
-    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
+    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
     sudo apt install -y ros-humble-gazebo-ros2-control \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-gazebo-ros2-control-demos \

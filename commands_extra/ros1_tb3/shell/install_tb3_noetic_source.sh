@@ -28,7 +28,7 @@ else
     sudo sh -c "$pwd/../ros1_tb3_gazebo/shell/install_turtlebot3_ros1_noetic_apt.sh"
 
     # install dep
-    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
+    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
 
     # 新建工作空间
     mkdir -p ~/ros1_tb3_ws/src
@@ -63,6 +63,8 @@ else
     echo "Dowload from hls_lfcd_lds_driver "
     git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
 
+    echo "Dowload from ld08_driver "
+    git clone -b develop https://ghproxy.com/https://github.com/ROBOTIS-GIT/ld08_driver.git
 
     #run colcon
 

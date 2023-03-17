@@ -27,7 +27,7 @@ if [ -d ~/ros2_tb3_ws/src ]; then
 else    
     # install dep
 
-    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
+    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
     sudo apt-get install ros-galactic-gazebo-* ros-galactic-cartographer ros-galactic-cartographer-ros ros-galactic-nav2-bringup ros-galactic-navigation2 ros-galactic-slam-toolbox
 
     # 新建工作空间
