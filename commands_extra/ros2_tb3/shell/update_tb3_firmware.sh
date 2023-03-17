@@ -49,4 +49,4 @@ tar -xvf opencr_update.tar.bz2
 
 echo "Flash firmware to opencr"
 cd ./opencr_update
-# ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
