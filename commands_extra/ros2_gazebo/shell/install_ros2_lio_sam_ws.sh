@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : Install ros2 lio_sam gazebo shell  
-# Desc     : 源码安装lio_sam并实现多线雷达仿真建图脚本                      
+# Desc     : 源码安装lio_sam并实现多线雷达仿真建图脚本  
+# Website  : https://www.ncnynl.com/archives/202303/5844.html                    
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          

@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : Install ros2 segway gazebo shell  
-# Desc     : 源码安装ros2 segway平衡车仿真脚本                      
+# Desc     : 源码安装ros2 segway平衡车仿真脚本   
+# Website  : https://www.ncnynl.com/archives/202303/5850.html                    
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          

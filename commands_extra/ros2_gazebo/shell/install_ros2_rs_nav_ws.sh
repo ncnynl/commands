@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : Install ros2 realsense rgbd navigation2 gazebo shell  
-# Desc     : 源码安装realsense rgbd相机实现仿真导航脚本                      
+# Desc     : 源码安装realsense rgbd相机实现仿真导航脚本 
+# Website  : https://www.ncnynl.com/archives/202303/5849.html                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          

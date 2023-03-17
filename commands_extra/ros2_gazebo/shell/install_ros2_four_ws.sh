@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################
 # Function : Install ros2 four wheel gazebo car shell  
-# Desc     : 源码安装四轮转向仿真小车的脚本                      
+# Desc     : 源码安装四轮转向仿真小车的脚本    
+# Website  : https://www.ncnynl.com/archives/202303/5841.html                     
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-03-10                          
