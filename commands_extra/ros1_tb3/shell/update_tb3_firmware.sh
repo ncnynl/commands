@@ -35,6 +35,7 @@ OPENCR_MODEL=burger_noetic
 echo "Download firmware"
 if [ -d ~/tools/opencr_update ]; then
     rm -rf ~/tools/opencr_update 
+    rm -rf ~/tools/opencr_update.tar.bz2
 fi
 
 if [ ! -d ~/tools ]; then 
