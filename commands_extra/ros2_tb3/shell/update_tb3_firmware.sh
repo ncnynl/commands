@@ -49,4 +49,5 @@ tar -xvf opencr_update.tar.bz2
 
 echo "Flash firmware to opencr"
 cd ./opencr_update
+sudo chmod 777 /dev/ttyACM0
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
