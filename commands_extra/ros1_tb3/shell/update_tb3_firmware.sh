@@ -19,11 +19,11 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Update ROS1 turtlebot3 opencr firmware")"
 
 #for arm
-if [ $(uname -m) == "aarch64" ];then 
-    sudo dpkg --add-architecture armhf
-    sudo apt update
-    sudo apt install libc6:armhf
-fi 
+# if [ $(uname -m) == "aarch64" ];then 
+#     sudo dpkg --add-architecture armhf
+#     sudo apt update
+#     sudo apt install libc6:armhf
+# fi 
 
 echo "Set env"
 echo ""
