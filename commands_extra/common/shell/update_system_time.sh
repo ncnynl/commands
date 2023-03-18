@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ################################################
-# Function : Install gettext       
-# Desc     : 用于安装gettext实现shell国际化的脚本                       
+# Function : Update system time  
+# Desc     : 用于更新系统时间的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2022-03-09 17:12:05                            
+# Date     : 2023-03-18 17:12:05                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -14,23 +14,15 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install gettext")"
-
-# https://www.gnu.org/software/gettext/
+echo "$(gettext "Update system time")" 
 
 
-sudo apt update
-sudo apt install gettext
-
-echo "Congratulations, You have successfully installed"
+echo "Install ntpdate"
+sudo apt install ntpdate
 
 
-
-
-
-
-
-
+echo "Update time"
+sudo ntpdate ntp.ubuntu.com
 
 
 
