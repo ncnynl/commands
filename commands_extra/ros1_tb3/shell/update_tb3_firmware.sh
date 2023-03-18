@@ -33,7 +33,6 @@ if [ ! -e /dev/ttyACM0 ]; then
 else 
     echo "Have found the port /dev/ttyACM0 "
     OPENCR_PORT=/dev/ttyACM0
-    sudo chmod 777 /dev/ttyACM0
 fi 
 
 echo ""
@@ -84,4 +83,5 @@ tar -xvf opencr_update.tar.bz2
 
 echo "Flash firmware to opencr"
 cd ./opencr_update
+sudo chmod 777 /dev/ttyACM0
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
