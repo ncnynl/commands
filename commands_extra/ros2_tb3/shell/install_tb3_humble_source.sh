@@ -92,7 +92,7 @@ else
     echo "build workspace..."
     cd ~/ros2_tb3_ws/
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
-    colcon build --symlink-install
+    colcon build --symlink-install --parallel-workers 1
 
     #run echo
 

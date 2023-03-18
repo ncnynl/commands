@@ -18,20 +18,46 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Update ROS2 turtlebot3 opencr firmware")"
 
-cs -up "arm"
-if [ 1 == $? ];then 
-    exit
+echo "Install deps"
+
+#for arm
+if [ $(uname -m) == "aarch64" ];then 
+    sudo dpkg --add-architecture armhf
+    sudo apt update
+    sudo apt install libc6:armhf
 fi 
 
-echo "Install deps"
-sudo dpkg --add-architecture armhf
-sudo apt update
-sudo apt install libc6:armhf
-
 echo "Set env"
-OPENCR_PORT=/dev/ttyACM0
-OPENCR_MODEL=burger
 
+if [ ! -e /dev/ttyACM0 ]; then 
+    echo "Don't have found the port /dev/ttyACM0 "
+    exit
+else 
+    echo "Have found the port /dev/ttyACM0 "
+    OPENCR_PORT=/dev/ttyACM0
+    sudo chmod 777 /dev/ttyACM0
+fi 
+
+echo ""
+echo " 1 - burger" 
+echo " 2 - waffle or waffle-pi"
+CHOICE_A=$(echo -e "\n${BOLD}└ $(gettext "Please select OPENCR_MODEL"):${PLAIN}")
+read -p "${CHOICE_A}" INPUT
+case $INPUT in 
+1)
+    echo "burger" 
+    OPENCR_MODEL=burger
+    ;;   
+2)
+    echo "waffle or waffle-pi" 
+    OPENCR_MODEL=waffle
+    ;;             
+*)
+    echo "Default is burger" 
+    OPENCR_MODEL=burger
+    ;;
+esac   
+exit
 echo "Download firmware"
 if [ -d ~/tools/opencr_update ]; then
     rm -rf ~/tools/opencr_update 
@@ -50,5 +76,4 @@ tar -xvf opencr_update.tar.bz2
 
 echo "Flash firmware to opencr"
 cd ./opencr_update
-sudo chmod 777 /dev/ttyACM0
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
