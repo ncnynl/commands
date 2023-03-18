@@ -19,11 +19,11 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Update ROS1 turtlebot3 opencr firmware")"
 
 #for arm
-# if [ $(uname -m) == "aarch64" ];then 
-#     sudo dpkg --add-architecture armhf
-#     sudo apt update
-#     sudo apt install libc6:armhf
-# fi 
+if [ $(uname -m) == "aarch64" ];then 
+    sudo dpkg --add-architecture armhf
+    sudo apt update
+    sudo apt install libc6:armhf
+fi 
 
 echo "Set env"
 echo ""
@@ -65,7 +65,7 @@ case $INPUT in
     OPENCR_MODEL=burger
     ;;
 esac   
-exit
+# exit
 echo "Download firmware"
 if [ -d ~/tools/opencr_update ]; then
     rm -rf ~/tools/opencr_update 
@@ -84,5 +84,4 @@ tar -xvf opencr_update.tar.bz2
 
 echo "Flash firmware to opencr"
 cd ./opencr_update
-
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr

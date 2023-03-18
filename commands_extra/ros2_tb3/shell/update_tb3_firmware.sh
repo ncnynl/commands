@@ -57,7 +57,7 @@ case $INPUT in
     OPENCR_MODEL=burger
     ;;
 esac   
-exit
+# exit
 echo "Download firmware"
 if [ -d ~/tools/opencr_update ]; then
     rm -rf ~/tools/opencr_update 
