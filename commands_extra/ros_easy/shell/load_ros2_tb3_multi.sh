@@ -17,7 +17,7 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Load turtlebot3 multi")"
 
-if [ -d ~/ros2_tb3_ws ]; then
+if [ -d ~/ros2_tb3_multi_ws ]; then
     source ~/ros2_tb3_multi_ws/install/setup.bash
     export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_tb3_multi_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models
     # export ROS_DOMAIN_ID=30 #TURTLEBOT3
