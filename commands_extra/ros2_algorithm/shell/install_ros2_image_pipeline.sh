@@ -41,6 +41,8 @@ fi
 
 echo ""
 echo "Install system deps"
+sudo apt update
+
 
 # 下载源码
 echo ""
