@@ -21,7 +21,7 @@ echo "$(gettext "Install ROS2 humble turtlebot4 and ignition apt version")"
 
 # echo "Not Yet Supported!" 
 # exit 0
-
+ros_distro="humble"
 #run install dep
 echo "Install TurtleBot 4 deps"
 sudo apt update
@@ -29,20 +29,20 @@ sudo apt install -y  wget python3-colcon-common-extensions python3-rosdep  pytho
 
 # 安装turtlebot
 echo "Install TurtleBot 4 Common"
-sudo apt install ros-${ROS_DISTRO}-turtlebot4-description \
-ros-${ROS_DISTRO}-turtlebot4-msgs \
-ros-${ROS_DISTRO}-turtlebot4-setup \
-ros-${ROS_DISTRO}-turtlebot4-robot \
-ros-${ROS_DISTRO}-irobot-create-control \
-ros-${ROS_DISTRO}-turtlebot4-navigation \
-ros-${ROS_DISTRO}-turtlebot4-node
+sudo apt install ros-${ros_distro}-turtlebot4-description \
+ros-${ros_distro}-turtlebot4-msgs \
+ros-${ros_distro}-turtlebot4-setup \
+ros-${ros_distro}-turtlebot4-robot \
+ros-${ros_distro}-irobot-create-control \
+ros-${ros_distro}-turtlebot4-navigation \
+ros-${ros_distro}-turtlebot4-node
 
 echo "Install TurtleBot 4 Desktop"
-sudo apt install ros-${ROS_DISTRO}-turtlebot4-desktop
+sudo apt install ros-${ros_distro}-turtlebot4-desktop
 
 echo "Install RPLIDAR A1M8"
-sudo apt install ros-${ROS_DISTRO}-rplidar-ros
+sudo apt install ros-${ros_distro}-rplidar-ros
 
 echo "Install OAK-D"
-sudo apt install ros-${ROS_DISTRO}-depthai-ros
+sudo apt install ros-${ros_distro}-depthai-ros
 
