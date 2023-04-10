@@ -24,3 +24,6 @@ sudo apt remove unity-webapps-common thunderbird totem rhythmbox empathy brasero
 
 echo "autoremove"
 sudo apt autoremove -y
+
+sudo apt remove deja-dup -y # 卸载备份工具
+sudo apt remove remmina -y # 卸载远程工具

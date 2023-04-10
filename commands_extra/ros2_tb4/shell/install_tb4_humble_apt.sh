@@ -19,8 +19,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 humble turtlebot4 and ignition apt version")"
 
-echo "Not Yet Supported!" 
-exit 0
+# echo "Not Yet Supported!" 
+# exit 0
 
 #run install dep
 echo "Install TurtleBot 4 deps"
