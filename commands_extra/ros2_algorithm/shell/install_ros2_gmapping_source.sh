@@ -33,6 +33,7 @@ else
     # https://github.com/charlielito/slam_gmapping/tree/feature/namespace_launch
     git clone https://ghproxy.com/https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
 
+    cd ~/$workspace/
     rosdep update
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
