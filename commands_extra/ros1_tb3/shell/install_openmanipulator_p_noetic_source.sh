@@ -24,7 +24,7 @@ if [ -d ~/ros1_op_ws/src ]; then
 else 
 
     # install dep
-    sudo apt install -ysudo apt-get install ros-noetic-ros-controllers ros-noetic-gazebo* ros-noetic-moveit* ros-noetic-industrial-core
+    sudo apt install -y ros-noetic-ros-controllers ros-noetic-gazebo* ros-noetic-moveit*
 
     # 新建工作空间
     mkdir -p ~/ros1_op_ws/src
@@ -40,6 +40,9 @@ else
     echo "this will take 10-30 min to download"
 
     # 下载仓库
+    echo "Dowload industrial_core"
+    git clone -b melodic-devel https://ghproxy.com/https://github.com/ros-industrial/industrial_core
+
     echo "Dowload DynamixelSDK"
 
     git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/DynamixelSDK.git

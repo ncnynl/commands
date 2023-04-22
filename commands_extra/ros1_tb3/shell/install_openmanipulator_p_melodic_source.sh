@@ -24,7 +24,7 @@ if [ -d ~/ros1_op_ws/src ]; then
 else 
 
     # install dep
-    sudo apt install -ysudo apt-get install ros-melodic-ros-controllers ros-melodic-gazebo* ros-melodic-moveit* ros-melodic-industrial-core
+    sudo apt install -y ros-melodic-ros-controllers ros-melodic-gazebo* ros-melodic-moveit* ros-melodic-industrial-core
 
     # 新建工作空间
     mkdir -p ~/ros1_op_ws/src
