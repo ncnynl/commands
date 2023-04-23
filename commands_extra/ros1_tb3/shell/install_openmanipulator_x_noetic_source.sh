@@ -82,7 +82,7 @@ else
 
     #run echo
     echo  "Update USB Latency Timer Setting: "
-    echo "1. roscore, 2.rosrun open_manipulator_p_controller create_udev_rules"
+    echo "1. roscore, 2.rosrun open_manipulator_controller create_udev_rules"
 
     # 添加工作空间路径到bashrc文件
     echo "Add workspace to bashrc"
