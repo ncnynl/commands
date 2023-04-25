@@ -24,7 +24,7 @@ if [ -d ~/ros1_op_ws/src ]; then
 else 
 
     # install dep
-    sudo apt install -y ros-noetic-ros-controllers ros-noetic-gazebo* ros-noetic-moveit*
+    sudo apt install -y ros-noetic-ros-controllers ros-noetic-gazebo-ros ros-noetic-moveit-core
 
     # 新建工作空间
     mkdir -p ~/ros1_op_ws/src
