@@ -54,7 +54,7 @@ else
     git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
 
     echo "Dowload from open_manipulator_p "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p.git
+    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p.git
 
     echo "Dowload from open_manipulator_msgs "
     git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
