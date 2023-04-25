@@ -67,7 +67,7 @@ else
 
     # 编辑各个包
     echo "build workspace..."
-   cd ~/ros1_op_ws 
+    cd ~/ros1_op_ws 
     rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
     catkin_make
 
