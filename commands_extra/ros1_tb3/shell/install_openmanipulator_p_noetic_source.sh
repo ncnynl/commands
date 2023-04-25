@@ -67,7 +67,9 @@ else
 
     # 编辑各个包
     echo "build workspace..."
-    cd ~/ros1_op_ws && catkin_make
+   cd ~/ros1_op_ws 
+    rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
+    catkin_make
 
     #run echo
     echo  "Update USB Latency Timer Setting: "
