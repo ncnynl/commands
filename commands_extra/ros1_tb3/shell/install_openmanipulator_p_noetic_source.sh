@@ -24,7 +24,24 @@ if [ -d ~/ros1_op_ws/src ]; then
 else 
 
     # install dep
-    sudo apt install -y ros-noetic-ros-controllers ros-noetic-gazebo-ros ros-noetic-moveit-core
+    sudo apt install -y ros-noetic-ros-controllers 
+
+    # for gazebo
+    sudo apt install -y ros-noetic-gazebo-ros 
+
+    #for moveit
+    sudo apt install -y ros-noetic-moveit-ros-control-interface \
+     ros-noetic-moveit-visual-tools  \
+     ros-noetic-moveit-servo \
+     ros-noetic-moveit-ros-control-interface \
+     ros-noetic-moveit-ros \
+     ros-noetic-moveit-python ros-noetic-moveit \
+     ros-noetic-moveit-plugins ros-noetic-moveit-planners  \
+     ros-noetic-moveit-msgs  ros-noetic-moveit-commander  \
+     ros-noetic-moveit-simple-controller-manager  ros-noetic-moveit-runtime \
+     ros-noetic-moveit-chomp-optimizer-adapter ros-noetic-moveit-resources \
+     ros-noetic-moveit-visual-tools 
+
 
     # 新建工作空间
     mkdir -p ~/ros1_op_ws/src
@@ -64,6 +81,13 @@ else
 
     echo "Dowload from robotis_manipulator "
     git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/robotis_manipulator.git
+
+    echo "Dowload from open_manipulator_p_controls for moveit"
+    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p_controls.git
+
+    echo "Dowload from open_manipulator_dependencies for moveit"
+    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git   
+
 
     # 编辑各个包
     echo "build workspace..."

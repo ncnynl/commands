@@ -62,9 +62,17 @@ else
     echo "Dowload from robotis_manipulator "
     git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/robotis_manipulator.git
 
+    echo "Dowload from open_manipulator_p_controls for moveit"
+    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p_controls.git
+
+    echo "Dowload from open_manipulator_dependencies for moveit"
+    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git  
+
     # 编辑各个包
     echo "build workspace..."
-    cd ~/ros1_op_ws && catkin_make
+    cd ~/ros1_op_ws
+    rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
+    catkin_make
 
     #run echo
     echo  "Update USB Latency Timer Setting: "

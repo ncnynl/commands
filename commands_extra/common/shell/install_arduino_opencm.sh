@@ -51,3 +51,4 @@ echo "3. copy https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCM9.04/master/ar
 echo "4. Click Tools → Board → Boards Manager. Type OpenCM9.04 into the textbox to find the OpenCM9.04 by ROBOTIS package. After it finds out, click Install."
 echo "5. OpenCM9.04 Board is now on the list of Tools → Board. Click this to import the OpenCM9.04 Board source"
 echo "6. The OpenCM9.04 should be connected to the PC and the OpenCM9.04 via the USB ports.Select Tools → Port → /dev/ttyACM0."
+echo "7. install DYNAMIXEL2Arduino library Sketch->Inlcude library ->Manage libraries -> DYNAMIXEL2Arduino  https://emanual.robotis.com/docs/en/parts/controller/opencm904/."
