@@ -42,6 +42,9 @@ else
      ros-noetic-moveit-chomp-optimizer-adapter ros-noetic-moveit-resources \
      ros-noetic-moveit-visual-tools 
 
+    #for AR 
+    sudo apt install ros-noetic-ar-track-alvar ros-noetic-ar-track-alvar-msgs ros-noetic-image-proc
+
 
     # 新建工作空间
     mkdir -p ~/ros1_op_ws/src
@@ -87,6 +90,10 @@ else
 
     echo "Dowload from open_manipulator_dependencies for moveit"
     git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git   
+
+    echo "Dowload from open_manipulator_dependencies for AR"
+    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_perceptions.git   
+    
 
 
     # 编辑各个包
