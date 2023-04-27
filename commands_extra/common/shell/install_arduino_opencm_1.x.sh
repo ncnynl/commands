@@ -44,7 +44,7 @@ echo "Add to bashrc"
 echo 'export PATH=$PATH:$HOME/tools/arduino-1.8.19' >> ~/.bashrc
 source ~/.bashrc
 
-
+echo "Arduono IDE 1.x have installed successfully, The arduino location is : ~/tools/arduino-1.8.19 "
 echo "How to use: "
 echo "1. open arduino"
 echo "2. click File → Preferences"
