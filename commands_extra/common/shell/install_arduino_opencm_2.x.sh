@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : Install arduino for opencm 
-# Desc     : 用于安装arduino IDE的脚本      
+# Function : Install arduino 2.x for opencm 
+# Desc     : 用于安装arduino IDE 2.x版本的脚本      
 # website  : https://emanual.robotis.com/docs/en/parts/controller/opencm904/                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -15,7 +15,9 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install arduino for opencm")"   
+echo "$(gettext "Install arduino 2.x for opencm")"   
+
+echo "Arduono IDE 2.x  for ubuntu 20.04 + "
 
 echo "Make the OpenCM9.04 USB port be able to upload the Arduino IDE program without root permission"
 mkdir ~/tools
