@@ -40,9 +40,16 @@ tar -xf arduino-1.8.19-linux64.tar.xz
 echo "Install"
 cd ~/tools/arduino-1.8.19
 
+echo "Configure Additional Boards Manager URLs"
+wget https://ghproxy.com/https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCM9.04/master/arduino/opencm_release/package_opencm9.04_index.json
+sed -i "s#\"url\": \"https#\"url\": \"https://ghproxy.com/https#"g  package_opencm9.04_index.json
+
+sed -i "s/boardsmanager.additional.urls=.*/boardsmanager.additional.urls=~\/tools\/arduino-1.8.19\/package_opencm9.04_index.json/"g /home/ubuntu/.arduino15/preferences.txt
+
 echo "Add to bashrc"
 echo 'export PATH=$PATH:$HOME/tools/arduino-1.8.19' >> ~/.bashrc
 source ~/.bashrc
+
 
 echo "Arduono IDE 1.x have installed successfully, The arduino location is : ~/tools/arduino-1.8.19 "
 echo "How to use: "
