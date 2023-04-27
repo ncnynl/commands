@@ -47,7 +47,7 @@ source ~/.bashrc
 
 echo "Arduono IDE 2.x have installed successfully, The arduino location is : ~/tools/arduino-ide_2.1.0_Linux_64bit "
 echo "How to use: "
-echo "1. open arduino"
+echo "1. cd ~/tools/arduino-ide_2.1.0_Linux_64bit  and ./arduino-ide"
 echo "2. click File → Preferences"
 echo "3. copy https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCM9.04/master/arduino/opencm_release/package_opencm9.04_index.json to Additional Boards Manager URLs"
 echo "4. Click Tools → Board → Boards Manager. Type OpenCM9.04 into the textbox to find the OpenCM9.04 by ROBOTIS package. After it finds out, click Install."

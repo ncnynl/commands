@@ -40,15 +40,18 @@ tar -xf arduino-1.8.19-linux64.tar.xz
 echo "Install"
 cd ~/tools/arduino-1.8.19
 
+echo "Configure Additional Boards Manager URLs"
+sed -i "s#boardsmanager.additional.urls=.*#boardsmanager.additional.urls=https://gitee.com/ncnynl/commands/raw/master/commands_extra/common/resource/package_opencr_index.json#"g /home/ubuntu/.arduino15/preferences.txt
+
 echo "Add to bashrc"
 echo 'export PATH=$PATH:$HOME/tools/arduino-1.8.19' >> ~/.bashrc
 source ~/.bashrc
 
 echo "Arduono IDE 1.x have installed successfully, The arduino location is : ~/tools/arduino-1.8.19 "
 echo "How to use: "
-echo "1. open arduino"
+echo "1. cd ~/tools/arduino-1.8.19  and ./arduino"
 echo "2. click File → Preferences"
-echo "3. copy https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCR/master/arduino/opencr_release/package_opencr_index.json to Additional Boards Manager URLs"
+echo "3. copy https://gitee.com/ncnynl/commands/raw/master/commands_extra/common/resource/package_opencr_index.json to Additional Boards Manager URLs"
 echo "4. Click Tools → Board → Boards Manager. Type OpenCR into the textbox to find the OpenCR by ROBOTIS package. After it finds out, click Install."
 echo "5. OpenCR Board is now on the list of Tools → Board. Click this to import the OpenCR Board source"
 echo "6. The OpenCR should be connected to the PC and the OpenCR via the USB ports.Select Tools → Port → /dev/ttyACM0."
