@@ -39,7 +39,6 @@ tar -xf arduino-1.8.19-linux64.tar.xz
 
 echo "Install"
 cd ~/tools/arduino-1.8.19
-./install.sh
 
 echo "Add to bashrc"
 echo 'export PATH=$PATH:$HOME/tools/arduino-1.8.19' >> ~/.bashrc
