@@ -107,10 +107,10 @@ function commands_list(){
             echo "$dir:"
             for file in $(ls $dir/shell/*.sh)
             do 
-                result=$(echo $file | grep "load_")
-                if [[ $result != "" ]] ; then
-                    continue
-                fi                
+                # result=$(echo $file | grep "^load_")
+                # if [[ $result != "" ]] ; then
+                #     continue
+                # fi                
                 if [ -f $file ]; then
                     file_full_path="$HOME/commands/$file"
                     desc=""
@@ -151,10 +151,10 @@ function commands_install(){
             fi            
             for file in $(ls $dir/shell/*.sh)
             do 
-                result=$(echo $file | grep "load_")
-                if [[ $result != "" ]] ; then
-                    continue
-                fi             
+                # result=$(echo $file | grep "^load_")
+                # if [[ $result != "" ]] ; then
+                #     continue
+                # fi             
                 if [ -f $file ]; then
                     let i++
 
@@ -225,10 +225,10 @@ function commands_search_install(){
             fi            
             for file in $(ls $dir/shell/*.sh)
             do 
-                result=$(echo $file | grep "load_")
-                if [[ $result != "" ]] ; then
-                    continue
-                fi 
+                # result=$(echo $file | grep "^load_")
+                # if [[ $result != "" ]] ; then
+                #     continue
+                # fi 
                 if [ -f $file ]; then
                     let i++
                     if [ $i == $1 ] ; then 
@@ -446,10 +446,11 @@ function commands_search(){
             fi            
             for file in $(ls $dir/shell/*.sh)
             do 
-                result=$(echo $file | grep "load_")
-                if [[ $result != "" ]] ; then
-                    continue
-                fi             
+                # result=$(echo $file | grep "^load_")
+                # # echo $result
+                # if [[ $result != "" ]] ; then
+                #     continue
+                # fi             
                 if [ -f $file ]; then
                     let i++
                     result=$(echo $file | grep "$1")
