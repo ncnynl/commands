@@ -19,8 +19,12 @@ echo "$(gettext "Download ROS2 gazebo model shell")"
 
 #run cd gazebo
 
-# 进入~/.gazebo目录
+# build if not exists
+if [ ! -d ~/.gazebo ];then
+    mkdir ~/.gazebo
+fi
 
+# 进入~/.gazebo目录
 cd ~/.gazebo/
 
 #run download gazebo model
