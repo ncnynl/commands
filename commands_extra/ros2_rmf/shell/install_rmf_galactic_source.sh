@@ -36,6 +36,7 @@ sudo apt update && sudo apt install \
   -y
 python3 -m pip install flask-socketio 
 sudo apt-get install python3-colcon* -y
+sudo apt-get install libyaml-dev -y
 
 #安装rosdep
 # sudo apt install python3-rosdep

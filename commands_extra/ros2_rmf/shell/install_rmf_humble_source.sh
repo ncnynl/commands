@@ -42,7 +42,7 @@ sudo apt update && sudo apt install \
   -y
 python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator asyncio
 sudo apt-get install python3-colcon* -y
-
+sudo apt-get install libyaml-dev -y
 
 
 #安装rosdep
