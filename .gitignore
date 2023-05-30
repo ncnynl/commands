@@ -3,3 +3,5 @@ commands_extra/rcm_commands*
 commands_src/build/
 commands_src/dist/
 venv/
+package.json
+package-lock.json
