@@ -1,4 +1,9 @@
 ################# commands工具更新日志 #############
+
+1.3.4 (2023-05-30)
+- 修复bug， 提交了多余文件 ，删除 commands/common/package.json 和 commands/common/package-lock.json
+
+
 1.3.3 (2023-04-27)
 - 增加解决apt安装出现lock问题脚本
 - 增加openmanipulator-p和x型号机械臂安装脚本
