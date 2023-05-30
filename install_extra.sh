@@ -40,7 +40,7 @@ function install_package_extra(){
         rm ~/tools/commands/commands_extra/common/package.json
         rm ~/tools/commands/commands_extra/common/package-lock.json
     fi 
-    
+
     if [ -f ~/commands/common/package.json ];then 
         rm ~/commands/common/package.json
         rm ~/commands/common/package-lock.json
@@ -49,6 +49,9 @@ function install_package_extra(){
     #add commands shell
     if [ ! -f /usr/bin/cs ] ; then
         sudo ln -s ~/commands/cs.sh /usr/bin/cs
+    else
+        #if have same name cs of other software , use csl
+        sudo ln -s ~/commands/cs.sh /usr/bin/csl
     fi 
 
     echo 0
