@@ -35,6 +35,13 @@ function install_package_extra(){
     if [ -L /usr/bin/cs ]; then
         sudo rm /usr/bin/cs
     fi 
+    #fixed 2023-05-30
+    if [ -f ~/tools/commands/commands_extra/common/package.json ]
+        rm ~/tools/commands/commands_extra/common/package.json
+        rm ~/tools/commands/commands_extra/common/package-lock.json
+        rm ~/commands/common/package.json
+        rm ~/commands/common/package-lock.json
+    fi 
 
     #add commands shell
     if [ ! -f /usr/bin/cs ] ; then
