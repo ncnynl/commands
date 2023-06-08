@@ -25,11 +25,11 @@ else
 
     #install apt first 
     pwd=$(pwd)
-    sudo sh -c "$pwd/../ros1_tb3/shell/install_turtlebot3_ros1_noetic_apt.sh"
+    sudo sh -c "$pwd/../ros1_tb3/shell/install_tb3_noetic_apt.sh"
 
     # install dep
     sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
-
+ 
     # 新建工作空间
     mkdir -p ~/ros1_tb3_ws/src
 
