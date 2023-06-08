@@ -26,6 +26,8 @@ WORKING='[\033[34m*\033[0m]'
 SUDO_LIST=(
 update_system_mirrors.sh
 update_system_mirrors2.sh
+update_ros1_source.sh
+update_ros2_source.sh
 )
 
 #######################################
