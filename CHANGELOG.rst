@@ -1,5 +1,10 @@
 ################# commands工具更新日志 #############
 
+1.3.5 (2023-08-17)
+
+- 增加ailibot仿真包部署脚本
+- 增加本地开发脚本，安装后自动赋予可执行权限
+
 1.3.4 (2023-05-30)
 
 - 修复bug， 提交了多余文件 ，删除 commands/common/package.json 和 commands/common/package-lock.json

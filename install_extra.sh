@@ -29,8 +29,11 @@ function install_package_extra(){
         sudo chown -R $USER:$USER ~/commands
     fi
 
+    #give perm to  *.sh
+    find ~/tools/commands/commands_extra/ -type f -iname '*.sh' | xargs chmod +x
     rsync -a ~/tools/commands/commands_extra/* ~/commands/
     sudo chown -R $USER:$USER ~/commands/
+    
     #rm 
     if [ -L /usr/bin/cs ]; then
         sudo rm /usr/bin/cs
