@@ -169,3 +169,10 @@ git config --global user.email 104391@qq.com
 
 #plugin name rule
 尽可能保持脚本名称是唯一的
+```
+如：安装ros1版本ailibot的仿真文件名
+install_ros1_ailibot_sim.sh 
+
+如：安装ros2版本ailibot2的仿真文件名
+install_ros2_ailibot2_sim.sh
+```
