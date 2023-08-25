@@ -165,3 +165,7 @@ echo "source ~/walking_ws/install/local_setup.bash" >> ~/.bashrc
 git config --global user.name "ncnynl"
 git config --global user.email 104391@qq.com
 ```
+
+
+#plugin name rule
+尽可能保持脚本名称是唯一的

@@ -24,6 +24,15 @@ if [ -d ~/ros1_ailibot_sim_ws/src ]; then
 else 
 
     # install dep
+    sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
+        ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
+        ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
+        ros-noetic-rosserial-python ros-noetic-rosserial-client \
+        ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
+        ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
+        ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
+        ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers \
+        ros-noetic-slam-karto ros-noetic-hector-mapping 
 
     # 新建工作空间
     mkdir -p ~/ros1_ailibot_sim_ws/src
@@ -39,6 +48,9 @@ else
     echo "Dowload ailibot_sim"
     git clone  https://gitee.com/ncnynl/ailibot_sim
 
+    echo "Dowload realsense_ros_gazebo plugin"
+    git clone https://github.com/EndlessLoops/realsense_ros_gazebo
+
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros1_ailibot_sim_ws 
@@ -50,6 +62,11 @@ else
     if ! grep -Fq "ros1_ailibot_sim_ws" ~/.bashrc
     then
         echo 'source ~/ros1_ailibot_sim_ws/devel/setup.bash' >> ~/.bashrc
+        echo 'export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml ' >> ~/.bashrc
+        echo 'export AILIBOTBASE=d4    
+        echo 'export ROS_NAMESPACE=""
+        echo 'export ROS_MULTI=false
+        echo 'export GAZEBO=true
     fi
 
 fi
