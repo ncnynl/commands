@@ -21,6 +21,6 @@ echo "$(gettext "Install cartographer apt version")"
 # echo "Not Yet Supported!"
 # exit 0    
 
-sudo apt install ros-${ROS_DISTRO}-cartographer
-sudo apt install ros-${ROS_DISTRO}-cartographer-ros
+sudo apt install -y ros-${ROS_DISTRO}-cartographer
+sudo apt install -y ros-${ROS_DISTRO}-cartographer-ros
 

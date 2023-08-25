@@ -21,8 +21,6 @@ if [ -d ~/$workspace/src/slam_gmapping ]; then
 else
 
     #install deps
-    sudo apt-get update
-
     echo "Download ROS2 ${ROS_DISTRO} gmapping"
     if [ ! -d ~/$workspace/src ];then
         mkdir -p ~/$workspace/src
@@ -42,4 +40,9 @@ else
 
     #add to bashrc if not exits
     echo "Please add workspace to bashrc 'cs -ss load_ros2_algorithm_ws'"
+    echo "Add workspace to bashrc"
+    if ! grep -Fq "ros2_algorithm_ws" ~/.bashrc
+    then
+        echo 'source ~/ros2_algorithm_ws/install/local_setup.bash' >> ~/.bashrc
+    fi    
 fi
