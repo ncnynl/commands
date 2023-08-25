@@ -30,7 +30,7 @@ else
     sudo apt-get install ros-${ROS_DISTRO}-slam-toolbox
 
     #install catographer
-    cs -si install_cartographer_source
+    cs -si install_ros2_cartographer_source
 
     #install gammping
     cs -si install_ros2_gmapping_source
