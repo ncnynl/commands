@@ -1,4 +1,12 @@
 ################# commands工具更新日志 #############
+1.3.6 (2023-08-26)
+
+- 增加默认代理,所有github.com地址都不需要单独增加代理，单独增加代理https://ghproxy.com地址也没有影响
+- 增加ailibot仿真安装脚本 cs -s ailibot
+- 增加ailibot2仿真安装脚本 cs -s ailibot2 
+- 增加micro_ros安装脚本 cs -s micro_ros 
+- 增加micro_ros_dds安装脚本 cs -s micro_ros_dds 
+- 增加stlink安装脚本 cs -s stlink
 
 1.3.5 (2023-08-17)
 

@@ -1168,4 +1168,6 @@ function commands() {
 }
 source ~/.bashrc
 cd ~/commands
+#default use ghproxy.com
+git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
 commands $1 $2 $3 $4 $5
