@@ -302,11 +302,11 @@
             "name": "update_system_mirrors.sh"
         },
         {
-            "command": "cd ~/commands/common;./shell/update_system_mirrors2.sh",
+            "command": "cd ~/commands/common;./shell/update_system_simple.sh",
             "desc": "",
             "id": 44,
             "link": "",
-            "name": "update_system_mirrors2.sh"
+            "name": "update_system_simple.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/upgrade_rcm.sh",

@@ -31,7 +31,7 @@ export LANG=en_US.UTF-8
 
 #apt source
 pwd=$(pwd)
-# sudo sh -c "$pwd/../common/shell/update_system_mirrors2.sh aliyun"
+# sudo sh -c "$pwd/../common/shell/update_system_simple.sh aliyun"
 sudo apt update && sudo apt install -y curl gnupg lsb-release
 
 # sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg

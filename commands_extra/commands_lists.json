@@ -1975,11 +1975,11 @@
             "name": "update_system_mirrors "
         },
         {
-            "command": "cd ~/commands/common; sudo ./shell/update_system_mirrors2.sh  aliyun",
+            "command": "cd ~/commands/common; sudo ./shell/update_system_simple.sh  aliyun",
             "desc": "更新系统源,指定阿里云的系统源",
             "id": 283,
             "link": "点击'启动'按钮就可",
-            "name": "update_system_mirrors2"
+            "name": "update_system_simple"
         },
         {
             "command": "cd ~/commands/common; ./shell/update_docker_source.sh https://registry.docker-cn.com",
@@ -2311,11 +2311,11 @@
             "name": "update_system_mirrors.sh"
         },
         {
-            "command": "cd ~/commands/common;./shell/update_system_mirrors2.sh",
+            "command": "cd ~/commands/common;./shell/update_system_simple.sh",
             "desc": "",
             "id": 331,
             "link": "",
-            "name": "update_system_mirrors2.sh"
+            "name": "update_system_simple.sh"
         },
         {
             "command": "cd ~/commands/common;./shell/upgrade_rcm.sh",

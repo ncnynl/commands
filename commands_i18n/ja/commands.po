@@ -384,7 +384,7 @@ msgstr "python ソースシェルを更新"
 msgid "Update rosdep tsinghua"
 msgstr "rosdep tsinghua を更新"
 
-#: /home/ubuntu/commands/common/shell/update_system_mirrors2.sh:17
+#: /home/ubuntu/commands/common/shell/update_system_simple.sh:17
 msgid "Update system mirrors shell 2"
 msgstr "システムミラーシェル 2 を更新"
 

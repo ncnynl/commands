@@ -385,7 +385,7 @@ msgstr "Update python source shell"
 msgid "Update rosdep tsinghua"
 msgstr "Update rosdep tsinghua"
 
-#: /home/ubuntu/commands/common/shell/update_system_mirrors2.sh:17
+#: /home/ubuntu/commands/common/shell/update_system_simple.sh:17
 msgid "Update system mirrors shell 2"
 msgstr "Update system mirrors shell 2"
 

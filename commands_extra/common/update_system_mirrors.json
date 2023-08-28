@@ -8,11 +8,11 @@
             "name": "update_system_mirrors "
         },
         {
-            "command": "cd ~/commands/common; sudo ./shell/update_system_mirrors2.sh  aliyun",
+            "command": "cd ~/commands/common; sudo ./shell/update_system_simple.sh  aliyun",
             "desc": "更新系统源,指定阿里云的系统源",
             "id": "2",
             "link": "点击'启动'按钮就可",
-            "name": "update_system_mirrors2"
+            "name": "update_system_simple"
         }
     ]
 }

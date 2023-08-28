@@ -1,7 +1,9 @@
 ################# commands工具更新日志 #############
-1.3.6 (2023-08-26)
+1.3.6 (2023-08-28)
 
-- 增加默认代理,所有github.com地址都不需要单独增加代理，单独增加代理https://ghproxy.com地址也没有影响
+- 使用update_system_simple.sh脚本替代update_system_mirrors2.sh脚本,采用提示方式更换系统源
+- 为了避免cs冲突，使用rcm作为后备命令
+- 增加cs -p 和cs -np 参数，或者设置和取消， 默认使用https://ghproxy.com/https://github.com作为代理，可以根据需要设置其他代理。
 - 增加ailibot仿真安装脚本 cs -s ailibot
 - 增加ailibot2仿真安装脚本 cs -s ailibot2 
 - 增加micro_ros安装脚本 cs -s micro_ros 

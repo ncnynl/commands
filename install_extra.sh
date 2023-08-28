@@ -53,8 +53,8 @@ function install_package_extra(){
     if [ ! -f /usr/bin/cs ] ; then
         sudo ln -s ~/commands/cs.sh /usr/bin/cs
     else
-        #if have same name cs of other software , use csl
-        sudo ln -s ~/commands/cs.sh /usr/bin/csl
+        #if have same name cs of other software , use rcm
+        sudo ln -s ~/commands/cs.sh /usr/bin/rcm
     fi 
 
     echo 0

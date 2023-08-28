@@ -25,7 +25,7 @@ WORKING='[\033[34m*\033[0m]'
 
 SUDO_LIST=(
 update_system_mirrors.sh
-update_system_mirrors2.sh
+update_system_simple.sh
 update_ros1_source.sh
 update_ros2_source.sh
 )
@@ -384,10 +384,11 @@ function commands_si(){
         echo "Shell name can not be null"
         exit 0
     fi 
-
     i=j=0
+    #fix bug for -si in script
     for dir in $(ls)
     do
+    # echo $dir
         if [ -d $dir/shell ]; then 
             if is_empty_dir $dir/shell
             then
@@ -412,6 +413,7 @@ function commands_si(){
     done 
 
     #if only one jump to  install
+    # echo $j
     if [ $j == 1 ];then 
         cd ~/commands/$folder
         filename=${shell#*/}
@@ -1052,7 +1054,34 @@ function commands() {
         commands_si $2
         # echo -e '#####################################################'
         # select_id       
-        ;;          
+        ;;   
+    '-p'|'proxy')
+        #default use ghproxy.com
+        echo "Setting default proxy ghproxy.com"
+        default_proxy="https://ghproxy.com/https://github.com"
+        if [ $2 ]; then 
+            default_proxy=$2
+        fi
+        #backup
+        cp ~/.gitconfig ~/.gitconfig.bk
+        git config --global url.$default_proxy.insteadof https://github.com
+        echo "haved setted github's proxy as $default_proxy, please check ~/.gitconfig/"
+        cat ~/.gitconfig        
+        ;;  
+    '-np'|'noproxy')
+        #default use ghproxy.com
+        echo "unset default proxy"
+        default_proxy="ghproxy.com"
+        if [ $2 ]; then 
+            default_proxy=$2
+        fi
+        #backup
+        cp ~/.gitconfig ~/.gitconfig.bk
+        sed -i "/$default_proxy/d" ~/.gitconfig
+        sed -i '/insteadof/d' ~/.gitconfig
+        echo "github.com proxy is unsetted!!, please check ~/.gitconfig/"
+        cat ~/.gitconfig
+        ;;                        
     '-l'|'list')
         echo -e '#####################################################'
         echo -e "########$(gettext "Alternative scripts")"
@@ -1153,6 +1182,8 @@ function commands() {
         echo "-b | build:      $(gettext "Build install script through template")"                        
         echo "-u | upgrade:    $(gettext "Upgrade RCM")"
         echo "-v | version:    $(gettext "Show RCM version") "
+        echo "-p | proxy:    $(gettext "Set github proxy") "
+        echo "-np | noproxy:    $(gettext "Unset github proxy") "
         echo "id:              $(gettext "Provide the serial number to install")"
         ;;             
     *)
@@ -1168,6 +1199,4 @@ function commands() {
 }
 source ~/.bashrc
 cd ~/commands
-#default use ghproxy.com
-git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
 commands $1 $2 $3 $4 $5

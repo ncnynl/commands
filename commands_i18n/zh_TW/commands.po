@@ -384,7 +384,7 @@ msgstr "更新python源"
 msgid "Update rosdep tsinghua"
 msgstr "更新rosdep源為清華源"
 
-#: /home/ubuntu/commands/common/shell/update_system_mirrors2.sh:17
+#: /home/ubuntu/commands/common/shell/update_system_simple.sh:17
 msgid "Update system mirrors shell 2"
 msgstr "更新系統鏡像源腳本2"
 
