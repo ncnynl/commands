@@ -153,7 +153,7 @@ restore(){
 setSources(){
 	getAbout
 	updateInit
-	echo "请问你需要变更系统源码，直接回车即可"
+	echo "请问你需要变更系统源吗? 不需要的话，直接回车即可"
 	echo "ubuntu官方源请输入 - ubu"
 	echo "清华源请输入 - ustc"
 	echo "阿里云请输入 - 163"
