@@ -82,3 +82,5 @@ case $ros_ver in
         ;;
 esac
 
+#install rosdep 
+cs -si update_rosdep_tsinghua

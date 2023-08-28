@@ -28,12 +28,12 @@ else
         
     # install dep
     sudo apt-get update
-    sudo apt-get -y install libusb-1.0
-    sudo apt-get -y install pkg-config
-    sudo apt-get -y install git
-    sudo apt-get -y install cmake
-    sudo apt-get -y install automake
-    sudo apt-get -y install libgtk-3-dev
+    sudo apt-get install libusb-1.0
+    sudo apt-get install pkg-config
+    sudo apt-get install git
+    sudo apt-get install cmake
+    sudo apt-get install automake
+    sudo apt-get install libgtk-3-dev
 
     # 进入工作空间
     cd ~/tools

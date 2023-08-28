@@ -41,7 +41,8 @@ sudo apt-get install libyaml-dev -y
 #安装rosdep
 # sudo apt install python3-rosdep
 # sudo rosdep init
-rosdep update
+# rosdep update
+cs -si update_rosdep_tsinghua
 
 #新建目录
 mkdir -p ~/ros2_rmf_ws/src

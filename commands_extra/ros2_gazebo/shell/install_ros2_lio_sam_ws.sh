@@ -70,6 +70,7 @@ git clone  http://gitee.com/ncnynl/ros2_lio_sam_ws
 
 echo ""
 echo "Install rosdeps"
+cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

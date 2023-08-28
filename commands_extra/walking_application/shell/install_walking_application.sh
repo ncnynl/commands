@@ -39,6 +39,9 @@ if [ -d ~/$workspace/src/walking_application ];then
 fi 
 
 echo "install rosdeps"
+cs -si update_rosdep_tsinghua
+
+
 sudo apt install -y ros-${ROS_DISTRO}-robot-localization ros-${ROS_DISTRO}-slam-toolbox
 sudo apt install -y ros-${ROS_DISTRO}-navigation2 \
 ros-${ROS_DISTRO}-nav2-bringup  \

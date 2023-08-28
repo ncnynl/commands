@@ -45,7 +45,8 @@ else
 
     #update rosdep
     #sudo rosdep init
-    rosdep update
+    # rosdep update
+    cs -si update_rosdep_tsinghua
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
     #Due to conflicting versions you might need to uninstall the ROS abseil-cpp using

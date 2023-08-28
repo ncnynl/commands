@@ -40,8 +40,9 @@ function install_autoware_source()
 
     if ! command -v "rosdep" > /dev/null 2>&1; then 
         echo "rosdep is not exists, Install now"
-        pwd=$(pwd)
-        sudo sh -c "$pwd/../common/shell/update_rosdep_tsinghua.sh"
+        cs -si update_rosdep_tsinghua
+        # pwd=$(pwd)
+        # sudo sh -c "$pwd/../common/shell/update_rosdep_tsinghua.sh"
     fi 
 
 
@@ -71,7 +72,8 @@ function install_autoware_source()
 
     #rosdep 一次安装src下所有依赖
     export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml
-    rosdep update
+    # rosdep update
+    cs -si update_rosdep_tsinghua
     rosdep install --reinstall -y -i --from-paths src
 
     #目的是切换想要安装的autoware版本，如果不切换master将使用最新分支

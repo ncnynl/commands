@@ -32,7 +32,8 @@ else
     git clone https://ghproxy.com/https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
 
     cd ~/$workspace/
-    rosdep update
+    # rosdep update
+    cs -si update_rosdep_tsinghua
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
     #Build and install

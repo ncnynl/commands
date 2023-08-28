@@ -40,7 +40,8 @@ cs -si install_nomachine.sh
 
 echo "install rosdep"
 # sudo sh -c "$pwd/../common/shell/install_rosdep_tsinghua.sh"
-cs -si install_rosdep_tsinghua.sh
+# cs -si install_rosdep_tsinghua.sh
+cs -si update_rosdep_tsinghua
 
 echo "remove files"
 # sudo sh -c "$pwd/../common/shell/remove_unuse_tools.sh"

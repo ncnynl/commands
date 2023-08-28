@@ -49,6 +49,7 @@ git clone -b master https://gitee.com/ncnynl/box_bot
 
 echo ""
 echo "Install rosdeps"
+cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

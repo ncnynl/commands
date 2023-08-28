@@ -57,6 +57,7 @@ git clone -b ${branch} https://github.com/ros-perception/image_pipeline
 
 echo ""
 echo "Install rosdeps"
+cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

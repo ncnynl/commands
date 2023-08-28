@@ -53,6 +53,7 @@ git clone -b startbots https://gitee.com/ncnynl/barista_ros2
 
 echo ""
 echo "Install rosdeps"
+cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

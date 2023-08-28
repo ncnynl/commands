@@ -49,6 +49,7 @@ git clone -b master https://gitee.com/ncnynl/rmf_burger_maps
 
 echo ""
 echo "Install rosdeps"
+cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

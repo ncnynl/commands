@@ -51,6 +51,7 @@ git clone -b ${ROS_DISTRO}-devel https:://ghproxy.com/https://github.com/ros/ros
 
 echo ""
 echo "Install rosdeps"
+cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

@@ -99,6 +99,7 @@ else
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros1_op_ws 
+    cs -si update_rosdep_tsinghua
     rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
     catkin_make
 

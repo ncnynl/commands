@@ -53,6 +53,7 @@ else
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros2_ailibot2_sim_ws 
+    cs -si update_rosdep_tsinghua
     rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
     colcon build --symlink-install
 

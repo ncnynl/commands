@@ -61,6 +61,7 @@ if [ ${ROS_DISTRO} == "humble" ]; then
 fi
 #rosdep
 cd ~/ros2_free_fleet_ws/
+cs -si update_rosdep_tsinghua
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 
 #build for ros2

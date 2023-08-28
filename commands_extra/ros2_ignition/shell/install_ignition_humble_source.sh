@@ -36,7 +36,7 @@ cd ~/ros2_ign_ws/
 #run 
 
 # 安装依赖
-
+cs -si update_rosdep_tsinghua
 rosdep install -r --from-paths src -i -y --rosdistro humble
 
 #run 

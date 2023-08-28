@@ -36,11 +36,12 @@ sudo curl -o /etc/ros/rosdep/sources.list.d/20-default.list https://mirrors.tuna
 export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml
 
 #run bashrc
-
-echo 'export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml' >> ~/.bashrc
+if ! grep -Fq "index-v4.yaml" ~/.bashrc
+then
+    echo 'export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml' >> ~/.bashrc
+fi 
 
 #run rosdep update
 sudo rosdep fix-permissions
 
 rosdep update
-

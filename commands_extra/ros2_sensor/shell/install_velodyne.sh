@@ -38,6 +38,7 @@ sudo apt install libpcap0.8-dev
 
 # 下载源码
 cd ~/$workspace/src
+cs -si update_rosdep_tsinghua
 git clone -b galactic-devel https://github.com/ros-drivers/velodyne.git
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

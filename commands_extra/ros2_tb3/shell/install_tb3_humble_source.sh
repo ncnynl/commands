@@ -46,7 +46,9 @@ else
     #rosdep update
     sudo apt install python3-rosdep -y
     . ~/commands/common/shell/update_rosdep_tsinghua.sh
-    rosdep update
+    # rosdep update
+    cs -si update_rosdep_tsinghua
+
 
     # 新建工作空间
     mkdir -p ~/ros2_tb3_ws/src
