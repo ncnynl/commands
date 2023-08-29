@@ -51,6 +51,9 @@ else
     echo "Dowload realsense_ros_gazebo plugin"
     git clone https://github.com/EndlessLoops/realsense_ros_gazebo
 
+    #rosdep 
+    cs -si update_rosdep_tsinghua
+    
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros1_ailibot_sim_ws 
