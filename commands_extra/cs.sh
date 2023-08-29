@@ -1081,7 +1081,27 @@ function commands() {
         sed -i '/insteadof/d' ~/.gitconfig
         echo "github.com proxy is unsetted!!, please check ~/.gitconfig/"
         cat ~/.gitconfig
-        ;;                        
+        ;;   
+    '-d'|'download')
+        #default use ghproxy.com
+        if [ $2 ]; then 
+            echo "Download code by git clone"
+            result=$(echo $2 | grep "github.com")
+            if [[ "$result" != "" ]]
+            then
+                url=https://ghproxy.com/$2
+            else
+                url=$2
+            fi
+            echo "Ready to download  git clone $url"
+            cd ~/tools/
+            git clone $url
+            echo "File is download to ~/tools"
+        else
+            echo "You need provide URL for git clone"
+        fi
+        
+        ;;   
     '-l'|'list')
         echo -e '#####################################################'
         echo -e "########$(gettext "Alternative scripts")"
@@ -1184,6 +1204,7 @@ function commands() {
         echo "-v | version:    $(gettext "Show RCM version") "
         echo "-p | proxy:    $(gettext "Set github proxy") "
         echo "-np | noproxy:    $(gettext "Unset github proxy") "
+        echo "-d | download:    $(gettext "Download github , gitee repo code") "
         echo "id:              $(gettext "Provide the serial number to install")"
         ;;             
     *)
