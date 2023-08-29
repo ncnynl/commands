@@ -57,6 +57,18 @@ pyqt5
 #### 在线安装教程
 
  - 一键安装桌面版
+ - 方法一：
+
+```
+curl http://file.ncnynl.com/rcm.sh | bash -
+```
+
+- 方法二：
+
+```
+curl https://gitee.com/ncnynl/commands/raw/master/online.sh | bash -
+```
+ - 方法三：
 
 ```
 rm online.sh ; wget https://gitee.com/ncnynl/commands/raw/master/online.sh ; sudo chmod +x ./online.sh; ./online.sh
@@ -69,6 +81,18 @@ commands
 ```
 
  - 一键安装命令行版
+ - 方法一：
+
+```
+curl http://file.ncnynl.com/rcms.sh | bash -
+```
+ - 方法二： 
+
+ ```
+curl https://gitee.com/ncnynl/commands/raw/master/online_shell.sh | bash -
+```
+
+- 方法三：
 
 ```
 rm online_shell.sh ; wget https://gitee.com/ncnynl/commands/raw/master/online_shell.sh ; sudo chmod +x ./online_shell.sh; ./online_shell.sh
