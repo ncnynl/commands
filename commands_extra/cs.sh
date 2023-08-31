@@ -1085,7 +1085,9 @@ function commands() {
     '-d'|'download')
         #default use ghproxy.com
         if [ $2 ]; then 
-            echo "Download code by git clone"
+            echo "Download code"
+
+            #URL
             result=$(echo $2 | grep "github.com")
             if [[ "$result" != "" ]]
             then
@@ -1093,10 +1095,30 @@ function commands() {
             else
                 url=$2
             fi
-            echo "Ready to download  git clone $url"
-            cd ~/tools/
-            git clone $url
-            echo "File is download to ~/tools"
+            
+            #position
+            if [ $3 ]; then
+                floder=$3
+                if [ ! -d $3 ]; then 
+                    echo "$3 is not folder, replace by default folder ~/tools"
+                    floder=~/tools
+                fi
+            else
+                floder=~/tools
+            fi 
+            cd $floder
+
+            #version
+            if [ $4 ]; then 
+                ver="-b $4"
+                echo "code version is $ver"
+            else
+                ver=""
+            fi
+
+            echo "Ready to download  git clone $ver $url"
+            git clone $ver $url 
+            echo "File is download to $floder "
         else
             echo "You need provide URL for git clone"
         fi
@@ -1204,7 +1226,7 @@ function commands() {
         echo "-v | version:    $(gettext "Show RCM version") "
         echo "-p | proxy:    $(gettext "Set github proxy") "
         echo "-np | noproxy:    $(gettext "Unset github proxy") "
-        echo "-d | download:    $(gettext "Download github , gitee repo code") "
+        echo "-d | download:    $(gettext "Download github , gitee repo code cs -d URL Position version") "
         echo "id:              $(gettext "Provide the serial number to install")"
         ;;             
     *)
