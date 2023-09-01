@@ -19,8 +19,10 @@ echo "$(gettext "Install ROS2 ${ROS_DISTRO}  Micro ROS DDS source")"
 
 # echo "Tested ROS2 Version: galactic , humble"
 # if installed ?
+echo "This packages included Micro-XRCE-DDS-Client, Micro-XRCE-DDS-Agent, Micro-XRCE-DDS-Gen "
 if [ -d ~/tools/Micro-XRCE-DDS ]; then
-    echo "Micro ROS DDS have installed!!" 
+    echo "Micro ROS DDS have installed!! But please check if this is a newest version."
+    echo "If You want to reinstall, Please delete ~/tools/Micro-XRCE-DDS  try again" 
 else 
     #folder 
     if [ ! -d ~/tools ]; then 
@@ -34,7 +36,7 @@ else
 
     # 获取仓库列表
     #run import
-    echo "this will take 5 min to download"
+    echo "this will take a while to download"
 
     #replace https
     git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com

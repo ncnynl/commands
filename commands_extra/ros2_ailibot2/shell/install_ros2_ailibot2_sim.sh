@@ -44,7 +44,7 @@ else
 
     # 获取仓库列表
     #run import
-    echo "this will take 5 min to download"
+    echo "this will take a while to download"
 
     # 下载仓库
     echo "Dowload ailibot2_sim"

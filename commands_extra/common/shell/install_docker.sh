@@ -18,10 +18,11 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Install docker")"
         
 echo "Install Curl"
-sudo apt isntall curl -y 
+sudo apt install curl -y 
 
 echo "安装最新版本的docker"
-curl -sSL https://get.daocloud.io/docker | sh
+curl sSL https://get.docker.com | sh
+sudo service docker start
 
 echo "无root 权限能否使用 docker"
 sudo groupadd docker			# 有则不用创建
@@ -35,3 +36,9 @@ docker --version
 
 
 
+# 检查dockerd进程启动
+# service docker status
+# ps aux|grep docker
+# # 检查拉取镜像等正常
+# docker pull busybox
+# docker images

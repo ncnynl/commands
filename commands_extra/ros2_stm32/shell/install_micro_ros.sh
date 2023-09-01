@@ -32,7 +32,7 @@ else
     sudo apt install -y arm-none-eabi-gcc arm-none-eabi-gdb
 
     #install micro ros dds
-    cs -si install_micro_ros_dds
+    #cs -si install_micro_ros_dds
     cs -si install_stlink
 
     # 新建工作空间
@@ -46,7 +46,7 @@ else
     git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
 
     #run import
-    echo "this will take 5 min to download"
+    echo "this will take a while to download"
 
     # 下载仓库
     echo "Dowload micro_ros"

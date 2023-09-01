@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : Install Micro-XRCE-DDS-Agent source 
-# Desc     : 用于源码方式安装Micro-XRCE-DDS-Agent的脚本                              
+# Function : Install Micro-XRCE-DDS-Gen source 
+# Desc     : 用于源码方式安装Micro-XRCE-DDS-Gen的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2023-08-31                           
@@ -15,12 +15,12 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install Micro-XRCE-DDS-Agent source")"
+echo "$(gettext "Install Micro-XRCE-DDS-Gen source")"
 
 # echo "Tested ROS2 Version: galactic , humble"
 # if installed ?
-if [ -d ~/tools/Micro-XRCE-DDS-Agent ]; then
-    echo "Micro-XRCE-DDS-Agent have installed!!" 
+if [ -d ~/tools/Micro-XRCE-DDS-Gen ]; then
+    echo "Micro-XRCE-DDS-Gen have installed!!" 
 else 
     #install micro ros dds
 
@@ -32,17 +32,14 @@ else
 
     # 下载仓库
     echo "Dowload micro_ros"
-    git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent
+    git clone https://github.com/eProsima/Micro-XRCE-DDS-Gen
 
     # 编辑各个包
     echo "build workspace..."
-    cd Micro-XRCE-DDS-Agent
+    cd Micro-XRCE-DDS-Gen
 
-    mkdir build && cd build
-    cmake ..
-    make
-    sudo make install
-
-    sudo ldconfig /usr/local/lib/
+    git submodule init
+    git submodule update
+    ./gradlew assemble
 
 fi

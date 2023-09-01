@@ -43,7 +43,7 @@ else
     # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         
     #run import
-    echo "this will take 5 min to download"
+    echo "this will take a while to download"
 
     # 下载仓库
     echo "Dowload stlink"
