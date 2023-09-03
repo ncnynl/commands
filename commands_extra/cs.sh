@@ -11,17 +11,8 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands
-RED='\033[31m'
-GREEN='\033[32m'
-YELLOW='\033[33m'
-BLUE='\033[34m'
-PLAIN='\033[0m'
-BOLD='\033[1m'
-SUCCESS='[\033[32mOK\033[0m]'
-COMPLETE='[\033[32mDone\033[0m]'
-WARN='[\033[33mWARN\033[0m]'
-ERROR='[\033[31mERROR\033[0m]'
-WORKING='[\033[34m*\033[0m]'
+
+source $HOME/commands/cs_variables.sh
 
 SUDO_LIST=(
 update_system_mirrors.sh
@@ -1240,9 +1231,9 @@ function commands() {
         # echo "5:$5"
         # execute shell
         if [ $# -ge 2 ]; then 
-            local script_file="$CSROOT/$1/shell/$2.sh"
+            local script_file="$CS_ROOT/$1/shell/$2.sh"
             if [ -f $script_file ]; then 
-                "$CSROOT/$1/shell/$2.sh" $*
+                "$CS_ROOT/$1/shell/$2.sh" $*
             else 
                 echo "Path is not exits : $script_file"
             fi
@@ -1255,6 +1246,5 @@ function commands() {
 }
 
 source ${HOME}/.bashrc
-export CSROOT="${HOME}/commands"
-cd $CSROOT 
+cd $CS_ROOT 
 commands $*

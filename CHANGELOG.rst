@@ -1,11 +1,19 @@
 ################# commands工具更新日志 #############
+2.0.0 (2023-09-03)
+
+- 增加创建脚本目录
+- 增加自动补全后，访问方式改变挺大，直接升级为v2.0.0系列以做区别
+
 1.3.7 (2023-09-03)
 
 - 增加脚本自动补全功能,通过tab键即可，自动补全路径，文件名，参数列表 如使用cs <tab><tab> <tab><tab> 
 - cs system check_ace --count 10 
 - cs system check_ace --help
-- TODO: 增加缓存文件，用于加快自动补全的显示
 - 修改commands_completion/commands_completion.bash文件需要重新source ~/.bashrc
+- 融合旧版本脚本格式，能通过如：cs common check_python_version 方式访问
+- TODO: 增加缓存文件，用于加快自动补全的显示
+- TODO: 增加目录创建，脚本创建的脚本
+- TODO: 增加私有目录，私有脚本的创建
 
 1.3.6 (2023-08-28)
 
