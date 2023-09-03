@@ -34,10 +34,15 @@ function install_package_extra(){
     rsync -a ~/tools/commands/commands_extra/* ~/commands/
     sudo chown -R $USER:$USER ~/commands/
     
-    #rm 
+    #rm cs
     if [ -L /usr/bin/cs ]; then
         sudo rm /usr/bin/cs
     fi 
+    #rm rcm
+    if [ -L /usr/bin/rcm ]; then
+        sudo rm /usr/bin/rcm
+    fi 
+
     #fixed 2023-05-30
     if [ -f ~/tools/commands/commands_extra/common/package.json ];then 
         rm ~/tools/commands/commands_extra/common/package.json
@@ -50,10 +55,9 @@ function install_package_extra(){
     fi 
 
     #add commands shell
-    if [ ! -f /usr/bin/cs ] ; then
+    #if have same name cs of other software , use rcm
+    if [ ! -f /usr/bin/rcm ] ; then
         sudo ln -s ~/commands/cs.sh /usr/bin/cs
-    else
-        #if have same name cs of other software , use rcm
         sudo ln -s ~/commands/cs.sh /usr/bin/rcm
     fi 
 

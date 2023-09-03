@@ -183,4 +183,4 @@ function subscripts() {
   fi
 }
 
-complete -F _commands_completions cs
+complete -F _commands_completions rcm
