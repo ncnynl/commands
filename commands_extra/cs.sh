@@ -1230,16 +1230,31 @@ function commands() {
         echo "id:              $(gettext "Provide the serial number to install")"
         ;;             
     *)
-        echo -e '#####################################################'
-        echo -e "########$(gettext "Alternative scripts")"
-        echo -e '#####################################################'    
-        #显示列表
-        commands_list
-        echo -e '#####################################################'
-        select_id
+        # 采用自动补全功能，实现推荐触发运行脚本
+        # ./$shell $2
+        # echo "0:$0"
+        # echo "1:$1" 
+        # echo "2:$2" 
+        # echo "3:$3"
+        # echo "4:$4"
+        # echo "5:$5"
+        # execute shell
+        if [ $# -ge 2 ]; then 
+            local script_file="$CSROOT/$1/shell/$2.sh"
+            if [ -f $script_file ]; then 
+                "$CSROOT/$1/shell/$2.sh" $*
+            else 
+                echo "Path is not exits : $script_file"
+            fi
+        else
+            echo "This command need three Params. But you only have $# !! "
+            # commands -l
+        fi 
         ;;
     esac
 }
-source ~/.bashrc
-cd ~/commands
-commands $1 $2 $3 $4 $5
+
+source ${HOME}/.bashrc
+export CSROOT="${HOME}/commands"
+cd $CSROOT 
+commands $*

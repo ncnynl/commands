@@ -1,4 +1,12 @@
 ################# commands工具更新日志 #############
+1.3.7 (2023-09-03)
+
+- 增加脚本自动补全功能,通过tab键即可，自动补全路径，文件名，参数列表 如使用cs <tab><tab> <tab><tab> 
+- cs system check_ace --count 10 
+- cs system check_ace --help
+- TODO: 增加缓存文件，用于加快自动补全的显示
+- 修改commands_completion/commands_completion.bash文件需要重新source ~/.bashrc
+
 1.3.6 (2023-08-28)
 
 - 使用update_system_simple.sh脚本替代update_system_mirrors2.sh脚本,采用提示方式更换系统源

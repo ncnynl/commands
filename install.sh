@@ -66,6 +66,9 @@ config_python3_source
 #install desktop
 ~/tools/commands/install_desktop.sh
 
+#install bash completion
+~/tools/commands/install_completion.sh
+
 echo -e "All Install Finished"
 
 
