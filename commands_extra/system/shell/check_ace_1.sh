@@ -1,128 +1,68 @@
 #!/bin/bash
 ################################################
-# Function : Check ace shell  
-# Desc     : 用于检测自动补全功能是否完整                         
+# Function : Install Ailibot2_SIM ROS2 ${ROS_DISTRO} source 
+# Desc     : 用于源码方式安装ROS2 humble版本Ailibot2_sim的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2023-09-03                    
+# Date     : 2023-08-17 15:25:09                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
 # Licnese: MIT                                 
 # QQ Qun: 创客智造B群:926779095                                  
 # QQ Qun: 创客智造C群:937347681                               
-# QQ Qun: 创客智造D群:562093920                          
+# QQ Qun: 创客智造D群:562093920                               
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Check echo shell")"
+echo "$(gettext "Install Ailibot2_SIM ROS2 ${ROS_DISTRO} source")"
 
-# Usage of ace.sh
-function _usage_of_ace() {
-    cat << EOF
-Usage:
-    nox poker ace [--count <count>] [--reverse]
+# echo "Tested ROS2 Version: galactic , humble"
+# if installed ?
+if [ -d ~/ros2_ailibot2_sim_ws/src ]; then
+    echo "ailibot2_sim have installed!!" 
+else 
 
-Description:
-    Print poker numbers.
+    # install dep
+    sudo apt-get update
+    sudo apt install -y ros-${ROS_DISTRO}-teleop-twist-keyboard 
+    sudo apt install -y ros-${ROS_DISTRO}-urdf  ros-${ROS_DISTRO}-xacro 
+    sudo apt install -y ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup 
+    sudo apt install -y ros-${ROS_DISTRO}-compressed-image-transport ros-${ROS_DISTRO}-rqt-tf-tree
+    sudo apt install -y ros-${ROS_DISTRO}-slam-toolbox  ros-${ROS_DISTRO}-cartographer ros-${ROS_DISTRO}-cartographer-ros
+    sudo apt install -y ros-${ROS_DISTRO}-robot-localization
 
-Option:
-    --help|-h:                                          -- using help
-    --debug|-x:                                         -- debug mode
-    --reverse|-r:                                       -- whether to print in reverse order, or print in normal order without this option
-    --count|-c:                                         -- the number of times to print, if there is no option, it will be printed once
+    #install gmapping
+    cs -si install_ros2_gmapping_source
+    source ~/ros2_algorithm_ws/install/local_setup.bash
 
-EOF
-}
+    # 新建工作空间
+    mkdir -p ~/ros2_ailibot2_sim_ws/src
 
-##########################################################################################################################
-#
-# English note
-# getopt command format description:
-#   -o: means define short option
-#       Example explanation: `ab:c::` defines three option types.
-#           a There is no colon after a, which means that the defined a option is a switch type (true/false), and no additional parameters are required. Using the -a option means true.
-#           b Followed by a colon, it means that the defined b option requires additional parameters, such as: `-b 30`
-#           c Followed by a double colon, it means that the defined c option has an optional parameter, and the optional parameter must be close to the option, such as: `-carg` instead of `-c arg`
-#   -long: means define long options
-#       Example explanation: `a-long,b-long:,c-long::`. The meaning is basically the same as above.
-#   "$@": a list representing the arguments, not including the command itself
-#   -n: indicates information when an error occurs
-#   --: A list representing the arguments themselves, not including the command itself
-#       How to create a directory with -f
-#       `mkdir -f` will fail because -f will be parsed as an option by mkdir
-#       `mkdir -- -f` will execute successfully, -f will not be considered as an option
-#
-##########################################################################################################################
-function ace() {
-    local debug=0
-    local reverse=false
-    local count=1
+    # 进入工作空间
+    cd ~/ros2_ailibot2_sim_ws/src
 
-    local ARGS=`getopt -o hxrc: --long help,debug,reverse,count: -n 'Error' -- "$@"`
-    if [ $? != 0 ]; then
-        error "Invalid option..." >&2;
-        exit 1;
-    fi
-    # rearrange the order of parameters
-    eval set -- "$ARGS"
-    # after being processed by getopt, the specific options are dealt with below.
-    while true ; do
-        case "$1" in
-            -h|--help)
-                _usage_of_ace
-                exit 1
-                ;;
-            -x|--debug)
-                debug=1
-                shift
-                ;;
-            -r|--reverse)
-                reverse=true
-                shift
-                ;;
-            -c|--count)
-                count=$2
-                shift 2
-                ;;
-            --)
-                shift
-                break
-                ;;
-            *)
-                error "Internal Error!"
-                exit 1
-                ;;
-        esac
-    done
+    # 获取仓库列表
+    #run import
+    echo "this will take a while to download"
 
-    if [[ $debug == 1 ]]; then
-        set -x
+    # 下载仓库
+    echo "Dowload ailibot2_sim"
+    git clone  https://gitee.com/ncnynl/ailibot2_sim
+
+    # 编辑各个包
+    echo "build workspace..."
+    cd ~/ros2_ailibot2_sim_ws 
+    cs -si update_rosdep_tsinghua
+    rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
+    colcon build --symlink-install
+
+    # 添加工作空间路径到bashrc文件
+    echo "Add workspace to bashrc"
+    if ! grep -Fq "ros2_ailibot2_sim_ws" ~/.bashrc
+    then
+        echo 'source ~/ros2_ailibot2_sim_ws/install/local_setup.bash' >> ~/.bashrc
+        echo 'export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml ' >> ~/.bashrc
     fi
 
-    # start
-    local poker=(A 2 3 4 5 6 7 8 9 10 J Q K Joker)
-     
-    if [[ $reverse == true ]]; then
-        local length=${#poker[*]}
-        local tmp=($poker)
-        local i=0
-        while [[ $i -lt $length ]]; do
-            poker[$[$i + 1]]=$tmp[$[$length - $i]]
-            i=$[i + 1]
-        done
-    fi
-
-    local j=0
-    while [[ $j -lt $count ]]; do
-        echo ${poker[@]}
-        j=$[j + 1]
-    done
-
-    if [[ $debug == 1 ]]; then
-        set +x
-    fi
-}
-
-# Execute current script
-ace $*
+fi

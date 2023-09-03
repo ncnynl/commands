@@ -16,8 +16,17 @@ _commands_completions() {
             local folderName=${COMP_WORDS[1]}
             local prefix="$CSROOT/$folderName/shell/"
             local scriptFile="$prefix$scriptName.sh"
+
             local start=`grep "^Option" -n $scriptFile | head -n 1 | cut -d ":" -f1`
+            if [[ $start == "" ]]; then 
+              return 
+            fi
+            
             local end=`grep "^EOF" -n $scriptFile | head -n 1 | cut -d ":" -f1`
+            if [[ $end == "" ]]; then 
+              return 
+            fi
+
             local length=$[ $end - $start ]
             if [[ $length == 0 ]]; then
               return
@@ -55,14 +64,14 @@ _commands_completions() {
                 return 
                 ;;            
               1)
-                number="${suggestions[0]/%\ */}"
+                number="${suggestions[0]}"
                 COMPREPLY=("$number")
                 ;;
               *)
                 #replace
                 local descOfCmd
                 for i in "${!suggestions[@]}"; do
-                  suggestions[$i]="$(printf '%-20s %-10s %-2s' ${items1[$i]} ${items2[$i]} -- ) ${items3[$i]}" 
+                  suggestions[$i]="$(printf '%-30s %-10s %-2s' ${items1[$i]} ${items2[$i]} -- ) ${items3[$i]}" 
                 done
 
                 #COMPREPLY
@@ -106,7 +115,7 @@ _commands_completions() {
                   local start=`grep "Desc" -n $scriptFile | head -n 1 | cut -d ":" -f1`
                   local descOfScript=`cat $scriptFile | tail -n +$start | head -n 1 | sed "s/^# Desc     ://" | sed "s/^ *//g"`
                   if [[ $descOfScript ]]; then
-                    descOfCmd="$(printf '%-40s %-10s' $scriptName --) $descOfScript" 
+                    descOfCmd="$(printf '%-30s %-10s' $scriptName --) $descOfScript" 
                   fi
                   # echo $descOfScript
                   suggestions2[$i]="$(printf '%*s' "-$COLUMNS"  "$descOfCmd")"
@@ -134,7 +143,7 @@ _commands_completions() {
                 for i in "${!suggestions[@]}"; do
                   #get description
                   local dirName=${suggestions[$i]}
-                  local descFile=$prefix"${dirName}/.description"
+                  local descFile=$prefix"${dirName}/shell/.description"
                   local descOfCmd
                   local desc
 
@@ -142,10 +151,10 @@ _commands_completions() {
                   if [[ -f $descFile ]]; then
                     desc=`cat $descFile | head -n 1 `
                     if [[ $desc ]]; then
-                        descOfCmd="$(printf '%-20s %-10s' $dirName --) $desc" 
+                        descOfCmd="$(printf '%-30s %-10s' $dirName --) $desc" 
                     fi
                   else
-                    descOfCmd="$(printf '%-20s %-8s %-4s\n' $dirName -- 相关功能)"
+                    descOfCmd="$(printf '%-30s %-10s %-4s\n' $dirName -- 相关功能)"
                   fi
 
                   suggestions[$i]="$(printf '%*s' "-$COLUMNS"  "$descOfCmd")"
@@ -173,37 +182,5 @@ function subscripts() {
     echo `ls -l $CSROOT/$1/shell/ | awk '/.sh$/ {print $NF}'`
   fi
 }
-
-# 获取脚本描述
-function while_read_desc(){
-    while read LINE
-    do
-        if [[ "${LINE[@]}" =~ "Function" ]];then
-            # echo $LINE
-            new=${LINE#*:}
-            # echo $new
-            #remove space
-            func=`echo ${new%*#}`
-            # echo $func
-        fi  
-
-        if [[ "${LINE[@]}" =~ "Desc" ]];then
-            # echo $LINE
-            new=${LINE#*:}
-            # echo $new
-            desc=${new%*#}
-            # echo $desc
-        fi           
-
-        if [[ "${LINE[@]}" =~ "Website" ]];then
-            # echo $LINE
-            new=${LINE#*:}
-            # echo $new
-            website=${new%*#}
-            # echo $desc
-        fi        
-    done < $1
-}
-
 
 complete -F _commands_completions cs

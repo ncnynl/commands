@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : Check ace shell  
+# Function : Check Bash Completion   
 # Desc     : 用于检测自动补全功能是否完整                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -18,7 +18,7 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Check ace shell")"
 
 # Usage of ace.sh
-function _usage_of_ace() {
+function _usage_() {
     cat << EOF
 Usage:
     nox poker ace [--count <count>] [--reverse]
@@ -54,7 +54,7 @@ EOF
 #       `mkdir -- -f` will execute successfully, -f will not be considered as an option
 #
 ##########################################################################################################################
-function ace() {
+function _exec() {
     local debug=0
     local reverse=false
     local count=1
@@ -70,7 +70,7 @@ function ace() {
     while true ; do
         case "$1" in
             -h|--help)
-                _usage_of_ace
+                _usage_
                 exit 1
                 ;;
             -x|--debug)
@@ -125,4 +125,4 @@ function ace() {
 }
 
 # Execute current script
-ace $*
+_exec $*
