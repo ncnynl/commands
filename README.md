@@ -52,6 +52,10 @@ RCM是一个基于bash的shell脚本管理工具。安装后，可以将符合�
 - [开源协议](#开源协议)
 - [鸣谢](#鸣谢)
 
+# 脚本应用目录：
+
+
+
 ## RCM是什么
 
 RCM是一个基于BASH和桌面的快捷shell脚本管理工具。安装后，可以将符合定义的shell脚本转换为以`RCM`为命令，脚本路径，脚本名称为子命令的系统命令。同时提供强大的Tab自动补全功能，实现脚本的快速查找。
@@ -105,15 +109,15 @@ RCM是一个基于BASH和桌面的快捷shell脚本管理工具。安装后，�
 
 ### 自动补全模式：
 
-<动图显示>
+![rcm-completion](images/rcm-completion.gif)
 
 ### 搜索模式：
 
-<动图显示>
+![rcm-s](images/rcm-s.gif)
 
 ### 界面模式：
 
-![rcm](images/main.png)
+![rcm-gui](images/rcm-gui.gif)
 
 ## 安装
 
@@ -158,6 +162,8 @@ curl -k https://gitee.com/ncnynl/commands/raw/master/online_shell.sh | bash -
 ```
 rcm <tab><tab>
 ```
+
+![rcm-install](images/rcm-install.gif)
 
 ## 升级
 更新 RCM，体验最新功能，命令如下：
@@ -275,8 +281,8 @@ $ rcm system create --dir <dirname> --dirdesc <description>
 $ rcm system create -d <dirname> -dd <description>
 
 # 创建一个名为 <scriptname> 的 Shell 脚本
-$ rcm system create --dir <dirname> -script <scriptname> -scriptdesc <description>
-$ rcm system create -d <dirname> -s <scriptname> -sd <description>
+$ rcm system create --dir <dirname> --dirdesc <description> -script <scriptname> -scriptdesc <description>
+$ rcm system create -d <dirname> -dd <description> -s <scriptname> -sd <description>
 
 # 创建一个名为 <scriptname> 的 Shell 脚本， 如果不指定目录，则默认在system目录下
 $ rcm system create -s <scriptname> -sd <description>
@@ -288,10 +294,10 @@ $ rcm system create -s <scriptname> -sd <description>
 ```sh
 $ rcm system create -d poker
 #或 
-$ rcm system create --dir poker
+$ rcm system create --dir poker --dirdesc <description>
 ```
 
-<动图>
+![rcm-create-dir](images/rcm-create.gif)
 
 进入新创建的 `poker` 目录，我们会发现该目录下默认生成一个 `.description` 隐藏文件，该文件描述了 `poker` 这个子目录分类下的脚本的主要功能。RCM 自动补全系统会读取 `.description` 中的描述信息。
 
@@ -301,20 +307,15 @@ $ rcm system create --dir poker
 ```sh
 $ rcm system create -d poker -s ace
 #或
-$ rcm system create --dir poker -script ace
+$ rcm system create --dir poker --script ace
 ```
 
 如果不指定存放的目录，则增加到system目录下
 
-<动图>
+![rcm-create-script](images/rcm-create-script.gif)
 
-此时 RCM 在 `poker` 子目录下创建了一个名为 `ace.sh` 的脚本。这个脚本是一个模板脚本，可以直接执行。**注意：由于此时还没有对 RCM 进行编译，此时新建的子目录和脚本都尚未支持自动补全**。我们需要手动输入完整的调用命令来执行 `ace.sh` 脚本，如下所示：
-
-```sh
-$ rcm poker ace
-```
-
-<动图>
+此时 RCM 在 `poker` 子目录下创建了一个名为 `ace.sh` 的脚本。这个脚本是一个模板脚本，可以直接执行。
+**注意：由于此时还没有对 RCM 进行编译，此时新建的子目录和脚本都还不能使用**。
 
 ## 编辑脚本
 接下来，我们对 `ace.sh` 脚本进行改写，使其执行能够打印 `A, 2, 3, 4, 5, 6, 7, 9, 10, J, Q, K, Joker`。同时支持两个选项：
@@ -487,7 +488,7 @@ source ~/.bashrc
 
 执行结果如下所示：
 
-<动图>
+![rcm-build](images/rcm-build.gif)
 
 ## 执行脚本
 然后，我们就可以执行 `rcm poker ace` 并加上相关的选项来执行脚本。
@@ -504,7 +505,7 @@ $ rcm poker ace -c 2 -r
 ```
 
 
-<动图>
+![rcm-run](images/rcm-run.gif)
 
 ## 调试模式
 
