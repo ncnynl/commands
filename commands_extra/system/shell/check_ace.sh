@@ -18,7 +18,7 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Check ace shell")"
 
 # Usage of ace.sh
-function _usage_() {
+function _rcm_usage_() {
     cat << EOF
 Usage:
     nox poker ace [--count <count>] [--reverse]
@@ -54,7 +54,7 @@ EOF
 #       `mkdir -- -f` will execute successfully, -f will not be considered as an option
 #
 ##########################################################################################################################
-function _exec() {
+function rcm_execute() {
     local debug=0
     local reverse=false
     local count=1
@@ -70,7 +70,7 @@ function _exec() {
     while true ; do
         case "$1" in
             -h|--help)
-                _usage_
+                _rcm_usage_
                 exit 1
                 ;;
             -x|--debug)
@@ -125,4 +125,4 @@ function _exec() {
 }
 
 # Execute current script
-_exec $*
+rcm_execute $*

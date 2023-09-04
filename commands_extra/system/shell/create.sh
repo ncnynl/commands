@@ -164,8 +164,7 @@ function _exec_() {
 
         cp system/templates/script_template.sh $dir_name/${script_name}.sh
         sed -i "s/script_template/${script_name}/g" $dir_name/${script_name}.sh
-        sed -i "s/<desc>/${desc}/g" $dir_name/${script_name}.sh
-        sed -i "s/<ldap>/${ldap}/g" $dir_name/${script_name}.sh
+        sed -i "s/<desc>/${script_desc}/g" $dir_name/${script_name}.sh
         sed -i "s/<date>/`date`/g" $dir_name/${script_name}.sh
     fi
 

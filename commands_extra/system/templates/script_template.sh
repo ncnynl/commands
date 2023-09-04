@@ -13,8 +13,11 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-# Usage of script-template.sh
-function _usage_() {
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "script_template related usage")"
+
+function _rcm_usage_() {
     cat << EOF
 Usage:
     script_template --along --blong argb --clong argc
@@ -70,10 +73,10 @@ EOF
 #
 ##########################################################################################################################
 
-function _exec_() {
+function rcm_execute() {
     local debug=0
 
-    local ARGS=`ggetopt -o hxab:c:: --long help,debug,along,blong:,clong:: -n 'Error' -- "$@"`
+    local ARGS=`getopt -o hxab:c:: --long help,debug,along,blong:,clong:: -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         error "Invalid option..." >&2;
         exit 1;
@@ -84,7 +87,7 @@ function _exec_() {
     while true ; do
         case "$1" in
             -h|--help)
-                _usage_
+                _rcm_usage_
                 exit 1
                 ;;
             -x|--debug)
@@ -136,4 +139,4 @@ function _exec_() {
 }
 
 # Execute current script
-_exec_ $*
+rcm_execute $*
