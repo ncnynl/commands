@@ -22,6 +22,9 @@ RCM是一个基于bash的shell脚本管理工具。安装后，可以将符合�
 
 # 脚本应用目录：
 
+- [系统相关](#系统相关)
+    - [安装ROS1](#安装ROS1)
+
 - [ROS1分类](#ROS1)
     - [安装ROS1](#安装ROS1)
 
@@ -29,20 +32,94 @@ RCM是一个基于bash的shell脚本管理工具。安装后，可以将符合�
     - [安装ROS2](#安装ROS2)
 
 
+# 系统相关
 
-## ROS1
 
+## 更新ubuntu系统源
+
+```sh
+rcm common update_system_simple
+```
+
+## 更新python源
+
+```sh
+rcm common update_python_source_shell
+```
+
+## 更新系统时间
+
+```sh
+rcm common update_system_time
+```
+
+## 安装和更新rosdep，针对国内有奇效
+
+```
+rcm common update_rosdep_tsinghua
+```
+
+# ROS1相关
 
 
 ## 安装ROS1
 
-演示通过RCM如何快速搭建ROS1机器人操作系统
+演示通过RCM如何快速搭建ROS1 noetic版本
+
+```sh
+rcm ros1 install_ros1_noetic
+```
+
+## 安装ROS1版Ailibot仿真包
+
+```sh
+rcm ros1_ailibot install_ros1_ailibot_sim
+```
+
+## 更新ROS1源
+
+```sh
+rcm ros1 update_ros1_source
+```
+
+## 更新ROS1密钥
+
+```sh
+rcm ros1 update_ros1_key
+```
 
 
-
+# ROS2相关
 
 ## 安装ROS2
 
-演示通过RCM如何快速搭建ROS2机器人操作系统
+演示通过RCM如何快速搭建ROS2机器人系统，根据系统自动匹配版本，当有多个版本提示选择相应版本
 
+```sh
+rcm ros2 install_ros2_now
+```
+
+## 安装ROS2版Ailibot2仿真包
+
+```sh
+rcm ros2_ailibot2 install_ros2_ailibot2_sim
+```
+
+## 安装ROS2版walking仿真包
+
+```sh
+rcm walking_application install_walking_application
+```
+
+## 更新ROS2源
+
+```sh
+rcm ros2 update_ros2_source
+```
+
+## 更新ROS2密钥
+
+```sh
+rcm ros2 update_ros2_key
+```
 
