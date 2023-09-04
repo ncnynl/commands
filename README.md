@@ -586,7 +586,10 @@ RCM 仓库中的 `.gitignore` 文件声明 git 会忽略以 `_` 为前缀的子�
 
 ## 编程语法
 
-rcm 默认使用 bash 执行脚本，遵循bash相关语法即可，可以参考 ![google语法规范](https://google.github.io/styleguide/shellguide.html)
+rcm 默认使用 bash 执行脚本，遵循bash相关语法即可，可以参考 
+
+![google语法规范](https://google.github.io/styleguide/shellguide.html)
+
 ![参考Google的Shell风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-shell-styleguide/contents/)
 
 
@@ -730,4 +733,5 @@ RCM is released under the MIT license.
 
 ## 鸣谢
 
-- 自动补全部分功能借鉴和引用基于mac下使用的开源项目![nox](https://github.com/baochuquan/nox)
+- 自动补全部分功能借鉴和引用基于mac下使用的开源项目
+![nox](https://github.com/baochuquan/nox)
