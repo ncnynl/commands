@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : script_template related usage
-# Desc     : script_template related usage                         
+# Desc     : <desc>                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : <date>                            
@@ -27,7 +27,7 @@ Description:
 
 Option:
     --help|-h:                                         -- using help
-    --debug|-x:                                        -- debug mode
+    --debug|-x:                                        -- debug mode, for checking how to run
     --along|-a:                                        -- boolean option
     --blong|-b:                                        -- option with one parameter
     --clong|-c:                                        -- option with an optional parameter

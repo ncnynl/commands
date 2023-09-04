@@ -287,6 +287,8 @@ $ rcm system create -s <scriptname> -sd <description>
 
 ```sh
 $ rcm system create -d poker
+#或 
+$ rcm system create --dir poker
 ```
 
 <动图>
@@ -298,6 +300,8 @@ $ rcm system create -d poker
 
 ```sh
 $ rcm system create -d poker -s ace
+#或
+$ rcm system create --dir poker -script ace
 ```
 
 如果不指定存放的目录，则增加到system目录下
@@ -456,23 +460,6 @@ function rcm_execute() {
 rcm_execute $*
 ```
 
-## 执行脚本
-然后，我们就可以执行 `rcm poker ace` 并加上相关的选项来执行脚本。
-
-```shell
-# 顺序打印扑克牌一遍
-$ rcm poker ace
-
-# 顺序打印扑克牌两遍
-$ rcm poker ace -c 2
-
-# 逆序打印扑克牌两遍
-$ rcm poker ace -c 2 -r
-```
-
-
-<动图>
-
 ## 编译
 
 在创建了子目录、脚本之后，还不能直接使用，需要完成两步工作：
@@ -499,6 +486,23 @@ source ~/.bashrc
 ```
 
 执行结果如下所示：
+
+<动图>
+
+## 执行脚本
+然后，我们就可以执行 `rcm poker ace` 并加上相关的选项来执行脚本。
+
+```shell
+# 顺序打印扑克牌一遍
+$ rcm poker ace
+
+# 顺序打印扑克牌两遍
+$ rcm poker ace -c 2
+
+# 逆序打印扑克牌两遍
+$ rcm poker ace -c 2 -r
+```
+
 
 <动图>
 

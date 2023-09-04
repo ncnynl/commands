@@ -17,7 +17,7 @@
 source ${HOME}/commands/cs_utils.sh
 source ${HOME}/commands/cs_variables.sh
 
-function _usage_() {
+function _rcm_usage_() {
     cat << EOF
 Usage:
     create --dir <dir_name> --dirdesc <description>
@@ -52,7 +52,7 @@ EOF
 #       mkdir -f 会执行失败，因为 -f 会被 mkdir 当做选项来解析
 #       mkdir -- -f 会执行成功，-f 不会被当做选项
 
-function _exec_() {
+function rcm_execute() {
     local debug=0    
     local script_name
     local script_desc
@@ -111,11 +111,16 @@ function _exec_() {
 
     
     local current_path=$CS_DEV_SCRIPT
-    # echo $dir_name
-    # echo $script_name
 
+    # echo $dir_name
+    # echo $dir_desc
+    # echo $script_name
+    # echo $script_desc
+    # return 
     # 创建目录
+    
     if [[ ! -z $dir_name ]]; then
+        
         cd $current_path
 
         working "Current path is under $current_path"
@@ -126,17 +131,21 @@ function _exec_() {
         fi
 
         if [[ -d ${dir_name} ]]; then
-            error "There is a sub directory named \`${dir_name}\` in current directory."
+            if [[ -z $script_name ]]; then
+                error "There is a sub directory named \`${dir_name}\` in current directory."
+                exit 1
+            fi
         else
+            echo "Building folde: $dir_name in ${current_path}"
             mkdir -p "$dir_name/shell/"
 
             if [ -d "$dir_name/shell/" ]; then 
                 cp system/templates/description_template $dir_name/shell/.description
-                if [ -z $desc ]; then 
-                    $desc = "$dir_name 相关功能"
+                if [ -z $dir_desc ]; then 
+                    dir_desc="与$dir_name相关脚本目录"
                 fi
-                echo "$desc" >> $dir_name/shell/.description
-                success "This $dir_name is build successfully with the desc $desc!"
+                echo "$dir_desc" >> $dir_name/shell/.description
+                success "This $dir_name is build successfully with the desc $dir_desc!"
             else 
                 error "This $dir_name is build failed!"
             fi
@@ -144,6 +153,7 @@ function _exec_() {
     fi
 
     # 创建脚本
+    
     if [[ ! -z $script_name ]]; then
         cd $current_path
 
@@ -158,14 +168,25 @@ function _exec_() {
         fi
 
         #if don't have dir_name , use system/shell
+        
         if [ -z $dir_name ]; then 
-            $dir_name = "$current_path/system/shell"
+            dir_path="$current_path/system/shell"
+        else
+            dir_path="$current_path/$dir_name/shell"
         fi
 
-        cp system/templates/script_template.sh $dir_name/${script_name}.sh
-        sed -i "s/script_template/${script_name}/g" $dir_name/${script_name}.sh
-        sed -i "s/<desc>/${script_desc}/g" $dir_name/${script_name}.sh
-        sed -i "s/<date>/`date`/g" $dir_name/${script_name}.sh
+        echo "Building script: $script_name in $dir_path"
+
+        cp system/templates/script_template.sh $dir_path/${script_name}.sh
+        sed -i "s/script_template/${script_name}/g" $dir_path/${script_name}.sh
+        sed -i "s/<desc>/${script_desc}/g" $dir_path/${script_name}.sh
+        sed -i "s/<date>/`date`/g" $dir_path/${script_name}.sh
+
+        if [ -f $dir_path/${script_name}.sh ]; then 
+            success "This $script_name is build successfully with the desc $script_desc!"
+        else
+            error "This $script_name is build failed!"
+        fi
     fi
 
     if [[ $debug == 1 ]]; then
@@ -174,4 +195,4 @@ function _exec_() {
 }
 
 # Execute current script
-_exec_ $*
+rcm_execute $*

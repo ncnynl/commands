@@ -1,6 +1,7 @@
 commands_*64
 commands_extra/rcm_commands*
 commands_extra/_*/
+commands_extra/poker/
 commands_extra/*/shell/_*.sh
 commands_src/build/
 commands_src/dist/
