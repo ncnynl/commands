@@ -77,7 +77,10 @@ function install_package(){
         sudo rm /usr/bin/commands
     fi 
 
+    #old use commands
     sudo ln -s /usr/local/commands/commands /usr/bin/commands
+    #new use rcm-gui 
+    sudo ln -s /usr/local/commands/commands /usr/bin/rcm-gui
 
     echo 0
 }

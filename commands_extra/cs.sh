@@ -1192,7 +1192,7 @@ function commands() {
         echo -e "########$(gettext "Set Domain ID") "
         echo -e '#####################################################'   
         commands_domain_id $2 
-        ;;                                                                          
+        ;;                                                                                  
     '-h'|'help')
         echo -e '#####################################################'
         echo -e "########$(gettext "commands help to the RCM tools")  "

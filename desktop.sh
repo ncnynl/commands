@@ -19,4 +19,5 @@ if [ $ROS_DISTRO ];then
 fi
 
 #launch commands
-/usr/local/commands/commands
+# /usr/local/commands/commands
+/usr/local/commands/rcm-gui

@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : script-template related usage
-# Desc     : script-template related usage.                         
+# Function : script_template related usage
+# Desc     : script_template related usage                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2022-07-02 02:39:30                            
+# Date     : <date>                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -17,17 +17,17 @@
 function _usage_() {
     cat << EOF
 Usage:
-    script-template --a-long --b-long argB --c-long argC
+    script_template --along --blong argb --clong argc
 
 Description:
-    script-template related usage.
+    script_template related usage.
 
 Option:
-    --help|-h:                                          -- using help
-    --debug|-x:                                         -- debug mode
-    --a-long|-a:                                        -- boolean option
-    --b-long|-b:                                        -- option with one parameter
-    --c-long|-c:                                        -- option with an optional parameter
+    --help|-h:                                         -- using help
+    --debug|-x:                                        -- debug mode
+    --along|-a:                                        -- boolean option
+    --blong|-b:                                        -- option with one parameter
+    --clong|-c:                                        -- option with an optional parameter
 
 EOF
 }
@@ -73,7 +73,7 @@ EOF
 function _exec_() {
     local debug=0
 
-    local ARGS=`ggetopt -o hxab:c:: --long help,debug,a-long,b-long:,c-long:: -n 'Error' -- "$@"`
+    local ARGS=`ggetopt -o hxab:c:: --long help,debug,along,blong:,clong:: -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         error "Invalid option..." >&2;
         exit 1;
@@ -84,22 +84,22 @@ function _exec_() {
     while true ; do
         case "$1" in
             -h|--help)
-                _usage_of_script_template
+                _usage_
                 exit 1
                 ;;
             -x|--debug)
                 debug=1
                 shift
                 ;;
-            -a|--a-long)
+            -a|--along)
                 echo "Option a"
                 shift
                 ;;
-            -b|--b-long)
+            -b|--blong)
                 echo "Option b, argument $2'"
                 shift 2
                 ;;
-            -c|--c-long)
+            -c|--clong)
                 # c has an optional argument. As we are in quoted mode, an empty parameter will be generated if its optional argument is not found.
                 case "$2" in
                     "")

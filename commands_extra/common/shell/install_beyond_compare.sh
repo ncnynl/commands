@@ -17,6 +17,12 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Install Beyond Compare")"         
 
 echo "This will take a while to download"
+
+if [ ! -d ~/tools ]; then 
+    mkidr ~/tools
+fi 
+
+cd ~/tools/
 wget https://www.scootersoftware.com/bcompare-4.4.6.27483_amd64.deb
 sudo apt update
 
