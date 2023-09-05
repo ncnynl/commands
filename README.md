@@ -34,10 +34,14 @@ RCM是一款基于bash的智能化shell脚本管理和源码部署工具，可�
     - [创建子命令](#创建子命令)
     - [创建脚本](#创建脚本)
     - [编辑脚本](#编辑脚本)
-    - [执行脚本](#执行脚本)
     - [编译](#编译)
+    - [执行脚本](#执行脚本)
     - [调试模式](#调试模式)
     - [帮助提示](#帮助提示)
+    - [脚本内置编辑](#脚本内置编辑)
+    - [脚本内置删除](#脚本内置删除)
+    - [脚本搜索](#脚本搜索)
+    - [RCM升级](#RCM升级)        
 - [开发提示](#开发提示)
     - [环境变量](#环境变量)
     - [脚本参数](#脚本参数)
@@ -513,7 +517,7 @@ $ rcm poker ace -c 2 -r
 
 以 `rcm poker ace` 为例，可以采用如下方式使用调试模式执行脚本。
 
-<动图>
+![rcm-debug](images/rcm-debug.gif)
 
 ## 帮助提示
 
@@ -521,7 +525,39 @@ $ rcm poker ace -c 2 -r
 
 以 `rcm poker ace` 为例，可以采用如下方式查看脚本的使用方法。
 
-<动图>
+![rcm-help](images/rcm-help.gif)
+
+## 脚本内置编辑
+
+通过 `rcm system create` 创建的脚本，默认都支持一个 `--edit` 和 `-e` 选项，可以打印出该脚本使用说明。每个脚本内部都有一个名为 `_rcm_edit_` 的方法，该方法内部定义了该脚本的使用说明。
+
+以 `rcm poker ace` 为例，可以采用如下方式查看脚本的使用方法。
+
+
+![rcm-edit](images/rcm-edit.gif)
+
+## 脚本内置删除
+
+通过 `rcm system create` 创建的脚本，默认都支持一个 `--delete` 和 `-k` 选项，可以打印出该脚本使用说明。每个脚本内部都有一个名为 `_rcm_delete_` 的方法，该方法内部定义了该脚本的使用说明。
+
+以 `rcm poker ace` 为例，可以采用如下方式查看脚本的使用方法。
+
+![rcm-delete](images/rcm-delete.gif)
+
+## 脚本搜索
+
+通过 `rcm system search` 搜索脚本，比如你指导某个关键词，或脚本名，但是不知道在那个分类下。可以通过搜索来找到对应的执行命令。
+
+以 `ace` 脚本名为例，可以采用如下方式查看脚本的使用方法。
+
+![rcm-search](images/rcm-search.gif)
+
+## RCM升级
+
+通过 `rcm system update` 主动升级RCM版本，RCM会不定期更新程序和扩展更多的脚本。可以通过更新来获取更多脚本，更多新实现的功能
+
+![rcm-update](images/rcm-update.gif)
+
 
 # 开发提示
 
@@ -579,11 +615,18 @@ install_ros2_ailibot2_sim.sh
 ```
 
 ## 私有脚本
+
 RCM 仓库中的 `.gitignore` 文件声明 git 会忽略以 `_` 为前缀的子目录或脚本。
 
-假如我们希望 `system` 作为私有子命令集合，我们可以将 `system` 改为 `_system`，那么其目录下的所有脚本都会变成你的私有脚本。同时也能够享有自动补全的功能。只不过，命令的调用也将发生变化，如：`rcm _system check_ace`。
+假如我们希望 `poker` 作为私有子命令集合，我们可以将 `poker` 改为 `_poker`，那么其目录下的所有脚本都会变成你的私有脚本。同时也能够享有自动补全的功能。只不过，命令的调用也将发生变化，如：`rcm _poker ace`。
 
-假如我们希望 `check_ace.sh` 作为私有脚本，我们可以将 `check_ace.sh` 改为 `_check_ace.sh`，那么脚本都会变成你的私有脚本。同时也能够享有自动补全的功能。只不过，命令的调用也将发生变化，如：`rcm system _check_ace`。
+![rcm-own-dir](images/rcm-own-dir.gif)
+
+假如我们希望 `ace.sh` 作为私有脚本，我们可以将 `ace.sh` 改为 `_ace.sh`，那么脚本都会变成你的私有脚本。同时也能够享有自动补全的功能。只不过，命令的调用也将发生变化，如：`rcm poker _ace`。
+
+
+![rcm-own-script](images/rcm-own-script.gif)
+
 
 ## 编程语法
 
