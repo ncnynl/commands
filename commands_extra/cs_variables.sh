@@ -33,4 +33,10 @@ export CS_ROOT="${HOME}/commands"      #用于应用
 export CS_DEV="${HOME}/tools/commands/" #用于开发
 export CS_DEV_SCRIPT="${HOME}/tools/commands/commands_extra" #用于开发的脚本目录
 
-
+# need sudo
+SUDO_LIST=(
+update_system_mirrors.sh
+update_system_simple.sh
+update_ros1_source.sh
+update_ros2_source.sh
+)

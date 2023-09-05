@@ -133,9 +133,21 @@ restore(){
 set_sources(){
 	get_about
 	update_init
+	# need choice
+	echo "请问你需要变更ROS1源吗? 不需要的话，直接回车即可"
+	echo "ROS官方源请输入 - ros"
+	echo "清华大学源请输入 - tsinghua"
+	echo "阿里云请输入 - aliyun"	
+	echo "北京外国语大学请输入 - bfsu" 
+	echo "中国科技大学源请输入 - ustc"
+	echo "恢复到上一次 - restore"
+	CHOICE_A=$(echo -e "\n Please input source ：")
+	read -p "${CHOICE_A}" para		
 	case "$release" in
 		ubuntu)
 			case $para in
+			  'ros'|'-ros'|'--ros' )
+				  set_ubuntu;;					
 			  'ustc'|'-ustc'|'--ustc' )
 				  set_ubuntu;set_ustc;;			
 			  'bfsu'|'-bfsu'|'--bfsu' )
@@ -150,8 +162,7 @@ set_sources(){
 					restore;;
 				'h'|'-h'|'--h' )
 				  getHelp;;					
-			  * )
-			   set_ubuntu;
+			  * );;
 			esac
 			apt-get update;;
 	esac

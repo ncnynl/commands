@@ -155,8 +155,9 @@ setSources(){
 	updateInit
 	echo "请问你需要变更系统源吗? 不需要的话，直接回车即可"
 	echo "ubuntu官方源请输入 - ubu"
-	echo "清华源请输入 - ustc"
-	echo "阿里云请输入 - 163"
+	echo "清华大学源请输入 - ustc"
+	echo "中国科学技术大学源请输入 - ustc"
+	echo "阿里云源请输入 - 163"
 	echo "163源请输入 - aliyun"
 	echo "aws源请输入 - aws"
 	echo "恢复到上一次 - restore"

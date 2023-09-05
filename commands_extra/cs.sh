@@ -14,13 +14,6 @@ export TEXTDOMAIN=commands
 
 source $HOME/commands/cs_variables.sh
 
-SUDO_LIST=(
-update_system_mirrors.sh
-update_system_simple.sh
-update_ros1_source.sh
-update_ros2_source.sh
-)
-
 #######################################
 # while_read_desc
 # Globals: 
@@ -1232,8 +1225,13 @@ function commands() {
         # execute shell
         if [ $# -ge 2 ]; then 
             local script_file="$CS_ROOT/$1/shell/$2.sh"
+            
             if [ -f $script_file ]; then 
-                "$CS_ROOT/$1/shell/$2.sh" $*
+                if [[ "${SUDO_LIST[@]}" =~ "${2}" ]];then
+                    sudo "$CS_ROOT/$1/shell/$2.sh" $*
+                else 
+                    "$CS_ROOT/$1/shell/$2.sh" $*
+                fi
             else 
                 echo "Path is not exits : $script_file"
             fi
