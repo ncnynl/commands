@@ -17,6 +17,9 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "build related usage")"
 
+source ${HOME}/commands/cs_utils.sh
+source ${HOME}/commands/cs_variables.sh
+
 function _rcm_usage_() {
     cat << EOF
 Usage:

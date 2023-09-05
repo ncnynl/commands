@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : update related usage
+# Function : update rcm to new version
 # Desc     : 用于升级RCM为最新版本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -15,7 +15,10 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "update related usage")"
+echo "$(gettext "update rcm to new version")"
+
+source ${HOME}/commands/cs_utils.sh
+source ${HOME}/commands/cs_variables.sh
 
 function _rcm_usage_() {
     cat << EOF
@@ -23,7 +26,7 @@ Usage:
     update --along --blong argb --clong argc
 
 Description:
-    update related usage.
+    update rcm to new version
 
 Option:
     --help|-h:                                         -- using help

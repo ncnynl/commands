@@ -192,6 +192,9 @@ function rcm_execute() {
     if [[ $debug == 1 ]]; then
         set +x
     fi
+
+    #sync file to ~/commands/
+    rcm system build
 }
 
 # Execute current script

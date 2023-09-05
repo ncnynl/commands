@@ -28,6 +28,8 @@ Description:
 Option:
     --help|-h:                                         -- using help
     --debug|-x:                                        -- debug mode, for checking how to run
+    --edit|-e:                                         -- edit mode, for edit this file
+    --delete|-k:                                       -- delete mode, for delete this file
     --along|-a:                                        -- boolean option
     --blong|-b:                                        -- option with one parameter
     --clong|-c:                                        -- option with an optional parameter
@@ -72,13 +74,80 @@ EOF
 #       mkdir -- -f 会执行成功，-f 不会被当做选项
 #
 ##########################################################################################################################
+function _rcm_edit_(){
+    file=${0##*commands/}
+    file_path="${HOME}/tools/commands/commands_extra/$file"
+    echo "Your file path is : $file_path"
+    echo "You are editing this file"
+    if [ -f $file_path ]; then 
+        vim $file_path
+        echo "sync this file"
+        rcm system build 
+        echo "Done, You have successfully edited, Please run this file again"
+    else 
+        echo "This file path is : $file_path , but it is not right "
+    fi 
+    return 
+}
+
+function _rcm_delete_(){
+
+    run_file_path=$0
+    file=${0##*commands/}
+    source_file_path="${HOME}/tools/commands/commands_extra/$file"
+
+    echo "This file have two version: run file and source file"
+    echo "Your run file path is : $run_file_path"
+    echo "Your source file path is : $source_file_path"
+    CHOICE_C=$(echo -e "\n Do you want to delete the run file script? [Y/n]")
+    read -p "${CHOICE_C}" YN
+    [ -z ${YN} ] && YN = N
+    case $YN in 
+    [Yy])
+        #delete
+        if [ -f $run_file_path ]; then 
+            rm -rf $run_file_path
+            echo "Your run file path is : $run_file_path "
+            echo "This file is deleted"
+        else
+            echo "THis file is not exists!"
+        fi
+        ;;
+    *)
+        echo "Your have canceled this operation!"
+        return 
+        ;;
+    esac  
+
+    CHOICE_C=$(echo -e "\n Do you want to delete the source file script? [Y/n]")
+    read -p "${CHOICE_C}" YN
+    [ -z ${YN} ] && YN = N
+    case $YN in 
+    [Yy])
+        #delete
+        if [ -f $source_file_path ]; then 
+            rm -rf $source_file_path
+            echo "Your source file path is : $source_file_path "
+            echo "This file is deleted"
+        else
+            echo "THis file is not exists!"
+        fi    
+        ;;
+    *)
+        echo "Your have canceled this operation!"
+        return 
+        ;;
+    esac  
+
+    return 
+}
 
 function rcm_execute() {
     local debug=0
 
-    local ARGS=`getopt -o hxab:c:: --long help,debug,along,blong:,clong:: -n 'Error' -- "$@"`
+    local ARGS=`getopt -o hekxab:c:: --long help,edit,delete,debug,along,blong:,clong:: -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
-        error "Invalid option..." >&2;
+        echo "Invalid option..." >&2;
         exit 1;
     fi
     # rearrange the order of parameters
@@ -90,10 +159,18 @@ function rcm_execute() {
                 _rcm_usage_
                 exit 1
                 ;;
+            -e|--edit)
+                _rcm_edit_ $*
+                exit 1
+                ;;    
+            -k|--delete)
+                _rcm_delete_ $*
+                exit 1
+                ;;                           
             -x|--debug)
                 debug=1
                 shift
-                ;;
+                ;;                
             -a|--along)
                 echo "Option a"
                 shift
@@ -120,7 +197,7 @@ function rcm_execute() {
                 break
                 ;;
             *)
-                error "Internal Error!"
+                echo "Internal Error!"
                 exit 1
                 ;;
         esac
