@@ -48,7 +48,12 @@ else
 
     # 下载仓库
     echo "Dowload ailibot2_sim"
-    git clone  https://gitee.com/ncnynl/ailibot2_sim
+    if [ ${ROS_DISTRO} == 'galactic' ]; then 
+        branch="-b galactic"
+    else
+        branch=""
+    fi 
+    git clone $branch  https://gitee.com/ncnynl/ailibot2_sim
 
     echo "Dowload realsense_ros_gazebo plugin"
     git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
