@@ -131,7 +131,7 @@ RCM是一款基于bash的智能化shell脚本管理和源码部署工具，可�
  - 方法一：
 
 ```
-curl -k http://file.ncnynl.com/rcm.sh | bash -
+curl -k https://www.ncnynl.com/rcm.sh | bash -
 ```
 
 - 方法二：
@@ -152,7 +152,7 @@ commands
  - 方法一：
 
 ```
-curl -k http://file.ncnynl.com/rcms.sh | bash -
+curl -k https://www.ncnynl.com/rcms.sh | bash -
 ```
 
  - 方法二： 
@@ -599,7 +599,7 @@ install_ros2_ailibot2_sim.sh
 
 私有函数名建议使用 `_` 作为前缀。
 
-一个脚本中应该只有一个公有函数cs_execute,作为入口。
+一个脚本中应该只有一个公有函数rcm_execute,作为入口。
 
 ## 函数引用
 假如 `hello.sh` 脚本中需要引用其他脚本的功能
