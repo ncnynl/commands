@@ -50,6 +50,10 @@ else
     echo "Dowload ailibot2_sim"
     git clone  https://gitee.com/ncnynl/ailibot2_sim
 
+    echo "Dowload realsense_ros_gazebo plugin"
+    git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+    git clone -b foxy-devel https://github.com/pal-robotics/realsense_gazebo_plugin
+
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros2_ailibot2_sim_ws 
@@ -62,7 +66,6 @@ else
     if ! grep -Fq "ros2_ailibot2_sim_ws" ~/.bashrc
     then
         echo 'source ~/ros2_ailibot2_sim_ws/install/local_setup.bash' >> ~/.bashrc
-        echo 'export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml ' >> ~/.bashrc
     fi
 
 fi

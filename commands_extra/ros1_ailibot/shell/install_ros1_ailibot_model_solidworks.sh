@@ -40,7 +40,8 @@ else
     #run import
     echo "this will take some times to download"
     echo "Dowload realsense_ros_gazebo plugin"
-    git clone https://github.com/EndlessLoops/realsense_ros_gazebo
+    git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+    git clone -b melodic-devel https://github.com/pal-robotics/realsense_gazebo_plugin
 
     #rosdep 
     cs -si update_rosdep_tsinghua
