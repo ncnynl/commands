@@ -18,6 +18,7 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Install Ailibot2_SIM ROS2 ${ROS_DISTRO} source")"
 
 # echo "Tested ROS2 Version: galactic , humble"
+
 # if installed ?
 if [ -d ~/ros2_ailibot2_sim_ws/src ]; then
     echo "ailibot2_sim have installed!!" 
@@ -25,12 +26,15 @@ else
 
     # install dep
     sudo apt-get update
+
     sudo apt install -y ros-${ROS_DISTRO}-teleop-twist-keyboard 
     sudo apt install -y ros-${ROS_DISTRO}-urdf  ros-${ROS_DISTRO}-xacro 
     sudo apt install -y ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup 
     sudo apt install -y ros-${ROS_DISTRO}-compressed-image-transport ros-${ROS_DISTRO}-rqt-tf-tree
     sudo apt install -y ros-${ROS_DISTRO}-slam-toolbox  ros-${ROS_DISTRO}-cartographer ros-${ROS_DISTRO}-cartographer-ros
     sudo apt install -y ros-${ROS_DISTRO}-robot-localization
+    sudo apt install -y ros-${ROS_DISTRO}-gazebo-ros
+    sudo apt install -y ros-${ROS_DISTRO}-realsense2-camera
 
     #install gmapping
     cs -si install_ros2_gmapping_source
