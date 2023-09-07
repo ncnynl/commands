@@ -35,6 +35,8 @@ else
     sudo apt install -y ros-${ROS_DISTRO}-robot-localization
     sudo apt install -y ros-${ROS_DISTRO}-gazebo-ros
     sudo apt install -y ros-${ROS_DISTRO}-realsense2-camera
+    sudo apt install -y ros-${ROS_DISTRO}-camera-info-manager
+
 
     #install gmapping
     cs -si install_ros2_gmapping_source
@@ -69,6 +71,9 @@ else
     cs -si update_rosdep_tsinghua
     rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
     colcon build --symlink-install
+
+    #cp model to model
+    # cp -r ~/ros2_ailibot2_sim_ws/src/ailibot2_sim/ailibot2_gazebo/models/* ~/.gazebo/models
 
     # 添加工作空间路径到bashrc文件
     echo "Add workspace to bashrc"
