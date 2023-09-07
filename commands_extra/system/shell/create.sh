@@ -22,6 +22,7 @@ function _rcm_usage_() {
 Usage:
     create --dir <dir_name> --dirdesc <description>
     create --script <script_name> --scriptdesc <description>
+    create --tempalte <tempalte_name_prefix=script, ros>
 
 Description:
     用于RCM脚本开发，创建一个子目录或脚本
@@ -33,6 +34,7 @@ Option:
     --dirdesc|-dd:                                      -- 创建目录，需要提供目录描述    
     --script|-s:                                        -- 创建脚本, 需要提供脚本名称
     --scriptdesc|-sd:                                   -- 创建脚本，需要提供脚本的描述
+    --template|-t:                                      -- 支持选择不同的脚本模板, 默认是使用script, 可选ros
 
 EOF
 }
@@ -59,7 +61,7 @@ function rcm_execute() {
     local dir_name
     local dir_desc
 
-    local ARGS=`getopt --options h,x,d:dd:,s:,sd: --longoptions help,debug,dir:,dirdesc:,script:,scriptdesc: -n 'Error' -- "$@"`
+    local ARGS=`getopt --options h,x,d:dd:,s:,sd:,t: --longoptions help,debug,dir:,dirdesc:,script:,scriptdesc:,template: -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         error "Invalid option..." >&2;
         exit 1;
@@ -70,7 +72,7 @@ function rcm_execute() {
     while true ; do
         case "$1" in
             -h|--help)
-                _usage_
+                _rcm_usage_
                 exit 1
                 ;;
             -x|--debug)
@@ -93,7 +95,11 @@ function rcm_execute() {
             -st|--scriptdesc)
                 script_desc=$2
                 shift 2
-                ;;                
+                ;;   
+            -t|--template)
+                template_prefix=$2
+                shift 2
+                ;;                               
             --)
                 shift
                 break
@@ -112,10 +118,11 @@ function rcm_execute() {
     
     local current_path=$CS_DEV_SCRIPT
 
-    # echo $dir_name
-    # echo $dir_desc
-    # echo $script_name
-    # echo $script_desc
+    # echo "dir_name:$dir_name"
+    # echo "dir_desc:$dir_desc"
+    # echo "script_name:$script_name"
+    # echo "script_desc:$script_desc"
+    # echo "template_prefix:$template_prefix"
     # return 
     # 创建目录
     
@@ -177,7 +184,16 @@ function rcm_execute() {
 
         echo "Building script: $script_name in $dir_path"
 
-        cp system/templates/script_template.sh $dir_path/${script_name}.sh
+        # add template prefix to choose difference templates
+        if [ -z $template_prefix ]; then 
+            template_name="script_template.sh"
+        else
+            template_name="$template_prefix"_template.sh
+        fi
+
+        # echo 1 ;
+
+        cp system/templates/$template_name $dir_path/${script_name}.sh
         sed -i "s/script_template/${script_name}/g" $dir_path/${script_name}.sh
         sed -i "s/<desc>/${script_desc}/g" $dir_path/${script_name}.sh
         sed -i "s/<date>/`date`/g" $dir_path/${script_name}.sh
@@ -194,7 +210,18 @@ function rcm_execute() {
     fi
 
     #sync file to ~/commands/
-    rcm system build
+    # return 
+    echo "If you want use rcm visit this script , please activate it first "
+    echo "Or you can use 'rcm system build' alone to activate "
+    CHOICE_C=$(echo -e "\n${BOLD}└ $(gettext "Activate this script right now")? [Y/n]${PLAIN}")
+    read -p "${CHOICE_C}" YN
+    case $YN in 
+        [Yy] | [Yy][Ee][Ss])
+            rcm system build 
+            ;;
+        *)
+        return ;;
+    esac  
 }
 
 # Execute current script

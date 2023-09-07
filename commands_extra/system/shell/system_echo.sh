@@ -22,7 +22,12 @@ echo "$(gettext "Check new function shell")"
 source ${HOME}/commands/cs_utils_ros.sh
 
 # echo 1
-echo "$(gettext "Test First")"
-echo 1
+# echo "$(gettext "Test First")"
+# echo 1
 
-#run echo 2
+# echo `check_ros_version galactic`
+# echo `check_ros_version humble`
+# echo `check_ros_version melodic`
+# echo `check_ros_version noetic`
+# echo `check_ros_version gala`
+# echo `check_ros_version gala22ic`

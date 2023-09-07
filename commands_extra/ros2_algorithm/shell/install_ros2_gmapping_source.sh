@@ -40,7 +40,7 @@ else
     colcon build --symlink-install --packages-select openslam_gmapping slam_gmapping
 
     #add to bashrc if not exits
-    echo "Please add workspace to bashrc 'cs -si load_ros2_algorithm_ws'"
+    echo "Please add workspace to bashrc 'cs -ss load_ros2_algorithm_ws'"
     echo "Add workspace to bashrc"
     if ! grep -Fq "ros2_algorithm_ws" ~/.bashrc
     then
