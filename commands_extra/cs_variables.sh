@@ -40,3 +40,8 @@ update_system_simple.sh
 update_ros1_source.sh
 update_ros2_source.sh
 )
+
+# fixed for docker 
+if [ -z $TERM ]; then 
+    export TERM=xterm
+fi

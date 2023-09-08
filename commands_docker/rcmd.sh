@@ -9,12 +9,12 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
-# this file move to commands_docker/rcmd.sh
+
 #docker version
 function online_install()
 {
     #build folder
-    if [[ ! -d ~/tools ]]; then 
+    if [ ! -d ~/tools ]; then 
         echo "#build ~/tools"
         mkdir ~/tools/
     fi
@@ -23,7 +23,7 @@ function online_install()
     cd ~/tools/
 
     #git clone main repo
-    if [[ -d ~/tools/commands ]]; then
+    if [ -d ~/tools/commands ]; then
         echo "#git pull"
         cd ~/tools/commands 
         git pull
@@ -47,7 +47,7 @@ function online_install()
 }
 
 #update 
-apt-get update 
+# apt-get update 
 
 #install dep
 apt-get install -y git rsync gettext
