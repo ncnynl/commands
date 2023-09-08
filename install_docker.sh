@@ -31,7 +31,7 @@ config_python3_source
 ~/tools/commands/install_docker_extra.sh
 
 #install i18n
-~/tools/commands/install_i18n.sh
+~/tools/commands/install_docker_i18n.sh
 
 #install bash completion
 ~/tools/commands/install_completion.sh

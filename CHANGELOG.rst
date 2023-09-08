@@ -1,5 +1,10 @@
 ################# commands工具更新日志 #############
 
+2.0.2 (2023-09-08)
+
+- 增加docker支持， 进入commands_docker运行`docker build -t rcm:v1 .`生成docker镜像
+- 通过命令docker run rcm -it 进入终端
+
 2.0.1 (2023-09-07)
 
 - 增加cartographer算法源码安装
