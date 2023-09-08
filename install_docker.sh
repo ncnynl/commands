@@ -28,7 +28,7 @@ function config_python3_source()
 config_python3_source
 
 #install commands_extra
-~/tools/commands/install_extra.sh
+~/tools/commands/install_docker_extra.sh
 
 #install i18n
 # ~/tools/commands/install_i18n.sh
