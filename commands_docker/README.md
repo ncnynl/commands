@@ -26,13 +26,19 @@ docker build -t rcm:latest .
 ```
 
 
-# run
+# run local
 ```
 #使用docker里面的命令集
 docker run -it rcm:latest  #进入终端
 
 #使用本机的命令集
 docker run -it -v /commands:/commands -v /tools/commands:/tools/commands rcm:latest  
+```
+
+# run docker-hub
+
+```
+docker run -it ncnynl/rcm:latest
 ```
 
 
@@ -49,3 +55,10 @@ sudo docker image rm ID -f
 ```
 
 
+# upload images
+
+```
+docker login -u ncnynl 
+docker tag rcm:latest ncnynl/rcm:latest
+docker push ncnynl/rcm:latest
+```
