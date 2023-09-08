@@ -26,7 +26,7 @@
 # sudo dpkg-reconfigure locales
 
 #for i18n
-apt install gettext 
+apt-get install gettext 
 #language lists
 support_lang=(
 zh_CN

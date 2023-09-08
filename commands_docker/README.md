@@ -23,8 +23,8 @@ docker build -t rcm:v1 .
 
 # run
 ```
-docker run -v /commands:/commands -v /tools/commands:/tools/commands rcm 
-docker run rcm:v1 rcm system check_ace
+docker run -it -v /commands:/commands -v /tools/commands:/tools/commands rcm:v1  
+docker run -it rcm:v1  #进入终端
 ```
 
 
