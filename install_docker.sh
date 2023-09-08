@@ -28,7 +28,7 @@ function config_python3_source()
 config_python3_source
 
 #need delete sudo inside scripts 
-find ~/tools/commands/commands_extra -name *.sh  | xargs sed -i "s/sudo//g" 
+find ~/tools/commands/commands_extra -name "*.sh"  | xargs sed -i "s/sudo//g" 
 
 #install commands_extra
 ~/tools/commands/install_docker_extra.sh

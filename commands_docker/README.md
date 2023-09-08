@@ -23,8 +23,10 @@ docker build -t rcm:v1 .
 
 # run
 ```
-docker run -it -v /commands:/commands -v /tools/commands:/tools/commands rcm:v1  
+#使用docker里面的命令集
 docker run -it rcm:v1  #进入终端
+#使用本机的命令集
+docker run -it -v /commands:/commands -v /tools/commands:/tools/commands rcm:v1  
 ```
 
 
