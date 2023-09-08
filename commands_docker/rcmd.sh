@@ -50,7 +50,7 @@ function online_install()
 # apt-get update 
 
 #install dep
-apt-get install -y git rsync gettext
+apt-get install -y git rsync gettext wget 
 
 #install commands
 online_install

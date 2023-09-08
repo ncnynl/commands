@@ -1,5 +1,3 @@
-<!-- https://blog.csdn.net/pushiqiang/article/details/78682323 -->
-
 
 # install docker 
 
@@ -10,33 +8,43 @@
 # compose run
 ```
 cd commands_extra/docker 
+
+# 构建镜像
+$ docker-compose build
+
+# 运行镜像
 $ docker-compose up
-# 若是要后台运行： $ docker-compose up -d
+
+# 若是要后台运行： 
+$ docker-compose up -d
 ```
 
 # build 
 ```
 cd commands_extra
-docker build -t rcm:v1 .
+docker build -t rcm:latest .
 ```
 
 
 # run
 ```
 #使用docker里面的命令集
-docker run -it rcm:v1  #进入终端
+docker run -it rcm:latest  #进入终端
+
 #使用本机的命令集
-docker run -it -v /commands:/commands -v /tools/commands:/tools/commands rcm:v1  
+docker run -it -v /commands:/commands -v /tools/commands:/tools/commands rcm:latest  
 ```
 
 
 # ls
 ```
+# 列出所有的镜像
 docker images
 ```
 
 # rm
 ```
+# 删除某个ID的镜像
 sudo docker image rm ID -f
 ```
 
