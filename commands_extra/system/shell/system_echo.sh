@@ -19,6 +19,7 @@ echo "$(gettext "Check new function shell")"
 #run echo 1
 
 # source cs_utils
+source ${HOME}/commands/cs_utils.sh
 source ${HOME}/commands/cs_utils_ros.sh
 
 # echo 1
@@ -32,3 +33,11 @@ source ${HOME}/commands/cs_utils_ros.sh
 # echo `check_ros_version gala`
 # echo `check_ros_version gala22ic`
 
+
+error "this is error test"
+success "this is success test"
+warning "this is warning test"
+underline "this is underline test"
+bold "this is bold test"
+working "this is working test"
+hint "this is hint test"

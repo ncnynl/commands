@@ -30,17 +30,17 @@ source $HOME/commands/cs_variables.sh
 
 # Print error into stdout
 function error() {
-    echo ${RED}"Error: $@"${RESET} >&2
+    echo ${RED}"ERROR: $@"${RESET} >&2
 }
 
 # Print success into stdout
 function success() {
-    echo ${GREEN}"$@"${RESET} >&2
+    echo ${GREEN}"SUCCESS: $@"${RESET} >&2
 }
 
 # Print warning
 function warning() {
-    echo ${YELLOW}"$@"${RESET} >&2
+    echo ${YELLOW}"WARNING: $@"${RESET} >&2
 }
 
 # Print underline content
@@ -55,5 +55,10 @@ function bold() {
 
 # Print working
 function working() {
-  echo ${WORKING}${GREEN}"$@"${RESET} >&2
+  echo ${BLUE}"WORKING: $@"${RESET} >&2
+}
+
+# Print note
+function hint() {
+  echo ${UNDER}${BOLD}${BLUE}"HINT: $@"${RESET} >&2
 }

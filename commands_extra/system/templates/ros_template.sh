@@ -19,23 +19,6 @@ echo "$(gettext "script_template related usage")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
-function _rcm_usage_() {
-    cat << EOF
-Usage:
-    script_template --along --blong argb --clong argc
-
-Description:
-    script_template related usage.
-
-Option:
-    --help|-h:                                         -- using help
-    --debug|-x:                                        -- debug mode, for checking how to run
-    --edit|-e:                                         -- edit mode, for edit this file
-    --delete|-k:                                       -- delete mode, for delete this file
-
-EOF
-}
-
 # For ros install
 function _rcm_ros_install_() {
     workspace=""
@@ -47,32 +30,43 @@ function _rcm_ros_install_() {
     if [ -d ~/$workspace/src/$package_name ]; then
         echo "$package_name have installed!!" 
     else
-        # build workspace if not
+        echo "Install related system dependencies"
+        sudo apt update
+        # <code here>
+
+        echo "Go to workspace"
         if [ ! -d ~/$workspace/ ];then
             mkdir -p ~/$workspace/src
         fi
-
-        ## isntall rosdep
-        sudo apt update
-
-        ## download package
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         cd ~/$workspace/src
-        #git clone repo
+
+        echo "Configure git proxy"
+        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         
-        # rosdep
+        echo "this will take a while to download"
+        echo "Dowload $package_name"
+        # <code here>
+
+        echo "Install related dependencies by rosdep"
         cd ~/$workspace/
         cs -si update_rosdep_tsinghua
         rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y  
 
-        # build
+
+        echo "Build the code"
         cd ~/$workspace 
+        # <code here>
+
+        #examples
         #ros1: 
         # catkin make
         #ros2: 
         # colcon build
 
-        #add to bashrc if not exits
+        echo "Add workspace to bashrc"
+        # <code here>
+
+        #examples
         #for ros1:
         # if ! grep -Fq "$workspace/devel/setup.bash" ~/.bashrc
         # then
@@ -94,6 +88,23 @@ function _rcm_ros_install_() {
         # success
         echo "ROS $package_name installed successfully location is: ~/$workspace/src/$package_name "
     fi
+}
+
+function _rcm_usage_() {
+    cat << EOF
+Usage:
+    script_template --along --blong argb --clong argc
+
+Description:
+    script_template related usage.
+
+Option:
+    --help|-h:                                         -- using help
+    --debug|-x:                                        -- debug mode, for checking how to run
+    --edit|-e:                                         -- edit mode, for edit this file
+    --delete|-k:                                       -- delete mode, for delete this file
+
+EOF
 }
 
 function rcm_execute() {
