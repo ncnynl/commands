@@ -60,5 +60,5 @@ function working() {
 
 # Print note
 function hint() {
-  echo ${UNDER}${BOLD}${BLUE}"HINT: $@"${RESET} >&2
+  echo ${UNDER}${BOLD}${PURPLE}"HINT: $@"${RESET} >&2
 }

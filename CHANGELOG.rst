@@ -3,7 +3,9 @@
 2.0.2 (2023-09-08)
 
 - 增加docker支持， 进入commands_docker运行`docker build -t rcm:latest .` 生成docker镜像
-- 通过命令docker run  -it rcm:latest 进入终端
+- 通过命令`docker run  -it rcm:latest` 进入终端
+- 增加备份私有目录和私有脚本的同步脚本，同步后目录和文件位于~/tools/commands_private/
+
 
 2.0.1 (2023-09-07)
 
