@@ -68,10 +68,10 @@ else
     then
         echo 'source ~/ros1_ailibot_sim_ws/devel/setup.bash' >> ~/.bashrc
         echo 'export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml ' >> ~/.bashrc
-        echo 'export AILIBOTBASE=d4    
-        echo 'export ROS_NAMESPACE=""
-        echo 'export ROS_MULTI=false
-        echo 'export GAZEBO=true
+        echo 'export AILIBOTBASE=d4' >> ~/.bashrc   
+        echo 'export ROS_NAMESPACE=""' >> ~/.bashrc
+        echo 'export ROS_MULTI=false' >> ~/.bashrc
+        echo 'export GAZEBO=true' >> ~/.bashrc
     fi
 
 fi
