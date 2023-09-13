@@ -26,6 +26,8 @@ RCM是一款基于bash的智能化shell脚本管理和源码部署工具，可�
 - [为什么使用RCM?](#为什么使用RCM)
 - [特色](#特色)
 - [安装](#安装)
+- [docker](#docker)
+- [升级](#升级)
 - [卸载](#卸载)
 - [系统和依赖](#系统和依赖)
 - [目录结构](#目录结构)
@@ -168,6 +170,14 @@ rcm <tab><tab>
 ```
 
 ![rcm-install](images/rcm-install.gif)
+
+## docker
+
+- 执行命令
+
+```
+docker run -it ncnynl/rcm:latest
+```
 
 ## 升级
 更新 RCM，体验最新功能，命令如下：

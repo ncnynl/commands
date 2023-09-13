@@ -19,6 +19,7 @@ echo "$(gettext "script_template")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
+echo "This script is under DEV state !"
 
 function _rcm_run_() {
 

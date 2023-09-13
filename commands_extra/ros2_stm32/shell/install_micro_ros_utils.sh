@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : script_template related usage
-# Desc     : <desc>                        
+# Function : install_micro_ros_utils 
+# Desc     : 安装micro_ros_stm32cubemx_utils的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                           
+# Date     : Wed Sep 13 12:25:25 PM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -15,90 +15,45 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "script_template related usage")"
+echo "$(gettext "install_micro_ros_utils")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
 echo "This script is under DEV state !"
 
-# For ros install
-function _rcm_ros_install_() {
-    workspace=""
-    package_name=""
+function _rcm_run_() {
 
-    echo "Please finish code first!"
-    return 
+    package_name="project_micro_ros"
+
     # if installed ?
-    if [ -d ~/$workspace/src/$package_name ]; then
+    if [ -d ~/$package_name ]; then
         echo "$package_name have installed!!" 
-    else
+    else 
+
         echo "Install related system dependencies"
-        sudo apt update
+        sudo apt-get update
         # <code here>
 
         echo "Go to workspace"
-        if [ ! -d ~/$workspace/ ];then
-            mkdir -p ~/$workspace/src
-        fi
-        cd ~/$workspace/src
+        cd ~
+        git clone  https://gitee.com/ncnynl/project_micro_ros/
+        cd ~/$package_name
 
-        echo "Configure git proxy"
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
-        
+        # 获取仓库列表
+        #run import
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        # <code here>
-
-        echo "Install related dependencies by rosdep"
-        cd ~/$workspace/
-        cs -si update_rosdep_tsinghua
-        rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y  
-
-
-        echo "Build the code"
-        cd ~/$workspace 
-        # <code here>
-
-        #examples
-        #ros1: 
-        # catkin make
-        #ros2: 
-        # colcon build
-
-        echo "Add workspace to bashrc"
-        # <code here>
-
-        #examples
-        #for ros1:
-        # if ! grep -Fq "$workspace/devel/setup.bash" ~/.bashrc
-        # then
-        #     echo ". ~/$workspace/devel/setup.bash" >> ~/.bashrc
-        #     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-        # else
-        #     echo "Has been inited before! Please check ~/.bashrc"
-        # fi    
-
-        #for ros2:
-        # if ! grep -Fq "$workspace/install/setup.bash" ~/.bashrc
-        # then
-        #     echo ". ~/$workspace/install/setup.bash" >> ~/.bashrc
-        #     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-        # else
-        #     echo "Has been inited before! Please check ~/.bashrc"
-        # fi
-
-        # success
-        echo "ROS $package_name installed successfully location is: ~/$workspace/src/$package_name "
+        git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_stm32cubemx_utils
     fi
 }
 
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    script_template --along --blong argb --clong argc
+    install_micro_ros_utils 
 
 Description:
-    script_template related usage.
+    安装micro_ros_stm32cubemx_utils的脚本
 
 Option:
     --help|-h:                                         -- using help
@@ -154,8 +109,8 @@ function rcm_execute() {
     fi
 
     # start
-    echo "script_template start ..."
-    # _rcm_ros_install_ $*
+    echo "install_micro_ros_utils start ..."
+    _rcm_run_ $*
 
     if [[ $debug == 1 ]]; then
         set +x

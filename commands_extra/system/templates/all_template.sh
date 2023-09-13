@@ -17,6 +17,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "script_template related usage")"
 
+echo "This script is under DEV state !"
+
 function _rcm_usage_() {
     cat << EOF
 Usage:
