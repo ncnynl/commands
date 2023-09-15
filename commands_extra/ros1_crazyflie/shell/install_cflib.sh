@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : install_ros1_crazys related usage
-# Desc     : ros1版crazys的gazebo仿真脚本                         
+# Function : install_cflib 
+# Desc     : 用于安装crazyflie的cflib-python库的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : Thu Sep  7 11:03:04 AM CST 2023                            
+# Date     : Fri Sep 15 10:55:50 AM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -15,18 +15,52 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "install_ros1_crazys related usage")"
+echo "$(gettext "install_cflib")"
 
-source ${HOME}/commands/cs_utils.sh
 source ${HOME}/commands/cs_utils_ros.sh
+
+echo "This script is under DEV state !"
+
+function _rcm_run_() {
+
+    package_name="crazyflie-lib-python"
+
+    # if installed ?
+    if [ -d ~/tools/$package_name ]; then
+        echo "$package_name have installed!!" 
+    else 
+
+        echo "Install related system dependencies"
+        echo "Go to workspace"
+        if [ ! -d ~/tools ]
+            mkdir -p ~/tools/
+        fi 
+        cd ~/tools/
+
+        # 获取仓库列表
+        #run import
+        echo "this will take a while to download"
+        echo "Dowload $package_name"
+        git clone https://github.com/bitcraze/crazyflie-lib-python.git
+
+        echo "Build the code"
+        cd crazyflie-lib-python
+        pip3 install -e .
+
+        # 添加GAZEBO_PLUGIN_PATH到bashrc文件
+        echo "Install cflib"
+        pip3 install cflib
+
+    fi
+}
 
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    install_ros1_crazys --along --blong argb --clong argc
+    install_cflib 
 
 Description:
-    install_ros1_crazys related usage.
+    用于安装crazyflie的cflib-python库的脚本
 
 Option:
     --help|-h:                                         -- using help
@@ -35,56 +69,6 @@ Option:
     --delete|-k:                                       -- delete mode, for delete this file
 
 EOF
-}
-
-# For ros1 install
-function _rcm_ros_run_() {
-    workspace="ros1_crazyflie_ws"
-    package_name="CrazyS"
-
-    # if installed ?
-    if [ -d ~/$workspace/src/$package_name ]; then
-        echo "$package_name have installed!!" 
-    else
-        # build workspace if not
-        if [ ! -d ~/$workspace/ ];then
-            mkdir -p ~/$workspace/src
-        fi
-
-        ## isntall rosdep
-        sudo apt update
-
-        sudo apt install -y ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-octomap-ros ros-${ROS_DISTRO}-mavlink
-        sudo apt install -y ros-${ROS_DISTRO}-octomap-mapping ros-${ROS_DISTRO}-control-toolbox
-        sudo apt install -y python3-rosdep python3-wstool ros-${ROS_DISTRO}-ros libgoogle-glog-dev
-        sudo apt install -y python3-vcstool python3-catkin-tools protobuf-compiler libgoogle-glog-dev
-
-        ## install package
-        cd ~/$workspace/src
-        git clone -b dev/ros-noetic https://github.com/gsilano/CrazyS.git
-        git clone -b med18_gazebo9 https://github.com/gsilano/mav_comm.git
-
-        # rosdep
-        cs -si update_rosdep_tsinghua
-
-        # build
-        cd ~/$workspace 
-        rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y    
-        catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCATKIN_ENABLE_TESTING=False
-
-        #add to bashrc if not exits
-        if ! grep -Fq "$workspace" ~/.bashrc
-        then
-            echo "source ~/$workspace/devel/setup.bash" >> ~/.bashrc
-            echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-            
-        else
-            echo "Has been inited before! Please check ~/.bashrc"
-        fi
-
-        # success
-        echo "ROS $package_name installed successfully location is: ~/$workspace/src/$package_name "
-    fi
 }
 
 function rcm_execute() {
@@ -132,8 +116,8 @@ function rcm_execute() {
     fi
 
     # start
-    echo "install_ros1_crazys start ..."
-    _rcm_ros_run_ $*
+    echo "install_cflib start ..."
+    _rcm_run_ $*
 
     if [[ $debug == 1 ]]; then
         set +x
