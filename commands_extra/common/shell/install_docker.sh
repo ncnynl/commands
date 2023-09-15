@@ -29,6 +29,9 @@ sudo groupadd docker			# 有则不用创建
 sudo usermod -aG docker $USER	# USER 为加入 docker 组的用户
 newgrp docker					# 刷新 docker 组    
 
+echo "Install Docker compose"
+rcm common install_docker_compose
+
 echo "Check Docker version"
 docker --version 
 
