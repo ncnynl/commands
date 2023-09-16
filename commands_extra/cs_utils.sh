@@ -62,3 +62,59 @@ function working() {
 function hint() {
   echo ${UNDER}${BOLD}${PURPLE}"HINT: $@"${RESET} >&2
 }
+
+#######################################
+# is_empty_dir
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function is_empty_dir(){ 
+    return `ls -A $1|wc -w`
+}
+
+#######################################
+# while_read_desc
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function while_read_desc(){
+    while read LINE
+    do
+        if [[ "${LINE[@]}" =~ "Function" ]];then
+            # echo $LINE
+            new=${LINE#*:}
+            # echo $new
+            #remove space
+            func=`echo ${new%*#}`
+            # echo $func
+        fi  
+
+        if [[ "${LINE[@]}" =~ "Desc" ]];then
+            # echo $LINE
+            new=${LINE#*:}
+            # echo $new
+            desc=${new%*#}
+            # echo $desc
+        fi           
+
+        if [[ "${LINE[@]}" =~ "Website" ]];then
+            # echo $LINE
+            new=${LINE#*:}
+            # echo $new
+            website=${new%*#}
+            # echo $desc
+        fi        
+    done < $1
+}

@@ -1,5 +1,5 @@
 #!/bin/bash
-################################################
+################################################################
 # Function : script_template related usage
 # Desc     : <desc>                        
 # Platform : ubuntu                                
@@ -7,12 +7,11 @@
 # Date     : <date>                           
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
+# Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
 # URL: https://ncnynl.com                                   
 # Licnese: MIT                                 
-# QQ Qun: 创客智造B群:926779095                                  
-# QQ Qun: 创客智造C群:937347681                               
-# QQ Qun: 创客智造D群:562093920                               
-################################################
+# QQ Qun：创客智造B群:926779095、C群:937347681、D群:562093920                                   
+################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "script_template related usage")"

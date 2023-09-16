@@ -1,14 +1,14 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS2 cartographer source version           #
+# Function :Install ROS2 cartographer source version           
 # Desc     : 用于源码方式安装ROS2版激光建图算法cartographer的脚本   
-# Platform :All Linux Based Platform                           #
-# Version  :1.0                                                #
-# Date     :2022-06-23                                         #
-# Author   :ncnynl                                             #
-# Contact  :1043931@qq.com                                     #
-# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
-# URL: https://ncnynl.com                                      #
+# Platform :All Linux Based Platform                           
+# Version  :1.0                                                
+# Date     :2022-06-23                                         
+# Author   :ncnynl                                             
+# Contact  :1043931@qq.com                                     
+# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   
+# URL: https://ncnynl.com                                      
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        

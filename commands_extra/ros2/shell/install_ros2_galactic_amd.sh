@@ -1,14 +1,14 @@
 #!/bin/bash
 ################################################################
-# Function : Install ROS2 Galactic AMD version                     #
+# Function : Install ROS2 Galactic AMD version                     
 # Desc     : 用于AMD架构下安装ROS2 Galactic版本的脚本
-# Platform :All Linux Based Platform                           #
-# Version  :1.0                                                #
-# Date     :2022-06-23                                         #
-# Author   :ncnynl                                             #
-# Contact  :1043931@qq.com                                     #
-# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
-# URL: https://ncnynl.com                                      #
+# Platform :All Linux Based Platform                           
+# Version  :1.0                                                
+# Date     :2022-06-23                                         
+# Author   :ncnynl                                             
+# Contact  :1043931@qq.com                                     
+# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   
+# URL: https://ncnynl.com                                      
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        

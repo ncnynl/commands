@@ -1,14 +1,14 @@
 #!/bin/bash
 ################################################################
-# Function :Install ROS1 Noetic ORB_SLAM2                      #
+# Function :Install ROS1 Noetic ORB_SLAM2                      
 # Desc     : 用于源码方式安装ROS1版本单目视觉建图算法DSO的脚本
-# Platform :All Linux Based Platform                           #
-# Version  :1.0                                                #
-# Date     :2022-11-30                                         #
-# Author   :ncnynl EndlessLoops                                #
-# Contact  :1043931@qq.com                                     #
-# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
-# URL: https://ncnynl.com                                      #
+# Platform :All Linux Based Platform                           
+# Version  :1.0                                                
+# Date     :2022-11-30                                         
+# Author   :ncnynl EndlessLoops                                
+# Contact  :1043931@qq.com                                     
+# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   
+# URL: https://ncnynl.com                                      
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
