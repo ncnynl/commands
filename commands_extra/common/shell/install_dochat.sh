@@ -22,8 +22,20 @@ echo "This script is under DEV state !"
 
 function _rcm_run_() {
 
-    echo "Install dochat"
-    curl -sL https://gitee.com/mirrors/dochat/raw/main/dochat.sh | bash
+    
+    echo "Install dochat from project: https://github.com/huan/docker-wechat"
+
+    cd ~/tools/
+
+    wget https://gitee.com/mirrors/dochat/raw/main/dochat.sh 
+
+    sed -i "s/user\//$USER\//g" ~/tools/dochat.sh
+
+    chmod +x dochat.sh
+
+    ./dochat.sh
+    # 赋予权限
+    # sudo chown $USER $HOME/DoChat -R
 
 }
 
