@@ -38,7 +38,8 @@ function _rcm_run_() {
     chmod +x dochat.sh
 
     if [ ! -d $HOME/DoChat ]; then 
-        mkdir $HOME/DoChat
+        mkdir -p $HOME/DoChat/'Applcation Data'  
+        mkdir -p $HOME/DoChat/'WeChat Files'
     fi 
 
     ./dochat.sh
