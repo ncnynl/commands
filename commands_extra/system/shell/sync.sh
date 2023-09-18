@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : update rcm to new version
-# Desc     : 用于通过最新版本比较来升级RCM为最新版本                         
+# Desc     : 用于实时同步最新代码并安装为最新版本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : Mon Sep  4 04:30:22 PM CST 2023                            
@@ -72,8 +72,9 @@ function rcm_execute() {
     fi
 
     # start
-    echo "update start ..."
-    rcm common upgrade_rcm
+    echo "sync start ..."
+    cd ${CS_DEV} 
+    . sync_gitee.sh
 
     if [[ $debug == 1 ]]; then
         set +x

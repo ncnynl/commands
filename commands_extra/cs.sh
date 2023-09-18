@@ -1173,8 +1173,9 @@ function commands() {
             local script_file="$CS_ROOT/$1/shell/$2.sh"
             
             if [ -f $script_file ]; then 
-                if [[ "${SUDO_LIST[@]}" =~ "${2}" ]];then
+                if [[ "${SUDO_LIST[@]}" =~ "${2}.sh" ]]; then
                     sudo "$CS_ROOT/$1/shell/$2.sh" $*
+                    echo 1
                 else 
                     "$CS_ROOT/$1/shell/$2.sh" $*
                 fi
