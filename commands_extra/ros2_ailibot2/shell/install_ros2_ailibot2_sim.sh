@@ -27,6 +27,7 @@ else
     # install dep
     sudo apt-get update
 
+    sudo apt install -y xterm
     sudo apt install -y ros-${ROS_DISTRO}-teleop-twist-keyboard 
     sudo apt install -y ros-${ROS_DISTRO}-urdf  ros-${ROS_DISTRO}-xacro 
     sudo apt install -y ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup 
