@@ -27,6 +27,10 @@ function _rcm_run_() {
 
     cd ~/tools/
 
+    if [ -f "dochat.sh" ]; then 
+        rm dochat.sh
+    fi 
+
     wget https://gitee.com/mirrors/dochat/raw/main/dochat.sh 
 
     sed -i "s/user\//$USER\//g" ~/tools/dochat.sh
