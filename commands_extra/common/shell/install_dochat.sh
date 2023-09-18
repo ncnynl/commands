@@ -37,9 +37,13 @@ function _rcm_run_() {
 
     chmod +x dochat.sh
 
+    if [ ! -d $HOME/DoChat ]; then 
+        mkdir $HOME/DoChat
+    fi 
+
     ./dochat.sh
     # 赋予权限
-    # sudo chown $USER $HOME/DoChat -R
+    
 
 }
 
