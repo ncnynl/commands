@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################################
-# Function : script_template 
-# Desc     : <desc>                         
+# Function : install_micro_ros_agent_docker 
+# Desc     : 安装micro-ros-agent的docker版本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                            
+# Date     : Mon Sep 18 09:18:09 PM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com     
 # Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
@@ -14,60 +14,27 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "script_template")"
+echo "$(gettext "install_micro_ros_agent_docker")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
 echo "This script is under DEV state !"
 
 function _rcm_run_() {
+    echo "Install micro-ros-agent with docker"
+    dockr pull microros/micro-ros-agent:${ROS_DISTRO}
 
-    package_name=""
-
-    echo "Please finish code first!"
-    return 
-    # if installed ?
-    if [ -d ~/tools/$package_name ]; then
-        echo "$package_name have installed!!" 
-    else 
-
-        echo "Install related system dependencies"
-        sudo apt-get update
-        # <code here>
-
-        echo "Go to workspace"
-        if [ ! -d ~/tools ]; then
-            mkdir -p ~/tools/
-        fi 
-        cd ~/tools/
-
-        # 获取仓库列表
-        #run import
-        echo "this will take a while to download"
-        echo "Dowload $package_name"
-        # <code here>
-
-        echo "Build the code"
-        # <code here>
-
-        # 添加GAZEBO_PLUGIN_PATH到bashrc文件
-        echo "Add workspace to bashrc"
-        if ! grep -Fq "$package_name" ~/.bashrc
-        then
-            # <code here>
-            # echo 'export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/tools/collision_map_creator_plugin/build' >> ~/.bashrc
-        fi
-
-    fi
+    echo "Run as : "
+    echo "docker run -it --net=host -v /dev:/dev --privileged microros/micro-ros-agent:galactic serial --dev /dev/ailibot -v6"
 }
 
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    script_template 
+    install_micro_ros_agent_docker 
 
 Description:
-    <desc>
+    安装micro-ros-agent的docker版本
 
 Option:
     --help|-h:                                         -- using help
@@ -123,7 +90,7 @@ function rcm_execute() {
     fi
 
     # start
-    echo "script_template start ..."
+    echo "install_micro_ros_agent_docker start ..."
     _rcm_run_ $*
 
     if [[ $debug == 1 ]]; then

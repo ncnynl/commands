@@ -36,7 +36,7 @@ function _rcm_ros_install_() {
         # <code here>
 
         echo "Go to workspace"
-        if [ ! -d ~/$workspace/ ];then
+        if [ ! -d ~/$workspace/ ]; then
             mkdir -p ~/$workspace/src
         fi
         cd ~/$workspace/src

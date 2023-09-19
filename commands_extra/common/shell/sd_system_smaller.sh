@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################################
-# Function : script_template 
-# Desc     : <desc>                         
+# Function : sd_system_smaller 
+# Desc     : 让备份的树莓派镜像压缩得更小的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                            
+# Date     : Tue Sep 19 08:38:05 AM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com     
 # Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
@@ -14,23 +14,21 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "script_template")"
+echo "$(gettext "sd_system_smaller")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
 echo "This script is under DEV state !"
+echo "Base on project :  https://github.com/Drewsif/PiShrink"
 
 function _rcm_run_() {
 
-    package_name=""
+    package_name="PiShrink"
 
-    echo "Please finish code first!"
-    return 
     # if installed ?
     if [ -d ~/tools/$package_name ]; then
         echo "$package_name have installed!!" 
     else 
-
         echo "Install related system dependencies"
         sudo apt-get update
         # <code here>
@@ -45,35 +43,34 @@ function _rcm_run_() {
         #run import
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        # <code here>
+        git clone https://github.com/ncnynl/PiShrink
 
-        echo "Build the code"
-        # <code here>
-
-        # 添加GAZEBO_PLUGIN_PATH到bashrc文件
-        echo "Add workspace to bashrc"
-        if ! grep -Fq "$package_name" ~/.bashrc
-        then
-            # <code here>
-            # echo 'export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/tools/collision_map_creator_plugin/build' >> ~/.bashrc
-        fi
-
+        chmod +x pishrink.sh
+        # sudo mv pishrink.sh /usr/local/bin
     fi
+
+    echo "Begin to make image smaller!"
+
+    echo "Your imgsrc is:$1"
+    echo "Your imgdes is:$2" 
+    sudo . ~/tools/PiShrink/pishrink.sh $1 $2
 }
 
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    script_template 
+    sd_system_smaller 
 
 Description:
-    <desc>
+    让备份的树莓派镜像压缩得更小的脚本
 
 Option:
     --help|-h:                                         -- using help
     --debug|-x:                                        -- debug mode, for checking how to run
     --edit|-e:                                         -- edit mode, for edit this file
     --delete|-k:                                       -- delete mode, for delete this file
+    --imgsrc|-s:                                       -- sd card image source address 
+    --imgdes|-d:                                       -- sd card image destination address
 
 EOF
 }
@@ -81,7 +78,7 @@ EOF
 function rcm_execute() {
     local debug=0
 
-    local ARGS=`getopt -o hekx --long help,edit,delete,debug -n 'Error' -- "$@"`
+    local ARGS=`getopt -o hekxs:d: --long help,edit,delete,debug,imgsrc:,imgdes: -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         echo "Invalid option..." >&2;
         exit 1;
@@ -106,7 +103,15 @@ function rcm_execute() {
             -x|--debug)
                 debug=1
                 shift
-                ;;                
+                ;;  
+            -s|--imgsrc)
+                imgsrc=$2
+                shift 2
+                ;; 
+            -d|--imgdes)
+                imgdes=$2
+                shift 2
+                ;;                                               
             --)
                 shift
                 break
@@ -123,8 +128,21 @@ function rcm_execute() {
     fi
 
     # start
-    echo "script_template start ..."
-    _rcm_run_ $*
+    echo "sd_system_smaller start ..."
+    echo "$imgsrc - $imgdes"
+    if [ -z $imgsrc ]; then
+        echo "You need provide imgsrc! "
+    fi 
+
+    if [ -f $imgsrc ]; then 
+        echo "Your file $imgsrc is not exits!"
+    fi 
+
+    if [ -z $imgdes ]; then 
+        echo "You need provide imgdes! "
+    else 
+        _rcm_run_ $imgsrc $imgdes
+    fi 
 
     if [[ $debug == 1 ]]; then
         set +x

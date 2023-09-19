@@ -21,8 +21,7 @@ echo "Install Curl"
 sudo apt install curl -y 
 
 echo "安装最新版本的docker"
-curl sSL https://get.docker.com | sh
-sudo service docker start
+curl sSL https://get.docker.com | sh -
 
 echo "无root 权限能否使用 docker"
 sudo groupadd docker			# 有则不用创建
@@ -31,6 +30,8 @@ newgrp docker					# 刷新 docker 组
 
 echo "Install Docker compose"
 rcm common install_docker_compose
+
+sudo service docker start
 
 echo "Check Docker version"
 docker --version 

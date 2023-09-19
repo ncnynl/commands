@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################################
-# Function : script_template 
-# Desc     : <desc>                         
+# Function : install_micro_ros_agent 
+# Desc     : 安装micro-ros-agent的源码版本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                            
+# Date     : Mon Sep 18 09:18:33 PM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com     
 # Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
@@ -14,7 +14,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "script_template")"
+echo "$(gettext "install_micro_ros_agent")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
@@ -22,41 +22,28 @@ echo "This script is under DEV state !"
 
 function _rcm_run_() {
 
-    package_name=""
+    workspace="ros2_micro_ros_ws"
+    package_name="micro_ros_setup"
 
     echo "Please finish code first!"
     return 
     # if installed ?
-    if [ -d ~/tools/$package_name ]; then
-        echo "$package_name have installed!!" 
+    if [ -d ~/$workspace/$package_name ]; then
+        echo "You have installed $package_name, you can continue to install micro-ros-agent " 
+
+        cd ~/$workspace
+        echo "create_agent_ws"
+        source install/local_setup.bash
+        ros2 run micro_ros_setup create_agent_ws.sh
+
+        echo "build_agent.sh"
+        source install/local_setup.bash
+        ros2 run micro_ros_setup build_agent.sh
+
+        echo "has Installed!"
+        echo "run as :"  
+        echo "ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 "
     else 
-
-        echo "Install related system dependencies"
-        sudo apt-get update
-        # <code here>
-
-        echo "Go to workspace"
-        if [ ! -d ~/tools ]; then
-            mkdir -p ~/tools/
-        fi 
-        cd ~/tools/
-
-        # 获取仓库列表
-        #run import
-        echo "this will take a while to download"
-        echo "Dowload $package_name"
-        # <code here>
-
-        echo "Build the code"
-        # <code here>
-
-        # 添加GAZEBO_PLUGIN_PATH到bashrc文件
-        echo "Add workspace to bashrc"
-        if ! grep -Fq "$package_name" ~/.bashrc
-        then
-            # <code here>
-            # echo 'export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/tools/collision_map_creator_plugin/build' >> ~/.bashrc
-        fi
 
     fi
 }
@@ -64,10 +51,10 @@ function _rcm_run_() {
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    script_template 
+    install_micro_ros_agent 
 
 Description:
-    <desc>
+    安装micro-ros-agent的源码版本
 
 Option:
     --help|-h:                                         -- using help
@@ -123,7 +110,7 @@ function rcm_execute() {
     fi
 
     # start
-    echo "script_template start ..."
+    echo "install_micro_ros_agent start ..."
     _rcm_run_ $*
 
     if [[ $debug == 1 ]]; then

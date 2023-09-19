@@ -28,19 +28,22 @@ else
         
     # install dep
     sudo apt-get update
-    sudo apt-get install libusb-1.0
-    sudo apt-get install pkg-config
-    sudo apt-get install git
-    sudo apt-get install cmake
-    sudo apt-get install automake
-    sudo apt-get install libgtk-3-dev
+    sudo apt-get install -y libusb-1.0
+    sudo apt-get install -y pkg-config
+    sudo apt-get install -y git
+    sudo apt-get install -y cmake
+    sudo apt-get install -y automake
+    sudo apt-get install -y libgtk-3-dev
+    sudo apt-get install -y openocd
+
+    
 
     # 进入工作空间
     cd ~/tools
 
     # 获取仓库列表
     #replace https
-    # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+    git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         
     #run import
     echo "this will take a while to download"
