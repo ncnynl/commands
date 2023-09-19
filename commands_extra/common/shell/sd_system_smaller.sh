@@ -132,14 +132,17 @@ function rcm_execute() {
     echo "$imgsrc - $imgdes"
     if [ -z $imgsrc ]; then
         echo "You need provide imgsrc! "
+        exit 1
     fi 
 
-    if [ -f $imgsrc ]; then 
+    if [ ! -f $imgsrc ]; then 
         echo "Your file $imgsrc is not exits!"
+        exit 1
     fi 
 
     if [ -z $imgdes ]; then 
         echo "You need provide imgdes! "
+        exit 1
     else 
         _rcm_run_ $imgsrc $imgdes
     fi 
