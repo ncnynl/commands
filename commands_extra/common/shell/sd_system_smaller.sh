@@ -45,7 +45,7 @@ function _rcm_run_() {
         echo "Dowload $package_name"
         git clone https://github.com/ncnynl/PiShrink
 
-        chmod +x pishrink.sh
+        chmod +x ~/tools/PiShrink/pishrink.sh
         # sudo mv pishrink.sh /usr/local/bin
     fi
 
@@ -53,7 +53,8 @@ function _rcm_run_() {
 
     echo "Your imgsrc is:$1"
     echo "Your imgdes is:$2" 
-    sudo . ~/tools/PiShrink/pishrink.sh $1 $2
+
+    sudo ~/tools/PiShrink/pishrink.sh $1 $2
 }
 
 function _rcm_usage_() {
