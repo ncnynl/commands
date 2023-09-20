@@ -63,6 +63,9 @@ else
     cd Release
     sudo make install
 
+    #
+    sudo ldconfig
+
     #add rule
     cd ~/tools/stlink  
     sudo cp config/udev/rules.d/49-stlinkv2.rules /etc/udev/rules.d/
