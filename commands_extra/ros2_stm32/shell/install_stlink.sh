@@ -55,12 +55,12 @@ else
     # 编辑各个包
     echo "build workspace..."
     cd stlink
-    make release
+    # make release
     make debug
     cd build
     cmake -DCMAKE_BUILD_TYPE=Debug ..
     make
-    cd release
+    # cd release
     sudo make install
 
     #add rule
