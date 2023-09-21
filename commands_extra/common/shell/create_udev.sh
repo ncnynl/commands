@@ -82,7 +82,7 @@ function _rcm_run_() {
             sudo udevadm control --reload-rules
 
             echo "启动udev服务"
-            sudo systemctl start udev
+            sudo systemctl restart udev
 
             echo "udev规则已生成并添加到 $rules_file "
             echo "请重新拔插设备即可生效"  
