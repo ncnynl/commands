@@ -22,7 +22,7 @@ RCM是一款基于bash的智能化shell脚本管理和源码部署工具，可�
 
 # 脚本应用目录：
 
- - ![显示详细的命令清单](DOCUMENT.md)
+ - ![显示详细的命令清单](https://gitee.com/ncnynl/commands/blob/master/DOCUMENT.md)
 
 # 目录：
 
