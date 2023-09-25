@@ -73,7 +73,8 @@ fi
 # copy commands.desktop to $USER/.local/share/applications
 # can not run , *.desktop launch by root. will not load ~/.bashrc
 # sudo cp commands.desktop $HOME/.local/share/applications/commands.desktop
-
+# install rsync 
+sudo apt install -y rsync 
 echo -e "Install package extra Finished"
 
 
