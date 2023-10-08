@@ -27,8 +27,9 @@ fi
 
 echo $1 
 echo $2
-
-return 
+echo $3 
+echo $4
+exit
 
 ros2_distro=$1
 

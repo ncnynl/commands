@@ -333,7 +333,7 @@ function commands_si(){
             do 
                 if [ -f $file ]; then
                     let i++
-                    result=$(echo $file | grep "$1")
+                    result=$(echo $file | grep "$2")
                     # echo $file 
                     # echo $1
                     if [[ $result != "" ]] ; then
@@ -349,13 +349,13 @@ function commands_si(){
 
     #if only one jump to  install
     # echo $j
-    if [ $j == 1 ];then 
+    if [ $j == 1 ]; then 
         cd ~/commands/$folder
         filename=${shell#*/}
-        if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
-            sudo ./$shell $2
+        if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]]; then
+            sudo ./$shell $*
         else 
-            ./$shell $2
+            ./$shell $*
         fi
     else
         echo "Don't have shell with name ${filename}"
