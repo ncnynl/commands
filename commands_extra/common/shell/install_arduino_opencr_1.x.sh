@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : Install arduino 1.x for opencr 
-# Desc     : 用于安装arduino IDE 1.x版本的脚本      
+# Desc     : 用于安装opencr的arduino IDE 1.x版本的脚本      
 # website  : https://www.ncnynl.com/archives/201707/1819.html                          
 # Platform : ubuntu                                
 # Version  : 1.0                               

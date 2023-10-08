@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : Install arduino 2.x for opencm 
-# Desc     : 用于安装arduino IDE 2.x版本的脚本      
+# Desc     : 用于安装opencm的arduino IDE 2.x版本的脚本      
 # website  : https://emanual.robotis.com/docs/en/parts/controller/opencm904/                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
