@@ -70,13 +70,15 @@ case $ros_ver in
     "rolling"|"iron")
         if [ $cpu == "x86_64" ]; then
             echo "Your cpu release is x86_64, please install AMD version "
-            $arch="amd"
+            arch="amd"
         elif [ $cpu == "aarch64" ]; then
             echo "Your cpu release is aarch64, please install ARM version "
-            $arch="arm"
+            arch="arm"
         fi
 
         cs -si install_ros2_common.sh $ros_ver $arch
+
+        exit
         ;;               
     *)
         CHOICE_A=$(echo -e "\n You have a wrong ROS2 version, If try again!!![Y/n] ：")

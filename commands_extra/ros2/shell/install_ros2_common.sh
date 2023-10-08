@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################
 # Function :Install ROS2 AMD/ARM version                    
-# Desc     : 用于AMD/ARM架构下安装ROS2版本的公共脚本，只能通过install_ros2_now来调用，不能单独调用
+# Desc     : 用于AMD/ARM架构下安装ROS2版本的公共脚本,通过install_ros2_now来调用
 # Platform :All Linux Based Platform                           
 # Version  :1.0                                                
 # Date     :2022-07-08                                         
@@ -12,28 +12,34 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install ROS2 iron AMD version")"
+echo "$(gettext "Install ROS2 AMD/ARM version")"
 
+# echo $3
+# echo $4 
 
-if [ $1 == "" ]; then 
+if [ ! $3 ]; then 
     echo "Please choose ros2 version"
     exit 1
 fi 
 
-if [ $2 == "" ]; then 
-    echo "Please choose cpu version"
+if [ ! $4 ]; then 
+    echo "Please choose cpu arch version"
     exit 1    
 fi
 
-echo $1 
-echo $2
-echo $3 
-echo $4
-exit
+# exit
 
-ros2_distro=$1
+ros2_distro=$3
+ros2_arch=$4
+
+#if exits ?
+if [ -f /opt/ros/$ros2_distro/setup.bash ]; then
+    echo "You have installed ROS2 Version $ros2_distro"
+    exit
+fi
 
 echo "Start to install ROS2 $ros2_distro"
+
 
 #update and upgrade first 
 sudo apt update 
@@ -48,7 +54,7 @@ export LANG=en_US.UTF-8
 #apt source
 # pwd=$(pwd)
 # sudo sh -c "$pwd/../common/shell/update_system_simple.sh aliyun"
-if [ $2 == "amd" ]; then 
+if [ $ros2_arch == "amd" ]; then 
     cs -si update_system_simple
 fi 
 
@@ -79,7 +85,7 @@ python3-rosdep
 
 # RMW for ROS 2
 sudo apt install -y ros-$ros2_distro-rmw-cyclonedds-cpp
-
+sudo apt install -y ros-$ros2_distro-rmw-fastrtps-cpp
 
 #install tf2 deps
 sudo apt install -y \
@@ -88,7 +94,7 @@ ros-$ros2_distro-tf2-tools \
 ros-$ros2_distro-tf-transformations
 
 #install ros2 bag deps
-if [ $2 == "amd" ]; then 
+if [ $ros2_arch == "amd" ]; then 
     sudo apt install -y \
     libroscpp-serialization0d \
     ros-$ros2_distro-nmea-msgs \
