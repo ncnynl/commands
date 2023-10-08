@@ -32,8 +32,6 @@
 #echo ${file_name##*/}
 
 rsync_exits=$(which is rsyn)
-if [ $rsync_exits ]; then 
-  	echo "rsync exits"
-else 
+if [ ! $rsync_exits ]; then 
 	echo "rsync is not exits"
 fi

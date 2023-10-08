@@ -310,10 +310,15 @@ function commands_search_source(){
 #    echo to stdout
 #######################################
 function commands_si(){
-    if [ ! $1 ];then 
+    if [ ! $2 ];then 
         echo "Shell name can not be null"
         exit 0
     fi 
+    # echo $1
+    # echo $2
+    # echo $3
+    # echo $4
+    # return 
     i=j=0
     #fix bug for -si in script
     for dir in $(ls)
@@ -981,7 +986,7 @@ function commands() {
         # select_id       
         ;;   
     '-si'|'search_install')
-        commands_si $2
+        commands_si $*
         # echo -e '#####################################################'
         # select_id       
         ;;   

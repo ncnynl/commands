@@ -25,6 +25,11 @@ if [ $2 == "" ]; then
     exit 1    
 fi
 
+echo $1 
+echo $2
+
+return 
+
 ros2_distro=$1
 
 echo "Start to install ROS2 $ros2_distro"
