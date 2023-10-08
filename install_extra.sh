@@ -74,7 +74,11 @@ fi
 # can not run , *.desktop launch by root. will not load ~/.bashrc
 # sudo cp commands.desktop $HOME/.local/share/applications/commands.desktop
 # install rsync 
-sudo apt install -y rsync 
+rsync_exits=$(which is rsync)
+if [ ! $rsync_exits ]; then
+    sudo apt install -y rsync 
+fi 
+
 echo -e "Install package extra Finished"
 
 

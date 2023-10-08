@@ -1,7 +1,7 @@
 #!/bin/bash
-export TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN=commands
-echo "$(gettext "hello")"
+#export TEXTDOMAINDIR=/usr/share/locale
+#export TEXTDOMAIN=commands
+#echo "$(gettext "hello")"
 
 # msgfmt -o test.sh.mo test.sh.zh_CN.po
 # sudo mv test.sh.mo /usr/share/locale/zh_CN/LC_MESSAGES/
@@ -26,7 +26,14 @@ echo "$(gettext "hello")"
 
 # sudo dpkg-reconfigure locales
 
-file_name="/home/ubuntu/commands/ros_easy/shell/load_ros4.sh"
-# sed -i -e "/$file_name/d" ./del_string.txt
-echo $file_name
-echo ${file_name##*/}
+#file_name="/home/ubuntu/commands/ros_easy/shell/load_ros4.sh"
+## sed -i -e "/$file_name/d" ./del_string.txt
+#echo $file_name
+#echo ${file_name##*/}
+
+rsync_exits=$(which is rsyn)
+if [ $rsync_exits ]; then 
+  	echo "rsync exits"
+else 
+	echo "rsync is not exits"
+fi

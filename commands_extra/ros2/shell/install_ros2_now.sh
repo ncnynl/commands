@@ -19,7 +19,7 @@ version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
 
 case $version in 
     "22.04")
-        ros2_distro=humble
+        ros2_distro=humble,rolling,iron
         ;;
     "20.04")
         ros2_distro=foxy,galactic 
@@ -42,7 +42,7 @@ case $ros_ver in
             echo "Your cpu release is x86_64, please install AMD version "
             cs -si install_ros2_foxy_amd.sh
         elif [ $cpu == "aarch64" ]; then
-            echo "Your cpu release is x86_64, please install ARM version "
+            echo "Your cpu release is aarch64, please install ARM version "
             cs -si install_ros2_foxy_arm.sh
         fi
         ;;
@@ -52,7 +52,7 @@ case $ros_ver in
             echo "Your cpu release is x86_64, please install AMD version "
             cs -si install_ros2_galactic_amd.sh
         elif [ $cpu == "aarch64" ]; then
-            echo "Your cpu release is x86_64, please install ARM version "
+            echo "Your cpu release is aarch64, please install ARM version "
             cs -si install_ros2_galactic_arm.sh
         fi
         ;;
@@ -63,11 +63,21 @@ case $ros_ver in
             echo "Your cpu release is x86_64, please install AMD version "
             cs -si install_ros2_humble_amd.sh
         elif [ $cpu == "aarch64" ]; then
-            echo "Your cpu release is x86_64, please install ARM version "
+            echo "Your cpu release is aarch64, please install ARM version "
             cs -si install_ros2_humble_arm.sh
         fi
         ;;
+    "rolling"|"iron")
+        if [ $cpu == "x86_64" ]; then
+            echo "Your cpu release is x86_64, please install AMD version "
+            $arch="amd"
+        elif [ $cpu == "aarch64" ]; then
+            echo "Your cpu release is aarch64, please install ARM version "
+            $arch="arm"
+        fi
 
+        cs -si install_ros2_common.sh $ros_ver $arch
+        ;;               
     *)
         CHOICE_A=$(echo -e "\n You have a wrong ROS2 version, If try again!!![Y/n] ：")
         read -p "${CHOICE_A}" YN
