@@ -72,7 +72,7 @@ function _rcm_run_() {
     case $YN in 
         [Yy])
             # 指定规则文件的路径
-            rules_file="/etc/udev/rules.d/$alias.rules"
+            rules_file="/etc/udev/rules.d/99-$alias.rules"
 
             # 将规则附加到规则文件
             echo "udev规则文件添加到/etc/udev/rules.d/目录下"
