@@ -17,38 +17,38 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 rplidar_ros2")"
 
-cs -si install_sllidar_ros2.sh
+# cs -si install_sllidar_ros2.sh
 
-#      
+     
 # echo "Not Yet Supported!"
 # exit 0      
-# workspace=ros2_sensor_ws
+workspace=ros2_sensor_ws
 
-# #workspace is exits ?
-# if [ ! -d ~/$workspace ];then 
-#     mkdir -p ~/$workspace/src
-# fi 
+#workspace is exits ?
+if [ ! -d ~/$workspace ];then 
+    mkdir -p ~/$workspace/src
+fi 
 
-# if [ -d ~/$workspace/src/rplidar_ros ];then 
-#     echo "rplidar_ros have installed" && exit 0
-# fi 
+if [ -d ~/$workspace/src/rplidar_ros ];then 
+    echo "rplidar_ros have installed" && exit 0
+fi 
 
-# # 下载源码
-# cd ~/$workspace/src
-# git clone -b ros2  https://github.com/allenh1/rplidar_ros
+# 下载源码
+cd ~/$workspace/src
+git clone -b ros2  https://github.com/Slamtec/rplidar_ros
 
-# # 编译代码
-# cd ~/$workspace/
-# colcon build --symlink-install --packages-select rplidar_ros 
+# 编译代码
+cd ~/$workspace/
+colcon build --symlink-install --packages-select rplidar_ros
 
-# #add to bashrc if not exits
-# if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
-# then
-#     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
-#     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-# else
-#     echo "Has been inited before! Please check ~/.bashrc"
-# fi
+#add to bashrc if not exits
+if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
+then
+    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+    echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
+else
+    echo "Has been inited before! Please check ~/.bashrc"
+fi
 
 
 # 启动雷达
