@@ -18,8 +18,8 @@ export TEXTDOMAIN=commands
 echo "$(gettext "Install ROS2 sllidar_ros2")"
 
 #      
-echo "Not Yet Supported!"
-exit 0      
+# echo "Not Yet Supported!"
+# exit 0      
 workspace=ros2_sensor_ws
 
 #workspace is exits ?
@@ -31,9 +31,12 @@ if [ -d ~/$workspace/src/sllidar_ros2 ];then
     echo "sllidar_ros2 have installed" && exit 0
 fi 
 
+echo "Configure git proxy"
+git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+
 # 下载源码
 cd ~/$workspace/src
-git clone https://github.com/ncnynl/sllidar_ros2 
+git clone https://github.com/Slamtec/sllidar_ros2
 
 # 编译代码
 cd ~/$workspace/
