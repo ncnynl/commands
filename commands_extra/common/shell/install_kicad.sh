@@ -22,7 +22,8 @@ echo "This script is under DEV state !"
 
 function _rcm_run_() {
     echo "Install related system dependencies"
-    sudo add-apt-repository ppa:kicad/kicad-7.0-releases
+    #too slow from http://ppa.launchpad.net, replace to https://launchpad.proxy.ustclug.org
+    echo "deb https://launchpad.proxy.ustclug.org/kicad/kicad-7.0-releases/ubuntu focal main" | sudo tee kicad-ubuntu-kicad-7_0-releases-focal.list
     sudo apt-get update
     sudo apt install -y kicad
 }
