@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function : install_ros2_ailibot2_firmware 
+# Function : install_ros2_ailibot_firmware 
 # Desc     : 安装ailibot2机器人固件的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -14,7 +14,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "install_ros2_ailibot2_firmware")"
+echo "$(gettext "install_ros2_ailibot_firmware")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
@@ -45,7 +45,7 @@ function _rcm_run_() {
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    install_ros2_ailibot2_firmware 
+    install_ros2_ailibot_firmware 
 
 Description:
     安装ailibot2机器人固件的脚本
@@ -104,7 +104,7 @@ function rcm_execute() {
     fi
 
     # start
-    echo "install_ros2_ailibot2_firmware start ..."
+    echo "install_ros2_ailibot_firmware start ..."
     _rcm_run_ $*
 
     if [[ $debug == 1 ]]; then
