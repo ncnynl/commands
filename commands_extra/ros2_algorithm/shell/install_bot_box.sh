@@ -24,7 +24,7 @@ echo " From https://github.com/roboportal/bot_box"
 
 function _rcm_run_() {
 
-    package_name=""
+    package_name="bot_box"
 
     echo "Please finish code first!"
     return 
@@ -37,7 +37,7 @@ function _rcm_run_() {
         sudo apt-get update
         sudo apt install -y git wget libatomic-ops-dev pkg-config libvpx-dev libopus-dev libopusfile-dev libasound2-dev libsodium-dev libzmq3-dev libczmq-dev
         sudo apt install -y supervisor
-        sudo apt install -y build-assential
+        sudo apt install -y build-essential
 
         echo "Go to workspace"
         if [ ! -d ~/tools ]; then
@@ -51,6 +51,7 @@ function _rcm_run_() {
         echo "Dowload $package_name"
 
         # install go
+        echo " if to slow ,see: https://cyfeng.science/2020/06/15/speed-up-ubuntu-snap/, need to proxy!"
         sudo snap install go --classic
 
         # install bot_box
