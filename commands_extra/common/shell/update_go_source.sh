@@ -58,7 +58,7 @@ setSources(){
 		'go'|'-go'|'--go' )
 			setDefault;;
 		'qiniu'|'-qiniu'|'--qiniu' )
-			setDefault;setUstc;;
+			setDefault;setQiniu;;
 		'aliyun'|'-aliyun'|'--aliyun' )
 			setDefault;setAliyun;;	
 		*);;
