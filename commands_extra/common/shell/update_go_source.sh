@@ -67,6 +67,8 @@ setSources(){
     echo "Have changed to :"
 	. ~/.bashrc
     go env | grep GOPROXY   
+
+	echo "Please execute:  source ~/.bashrc"
 }
 
 para=$1
