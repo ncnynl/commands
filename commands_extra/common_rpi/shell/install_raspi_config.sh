@@ -29,8 +29,9 @@ function _rcm_run_() {
     else 
 
         echo "Install related system dependencies"
-        sudo apt-get update
-        sudo apt install lua5.1 libatopology2 libfftw3-single3 libsamplerate0 alsa-utils
+        sudo apt update
+        sudo apt install -y lua5.1 libatopology2 libfftw3-single3 libsamplerate0 alsa-utils
+        sudo apt install -y v4l-utils
 
         echo "Go to workspace"
         if [ ! -d ~/tools ]; then
@@ -47,6 +48,9 @@ function _rcm_run_() {
         echo "Build the code"
         sudo dpkg -i raspi-config_20201108_all.deb
         sudo usermod -aG video ubuntu
+        
+        sudo chown root.gpio /dev/gpiomem
+        sudo chmod g+rw /dev/gpiomem
 
         echo "Finish configuration , Please check URL : https://www.ncnynl.com/archives/202110/4813.html "
     fi

@@ -54,6 +54,7 @@ function _rcm_run_() {
         echo " if to slow ,see: https://cyfeng.science/2020/06/15/speed-up-ubuntu-snap/, need to proxy!"
         sudo snap install go --classic
 
+
         # install bot_box
         echo "Configure git proxy"
         git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com    
@@ -61,8 +62,6 @@ function _rcm_run_() {
         git clone https://github.com/roboportal/bot_box.git
         cd ./bot_box
         go build
-        # CGO_LDFLAGS="-latomic" go build -tags=arm64
-        # CGO_LDFLAGS="-latomic" go build -tags=arm
 
     fi
 }
