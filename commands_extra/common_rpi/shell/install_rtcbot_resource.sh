@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################################
-# Function : install_rtcbot 
-# Desc     : 安装python的webrtc客户端库rtcbot的脚本                         
+# Function : install_rtcbot_resource 
+# Desc     : 安装webrtc客户端rtcbot的源码的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : Wed Oct 11 11:53:47 AM CST 2023                            
+# Date     : Fri Oct 13 08:57:18 AM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com     
 # Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
@@ -14,7 +14,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "install_rtcbot")"
+echo "$(gettext "install_rtcbot_resource")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
@@ -22,39 +22,52 @@ echo "This script is under DEV state !"
 
 function _rcm_run_() {
 
-    echo "Install related system dependencies"
-    sudo apt-get update
-    sudo apt-get install -y python3-numpy python3-cffi python3-aiohttp \
-        libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev \
-        libswscale-dev libswresample-dev libavfilter-dev libopus-dev \
-        libvpx-dev pkg-config libsrtp2-dev python3-opencv pulseaudio
+    package_name="rtcbot"
 
-    echo "Build the code"
-    pip3 install rtcbot
+    # if installed ?
+    if [ -d ~/tools/$package_name ]; then
+        echo "$package_name have installed!!" 
+    else 
 
-    echo "Please check URL How to use : https://rtcbot.readthedocs.io/en/latest/examples/index.html "
-    
-    # error 1:
-    # https://bobbyhadz.com/blog/attributeerror-module-lib-has-no-attribute-x509-v-flag-cb-issuer-check
-    # https://stackoverflow.com/questions/74041308/pip-throws-typeerror-deprecated-error
-    # https://stackoverflow.com/questions/74981558/error-updating-python3-pip-attributeerror-module-lib-has-no-attribute-openss
+        echo "Install related system dependencies"
+        sudo apt-get update
+       
+        echo "Install make"
+        sudo apt install -y make
 
-    # sudo rm -rf /usr/local/lib/python3.8/dist-packages/OpenSSL
-    # sudo rm -rf /home/ubuntu/.local/lib/python3.8/site-packages/OpenSSL/
-    # sudo rm -rf /usr/local/lib/python3.8/dist-packages/pyOpenSSL-22.1.0.dist-info/
-    # sudo rm -rf /home/ubuntu/.local/lib/python3.8/dist-packages/pyOpenSSL-22.1.0.dist-info/
-    # pip3 install --upgrade pip
-    # pip3 install pyOpenSSL --upgrade
+        echo "Install nmp"
+        sudo apt install -y nmp
 
+        echo "Go to workspace"
+        if [ ! -d ~/tools ]; then
+            mkdir -p ~/tools/
+        fi 
+        cd ~/tools
+
+        echo "Configure git proxy"
+        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com    
+
+        #run import
+        echo "this will take a while to download"
+        echo "Dowload $package_name"
+        git clone https://github.com/dkumor/rtcbot
+
+        echo "Build the code"
+        cd rtcbot
+        pip3 install -r requirements.txt
+
+        echo "Build javascript, need make and npm installed"
+        make js
+    fi
 }
 
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    install_rtcbot 
+    install_rtcbot_resource 
 
 Description:
-    安装python的webrtc客户端库rtcbot的脚本
+    安装webrtc客户端rtcbot的源码的脚本
 
 Option:
     --help|-h:                                         -- using help
@@ -110,7 +123,7 @@ function rcm_execute() {
     fi
 
     # start
-    echo "install_rtcbot start ..."
+    echo "install_rtcbot_resource start ..."
     _rcm_run_ $*
 
     if [[ $debug == 1 ]]; then

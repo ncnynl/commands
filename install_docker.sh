@@ -20,9 +20,9 @@ function config_python3_source()
         mkdir ~/.pip 
         touch ~/.pip/pip.conf
         echo "[global]" >> ~/.pip/pip.conf
-        echo "index-url=http://pypi.douban.com/simple" >> ~/.pip/pip.conf
+        echo "index-url=https://pypi.tuna.tsinghua.edu.cn/simple" >> ~/.pip/pip.conf
         echo "[install]" >> ~/.pip/pip.conf
-        echo "trusted-host=pypi.douban.com" >> ~/.pip/pip.conf    
+        echo "trusted-host=pypi.tuna.tsinghua.edu.cn" >> ~/.pip/pip.conf    
     fi      
 }
 config_python3_source

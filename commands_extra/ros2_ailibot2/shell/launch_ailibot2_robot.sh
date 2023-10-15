@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : launch_gmapping 
-# Desc     : 启动ailibot2建图算法gmapping的脚本                         
+# Function : launch_ailibot2_robot 
+# Desc     : 启动ailibot2发布odom的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : Mon Oct  9 10:19:19 AM CST 2023                            
+# Date     : Sat Oct 14 12:00:52 PM CST 2023                            
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -15,12 +15,12 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "launch_gmapping")"
+echo "$(gettext "launch_ailibot2_robot")"
 
 echo "This script is under DEV state !"
 
 function rcm_execute() {
-    ros2 launch ailibot2_slam gmapping.launch.py use_rviz:=true
+    ros2 launch ailibot2_bringup  odom.launch.py
 }
 
 # Execute current script
