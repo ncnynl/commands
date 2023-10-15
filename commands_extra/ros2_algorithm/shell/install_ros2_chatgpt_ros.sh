@@ -22,7 +22,7 @@ echo "This script is under DEV state !"
 
 # For ros install
 function _rcm_ros_install_() {
-    workspace="ros2_algorithm"
+    workspace="ros2_algorithm_ws"
     package_name="chatgpt_ros"
 
     # if installed ?
