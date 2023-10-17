@@ -46,12 +46,9 @@ function _rcm_ros_install_() {
         fi
         cd ~/$workspace/src
 
-        echo "Configure git proxy"
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
-        
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        git clone https://github.com/aniskoubaa/rosgpt
+        git clone https://gitee.com/ncnynl/rosgpt
 
         echo "Install related dependencies by rosdep"
         cd ~/$workspace/
@@ -74,12 +71,16 @@ function _rcm_ros_install_() {
         fi
 
         # success
-        if ! grep -Fq "$workspace/install/setup.bash" ~/.bashrc
+        if ! grep -Fq "OPENAI_API_KEY" ~/.bashrc
         then        
             echo 'export OPENAI_API_KEY=your_api_key' >> ~/.bashrc
         fi
         
         echo "ROS $package_name installed successfully location is: ~/$workspace/src/$package_name "
+
+        # I want that you move 1 meter forward speed 0.2 
+        # rotate 60 degrees counter clockwise velocity 10
+        # 直行3米，旋转180度
     fi
 }
 

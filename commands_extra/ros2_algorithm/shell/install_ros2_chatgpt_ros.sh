@@ -66,7 +66,7 @@ function _rcm_ros_install_() {
             echo "Has been inited before! Please check ~/.bashrc"
         fi
 
-        if ! grep -Fq "$workspace/install/setup.bash" ~/.bashrc
+        if ! grep -Fq "OPENAI_API_KEY" ~/.bashrc
         then
             echo 'export OPENAI_API_KEY=your_api_key' >> ~/.bashrc
         fi
