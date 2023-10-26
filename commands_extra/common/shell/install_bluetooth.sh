@@ -49,40 +49,86 @@ function _rcm_run_() {
         echo "Configure var-run-sdp.path"
         sudo usermod -G bluetooth -a $USER
 
-        echo "########################################" | sudo tee /etc/systemd/system/var-run-sdp.path
-        echo "/etc/systemd/system/var-run-sdp.path"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "########################################"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo ""  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "[Unit]"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "Descrption=Monitor /var/run/sdp"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo ""  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "[Install]"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "WantedBy=bluetooth.service"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo ""  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "[Path]"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "PathExists=/var/run/sdp"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
-        echo "Unit=var-run-sdp.service"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "########################################" | sudo tee /etc/systemd/system/var-run-sdp.path
+        # echo "/etc/systemd/system/var-run-sdp.path"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "########################################"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo ""  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "[Unit]"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "Descrption=Monitor /var/run/sdp"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo ""  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "[Install]"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "WantedBy=bluetooth.service"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo ""  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "[Path]"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "PathExists=/var/run/sdp"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
+        # echo "Unit=var-run-sdp.service"  | sudo tee -a /etc/systemd/system/var-run-sdp.path
 
-        echo "Configure bluetvar-run-sdp.serviceooth"
-        echo "########################################" | sudo tee  /etc/systemd/system/var-run-sdp.service
-        echo "/etc/systemd/system/var-run-sdp.service:" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "########################################" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "[Unit]" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "Description=Set permission of /var/run/sdp" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "" | sudo tee -a /etc/systemd/system/var-run-sdp.service
-        echo "[Install]" | sudo tee -a  /etc/systemd/system/var-run-sdp.service
-        echo "RequiredBy=var-run-sdp.path" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "" | sudo tee -a  /etc/systemd/system/var-run-sdp.service
-        echo "[Service]" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "Type=simple" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
-        echo "ExecStart=/bin/chgrp bluetooth /var/run/sdp" | sudo tee -a /etc/systemd/system/var-run-sdp.service
+# to file
+# SDPPATH='/etc/systemd/system/var-run-sdp.path'
+# cat > ${SDPPATH} <<- EOF
+# EOF 
+
+# to var 
+sudo cat > /etc/systemd/system/var-run-sdp.path <<_EOF_
+########################################
+/etc/systemd/system/var-run-sdp.path
+########################################
+
+[Unit]
+Descrption=Monitor /var/run/sdp
+
+[Install]
+WantedBy=bluetooth.service
+
+[Path]
+PathExists=/var/run/sdp
+Unit=var-run-sdp.service
+_EOF_  
+
+        # echo "Configure bluetvar-run-sdp.serviceooth"
+        # echo "########################################" | sudo tee  /etc/systemd/system/var-run-sdp.service
+        # echo "/etc/systemd/system/var-run-sdp.service:" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "########################################" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "[Unit]" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "Description=Set permission of /var/run/sdp" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "" | sudo tee -a /etc/systemd/system/var-run-sdp.service
+        # echo "[Install]" | sudo tee -a  /etc/systemd/system/var-run-sdp.service
+        # echo "RequiredBy=var-run-sdp.path" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "" | sudo tee -a  /etc/systemd/system/var-run-sdp.service
+        # echo "[Service]" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "Type=simple" | sudo tee  -a /etc/systemd/system/var-run-sdp.service
+        # echo "ExecStart=/bin/chgrp bluetooth /var/run/sdp" | sudo tee -a /etc/systemd/system/var-run-sdp.service
+
+sudo cat > /etc/systemd/system/var-run-sdp.service <<_EOF_
+########################################
+/etc/systemd/system/var-run-sdp.service:
+########################################
+
+[Unit]
+Description=Set permission of /var/run/sdp
+
+[Install]
+RequiredBy=var-run-sdp.path
+
+[Service]
+Type=simple
+ExecStart=/bin/chgrp bluetooth /var/run/sdp
+_EOF_
 
 
         #/etc/systemd/system/bluetooth.target.wants/bluetooth.service
+        # /lib/systemd/system/bluetooth.service
         echo "Configure bluetooth.service"
-        sudo sed  "s/bluetooth\/bluetoothd/bluetooth\/bluetoothd -C/"g -i /etc/systemd/system/bluetooth.target.wants/bluetooth.service
-        sudo sed "9 aExecStartPost=\/bin\/chmod 662 \/var\/run\/sdp" -i /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+        if [ -f /etc/systemd/system/bluetooth.target.wants/bluetooth.service ]; then 
+            sudo sed  "s/bluetooth\/bluetoothd/bluetooth\/bluetoothd -C/"g -i /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+            sudo sed "9 aExecStartPost=\/bin\/chmod 662 \/var\/run\/sdp" -i /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+        fi 
+
+        if [ -f /lib/systemd/system/bluetooth.service ]; then 
+            sudo sed  "s/bluetooth\/bluetoothd/bluetooth\/bluetoothd -C/"g -i /lib/systemd/system/bluetooth.service
+            sudo sed "9 aExecStartPost=\/bin\/chmod 662 \/var\/run\/sdp" -i /lib/systemd/system/bluetooth.service
+        fi         
 
         echo "restart bluetooth"
         sudo systemctl daemon-reload
@@ -99,7 +145,9 @@ function _rcm_run_() {
         wget https://gitee.com/ncnynl/ailibot2_app/raw/master/APK/ailibot2_app.apk
         wget https://gitee.com/ncnynl/ailibot2_app/raw/master/teleop_bluetooth.py
 
-        echo "USAGE:"
+        echo "Please reboot PC"
+
+        echo "After reboot , follow USAGE:"
         echo "1. Install ~/tools/ailibot2_app/ailibot2_app.apk to mobilephone"
         echo "2. Pair bluetooth mobilephone and PC"
         echo "3. run script: python3 ~/tools/ailibot2_app/teleop_bluetooth.py"
