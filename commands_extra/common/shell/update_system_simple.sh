@@ -148,6 +148,19 @@ setTencent(){
 	sed -i 's/archive.ubuntu.com/mirrors.cloud.tencent.com/'g /etc/apt/sources.list
 }
 
+setPorts(){
+	if [[ -f /etc/apt/sources.list.bak ]]; then
+		echo -e " ${GREEN}sources.list.bak exists${PLAIN}"
+	else
+		mv /etc/apt/sources.list{,.bak}
+	fi
+
+	[ -f /etc/apt/sources.list ] && rm /etc/apt/sources.list
+
+	echo "deb http://ports.ubuntu.com/ xenial main restricted universe multiverse" > /etc/apt/sources.list
+}
+
+
 
 
 restore(){
@@ -164,7 +177,8 @@ setSources(){
 	getAbout
 	updateInit
 	echo "请问你需要变更系统源吗? 不需要的话，直接回车即可"
-	echo "ubuntu官方源请输入 - ubu"
+	echo "ubuntu官方archive源请输入 - ubu"
+	echo "ubuntu官方ports源请输入 - ports"
 	echo "清华大学源请输入 - tsinghua"
 	echo "中国科学技术大学源请输入 - ustc"
 	echo "阿里云源请输入 - aliyun"
@@ -177,6 +191,8 @@ setSources(){
 	case $para in
 		'ubu'|'-ubu'|'--ubu' )
 			setUbuntu;;
+		'ports'|'-ports'|'--ports' )
+			setPorts;;			
 		'ustc'|'-ustc'|'--ustc' )
 			setUbuntu;setUstc;;
 		'tsinghua'|'-tsinghua'|'--tsinghua' )
