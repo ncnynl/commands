@@ -36,4 +36,16 @@
 # 	echo "rsync is not exits"
 # fi
 
-echo "$(printf '%s' " - 命令格式: rcm dddd dddd [查看代码](#ddddd)")"  > DOCUMENT.md
+# echo "$(printf '%s' " - 命令格式: rcm dddd dddd [查看代码](#ddddd)")"  > DOCUMENT.md
+
+version="3.22.6"
+echo $verion
+version_sub=${version%.*}
+echo $version_sub
+package_name="cmake-$version"
+echo $package_name
+package_name_gz=$package_name".tar.gz"
+echo $package_name_gz
+url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz"
+echo $url
+

@@ -18,8 +18,9 @@ echo "$(gettext "install_ros2_whisper related usage")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
-echo "This script is under DEV state !"
+echo "This script is under DEV state  !"
 echo "Source： https://github.com/ros-ai/ros2_whisper"
+echo "Note:  cmake > 3.17"
 
 # For ros install
 function _rcm_ros_install_() {
