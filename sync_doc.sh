@@ -11,7 +11,7 @@
 ################################################################
 
 #Document Format 
-
+url="https://gitee.com/ncnynl/commands/blob/master/commands_extra/"
 source ${HOME}/commands/cs_utils.sh
 
 function create_markdown_document(){
@@ -45,7 +45,7 @@ function create_markdown_document(){
 
                         if [[ $script_desc ]]; then
                             echo "$(printf '%s' "##  第 $i 条命令 ")"  >> ${HOME}/tools/commands/DOCUMENT.md
-                            echo "$(printf '%s' " - 命令格式: rcm $dir_name $script_name")"  >> ${HOME}/tools/commands/DOCUMENT.md
+                            echo "$(printf '%s' " - 命令格式: rcm $dir_name $script_name [查看代码](#${url}${file})")"  >> ${HOME}/tools/commands/DOCUMENT.md
                             echo "$(printf '%s' " - 中文介绍: $script_desc")"  >> ${HOME}/tools/commands/DOCUMENT.md
                             echo "$(printf '%s' " - English Desc: $f_script_desc")"  >> ${HOME}/tools/commands/DOCUMENT.md
                         fi   

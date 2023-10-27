@@ -31,7 +31,9 @@
 #echo $file_name
 #echo ${file_name##*/}
 
-rsync_exits=$(which is rsyn)
-if [ ! $rsync_exits ]; then 
-	echo "rsync is not exits"
-fi
+# rsync_exits=$(which is rsyn)
+# if [ ! $rsync_exits ]; then 
+# 	echo "rsync is not exits"
+# fi
+
+echo "$(printf '%s' " - 命令格式: rcm dddd dddd [查看代码](#ddddd)")"  > DOCUMENT.md
