@@ -24,8 +24,6 @@ _pid_kill_(){
     if [ ${PIDCOUNT} -gt 0 ] ; then  
         echo "There are ${PIDCOUNT} process contains name[$1]" 
         echo "Program is:"
-        ps -ef | grep $1 | grep -v "grep" | grep -v "pidkill" 
-        
         PID=`ps -ef | grep $1 | grep -v "grep" | grep -v "pidkill" | awk '{print $2}'` ;
         echo "$1 's PID is: $PID"
         kill -9  ${PID};
