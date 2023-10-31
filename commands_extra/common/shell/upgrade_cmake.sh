@@ -25,18 +25,18 @@ echo "不能使用 sudo apt-get remove cmake卸载低版本cmake后再重装高�
 echo "SOURCE: https://cmake.org/files/"
 
 function _rcm_run_() {
-    version="3.22.6"
-    version_sub=${version%.*}
-    package_name="cmake-$version"
-    package_name_gz=$package_name".tar.gz"
-    url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz"
-
-    if [ $1 !="" ]; then 
+    if [ $1 ]; then 
         version=$1
         version_sub=${version%.*}
         package_name="cmake-$version"
         package_name_gz=$package_name".tar.gz"
-        url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz"   
+        url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz" 
+    else
+        version="3.22.6"
+        version_sub=${version%.*}
+        package_name="cmake-$version"
+        package_name_gz=$package_name".tar.gz"
+        url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz"
     fi
 
     echo "version is : $version"
@@ -104,7 +104,7 @@ EOF
 function rcm_execute() {
     local debug=0
 
-    local ARGS=`getopt -o hekxv: --long help,edit,delete,debug,v: -n 'Error' -- "$@"`
+    local ARGS=`getopt -o hekxv: --long help,edit,delete,debug,version: -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         echo "Invalid option..." >&2;
         exit 1;
