@@ -37,7 +37,12 @@ function _rcm_run_() {
         # python3 -m pip install --upgrade pip seteptools wheel
         # pip3 install pybluez
         # install newest version
-        pip3 install git+https://github.com/pybluez/pybluez.git#egg=pybluez
+        # pip3 install pybluez
+        cd ~/tools/
+        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+        git clone https://github.com/pybluez/pybluez
+        cd pybluez
+        pip3 install .
 
         echo "Go to workspace"
         if [ ! -d ~/tools/ailibot2_app ]; then
