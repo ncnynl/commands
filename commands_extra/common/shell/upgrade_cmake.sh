@@ -64,7 +64,7 @@ function _rcm_run_() {
         #run import
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        wget 
+        wget $url
 
         echo "Build the code"
         tar -xvzf $package_name_gz
