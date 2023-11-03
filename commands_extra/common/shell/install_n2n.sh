@@ -47,7 +47,7 @@ sudo apt install autogen autoconf -y
 echo ""
 echo "Download source"
 cd ~/$workspace/
-git clone -b 3.0-stable https://ghproxy.com/https://github.com/ntop/n2n n2n-3.0
+git clone -b 3.0-stable https://github.com/ntop/n2n n2n-3.0
 
 echo ""
 echo "Install rosdeps"
