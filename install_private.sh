@@ -21,7 +21,7 @@ function install_private()
         hint "Begin to sync file to commands_extra!!"
 
         #rsync
-        rsync -azv ~/tools/commands_private/* ~/tools/commands/commands_extra/
+        rsync -azv --exclude='README.md' ~/tools/commands_private/* ~/tools/commands/commands_extra/
 
         #install
         rcm system build
