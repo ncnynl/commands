@@ -26,6 +26,8 @@ function sync_private()
     # keep _dir
     rsync -azv ~/tools/commands/commands_extra/_* ~/tools/commands_private/
 
+    rsync -azv --include="_*/shell/.description" ~/tools/commands/commands_extra/_*   ~/tools/commands_private/
+
     # keep dir/_*.sh
     rsync -azv --delete --prune-empty-dirs --include='*/' --include='_*.sh' --exclude='*'  ~/tools/commands/commands_extra/  ~/tools/commands_private/
     
