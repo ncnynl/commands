@@ -70,7 +70,8 @@ function _rcm_run_() {
         wget $url
 
         echo "Build the code"
-        sudo dpkg -i $package_name
+        # sudo dpkg -i $package_name
+        sudo apt install -fy ./$package_name
 
     fi
 }
