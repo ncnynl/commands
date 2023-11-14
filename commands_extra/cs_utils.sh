@@ -75,7 +75,7 @@ function hint() {
 #    echo to stdout
 #######################################
 function is_empty_dir(){ 
-    return `ls -A $1|wc -w`
+    echo `ls -A $1|wc -w`
 }
 
 #######################################
@@ -118,3 +118,59 @@ function while_read_desc(){
         fi        
     done < $1
 }
+
+#######################################
+# check url if exists
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function check_url()
+{
+   filestatus=$(curl -s -m 5 -IL $1|grep 200)
+   if [ ${#filestatus} != 0 ]; then 
+    echo 1
+   else 
+    echo 0
+   fi
+}
+
+#######################################
+# check cpu 
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    x86_64, aarch64, armv7l
+#######################################
+function check_cpu()
+{
+    echo $(uname -m)
+}
+
+#######################################
+# check system 
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    18.04,20.04,22.04,23.04,24.04
+#######################################
+function check_system()
+{
+    echo $(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+}
+

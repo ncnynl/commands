@@ -38,14 +38,57 @@
 
 # echo "$(printf '%s' " - 命令格式: rcm dddd dddd [查看代码](#ddddd)")"  > DOCUMENT.md
 
-version="3.22.6"
-echo $verion
-version_sub=${version%.*}
-echo $version_sub
-package_name="cmake-$version"
-echo $package_name
-package_name_gz=$package_name".tar.gz"
-echo $package_name_gz
-url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz"
-echo $url
+# version="3.22.6"
+# echo $verion
+# version_sub=${version%.*}
+# echo $version_sub
+# package_name="cmake-$version"
+# echo $package_name
+# package_name_gz=$package_name".tar.gz"
+# echo $package_name_gz
+# url="https://cmake.org/files/v$version_sub/cmake-$version.tar.gz"
+# echo $url
+
+
+# function is_empty_dir(){ 
+#     echo `ls -A $1|wc -w`
+# }
+
+# echo $(is_empty_dir $HOME)
+
+function check_url()
+{
+   filestatus=$(curl -s -m 5 -IL $1|grep 200)
+   if [ ${#filestatus} != 0 ]; then 
+    echo 1
+   else 
+    echo 0
+   fi
+}
+
+echo $(check_url 'https://www.ncnynl.comd')
+
+# function check_system()
+# {
+#     echo $(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+# }
+
+# function check_cpu()
+# {
+#     echo $(uname -m)
+# }
+
+# echo $(check_system)
+# echo $(check_cpu)
+
+
+str="x-ms-request-id: 7dd8cea3-901e-005a-4986-0487b2000000"  
+# str=""  
+echo ${#str} 
+
+if [ ${#str} != 0  ]; then 
+    echo "a"
+else 
+    echo "b"
+fi 
 
