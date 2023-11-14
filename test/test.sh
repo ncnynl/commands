@@ -31,10 +31,17 @@
 #echo $file_name
 #echo ${file_name##*/}
 
-# rsync_exits=$(which is rsyn)
-# if [ ! $rsync_exits ]; then 
-# 	echo "rsync is not exits"
-# fi
+function check_installed()
+{
+    is_exits=$(which is $1)
+    if [ ${#is_exits} != 0 ]; then 
+        echo 1
+    else
+        echo 0
+    fi
+}
+
+echo $(check_installed ros2)
 
 # echo "$(printf '%s' " - 命令格式: rcm dddd dddd [查看代码](#ddddd)")"  > DOCUMENT.md
 
@@ -56,17 +63,17 @@
 
 # echo $(is_empty_dir $HOME)
 
-function check_url()
-{
-   filestatus=$(curl -s -m 5 -IL $1|grep 200)
-   if [ ${#filestatus} != 0 ]; then 
-    echo 1
-   else 
-    echo 0
-   fi
-}
+# function check_url()
+# {
+#    filestatus=$(curl -s -m 5 -IL $1|grep 200)
+#    if [ ${#filestatus} != 0 ]; then 
+#     echo 1
+#    else 
+#     echo 0
+#    fi
+# }
 
-echo $(check_url 'https://www.ncnynl.comd')
+# echo $(check_url 'https://www.ncnynl.comd')
 
 # function check_system()
 # {
@@ -82,13 +89,13 @@ echo $(check_url 'https://www.ncnynl.comd')
 # echo $(check_cpu)
 
 
-str="x-ms-request-id: 7dd8cea3-901e-005a-4986-0487b2000000"  
-# str=""  
-echo ${#str} 
+# str="x-ms-request-id: 7dd8cea3-901e-005a-4986-0487b2000000"  
+# # str=""  
+# echo ${#str} 
 
-if [ ${#str} != 0  ]; then 
-    echo "a"
-else 
-    echo "b"
-fi 
+# if [ ${#str} != 0  ]; then 
+#     echo "a"
+# else 
+#     echo "b"
+# fi 
 

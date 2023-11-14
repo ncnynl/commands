@@ -128,7 +128,7 @@ function while_read_desc(){
 # Return:
 #   None
 # Outputs:
-#    echo to stdout
+#    1 or 0
 #######################################
 function check_url()
 {
@@ -174,3 +174,24 @@ function check_system()
     echo $(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
 }
 
+#######################################
+# check soft if installed 
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    1 or 0
+#######################################
+function check_installed()
+{
+    is_exits=$(which is $1)
+    if [ ${#is_exits} != 0 ]; then 
+        echo 1
+    else
+        echo 0
+    fi
+}
