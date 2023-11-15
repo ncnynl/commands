@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################################
-# Function : install_ros2_web_video_server related usage
-# Desc     : 安装源码ros2版web_video_server的脚本                        
+# Function : install_ros2_rosbridge_suite related usage
+# Desc     : 安装源码ros2版rosbridge_suite的脚本                        
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : Wed Nov 15 11:45:08 AM CST 2023                           
+# Date     : Wed Nov 15 01:11:53 PM CST 2023                           
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
@@ -14,7 +14,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "install_ros2_web_video_server related usage")"
+echo "$(gettext "install_ros2_rosbridge_suite related usage")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
@@ -23,7 +23,7 @@ echo "This script is under DEV state !"
 # For ros install
 function _rcm_ros_install_() {
     workspace="ros2_algorithm_ws"
-    package_name="web_video_server"
+    package_name="rosbridge_suite"
 
     # if installed ?
     if [ -d ~/$workspace/src/$package_name ]; then
@@ -31,7 +31,7 @@ function _rcm_ros_install_() {
     else
         echo "Install related system dependencies"
         sudo apt update
-        sudo apt install ros-${ROS_DISTRO}-async-web-server-cpp -y
+        # <code here>
 
         echo "Go to workspace"
         if [ ! -d ~/$workspace/ ]; then
@@ -44,7 +44,7 @@ function _rcm_ros_install_() {
         
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        git clone -b ros2 https://gitee.com/ncnynl/web_video_server
+        git clone -b ros2 https://gitee.com/ncnynl/rosbridge_suite
 
         echo "Install related dependencies by rosdep"
         cd ~/$workspace/
@@ -54,7 +54,7 @@ function _rcm_ros_install_() {
 
         echo "Build the code"
         cd ~/$workspace 
-        colcon build --symlink-install --packages-select $package_name
+        colcon build --symlink-install --packages-select rosapi rosapi_msgs rosbridge_library rosbridge_msgs rosbridge_server rosbridge_suite rosbridge_test_msgs
 
         echo "Add workspace to bashrc"
         #for ros2:
@@ -74,10 +74,10 @@ function _rcm_ros_install_() {
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    install_ros2_web_video_server --along --blong argb --clong argc
+    install_ros2_rosbridge_suite --along --blong argb --clong argc
 
 Description:
-    install_ros2_web_video_server related usage.
+    install_ros2_rosbridge_suite related usage.
 
 Option:
     --help|-h:                                         -- using help
@@ -133,7 +133,7 @@ function rcm_execute() {
     fi
 
     # start
-    echo "install_ros2_web_video_server start ..."
+    echo "install_ros2_rosbridge_suite start ..."
     _rcm_ros_install_ $*
 
     if [[ $debug == 1 ]]; then
