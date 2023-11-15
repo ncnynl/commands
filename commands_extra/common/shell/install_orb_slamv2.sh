@@ -43,7 +43,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace
-git clone https://ghproxy.com/https://github.com/stevenlovegrove/Pangolin  Pangolin_orb_slamv2
+git clone https://github.com/stevenlovegrove/Pangolin  Pangolin_orb_slamv2
 
 # 编译代码
 echo "Compile source"
@@ -59,7 +59,7 @@ make
 echo ""
 echo "Download source"
 cd ~/$workspace
-git clone https://ghproxy.com/https://github.com/EndlessLoops/ORB_SLAM2
+git clone https://github.com/EndlessLoops/ORB_SLAM2
 
 # 编译代码
 echo "Compile source"

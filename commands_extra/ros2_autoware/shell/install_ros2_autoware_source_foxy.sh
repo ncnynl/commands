@@ -114,7 +114,7 @@ function install_autoware_source()
 
     if [ ! -d ~/AutowareAuto/src/external/grid_map ]; then
         cd ~/AutowareAuto/src/external/
-        git clone -b foxy-devel https://ghproxy.com/https://github.com/ANYbotics/grid_map
+        git clone -b foxy-devel https://github.com/ANYbotics/grid_map
     fi    
 
     #googletest ament_add_google_benchmark
@@ -154,7 +154,7 @@ function install_autoware_source()
     # ---
 
     #openni2_camera
-    # git clone -b ros2 https://ghproxy.com/https://github.com/mikeferguson/openni2_camera
+    # git clone -b ros2 https://github.com/mikeferguson/openni2_camera
 
     #for pcap
     sudo apt install libpcap0.8-dev

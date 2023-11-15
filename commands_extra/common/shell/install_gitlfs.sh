@@ -29,7 +29,7 @@ filename="git-lfs-linux-amd64-v3.2.0.tar.gz"
 
 cd ~/tools 
 
-wget https://ghproxy.com/https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
+wget https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
 
 tar -zxvf git-lfs-linux-amd64-v3.2.0.tar.gz
 

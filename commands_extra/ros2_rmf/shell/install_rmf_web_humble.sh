@@ -57,7 +57,7 @@ sudo systemctl restart postgresql
 #downlaod
 #commit dbdfb532b653642bb91ea3ed553c399d60220c0c
 cd ~/ros2_rmf_ws/
-git clone -b main https://ghproxy.com/https://github.com/open-rmf/rmf-web
+git clone -b main https://github.com/open-rmf/rmf-web
 
 #安装，需要花一定时间安装
 cd ~/ros2_rmf_ws/rmf-web

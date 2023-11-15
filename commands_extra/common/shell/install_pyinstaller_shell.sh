@@ -28,7 +28,7 @@ mkdir ~/tools/
 
 cd ~/tools/
 
-git clone https://ghproxy.com/https://github.com/pyinstaller/pyinstaller
+git clone https://github.com/pyinstaller/pyinstaller
 
 #run cd
 

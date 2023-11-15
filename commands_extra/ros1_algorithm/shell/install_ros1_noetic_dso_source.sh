@@ -35,7 +35,7 @@ else
         echo -e "\033[33m Now installing Pangolin. \033[0m"
      
         cd ~/$workspace/
-        git clone https://ghproxy.com/https://github.com/stevenlovegrove/Pangolin
+        git clone https://github.com/stevenlovegrove/Pangolin
         cd ~/$workspace/Pangolin
         git checkout 25159034e62011b3527228e476cec51f08e87602
         mkdir build
@@ -48,7 +48,7 @@ else
     echo -e "\033[33m Now installing libzip. \033[0m"
 
     cd ~/$workspace/
-    git clone https://ghproxy.com/https://github.com/JakobEngel/dso.git
+    git clone https://github.com/JakobEngel/dso.git
 
     sudo apt-get install zlib1g-dev
     cd ~/$workspace/dso/thirdparty
@@ -76,7 +76,7 @@ else
         mkdir -p ~/$workspace/src
     fi
     cd ~/$workspace/src
-    git clone -b catkin https://ghproxy.com/https://github.com/JakobEngel/dso_ros
+    git clone -b catkin https://github.com/JakobEngel/dso_ros
     cd ..
     catkin_make
 

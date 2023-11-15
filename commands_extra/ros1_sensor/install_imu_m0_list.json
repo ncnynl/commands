@@ -22,7 +22,7 @@
             "name": "cd"
         },
         {
-            "command": "git clone https://ghproxy.com/https://github.com/ncnynl/razor_imu_m0_driver",
+            "command": "git clone https://github.com/ncnynl/razor_imu_m0_driver",
             "desc": "",
             "id": "13",
             "link": "",

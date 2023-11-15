@@ -49,22 +49,22 @@ else
     # 下载仓库
     echo "Dowload from turtlebot3 "
 
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 
     echo "Dowload from turtlebot3_msgs "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 
     echo "Dowload from turtlebot3_simulations "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 
     echo "Dowload from DynamixelSDK "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
     echo "Dowload from hls_lfcd_lds_driver "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
 
     echo "Dowload from ld08_driver "
-    git clone -b develop https://ghproxy.com/https://github.com/ROBOTIS-GIT/ld08_driver.git
+    git clone -b develop https://github.com/ROBOTIS-GIT/ld08_driver.git
 
     #run colcon
 

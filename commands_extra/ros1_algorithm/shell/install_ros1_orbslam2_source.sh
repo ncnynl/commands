@@ -29,7 +29,7 @@ else
 
     ## install Pangolin
     cd ~/$workspace/
-    git clone https://ghproxy.com/https://github.com/stevenlovegrove/Pangolin
+    git clone https://github.com/stevenlovegrove/Pangolin
     cd ~/$workspace/Pangolin
     git checkout 25159034e62011b3527228e476cec51f08e87602
     mkdir build

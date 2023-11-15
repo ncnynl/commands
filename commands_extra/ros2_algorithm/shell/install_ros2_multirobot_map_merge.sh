@@ -50,9 +50,9 @@ cd ~/$workspace/src
 
 
 if [ ${ROS_DISTRO} == 'humble' ];then
-    git clone -b feature/slam_toolbox_compat https://ghproxy.com/https://github.com/owen7900/m-explore-ros2
+    git clone -b feature/slam_toolbox_compat https://github.com/owen7900/m-explore-ros2
 else
-    git clone -b feature/slam_toolbox_compat https://ghproxy.com/https://github.com/robo-friends/m-explore-ros2
+    git clone -b feature/slam_toolbox_compat https://github.com/robo-friends/m-explore-ros2
 fi
 
 echo ""

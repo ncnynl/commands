@@ -45,7 +45,7 @@ function _rcm_run_() {
         cd ~/tools
 
         echo "Configure git proxy"
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com    
+        # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com    
 
         #run import
         echo "this will take a while to download"

@@ -43,8 +43,8 @@ cd ~/tools
 rm -rf $filename
 
 #download
-# wget https://ghproxy.com/https://github.com/balena-io/etcher/releases/download/v1.10.1/balenaEtcher-1.10.1-x64.AppImage
-wget https://ghproxy.com/https://github.com/balena-io/etcher/releases/download/v$version/balenaEtcher-$version-x64.AppImage
+# wget https://github.com/balena-io/etcher/releases/download/v1.10.1/balenaEtcher-1.10.1-x64.AppImage
+wget https://github.com/balena-io/etcher/releases/download/v$version/balenaEtcher-$version-x64.AppImage
 #别名
 rm -rf balenaEtcher
 ln -s $filename balenaEtcher

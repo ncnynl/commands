@@ -53,8 +53,8 @@ else
 
     #download package
     cd ~/$workspace/src
-    git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
-    git config --global url."https://ghproxy.com/https://raw.githubusercontent.com".insteadof https://raw.githubusercontent.com
+    # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+    # git config --global url."https://ghproxy.com/https://raw.githubusercontent.com".insteadof https://raw.githubusercontent.com
 
     git clone -b ros2 https://github.com/ros2/cartographer.git 
     git clone -b ros2 https://github.com/ros2/cartographer_ros.git 

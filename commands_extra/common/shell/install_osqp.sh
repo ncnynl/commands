@@ -23,7 +23,7 @@ echo "$(gettext "Install osqp")"
 function install_osqp()
 {
     cd ~/tools
-    wget https://ghproxy.com/https://github.com/osqp/osqp/releases/download/v0.6.2/complete_sources.tar.gz
+    wget https://github.com/osqp/osqp/releases/download/v0.6.2/complete_sources.tar.gz
     tar -zxvf complete_sources.tar.gz
     cd ~/tools/osqp
     mkdir build

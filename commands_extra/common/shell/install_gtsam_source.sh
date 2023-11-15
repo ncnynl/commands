@@ -33,7 +33,7 @@ if [ ! -d ~/tools ];then
 fi 
 
 cd ~/tools 
-git clone  -b 4.1.0 https://ghproxy.com/https://github.com/borglab/gtsam
+git clone  -b 4.1.0 https://github.com/borglab/gtsam
 
 # 编译代码
 echo "Compile source"

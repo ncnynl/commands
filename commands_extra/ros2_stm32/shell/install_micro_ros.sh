@@ -43,7 +43,7 @@ else
 
     # 获取仓库列表
     #replace https
-    git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+    # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
 
     #run import
     echo "this will take a while to download"

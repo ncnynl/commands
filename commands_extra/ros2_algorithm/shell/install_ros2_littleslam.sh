@@ -56,7 +56,7 @@ function _rcm_ros_install_() {
 
         ## download package
         cd ~/$workspace/src
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+        # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         git clone --recursive https://github.com/rsasaki0109/littleslam_ros2
 
         # rosdep

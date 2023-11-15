@@ -54,7 +54,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b $ROS_DISTRO https://ghproxy.com/https://github.com/chapulina/dolly
+git clone -b $ROS_DISTRO https://github.com/chapulina/dolly
 
 echo ""
 echo "Install rosdeps"

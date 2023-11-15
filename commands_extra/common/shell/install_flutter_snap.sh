@@ -43,11 +43,11 @@ androidsdk "platform-tools" "platforms;android-32" "build-tools;30.0.3" "cmdline
 # echo "add path to bashrc"
 # echo 'export PUB_HOSTED_URL=https://pub.flutter-io.cn' >> ~/.bashrc 
 # echo 'export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn' >> ~/.bashrc 
-# echo 'export FLUTTER_GIT_URL=https://ghproxy.com/https://github.com/flutter/flutter.git' >> ~/.bashrc 
+# echo 'export FLUTTER_GIT_URL=https://github.com/flutter/flutter.git' >> ~/.bashrc 
 
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-# export FLUTTER_GIT_URL=https://ghproxy.com/https://github.com/flutter/flutter.git
+# export FLUTTER_GIT_URL=https://github.com/flutter/flutter.git
 export FLUTTER_GIT_URL=https://github.com/flutter/flutter.git
 
 flutter doctor --android-licenses

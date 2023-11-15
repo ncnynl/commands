@@ -31,7 +31,7 @@ else
     # Clone this repository
     cd $HOME/tools
     
-    git clone https://ghproxy.com/https://github.com/electron/electron-quick-start
+    git clone https://github.com/electron/electron-quick-start
     # Go into the repository
     cd electron-quick-start
     # Install dependencies

@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "wget -O pyinstaller.tar.gz  https://ghproxy.com/https://github.com/pyinstaller/pyinstaller/tarball/develop",
+            "command": "wget -O pyinstaller.tar.gz  https://github.com/pyinstaller/pyinstaller/tarball/develop",
             "desc": "下载pyinstaller包",
             "id": "1",
             "link": "",

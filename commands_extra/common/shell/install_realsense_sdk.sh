@@ -34,7 +34,7 @@ if [ ! -d ~/tools ];then
 fi 
 
 cd ~/tools 
-git clone  https://ghproxy.com/https://github.com/IntelRealSense/librealsense
+git clone  https://github.com/IntelRealSense/librealsense
 
 # 编译代码
 echo "Compile source"

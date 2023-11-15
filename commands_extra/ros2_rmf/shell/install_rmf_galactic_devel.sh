@@ -50,63 +50,63 @@ cd ~/ros2_rmf_ws
 # echo "repositories:
 #   rmf/rmf_battery:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_battery.git
+#     url: https://github.com/open-rmf/rmf_battery.git
 #     version: 0.1.1
 #   rmf/rmf_internal_msgs:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_internal_msgs.git
+#     url: https://github.com/open-rmf/rmf_internal_msgs.git
 #     version: 1.4.0
 #   rmf/rmf_ros2:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_ros2.git
+#     url: https://github.com/open-rmf/rmf_ros2.git
 #     version: 1.4.0
 #   rmf/rmf_task:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_task.git
+#     url: https://github.com/open-rmf/rmf_task.git
 #     version: 1.0.0
 #   rmf/rmf_traffic:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic.git
+#     url: https://github.com/open-rmf/rmf_traffic.git
 #     version: 1.4.0
 #   rmf/rmf_utils:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_utils.git
+#     url: https://github.com/open-rmf/rmf_utils.git
 #     version: 1.3.0
 #   rmf/rmf_cmake_uncrustify:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_cmake_uncrustify.git
+#     url: https://github.com/open-rmf/rmf_cmake_uncrustify.git
 #     version: 1.2.0
 #   rmf/ament_cmake_catch2:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/ament_cmake_catch2.git
+#     url: https://github.com/open-rmf/ament_cmake_catch2.git
 #     version: 1.2.0
 #   rmf/rmf_visualization:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization.git
+#     url: https://github.com/open-rmf/rmf_visualization.git
 #     version: 1.2.1
 #   rmf/rmf_visualization_msgs:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization_msgs.git
+#     url: https://github.com/open-rmf/rmf_visualization_msgs.git
 #     version: 1.2.0
 #   rmf/rmf_building_map_msgs:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_building_map_msgs.git
+#     url: https://github.com/open-rmf/rmf_building_map_msgs.git
 #     version: 1.2.0
 #   rmf/rmf_simulation:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_simulation.git
+#     url: https://github.com/open-rmf/rmf_simulation.git
 #     version: 1.3.0
 #   rmf/rmf_traffic_editor:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic_editor.git
+#     url: https://github.com/open-rmf/rmf_traffic_editor.git
 #     version: 1.4.0
 #   demonstrations/rmf_demos:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/rmf_demos.git
+#     url: https://github.com/open-rmf/rmf_demos.git
 #     version: 1.3.1
 #   thirdparty/menge_vendor:
 #     type: git
-#     url: https://ghproxy.com/https://github.com/open-rmf/menge_vendor.git
+#     url: https://github.com/open-rmf/menge_vendor.git
 #     version: 1.0.0" > rmf.repos
 
 
@@ -115,75 +115,75 @@ cd ~/ros2_rmf_ws
 echo "repositories:
   rmf/rmf_battery:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_battery.git
+    url: https://github.com/open-rmf/rmf_battery.git
     version: galactic-devel
   rmf/rmf_internal_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_internal_msgs.git
+    url: https://github.com/open-rmf/rmf_internal_msgs.git
     version: galactic-devel
   rmf/rmf_api_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_api_msgs.git
+    url: https://github.com/open-rmf/rmf_api_msgs.git
     version: galactic-devel
   rmf/rmf_ros2:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_ros2.git
+    url: https://github.com/open-rmf/rmf_ros2.git
     version: galactic-devel
   rmf/rmf_task:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_task.git
+    url: https://github.com/open-rmf/rmf_task.git
     version: galactic-devel
   rmf/rmf_traffic:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic.git
+    url: https://github.com/open-rmf/rmf_traffic.git
     version: galactic-devel
   rmf/rmf_utils:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_utils.git
+    url: https://github.com/open-rmf/rmf_utils.git
     version: galactic-devel
   rmf/ament_cmake_catch2:
     type: git
-    url: https://ghproxy.com/https://ghproxy.com/https://ghproxy.com/https://github.com/open-rmf/ament_cmake_catch2.git
+    url: https://github.com/open-rmf/ament_cmake_catch2.git
     version: galactic-devel
   rmf/rmf_visualization:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization.git
+    url: https://github.com/open-rmf/rmf_visualization.git
     version: galactic-devel
   rmf/rmf_visualization_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization_msgs.git
+    url: https://github.com/open-rmf/rmf_visualization_msgs.git
     version: galactic-devel
   rmf/rmf_building_map_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_building_map_msgs.git
+    url: https://github.com/open-rmf/rmf_building_map_msgs.git
     version: galactic-devel
   rmf/rmf_simulation:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_simulation.git
+    url: https://github.com/open-rmf/rmf_simulation.git
     version: galactic-devel
   rmf/rmf_traffic_editor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic_editor.git
+    url: https://github.com/open-rmf/rmf_traffic_editor.git
     version: galactic-devel
   demonstrations/rmf_demos:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_demos.git
+    url: https://github.com/open-rmf/rmf_demos.git
     version: galactic-devel
   thirdparty/menge_vendor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/menge_vendor.git
+    url: https://github.com/open-rmf/menge_vendor.git
     version: master
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
+    url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
     version: main
   thirdparty/pybind11_json_vendor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/pybind11_json_vendor.git
+    url: https://github.com/open-rmf/pybind11_json_vendor.git
     version: main
   thirdparty/ros_ign:
     type: git
-    url: https://ghproxy.com/https://github.com/ignitionrobotics/ros_ign.git
+    url: https://github.com/ignitionrobotics/ros_ign.git
     version: galactic" > rmf.repos
 
 #下载源码 

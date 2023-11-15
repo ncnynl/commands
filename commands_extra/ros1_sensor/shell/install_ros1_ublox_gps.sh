@@ -46,7 +46,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone https://ghproxy.com/https://github.com/ncnynl/ublox
+git clone https://github.com/ncnynl/ublox
 
 echo ""
 echo "Install rosdeps"

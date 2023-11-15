@@ -22,7 +22,7 @@ echo "Arduono IDE 1.x  for ubuntu 18.04"
 echo "Make the OpenCR USB port be able to upload the Arduino IDE program without root permission"
 mkdir ~/tools
 cd ~/tools/
-wget https://ghproxy.com/https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCR/master/99-opencr-cdc.rules
+wget https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCR/master/99-opencr-cdc.rules
 sudo mv ./99-opencr-cdc.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger

@@ -834,7 +834,7 @@
             "name": "cd"
         },
         {
-            "command": "git clone https://ghproxy.com/https://github.com/ncnynl/razor_imu_m0_driver",
+            "command": "git clone https://github.com/ncnynl/razor_imu_m0_driver",
             "desc": "",
             "id": 120,
             "link": "",
@@ -1548,7 +1548,7 @@
             "name": "upgrade_template"
         },
         {
-            "command": "sudo wget https://ghproxy.com/https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb",
+            "command": "sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb",
             "desc": "下载GitHubDesktop工具",
             "id": 222,
             "link": "点击'启动'按钮,一键下载",
@@ -1583,7 +1583,7 @@
             "name": "update_rosdep_tsinghua"
         },
         {
-            "command": "wget -O pyinstaller.tar.gz  https://ghproxy.com/https://github.com/pyinstaller/pyinstaller/tarball/develop",
+            "command": "wget -O pyinstaller.tar.gz  https://github.com/pyinstaller/pyinstaller/tarball/develop",
             "desc": "下载pyinstaller包",
             "id": 227,
             "link": "",

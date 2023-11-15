@@ -22,7 +22,7 @@ exit 0
 #基于ubuntu20.04 galacitc版本安装需要指的版本
 #安装nvm
 # sudo apt update && sudo apt install curl
-# curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 # nvm install 14
 
 # pip3 install pipenv
@@ -50,7 +50,7 @@ source ~/.bashrc
 
 #downlaod
 cd ~/ros2_rmf_ws/
-git clone -b galactic https://ghproxy.com/https://github.com/open-rmf/rmf-web
+git clone -b galactic https://github.com/open-rmf/rmf-web
 cd rmf-web
 git checkout 5670bd9
 #安装，需要花一定时间安装

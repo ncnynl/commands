@@ -21,7 +21,7 @@ echo "$(gettext "Install vpn clash")"
 #https://github.com/Fndroid/clash_for_windows_pkg/releases
 #安装最新版本的vpn clash for ubuntu
 #下载
-wget "https://ghproxy.com/https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.20.7/Clash.for.Windows-0.20.7-x64-linux.tar.gz"
+wget "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.20.7/Clash.for.Windows-0.20.7-x64-linux.tar.gz"
 
 #解压
 tar -zxvf Clash.for.Windows-0.19.16-x64-linux.tar.gz

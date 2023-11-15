@@ -25,7 +25,7 @@ else
 
     cd $HOME/tools
     
-    git clone https://ghproxy.com/https://github.com/AtsushiSakai/PythonRobotics.git
+    git clone https://github.com/AtsushiSakai/PythonRobotics.git
 
     # Go into the repository
     cd PythonRobotics

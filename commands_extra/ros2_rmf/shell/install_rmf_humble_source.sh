@@ -60,71 +60,71 @@ cd ~/ros2_rmf_ws
 echo "repositories:
   rmf/rmf_battery:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_battery.git
+    url: https://github.com/open-rmf/rmf_battery.git
     version: humble
   rmf/rmf_internal_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_internal_msgs.git
+    url: https://github.com/open-rmf/rmf_internal_msgs.git
     version: humble
   rmf/rmf_api_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_api_msgs.git
+    url: https://github.com/open-rmf/rmf_api_msgs.git
     version: humble
   rmf/rmf_ros2:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_ros2.git
+    url: https://github.com/open-rmf/rmf_ros2.git
     version: humble
   rmf/rmf_task:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_task.git
+    url: https://github.com/open-rmf/rmf_task.git
     version: humble
   rmf/rmf_traffic:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic.git
+    url: https://github.com/open-rmf/rmf_traffic.git
     version: humble
   rmf/rmf_utils:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_utils.git
+    url: https://github.com/open-rmf/rmf_utils.git
     version: humble
   rmf/ament_cmake_catch2:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/ament_cmake_catch2.git
+    url: https://github.com/open-rmf/ament_cmake_catch2.git
     version: humble
   rmf/rmf_visualization:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization.git
+    url: https://github.com/open-rmf/rmf_visualization.git
     version: humble
   rmf/rmf_visualization_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_visualization_msgs.git
+    url: https://github.com/open-rmf/rmf_visualization_msgs.git
     version: humble
   rmf/rmf_building_map_msgs:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_building_map_msgs.git
+    url: https://github.com/open-rmf/rmf_building_map_msgs.git
     version: humble
   rmf/rmf_simulation:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_simulation.git
+    url: https://github.com/open-rmf/rmf_simulation.git
     version: humble
   rmf/rmf_traffic_editor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_traffic_editor.git
+    url: https://github.com/open-rmf/rmf_traffic_editor.git
     version: humble
   demonstrations/rmf_demos:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/rmf_demos.git
+    url: https://github.com/open-rmf/rmf_demos.git
     version: humble
   thirdparty/menge_vendor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/menge_vendor.git
+    url: https://github.com/open-rmf/menge_vendor.git
     version: humble
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
+    url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
     version: humble
   thirdparty/pybind11_json_vendor:
     type: git
-    url: https://ghproxy.com/https://github.com/open-rmf/pybind11_json_vendor.git
+    url: https://github.com/open-rmf/pybind11_json_vendor.git
     version: humble" > rmf.repos
 
 #下载源码 
@@ -146,7 +146,7 @@ sudo apt install clang lldb lld
 
 #Compile using clang
 #Update colcon mixin which is a one time step:
-colcon mixin add default https://ghproxy.com/https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
 colcon mixin update default
 
 

@@ -63,7 +63,7 @@ else
     git clone $branch  https://gitee.com/ncnynl/ailibot2_sim
 
     echo "Dowload realsense_ros_gazebo plugin"
-    git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+    # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
     git clone -b foxy-devel https://github.com/pal-robotics/realsense_gazebo_plugin
 
     # 编辑各个包

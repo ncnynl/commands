@@ -16,5 +16,5 @@ echo "$(gettext "Update ROS1 key")"
 
 #set Key
 sudo apt-get install curl 
-curl -s https://ghproxy.com/https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 sudo apt update

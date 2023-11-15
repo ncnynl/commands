@@ -47,7 +47,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b ${ROS_DISTRO}-devel https:://ghproxy.com/https://github.com/ros/ros_tutorials
+git clone -b ${ROS_DISTRO}-devel https://github.com/ros/ros_tutorials
 
 echo ""
 echo "Install rosdeps"

@@ -46,7 +46,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace
-git clone https://ghproxy.com/https://github.com/stevenlovegrove/Pangolin
+git clone https://github.com/stevenlovegrove/Pangolin
 
 # 编译代码
 echo "Compile source"

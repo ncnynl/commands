@@ -56,7 +56,7 @@ case ${ROS_DISTRO} in
     ;;
 esac 
 echo "Choose branch is ${branch}"
-git clone -b ${branch} https://ghproxy.com/https://github.com/ros-planning/navigation2.git
+git clone -b ${branch} https://github.com/ros-planning/navigation2.git
 
 echo ""
 echo "Install rosdeps"

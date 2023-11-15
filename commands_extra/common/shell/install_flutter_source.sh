@@ -22,18 +22,18 @@ echo "$(gettext "Install flutter linux source version")"
 echo "Install flutter source"
 cd $HOME/tools
 
-git clone https://ghproxy.com/https://github.com/flutter/flutter.git -b stable
+git clone https://github.com/flutter/flutter.git -b stable
 
 echo "add path to bashrc"
 echo 'export PATH=$PATH:$HOME/tools/flutter/bin' >> ~/.bashrc 
 echo 'export PUB_HOSTED_URL=https://pub.flutter-io.cn' >> ~/.bashrc 
 echo 'export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn' >> ~/.bashrc 
-echo 'export FLUTTER_GIT_URL=https://ghproxy.com/https://github.com/flutter/flutter.git' >> ~/.bashrc 
+echo 'export FLUTTER_GIT_URL=https://github.com/flutter/flutter.git' >> ~/.bashrc 
 
 export PATH=$PATH:$HOME/tools/flutter/bin
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export FLUTTER_GIT_URL=https://ghproxy.com/https://github.com/flutter/flutter.git
+export FLUTTER_GIT_URL=https://github.com/flutter/flutter.git
 
 which flutter dart
 

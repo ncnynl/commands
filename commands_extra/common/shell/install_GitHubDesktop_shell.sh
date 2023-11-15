@@ -20,7 +20,7 @@ echo "$(gettext "Install GitHubDesktop shell")"
 
 # 下载GitHubDesktop工具
 
-sudo wget https://ghproxy.com/https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb
+sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb
 
 #run install gdebi
 

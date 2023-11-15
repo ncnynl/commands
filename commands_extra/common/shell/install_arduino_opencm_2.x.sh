@@ -22,7 +22,7 @@ echo "Arduono IDE 2.x  for ubuntu 20.04 + "
 echo "Make the OpenCM9.04 USB port be able to upload the Arduino IDE program without root permission"
 mkdir ~/tools
 cd ~/tools/
-wget https://ghproxy.com/https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCM9.04/master/99-opencm-cdc.rules
+wget https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCM9.04/master/99-opencm-cdc.rules
 sudo mv ./99-opencm-cdc.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger
@@ -34,7 +34,7 @@ echo "Install the Arduino IDE (Linux)"
 echo "Go to https://www.arduino.cc/en/Main/Software download "
 
 
-wget https://ghproxy.com/https://github.com/arduino/arduino-ide/releases/download/2.1.0/arduino-ide_2.1.0_Linux_64bit.zip
+wget https://github.com/arduino/arduino-ide/releases/download/2.1.0/arduino-ide_2.1.0_Linux_64bit.zip
 unzip arduino-ide_2.1.0_Linux_64bit.zip
 
 echo "Install"

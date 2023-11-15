@@ -42,34 +42,34 @@ else
     # 下载仓库
     echo "Dowload DynamixelSDK"
 
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
     echo "Dowload from dynamixel-workbench "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
 
     echo "Dowload from dynamixel-workbench-msgs "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
 
     echo "Dowload from open_manipulator "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/open_manipulator.git
 
     echo "Dowload from open_manipulator_msgs "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
 
     echo "Dowload from open_manipulator_simulations "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_simulations.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/open_manipulator_simulations.git
 
     echo "Dowload from robotis_manipulator "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/robotis_manipulator.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/robotis_manipulator.git
 
     echo "Dowload from open_manipulator_applications "
-    git clone https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_applications.git
+    git clone https://github.com/ROBOTIS-GIT/open_manipulator_applications.git
 
     echo "Dowload from open_manipulator_controls "
-    git clone https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_controls.git
+    git clone https://github.com/ROBOTIS-GIT/open_manipulator_controls.git
 
     echo "Dowload from open_manipulator_dependencies "
-    git clone https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
+    git clone https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
 
 
     # 编辑各个包

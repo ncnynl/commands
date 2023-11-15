@@ -39,7 +39,7 @@ function _rcm_run_() {
         # install newest version
         # pip3 install pybluez
         cd ~/tools/
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+        # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         git clone https://github.com/pybluez/pybluez
         cd pybluez
         pip3 install .

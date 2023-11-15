@@ -29,7 +29,7 @@ else
     cd ~/$workspace/src
     # git clone https://github.com/Project-MANAS/slam_gmapping
     # https://github.com/charlielito/slam_gmapping/tree/feature/namespace_launch
-    git clone https://ghproxy.com/https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
+    git clone https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
 
     cd ~/$workspace/
     # rosdep update

@@ -68,7 +68,7 @@ if [ ! -d ~/tools ]; then
 fi 
 
 cd ~/tools 
-wget http://ghproxy.com/https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
+wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
 
 echo "Unzip firmware"
 tar -xvf opencr_update.tar.bz2

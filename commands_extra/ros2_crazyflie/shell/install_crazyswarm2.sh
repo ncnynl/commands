@@ -47,7 +47,7 @@ function _rcm_ros_install_() {
         cd ~/$workspace/src
 
         echo "Configure git proxy"
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+        # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         
         echo "this will take a while to download"
         echo "Dowload $package_name"

@@ -17,5 +17,5 @@ echo "$(gettext "Update ROS2 key")"
 #set Key
 sudo apt-get install curl 
 #sudo curl http://repo.ros2.org/repos.key | sudo apt-key add -
-sudo curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 sudo apt update

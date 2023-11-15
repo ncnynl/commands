@@ -42,7 +42,7 @@ sudo apt install python3-empy
 #download https://github.com/ros-infrastructure/robots.ros.org
 if [ ! -d ~/tools/robots.ros.org ]; then
     cd ~/tools/
-    git clone https://ghproxy.com/https://github.com/ros-infrastructure/robots.ros.org
+    git clone https://github.com/ros-infrastructure/robots.ros.org
 fi 
 
 #start

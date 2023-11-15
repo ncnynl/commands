@@ -32,7 +32,7 @@ if [ -d ~/$workspace/src/sllidar_ros2 ];then
 fi 
 
 echo "Configure git proxy"
-git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+# git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
 
 # 下载源码
 cd ~/$workspace/src

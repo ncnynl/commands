@@ -40,7 +40,7 @@ cd ~/ros1_sensor_ws/src/
 
 # 
 
-git clone https://ghproxy.com/https://github.com/ncnynl/razor_imu_m0_driver
+git clone https://github.com/ncnynl/razor_imu_m0_driver
 
 #run cd
 

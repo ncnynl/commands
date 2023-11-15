@@ -29,7 +29,7 @@ else
 
     ## install frontier_exploration
     cd ~/$workspace/src
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/paulbovbel/frontier_exploration
+    git clone -b melodic-devel https://github.com/paulbovbel/frontier_exploration
     cs -si update_rosdep_tsinghua
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y    
     cd ~/$workspace && catkin_make

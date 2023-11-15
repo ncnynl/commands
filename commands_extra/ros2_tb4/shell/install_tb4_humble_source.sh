@@ -45,7 +45,7 @@ else
 
     # 获取仓库列表
 
-    git clone -b humble https://ghproxy.com/https://github.com/turtlebot/turtlebot4_simulator.git
+    git clone -b humble https://github.com/turtlebot/turtlebot4_simulator.git
     #fix ignition-gui5 to ignition-gui6
     if [ ${ROS_DISTRO} == "humble" ]; then
         sed -i 's/ignition-gui5/ignition-gui6/'g ~/ros2_tb4_ws/src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins/package.xml
@@ -58,13 +58,13 @@ else
     # 下载仓库
     echo "Dowload from irobot_create_msgs "
 
-    git clone -b ${ROS_DISTRO} https://ghproxy.com/https://github.com/iRobotEducation/irobot_create_msgs.git
+    git clone -b ${ROS_DISTRO} https://github.com/iRobotEducation/irobot_create_msgs.git
 
     echo "Dowload from create3_sim support namespace"
-    # git clone -b humble https://ghproxy.com/https://github.com/iRobotEducation/create3_sim.git
+    # git clone -b humble https://github.com/iRobotEducation/create3_sim.git
     #commit e589410aa4ee483c4a3948c55a6b53c37118143a
-    git clone -b asoragna/${ROS_DISTRO} https://ghproxy.com/https://github.com/iRobotEducation/create3_sim.git
-    # git clone -b feat/create3_namespace https://ghproxy.com/https://github.com/sp-sophia-labs/create3_sim.git
+    git clone -b asoragna/${ROS_DISTRO} https://github.com/iRobotEducation/create3_sim.git
+    # git clone -b feat/create3_namespace https://github.com/sp-sophia-labs/create3_sim.git
     #fix ignition-gui5 to ignition-gui6
     if [ ${ROS_DISTRO} == "humble" ]; then
         sed -i 's/ignition-gui5/ignition-gui6/'g ~/ros2_tb4_ws/src/create3_sim/irobot_create_ignition/irobot_create_ignition_plugins/package.xml
@@ -123,16 +123,16 @@ else
     fi
 
     echo "Dowload from turtlebot4 common "
-    git clone -b ${ROS_DISTRO} https://ghproxy.com/https://github.com/turtlebot/turtlebot4.git
+    git clone -b ${ROS_DISTRO} https://github.com/turtlebot/turtlebot4.git
 
     echo "Dowload from turtlebot4 robot "
-    git clone -b ${ROS_DISTRO} https://ghproxy.com/https://github.com/turtlebot/turtlebot4_robot.git
+    git clone -b ${ROS_DISTRO} https://github.com/turtlebot/turtlebot4_robot.git
 
     echo "Dowload from turtlebot4_desktop "
-    git clone -b ${ROS_DISTRO} https://ghproxy.com/https://github.com/turtlebot/turtlebot4_desktop.git
+    git clone -b ${ROS_DISTRO} https://github.com/turtlebot/turtlebot4_desktop.git
 
     echo "Dowload from turtlebot4_tutorials "
-    git clone -b ${ROS_DISTRO}  https://ghproxy.com/https://github.com/turtlebot/turtlebot4_tutorials.git
+    git clone -b ${ROS_DISTRO}  https://github.com/turtlebot/turtlebot4_tutorials.git
 
 
     # 编辑各个包, 如果编译出错，重新编译一次

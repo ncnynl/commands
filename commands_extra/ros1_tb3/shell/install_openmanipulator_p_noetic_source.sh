@@ -61,38 +61,38 @@ else
 
     # 下载仓库
     echo "Dowload industrial_core"
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ros-industrial/industrial_core
+    git clone -b melodic-devel https://github.com/ros-industrial/industrial_core
 
     echo "Dowload DynamixelSDK"
 
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
     echo "Dowload from dynamixel-workbench "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
 
     echo "Dowload from dynamixel-workbench-msgs "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
 
     echo "Dowload from open_manipulator_p "
-    git clone -b melodic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p.git
+    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/open_manipulator_p.git
 
     echo "Dowload from open_manipulator_msgs "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
 
     echo "Dowload from open_manipulator_p_simulations "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p_simulations.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/open_manipulator_p_simulations.git
 
     echo "Dowload from robotis_manipulator "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/robotis_manipulator.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/robotis_manipulator.git
 
     echo "Dowload from open_manipulator_p_controls for moveit"
-    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_p_controls.git
+    git clone  https://github.com/ROBOTIS-GIT/open_manipulator_p_controls.git
 
     echo "Dowload from open_manipulator_dependencies for moveit"
-    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git   
+    git clone  https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git   
 
     echo "Dowload from open_manipulator_dependencies for AR"
-    git clone  https://ghproxy.com/https://github.com/ROBOTIS-GIT/open_manipulator_perceptions.git   
+    git clone  https://github.com/ROBOTIS-GIT/open_manipulator_perceptions.git   
     
 
 

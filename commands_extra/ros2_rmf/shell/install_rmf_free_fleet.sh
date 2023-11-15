@@ -49,9 +49,9 @@ sudo apt update && sudo apt install \
 mkdir -p ~/ros2_free_fleet_ws/src
 cd ~/ros2_free_fleet_ws/src
 #commit 4f2c897b206d55905f51222499cde5dd36a4c093
-git clone -b main https://ghproxy.com/https://github.com/open-rmf/free_fleet
+git clone -b main https://github.com/open-rmf/free_fleet
 #have installed in rmf
-# git clone -b main https://ghproxy.com/https://github.com/open-rmf/rmf_internal_msgs 
+# git clone -b main https://github.com/open-rmf/rmf_internal_msgs 
 
 #for humble need fix from differential to nav2_amcl::DifferentialMotionModel
 if [ ${ROS_DISTRO} == "humble" ]; then

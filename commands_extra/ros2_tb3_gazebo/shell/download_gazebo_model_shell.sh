@@ -32,11 +32,11 @@ echo "This will take 30-40 min to download. size more than 800M "
 #  下载gazebo模型
 
 if [ -d ~/.gazebo/models ];then
-    git clone https://ghproxy.com/https://github.com/osrf/gazebo_models gmodels
+    git clone https://github.com/osrf/gazebo_models gmodels
     cp -r gmodels/* models
     rm -rf gmodels
 else 
-    git clone https://ghproxy.com/https://github.com/osrf/gazebo_models models
+    git clone https://github.com/osrf/gazebo_models models
     #run rm model git
     echo "rm .git folder"
     # 删除.git目录

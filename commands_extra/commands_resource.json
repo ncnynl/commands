@@ -46,7 +46,7 @@
             "email": "",
             "id": "5",
             "name": "awesome-ros2",
-            "repo": "https://ghproxy.com/https://github.com/fkromer/awesome-ros2",
+            "repo": "https://github.com/fkromer/awesome-ros2",
             "type": 0,
             "usage": "https://fkromer.github.io/awesome-ros2/"
         },
@@ -76,7 +76,7 @@
             "email": "ncnynl/1043931@qq.com",
             "id": "8",
             "name": "ros_tutorials",
-            "repo": "https://ghproxy.com/https://github.com/ros/ros_tutorials",
+            "repo": "https://github.com/ros/ros_tutorials",
             "type": 0,
             "usage": "https://www.ncnynl.com/archives/202210/5512.html"
         },
@@ -86,7 +86,7 @@
             "email": "",
             "id": "9",
             "name": "geometry_tutorials",
-            "repo": "-b ros2  https://ghproxy.com/https://github.com/ros/geometry_tutorials",
+            "repo": "-b ros2  https://github.com/ros/geometry_tutorials",
             "type": 0,
             "usage": "https://docs.ros.org/en/foxy/Tutorials/Intermediate/Tf2/Introduction-To-Tf2.html"
         },
