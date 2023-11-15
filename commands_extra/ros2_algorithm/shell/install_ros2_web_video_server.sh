@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################################
-# Function : script_template related usage
-# Desc     : <desc>                        
+# Function : install_ros2_web_video_server related usage
+# Desc     : 安装源码ros2版web_video_server的脚本                        
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                           
+# Date     : Wed Nov 15 11:45:08 AM CST 2023                           
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # Company  : Foshan AiZheTeng Information Technology Co.,Ltd.                            
@@ -14,7 +14,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "script_template related usage")"
+echo "$(gettext "install_ros2_web_video_server related usage")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
@@ -22,18 +22,15 @@ echo "This script is under DEV state !"
 
 # For ros install
 function _rcm_ros_install_() {
-    workspace=""
-    package_name=""
+    workspace="ros2_algorithm_ws"
+    package_name="web_video_server"
 
-    echo "Please finish code first!"
-    return 
     # if installed ?
     if [ -d ~/$workspace/src/$package_name ]; then
         echo "$package_name have installed!!" 
     else
         echo "Install related system dependencies"
         sudo apt update
-        # <code here>
 
         echo "Go to workspace"
         if [ ! -d ~/$workspace/ ]; then
@@ -41,12 +38,12 @@ function _rcm_ros_install_() {
         fi
         cd ~/$workspace/src
 
-        echo "Configure git proxy"
-        git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+        # echo "Configure git proxy"
+        # git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
         
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        # <code here>
+        git clone -b ros2 https://gitee.com/ncnynl/web_video_server
 
         echo "Install related dependencies by rosdep"
         cd ~/$workspace/
@@ -56,35 +53,17 @@ function _rcm_ros_install_() {
 
         echo "Build the code"
         cd ~/$workspace 
-        # <code here>
-
-        #examples
-        #ros1: 
-        # catkin make
-        #ros2: 
-        # colcon build --symlink-install --packages-select $package_name
+        colcon build --symlink-install --packages-select $package_name
 
         echo "Add workspace to bashrc"
-        # <code here>
-
-        #examples
-        #for ros1:
-        # if ! grep -Fq "$workspace/devel/setup.bash" ~/.bashrc
-        # then
-        #     echo ". ~/$workspace/devel/setup.bash" >> ~/.bashrc
-        #     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-        # else
-        #     echo "Has been inited before! Please check ~/.bashrc"
-        # fi    
-
         #for ros2:
-        # if ! grep -Fq "$workspace/install/setup.bash" ~/.bashrc
-        # then
-        #     echo ". ~/$workspace/install/setup.bash" >> ~/.bashrc
-        #     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-        # else
-        #     echo "Has been inited before! Please check ~/.bashrc"
-        # fi
+        if ! grep -Fq "$workspace/install/setup.bash" ~/.bashrc
+        then
+            echo ". ~/$workspace/install/setup.bash" >> ~/.bashrc
+            echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
+        else
+            echo "Has been inited before! Please check ~/.bashrc"
+        fi
 
         # success
         echo "ROS $package_name installed successfully location is: ~/$workspace/src/$package_name "
@@ -94,10 +73,10 @@ function _rcm_ros_install_() {
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    script_template --along --blong argb --clong argc
+    install_ros2_web_video_server --along --blong argb --clong argc
 
 Description:
-    script_template related usage.
+    install_ros2_web_video_server related usage.
 
 Option:
     --help|-h:                                         -- using help
@@ -153,8 +132,8 @@ function rcm_execute() {
     fi
 
     # start
-    echo "script_template start ..."
-    # _rcm_ros_install_ $*
+    echo "install_ros2_web_video_server start ..."
+    _rcm_ros_install_ $*
 
     if [[ $debug == 1 ]]; then
         set +x

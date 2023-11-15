@@ -75,7 +75,7 @@ function hint() {
 #    echo to stdout
 #######################################
 function is_empty_dir(){ 
-    echo `ls -A $1|wc -w`
+    return `ls -A $1|wc -w`
 }
 
 #######################################
