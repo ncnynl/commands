@@ -31,13 +31,12 @@ function _rcm_run_() {
     echo "Install related system dependencies"
     sudo apt-get update
     sudo apt-get install -y screen ffmpeg
+
+    echo "USAGE: "
+    echo "nohup rcm common launch_ffmpeg_stream --start 1>/dev/null 2>&1 &" 
 }
 
-
 _stream_start_(){
-
-    screen -S ffmpeg_stream
-
     # 定义推流地址和推流码
     read -p "输入你的推流地址和推流码(rtmp协议):" rtmp
 
@@ -67,7 +66,7 @@ _stream_start_(){
     echo "rtmp: $rtmp"
     echo "watermark: $watermark"
     echo "folder: $folder" 
-    return 
+    
     if [ $watermark = "yes" ];then
         read -p "输入你的水印图片存放绝对路径,例如/home/ubuntu/Pictures/watermark.jpg (格式支持jpg/png/bmp):" image
 
@@ -104,7 +103,6 @@ _stream_start_(){
 
 # 停止推流
 _stream_stop_(){
-    screen -S ffmpeg_stream -X quit
     killall ffmpeg
 }
 
