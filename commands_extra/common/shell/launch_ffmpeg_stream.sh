@@ -31,12 +31,17 @@ function _rcm_run_() {
     sudo apt-get install -y screen ffmpeg
 
     echo "USAGE: "
+
+    echo "export FFMPEG_STREAM_URL=xxxxx"
+    echo "export FFMPEG_STREAM_VIDEOS=/home/ubuntu/Videos"
+    echo "export FFMPEG_STREAM_WATERMARK=/home/ubuntu/Pictures/watermark.jpg"
+
     echo "nohup rcm common launch_ffmpeg_stream --start 1>/dev/null 2>&1 &" 
 }
 
 _stream_start_(){
     # 定义推流地址和推流码
-    read -p "输入你的推流地址和推流码(rtmp协议):" rtmp
+    # read -p "输入你的推流地址和推流码(rtmp协议):" rtmp
 
     if [ ! $rtmp ]; then 
         rtmp=$FFMPEG_STREAM_URL
@@ -52,14 +57,14 @@ _stream_start_(){
     fi 
 
     # 定义视频存放目录
-    read -p "输入你的视频存放目录 (格式仅支持mp4,并且要绝对路径,例如/home/ubuntu/Videos):" folder
+    # read -p "输入你的视频存放目录 (格式仅支持mp4,并且要绝对路径,例如/home/ubuntu/Videos):" folder
 
     if [ ! $folder ]; then 
-        folder="/home/ubuntu/Videos"
+        folder=$FFMPEG_STREAM_VIDEOS
     fi
 
     # 判断是否需要添加水印
-    read -p "是否需要为视频添加水印?水印位置默认在右上方,需要较好CPU支持(yes/no):" watermark
+    # read -p "是否需要为视频添加水印?水印位置默认在右上方,需要较好CPU支持(yes/no):" watermark
 
     if [ ! $watermark ]; then
         watermark="no"
@@ -70,10 +75,10 @@ _stream_start_(){
     echo "folder: $folder" 
 
     if [ $watermark = "yes" ];then
-        read -p "输入你的水印图片存放绝对路径,例如/home/ubuntu/Pictures/watermark.jpg (格式支持jpg/png/bmp):" image
+        # read -p "输入你的水印图片存放绝对路径,例如/home/ubuntu/Pictures/watermark.jpg (格式支持jpg/png/bmp):" image
 
         if [ ! $image ]; then
-            image="/home/ubuntu/Pictures/watermark.jpg"
+            image=$FFMPEG_STREAM_IMG
         fi 
 
         echo -e "${yellow} 添加水印完成,程序将开始推流. ${font}"
