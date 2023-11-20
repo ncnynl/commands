@@ -38,6 +38,10 @@ _stream_start_(){
     # 定义推流地址和推流码
     read -p "输入你的推流地址和推流码(rtmp协议):" rtmp
 
+    if [ ! $rtmp ]; then 
+        rtmp=$FFMPEG_STREAM_URL
+    fi
+
     # 判断用户输入的地址是否合法
     if [[ $rtmp =~ "rtmp://" ]];then
         echo -e "${green} 推流地址输入正确,程序将进行下一步操作. ${font}"
