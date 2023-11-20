@@ -35,6 +35,9 @@ function _rcm_run_() {
 
 
 _stream_start_(){
+
+    screen -S ffmpeg_stream
+
     # 定义推流地址和推流码
     read -p "输入你的推流地址和推流码(rtmp协议):" rtmp
 
@@ -52,6 +55,7 @@ _stream_start_(){
 
     # 判断是否需要添加水印
     read -p "是否需要为视频添加水印?水印位置默认在右上方,需要较好CPU支持(yes/no):" watermark
+
     if [ $watermark = "yes" ];then
         read -p "输入你的水印图片存放绝对路径,例如/opt/image/watermark.jpg (格式支持jpg/png/bmp):" image
         echo -e "${yellow} 添加水印完成,程序将开始推流. ${font}"
@@ -65,6 +69,7 @@ _stream_start_(){
             done
         done
     fi
+    
     if [ $watermark = "no" ]
     then
         echo -e "${yellow} 你选择不添加水印,程序将开始推流. ${font}"
@@ -82,7 +87,7 @@ _stream_start_(){
 
 # 停止推流
 _stream_stop_(){
-    screen -S stream -X quit
+    screen -S ffmpeg_stream -X quit
     killall ffmpeg
 }
 
@@ -132,6 +137,7 @@ function rcm_execute() {
                 exit 1
                 ;;    
             -s|--start)
+                
                 _stream_start_ $*
                 exit 1
                 ;;  
