@@ -53,11 +53,28 @@ _stream_start_(){
     # 定义视频存放目录
     read -p "输入你的视频存放目录 (格式仅支持mp4,并且要绝对路径,例如/home/ubuntu/Videos):" folder
 
+    if [ ! $folder ]; then 
+        folder="/home/ubuntu/Videos"
+    fi
+
     # 判断是否需要添加水印
     read -p "是否需要为视频添加水印?水印位置默认在右上方,需要较好CPU支持(yes/no):" watermark
 
+    if [ ! $watermark ]; then
+        watermark="no"
+    fi 
+
+    echo "rtmp: $rtmp"
+    echo "watermark: $watermark"
+    echo "folder: $folder" 
+    return 
     if [ $watermark = "yes" ];then
-        read -p "输入你的水印图片存放绝对路径,例如/opt/image/watermark.jpg (格式支持jpg/png/bmp):" image
+        read -p "输入你的水印图片存放绝对路径,例如/home/ubuntu/Pictures/watermark.jpg (格式支持jpg/png/bmp):" image
+
+        if [ ! $image ]; then
+            image="/home/ubuntu/Pictures/watermark.jpg"
+        fi 
+
         echo -e "${yellow} 添加水印完成,程序将开始推流. ${font}"
         # 循环
         while true
@@ -69,7 +86,7 @@ _stream_start_(){
             done
         done
     fi
-    
+
     if [ $watermark = "no" ]
     then
         echo -e "${yellow} 你选择不添加水印,程序将开始推流. ${font}"
