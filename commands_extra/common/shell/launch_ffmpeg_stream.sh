@@ -16,9 +16,7 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "launch_ffmpeg_stream")"
 
-source ${HOME}/commands/cs_utils_ros.sh
-
-echo "This script is under DEV state !"
+source ${HOME}/commands/cs_utils.sh
 
 # 颜色选择
 red='\033[0;31m'
@@ -66,7 +64,7 @@ _stream_start_(){
     echo "rtmp: $rtmp"
     echo "watermark: $watermark"
     echo "folder: $folder" 
-    
+
     if [ $watermark = "yes" ];then
         read -p "输入你的水印图片存放绝对路径,例如/home/ubuntu/Pictures/watermark.jpg (格式支持jpg/png/bmp):" image
 
@@ -103,7 +101,7 @@ _stream_start_(){
 
 # 停止推流
 _stream_stop_(){
-    killall ffmpeg
+    kill_by_name ffmpeg
 }
 
 
