@@ -25,8 +25,6 @@ function _rcm_run_() {
     workspace="ros2_micro_ros_ws"
     package_name="micro_ros_setup"
 
-    echo "Please finish code first!"
-    return 
     # if installed ?
     if [ -d ~/$workspace/$package_name ]; then
         echo "You have installed $package_name, you can continue to install micro-ros-agent " 
@@ -43,8 +41,8 @@ function _rcm_run_() {
         echo "has Installed!"
         echo "run as :"  
         echo "ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 "
-    else 
-
+    else
+        echo "Pleae execute install_micro_ros first: rcm ros2_stm32 install_micro_ros"
     fi
 }
 
