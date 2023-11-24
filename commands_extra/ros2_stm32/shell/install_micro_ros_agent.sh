@@ -26,7 +26,7 @@ function _rcm_run_() {
     package_name="micro_ros_setup"
 
     # if installed ?
-    if [ -d ~/$workspace/$package_name ]; then
+    if [ -d ~/$workspace/src/$package_name ]; then
         echo "You have installed $package_name, you can continue to install micro-ros-agent " 
 
         cd ~/$workspace
