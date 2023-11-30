@@ -44,7 +44,7 @@ function _rcm_run_() {
         #run import
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        git clone https://gitlab.com/stm32flash/stm32flash
+        git clone -b v0.5 https://gitlab.com/stm32flash/stm32flash
 
         echo "Build the code"
         cd stm32flash
