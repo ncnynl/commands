@@ -26,8 +26,6 @@ function _rcm_run_() {
 
     package_name="bot_box"
 
-    echo "Please finish code first!"
-    return 
     # if installed ?
     if [ -d ~/tools/$package_name ]; then
         echo "$package_name have installed!!" 
