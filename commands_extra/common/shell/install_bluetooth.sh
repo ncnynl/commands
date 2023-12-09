@@ -33,6 +33,7 @@ function _rcm_run_() {
         
         echo "Install bluetooth dev"
         sudo apt-get install -y libbluetooth-dev
+        # https://ubuntu.pkgs.org/22.04/ubuntu-main-amd64/libbluetooth-dev_5.64-0ubuntu1_amd64.deb.html
 
         # python3 -m pip install --upgrade pip seteptools wheel
         # pip3 install pybluez
