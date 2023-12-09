@@ -10,9 +10,16 @@
 # URL: https://ncnynl.com                                      
 ################################################################
 
+source ${HOME}/commands/cs_variables.sh
+
 # ros var 
 ROS1LIST=('kinetic' 'melodic' 'noetic')
-ROS2LIST=('foxy' 'galactic' 'humble')
+ROS2LIST=('foxy' 'galactic' 'humble' 'iron' 'rolling')
+
+
+function have_tested(){
+  echo -e "${BLUE} This pachage have tested in $1 ${RESET}"
+}
 
 # check if exits, if not mkdir it
 function check_directory(){

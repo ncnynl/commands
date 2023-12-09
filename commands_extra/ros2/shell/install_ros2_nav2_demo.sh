@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################
-# Function : install_nav2_gps_demo related usage
+# Function : install_ros2_nav2_demo related usage
 # Desc     : 源码安装nav2导航包带gps功能的演示脚本                        
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -14,7 +14,7 @@
 ################################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "install_nav2_gps_demo related usage")"
+echo "$(gettext "install_ros2_nav2_demo related usage")"
 
 source ${HOME}/commands/cs_utils_ros.sh
 
@@ -22,7 +22,7 @@ echo "This script is under DEV state !"
 
 # For ros install
 function _rcm_ros_install_() {
-    workspace="ros2_nav2_ws"
+    workspace="ros2_nav2_demo_ws"
     package_name="navigation2_tutorials"
 
     # if installed ?
@@ -78,10 +78,10 @@ function _rcm_ros_install_() {
 function _rcm_usage_() {
     cat << EOF
 Usage:
-    install_nav2_gps_demo --along --blong argb --clong argc
+    install_ros2_nav2_demo --along --blong argb --clong argc
 
 Description:
-    install_nav2_gps_demo related usage.
+    install_ros2_nav2_demo related usage.
 
 Option:
     --help|-h:                                         -- using help
@@ -137,7 +137,7 @@ function rcm_execute() {
     fi
 
     # start
-    echo "install_nav2_gps_demo start ..."
+    echo "install_ros2_nav2_demo start ..."
     _rcm_ros_install_ $*
 
     if [[ $debug == 1 ]]; then

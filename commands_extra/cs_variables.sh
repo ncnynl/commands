@@ -23,11 +23,15 @@ UNDER=$(printf '\033[4m')
 RESET=$(printf '\033[m')
 PLAIN=$(printf '\033[0m')
 
+# echo -e "${RED}=====红色可替换部分=====${RESET}"
+
 SUCCESS=$(printf '[\033[32mOK\033[0m]')
 COMPLETE=$(printf '[\033[32mDone\033[0m]')
 WARN=$(printf '[\033[33mWARN\033[0m]')
 ERROR=$(printf '[\033[31mERROR\033[0m]')
 WORKING=$(printf '[\033[34mWORKING\033[0m]')
+
+# echo $SUCCESS
 
 # Var
 export CS_ROOT="${HOME}/commands"      #用于应用
