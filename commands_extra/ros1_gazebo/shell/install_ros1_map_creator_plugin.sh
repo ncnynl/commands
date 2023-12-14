@@ -39,7 +39,7 @@ else
     echo "this will take serveral min to download"
     # 下载仓库
     echo "Dowload collision_map_creator_plugin"
-    git clone  https://github.com/EndlessLoops/collision_map_creator_plugin
+    git clone  https://gitee.com/ncnynl/collision_map_creator_plugin
     cd collision_map_creator_plugin
     mkdir build
     cd build
