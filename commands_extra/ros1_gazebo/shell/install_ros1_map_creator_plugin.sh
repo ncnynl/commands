@@ -27,7 +27,7 @@ else
     sudo apt-get -y install protobuf-compiler
 
     # 新建工作空间
-    if [ ! -d ~/tools ]
+    if [ ! -d ~/tools ]; then
         mkdir -p ~/tools/
     fi 
 

@@ -129,9 +129,7 @@ PINK_COLOR='\E[1;35m'
 RES='\E[0m'
 
 echo -e "${RED_COLOR}=====红色可替换部分=====${RES}"
-
 echo -e "${GREEN_COLOR}=====绿色可替换部分=====${RES}"
-
 echo -e "${YELLOW_COLOR}=====×××可替换部分=====${RES}"
 
 echo -e "${BLUE_COLOR}=====蓝色可替换部分=====${RES}"
