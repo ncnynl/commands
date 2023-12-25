@@ -19,7 +19,7 @@ echo "$(gettext "Install base tools")"
 #https://askubuntu.com/questions/168069/problem-installing-vim
 
 echo "install git vim terminator ssh chromium-browser tree cheese "
-sudo apt install wget curl git vim terminator ssh chromium-browser tree cheese mesa-utils -y 
+sudo apt install wget curl git vim terminator ssh  tree cheese mesa-utils -y 
 
 echo "install video and audio tools"
 sudo apt install audacity simplescreenrecorder kazam vlc -y
