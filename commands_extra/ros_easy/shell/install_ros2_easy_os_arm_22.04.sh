@@ -23,20 +23,19 @@ echo "Not Yet Tested"
 
 pwd=$(pwd)      
 echo "install humble"
-sudo sh -c "$pwd/../ros2/shell/install_ros2_humble_arm.sh"
+rcm -si install_ros2_humble_arm.sh
 
 echo "install tools"
-sudo sh -c "$pwd/../common/shell/install_base_tools.sh"
+# rcm -si install_base_tools.sh
 
 echo "install vscode"
-sudo sh -c "$pwd/../common/shell/install_vscode.sh"
+# rcm -si install_vscode.sh
 
 # echo "install nomachine"
-# sudo sh -c "$pwd/../common/shell/install_nomachine.sh"
+# rcm -si install_nomachine.sh
 
 echo "install rosdep"
-cs -si update_rosdep_tsinghua
-# sudo sh -c "$pwd/../common/shell/install_rosdep_tsinghua.sh"
+rcm -si install_rosdep_tsinghua.sh
 
 # echo "remove files"
 # sudo sh -c "$pwd/../common/shell/remove_unuse_tools.sh"

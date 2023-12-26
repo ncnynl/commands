@@ -32,21 +32,20 @@ rcm -si install_ros1_noetic.sh
 
 echo "install tools"
 # sudo sh -c "$pwd/../common/shell/install_base_tools.sh"
-rcm -si install_base_tools.sh
+# rcm -si install_base_tools.sh
 
 echo "install vscode"
 # sudo sh -c "$pwd/../common/shell/install_vscode.sh"
-rcm -si install_vscode.sh
+# rcm -si install_vscode.sh
 
 echo "install nomachine"
 # sudo sh -c "$pwd/../common/shell/install_nomachine.sh"
-rcm -si install_nomachine.sh
+# rcm -si install_nomachine.sh
 
 echo "install rosdep"
 # sudo sh -c "$pwd/../common/shell/install_rosdep_tsinghua.sh"
 # rcm -si install_rosdep_tsinghua.sh
 rcm -si update_rosdep_tsinghua
-
 
 echo "remove files"
 # sudo sh -c "$pwd/../common/shell/remove_unuse_tools.sh"
@@ -58,9 +57,9 @@ rcm -si remove_zsys.sh
 
 echo "install turtlebot3"
 # sudo sh -c "$pwd/../ros2_tb3/shell/install_tb3_galactic_apt.sh"
-rcm -si install_tb3_galactic_apt.sh
+# rcm -si install_tb3_galactic_apt.sh
 
 echo "install ignition"
 # sudo sh -c "$pwd/../ros2_ignition/shell/install_ignition_galactic_apt.sh"
-rcm -si install_ignition_galactic_apt.sh
+# rcm -si install_ignition_galactic_apt.sh
 

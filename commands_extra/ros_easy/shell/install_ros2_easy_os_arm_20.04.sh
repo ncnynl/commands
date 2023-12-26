@@ -24,28 +24,28 @@ exit 0
 pwd=$(pwd)      
 
 echo "install foxy"
-sudo sh -c "$pwd/../ros2/shell/install_ros2_foxy_arm.sh"
+rcm -si install_ros2_foxy_arm.sh
 
 echo "install noetic"
-sudo sh -c "$pwd/../ros1/shell/install_ros1_noetic_arm.sh"
+rcm -si install_ros1_noetic_arm.sh
 
 echo "install tools"
-sudo sh -c "$pwd/../common/shell/install_base_tools.sh"
+# rcm -si install_base_tools.sh
 
 echo "install vscode"
-sudo sh -c "$pwd/../common/shell/install_vscode.sh"
+# rcm -si install_vscode.sh
 
 echo "install nomachine"
-# sudo sh -c "$pwd/../common/shell/install_nomachine.sh"
+# rcm -si install_nomachine.sh
 
 echo "install rosdep"
-sudo sh -c "$pwd/../common/shell/install_rosdep_tsinghua.sh"
+rcm -si install_rosdep_tsinghua.sh
 
 echo "remove files"
-# sudo sh -c "$pwd/../common/shell/remove_unuse_tools.sh"
+rcm -si remove_unuse_tools.sh
 
 echo "remove zsys"
-# sudo sh -c "$pwd/../common/shell/remove_zsys.sh"
+rcm -si remove_zsys.sh
 
 echo "install turtlebot3"
-sudo sh -c "$pwd/../ros2_tb3/shell/install_tb3_foxy_apt.sh"
+# rcm -si install_tb3_foxy_apt.sh
