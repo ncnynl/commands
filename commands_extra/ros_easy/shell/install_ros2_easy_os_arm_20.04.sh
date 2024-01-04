@@ -45,7 +45,7 @@ echo "remove files"
 rcm -si remove_unuse_tools.sh
 
 echo "remove zsys"
-rcm -si remove_zsys.sh
+# rcm -si remove_zsys.sh
 
 echo "install turtlebot3"
 # rcm -si install_tb3_foxy_apt.sh
