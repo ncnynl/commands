@@ -35,11 +35,20 @@ function rm_package(){
         sudo rm -rf /usr/local/commands/
     fi 
 
-    #delete shell version
+    #delete shell cs
     if [ -L /usr/bin/cs ]; then
         sudo rm -f /usr/bin/cs
     fi 
 
+    #delete shell rcm
+    if [ -L /usr/bin/rcm ]; then
+        sudo rm -f /usr/bin/rcm
+    fi
+
+    #delete source folder
+    if [ -d /tools/commands ]; then
+        sudo rm -f /tools/commands
+    fi
 
     echo 0
 }
