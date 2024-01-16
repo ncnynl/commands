@@ -1016,7 +1016,17 @@ function commands() {
         sed -i '/insteadof/d' ~/.gitconfig
         echo "github.com proxy is unsetted!!, please check ~/.gitconfig/"
         cat ~/.gitconfig
-        ;;   
+        ;;  
+    '-hp'|'https_proxy')
+        git config --global http.proxy http://${2}:${3}
+        git config --global https.proxy https://${2}:${3}
+        cat ~/.gitconfig
+        ;;
+    '-nhp'|'no_https_proxy')
+        git config --global --unset http.proxy
+        git config --global --unset https.proxy
+        cat ~/.gitconfig
+        ;;             
     '-d'|'download')
         #default use ghproxy.com
         if [ $2 ]; then 
@@ -1159,8 +1169,10 @@ function commands() {
         echo "-b | build:      $(gettext "Build install script through template")"                        
         echo "-u | upgrade:    $(gettext "Upgrade RCM")"
         echo "-v | version:    $(gettext "Show RCM version") "
-        echo "-p | proxy:    $(gettext "Set github proxy") "
+        echo "-p | proxy:       $(gettext "Set github proxy") "
         echo "-np | noproxy:    $(gettext "Unset github proxy") "
+        echo "-hp | https_proxy:   $(gettext "Set git proxy like as {IP} {PORT} | 192.168.0.16 10811") "
+        echo "-nhp | no_https_proxy:  $(gettext "Unset git proxy") "        
         echo "-d | download:    $(gettext "Download github , gitee repo code cs -d URL Position version") "
         echo "id:              $(gettext "Provide the serial number to install")"
         ;;             
