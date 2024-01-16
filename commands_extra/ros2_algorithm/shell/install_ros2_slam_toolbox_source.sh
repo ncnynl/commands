@@ -16,7 +16,7 @@ echo "$(gettext "Install ROS2 slam_toolbox source version")"
 
 workspace=ros2_algorithm_ws
 
-if [ -d ~/$workspace/src/slam_gmapping ]; then
+if [ -d ~/$workspace/src/slam_toolbox ]; then
     echo "slam_toolbox have installed!!" 
 else
 
