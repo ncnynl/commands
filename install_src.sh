@@ -36,7 +36,12 @@ function build_src()
     cd commands_src
     #install python3 deps
     echo -e "Install python3 deps for commands"
-    pip3 install -r requiments.txt 
+    version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+    if [ ${version} == "24.04" ]; then
+        pip3 install -r requiments.txt --break-system-packages --no-warn-script-location
+    else
+        pip3 install -r requiments.txt 
+    fi 
     #build 
     export PATH=${HOME}/.local/bin:$PATH
     ./build.sh 
