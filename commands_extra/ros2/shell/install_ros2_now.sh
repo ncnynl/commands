@@ -18,6 +18,9 @@ cpu=$(uname -m)
 version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
 
 case $version in 
+    "24.04")
+        ros2_distro=jazzy
+        ;;
     "22.04")
         ros2_distro=humble,rolling,iron
         ;;
@@ -67,7 +70,7 @@ case $ros_ver in
             cs -si install_ros2_humble_arm.sh
         fi
         ;;
-    "rolling"|"iron")
+    "rolling"|"iron"|"jazzy")
         if [ $cpu == "x86_64" ]; then
             echo "Your cpu release is x86_64, please install AMD version "
             arch="amd"

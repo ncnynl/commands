@@ -1,5 +1,10 @@
 ################# commands工具更新日志 #############
 
+2.0.3 (2024-07-02)
+
+- 新增install_ros2_easy_os_24.04.sh 
+- 增加ubuntu24.04系统ros2 jazzy的安装支持
+
 2.0.2 (2023-09-08)
 
 - 增加docker支持， 进入commands_docker运行`docker build -t rcm:latest .` 生成docker镜像
