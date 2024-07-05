@@ -218,7 +218,7 @@ class CategoryManagerWindow(QWidget):
                         #删除目录
                         widget = self.table.cellWidget(idx, 1)
                         if isinstance(widget, QLineEdit):
-                            print(widget.text())
+                            # print(widget.text())
                             #删除开发目录下的分类
                             category_path = self.dev_path + "/" + widget.text()                        
                             if os.path.exists(category_path):
@@ -254,7 +254,7 @@ class CategoryManagerWindow(QWidget):
                         has_checked = True
                         widget = self.table.cellWidget(idx, 1)
                         if isinstance(widget, QLineEdit):
-                            print(widget.text())
+                            # print(widget.text())
                             #如果分类不存在，则添加新
                             category_path = self.dev_path + "/" + widget.text()
                             if not os.path.exists(category_path):
@@ -265,7 +265,7 @@ class CategoryManagerWindow(QWidget):
                             description_path = category_path + "/shell/.description" 
                             widget_desc = self.table.cellWidget(idx, 2)
                             if isinstance(widget, QLineEdit):
-                                print(widget_desc.text())
+                                # print(widget_desc.text())
                                 with open(description_path, 'w') as file:
                                     file.write(widget_desc.text() + '\n')
 
@@ -314,14 +314,14 @@ class CategoryManagerWindow(QWidget):
 
         folds.sort()
         for folder_name in folds:
-            print(folder_name) 
+            # print(folder_name) 
             description_path = self.dev_path + "/" + folder_name + "/shell/.description" 
-            print(description_path) 
+            # print(description_path) 
             if os.path.isfile(description_path):
                 file = open(description_path, "r")
                 try:
                     text_lines = file.readlines()
-                    print(text_lines)
+                    # print(text_lines)
                     data = [folder_name, text_lines[0]]
                     self.load_line(data)
                 finally:

@@ -254,7 +254,7 @@ class ScriptManagerWindow(QWidget):
         # 更新文件下拉列表中的文件
         self.fileComboBox.clear()
         category = self.categoryComboBox.currentText()
-        print(category)
+        # print(category)
         if category:
             self.folder_path = self.file_path + "/" + category + "/shell/"
             if os.path.exists(self.folder_path) and os.path.isdir(self.folder_path):
@@ -354,7 +354,7 @@ class ScriptManagerWindow(QWidget):
                 file_path = self.dev_path + "/common/shell/install_template.sh.tl"
 
             # 加载选中文件的内容
-            print(file_path)
+            # print(file_path)
             if os.path.exists(file_path) and os.path.isfile(file_path):
                 with open(file_path, 'r') as file:
                     content = file.read()
