@@ -1,11 +1,11 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros1_tb3_gazebo;./shell/download_gazebo_model_shell.sh",
+            "command": "cd ~/commands/ros2_odrive;./shell/install_odrive.sh",
             "desc": "",
             "id": 1,
             "link": "",
-            "name": "download_gazebo_model_shell.sh"
+            "name": "install_odrive.sh"
         }
     ],
     "time": [

@@ -22,16 +22,51 @@
             "name": "install_box_bot.sh"
         },
         {
-            "command": "cd ~/commands/ros2_gazebo;./shell/install_dolly.sh",
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_ros2_dolly.sh",
             "desc": "",
             "id": 4,
             "link": "",
-            "name": "install_dolly.sh"
+            "name": "install_ros2_dolly.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_ros2_four_ws.sh",
+            "desc": "",
+            "id": 5,
+            "link": "",
+            "name": "install_ros2_four_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_ros2_lio_sam_ws.sh",
+            "desc": "",
+            "id": 6,
+            "link": "",
+            "name": "install_ros2_lio_sam_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_ros2_omni_ws.sh",
+            "desc": "",
+            "id": 7,
+            "link": "",
+            "name": "install_ros2_omni_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_ros2_rs_nav_ws.sh",
+            "desc": "",
+            "id": 8,
+            "link": "",
+            "name": "install_ros2_rs_nav_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros2_gazebo;./shell/install_ros2_segway_ws.sh",
+            "desc": "",
+            "id": 9,
+            "link": "",
+            "name": "install_ros2_segway_ws.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2023-01-04"
+            "datetime": "2024-07-04"
         }
     ]
 }

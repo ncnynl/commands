@@ -55,7 +55,8 @@ config_python3_source
 # config_venv
 
 #install commands_src
-~/tools/commands/install_src.sh
+# ~/tools/commands/install_src.sh
+~/tools/commands/install_gui.sh
 
 #install commands_extra
 ~/tools/commands/install_extra.sh

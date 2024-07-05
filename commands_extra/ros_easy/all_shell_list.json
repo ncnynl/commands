@@ -57,72 +57,205 @@
             "name": "install_ros2_easy_os_22.04.sh"
         },
         {
-            "command": "cd ~/commands/ros_easy;./shell/install_turtorial_ros2_code_ws.sh",
+            "command": "cd ~/commands/ros_easy;./shell/install_ros2_easy_os_24.04.sh",
             "desc": "",
             "id": 9,
+            "link": "",
+            "name": "install_ros2_easy_os_24.04.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/install_ros2_easy_os_arm_20.04.sh",
+            "desc": "",
+            "id": 10,
+            "link": "",
+            "name": "install_ros2_easy_os_arm_20.04.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/install_ros2_easy_os_arm_22.04.sh",
+            "desc": "",
+            "id": 11,
+            "link": "",
+            "name": "install_ros2_easy_os_arm_22.04.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/install_ros2_easy_os_arm_24.04.sh",
+            "desc": "",
+            "id": 12,
+            "link": "",
+            "name": "install_ros2_easy_os_arm_24.04.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/install_turtorial_ros2_code_ws.sh",
+            "desc": "",
+            "id": 13,
             "link": "",
             "name": "install_turtorial_ros2_code_ws.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/install_turtorial_ros2_launch_ws.sh",
             "desc": "",
-            "id": 10,
+            "id": 14,
             "link": "",
             "name": "install_turtorial_ros2_launch_ws.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/install_turtorial_ros2_tf2_ws.sh",
             "desc": "",
-            "id": 11,
+            "id": 15,
             "link": "",
             "name": "install_turtorial_ros2_tf2_ws.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/load_free_fleet.sh",
             "desc": "",
-            "id": 12,
+            "id": 16,
             "link": "",
             "name": "load_free_fleet.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/load_rmf.sh",
             "desc": "",
-            "id": 13,
+            "id": 17,
             "link": "",
             "name": "load_rmf.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/load_ros1.sh",
             "desc": "",
-            "id": 14,
+            "id": 18,
             "link": "",
             "name": "load_ros1.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/load_ros2.sh",
             "desc": "",
-            "id": 15,
+            "id": 19,
             "link": "",
             "name": "load_ros2.sh"
         },
         {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_algorithm_ws.sh",
+            "desc": "",
+            "id": 20,
+            "link": "",
+            "name": "load_ros2_algorithm_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_four_ws.sh",
+            "desc": "",
+            "id": 21,
+            "link": "",
+            "name": "load_ros2_four_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_free_fleet_barista_ws.sh",
+            "desc": "",
+            "id": 22,
+            "link": "",
+            "name": "load_ros2_free_fleet_barista_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_free_fleet_burger_ws.sh",
+            "desc": "",
+            "id": 23,
+            "link": "",
+            "name": "load_ros2_free_fleet_burger_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_gazebo_ws.sh",
+            "desc": "",
+            "id": 24,
+            "link": "",
+            "name": "load_ros2_gazebo_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_lio_sam_ws.sh",
+            "desc": "",
+            "id": 25,
+            "link": "",
+            "name": "load_ros2_lio_sam_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_multirobot_ws.sh",
+            "desc": "",
+            "id": 26,
+            "link": "",
+            "name": "load_ros2_multirobot_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_navigation_ws.sh",
+            "desc": "",
+            "id": 27,
+            "link": "",
+            "name": "load_ros2_navigation_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_omni_ws.sh",
+            "desc": "",
+            "id": 28,
+            "link": "",
+            "name": "load_ros2_omni_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_rmf_map_ws.sh",
+            "desc": "",
+            "id": 29,
+            "link": "",
+            "name": "load_ros2_rmf_map_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_rs_nav_ws.sh",
+            "desc": "",
+            "id": 30,
+            "link": "",
+            "name": "load_ros2_rs_nav_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_segway_ws.sh",
+            "desc": "",
+            "id": 31,
+            "link": "",
+            "name": "load_ros2_segway_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_tb3_multi.sh",
+            "desc": "",
+            "id": 32,
+            "link": "",
+            "name": "load_ros2_tb3_multi.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_test_ws.sh",
+            "desc": "",
+            "id": 33,
+            "link": "",
+            "name": "load_ros2_test_ws.sh"
+        },
+        {
+            "command": "cd ~/commands/ros_easy;./shell/load_ros2_walking_app_ws.sh",
+            "desc": "",
+            "id": 34,
+            "link": "",
+            "name": "load_ros2_walking_app_ws.sh"
+        },
+        {
             "command": "cd ~/commands/ros_easy;./shell/load_tb3.sh",
             "desc": "",
-            "id": 16,
+            "id": 35,
             "link": "",
             "name": "load_tb3.sh"
         },
         {
             "command": "cd ~/commands/ros_easy;./shell/load_tb4.sh",
             "desc": "",
-            "id": 17,
+            "id": 36,
             "link": "",
             "name": "load_tb4.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2023-01-04"
+            "datetime": "2024-07-04"
         }
     ]
 }

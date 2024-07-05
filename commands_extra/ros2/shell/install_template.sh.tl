@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################
 # Function : <file_name>  
-# Desc     : <file_desc>                       
+# Desc     : 用于生成ROS2版本脚本的脚本模板                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : <date>                          

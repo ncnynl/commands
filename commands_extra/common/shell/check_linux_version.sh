@@ -26,18 +26,19 @@ echo "$(gettext "Check linux Version")"
 # Outputs:
 #    echo to stdout
 #######################################
-release=""
+release="ubuntu"
 version=""
 cpu_release=""
-function get_system(){
-    if cat /etc/issue | grep -Eqi "ubuntu"; then
-        release="ubuntu"
-    elif cat /proc/version | grep  -Eqi  "ubuntu"; then
-        release="ubuntu"
-    fi
-    # echo "release:$release"
-}
-get_system
+
+# function get_system(){
+#     if cat /etc/issue | grep -Eqi "ubuntu"; then
+#         release="ubuntu"
+#     elif cat /proc/version | grep  -Eqi  "ubuntu"; then
+#         release="ubuntu"
+#     fi
+#     # echo "release:$release"
+# }
+# get_system
 
 # echo $release
 

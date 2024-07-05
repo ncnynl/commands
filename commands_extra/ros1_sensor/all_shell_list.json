@@ -1,23 +1,23 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros1_sensor;./shell/install_imu_m0_shell.sh",
+            "command": "cd ~/commands/ros1_sensor;./shell/install_ros1_imu_m0_shell.sh",
             "desc": "",
             "id": 1,
             "link": "",
-            "name": "install_imu_m0_shell.sh"
+            "name": "install_ros1_imu_m0_shell.sh"
         },
         {
-            "command": "cd ~/commands/ros1_sensor;./shell/install_ublox_gps.sh",
+            "command": "cd ~/commands/ros1_sensor;./shell/install_ros1_ublox_gps.sh",
             "desc": "",
             "id": 2,
             "link": "",
-            "name": "install_ublox_gps.sh"
+            "name": "install_ros1_ublox_gps.sh"
         }
     ],
     "time": [
         {
-            "datetime": "2023-01-04"
+            "datetime": "2024-07-04"
         }
     ]
 }

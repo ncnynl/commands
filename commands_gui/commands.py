@@ -13,13 +13,14 @@ Last edited: 2022-05-19
 
 """
 
+import re
 import webbrowser
 from PyQt5.QtWidgets import (
     QApplication, QTableWidget, QWidget, QPushButton,
     QVBoxLayout, QLabel, QHBoxLayout, QCheckBox,
     QCheckBox, QLineEdit, QTableWidgetItem, QMessageBox,
     QFileDialog,QHeaderView,QSpacerItem,QSizePolicy,
-    QAbstractItemView
+    QAbstractItemView,QTextEdit,QDialog
 )
 from PyQt5.QtCore import ( 
     pyqtSignal, QThread, QByteArray, Qt, 
@@ -32,6 +33,9 @@ import os
 import apt
 import apt_pkg
 import time,datetime
+import subprocess
+import requests
+from bs4 import BeautifulSoup
 
 class WorkThread(QThread):
     trigger = pyqtSignal()
@@ -54,7 +58,7 @@ class ui(QWidget):
     def __init__(self):
         super().__init__()
         self.version = self.getVersion()
-        self.last_edited = "2022-10-26"
+        self.last_edited = self.getModifyTime()
         self.author = "ncnynl"
         self.email  = "1043931@qq.com"
         self.website  = "https://ncnynl.com"
@@ -63,7 +67,7 @@ class ui(QWidget):
         self.qq2  = "创客智造C群:937347681"
         self.qq3  = "创客智造D群:562093920"
         self.qq   =  self.qq1  + "\n" + self.qq2 + "\n" + self.qq3
-        self.lines2 = []
+        # self.lines2 = []
         self.id2 =1
         self.file_path = os.path.expanduser('~') + '/commands'
         self.default_folder="common"
@@ -75,8 +79,8 @@ class ui(QWidget):
         self.editable = True
         self.des_sort = True
         self.btn_search.clicked.connect(self.search_line)
-        self.btn_add.clicked.connect(self.add_line)
-        self.btn_del.clicked.connect(self.del_line)
+        self.btn_category.clicked.connect(self.category_manager)
+        self.btn_script.clicked.connect(self.script_manager)
         self.table.cellChanged.connect(self.cellchange)
         
         self.btn_save_commands.clicked.connect(self.save_commands)
@@ -92,6 +96,67 @@ class ui(QWidget):
 
         self.cwd = self.file_path
 
+           # 设置样式表
+        self.setStyleSheet("""
+            QWidget {
+                background-color: #f9f9f9;
+                font-size: 14px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #333;
+            }
+            QLabel {
+                color: #333;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+            QPushButton {
+                color: #333;
+                background-color: rgba(200, 200, 200, 0.5);  # 半透明淡灰色
+                border: 1px solid #ccc;
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: rgba(200, 200, 200, 0.7);  # 悬停时更深的半透明淡灰色
+            }
+            QLineEdit {
+                padding: 6px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+            QTextEdit {
+                padding: 6px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+            QTableWidget {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                gridline-color: #eee;
+                background-color: #fff;
+            }
+            QHeaderView::section {
+                background-color: #007bff;
+                color: #fff;
+                padding: 4px;
+                border: none;
+            }
+            QTableWidgetItem {
+                padding: 4px;
+            }
+        """)
+
+    def getModifyTime(self):
+        file_path = os.path.expanduser('~') + '/tools/commands/commands_gui/commands.py'
+        t = os.path.getctime(file_path)
+        time_struct = time.localtime(t)
+        return time.strftime('%Y-%m-%d', time_struct)
+
     def getVersion(self):
         self.version_file_path = os.path.expanduser('~') + '/tools/commands/version.txt'
         f = open(self.version_file_path)
@@ -101,18 +166,18 @@ class ui(QWidget):
 
     def setupUI(self):
         self.setWindowTitle('ROS命令管理器(简称RCM) v'+self.version)
-        self.resize(640,480)
+        self.resize(800,400)
         self.table = QTableWidget(self)
         
-        self.btn_add = QPushButton('增加')
-        self.btn_del = QPushButton('删除')
+        self.btn_category = QPushButton('分类管理')
+        self.btn_script = QPushButton('脚本管理')
         self.btn_save_commands = QPushButton('保存命令列表')
         self.btn_save_shell = QPushButton('生成SHELL脚本')
         self.btn_load_commands = QPushButton('加载命令列表')
         self.btn_clear_commands = QPushButton('清空命令列表')
         self.btn_share_commands = QPushButton('管理共享命令集')     
         self.btn_resource = QPushButton('管理ROS2资源')          
-        self.btn_update_folder = QPushButton('更新命令集目录')   
+        self.btn_update_folder = QPushButton('更新命令集分类')   
         self.btn_upgrade_commands = QPushButton('升级命令管理器')
         self.btn_kill_commands = QPushButton('关闭已启动命令')
         
@@ -121,15 +186,15 @@ class ui(QWidget):
         self.spacerItem = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
         
         self.vbox = QVBoxLayout()
-        self.vbox.addWidget(self.btn_add)
-        self.vbox.addWidget(self.btn_del)
-        self.vbox.addWidget(self.btn_save_commands)
-        self.vbox.addWidget(self.btn_save_shell)
-        self.vbox.addWidget(self.btn_load_commands)
+        self.vbox.addWidget(self.btn_category)
+        self.vbox.addWidget(self.btn_script)      
+        # self.vbox.addWidget(self.btn_save_commands)
+        # self.vbox.addWidget(self.btn_save_shell)
+        # self.vbox.addWidget(self.btn_load_commands)
         self.vbox.addWidget(self.btn_clear_commands)
-        self.vbox.addWidget(self.btn_share_commands)
-        self.vbox.addWidget(self.btn_resource)
-        self.vbox.addWidget(self.btn_update_folder)        
+        # self.vbox.addWidget(self.btn_share_commands)
+        # self.vbox.addWidget(self.btn_resource)
+        # self.vbox.addWidget(self.btn_update_folder)        
         self.vbox.addWidget(self.btn_upgrade_commands)
         self.vbox.addWidget(self.btn_kill_commands)
 
@@ -162,35 +227,36 @@ class ui(QWidget):
         self.txt.setMinimumHeight(50)
 
 
-        self.table.setColumnCount(8)   ##设置列数
-        self.headers = ['序号', '选择', '名称', '描述', '命令', '使用说明', '启动', '浏览说明']
+        self.table.setColumnCount(6)   ##设置列数
+        self.headers = ['选择', '名称', '描述',  '版本', '操作', '详情']
         self.table.setHorizontalHeaderLabels(self.headers)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeToContents)
-        self.table.horizontalHeader().setSectionResizeMode(6, QHeaderView.ResizeToContents)
-        self.table.horizontalHeader().setSectionResizeMode(7, QHeaderView.ResizeToContents)
+        # self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        self.table.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeToContents)
+        self.table.horizontalHeader().setSectionResizeMode(4, QHeaderView.ResizeToContents)
+        self.table.horizontalHeader().setSectionResizeMode(5, QHeaderView.ResizeToContents)
 
         
-        self.table2 = QTableWidget(self)
-        self.table2.setColumnCount(4)
-        self.table2.setSelectionBehavior(1)
-        self.table2.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.headers2 = ['文件', '时间', '导入', '删除']
-        self.table2.setHorizontalHeaderLabels(self.headers2)    
-        self.table2.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
-        self.table2.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeToContents)   
-        self.table2.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeToContents)   
-        self.table2.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeToContents)   
+        # self.table2 = QTableWidget(self)
+        # self.table2.setColumnCount(4)
+        # self.table2.setSelectionBehavior(1)
+        # self.table2.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        # self.headers2 = ['文件', '时间', '导入', '删除']
+        # self.table2.setHorizontalHeaderLabels(self.headers2)    
+        # self.table2.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
+        # self.table2.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeToContents)   
+        # self.table2.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeToContents)   
+        # self.table2.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeToContents)   
 
         self.table3 = QTableWidget(self)
-        self.table3.setColumnCount(2)
+        self.table3.setColumnCount(1)
         self.table3.setSelectionBehavior(1)
         self.table3.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.headers3 = ['目录', '文件数']
+        self.headers3 = ['分类(脚本数)']
         self.table3.setHorizontalHeaderLabels(self.headers3)    
         self.table3.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
-        self.table3.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        # self.table3.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)       
 
 
         self.txt3 = QLabel()
@@ -201,18 +267,42 @@ class ui(QWidget):
         self.qc3 = QCheckBox()
         self.qc3.setText("精确")
         self.qc3.setChecked(True)
+
+        self.qc4 = QCheckBox()
+        self.qc4.setText("本地脚本库")
+        self.qc4.setChecked(True)
+
+        self.qc5 = QCheckBox()
+        self.qc5.setText("APT软件库")
+        self.qc5.setChecked(False)
+
+        # self.qc6 = QCheckBox()
+        # self.qc6.setText("Python软件库")
+        # self.qc6.setChecked(False)
+
+        # self.qc7 = QCheckBox()
+        # self.qc7.setText("Ruby软件库")
+        # self.qc7.setChecked(False)             
+
         self.btn_search = QPushButton('搜索')
 
 
         self.hbox2 = QHBoxLayout()
         self.hbox2.addWidget(self.table3)
-        self.hbox2.addWidget(self.table2)
+        self.hbox2.addWidget(self.table)
+        # Set the stretch factors (20% and 80%)
+        self.hbox2.setStretch(0, 1)  # table3 gets 20% of the space
+        self.hbox2.setStretch(1, 4)  # table gets 80% of the space
 
 
         self.hbox3 = QHBoxLayout()
         self.hbox3.addWidget(self.txt3)       
         self.hbox3.addWidget(self.ql3)       
-        self.hbox3.addWidget(self.qc3)       
+        self.hbox3.addWidget(self.qc3)     
+        self.hbox3.addWidget(self.qc4)
+        self.hbox3.addWidget(self.qc5)
+        # self.hbox3.addWidget(self.qc6)  
+        # self.hbox3.addWidget(self.qc7) 
         self.hbox3.addWidget(self.btn_search)   
 
         self.txt4 = QLabel()
@@ -222,7 +312,7 @@ class ui(QWidget):
         self.vbox2 = QVBoxLayout()
         self.vbox2.addLayout(self.hbox3)
         self.vbox2.addWidget(self.txt4)
-        self.vbox2.addWidget(self.table)
+        # self.vbox2.addWidget(self.table)
         self.vbox2.addLayout(self.hbox2)
         self.vbox2.addWidget(self.txt)
 
@@ -252,14 +342,15 @@ class ui(QWidget):
         for fold in os.listdir(self.file_path):
             sub_fold_name = fold 
             sub_fold_path = self.file_path + "/" + sub_fold_name
-
+            
             if os.path.isdir(sub_fold_path):
                 folds.append(sub_fold_name)        
         folds.sort()
         for folder_name in folds:
-            sub_fold_path = self.file_path + "/" + folder_name  
-            names = [name for name in os.listdir(sub_fold_path)
-                if os.path.isfile(os.path.join(sub_fold_path, name))  if "json" in name ]  
+            sub_fold_path = self.file_path + "/" + folder_name + "/shell/" 
+            if os.path.isdir(sub_fold_path):
+                names = [name for name in os.listdir(sub_fold_path)
+                    if os.path.isfile(os.path.join(sub_fold_path, name))  if "sh" in name ]  
                         
             self.to_load_single_folder(folder_name, len(names))            
 
@@ -271,63 +362,143 @@ class ui(QWidget):
         self.table3.cellChanged.disconnect()
         row = self.table3.rowCount()
         self.table3.setRowCount(row + 1)
-        fn = self.file_path + "/" + folder_name
+        fn = folder_name + "(" + str(file_total) + ")"
         btn1 = QPushButton()
         btn1.setStyleSheet("QPushButton{text-align : left;}")
         btn1.setText(str(fn))
         btn1.clicked.connect(lambda:self.load_file(str(folder_name)))
 
         self.table3.setCellWidget(row,0,btn1) 
-        self.table3.setItem(row,1,QTableWidgetItem(str(file_total)))   
+        # self.table3.setItem(row,1,QTableWidgetItem(str(file_total)))   
 
         self.id3 += 1
         self.table3.cellChanged.connect(self.cellchange)  
 
 
     def load_file(self, folder_name="common"):
-
-        self.id2 = 1
-        self.table2.setRowCount(0)
-        self.table2.clearContents()        
-        self.table2.cellChanged.connect(self.cellchange)
-
+        self.lines = []
+        self.id = 1
         #set default_folder
         self.default_folder = folder_name
-        
+        #clear table
+        self.table.setRowCount(0)
+        self.table.clearContents()        
+        self.table.cellChanged.connect(self.cellchange)
 
         # if not os.path.exists(self.file_path):
         #     os.makedirs(self.file_path)
-        folder = self.file_path + "/" + folder_name
-        names = [name for name in os.listdir(folder)
-                if os.path.isfile(os.path.join(folder, name))]       
-        #sort
-        names.sort()
-        for file_name in names:
-            if "json" in file_name:
-                self.to_load_single(file_name)
+        folder = self.file_path + "/" + folder_name + "/shell/"
+        if os.path.isdir(folder):
+            names = [name for name in os.listdir(folder)
+                    if os.path.isfile(os.path.join(folder, name))]       
+            #sort
+            names.sort()
+            for file_name in names:
+                pattern = re.compile(r"^(.*)\.sh$")
+                match = pattern.search(file_name)
+                if match :
+                    data = self.get_info_from_file(folder, file_name)
+                    self.to_load_single(data)
+
+    def get_info_from_file(self, folder, file_name):
+        data = ["","","",""]
+        file_path = folder + "/" + file_name
+        file = open(file_path, "r")
+        try:
+            text_lines = file.readlines()
+            for line in text_lines:
+                # 使用正则表达式提取文件名主体（不包括扩展名）
+                pattern = re.compile(r"^(.*)\.sh$")
+                match = pattern.search(file_name)
+                if match:
+                    file_main_name = match.group(1)
+                    data[0] = file_main_name
+                    # print("File name:", file_main_name)
+                # else:
+                    # print("Pattern not matched")
+
+                # 使用正则表达式提取Desc :后的内容
+                pattern = re.compile(r"# Desc\s*:\s*(.*)")
+                match = pattern.search(line)
+                if match:
+                    function_content = match.group(1)
+                    data[1] = function_content.strip()
+                    # print("Desc:", function_content)
+
+                # 使用正则表达式提取Version :后的内容
+                pattern = re.compile(r"# Version\s*:\s*(.*)")
+                match = pattern.search(line)
+                if match:
+                    function_content = match.group(1)
+                    data[2] = function_content.strip()
+                    # print("Version:", function_content)  
+
+                # 使用正则表达式提取URL:后的内容
+                pattern = re.compile(r"# URL\s*:\s*(.*)")
+                match = pattern.search(line)
+                if match:
+                    function_content = match.group(1)
+                    data[3] = function_content.strip()
+
+            return data
+
+        finally:
+            file.close()
+
+        
 
 
-    def to_load_single(self, file_name): 
-        id = self.id2
-        self.table2.cellChanged.disconnect()
-        row = self.table2.rowCount()
-        self.table2.setRowCount(row + 1)
-        # fn = self.file_path + "/" + file_name
-        fn = file_name
-        btn1 = QPushButton("导入")
-        btn1.clicked.connect(lambda:self.to_load(int(id)))
-        btn2 = QPushButton("删除")
-        btn2.clicked.connect(lambda:self.to_delete(int(id)))    
+    def to_load_single(self, data): 
+        self.table.cellChanged.connect(self.cellchange)
+        row = self.table.rowCount()
+        self.table.setRowCount(row + 1)
+        name = data[0] 
+        desc = data[1]        
+        # command = data[2]
+        version = data[2]
 
-        datetime  = self.get_file_time(file_name)
-        self.table2.setItem(row,0,QTableWidgetItem(str(fn)))    
-        self.table2.setItem(row,1,QTableWidgetItem(datetime))
-        self.table2.setCellWidget(row,2,btn1)
-        self.table2.setCellWidget(row,3,btn2)
+        id = str(self.id)
+       
+        ck = QCheckBox()
+        h = QHBoxLayout()
+        h.setAlignment(Qt.AlignCenter)
+        h.addWidget(ck)
+        w = QWidget()
+        w.setLayout(h)
 
-        self.id2 += 1
-        self.lines2.append([id,fn,btn1,btn2])
-        self.table2.cellChanged.connect(self.cellchange)  
+        name_edit = QLineEdit()
+        # name_edit.setReadOnly(True) 
+        name_edit.setStyleSheet("text-align: left;")
+        name_edit.setText(name)
+        name_edit.setToolTip(name)
+
+        desc_edit = QLineEdit()
+        desc_edit.setReadOnly(True) 
+        desc_edit.setStyleSheet("text-align: left;")
+        desc_edit.setText(desc)
+        desc_edit.setToolTip(desc)
+
+        version_edit = QLineEdit()
+        version_edit.setReadOnly(True) 
+        version_edit.setText(version)
+        version_edit.setToolTip(version)
+
+        install_click = QPushButton("启动")
+        install_click.clicked.connect(lambda:self.to_start(int(row)))
+
+        view_click = QPushButton("查看脚本")
+        view_click.clicked.connect(lambda:self.to_browse(int(row)))        
+
+        self.table.setCellWidget(row,0,w)
+        self.table.setCellWidget(row,1,name_edit)
+        self.table.setCellWidget(row,2,desc_edit)
+        self.table.setCellWidget(row,3,version_edit)        
+        self.table.setCellWidget(row,4,install_click)
+        self.table.setCellWidget(row,5,view_click)
+
+        self.id += 1
+        self.lines.append([id,ck,name_edit,desc_edit,version_edit,install_click,view_click])
+        self.table.cellChanged.connect(self.cellchange)  
 
     def get_file_time(self, file_name):
         datetime_str = ""
@@ -358,15 +529,15 @@ class ui(QWidget):
 
     def to_delete(self, id):
         QMessageBox.information(None, '删除选择的文件', str(id))
-        row = self.table2.currentRow()
-        file_name = self.file_path + "/" + self.default_folder + "/" + str(self.table2.item(row, 0).text())
-        if os.path.exists(file_name) : 
-            os.remove(file_name)                
-            self.table2.removeRow(row)
+        # row = self.table2.currentRow()
+        # file_name = self.file_path + "/" + self.default_folder + "/" + str(self.table2.item(row, 0).text())
+        # if os.path.exists(file_name) : 
+        #     os.remove(file_name)                
+        #     self.table2.removeRow(row)
 
-        for line in self.lines2:
-            if id == line[0] : 
-                self.lines2.remove(line)
+        # for line in self.lines2:
+        #     if id == line[0] : 
+        #         self.lines2.remove(line)
 
         self.settext('文件已经删除')         
 
@@ -410,32 +581,36 @@ class ui(QWidget):
         self.settext('加载现有数据!')
 
 
-    def search_commands_lists(self):
+    def search_commands_lists(self, package_name):
         # print("commands search")    
         #get list
         all = self.load_commands_list()
         #add 
-        keywords = self.ql3.text()
         checked  = self.qc3.isChecked()
         have_one = False
+        # print(all)
         for word in all[0] :
+            
             if checked:
-                if keywords == word :
+                if package_name == word :
                     have_one = True
                     index  = all[0].index(word)
                     desc = all[1][index]
-                    command=all[2][index]
-                    link=all[3][index]
-                    data = [word,desc,command,link]
+                    # command=all[2][index]
+                    version=all[3][index]
+                    link=all[4][index]
+                    data = [word,desc,version,link]
+                    # print(data)
                     self.load_line(data)
             else:
-                if keywords in word :
+                if package_name in word :
                     have_one = True
                     index  = all[0].index(word)
                     desc = all[1][index]
-                    command=all[2][index]
-                    link=all[3][index]
-                    data = [word,desc,command,link]
+                    # command=all[2][index]
+                    version=all[3][index]
+                    link=all[4][index]
+                    data = [word,desc,version,link]
                     self.load_line(data)
         if have_one:
             self.settext4("找到相应命令,请启动合适的命令")
@@ -444,7 +619,6 @@ class ui(QWidget):
         #get list
         folders = []
 
-        file_path = ""
         for fold in os.listdir(self.file_path):
             sub_fold_name = fold 
             sub_fold_path = self.file_path + "/" + sub_fold_name
@@ -453,57 +627,41 @@ class ui(QWidget):
                 folders.append(sub_fold_name)        
 
         all_files = []
-        for folder_name in folders:
-            folder = self.file_path + "/" + folder_name
-            files = [name for name in os.listdir(folder)
-                    if os.path.isfile(os.path.join(folder, name))]     
-
-            for file in files:
-                all_files.append(folder + "/" + file)
-
         all_commands = []
         all_descs = []
+        all_versions = []
         all_links = []
         all_names = []
         all = []
-        for  file_name in  all_files:
-            #only json file can be read
-            if "json" in file_name:
-                f = QFile(file_name)
-                if not f.open(QIODevice.ReadOnly):
-                    self.settext("\n file open fail")
-                    return       
-            else:
-                continue 
 
-            data = f.readAll()
-            # print(data)
-            error = QJsonParseError()
-            jsonObject = QJsonDocument.fromJson(data, error).object()
-            jsonArray = jsonObject["commands"].toArray()
+        for folder_name in folders:
+            folder = self.file_path + "/" + folder_name + "/shell"
+            if os.path.exists(folder):
+                files = [name for name in os.listdir(folder)
+                        if os.path.isfile(os.path.join(folder, name))]     
 
-            for item in jsonArray :
-
-                name    = item["name"].toString()
-                desc    = item["desc"].toString()
-                command = item["command"].toString()
-                link    = item["link"].toString()
-                         
-                all_names.append(name)
-                all_descs.append(desc)
-                all_commands.append(command)
-                all_links.append(link)
+                for file in files:
+                    if "sh" in file and "tl" not in file:
+                        file_path = folder + "/" + file
+                        
+                        all_commands.append(file_path)
+                        info = self.get_info_from_file(folder, file)
+                        all_names.append(info[0])
+                        all_descs.append(info[1])
+                        all_versions.append(info[2])
+                        all_links.append(info[3])
 
         all.append(all_names)
         all.append(all_descs)
         all.append(all_commands)
+        all.append(all_versions)
         all.append(all_links)
 
         #save all
         self.write_commands_list(all)
 
         #gen shell list
-        self.gen_shell_list()
+        # self.gen_shell_list()
 
         #return 
         return all
@@ -530,7 +688,8 @@ class ui(QWidget):
             jsonItem["name"]     = name
             jsonItem["desc"]     = all[1][index]
             jsonItem["command"]  = all[2][index]
-            jsonItem["link"]     = all[3][index]
+            jsonItem["version"]  = all[3][index]
+            jsonItem["link"]     = all[4][index]
             
             jsonArray1.append(jsonItem)  
             id=id+1 
@@ -560,6 +719,7 @@ class ui(QWidget):
         all_commands = []
         all_descs = []
         all_links = []
+        all_versions = []
         all_names = []
         all = []
         data = f.readAll()
@@ -575,16 +735,19 @@ class ui(QWidget):
             name    = item["name"].toString()
             desc    = item["desc"].toString()
             command = item["command"].toString()
+            version = item["version"].toString()
             link    = item["link"].toString()
 
             all_names.append(name)
             all_descs.append(desc)
             all_commands.append(command)
+            all_versions.append(version)
             all_links.append(link)
 
         all.append(all_names)
         all.append(all_descs)
         all.append(all_commands)
+        all.append(all_versions)
         all.append(all_links)
         
         return all
@@ -682,43 +845,176 @@ class ui(QWidget):
         f.write(outputjson)
         f.close()  
 
-    def search_apt_cache(self):
-        # print("apt search")
-        pkgname = self.ql3.text()
-        checked = self.qc3.isChecked()
+    def search_ruby(self, package_name):
+        print("ruby")
+
+    def search_python_package_online(self, package_name):
+        url = f"https://pypi.org/search/?q={package_name}"
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
         
-        has_pkp = False
-        cache = apt.Cache()
-        for pkg in cache.keys():
+        packages_info = []
+        results = soup.find_all('a', class_='package-snippet')
+        
+        for result in results:
+            name = result.find('span', class_='package-snippet__name').text
+            version = result.find('span', class_='package-snippet__version').text
+            description = result.find('p', class_='package-snippet__description').text.strip()
+            
+            packages_info.append({
+                'name': name,
+                'version': version,
+                'description': description
+            })
+        
+        return packages_info
+    
+    def search_python_package(self, package_name):
+        # 搜索包信息
+        search_result = subprocess.run(['pip', 'search', package_name], stdout=subprocess.PIPE, text=True)
+        lines = search_result.stdout.split('\n')
+        
+        packages_info = []
+        pattern = re.compile(r'^(?P<name>\S+) \((?P<version>.+)\) - (?P<description>.+)$')
+        for line in lines:
+            match = pattern.match(line)
+            if match:
+                packages_info.append(match.groupdict())
+        
+        return packages_info
+
+    def get_python_package_info(self, package_name):
+        # 获取包详细信息
+        show_result = subprocess.run(['pip', 'show', package_name], stdout=subprocess.PIPE, text=True)
+        show_lines = show_result.stdout.split('\n')
+        
+        package_info = {
+            'name': package_name,
+            'version': '',
+            'description': ''
+        }
+        
+        for line in show_lines:
+            if line.startswith('Version:'):
+                package_info['version'] = line.split('Version:')[1].strip()
+            elif line.startswith('Summary:'):
+                package_info['description'] = line.split('Summary:')[1].strip()
+        
+        return package_info
+    
+    def is_python_package_installed(self, package_name):
+        # 检查包是否已安装
+        result = subprocess.run(['pip', 'show', package_name], stdout=subprocess.PIPE, text=True)
+        return result.returncode == 0
+
+    def search_python(self, package_name):
+        packages_info = self.search_python_package_online(package_name)
+
+        if not packages_info:
+            self.settext4('没有找到合适的包,请检查名称是否正确')
+        
+        # 打印搜索到的包信息
+        checked = self.qc3.isChecked()
+        for pkg_info in packages_info:
             if checked: 
-                if pkgname == pkg:
-                    has_pkp = True
-                    my_apt_pkg = cache[pkg]
-                    command = "sudo apt install -y " + pkg
-                    if my_apt_pkg.is_installed:
-                        desc = "From APT Repo"
+                if package_name == pkg_info['name']:
+                    installed = self.is_python_package_installed(package_name)
+                    if installed:
+                        desc = pkg_info['description'] + "(Installed)"
+                        version = pkg_info['version']
                         link = ""
-                        data = [pkg,desc,command,link]
-                        self.load_serach_line(data, True)   
+                        data = [pkg_info['name'],desc,version,link]
+                        self.load_serach_line(data, True) 
                     else:
-                        desc = "From APT Repo"
+                        desc = pkg_info['description'] + "Not Installed"
+                        version = pkg_info['version']
                         link = ""
-                        data = [pkg,desc,command,link]
+                        data = [pkg_info['name'],desc,version,link]
                         self.load_serach_line(data) 
             else:
-                if pkgname in pkg:
+                if package_name in pkg_info['name']:
+                    installed = self.is_python_package_installed(package_name)
+                    if installed:
+                        desc = pkg_info['description'] + "(Installed)"
+                        version = pkg_info['version']
+                        link = ""
+                        data = [pkg_info['name'],desc,version,link]
+                        self.load_serach_line(data, True) 
+                    else:
+                        desc = pkg_info['description'] + "Not Installed"
+                        version = pkg_info['version']
+                        link = ""
+                        data = [pkg_info['name'],desc,version,link]
+                        self.load_serach_line(data)  
+
+
+            # print(f"Name: {pkg_info['name']}")
+            # print(f"Version: {pkg_info['version']}")
+            # print(f"Description: {pkg_info['description']}")
+            # print('---')
+        # 获取详细信息
+        # detailed_info = self.get_package_info(packages_info[0]['name'])
+        # print(detailed_info)
+        # return detailed_info
+
+
+    def get_package_info(self, package_name):
+        # 获取包详细信息
+        result = subprocess.run(['apt-cache', 'show', package_name], stdout=subprocess.PIPE, text=True)
+        lines = result.stdout.split('\n')
+        
+        package_info = {
+            'name': package_name,
+            'version': '',
+            'description': ''
+        }
+        
+        for line in lines:
+            if line.startswith('Version:'):
+                package_info['version'] = line.split('Version:')[1].strip()
+            elif line.startswith('Description:'):
+                package_info['description'] = line.split('Description:')[1].strip()
+        
+        return package_info
+
+    def search_apt(self, package_name):
+        # print("apt search")
+        checked = self.qc3.isChecked()
+        has_pkp = False
+        cache = apt.Cache()
+        
+        for pkg in cache.keys():
+            if checked: 
+                if package_name == pkg:
                     has_pkp = True
                     my_apt_pkg = cache[pkg]
-                    command = "sudo apt install -y " + pkg
+                    info = self.get_package_info(pkg)
                     if my_apt_pkg.is_installed:
-                        desc = "From APT Repo"
+                        desc = info['description'] + "(Installed)"
+                        version = info['version']
                         link = ""
-                        data = [pkg,desc,command,link]                       
+                        data = [pkg,desc,version,link]
+                        self.load_serach_line(data, True) 
+                    else:
+                        desc = info['description'] + "Not Installed"
+                        version = info['version']
+                        link = ""
+                        data = [pkg,desc,version,link]
+                        self.load_serach_line(data) 
+            else:
+                if package_name in pkg:
+                    has_pkp = True
+                    my_apt_pkg = cache[pkg]
+                    info = self.get_package_info(pkg)
+                    if my_apt_pkg.is_installed:
+                        desc = info['description'] + "(Installed)"
+                        version = info['version']
+                        data = [pkg,desc,version,""]                       
                         self.load_serach_line(data, True)   
                     else:
-                        desc = "From APT Repo"
-                        link = "点击按钮,一键安装"
-                        data = [pkg,desc,command,link]
+                        desc = info['description'] + "(Not Installed)"
+                        version = info['version']
+                        data = [pkg,desc,version,""]
                         self.load_serach_line(data)                
         if has_pkp:                
             self.settext4('搜索到相关包,请选择适合的包进行安装')
@@ -726,16 +1022,15 @@ class ui(QWidget):
             self.settext4('没有找到合适的包,请检查名称是否正确')
 
     def load_serach_line(self, data, installed=False):
-        self.table.cellChanged.disconnect()
+        self.table.cellChanged.connect(self.cellchange)
         row = self.table.rowCount()
         self.table.setRowCount(row + 1)
+        name = data[0] 
+        desc = data[1]        
+        version = data[2]
 
         id = str(self.id)
-        name = data[0]
-        desc = data[1]
-        command = data[2]
-        link = data[3]  
-
+       
         ck = QCheckBox()
         h = QHBoxLayout()
         h.setAlignment(Qt.AlignCenter)
@@ -743,71 +1038,106 @@ class ui(QWidget):
         w = QWidget()
         w.setLayout(h)
 
-        le1 = QLineEdit()
-        le1.setText(name)
-        le1.setToolTip(name)
+        name_edit = QLineEdit()
+        # name_edit.setReadOnly(True) 
+        name_edit.setStyleSheet("text-align: left;")
+        name_edit.setText(name)
+        name_edit.setToolTip(name)
 
-        le2 = QLineEdit()
-        le2.setText(desc)
-        le2.setToolTip(desc)
+        desc_edit = QLineEdit()
+        desc_edit.setReadOnly(True) 
+        desc_edit.setStyleSheet("text-align: left;")
+        desc_edit.setText(desc)
+        desc_edit.setToolTip(desc)
 
-        le3 = QLineEdit()
-        le3.setText(command)
-        le3.setToolTip(command)
+        version_edit = QLineEdit()
+        version_edit.setReadOnly(True) 
+        version_edit.setText(version)
+        version_edit.setToolTip(version)
 
-        le4 = QLineEdit()
-        le4.setText(link)        
-        le4.setToolTip(link)        
-        
-        if installed:
-            btn1 = QPushButton("已经安装")
+        if installed : 
+            install_click = QPushButton("已经安装")
         else:
-            btn1 = QPushButton("立刻安装")
-            btn1.clicked.connect(lambda:self.to_start(int(id)))
+            install_click = QPushButton("立刻安装")
+            install_click.clicked.connect(lambda:self.to_install_apt(int(row)))
 
+        if installed:
+            view_click = QPushButton("卸载")
+            view_click.clicked.connect(lambda:self.to_uninstall_apt(int(row)))    
+        else:
+            view_click = QPushButton("")    
 
-        btn2 = QPushButton("浏览说明")
-        btn2.clicked.connect(lambda:self.to_browse(int(id)))              
-
-        self.table.setItem(row,0,QTableWidgetItem(id))
-        self.table.setCellWidget(row,1,w)
-        self.table.setCellWidget(row,2,le1)
-        self.table.setCellWidget(row,3,le2)
-        self.table.setCellWidget(row,4,le3)
-        self.table.setCellWidget(row,5,le4)
-        self.table.setCellWidget(row,6,btn1)
-        self.table.setCellWidget(row,7,btn2)
+        self.table.setCellWidget(row,0,w)
+        self.table.setCellWidget(row,1,name_edit)
+        self.table.setCellWidget(row,2,desc_edit)
+        self.table.setCellWidget(row,3,version_edit)        
+        self.table.setCellWidget(row,4,install_click)
+        self.table.setCellWidget(row,5,view_click)
 
         self.id += 1
-        self.lines.append([id,ck,le1,le2,btn1,btn2])
-        self.table.cellChanged.connect(self.cellchange)   
+        self.lines.append([id,ck,name_edit,desc_edit,version_edit,install_click,view_click])
+        self.table.cellChanged.connect(self.cellchange)  
 
     def search_line(self):
         # print("search")
         #search commands
-        self.search_commands_lists()
-        #search apt_cache
-        self.search_apt_cache()
+        self.clear_commands()
+        package_name = self.ql3.text()
+        if package_name : 
+            checked4  = self.qc4.isChecked()
+            if checked4:
+                self.search_commands_lists(package_name)
 
+            #search apt_cache
+            checked5  = self.qc5.isChecked()
+            if checked5:
+                self.search_apt(package_name)
 
- 
+            # #search python
+            # checked6  = self.qc6.isChecked()
+            # if checked6:
+            #     self.search_python(package_name)
+
+            # #search ruby
+            # checked7  = self.qc7.isChecked()
+            # if checked7:
+            #     self.search_ruby(package_name)
+        else:
+            print("keywords can not be empty!")
+            self.settext4('关键词不能为空')
+
+    def script_manager(self):
+        """
+        想要有新的窗口， 引用其它已经写好的类
+        """
+        import script
+        self.script = script.ScriptManagerWindow()
+        self.script.show()   
+
+    def category_manager(self):
+        """
+        想要有新的窗口， 引用其它已经写好的类
+        """
+        import category 
+        self.category = category.CategoryManagerWindow()
+        self.category.show()        
+        
+
     def add_line(self):
         data = ["","","",""]
         self.load_line(data)
 
     def load_line(self, data):
-
-        self.table.cellChanged.disconnect()
+        
+        self.table.cellChanged.connect(self.cellchange)
         row = self.table.rowCount()
         self.table.setRowCount(row + 1)
-
         name = data[0] 
         desc = data[1]        
-        command = data[2]
-        link = data[3]
+        version = data[2]
 
         id = str(self.id)
-
+       
         ck = QCheckBox()
         h = QHBoxLayout()
         h.setAlignment(Qt.AlignCenter)
@@ -815,62 +1145,132 @@ class ui(QWidget):
         w = QWidget()
         w.setLayout(h)
 
-        le1 = QLineEdit()
-        le1.setText(name)
-        le1.setToolTip(name)
+        name_edit = QLineEdit()
+        # name_edit.setReadOnly(True) 
+        name_edit.setStyleSheet("text-align: left;")
+        name_edit.setText(name)
+        name_edit.setToolTip(name)
 
-        le2 = QLineEdit()
-        le2.setText(desc)
-        le2.setToolTip(desc)
+        desc_edit = QLineEdit()
+        desc_edit.setReadOnly(True) 
+        desc_edit.setStyleSheet("text-align: left;")
+        desc_edit.setText(desc)
+        desc_edit.setToolTip(desc)
 
-        le3 = QLineEdit()
-        le3.setText(command)
-        le3.setToolTip(command)
+        version_edit = QLineEdit()
+        version_edit.setReadOnly(True) 
+        version_edit.setText(version)
+        version_edit.setToolTip(version)
 
-        le4 = QLineEdit()
-        le4.setText(link)
-        le4.setToolTip(link)
+        install_click = QPushButton("启动")
+        install_click.clicked.connect(lambda:self.to_start(int(row)))
 
-        btn1 = QPushButton("启动")
-        btn1.clicked.connect(lambda:self.to_start(int(id)))
+        view_click = QPushButton("查看脚本")
+        view_click.clicked.connect(lambda:self.to_browse(int(row)))        
 
-        btn2 = QPushButton("浏览说明")
-        btn2.clicked.connect(lambda:self.to_browse(int(id)))        
-
-        self.table.setItem(row,0,QTableWidgetItem(id))
-        self.table.setCellWidget(row,1,w)
-        self.table.setCellWidget(row,2,le1)
-        self.table.setCellWidget(row,3,le2)
-        self.table.setCellWidget(row,4,le3)
-        self.table.setCellWidget(row,5,le4)        
-        self.table.setCellWidget(row,6,btn1)
-        self.table.setCellWidget(row,7,btn2)
+        self.table.setCellWidget(row,0,w)
+        self.table.setCellWidget(row,1,name_edit)
+        self.table.setCellWidget(row,2,desc_edit)
+        self.table.setCellWidget(row,3,version_edit)        
+        self.table.setCellWidget(row,4,install_click)
+        self.table.setCellWidget(row,5,view_click)
 
         self.id += 1
-        self.lines.append([id,ck,le1,le2,le3,le4,btn1,btn2])
-        self.settext('自动生成随机一行数据！,checkbox设置为居中显示')
-        self.table.cellChanged.connect(self.cellchange)  
+        self.lines.append([id,ck,name_edit,desc_edit,version_edit,install_click,view_click])
+        self.table.cellChanged.connect(self.cellchange) 
 
-    def to_browse(self, id):
-        for idx in range(self.table.rowCount()):
-            if id == int(self.table.item(idx,0).text()):
-                command = self.table.cellWidget(idx,5).text()
-                if "http" in command:
-                    webbrowser.open_new_tab(command)
-                else:
-                    QMessageBox.information(None, '提醒', '不是可浏览的页面')
-    
-    def to_start(self, id):
-        QMessageBox.information(None, '启动选择的命令', str(id))
-        for idx in range(self.table.rowCount()):
-            if id == int(self.table.item(idx,0).text()):
-                command = self.table.cellWidget(idx,4).text()
-                # print('id:' + self.table.item(idx,0).text() + ' \n name:' + self.table.cellWidget(idx,2).text() + '\n command:' + self.table.cellWidget(idx,3).text())
-                # new thread to do 
+    def to_uninstall_apt(self, id):
+        result = self.show_message_box("你是否启动第" + str(id+1) + "条命令")
+        if result == QMessageBox.Ok:
+            widget = self.table.cellWidget(id, 1)
+            if isinstance(widget, QLineEdit):
+                command = "sudo apt remove  " + widget.text()
                 wt = WorkThread()
                 wt.setCommand(command)
                 self.threads[id] = wt
-                wt.start()
+                wt.start()  
+
+    def to_install_apt(self, id):
+        result = self.show_message_box("你是否启动第" + str(id+1) + "条命令")
+        if result == QMessageBox.Ok:
+            widget = self.table.cellWidget(id, 1)
+            if isinstance(widget, QLineEdit):
+                command = "sudo apt install -y " + widget.text()
+                wt = WorkThread()
+                wt.setCommand(command)
+                self.threads[id] = wt
+                wt.start()                
+
+    def to_browse(self, id):
+        result = self.show_message_box("你是否查看第" + str(id+1) + "条命令内容")
+        if result == QMessageBox.Ok:
+            widget = self.table.cellWidget(id, 1)
+            if isinstance(widget, QLineEdit):
+                all = self.load_commands_list()
+                for word in all[0] :
+                    if widget.text() == word:
+                        index  = all[0].index(word)
+                        file_full_path = all[2][index]
+                        # print(file_full_path)
+                        if os.path.isfile(file_full_path):
+                            with open(file_full_path, 'r', encoding='utf-8') as file:
+                                fileContent = file.read()
+                                self.showTextWindow(fileContent, widget.text())
+
+    def showTextWindow(self, text, name):
+        textWindow = QDialog(self)
+        textWindow.setWindowTitle(name)
+
+        layout = QVBoxLayout()
+
+        textEdit = QTextEdit(textWindow)
+        textEdit.setPlainText(text)
+        layout.addWidget(textEdit)
+
+        closeButton = QPushButton('Close', textWindow)
+        closeButton.clicked.connect(textWindow.accept)
+        layout.addWidget(closeButton)
+
+        textWindow.setLayout(layout)
+        textWindow.resize(600, 400)
+        textWindow.exec_()
+
+    def to_start(self, id):
+        result = self.show_message_box("你是否启动第" + str(id+1) + "条命令")
+        if result == QMessageBox.Ok:
+            widget = self.table.cellWidget(id, 1)
+            if isinstance(widget, QLineEdit):
+                all = self.load_commands_list()
+                for word in all[0] :
+                    if widget.text() == word:
+                        index  = all[0].index(word)
+                        file_full_path = all[2][index]
+                        # print(file_full_path)
+                        if os.path.isfile(file_full_path):
+                            wt = WorkThread()
+                            wt.setCommand(file_full_path)
+                            self.threads[id] = wt
+                            wt.start()
+
+    def show_message_box(self, text):
+        # 创建QMessageBox
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Information)
+        msg_box.setWindowTitle('启动选择的命令')
+        msg_box.setText(f"{text}")
+
+        # 设置QMessageBox的按钮
+        msg_box.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+
+        # 设置QMessageBox的样式
+        msg_box.setStyleSheet("QMessageBox { border: 2px solid red; }")
+
+        # 居中弹出QMessageBox
+        msg_box.move(self.geometry().center() - msg_box.rect().center())
+
+        # 显示QMessageBox并处理按钮点击事件
+        result = msg_box.exec_()
+        return result 
 
     def del_line(self):
         removeline = []
@@ -964,7 +1364,7 @@ class ui(QWidget):
         # print(len(path_array))
         #only save on /home/ubuntu/commands/xxxx 
         if len(path_array) != 6 :
-            self.settext("没有保存到正确目录下如/home/ubuntu/commands/common")
+            self.settext("没有保存到正确分类下如/home/ubuntu/commands/common")
             return 
 
         f_name = path_array[-1]
@@ -1141,8 +1541,8 @@ class ui(QWidget):
         self.load_folder()
         self.load_file("common")
         self.gen_commands_list() 
-        self.settext('命令集目录已经更新完成!')   
-        QMessageBox.information(self, '更新目录集提示', '命令集目录已经更新完成!', QMessageBox.Yes)  
+        self.settext('命令集分类已经更新完成!')   
+        QMessageBox.information(self, '更新分类集提示', '命令集分类已经更新完成!', QMessageBox.Yes)  
 
 
 

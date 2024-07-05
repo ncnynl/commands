@@ -1,11 +1,11 @@
 {
     "commands": [
         {
-            "command": "cd ~/commands/ros1_tb3_gazebo;./shell/download_gazebo_model_shell.sh",
+            "command": "cd ~/commands/ros1_gazebo;./shell/install_ros1_map_creator_plugin.sh",
             "desc": "",
             "id": 1,
             "link": "",
-            "name": "download_gazebo_model_shell.sh"
+            "name": "install_ros1_map_creator_plugin.sh"
         }
     ],
     "time": [
