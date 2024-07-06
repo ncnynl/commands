@@ -1,0 +1,17 @@
+#!/bin/bash
+################################################################
+# Function : Launch rmf_barista_ff_6_destination_request_1                                  
+# Desc     : 目的地请求，允许对机器人1发出单一目的地命令,请在终端执行,重复执行需要ID加1
+# Platform :All Linux Based Platform                           
+# Version  :1.0                                                
+# Date     :2024-07-06                                         
+# Author   :ncnynl                                             
+# Contact  :1043931@qq.com                                     
+# Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   
+# URL: https://www.ncnynl.com/archives/202211/5668.html                                     
+################################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Launch rmf_barista_ff_6_destination_request_1")"
+
+ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_1 -x 10 -y -8.39 --yaw 0.0 -i unique_task_id_100
