@@ -350,7 +350,7 @@ class ui(QWidget):
             sub_fold_path = self.file_path + "/" + folder_name + "/shell/" 
             if os.path.isdir(sub_fold_path):
                 names = [name for name in os.listdir(sub_fold_path)
-                    if os.path.isfile(os.path.join(sub_fold_path, name))  if "sh" in name and ".tl" not in name]  
+                    if os.path.isfile(os.path.join(sub_fold_path, name))  if ".sh" in name and ".tl" not in name]  
                 # print(names)
                         
             self.to_load_single_folder(folder_name, len(names))            
@@ -407,7 +407,8 @@ class ui(QWidget):
         file = open(file_path, "r")
         try:
             text_lines = file.readlines()
-            for line in text_lines:
+            text_lines_20 = text_lines[:20]
+            for line in text_lines_20:
                 # 使用正则表达式提取文件名主体（不包括扩展名）
                 pattern = re.compile(r"^(.*)\.sh$")
                 match = pattern.search(file_name)
@@ -642,9 +643,10 @@ class ui(QWidget):
                         if os.path.isfile(os.path.join(folder, name))]     
 
                 for file in files:
-                    if "sh" in file and "tl" not in file:
+                    # print(file)
+                    if ".sh" in file and ".tl" not in file:
                         file_path = folder + "/" + file
-                        
+                        # print(file_path)
                         all_commands.append(file_path)
                         info = self.get_info_from_file(folder, file)
                         all_names.append(info[0])
@@ -781,7 +783,7 @@ class ui(QWidget):
                     files.sort()
                     for file_name in files:
                         
-                        if "sh" not in file_name:
+                        if ".sh" not in file_name:
                             continue 
 
                         name    = file_name
@@ -1208,7 +1210,10 @@ class ui(QWidget):
             widget = self.table.cellWidget(id, 1)
             if isinstance(widget, QLineEdit):
                 all = self.load_commands_list()
+                # print(1)
                 for word in all[0] :
+                    # print(word)
+                    # print(widget.text())
                     if widget.text() == word:
                         index  = all[0].index(word)
                         file_full_path = all[2][index]
