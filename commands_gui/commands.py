@@ -350,7 +350,7 @@ class ui(QWidget):
             sub_fold_path = self.file_path + "/" + folder_name + "/shell/" 
             if os.path.isdir(sub_fold_path):
                 names = [name for name in os.listdir(sub_fold_path)
-                    if os.path.isfile(os.path.join(sub_fold_path, name))  if "sh" in name ]  
+                    if os.path.isfile(os.path.join(sub_fold_path, name))  if "sh" in name and ".description" not in name]  
                         
             self.to_load_single_folder(folder_name, len(names))            
 
