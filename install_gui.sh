@@ -36,7 +36,7 @@ function build_gui()
     cd commands_gui
     #install python3 deps
     echo -e "Install python3 deps for commands"
-    sudo apt-get install python3-bs4
+    # sudo apt-get install python3-bs4
 
     version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
     if [ ${version} == "24.04" ]; then
@@ -72,6 +72,7 @@ function install_package(){
         sudo mkdir -p /usr/local/commands/
     fi 
     if [ -f ~/tools/commands/commands_gui/dist/commands ]; then
+        sudo rm /usr/local/commands/commands
         sudo cp ~/tools/commands/commands_gui/dist/commands /usr/local/commands/commands
     else
         echo -e "~/tools/commands/commands_gui/dist/commands file is not found!"
@@ -84,6 +85,10 @@ function install_package(){
     if [ -f /usr/bin/commands ]; then
         sudo rm /usr/bin/commands
     fi 
+
+    if [ -f /usr/bin/rcm-gui ]; then
+        sudo rm /usr/bin/rcm-gui
+    fi     
 
     #old use commands
     sudo ln -s /usr/local/commands/commands /usr/bin/commands
