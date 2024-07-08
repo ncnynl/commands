@@ -36,6 +36,8 @@ function build_gui()
     cd commands_gui
     #install python3 deps
     echo -e "Install python3 deps for commands"
+    sudo apt-get install python3-bs4
+
     version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
     if [ ${version} == "24.04" ]; then
         pip3 install -r requiments.txt --break-system-packages --no-warn-script-location
