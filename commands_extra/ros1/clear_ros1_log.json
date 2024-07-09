@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "rosclean purge ; echo \"Clean ros1 log finished \"",
+            "desc": "清除ROS1的日志文件",
+            "id": "1",
+            "link": "点击'启动'按钮,一键清除",
+            "name": "clear ros1  log"
+        }
+    ]
+}

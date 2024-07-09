@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros1_sensor; ./shell/install_ublox_gps.sh",
+            "desc": "",
+            "id": "1",
+            "link": "",
+            "name": "install_ublox_gps"
+        }
+    ]
+}

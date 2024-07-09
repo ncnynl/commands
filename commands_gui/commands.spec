@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['commands.py', 'share.py', 'resources.py'],
+    ['commands.py', 'share.py', 'resources.py', 'script.py', 'category.py'],
     pathex=[],
     binaries=[],
     datas=[],

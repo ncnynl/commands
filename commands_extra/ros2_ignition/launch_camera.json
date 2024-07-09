@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos image_bridge.launch.py",
+            "desc": "launch启动桥接",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202201/4947.html",
+            "name": " launch image_bridge"
+        },
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos camera.launch.py",
+            "desc": "launch启动相机",
+            "id": "6",
+            "link": "https://www.ncnynl.com/archives/202201/4947.html",
+            "name": " launch camera"
+        }
+    ]
+}

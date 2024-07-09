@@ -1,0 +1,37 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch barista_gazebo main_three_robots_turtleworld.launch.xml",
+            "desc": "启动3个机器人的仿真",
+            "id": "1",
+            "link": "",
+            "name": "main_three_robots_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_nav_barista_1_2_mule_turtleworld.launch.xml",
+            "desc": "同时启动1/2/mule机器人导航",
+            "id": "2",
+            "link": "",
+            "name": "start_nav_barista_1_2_mule_turtleworld"
+        },
+        {
+            "command": "ros2 launch main_navigation start_navigation_rviz.launch.xml",
+            "desc": "启动rviz",
+            "id": "3",
+            "link": "",
+            "name": "start_navigation_rviz"
+        },
+        {
+            "command": "ros2 run rqt_tf_tree rqt_tf_tree",
+            "desc": "查看TF ",
+            "id": "4",
+            "link": "",
+            "name": "rqt_tf_tree"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2023-01-01"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "echo \"config  localhost\"",
+            "desc": "",
+            "id": "1",
+            "link": "",
+            "name": "echo "
+        },
+        {
+            "command": "echo \"export ROS_MASTER_URI=http://localhost:11311\">> ~/.bashrc",
+            "desc": "",
+            "id": "2",
+            "link": "",
+            "name": "echo "
+        },
+        {
+            "command": "echo \"export ROS_HOSTNAME=192.168.0.101\">> ~/.bashrc",
+            "desc": "",
+            "id": "3",
+            "link": "",
+            "name": "echo "
+        },
+        {
+            "command": "echo \"config finished\"",
+            "desc": "",
+            "id": "4",
+            "link": "",
+            "name": "echo "
+        }
+    ]
+}

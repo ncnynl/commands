@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros2_tb3_gazebo; ./shell/download_gazebo_model_shell.sh",
+            "desc": "下载gazebo模型",
+            "id": "1",
+            "link": "点击'启动'按钮,一键下载",
+            "name": "download_gazebo_model_shell"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-11-07"
+        }
+    ]
+}

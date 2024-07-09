@@ -1,0 +1,60 @@
+{
+    "commands": [
+        {
+            "command": "sudo apt-get install ros-noetic-serial",
+            "desc": "",
+            "id": "1",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "install  serial"
+        },
+        {
+            "command": "mkdir  -p ~/ros1_sensor_ws/src/",
+            "desc": "",
+            "id": "6",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "mkdir"
+        },
+        {
+            "command": "cd ~/ros1_sensor_ws/src/",
+            "desc": "",
+            "id": "11",
+            "link": "点击'启动'按钮,一键启动",
+            "name": "cd"
+        },
+        {
+            "command": "git clone https://github.com/ncnynl/razor_imu_m0_driver",
+            "desc": "",
+            "id": "13",
+            "link": "",
+            "name": "git clone"
+        },
+        {
+            "command": "cd ..",
+            "desc": "",
+            "id": "14",
+            "link": "",
+            "name": "cd"
+        },
+        {
+            "command": "catkin_make \n",
+            "desc": "",
+            "id": "15",
+            "link": "",
+            "name": "catkin_make"
+        },
+        {
+            "command": "cd  ~/catkin_ws/src/razor_imu_m0_driver/scripts",
+            "desc": "",
+            "id": "16",
+            "link": "",
+            "name": ""
+        },
+        {
+            "command": "sudo ./create_udev_rules",
+            "desc": "",
+            "id": "17",
+            "link": "",
+            "name": ""
+        }
+    ]
+}

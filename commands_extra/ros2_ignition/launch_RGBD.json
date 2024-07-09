@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos image_bridge.launch.py image_topic:=/rgbd_camera/image",
+            "desc": "启动RGB image",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202201/4953.html",
+            "name": "launch iRGB image"
+        },
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos image_bridge.launch.py image_topic:=/rgbd_camera/depth_image",
+            "desc": "启动Depth image",
+            "id": "2",
+            "link": "https://www.ncnynl.com/archives/202201/4953.html",
+            "name": "launch Depth image"
+        },
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos rgbd_camera_bridge.launch.py",
+            "desc": "使用桥接",
+            "id": "3",
+            "link": "https://www.ncnynl.com/archives/202201/4953.html",
+            "name": "launch rgbd_camera_bridge"
+        },
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos rgbd_camera.launch.py",
+            "desc": "使用 Ignition Gazebo 插件",
+            "id": "4",
+            "link": "https://www.ncnynl.com/archives/202201/4953.html",
+            "name": "launch rgbd_camera"
+        }
+    ]
+}

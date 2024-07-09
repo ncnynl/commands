@@ -1,0 +1,18 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos gpu_lidar_bridge.launch.py",
+            "desc": "使用桥接启动",
+            "id": "4",
+            "link": "https://www.ncnynl.com/archives/202201/4950.html",
+            "name": "launch gpu_lidar_bridge"
+        },
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos gpu_lidar.launch.py",
+            "desc": "使用 Ignition Gazebo 插件启动",
+            "id": "5",
+            "link": "https://www.ncnynl.com/archives/202201/4950.html",
+            "name": "launch gpu_lidar"
+        }
+    ]
+}

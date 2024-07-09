@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/ros2; ./shell/install_ros2_humble.sh ",
+            "desc": "安装humble,采用国内源,安装更顺畅",
+            "id": "1",
+            "link": "点击'启动'按钮,一键安装",
+            "name": "install_ros2_humble"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2022-07-08"
+        }
+    ]
+}

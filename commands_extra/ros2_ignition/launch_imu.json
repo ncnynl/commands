@@ -1,0 +1,11 @@
+{
+    "commands": [
+        {
+            "command": "ros2 launch ros_ign_gazebo_demos imu.launch.py",
+            "desc": "启动imu",
+            "id": "1",
+            "link": "https://www.ncnynl.com/archives/202201/4951.html",
+            "name": "launch imu"
+        }
+    ]
+}
