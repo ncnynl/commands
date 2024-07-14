@@ -31,17 +31,17 @@
 #echo $file_name
 #echo ${file_name##*/}
 
-function check_installed()
-{
-    is_exits=$(which is $1)
-    if [ ${#is_exits} != 0 ]; then 
-        echo 1
-    else
-        echo 0
-    fi
-}
+# function check_installed()
+# {
+#     is_exits=$(which is $1)
+#     if [ ${#is_exits} != 0 ]; then 
+#         echo 1
+#     else
+#         echo 0
+#     fi
+# }
 
-echo $(check_installed ros2)
+# echo $(check_installed ros2)
 
 # echo "$(printf '%s' " - 命令格式: rcm dddd dddd [查看代码](#ddddd)")"  > DOCUMENT.md
 
@@ -98,4 +98,9 @@ echo $(check_installed ros2)
 # else 
 #     echo "b"
 # fi 
+package_noinstall="sadfdf"
 
+if [ ${package_noinstall} ]; then 
+    echo "package $package_noinstall is not installed "
+    exit 0
+fi

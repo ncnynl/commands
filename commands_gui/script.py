@@ -317,8 +317,12 @@ class ScriptManagerWindow(QWidget):
         file2_path = self.file_path + "/" + directory + "/shell/" + file_name
         result = self.show_message_box("是否删除选中的脚本：" + file_name)
         if result == QMessageBox.Ok:
-            os.remove(file_path)
-            os.remove(file2_path)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+
+            if os.path.isfile(file2_path):
+                os.remove(file2_path)
+            
             QMessageBox.information(self, '成功', f'文件 "{file_name}" 已经删除！')
 
 

@@ -17,8 +17,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 humble Turbot4-ARM source version ")"
 
-echo "Not Supported Yet!"
-exit 0 
+# echo "Not Supported Yet!"
+# exit 0 
 ros2_distro=humble 
 
 echo ""
@@ -38,7 +38,8 @@ fi
 echo ""
 echo "Software if installed ?"
 if [ -d ~/$workspace/src/$soft_name ];then 
-    echo "$soft_name have installed" && exit 0
+    echo "$soft_name have installed" 
+    # exit 0
 fi 
 
 echo ""
@@ -51,39 +52,72 @@ cd ~/$workspace/src
 git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_core.git
 git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_rovers.git
 git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_toolboxes.git
+git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_manipulators.git
 git clone -b ros2 https://github.com/ros-planning/moveit_visual_tools.git 
+git clone -b $ros2_distro https://github.com/iRobotEducation/create3_sim.git
 
 echo "rm COLCON_IGNORE"
 rm                                                                                                  \
     interbotix_ros_toolboxes/interbotix_perception_toolbox/COLCON_IGNORE                              \
     interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_moveit_interface/COLCON_IGNORE      \
-    interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_moveit_interface_msgs/COLCON_IGNORE
+    interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_moveit_interface_msgs/COLCON_IGNORE \                                                                                              \
+    interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_perception/COLCON_IGNORE     \
+    interbotix_ros_toolboxes/interbotix_perception_toolbox/COLCON_IGNORE                             \
+    interbotix_ros_core/interbotix_ros_xseries/COLCON_IGNORE                                          
+
 
 echo "interbotix_ros_core submodule"
-cd interbotix_ros_core
+cd ~/$workspace/src/interbotix_ros_core
 git submodule update --init interbotix_ros_xseries/dynamixel_workbench_toolbox
 git submodule update --init interbotix_ros_xseries/interbotix_xs_driver
 
 echo "interbotix_xs_sdk udev"
-cd interbotix_ros_xseries/interbotix_xs_sdk
+cd ~/$workspace/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk
 sudo cp 99-interbotix-udev.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && sudo udevadm trigger
 
-echo "irobot_create_msgs"
-git clone -b $ros2_distro https://github.com/iRobotEducation/irobot_create_msgs.git 
-
+#install by rosdep
+# cd ~/$workspace/src
+# echo "irobot_create_msgs"
+# git clone -b $ros2_distro https://github.com/iRobotEducation/irobot_create_msgs.git 
 
 echo ""
 echo "Install rosdeps"
-cs -si update_rosdep_tsinghua
+# cs -si update_rosdep_tsinghua
 cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ros2_distro} -y
 
+# if all package downloaded?
+package_noinstall=""
+if [ ! -d ~/$workspace/src/interbotix_ros_core ];then 
+package_noinstall=interbotix_ros_core
+elif [ ! -d ~/$workspace/src/interbotix_ros_toolboxes ]; then 
+package_noinstall=interbotix_ros_toolboxes
+elif [ ! -d ~/$workspace/src/interbotix_ros_rovers ]; then 
+package_noinstall=interbotix_ros_rovers
+elif [ ! -d ~/$workspace/src/interbotix_ros_manipulators ]; then 
+package_noinstall=interbotix_ros_manipulators
+elif [ ! -d ~/$workspace/src/moveit_visual_tools ]; then 
+package_noinstall=moveit_visual_tools
+elif [ ! -d ~/$workspace/src/interbotix_ros_core/interbotix_ros_xseries/dynamixel_workbench_toolbox ]; then 
+package_noinstall=dynamixel_workbench_toolbox
+elif [ ! -d ~/$workspace/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_driver ]; then 
+package_noinstall=interbotix_xs_driver
+elif [ ! -d ~/$workspace/src/create3_sim ]; then 
+package_noinstall=create3_sim
+else
+    echo "All Package is downloaded "
+fi 
+
+if [ ${package_noinstall} ]; then 
+    echo "package $package_noinstall is not installed "
+    exit 0
+fi
 
 # 编译代码
 echo "Compile source"
 cd ~/$workspace/
-colcon build --symlink-install 
+colcon build --symlink-install  --executor sequential
 
 
 FASTRTPS_DEFAULT_PROFILES_FILE=~/$workspace/src/interbotix_ros_rovers/interbotix_ros_xslocobots/install/resources/super_client_configuration_file.xml
@@ -108,3 +142,4 @@ else
 fi
 
 #How to use
+# ros2 pkg list | grep interbotix_
