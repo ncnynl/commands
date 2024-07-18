@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : <file_name>  
-# Desc     : 用于生成ROS2版本脚本的脚本模板                      
+# Function : Install m-explore-ros2 source 
+# Desc     : 用于安装ROS2版本m-explore自主探索源码的脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : <date>                          
+# Date     : 2024-07-18                          
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -16,16 +16,15 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "<file_name>")"
-echo "Not Supported Yet!"
-exit 0  
+echo "$(gettext "Install m-explore-ros2 source ")"
+
 echo ""
 echo "Set workspace"
-workspace=<workspace_ws>
+workspace=ros2_algorithm_ws
 
 echo ""
 echo "Set soft name"
-soft_name=<soft_name>
+soft_name=m-explore-ros2
 
 echo ""
 echo "Workspace if exits ?"
@@ -46,7 +45,7 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone -b <soft_branch> <soft_url>
+git clone  https://github.com/robo-friends/m-explore-ros2
 
 echo ""
 echo "Install rosdeps"
@@ -58,7 +57,7 @@ rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 # 编译代码
 echo "Compile source"
 cd ~/$workspace/
-colcon build --symlink-install 
+colcon build --symlink-install --packages-select explore_lite multirobot_map_merge
 
 
 echo "Add workspace to bashrc if not exits"

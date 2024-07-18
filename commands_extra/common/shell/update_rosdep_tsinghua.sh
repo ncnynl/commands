@@ -25,11 +25,14 @@ python3-rosdep \
 python3-vcstool
 #run mkdir
 
-sudo mkdir -p /etc/ros/rosdep/sources.list.d/
+if [ ! -d /etc/ros/rosdep/sources.list.d ];then 
+    sudo mkdir -p /etc/ros/rosdep/sources.list.d/
+fi 
 
 #run curl
-
-sudo curl -o /etc/ros/rosdep/sources.list.d/20-default.list https://mirrors.tuna.tsinghua.edu.cn/github-raw/ros/rosdistro/master/rosdep/sources.list.d/20-default.list
+if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then 
+    sudo curl -o /etc/ros/rosdep/sources.list.d/20-default.list https://mirrors.tuna.tsinghua.edu.cn/github-raw/ros/rosdistro/master/rosdep/sources.list.d/20-default.list
+fi 
 
 #run export 
 
