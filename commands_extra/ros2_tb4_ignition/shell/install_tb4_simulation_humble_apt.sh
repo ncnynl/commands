@@ -17,8 +17,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 turtlebot4 simulation humble apt version")"
 
-echo "Not Yet Supported!" 
-exit 0
+# echo "Not Yet Supported!" 
+# exit 0
 
 #run install dep
 
