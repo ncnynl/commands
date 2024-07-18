@@ -98,9 +98,11 @@
 # else 
 #     echo "b"
 # fi 
-package_noinstall="sadfdf"
+# package_noinstall="sadfdf"
 
-if [ ${package_noinstall} ]; then 
-    echo "package $package_noinstall is not installed "
-    exit 0
-fi
+# if [ ${package_noinstall} ]; then 
+#     echo "package $package_noinstall is not installed "
+#     exit 0
+# fi
+
+

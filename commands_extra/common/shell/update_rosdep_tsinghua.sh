@@ -30,9 +30,18 @@ if [ ! -d /etc/ros/rosdep/sources.list.d ];then
 fi 
 
 #run curl
-if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then 
+if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ];then 
+
     sudo curl -o /etc/ros/rosdep/sources.list.d/20-default.list https://mirrors.tuna.tsinghua.edu.cn/github-raw/ros/rosdistro/master/rosdep/sources.list.d/20-default.list
-fi 
+
+else
+
+    if ! grep -Fq "tsinghua" /etc/ros/rosdep/sources.list.d/20-default.list
+    then
+        sudo curl -o /etc/ros/rosdep/sources.list.d/20-default.list https://mirrors.tuna.tsinghua.edu.cn/github-raw/ros/rosdistro/master/rosdep/sources.list.d/20-default.list
+    fi
+
+fi
 
 #run export 
 
