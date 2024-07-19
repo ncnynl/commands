@@ -11,7 +11,8 @@
 # Licnese: MIT                                 
 # QQ Qun: 创客智造B群:926779095                                  
 # QQ Qun: 创客智造C群:937347681                               
-# QQ Qun: 创客智造D群:562093920                               
+# QQ Qun: 创客智造D群:562093920        
+# website: https://classic.gazebosim.org/tutorials?tut=custom_messages&cat=transport                       
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        

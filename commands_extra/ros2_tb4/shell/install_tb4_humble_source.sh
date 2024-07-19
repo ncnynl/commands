@@ -33,9 +33,9 @@ else
     sudo apt install -y ros-humble-rclcpp-components
 
     # 新建工作空间
-    mkdir -p ~/ros2_tb4_ws/src
-
-    #run cd ros2_tb4_ws
+    if [ ! -d ~/ros2_tb4_ws/src ]; then 
+        mkdir -p ~/ros2_tb4_ws/src
+    fi
 
     # 进入工作空间
 
@@ -56,7 +56,19 @@ else
     git clone -b ${ROS_DISTRO} https://github.com/iRobotEducation/irobot_create_msgs.git
 
     echo "Dowload from create3_sim support namespace"
-    git clone -b humble https://github.com/iRobotEducation/create3_sim.git
+    git clone -b ${ROS_DISTRO}  https://github.com/iRobotEducation/create3_sim.git
+
+    #fix:https://github.com/turtlebot/turtlebot4_simulator/issues/55
+    CHOICE_C=$(echo -e "If your system is support GPU ? [Y/n]")
+    read -p "${CHOICE_C}" YN
+    [ -z ${YN} ] && YN = Y
+    case $YN in 
+    [Yy] | [Yy][Ee][Ss])
+        ;;
+    *)
+        sed -i 's/ogre/ogre2/'g ~/ros2_tb4_ws/src/create3_sim/irobot_create_common/irobot_create_description/urdf/create3.urdf.xacro
+        ;;
+    esac 
 
     echo "Dowload from turtlebot4 common "
     git clone -b ${ROS_DISTRO} https://github.com/turtlebot/turtlebot4.git
