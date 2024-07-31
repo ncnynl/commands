@@ -120,20 +120,24 @@ cd ~/$workspace/
 colcon build --symlink-install  --executor sequential
 
 
-FASTRTPS_DEFAULT_PROFILES_FILE=~/$workspace/src/interbotix_ros_rovers/interbotix_ros_xslocobots/install/resources/super_client_configuration_file.xml
 
 echo "Add workspace to bashrc if not exits"
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
 then
     echo  "configures Turbot4-ARM's computer's RMW"
-    if [ -z "$ROS_DISCOVERY_SERVER" ]; then
-        echo "export RMW_IMPLEMENTATION=rmw_fastrtps_cpp" >> ~/.bashrc
-        echo "export FASTRTPS_DEFAULT_PROFILES_FILE=${FASTRTPS_DEFAULT_PROFILES_FILE}" >> ~/.bashrc
-        echo "export ROS_DISCOVERY_SERVER=127.0.0.1:11811" >> ~/.bashrc
-        sudo cp "~/$workspace"/src/interbotix_ros_rovers/interbotix_ros_xslocobots/install/resources/service/fastdds_disc_server.service /lib/systemd/system/
-        sudo systemctl daemon-reload
-        sudo systemctl enable fastdds_disc_server.service
-    fi
+
+    echo "export INTERBOTIX_XSLOCOBOT_BASE_TYPE=create3" >> ~/.bashrc
+    echo "export INTERBOTIX_XSLOCOBOT_ROBOT_MODEL=locobot_wx250s" >> ~/.bashrc
+    
+    # if [ -z "$ROS_DISCOVERY_SERVER" ]; then
+    #     echo "export RMW_IMPLEMENTATION=rmw_fastrtps_cpp" >> ~/.bashrc
+    #     FASTRTPS_DEFAULT_PROFILES_FILE=~/$workspace/src/interbotix_ros_rovers/interbotix_ros_xslocobots/install/resources/super_client_configuration_file.xml
+    #     echo "export FASTRTPS_DEFAULT_PROFILES_FILE=${FASTRTPS_DEFAULT_PROFILES_FILE}" >> ~/.bashrc
+    #     echo "export ROS_DISCOVERY_SERVER=127.0.0.1:11811" >> ~/.bashrc
+    #     sudo cp "~/$workspace"/src/interbotix_ros_rovers/interbotix_ros_xslocobots/install/resources/service/fastdds_disc_server.service /lib/systemd/system/
+    #     sudo systemctl daemon-reload
+    #     sudo systemctl enable fastdds_disc_server.service
+    # fi
 
     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
