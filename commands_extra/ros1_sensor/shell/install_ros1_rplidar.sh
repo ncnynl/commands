@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : Install ublox GPS    
-# Desc     : 用于源码方式安装ROS1版本GPS ublox-gps驱动的脚本                      
+# Function : Install Rplidar ROS 
+# Desc     : 用于源码方式安装ROS1版本rplidar驱动的脚本                      
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2022-12-09                          
+# Date     : 2024-08-17                          
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -15,7 +15,7 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install ublox GPS")"
+echo "$(gettext "Install Rplidar ROS")"
 
 # echo "Not Supported Yet!"
 # exit 0  
@@ -25,7 +25,7 @@ workspace=ros1_sensor_ws
 
 echo ""
 echo "Set soft name"
-soft_name=ublox
+soft_name=rplidar_ros
 
 echo ""
 echo "Workspace if exits ?"
@@ -46,7 +46,11 @@ echo "Install system deps"
 echo ""
 echo "Download source"
 cd ~/$workspace/src
-git clone https://github.com/ncnynl/ublox
+git clone https://github.com/Slamtec/rplidar_ros
+
+if [ ! -d ~/$workspace/src/$soft_name ];then 
+echo " Download failed! " && exit 0
+fi
 
 echo ""
 echo "Install rosdeps"
@@ -58,8 +62,7 @@ rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 # 编译代码
 echo "Compile source"
 cd ~/$workspace/
-catkin_make --pkg ublox_gps ublox_msgs ublox_serialization ublox
-
+catkin_make --pkg  rplidar_ros
 
 echo "Add workspace to bashrc if not exits"
 if ! grep -Fq "$workspace/devel/setup.bash" ~/.bashrc
