@@ -23,7 +23,7 @@ ros2_distro=humble
 
 echo ""
 echo "Set workspace"
-workspace=ros2_turbot4_arm_ws
+workspace=ros2_turbot4_arm_sim_ws
 
 echo ""
 echo "Set soft name"
@@ -50,9 +50,11 @@ echo ""
 echo "Download source"
 cd ~/$workspace/src
 git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_core.git
-git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_rovers.git
+# git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_rovers.git
+git clone -b $ros2_distro https://gitee.com/ncnynl/interbotix_ros_rovers.git
 git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_toolboxes.git
-git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_manipulators.git
+# git clone -b $ros2_distro https://github.com/Interbotix/interbotix_ros_manipulators.git
+git clone -b $ros2_distro https://gitee.com/ncnynl/interbotix_ros_manipulators.git
 git clone -b ros2 https://github.com/ros-planning/moveit_visual_tools.git 
 git clone -b $ros2_distro https://github.com/iRobotEducation/create3_sim.git
 

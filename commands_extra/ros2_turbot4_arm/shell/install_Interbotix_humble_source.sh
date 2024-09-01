@@ -23,7 +23,7 @@ ros2_distro=humble
 
 echo ""
 echo "Set workspace"
-workspace=ros2_Interbotix_ws
+workspace=ros2_interbotix_ws
 
 echo ""
 echo "Set soft name"
