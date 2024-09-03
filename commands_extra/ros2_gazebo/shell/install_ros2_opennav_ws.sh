@@ -40,12 +40,19 @@ fi
 
 echo ""
 echo "Install system deps"
+
+
 sudo apt install ros-${ROS_DISTRO}-gazebo-ros-pkgs
 sudo apt install ros-${ROS_DISTRO}-ros2-control
 sudo apt install ros-${ROS_DISTRO}-ros2-controllers
 sudo apt install ros-${ROS_DISTRO}-pointcloud-to-laserscan
 sudo apt install ros-${ROS_DISTRO}-nav2-graceful-controller
 sudo apt install ros-${ROS_DISTRO}-nav2-*
+
+#3D Localization
+sudo apt install ros-${ROS_DISTRO}-spatio-temporal-voxel-layer
+sudo apt install libpcap-dev
+
 
 # 下载源码
 echo ""
@@ -73,7 +80,8 @@ git clone -b humble https://github.com/SteveMacenski/nonpersistent_voxel_layer
 # For ground segmentation
 git clone -b master https://github.com/url-kaist/patchwork-plusplus
 # For 3D SLAM and Localization
-git clone -b develop https://github.com/rsasaki0109/lidarslam_ros2.git
+# git clone -b develop https://github.com/rsasaki0109/lidarslam_ros2.git
+git clone -b humble https://github.com/rsasaki0109/lidarslam_ros2.git
 git clone -b main https://github.com/rsasaki0109/lidar_localization_ros2.git
 git clone -b humble https://github.com/rsasaki0109/ndt_omp_ros2.git
 

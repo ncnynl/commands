@@ -69,9 +69,14 @@ sudo apt install -y ros-${ROS_DISTRO}-teleop-twist-keyboard
 sudo apt install -y xterm
 
 
+
+
+
 echo "Download source"
 cd ~/$workspace/src 
 git clone -b ${ROS_DISTRO} https://gitee.com/ncnynl/walking_application
+#stvl
+git clone -b foxy-delvel https://gitee.com/ncnynl/velodyne_simulator
 
 # 编译代码
 echo "Compile source"
