@@ -64,39 +64,38 @@ sudo apt install ros-$ROS_DISTRO-tile-map
 echo ""
 echo "Download source"
 cd ~/$workspace/src/
-# git clone  https://github.com/ncnynl/opennav_amd_demonstrations
-git clone  https://gitee.com/ncnynl/opennav_amd_demonstrations
+git clone -b $ROS_DISTRO https://github.com/ncnynl/nav2_opennav
+# # git clone  https://github.com/ncnynl/opennav_amd_demonstrations
+# git clone  https://gitee.com/ncnynl/opennav_amd_demonstrations
 
-cd ~/$workspace/src/opennav_amd_demonstrations/
-git clone  -b humble https://github.com/open-navigation/opennav_docking
+# cd ~/$workspace/src/opennav_amd_demonstrations/
+# git clone  -b humble https://github.com/open-navigation/opennav_docking
 
-#https://github.com/open-navigation/opennav_amd_demonstrations/blob/main/deps.repos
-cd ~/$workspace/src/
+# #https://github.com/open-navigation/opennav_amd_demonstrations/blob/main/deps.repos
+# cd ~/$workspace/src/
 
-#for real
-# Generally required
-# git clone -b humble https://github.com/micro-ROS/micro-ROS-Agent.git
-# git clone --recurse-submodules -b ros2  https://github.com/ouster-lidar/ouster-ros.git
-# git clone -b  main https://github.com/orbbec/OrbbecSDK_ROS2
-# git clone -b 0.2.11 https://github.com/clearpathrobotics/clearpath_robot.git
+# #for real
+# # Generally required
+# # git clone -b humble https://github.com/micro-ROS/micro-ROS-Agent.git
+# # git clone --recurse-submodules -b ros2  https://github.com/ouster-lidar/ouster-ros.git
+# # git clone -b  main https://github.com/orbbec/OrbbecSDK_ROS2
+# # git clone -b 0.2.11 https://github.com/clearpathrobotics/clearpath_robot.git
 
-#for sim
-# For GPS demo
-git clone -b humble https://github.com/SteveMacenski/nonpersistent_voxel_layer
-# For ground segmentation
-git clone -b master https://github.com/url-kaist/patchwork-plusplus
-# For 3D SLAM and Localization
-# git clone -b develop https://github.com/rsasaki0109/lidarslam_ros2.git
-git clone -b humble https://github.com/rsasaki0109/lidarslam_ros2.git
-git clone -b main https://github.com/rsasaki0109/lidar_localization_ros2.git
-git clone -b humble https://github.com/rsasaki0109/ndt_omp_ros2.git
+# #for sim
+# # For GPS demo
+# git clone -b humble https://github.com/SteveMacenski/nonpersistent_voxel_layer
+# # For ground segmentation
+# git clone -b master https://github.com/url-kaist/patchwork-plusplus
+# # For 3D SLAM and Localization
+# # git clone -b develop https://github.com/rsasaki0109/lidarslam_ros2.git
+# git clone -b humble https://github.com/rsasaki0109/lidarslam_ros2.git
+# git clone -b main https://github.com/rsasaki0109/lidar_localization_ros2.git
+# git clone -b humble https://github.com/rsasaki0109/ndt_omp_ros2.git
 
 
 if [ ! -d ~/$workspace/src/$soft_name ];then 
     echo "Download failed, please try again!" && exit 0
 fi
-
-
 
 echo ""
 echo "Install rosdeps"
