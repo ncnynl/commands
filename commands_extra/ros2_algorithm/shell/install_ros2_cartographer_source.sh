@@ -22,8 +22,15 @@ else
 
     #install deps
     sudo apt update
+
+
+
+
+    if [ $ROS_DISTRO == 'galactic' ];then
+        sudo apt install -y clang
+    fi
+
     sudo apt install -y \
-        clang \
         cmake \
         g++ \
         git \
@@ -43,7 +50,6 @@ else
         lsb-release \
         ninja-build \
         stow
-
 
     echo "Download ROS2 ${ROS_DISTRO} cartographer"
     if [ ! -d ~/$workspace/src ];then
