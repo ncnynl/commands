@@ -26,7 +26,7 @@ workspace=ros2_opennav_ws
 
 echo ""
 echo "Set soft name"
-soft_name=opennav_amd_demonstrations
+soft_name=nav2_opennav
 
 if [ ! -d ~/$workspace/src ] ; then 
     mkdir -p ~/$workspace/src/
@@ -64,7 +64,7 @@ sudo apt install ros-$ROS_DISTRO-tile-map
 echo ""
 echo "Download source"
 cd ~/$workspace/src/
-git clone -b $ROS_DISTRO https://github.com/ncnynl/nav2_opennav
+git clone -b $ROS_DISTRO https://gitee.com/ncnynl/nav2_opennav
 # # git clone  https://github.com/ncnynl/opennav_amd_demonstrations
 # git clone  https://gitee.com/ncnynl/opennav_amd_demonstrations
 
