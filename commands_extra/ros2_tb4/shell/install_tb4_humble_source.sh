@@ -31,6 +31,7 @@ else
     sudo apt install -y  wget python3-colcon-common-extensions python3-rosdep  python3-vcstool
     #fix fatal error: 'rclcpp_components/register_node_macro.hpp' file not found
     sudo apt install -y ros-humble-rclcpp-components
+    sudo apt install qtquickcontrols2-5-dev
 
     # 新建工作空间
     if [ ! -d ~/ros2_tb4_ws/src ]; then 
