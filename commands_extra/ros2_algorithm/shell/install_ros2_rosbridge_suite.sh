@@ -44,7 +44,7 @@ function _rcm_ros_install_() {
         
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        git clone -b ros2 https://gitee.com/ncnynl/rosbridge_suite
+        git clone -b ${ROS_DISTRO} https://github.com/RobotWebTools/rosbridge_suite
 
         echo "Install related dependencies by rosdep"
         cd ~/$workspace/
