@@ -115,11 +115,13 @@ function commands_install(){
                             #只能在终端执行
                             cd ~/commands/$folder
                             filename=${shell#*/}
+                            shell_path=~/commands/$folder
+                            full_name="$shell_path/$shell"
+                            proxy_handle_before_install $full_name
                             if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
                                 sudo ./$shell $2
                             else 
-                                # ./$shell $2
-                                handle_install $shell $2
+                                ./$shell $2
                             fi
                             ;;
                         [Nn] | [Nn][Oo])
@@ -128,7 +130,7 @@ function commands_install(){
                         *)
                             commands
                             ;;
-                        esac  
+                        esac 
                     fi
                 fi
             done 
@@ -179,14 +181,14 @@ function commands_search_install(){
                             # commands
                             #只能在终端执行
                             cd ~/commands/$folder
-                            shell_path=~/commands/$folder
                             filename=${shell#*/}
+                            shell_path=~/commands/$folder
+                            full_name="$shell_path/$shell"
+                            proxy_handle_before_install $full_name
                             if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
-                                # sudo ./$shell $2
-                                handle_install $shell_path $shell 1
+                                sudo ./$shell $2
                             else 
-                                # ./$shell $2
-                                handle_install $shell_path $shell 
+                                ./$shell $2
                             fi
                             ;;
                         [Nn] | [Nn][Oo])
@@ -204,7 +206,7 @@ function commands_search_install(){
 }
 
 #######################################
-# handle_install
+# proxy_handle_before_install
 # Globals: 
 #   None
 # Arguments:
@@ -214,7 +216,7 @@ function commands_search_install(){
 # Outputs:
 #    echo to stdout
 #######################################
-function handle_install()
+function proxy_handle_before_install()
 {
     # echo "0:$0" 
     # echo "1:$1"  
@@ -224,8 +226,7 @@ function handle_install()
 
     #通过判断脚本是否github.com网址，自动适配系统代理，前缀代理，从而增加下载成功率
     #判断是否包含github
-    file_path=$1/$2
-    if [ $(check_file_with_github $file_path) == 1 ]; then 
+    if [ $(check_file_with_github $1) == 1 ]; then 
         echo "The script contains github.com required processing"
         echo "Check if you can access github.com "
         if [ $(check_github) == 1 ]; then 
@@ -233,18 +234,10 @@ function handle_install()
         else
             echo "you can not access github.com, add proxy prefix"
             rcm -p
+            echo "use git proxy now"
+            echo "if still can not access github.com, you can use other proxy, please check the above proxy list"
         fi
     fi
-
-    #执行脚本
-    cd $1
-    if [ $3 ]; then
-        sudo ./$2
-    else 
-        ./$2
-    fi
-    
-
 }
 
 #######################################
@@ -401,6 +394,9 @@ function commands_si(){
     if [ $j == 1 ]; then 
         cd ~/commands/$folder
         filename=${shell#*/}
+        shell_path=~/commands/$folder
+        full_name="$shell_path/$shell"
+        proxy_handle_before_install $full_name
         if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]]; then
             sudo ./$shell $*
         else 
@@ -1410,9 +1406,9 @@ function commands() {
             local script_file="$CS_ROOT/$1/shell/$2.sh"
             
             if [ -f $script_file ]; then 
+                proxy_handle_before_install $script_file
                 if [[ "${SUDO_LIST[@]}" =~ "${2}.sh" ]]; then
                     sudo "$CS_ROOT/$1/shell/$2.sh" $*
-                    echo 1
                 else 
                     "$CS_ROOT/$1/shell/$2.sh" $*
                 fi
