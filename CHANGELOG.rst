@@ -1,5 +1,14 @@
 ################# commands工具更新日志 #############
 
+
+2.1.3 (2024-10-11)
+
+- 增加多种代理设置功能
+- 系统代理，在~/.bashrc文件增加  export http_proxy和https_proxy,当自己有独立代理，比如v2RayN代理，开启局域网代理，可以设置系统代理。或者其他代理地址，也可以设置系统代理
+- 前缀代理，在~/.gitconfig文件增加，增加git config --global url.$default_proxy.insteadof https://github.com
+- git代理，在~/.gitconfig文件增加，增加git config --global http.proxy http://${2}:${3}
+- 增加执行脚本前自动判断github.com是否可访问，不能访问自动添加前缀代理
+
 2.1.2 (2024-07-06)
 
 - 清除旧桌面版相关源码和json文件

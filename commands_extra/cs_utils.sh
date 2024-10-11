@@ -222,3 +222,93 @@ function kill_by_name()
         echo "No such process[$1]!"  
     fi  
 } 
+
+#######################################
+# check github  
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function check_github()
+{   
+    export http_proxy=""
+    export https_proxy=""
+
+    # GitHub URL
+    GITHUB_URL="https://github.com"
+    # 连接超时时间（秒）
+    CONNECT_TIMEOUT=5
+    # 最大请求时间（秒）
+    MAX_TIME=10    
+    if [ "$(curl -s --connect-timeout "$CONNECT_TIMEOUT" --max-time "$MAX_TIME" -o /dev/null -w "%{http_code}" --http2 "$GITHUB_URL")" == "200" ]; then
+        echo 1
+    else
+        echo 0
+    fi
+}
+
+#######################################
+# check_github_with_prefix_proxy 
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function check_github_with_prefix_proxy()
+{   
+    export http_proxy=""
+    export https_proxy=""
+
+    echo "Proxy List:"
+    echo "https://mirror.ghproxy.com"
+    echo "https://cf.ghproxy.cc"
+    echo "https://gh-proxy.com"
+    echo "https://gh.ddlc.top"
+    echo "https://gh.api.99988866.xyz"
+    echo "https://ghp.ci"
+
+    cd ~
+    git clone $1/https://github.com/ncnynl/test  rcm_check_github
+
+    if [ -d ~/rcm_check_github ]; then
+        echo 1
+        rm -rf  ~/rcm_check_github
+    else
+        echo 0
+    fi
+} 
+
+#######################################
+# check_file_with_github
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function check_file_with_github()
+{
+        # GitHub URL
+    GITHUB_URL="github.com"
+    # 检查脚本内容是否包含 GitHub 地址
+    if grep -q "$GITHUB_URL" "$1"; then
+        echo 1  
+    else
+        echo 0 
+    fi
+}

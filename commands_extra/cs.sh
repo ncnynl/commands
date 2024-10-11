@@ -118,7 +118,8 @@ function commands_install(){
                             if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
                                 sudo ./$shell $2
                             else 
-                                ./$shell $2
+                                # ./$shell $2
+                                handle_install $shell $2
                             fi
                             ;;
                         [Nn] | [Nn][Oo])
@@ -134,6 +135,8 @@ function commands_install(){
         fi 
     done 
 }
+
+
 
 #######################################
 # commands_search_install
@@ -176,11 +179,14 @@ function commands_search_install(){
                             # commands
                             #只能在终端执行
                             cd ~/commands/$folder
+                            shell_path=~/commands/$folder
                             filename=${shell#*/}
                             if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]];then
-                                sudo ./$shell $2
+                                # sudo ./$shell $2
+                                handle_install $shell_path $shell 1
                             else 
-                                ./$shell $2
+                                # ./$shell $2
+                                handle_install $shell_path $shell 
                             fi
                             ;;
                         [Nn] | [Nn][Oo])
@@ -197,6 +203,49 @@ function commands_search_install(){
     done 
 }
 
+#######################################
+# handle_install
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    echo to stdout
+#######################################
+function handle_install()
+{
+    # echo "0:$0" 
+    # echo "1:$1"  
+    # echo "2:$2" 
+    # echo "3:$3" 
+    # echo "4:$4" 
+
+    #通过判断脚本是否github.com网址，自动适配系统代理，前缀代理，从而增加下载成功率
+    #判断是否包含github
+    file_path=$1/$2
+    if [ $(check_file_with_github $file_path) == 1 ]; then 
+        echo "The script contains github.com required processing"
+        echo "Check if you can access github.com "
+        if [ $(check_github) == 1 ]; then 
+            echo "you can access github.com, continue "
+        else
+            echo "you can not access github.com, add proxy prefix"
+            rcm -p
+        fi
+    fi
+
+    #执行脚本
+    cd $1
+    if [ $3 ]; then
+        sudo ./$2
+    else 
+        ./$2
+    fi
+    
+
+}
 
 #######################################
 # commands_search_source
@@ -633,7 +682,7 @@ function commands_build()
     if [ ! $workspace_ws ]; then
         echo "workspace_ws can not be null"
         commands_build
-    fi  
+    fi
 
     CHOICE_A=$(echo -e "\n${BOLD} Please input soft name like ：${PLAIN}")
     read -p "${CHOICE_A}" soft_name
@@ -954,6 +1003,196 @@ function header(){
     fi
 }
 
+
+#######################################
+# proxy_add_prefix
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function proxy_add_prefix()
+{
+    echo $1
+    echo $2
+
+    echo "Proxy List:"
+    echo ""
+    echo "https://mirror.ghproxy.com"
+    echo "https://cf.ghproxy.cc"
+    echo "https://gh-proxy.com"
+    echo "https://gh.ddlc.top"
+    echo "https://gh.api.99988866.xyz"
+    echo "https://ghp.ci"
+    echo ""
+    echo "UASGE: rcm -p https://gh-proxy.com"
+    echo ""
+
+    echo "Setting default proxy gh-proxy.com"
+    if [ $2 ]; then 
+        default=$2
+    else
+        default="https://gh-proxy.com"
+    fi
+    default_proxy="$default/https://github.com"
+    #backup
+    cp ~/.gitconfig ~/.gitconfig.bk
+    git config --global url.$default_proxy.insteadof https://github.com
+    echo "haved setted github's proxy as $default_proxy, please check ~/.gitconfig/"
+    cat ~/.gitconfig     
+}  
+
+#######################################
+# proxy_del_prefix
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function proxy_del_prefix()
+{
+    echo "unset default proxy"
+    default_proxy="gh-proxy.com"
+    if [ $2 ]; then 
+        default_proxy=$(echo "$2" | sed -e 's~http[s]\?://~~g')
+    fi
+    #backup
+    echo $default_proxy
+    cp ~/.gitconfig ~/.gitconfig.bk
+    sed -i "/$default_proxy/d" ~/.gitconfig
+    sed -i '/insteadof/d' ~/.gitconfig
+    echo "github.com proxy is unsetted!!, please check ~/.gitconfig/"
+    cat ~/.gitconfig
+}
+
+#######################################
+# proxy_add_global
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function proxy_add_global()
+{
+    echo "USAGE: rcm -hp 192.168.0.12 8080"
+    echo ""
+
+    if [ ! $2 ]; then 
+        echo "IP cat not be null "
+        exit 0
+    fi 
+
+    if [ ! $3 ]; then 
+        echo "port cat not be null "
+        exit 0
+    fi 
+
+    git config --global http.proxy http://${2}:${3}
+    git config --global https.proxy https://${2}:${3}
+    cat ~/.gitconfig
+
+}
+
+#######################################
+# proxy_del_global
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function proxy_del_global()
+{
+    echo "USAGE: rcm -nhp"
+    echo ""
+
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+    cat ~/.gitconfig
+}
+
+#######################################
+# proxy_add_system
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function proxy_add_system()
+{
+    echo "USAGE: rcm -sp 192.168.0.12 8080"
+
+    echo "" 
+
+    if [ ! $2 ]; then 
+        echo "IP cat not be null "
+        exit 0
+    fi 
+
+    if [ ! $3 ]; then 
+        echo "port cat not be null "
+        exit 0
+    fi 
+
+    # 检查是否已经存在代理设置，若不存在则添加
+    HTTP_PROXY="http://$2:$3"
+    if ! grep -q "export http_proxy=" ~/.bashrc; then
+        echo "export http_proxy=\"$HTTP_PROXY\"" >> ~/.bashrc
+        echo "export https_proxy=\"$HTTP_PROXY\"" >> ~/.bashrc
+        echo "代理已添加到 .bashrc"
+    else
+        echo "代理已存在于 .bashrc 中"
+    fi
+}
+
+#######################################
+# proxy_del_system
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function proxy_del_system()
+{
+    echo "USAGE: rcm -nsp"
+    echo ""
+
+    # 删除代理行
+    sed -i '/^export http_proxy=/d' ~/.bashrc
+    sed -i '/^export https_proxy=/d' ~/.bashrc
+
+    echo "代理已从 .bashrc 中删除"
+}
+
 #######################################
 # commands
 # Globals: 
@@ -991,44 +1230,25 @@ function commands() {
         # select_id       
         ;;   
     '-p'|'proxy')
-        #default use ghproxy.com
-        echo "Setting default proxy ghproxy.com"
-        default_proxy="https://ghproxy.com/https://github.com"
-        if [ $2 ]; then 
-            default_proxy=$2
-        fi
-        #backup
-        cp ~/.gitconfig ~/.gitconfig.bk
-        git config --global url.$default_proxy.insteadof https://github.com
-        echo "haved setted github's proxy as $default_proxy, please check ~/.gitconfig/"
-        cat ~/.gitconfig        
+        proxy_add_prefix $*
         ;;  
     '-np'|'noproxy')
-        #default use ghproxy.com
-        echo "unset default proxy"
-        default_proxy="ghproxy.com"
-        if [ $2 ]; then 
-            default_proxy=$2
-        fi
-        #backup
-        cp ~/.gitconfig ~/.gitconfig.bk
-        sed -i "/$default_proxy/d" ~/.gitconfig
-        sed -i '/insteadof/d' ~/.gitconfig
-        echo "github.com proxy is unsetted!!, please check ~/.gitconfig/"
-        cat ~/.gitconfig
+        proxy_del_prefix $*
         ;;  
-    '-hp'|'https_proxy')
-        git config --global http.proxy http://${2}:${3}
-        git config --global https.proxy https://${2}:${3}
-        cat ~/.gitconfig
+    '-hp'|'git_https_proxy')
+        proxy_add_global $*
         ;;
-    '-nhp'|'no_https_proxy')
-        git config --global --unset http.proxy
-        git config --global --unset https.proxy
-        cat ~/.gitconfig
-        ;;             
+    '-nhp'|'no_git_https_proxy')
+        proxy_del_global $*
+        ;;
+    '-sp'|'system_https_proxy')
+        proxy_add_system $*
+        ;;
+    '-nsp'|'no_system_https_proxy')
+        proxy_del_system $*
+        ;;                     
     '-d'|'download')
-        #default use ghproxy.com
+        #default use gh-proxy.com
         if [ $2 ]; then 
             echo "Download code"
 
@@ -1036,7 +1256,7 @@ function commands() {
             result=$(echo $2 | grep "github.com")
             if [[ "$result" != "" ]]
             then
-                url=https://ghproxy.com/$2
+                url=https://gh-proxy.com/$2
             else
                 url=$2
             fi
