@@ -237,16 +237,18 @@ function kill_by_name()
 #######################################
 function check_github()
 {   
-    export http_proxy=""
-    export https_proxy=""
+    # export http_proxy=""
+    # export https_proxy=""
 
     # GitHub URL
     GITHUB_URL="https://github.com"
     # 连接超时时间（秒）
     CONNECT_TIMEOUT=5
     # 最大请求时间（秒）
-    MAX_TIME=10    
-    if [ "$(curl -s --connect-timeout "$CONNECT_TIMEOUT" --max-time "$MAX_TIME" -o /dev/null -w "%{http_code}" --http2 "$GITHUB_URL")" == "200" ]; then
+    MAX_TIME=30 
+    re="$(curl -s --connect-timeout "$CONNECT_TIMEOUT" --max-time "$MAX_TIME" -o /dev/null -w "%{http_code}" --http2 "$GITHUB_URL")"   
+    # echo $re 
+    if [ $re == "200" ]; then
         echo 1
     else
         echo 0

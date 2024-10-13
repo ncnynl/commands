@@ -234,8 +234,19 @@ function proxy_handle_before_install()
         else
             echo "you can not access github.com, add proxy prefix"
             rcm -p
-            echo "use git proxy now"
-            echo "if still can not access github.com, you can use other proxy, please check the above proxy list"
+            if [ $(check_github) == 1 ]; then 
+                echo "use git proxy now"
+            else
+                echo "if still can not access github.com, you can use other proxy, please check the above proxy list"
+                echo "rcm -p proxy_website (such as: rcm -p http://ghp.ci)"
+                echo ""
+                echo "if you have v2rayN proxy or other local proxy, you can use as : "
+                echo "rcm -shp ip port (such as: rcm -shp 192.168.0.16 10809)"
+                echo ""
+                echo "when system proxy set, you can check if usefull"
+                echo "rcm -s check_github"
+                echo ""
+            fi
         fi
     fi
 }
@@ -1190,6 +1201,77 @@ function proxy_del_system()
 }
 
 #######################################
+# download_code
+# 
+# Globals: 
+#   None
+# Arguments:
+#   None
+# Return:
+#   None
+# Outputs:
+#    
+#######################################
+function download_code()
+{
+    #default use gh-proxy.com
+    if [ $2 ]; then 
+        echo "Download code"
+
+        echo "USAGE: rcm -d https://github.com/ncnynl/test "
+        echo "USAGE: rcm -d https://github.com/ncnynl/test master"
+
+        echo ""
+
+        echo "URL:$2"
+        echo "VER:$4"
+
+        echo ""
+
+        #URL
+        result=$(echo $2 | grep "github.com")
+        if [[ "$result" != "" ]]; then
+            if [ $(check_github) == 1 ]; then 
+                echo "you can access github.com, continue "
+            else
+                echo "you can not access github.com, add proxy prefix"
+                rcm -p
+                echo "use git proxy now"
+                echo "if still can not access github.com, you can use other proxy, please check the above proxy list"
+            fi
+        else
+            url=$2
+        fi
+        
+        #position
+        if [ $3 ]; then
+            floder=$3
+            if [ ! -d $3 ]; then 
+                echo "$3 is not folder, replace by default folder ~/tools"
+                floder=~/tools
+            fi
+        else
+            floder=~/tools
+        fi 
+        cd $floder
+
+        #version
+        if [ $4 ]; then 
+            ver="-b $4"
+            echo "code version is $ver"
+        else
+            ver=""
+        fi
+
+        echo "Ready to download  git clone $ver $url"
+        git clone $ver $url 
+        echo "File is download to $floder "
+    else
+        echo "You need provide URL for git clone"
+    fi
+}
+
+#######################################
 # commands
 # Globals: 
 #   None
@@ -1244,46 +1326,7 @@ function commands() {
         proxy_del_system $*
         ;;                     
     '-d'|'download')
-        #default use gh-proxy.com
-        if [ $2 ]; then 
-            echo "Download code"
-
-            #URL
-            result=$(echo $2 | grep "github.com")
-            if [[ "$result" != "" ]]
-            then
-                url=https://gh-proxy.com/$2
-            else
-                url=$2
-            fi
-            
-            #position
-            if [ $3 ]; then
-                floder=$3
-                if [ ! -d $3 ]; then 
-                    echo "$3 is not folder, replace by default folder ~/tools"
-                    floder=~/tools
-                fi
-            else
-                floder=~/tools
-            fi 
-            cd $floder
-
-            #version
-            if [ $4 ]; then 
-                ver="-b $4"
-                echo "code version is $ver"
-            else
-                ver=""
-            fi
-
-            echo "Ready to download  git clone $ver $url"
-            git clone $ver $url 
-            echo "File is download to $floder "
-        else
-            echo "You need provide URL for git clone"
-        fi
-        
+        download_code $*
         ;;   
     '-l'|'list')
         echo -e '#####################################################'
