@@ -409,9 +409,9 @@ function commands_si(){
         full_name="$shell_path/$shell"
         proxy_handle_before_install $full_name
         if [[ "${SUDO_LIST[@]}" =~ "${filename}" ]]; then
-            sudo ./$shell $*
+            sudo ./$shell 
         else 
-            ./$shell $*
+            ./$shell 
         fi
     else
         echo "Don't have shell with name ${filename}"

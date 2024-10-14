@@ -44,7 +44,8 @@ function _rcm_ros_install_() {
         
         echo "this will take a while to download"
         echo "Dowload $package_name"
-        git clone -b ros2 https://gitee.com/ncnynl/web_video_server
+        # git clone -b ros2 https://gitee.com/ncnynl/web_video_server
+        git clone -b ros2 https://github.com/RobotWebTools/web_video_server.git
 
         echo "Install related dependencies by rosdep"
         cd ~/$workspace/

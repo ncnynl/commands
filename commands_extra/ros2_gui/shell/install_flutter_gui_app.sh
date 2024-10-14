@@ -41,6 +41,10 @@ echo ""
 echo "Install system deps"
 sudo apt-get install ros-${ROS_DISTRO}-rosbridge-suite
 
+
+# 安装web video servr
+rcm -si install_ros2_web_video_server
+
 # 下载源码
 echo ""
 echo "Download source"
@@ -48,11 +52,17 @@ cd ~/$workspace/
 git clone -b ${ROS_DISTRO} https://gitee.com/ncnynl/ROS_Flutter_Gui_App
 
 #usage
+#
 # https://github.com/ncnynl/ROS_Flutter_Gui_App
 #ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 #http://localhost:9090
+
+#web video server
+#ros2 run web_video_server web_video_server
+#http://localhost:8080/stream?topic=/usb_cam/image_raw
 
 #web
 #cd ros_flutter_gui_app_web
 #python -m http.server 8000
 #http://localhost:8000
+
