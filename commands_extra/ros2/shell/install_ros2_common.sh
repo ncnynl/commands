@@ -106,7 +106,20 @@ ros-$ros2_distro-tf-transformations
 # fi
 
 #add ros to bashrc
-sudo echo "source /opt/ros/$ros2_distro/setup.bash" >> ~/.bashrc
+echo "Add $ros2_distro to bashrc"
+if ! grep -Fq "/opt/ros/$ros2_distro/setup.bash" ~/.bashrc
+then
+    echo "source /opt/ros/$ros2_distro/setup.bash" >> ~/.bashrc
+    echo "export RMW_IMPLEMENTATION=rmw_fastrtps_cpp" >> ~/.bashrc
+    echo " $ros2_distro workspace have installed successfully! writed to ~/.bashrc"
+else
+    echo "Has been inited before! Please check ~/.bashrc"
+fi
+
+if ! grep -Fq "RMW_IMPLEMENTATION" ~/.bashrc
+then
+    echo "export RMW_IMPLEMENTATION=rmw_fastrtps_cpp" >> ~/.bashrc
+fi
 
 echo "ROS 2 $ros2_distro installed successfully"
 
