@@ -29,6 +29,10 @@ else
     cd ~/$workspace/src
     git clone -b ${ROS_DISTRO} https://github.com/SteveMacenski/slam_toolbox
 
+    if [ !-d ~/$workspace/src/slam_toolbox ]; then 
+        echo "slam_toolbox download failed! please try again!"
+    fi
+
     cd ~/$workspace/
     # rosdep update
     cs -si update_rosdep_tsinghua
