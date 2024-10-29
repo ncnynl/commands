@@ -27,7 +27,7 @@ sudo apt install -y samba
 # 配置 Samba
 echo "配置 Samba..."
 CONFIG_FILE="/etc/samba/smb.conf"
-SHARE_DIR="/tool/samba/share"
+SHARE_DIR="~/tool/samba/share"
 
 # 创建共享目录
 if [ ! -d "$SHARE_DIR" ]; then
@@ -63,4 +63,4 @@ sudo systemctl status smbd
 echo "配置防火墙..."
 sudo ufw allow Samba
 
-echo "Samba 安装和配置完成！"
+echo "Samba 安装和配置完成！共享目录位于: $SHARE_DIR"
