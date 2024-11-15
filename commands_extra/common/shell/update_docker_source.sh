@@ -1,237 +1,86 @@
 #!/usr/bin/env bash
 ################################################
-# Function : Update docker source  
-# Desc     : 用于更新docker源的脚本                             
-# Platform : ubuntu                                
-# Version  : 1.0                               
-# Date     : 2022-06-25 17:12:05                            
+# Function : Update Docker source  
+# Desc     : 用于更新 Docker 源的脚本                             
+# Platform : Ubuntu                                 
+# Version  : 1.1                               
+# Date     : 2024-11-01                             
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
-# URL: https://ncnynl.com                                   
-# QQ Qun: 创客智造B群:926779095                                 
-# QQ Qun: 创客智造C群:937347681                                  
-# QQ Qun: 创客智造D群:562093920                               
+# URL      : https://ncnynl.com                                   
+# QQ Qun   : 创客智造B群:926779095                                 
+# QQ Qun   : 创客智造C群:937347681                                  
+# QQ Qun   : 创客智造D群:562093920                               
 ################################################
-export TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN=commands        
-echo "$(gettext "Update docker source")" 
 
-set -e
-
-if [ -z "$1" ]
-then
-    echo 'Error: Registry-mirror url required.'
-    exit 1
+# 检查是否以 root 用户运行
+if [ "$(id -u)" -ne 0 ]; then
+  echo "请使用 root 用户或使用 sudo 运行此脚本"
+  exit 1
 fi
 
-MIRROR_URL=$1
-lsb_dist=''
-command_exists() {
-    command -v "$@" > /dev/null 2>&1
+# 定义可用的 Docker 镜像源
+declare -A mirrors
+mirrors=(
+  ["1"]="华为云镜像:https://repo.huaweicloud.com/repository/docker"
+  ["2"]="腾讯云镜像:https://mirror.ccs.tencentyun.com"
+  ["3"]="阿里云镜像:https://mirrors.aliyun.com"
+  ["4"]="Docker Hub:https://registry-1.docker.io"
+)
+
+# 显示可用源列表
+echo "请选择要使用的 Docker 镜像源:"
+for key in "${!mirrors[@]}"; do
+  echo "$key) ${mirrors[$key]}"
+done
+
+# 读取用户输入
+read -p "请输入选择的编号: " choice
+
+# 检查输入有效性
+if [[ -z "${mirrors[$choice]}" ]]; then
+  echo "无效的选择"
+  exit 1
+fi
+
+# 提取用户选择的镜像源
+selected_mirror="${mirrors[$choice]#*:}"
+
+# 创建或修改 Docker 的 daemon.json 文件
+DOCKER_CONFIG="/etc/docker/daemon.json"
+
+# 创建备份
+if [ -f "$DOCKER_CONFIG" ]; then
+  cp "$DOCKER_CONFIG" "$DOCKER_CONFIG.bak"
+fi
+
+# 使用 sudo tee 写入新的源配置
+sudo tee "$DOCKER_CONFIG" <<-EOF
+{
+ "registry-mirrors": [
+    "$selected_mirror"
+  ],
+ "exec-opts": ["native.cgroupdriver=systemd"],
+ "max-concurrent-downloads": 10,
+ "max-concurrent-uploads": 5,
+ "log-opts": {
+   "max-size": "300m",
+   "max-file": "2"
+ },
+ "live-restore": true
 }
-if command_exists lsb_release; then
-    lsb_dist="$(lsb_release -si)"
-    lsb_version="$(lsb_release -rs)"
-fi
-if [ -z "$lsb_dist" ] && [ -r /etc/lsb-release ]; then
-    lsb_dist="$(. /etc/lsb-release && echo "$DISTRIB_ID")"
-    lsb_version="$(. /etc/lsb-release && echo "$DISTRIB_RELEASE")"
-fi
-if [ -z "$lsb_dist" ] && [ -r /etc/debian_version ]; then
-    lsb_dist='debian'
-fi
-if [ -z "$lsb_dist" ] && [ -r /etc/fedora-release ]; then
-    lsb_dist='fedora'
-fi
-if [ -z "$lsb_dist" ] && [ -r /etc/os-release ]; then
-    lsb_dist="$(. /etc/os-release && echo "$ID")"
-fi
-if [ -z "$lsb_dist" ] && [ -r /etc/centos-release ]; then
-    lsb_dist="$(cat /etc/*-release | head -n1 | cut -d " " -f1)"
-fi
-if [ -z "$lsb_dist" ] && [ -r /etc/redhat-release ]; then
-    lsb_dist="$(cat /etc/*-release | head -n1 | cut -d " " -f1)"
-fi
-lsb_dist="$(echo $lsb_dist | cut -d " " -f1)"
-docker_version="$(docker -v | awk '{print $3}')"
-docker_major_version="$(echo $docker_version| cut -d "." -f1)"
-docker_minor_version="$(echo $docker_version| cut -d "." -f2)"
-lsb_dist="$(echo "$lsb_dist" | tr '[:upper:]' '[:lower:]')"
+EOF
 
-set_daemon_json_file(){
-    DOCKER_DAEMON_JSON_FILE="/etc/docker/daemon.json"
-    if sudo test -f ${DOCKER_DAEMON_JSON_FILE}
-    then
-        sudo cp  ${DOCKER_DAEMON_JSON_FILE} "${DOCKER_DAEMON_JSON_FILE}.bak"
-        if sudo grep -q registry-mirrors "${DOCKER_DAEMON_JSON_FILE}.bak";then
-            sudo cat "${DOCKER_DAEMON_JSON_FILE}.bak" | sed -n "1h;1"'!'"H;\${g;s|\"registry-mirrors\":\s*\[[^]]*\]|\"registry-mirrors\": [\"${MIRROR_URL}\"]|g;p;}" | sudo tee ${DOCKER_DAEMON_JSON_FILE}
-        else
-            sudo cat "${DOCKER_DAEMON_JSON_FILE}.bak" | sed -n "s|{|{\"registry-mirrors\": [\"${MIRROR_URL}\"],|g;p;" | sudo tee ${DOCKER_DAEMON_JSON_FILE}
-        fi
-    else
-        sudo mkdir -p "/etc/docker"
-        sudo echo "{\"registry-mirrors\": [\"${MIRROR_URL}\"]}" | sudo tee ${DOCKER_DAEMON_JSON_FILE}
-    fi
-}
+# 重启 Docker 服务
+sudo systemctl restart docker
 
+# 检查 Docker 状态和配置信息
+echo "检查 Docker 状态和配置信息..."
+if command -v docker &> /dev/null; then
+    docker info
+else
+    echo "Docker 未安装或未正确配置。"
+fi
 
-can_set_json(){
-	if [ "$docker_major_version" -eq 1 ] && [ "$docker_minor_version" -lt 12 ] 
-	then
-		echo "docker version < 1.12"
-		return 0
-	else
-		echo "docker version >= 1.12"
-		return 1
-	fi
-}
-
-set_mirror(){
-    if [ "$docker_major_version" -eq 1 ] && [ "$docker_minor_version" -lt 9 ]
-        then
-            echo "please upgrade your docker to v1.9 or later"
-            exit 1
-    fi
-
-    case "$lsb_dist" in
-        centos)
-        if grep "CentOS release 6" /etc/redhat-release > /dev/null
-        then
-            DOCKER_SERVICE_FILE="/etc/sysconfig/docker"
-            sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-            sudo sed -i "s|other_args=\"|other_args=\"--registry-mirror='${MIRROR_URL}'|g" ${DOCKER_SERVICE_FILE}
-            sudo sed -i "s|OPTIONS='|OPTIONS='--registry-mirror='${MIRROR_URL}'|g" ${DOCKER_SERVICE_FILE}
-            echo "Success."
-            echo "You need to restart docker to take effect: sudo service docker restart"
-            exit 0
-        fi
-        if grep "CentOS Linux release 7" /etc/redhat-release > /dev/null
-        then
-            if can_set_json; then
-                DOCKER_SERVICE_FILE="/lib/systemd/system/docker.service"
-                sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-                sudo sed -i "s|\(ExecStart=/usr/bin/docker[^ ]* daemon\)|\1 --registry-mirror="${MIRROR_URL}"|g" ${DOCKER_SERVICE_FILE}
-                sudo systemctl daemon-reload
-            else
-                set_daemon_json_file
-            fi
-            echo "Success."
-            echo "You need to restart docker to take effect: sudo systemctl restart docker "
-            exit 0
-        else
-            echo "Error: Set mirror failed, please set registry-mirror manually please."
-            exit 1
-        fi
-    ;;
-        fedora)
-        if grep "Fedora release" /etc/fedora-release > /dev/null
-        then
-            if can_set_json; then
-            DOCKER_SERVICE_FILE="/lib/systemd/system/docker.service"
-            sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-            sudo sed -i "s|\(ExecStart=/usr/bin/docker[^ ]* daemon\)|\1 --registry-mirror="${MIRROR_URL}"|g" ${DOCKER_SERVICE_FILE}
-            sudo systemctl daemon-reload
-            else
-                set_daemon_json_file
-            fi
-            echo "Success."
-            echo "You need to restart docker to take effect: sudo systemctl restart docker"
-            exit 0
-        else
-            echo "Error: Set mirror failed, please set registry-mirror manually please."
-            exit 1
-        fi
-    ;;
-        ubuntu)
-        v1=`echo ${lsb_version} | cut -d "." -f1`
-        if [ "$v1" -ge 16 ]; then
-            if can_set_json; then
-                DOCKER_SERVICE_FILE="/lib/systemd/system/docker.service"
-                sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-                sudo sed -i "s|\(ExecStart=/usr/bin/docker[^ ]* daemon -H fd://$\)|\1 --registry-mirror="${MIRROR_URL}"|g" ${DOCKER_SERVICE_FILE}
-                sudo systemctl daemon-reload
-            else
-                set_daemon_json_file
-            fi
-            echo "Success."
-            echo "You need to restart docker to take effect: sudo systemctl restart docker.service"
-            exit 0
-        else
-            if can_set_json; then
-                DOCKER_SERVICE_FILE="/etc/default/docker"
-                sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-                if grep "registry-mirror" ${DOCKER_SERVICE_FILE} > /dev/null
-                then
-                    sudo sed -i -u -E "s#--registry-mirror='?((http|https)://)?[a-zA-Z0-9.]+'?#--registry-mirror='${MIRROR_URL}'#g" ${DOCKER_SERVICE_FILE}
-                else
-                    echo 'DOCKER_OPTS="$DOCKER_OPTS --registry-mirror='${MIRROR_URL}'"' >> ${DOCKER_SERVICE_FILE}
-                    echo ${MIRROR_URL}
-                fi
-            else
-                set_daemon_json_file
-            fi
-        fi
-        echo "Success."
-        echo "You need to restart docker to take effect: sudo service docker restart"
-        exit 0
-    ;;
-        debian)
-        if can_set_json; then
-            DOCKER_SERVICE_FILE="/etc/default/docker"
-            sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-            if grep "registry-mirror" ${DOCKER_SERVICE_FILE} > /dev/null
-            then
-                sudo sed -i -u -E "s#--registry-mirror='?((http|https)://)?[a-zA-Z0-9.]+'?#--registry-mirror='${MIRROR_URL}'#g" ${DOCKER_SERVICE_FILE}
-            else
-                echo 'DOCKER_OPTS="$DOCKER_OPTS --registry-mirror='${MIRROR_URL}'"' >> ${DOCKER_SERVICE_FILE}
-                echo ${MIRROR_URL}
-            fi
-        else
-            set_daemon_json_file
-        fi
-        echo "Success."
-        echo "You need to restart docker to take effect: sudo service docker restart"
-        exit 0
-    ;;
-        arch)
-        if grep "Arch Linux" /etc/os-release > /dev/null
-        then
-            if can_set_json; then
-                DOCKER_SERVICE_FILE="/lib/systemd/system/docker.service"
-                sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-                sudo sed -i "s|\(ExecStart=/usr/bin/docker[^ ]* daemon -H fd://\)|\1 --registry-mirror="${MIRROR_URL}"|g" ${DOCKER_SERVICE_FILE}
-                sudo systemctl daemon-reload
-            else
-                set_daemon_json_file
-            fi
-            echo "Success."
-            echo "You need to restart docker to take effect: sudo systemctl restart docker"
-            exit 0
-        else
-            echo "Error: Set mirror failed, please set registry-mirror manually please."
-            exit 1
-        fi
-    ;;
-        suse)
-        if grep "openSUSE Leap" /etc/os-release > /dev/null
-        then
-            if can_set_json; then
-            DOCKER_SERVICE_FILE="/usr/lib/systemd/system/docker.service"
-            sudo cp ${DOCKER_SERVICE_FILE} "${DOCKER_SERVICE_FILE}.bak"
-            sudo sed -i "s|\(^ExecStart=/usr/bin/docker daemon -H fd://\)|\1 --registry-mirror="${MIRROR_URL}"|g" ${DOCKER_SERVICE_FILE}
-            sudo systemctl daemon-reload
-            else
-                set_daemon_json_file
-            fi
-            echo "Success."
-            echo "You need to restart docker to take effect: sudo systemctl restart docker"
-            exit 0
-        else
-            echo "Error: Set mirror failed, please set registry-mirror manually please."
-            exit 1
-        fi
-    esac
-    echo "Error: Unsupported OS, please set registry-mirror manually."
-    exit 1
-}
-set_mirror
+echo "Docker 镜像源已更新为: $selected_mirror"
+cat "$DOCKER_CONFIG"

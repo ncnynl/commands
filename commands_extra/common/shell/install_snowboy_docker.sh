@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-# Function : Install snowboy  
+# Function : Install snowboy docker  
 # Desc     : 用于安装唤醒词程序snowboy
 # Website  : https://www.ncnynl.com/archives/202203/5107.html                      
 # Platform : ubuntu                                
@@ -17,7 +17,7 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install snowboy")" 
+echo "$(gettext "Install snowboy docker")" 
 # echo "Not Supported Yet!"
 # exit 0  
 echo "Set workspace"
@@ -25,7 +25,7 @@ workspace=tools
 
 echo ""
 echo "Set soft name"
-soft_name=snowboy
+soft_name=snowboy-new
 
 echo ""
 echo "Workspace if exits ?"
@@ -41,32 +41,21 @@ fi
 
 echo ""
 echo "Install system deps"
-sudo apt -y update
-sudo apt install portaudio19-dev python3-pyaudio sox pulseaudio libsox-fmt-all -y
-sudo apt install  ffmpeg -y
-sudo apt install libpcre3 libpcre3-dev  libatlas-base-dev -y
-pip3 install pyaudio fire -y
+#install docker 
+rcm -si install_docker.sh
 
 echo ""
 echo "Download source"
 cd ~/$workspace/
 git clone https://gitee.com/ncnynl/snowboy-new
 
+#build zh
+cd ~/$workspace/snowboy-new/docker/zh
+docker build -t snowboy-pmdl-zh .
 
-echo "Install swig"
-cd ~/tools/snowboy-new
-# wget https://wzpan-1253537070.cos.ap-guangzhou.myqcloud.com/misc/swig-3.0.10.tar.gz
-tar xvf swig-3.0.10.tar.gz
-cd swig-3.0.10
-./configure --prefix=/usr --without-clisp --without-maximum-compile-warnings
-make
-sudo make install
-sudo install -v -m755 -d /usr/share/doc/swig-3.0.10
-sudo cp -v -R Doc/* /usr/share/doc/swig-3.0.10
-
-echo "Install snowboy-new"
-cd ~/tools/snowboy-new/swig/Python3
-make
+#build en 
+cd ~/$workspace/snowboy-new/docker/en
+docker build -t snowboy-pmdl-en .
 
 echo "Please continue to finished code"
-#How to use
+
