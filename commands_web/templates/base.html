@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WALKING机器人控制系统</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+    <style>
+        /* 自定义导航栏和高亮样式 */
+        .navbar {
+            background-color: black;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: white;
+        }
+
+        .navbar-nav .nav-item.active .nav-link {
+            background-color: orange;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* 美化加载提示样式 */
+        /* 美化加载提示样式 */
+        #loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* 深色背景，稍微透明 */
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            display: none;
+            /* 默认隐藏 */
+            z-index: 9999;
+            /* 保证加载提示在最上层 */
+            text-align: center;
+        }
+
+        /* 加载动画效果 */
+        #loading-indicator:before {
+            content: '';
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            border: 5px solid #fff;
+            border-top: 5px solid #4e7af2;
+            /* 使用柔和的蓝色 */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 15px;
+        }
+
+        /* 动画效果：旋转 */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ellipsis {
+            display: inline-block;
+            max-width: 300px;
+            /* 可以根据需要设置最大宽度 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <script src="static/popper.min.js"></script> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/" style="color: white;">SERVER管理端</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item {% if request.path == '/service' %}active{% endif %}">
+                    <a class="nav-link" href="/service">服务配置</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="container mt-4">
+        <!-- 加载提示 -->
+        <div id="loading-indicator" style="display:none;">
+            <p>正在加载...</p>
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- 引入 Bootstrap JS 和 jQuery -->
+    <!-- <script src="static/jquery-3.5.1.slim.min.js"></script> -->
+    <script src="static/jquery-3.5.1.min.js"></script>
+    <script src="static/popper.min.js"></script>
+    <script src="static/bootstrap.min.4.5.2.js"></script>
+
+</body>
+
+</html>

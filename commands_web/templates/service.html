@@ -1,0 +1,48 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+
+<div class="mt-5">
+    <h2>服务配置</h2>
+    <div class="row" id="service-container">
+        <!-- 服务配置将动态生成在这里 -->
+    </div>
+
+    <div class="row">
+        <h2 id="form-title">添加新服务</h2>
+        <form id="add-service-form">
+            <!-- 隐藏字段，用于存储服务 ID -->
+            <input type="hidden" class="form-control" id="service-id" name="service-id" value="0" required>
+            <div class="form-group">
+                <label for="service-name"  class="form-label text-success fw-bold">服务名称</label>
+                <input type="text" class="form-control" id="service-name" placeholder="输入服务名称" required>
+            </div>
+            <div class="form-group">
+                <label for="start-command"  class="form-label text-success fw-bold">启动命令</label>
+                <input type="text" class="form-control" id="start-command" placeholder="输入启动命令" required>
+            </div>
+            <div class="form-group">
+                <label for="stop-condition"  class="form-label text-success fw-bold">停止条件</label>
+                <input type="text" class="form-control" id="stop-condition" placeholder="输入停止条件 (用分号分隔)" required>
+            </div>
+            <div class="form-group">
+                <label for="clear-command"  class="form-label text-success fw-bold">清除命令</label>
+                <input type="text" class="form-control" id="clear-command" placeholder="输入清除命令">
+            </div>
+        
+
+            <div class="row justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary col-md-4 mx-2" id="submit-button">添加服务</button>
+                <button type="button" class="btn btn-secondary col-md-4 mx-2 d-none" id="cancel-edit" onclick="cancelEdit()">取消</button>
+            </div>
+
+        </form>
+        </div>
+
+    <div id="response-message" class="mt-3"></div>
+</div>
+
+
+<!-- 引入jQuery -->
+<script src="{{ url_for('static', filename='service.js') }}"></script>
+{% endblock %}
