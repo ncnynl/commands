@@ -20,8 +20,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 depthai-ros")"
 
-echo "Not Yet Supported!"
-exit 0   
+# echo "Not Yet Supported!"
+# exit 0   
 # workspace       
 workspace=ros2_sensor_ws
 
@@ -31,7 +31,7 @@ if [ ! -d ~/$workspace ];then
 fi 
 
 if [ -d ~/$workspace/src/depthai-ros ];then 
-    echo "velodyne have installed" && exit 0
+    echo "depthai-ros have installed" && exit 0
 fi 
 
 #install rosdeps
@@ -45,11 +45,11 @@ cd ~/$workspace/src
 #download wheeltec_gps
 git clone -b ${ROS_DISTRO}  https://github.com/luxonis/depthai-ros.git
 
+cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 
 # 编译代码
-cd ~/$workspace/
-colcon build --symlink-install --packages-select depthai-ros depthai_bridge depthai_descriptions depthai_examples depthai_filters depthai_ros_driver  depthai_ros_msgs 
+colcon build --symlink-install --parallel-workers 1 --packages-select depthai-ros depthai_bridge depthai_descriptions depthai_examples  depthai_filters depthai_ros_driver  depthai_ros_msgs 
 
 
 #add to bashrc if not exits

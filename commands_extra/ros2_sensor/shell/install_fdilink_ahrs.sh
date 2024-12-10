@@ -48,10 +48,10 @@ git clone https://github.com/jinmenglei/serial_ros2
 #download fdilink_ahrs_ros2
 git https://gitee.com/ncnynl/fdilink_ahrs_ros2
 
+cd ~/$workspace/
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 
 # 编译代码
-cd ~/$workspace/
 colcon build --symlink-install --packages-select serial_ros2 fdilink_ahrs
 
 #add to bashrc if not exits
