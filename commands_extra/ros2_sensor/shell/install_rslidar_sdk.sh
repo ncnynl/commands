@@ -21,8 +21,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 rslidar_sdk")"
 
-echo "Not Yet Supported!"
-exit 0   
+# echo "Not Yet Supported!"
+# exit 0   
 # workspace       
 workspace=ros2_sensor_ws
 
@@ -36,7 +36,6 @@ if [ -d ~/$workspace/src/rslidar_sdk ];then
 fi 
 
 #install rosdeps
-sudo apt install ros-${ROS-DISTRO}-diagnostic-updater
 sudo apt install libpcap-dev libeigen3-dev libboost-dev libpcl-dev
 sudo apt install -y libyaml-cpp-dev
 
@@ -44,15 +43,21 @@ sudo apt install -y libyaml-cpp-dev
 cs -si update_rosdep_tsinghua
 
 cd ~/$workspace/src
+
+#rslidar_sdk
 git clone https://github.com/RoboSense-LiDAR/rslidar_sdk.git
 cd rslidar_sdk
 git submodule init
 git submodule update
+
+#rslidar_msg
+git clone  https://github.com/RoboSense-LiDAR/rslidar_msg
+
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 
 # 编译代码
 cd ~/$workspace/
-colcon build --symlink-install --packages-select rslidar_sdk
+colcon build --symlink-install --packages-select rslidar_sdk rs_driver rslidar_msg
 
 #add to bashrc if not exits
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc

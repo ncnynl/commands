@@ -48,15 +48,6 @@ python3 examples/install_requirements.py
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"' | sudo tee /etc/udev/rules.d/80-movidius.rules
 sudo udevadm control --reload-rules && sudo udevadm trigger
 
-#add to bashrc if not exits
-if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
-then
-    echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
-    echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
-else
-    echo "Has been inited before! Please check ~/.bashrc"
-fi
-
 
 # python3 utilities/cam_test.py -rs -cams left,c right,c 
 # python3 utilities/cam_ros.py -rs -cams left,c right,c 
