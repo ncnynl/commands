@@ -20,8 +20,6 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 wheeltec_mic_ros2")"
 
-echo "Not Yet Supported!"
-exit 0   
 # workspace       
 workspace=ros2_sensor_ws
 
@@ -43,14 +41,25 @@ cs -si update_rosdep_tsinghua
 cd ~/$workspace/src
 
 #download wheeltec_gps
-git https://gitee.com/ncnynl/wheeltec_mic_ros2
+git clone https://gitee.com/ncnynl/wheeltec_mic_ros2
 
-rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 
 # 编译代码
 cd ~/$workspace/
+rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 colcon build --symlink-install --packages-select wheeltec_mic_msg wheeltec_mic_ros2
 
+
+#udev
+echo 'KERNEL=="ttyACM*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", MODE:="0777", SYMLINK+="wheeltec_mic"' | sudo tee /etc/udev/rules.d/wheeltec_mic.rules
+# ATTRS{idVendor}=="10d6", ATTRS{idProduct}=="b003", MODE="0666"
+#                     ID 1a86:55d4 QinHeng Electronics USB Single Serial
+# Bus 003 Device 075: ID 2207:0001 Fuzhou Rockchip Electronics Company XFM-DP-V0.0.18
+# Bus 003 Device 071: ID 1a40:0101 Terminus Technology Inc. Hub
+
+sudo service udev reload
+sleep 2
+sudo service udev restart
 
 #add to bashrc if not exits
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc

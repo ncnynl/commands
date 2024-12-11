@@ -21,8 +21,8 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install ROS2 wheeltec_gps")"
 
-echo "Not Yet Supported!"
-exit 0   
+# echo "Not Yet Supported!"
+# exit 0   
 # workspace       
 workspace=ros2_sensor_ws
 
@@ -32,7 +32,7 @@ if [ ! -d ~/$workspace ];then
 fi 
 
 if [ -d ~/$workspace/src/wheeltec_gps_ros2 ];then 
-    echo "velodyne have installed" && exit 0
+    echo "wheeltec_gps_ros2 have installed" && exit 0
 fi 
 
 #install rosdeps
@@ -44,17 +44,20 @@ cs -si update_rosdep_tsinghua
 cd ~/$workspace/src
 
 #download wheeltec_gps
-git https://gitee.com/ncnynl/wheeltec_gps_ros2
+git clone https://gitee.com/ncnynl/wheeltec_gps_ros2
 
-rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 
 # 编译代码
 cd ~/$workspace/
+rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
+
 colcon build --symlink-install --packages-select nmea_msgs nmea_navsat_driver wheeltec_gps_path
 
 #build wheeltec_udev
-cd ~/$workspace/src/wheeltec_gps_ros2
-./wheeltec_udev.sh
+echo 'KERNEL=="ttyACM*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", MODE:="0777", SYMLINK+="wheeltec_gps"' | sudo tee /etc/udev/rules.d/wheeltec_gps.rules
+sudo service udev reload
+sleep 2
+sudo service udev restart
 
 #add to bashrc if not exits
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
