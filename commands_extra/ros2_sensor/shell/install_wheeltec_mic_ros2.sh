@@ -61,10 +61,14 @@ sudo service udev reload
 sleep 2
 sudo service udev restart
 
+#lib
+sudo cp ~/ros2_sensor_ws/src/wheeltec_mic_ros2/wheeltec_mic_ros2/lib/x64/lib* /usr/lib/
+
 #add to bashrc if not exits
 if ! grep -Fq "$workspace/install/local_setup.bash" ~/.bashrc
 then
     echo ". ~/$workspace/install/local_setup.bash" >> ~/.bashrc
+    # echo "export LD_LIBRARY_PATH=~/ros2_sensor_ws/src/wheeltec_mic_ros2/wheeltec_mic_ros2/lib/x64:$LD_LIBRARY_PATH" >> ~/.bashrc
     echo " $workspace workspace have installed successfully! writed to ~/.bashrc"
 else
     echo "Has been inited before! Please check ~/.bashrc"

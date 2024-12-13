@@ -44,6 +44,7 @@ fi
 
 echo ""
 echo "Install system deps"
+sudo apt install ros-$ros2_distro-pcl-ros
 
 # 下载源码
 echo ""
