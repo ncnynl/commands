@@ -44,7 +44,7 @@ fi
 
 echo ""
 echo "Install system deps"
-sudo apt install ros-$ros2_distro-pcl-ros
+sudo apt install ros-$ros2_distro-pcl-ros sudo apt install ros-$ros2_distro-irobot-create-msgs
 
 # 下载源码
 echo ""
