@@ -1,10 +1,10 @@
 #!/bin/bash
 ################################################
-# Function : Install nvm  
-# Desc     : 用于安装nodejs管理工具NVM的脚本                             
+# Function : Install nodejs apt version 
+# Desc     : 用于安装APT的nodejs版本                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
-# Date     : 2022-06-25 17:12:05                            
+# Date     : 2024-12-18                             
 # Author   : ncnynl                             
 # Contact  : 1043931@qq.com                              
 # URL: https://ncnynl.com                                   
@@ -14,16 +14,14 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Install nvm")" 
+echo "$(gettext "Install nodejs apt version")" 
 
-#https://github.com/nvm-sh/nvm
-if  [ -d $HOME/.nvm ]; then 
-    echo "nvm has installed "
-else
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 
-    echo "install nvm"
-    sudo apt update && sudo apt install curl
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh  | bash 
-    echo "Congratulations, nvm have successfully installed"
+sudo apt install nodejs
 
-fi
+node -v 
+
+npm -v 
+
+echo "Congratulations, nodejs and yarn have successfully installed"
