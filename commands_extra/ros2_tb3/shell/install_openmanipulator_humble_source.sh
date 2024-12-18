@@ -25,25 +25,23 @@ echo "$(gettext "Install ROS2 humble open_manipulator_x source version")"
 
 # if installed ?
 if [ -d ~/ros2_openmanipulatorx_ws/src ]; then
-    echo " open_manipulator have installed!!" 
+    echo " open_manipulatorx have installed!!" 
 else
     # install dep
 
-    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
-    sudo apt install -y ros-humble-gazebo-ros2-control \
-    ros-humble-gazebo-ros-pkgs \
-    ros-humble-gazebo-ros2-control-demos \
-    ros-humble-gazebo-dev \
-    ros-humble-gazebo-ros \
-    ros-humble-gazebo-plugins \
-    ros-humble-gazebo-msgs \
-    ros-humble-cartographer \
-    ros-humble-cartographer-ros \
-    ros-humble-nav2-bringup \
-    ros-humble-navigation2 \
-    ros-humble-slam-toolbox \
-    ros-humble-rqt* \
-    ros-humble-joint-state-publisher
+    sudo apt install \
+    ros-humble-dynamixel-sdk \
+    ros-humble-ros2-control \
+    ros-humble-moveit* \
+    ros-humble-gazebo-ros2-control \
+    ros-humble-ros2-controllers \
+    ros-humble-controller-manager \
+    ros-humble-position-controllers \
+    ros-humble-joint-state-broadcaster \
+    ros-humble-joint-trajectory-controller \
+    ros-humble-gripper-controllers \
+    ros-humble-hardware-interface \
+    ros-humble-xacro
 
     #rosdep update
     sudo apt install python3-rosdep -y
@@ -61,30 +59,18 @@ else
 
     cd ~/ros2_openmanipulatorx_ws/src
 
-    #run wget
-
-    # 获取仓库列表
-
-    # wget https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3/humble-devel/turtlebot3.repos
-
-    #run import
-    echo "this will take 10-30 min to download"
-
     # 下载仓库
     echo "Download code "
 
-    git clone -b humble-devel https://github.com/ROBOTIS-GIT/DynamixelSDK
-    git clone -b ros2 https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
-    git clone -b humble-devel https://github.com/ROBOTIS-GIT/open_manipulator.git
-    git clone -b ros2 https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
-    git clone -b ros2 https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
-    git clone -b ros2 https://github.com/ROBOTIS-GIT/robotis_manipulator.git
+    git clone -b humble https://github.com/ROBOTIS-GIT/open_manipulator.git
+    git clone -b humble https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface.git
+    git clone -b humble https://github.com/ROBOTIS-GIT/dynamixel_interfaces.git
+
     #run colcon
 
     # 编辑各个包
     echo "build workspace..."
     cd ~/ros2_openmanipulatorx_ws/
-    rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
     colcon build --symlink-install --parallel-workers 1
 
     #run echo
@@ -93,22 +79,7 @@ else
 
     echo 'source ~/ros2_openmanipulatorx_ws/install/setup.bash' >> ~/.bashrc
 
-    #run echo
-
-    # 添加ROS_DOMAIN_ID到bashrc文件
-
-    # echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc
-
-    # export GAZEBO_MODEL_PATH
-    # echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_tb3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
-
-    # export TURTLEBOT3_MODEL
-    # echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
-
-    #run source
-
     # 加载工作空间到当前环境
-    #sh -c "~/commands/ros_easy/shell/init_tb3.sh"
     source ~/.bashrc
 
 fi
