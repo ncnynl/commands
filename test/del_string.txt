@@ -1,0 +1,4 @@
+. ~/commands/ros_easy/shell/load_ros1.sh
+. ~/commands/ros_easy/shell/load_ros2.sh
+. ~/commands/ros_easy/shell/load_ros3.sh
+. ~/commands/ros_easy/shell/load_ros4.sh

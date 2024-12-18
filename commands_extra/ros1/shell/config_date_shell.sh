@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : config_date_shell.sh                              
+# Function : Config date shell  
+# Desc     : 用于安装时间同步软件chrony/ntpdate并完成初次时间同步的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 21:25:53                            
@@ -12,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Config date shell")"
 
 #run install chrony
 

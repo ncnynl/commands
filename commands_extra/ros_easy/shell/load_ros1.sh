@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_ros1.sh                              
+# Function : Load ROS1
+# Desc     : 用于加载ROS1的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            
@@ -12,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Load ROS1")"
 
 if [ -d /opt/ros/noetic ]; then
     source /opt/ros/noetic/setup.bash

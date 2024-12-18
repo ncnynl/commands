@@ -1,7 +1,7 @@
 {
     "commands": [
         {
-            "command": "cd /home/ubuntu/commands/common; ./shell/install_systemback_shell.sh",
+            "command": "cd ~/commands/common; ./shell/install_systemback_shell.sh",
             "desc": "",
             "id": 0,
             "link": "",

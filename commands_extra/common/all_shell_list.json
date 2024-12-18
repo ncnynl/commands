@@ -1,0 +1,667 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/common;./shell/check_echo_shell.sh",
+            "desc": "",
+            "id": 1,
+            "link": "",
+            "name": "check_echo_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/check_linux_version.sh",
+            "desc": "",
+            "id": 2,
+            "link": "",
+            "name": "check_linux_version.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/check_python_version.sh",
+            "desc": "",
+            "id": 3,
+            "link": "",
+            "name": "check_python_version.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/close_commands.sh",
+            "desc": "",
+            "id": 4,
+            "link": "",
+            "name": "close_commands.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/close_template.sh",
+            "desc": "",
+            "id": 5,
+            "link": "",
+            "name": "close_template.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/create_udev.sh",
+            "desc": "",
+            "id": 6,
+            "link": "",
+            "name": "create_udev.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/fix_apt_lock.sh",
+            "desc": "",
+            "id": 7,
+            "link": "",
+            "name": "fix_apt_lock.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_GitHubDesktop_shell.sh",
+            "desc": "",
+            "id": 8,
+            "link": "",
+            "name": "install_GitHubDesktop_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_ade.sh",
+            "desc": "",
+            "id": 9,
+            "link": "",
+            "name": "install_ade.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_anaconda3.sh",
+            "desc": "",
+            "id": 10,
+            "link": "",
+            "name": "install_anaconda3.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_arduino.sh",
+            "desc": "",
+            "id": 11,
+            "link": "",
+            "name": "install_arduino.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_arduino_apt.sh",
+            "desc": "",
+            "id": 12,
+            "link": "",
+            "name": "install_arduino_apt.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_arduino_opencm_1.x.sh",
+            "desc": "",
+            "id": 13,
+            "link": "",
+            "name": "install_arduino_opencm_1.x.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_arduino_opencm_2.x.sh",
+            "desc": "",
+            "id": 14,
+            "link": "",
+            "name": "install_arduino_opencm_2.x.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_arduino_opencr_1.x.sh",
+            "desc": "",
+            "id": 15,
+            "link": "",
+            "name": "install_arduino_opencr_1.x.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_balenaEtcher.sh",
+            "desc": "",
+            "id": 16,
+            "link": "",
+            "name": "install_balenaEtcher.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_base_tools.sh",
+            "desc": "",
+            "id": 17,
+            "link": "",
+            "name": "install_base_tools.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_beyond_compare.sh",
+            "desc": "",
+            "id": 18,
+            "link": "",
+            "name": "install_beyond_compare.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_bluetooth.sh",
+            "desc": "",
+            "id": 19,
+            "link": "",
+            "name": "install_bluetooth.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_boot_repair.sh",
+            "desc": "",
+            "id": 20,
+            "link": "",
+            "name": "install_boot_repair.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_chrome.sh",
+            "desc": "",
+            "id": 21,
+            "link": "",
+            "name": "install_chrome.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_cloudcompare.sh",
+            "desc": "",
+            "id": 22,
+            "link": "",
+            "name": "install_cloudcompare.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_cloudcompare_source.sh",
+            "desc": "",
+            "id": 23,
+            "link": "",
+            "name": "install_cloudcompare_source.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_coturn.sh",
+            "desc": "",
+            "id": 24,
+            "link": "",
+            "name": "install_coturn.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_cubic.sh",
+            "desc": "",
+            "id": 25,
+            "link": "",
+            "name": "install_cubic.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_dochat.sh",
+            "desc": "",
+            "id": 26,
+            "link": "",
+            "name": "install_dochat.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_docker.sh",
+            "desc": "",
+            "id": 27,
+            "link": "",
+            "name": "install_docker.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_docker_compose.sh",
+            "desc": "",
+            "id": 28,
+            "link": "",
+            "name": "install_docker_compose.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_electron.sh",
+            "desc": "",
+            "id": 29,
+            "link": "",
+            "name": "install_electron.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_example_shell.sh",
+            "desc": "",
+            "id": 30,
+            "link": "",
+            "name": "install_example_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_flutter_snap.sh",
+            "desc": "",
+            "id": 31,
+            "link": "",
+            "name": "install_flutter_snap.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_flutter_source.sh",
+            "desc": "",
+            "id": 32,
+            "link": "",
+            "name": "install_flutter_source.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_foxglove.sh",
+            "desc": "",
+            "id": 33,
+            "link": "",
+            "name": "install_foxglove.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_gettext.sh",
+            "desc": "",
+            "id": 34,
+            "link": "",
+            "name": "install_gettext.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_gitlfs.sh",
+            "desc": "",
+            "id": 35,
+            "link": "",
+            "name": "install_gitlfs.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_googlepinyin_shell.sh",
+            "desc": "",
+            "id": 36,
+            "link": "",
+            "name": "install_googlepinyin_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_gtsam.sh",
+            "desc": "",
+            "id": 37,
+            "link": "",
+            "name": "install_gtsam.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_gtsam_source.sh",
+            "desc": "",
+            "id": 38,
+            "link": "",
+            "name": "install_gtsam_source.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_kicad.sh",
+            "desc": "",
+            "id": 39,
+            "link": "",
+            "name": "install_kicad.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_mosquitto.sh",
+            "desc": "",
+            "id": 40,
+            "link": "",
+            "name": "install_mosquitto.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_n2n.sh",
+            "desc": "",
+            "id": 41,
+            "link": "",
+            "name": "install_n2n.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_nodejs.sh",
+            "desc": "",
+            "id": 42,
+            "link": "",
+            "name": "install_nodejs.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_nodejs_16.sh",
+            "desc": "",
+            "id": 43,
+            "link": "",
+            "name": "install_nodejs_16.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_nodejs_18.12.1.sh",
+            "desc": "",
+            "id": 44,
+            "link": "",
+            "name": "install_nodejs_18.12.1.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_nodejs_18.2.1.sh",
+            "desc": "",
+            "id": 45,
+            "link": "",
+            "name": "install_nodejs_18.2.1.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_nomachine.sh",
+            "desc": "",
+            "id": 46,
+            "link": "",
+            "name": "install_nomachine.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_nvm.sh",
+            "desc": "",
+            "id": 47,
+            "link": "",
+            "name": "install_nvm.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_obs_studio.sh",
+            "desc": "",
+            "id": 48,
+            "link": "",
+            "name": "install_obs_studio.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_orb_slamv2.sh",
+            "desc": "",
+            "id": 49,
+            "link": "",
+            "name": "install_orb_slamv2.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_osqp.sh",
+            "desc": "",
+            "id": 50,
+            "link": "",
+            "name": "install_osqp.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_pangolin.sh",
+            "desc": "",
+            "id": 51,
+            "link": "",
+            "name": "install_pangolin.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_platformio.sh",
+            "desc": "",
+            "id": 52,
+            "link": "",
+            "name": "install_platformio.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_pnpm.sh",
+            "desc": "",
+            "id": 53,
+            "link": "",
+            "name": "install_pnpm.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_pyinstaller_shell.sh",
+            "desc": "",
+            "id": 54,
+            "link": "",
+            "name": "install_pyinstaller_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_python_robotics.sh",
+            "desc": "",
+            "id": 55,
+            "link": "",
+            "name": "install_python_robotics.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_realsense_sdk.sh",
+            "desc": "",
+            "id": 56,
+            "link": "",
+            "name": "install_realsense_sdk.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_robots_ros_org.sh",
+            "desc": "",
+            "id": 57,
+            "link": "",
+            "name": "install_robots_ros_org.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_ros2_documentation.sh",
+            "desc": "",
+            "id": 58,
+            "link": "",
+            "name": "install_ros2_documentation.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_rtspplayer.sh",
+            "desc": "",
+            "id": 59,
+            "link": "",
+            "name": "install_rtspplayer.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_rustdesk_client.sh",
+            "desc": "",
+            "id": 60,
+            "link": "",
+            "name": "install_rustdesk_client.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_rustdesk_server.sh",
+            "desc": "",
+            "id": 61,
+            "link": "",
+            "name": "install_rustdesk_server.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_snap.sh",
+            "desc": "",
+            "id": 62,
+            "link": "",
+            "name": "install_snap.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_snap_proxy.sh",
+            "desc": "",
+            "id": 63,
+            "link": "",
+            "name": "install_snap_proxy.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_snowboy.sh",
+            "desc": "",
+            "id": 64,
+            "link": "",
+            "name": "install_snowboy.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_sunlogin.sh",
+            "desc": "",
+            "id": 65,
+            "link": "",
+            "name": "install_sunlogin.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_systemback_shell.sh",
+            "desc": "",
+            "id": 66,
+            "link": "",
+            "name": "install_systemback_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_template.sh.tl",
+            "desc": "",
+            "id": 67,
+            "link": "",
+            "name": "install_template.sh.tl"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_test_shell.sh",
+            "desc": "",
+            "id": 68,
+            "link": "",
+            "name": "install_test_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_translate_shell.sh",
+            "desc": "",
+            "id": 69,
+            "link": "",
+            "name": "install_translate_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_vpn_clash.sh",
+            "desc": "",
+            "id": 70,
+            "link": "",
+            "name": "install_vpn_clash.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_vscode.sh",
+            "desc": "",
+            "id": 71,
+            "link": "",
+            "name": "install_vscode.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_wireguard_client.sh",
+            "desc": "",
+            "id": 72,
+            "link": "",
+            "name": "install_wireguard_client.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_wireguard_server.sh",
+            "desc": "",
+            "id": 73,
+            "link": "",
+            "name": "install_wireguard_server.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/install_wireguard_server_firewall.sh",
+            "desc": "",
+            "id": 74,
+            "link": "",
+            "name": "install_wireguard_server_firewall.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/launch_ffmpeg_stream.sh",
+            "desc": "",
+            "id": 75,
+            "link": "",
+            "name": "launch_ffmpeg_stream.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/remove_unuse_tools.sh",
+            "desc": "",
+            "id": 76,
+            "link": "",
+            "name": "remove_unuse_tools.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/remove_zsys.sh",
+            "desc": "",
+            "id": 77,
+            "link": "",
+            "name": "remove_zsys.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/sd_system_backup.sh",
+            "desc": "",
+            "id": 78,
+            "link": "",
+            "name": "sd_system_backup.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/sd_system_recover.sh",
+            "desc": "",
+            "id": 79,
+            "link": "",
+            "name": "sd_system_recover.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/sd_system_smaller.sh",
+            "desc": "",
+            "id": 80,
+            "link": "",
+            "name": "sd_system_smaller.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/test_echo_shell.sh",
+            "desc": "",
+            "id": 81,
+            "link": "",
+            "name": "test_echo_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_docker_source.sh",
+            "desc": "",
+            "id": 82,
+            "link": "",
+            "name": "update_docker_source.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_go_source.sh",
+            "desc": "",
+            "id": 83,
+            "link": "",
+            "name": "update_go_source.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_python_source_shell.sh",
+            "desc": "",
+            "id": 84,
+            "link": "",
+            "name": "update_python_source_shell.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_rosdep_tsinghua.sh",
+            "desc": "",
+            "id": 85,
+            "link": "",
+            "name": "update_rosdep_tsinghua.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_snap_proxy.sh",
+            "desc": "",
+            "id": 86,
+            "link": "",
+            "name": "update_snap_proxy.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_system_mirrors.sh",
+            "desc": "",
+            "id": 87,
+            "link": "",
+            "name": "update_system_mirrors.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_system_mirrors2.sh",
+            "desc": "",
+            "id": 88,
+            "link": "",
+            "name": "update_system_mirrors2.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_system_simple.sh",
+            "desc": "",
+            "id": 89,
+            "link": "",
+            "name": "update_system_simple.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_system_time.sh",
+            "desc": "",
+            "id": 90,
+            "link": "",
+            "name": "update_system_time.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_timezone_cst.sh",
+            "desc": "",
+            "id": 91,
+            "link": "",
+            "name": "update_timezone_cst.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/update_timezone_utc.sh",
+            "desc": "",
+            "id": 92,
+            "link": "",
+            "name": "update_timezone_utc.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/upgrade_cmake.sh",
+            "desc": "",
+            "id": 93,
+            "link": "",
+            "name": "upgrade_cmake.sh"
+        },
+        {
+            "command": "cd ~/commands/common;./shell/upgrade_rcm.sh",
+            "desc": "",
+            "id": 94,
+            "link": "",
+            "name": "upgrade_rcm.sh"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2024-07-04"
+        }
+    ]
+}

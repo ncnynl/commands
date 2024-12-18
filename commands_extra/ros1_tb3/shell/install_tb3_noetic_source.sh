@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_turtlebot3_ros1_noetic_source.sh                              
+# Function : Install turtlebot3 ROS1 noetic source 
+# Desc     : 用于源码方式安装ROS1版本Turtlebot3的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-30 15:25:09                            
@@ -12,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-#run ros2_tb3_ws
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install turtlebot3 ROS1 noetic source")"
 
 
 # if installed ?
@@ -22,11 +25,11 @@ else
 
     #install apt first 
     pwd=$(pwd)
-    sudo sh -c "$pwd/../ros1_tb3_gazebo/shell/install_turtlebot3_ros1_noetic_apt.sh"
+    sudo sh -c "$pwd/../ros1_tb3/shell/install_tb3_noetic_apt.sh"
 
     # install dep
-    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
-
+    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
+ 
     # 新建工作空间
     mkdir -p ~/ros1_tb3_ws/src
 
@@ -46,20 +49,22 @@ else
     # 下载仓库
     echo "Dowload from turtlebot3 "
 
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 
     echo "Dowload from turtlebot3_msgs "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 
     echo "Dowload from turtlebot3_simulations "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 
     echo "Dowload from DynamixelSDK "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
     echo "Dowload from hls_lfcd_lds_driver "
-    git clone -b noetic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
+    git clone -b noetic-devel https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
 
+    echo "Dowload from ld08_driver "
+    git clone -b develop https://github.com/ROBOTIS-GIT/ld08_driver.git
 
     #run colcon
 

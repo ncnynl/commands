@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_rmf_web_20.04.sh                              
+# Function : Install ROS2 galactic RM-web 20.04 source version  
+# Desc     : 用于源码方式安装RMF-WEB 20.04/galactic版的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            
@@ -12,12 +13,16 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 galactic RMF-web 20.04 source version")"
+
 echo "Not Yet Supported!"
 exit 0   
 #基于ubuntu20.04 galacitc版本安装需要指的版本
 #安装nvm
 # sudo apt update && sudo apt install curl
-# curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 # nvm install 14
 
 # pip3 install pipenv
@@ -45,7 +50,7 @@ source ~/.bashrc
 
 #downlaod
 cd ~/ros2_rmf_ws/
-git clone -b galactic https://ghproxy.com/https://github.com/open-rmf/rmf-web
+git clone -b galactic https://github.com/open-rmf/rmf-web
 cd rmf-web
 git checkout 5670bd9
 #安装，需要花一定时间安装

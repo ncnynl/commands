@@ -1,6 +1,8 @@
 #!/bin/bash
 ################################################
-# Function : install_googlepinyin_shell.sh                              
+# Function : Install googlepinyin shell  
+# Desc     : 用于安装谷歌输入法googlepinyin的脚本     
+# Website  : https://www.ncnynl.com/archives/202210/5511.html                          
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            
@@ -11,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install googlepinyin shell")"        
 
 #run install fcitx
 

@@ -9,5 +9,15 @@
 # Company  :Foshan AiZheTeng Information Technology Co.,Ltd.   #
 # URL: https://ncnynl.com                                      #
 ################################################################
-source /opt/ros/galactic/setup.bash
-/usr/local/commands/commands
+
+#source bashrc
+. $HOME/.bashrc
+
+#source ros
+if [ $ROS_DISTRO ];then
+    source /opt/ros/$ROS_DISTRO/setup.bash
+fi
+
+#launch commands
+# /usr/local/commands/commands
+/usr/local/commands/rcm-gui

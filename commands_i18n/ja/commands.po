@@ -1,0 +1,815 @@
+# Chinese translations for commands_i package.
+# Copyright (C) 2023 THE commands_i'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the commands_i package.
+#  <1043931@qq.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: commands_i 18n\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-07 16:46+0800\n"
+"PO-Revision-Date: 2023-03-07 16:46+0800\n"
+"Last-Translator:  <1043931@qq.com>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:164
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:223
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:405
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:475
+msgid "Whether to execute the script"
+msgstr "スクリプトを実行するかどうか"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:519
+msgid "Please select the script ID to be executed"
+msgstr "実行するスクリプト ID を選択してください"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:696
+msgid "Welcome to ROS Commands Manager CLI"
+msgstr "ROS Commands Manager CLI へようこそ"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:699
+msgid "Author"
+msgstr "作者"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:700
+msgid "Email"
+msgstr "メール"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:701
+msgid "Website"
+msgstr "ウェブサイト"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:702
+msgid "Date"
+msgstr "日付"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:703
+msgid "QQ Qun B"
+msgstr "QQ クンB"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:704
+msgid "QQ Qun C"
+msgstr "QQ クンC"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:705
+msgid "QQ Qun D"
+msgstr "QQ クンD"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:728
+msgid "The following script will be executed"
+msgstr "次のスクリプトが実行されます"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:736
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:749
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:825
+msgid "Alternative scripts"
+msgstr "代替スクリプト"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:755
+msgid "Install"
+msgstr "インストール"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:761
+msgid "Remove"
+msgstr "削除"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:767
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:819
+#: /home/ubuntu/commands/common/shell/upgrade_rcm.sh:17
+msgid "Upgrade RCM"
+msgstr "RCM をアップグレード"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:774
+msgid "Current RCM Version"
+msgstr "現在の RCM バージョン"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:779
+msgid "Edit File"
+msgstr "ファイルを編集"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:785
+msgid "View File Content"
+msgstr "ファイルの内容を表示"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:791
+msgid "Build install script"
+msgstr "ビルド インストール スクリプト"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:797
+msgid "select language"
+msgstr "言語を選択"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:803
+msgid "commands help to the RCM tools"
+msgstr "RCM ツールへのコマンド インターフェイス"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:805
+msgid "Usage"
+msgstr "使用法"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:807
+msgid "List of available options"
+msgstr "利用可能なオプションのリスト"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:809
+msgid "Print this help text"
+msgstr "このヘルプ テキストを印刷"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:810
+msgid "Search the script file by keyword"
+msgstr "キーワードでスクリプトファイルを検索"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:811
+msgid "Search the script file and install rightnow"
+msgstr "スクリプトファイルを検索して今すぐインストール"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:812
+msgid "List all script files and serial numbers"
+msgstr "すべてのスクリプト ファイルとシリアル番号を一覧表示"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:813
+msgid "Select language with en cn tw cz de es fr hu it jp kr pl br ru"
+msgstr "en cn tw cz de es fr hu it jp kr pl br ru で言語を選択"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:814
+msgid "Install apt packages"
+msgstr "インストールAPT软件包"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:815
+msgid "Remove apt packages"
+msgstr "apt パッケージを削除"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:816
+msgid "Edit script through vim"
+msgstr "vim でスクリプトを編集"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:817
+msgid "Check script through cat"
+msgstr "cat でスクリプトをチェック"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:818
+msgid "Build install script through template"
+msgstr "テンプレートを使用してインストール スクリプトを作成"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:820
+msgid "Show RCM version"
+msgstr "RCM バージョンを表示"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:821
+msgid "Provide the serial number to install"
+msgstr "インストールするシリアル番号を入力してください"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:18
+msgid "Check echo shell"
+msgstr "エコーシェルをチェック"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:22
+msgid "Test First"
+msgstr "テスト1"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:28
+msgid "Test Second"
+msgstr "テスト2"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:34
+msgid "Test Three"
+msgstr "テスト3"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:40
+msgid "Test Four"
+msgstr "テスト4"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:46
+msgid "Test Five"
+msgstr "テスト5"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:52
+msgid "Test Six"
+msgstr "テスト6"
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:56
+msgid "Test Seven"
+msgstr "テスト7"
+
+#: /home/ubuntu/commands/common/shell/check_linux_version.sh:17
+msgid "Check linux Version"
+msgstr "Linux のバージョンを確認"
+
+#: /home/ubuntu/commands/common/shell/check_python_version.sh:17
+msgid "Check Python Version"
+msgstr "Python のバージョンを確認"
+
+#: /home/ubuntu/commands/common/shell/close_commands.sh:17
+#: /home/ubuntu/commands/ros2/shell/close_template.sh:17
+msgid "Close Commands"
+msgstr "閉じるコマンド"
+
+#: /home/ubuntu/commands/common/shell/close_template.sh:17
+msgid "Close Commands tempalte"
+msgstr "テンプレートを閉じるコマンド"
+
+#: /home/ubuntu/commands/common/shell/install_anaconda3.sh:19
+msgid "Install Anaconda3-2022.10-Linux-x86_64"
+msgstr "インストールAnaconda3-2022.10-Linux-x86_64"
+
+#: /home/ubuntu/commands/common/shell/install_arduino.sh:17
+msgid "Install arduino"
+msgstr "インストールArduino"
+
+#: /home/ubuntu/commands/common/shell/install_balenaEtcher.sh:18
+msgid "Install balenaEtcher"
+msgstr "インストールbalenaEtcher"
+
+#: /home/ubuntu/commands/common/shell/install_base_tools.sh:17
+msgid "Install base tools"
+msgstr "インストール必要工具"
+
+#: /home/ubuntu/commands/common/shell/install_boot_repair.sh:17
+msgid "Install boot repair"
+msgstr "インストールboot repair"
+
+#: /home/ubuntu/commands/common/shell/install_chrome.sh:18
+msgid "Install chrome linux version"
+msgstr "インストールchrome"
+
+#: /home/ubuntu/commands/common/shell/install_cubic.sh:18
+msgid "Install cubic"
+msgstr "インストールcubic"
+
+#: /home/ubuntu/commands/common/shell/install_docker_compose.sh:18
+msgid "Install docker compose"
+msgstr "インストールdocker compose"
+
+#: /home/ubuntu/commands/common/shell/install_docker.sh:18
+msgid "Install docker"
+msgstr "インストールdocker"
+
+#: /home/ubuntu/commands/common/shell/install_electron.sh:17
+msgid "Install electron"
+msgstr "インストールelectron"
+
+#: /home/ubuntu/commands/common/shell/install_example_shell.sh:18
+msgid "Install example shell template"
+msgstr "サンプルシェルテンプレートをインストール"
+
+#: /home/ubuntu/commands/common/shell/install_flutter_snap.sh:18
+msgid "Install flutter snap version"
+msgstr "フラッタースナップ版をインストール"
+
+#: /home/ubuntu/commands/common/shell/install_flutter_source.sh:20
+msgid "Install flutter linux source version"
+msgstr "フラッター Linux ソース バージョンをインストール"
+
+#: /home/ubuntu/commands/common/shell/install_foxglove.sh:17
+msgid "Install foxglove"
+msgstr "インストールfoxglove"
+
+#: /home/ubuntu/commands/common/shell/install_GitHubDesktop_shell.sh:17
+msgid "Install GitHubDesktop shell"
+msgstr "インストールGitHubDesktop"
+
+#: /home/ubuntu/commands/common/shell/install_gitlfs.sh:17
+msgid "Install gitlfs"
+msgstr "インストールgitlfs"
+
+#: /home/ubuntu/commands/common/shell/install_googlepinyin_shell.sh:18
+msgid "Install googlepinyin shell"
+msgstr "インストールgooglepinyin"
+
+#: /home/ubuntu/commands/common/shell/install_mosquitto.sh:18
+msgid "Install mosquitto"
+msgstr "インストールmosquitto"
+
+#: /home/ubuntu/commands/common/shell/install_n2n.sh:20
+msgid "Install n2n"
+msgstr "インストールn2n"
+
+#: /home/ubuntu/commands/common/shell/install_nodejs_16.sh:17
+msgid "Install nodejs 16 version"
+msgstr "インストールnodejs 16版本"
+
+#: /home/ubuntu/commands/common/shell/install_nodejs_18.12.1.sh:17
+msgid "Install nodejs 18.12.1 version"
+msgstr "インストールnodejs 18.12.1版本"
+
+#: /home/ubuntu/commands/common/shell/install_nodejs_18.2.1.sh:17
+msgid "Install nodejs 18.2.1 version"
+msgstr "インストールnodejs 18.2.1版本"
+
+#: /home/ubuntu/commands/common/shell/install_nodejs.sh:17
+msgid "Install nodejs newest version"
+msgstr "インストールnodejs最新版"
+
+#: /home/ubuntu/commands/common/shell/install_nomachine.sh:17
+msgid "Install nomachine"
+msgstr "インストールnomachine"
+
+#: /home/ubuntu/commands/common/shell/install_nvm.sh:17
+msgid "Install nvm"
+msgstr "インストールnvm"
+
+#: /home/ubuntu/commands/common/shell/install_pnpm.sh:17
+msgid "Install pnpm"
+msgstr "インストールpnpm"
+
+#: /home/ubuntu/commands/common/shell/install_pyinstaller_shell.sh:17
+msgid "Install pyinstaller shell"
+msgstr "インストールpyinstaller"
+
+#: /home/ubuntu/commands/common/shell/install_robots_ros_org.sh:18
+msgid "Install robots ros org"
+msgstr "インストールrobots ros org"
+
+#: /home/ubuntu/commands/common/shell/install_ros2_documentation.sh:18
+msgid "Install ros2 documentation"
+msgstr "インストールros2 documentation"
+
+#: /home/ubuntu/commands/common/shell/install_systemback_shell.sh:18
+msgid "Install systemback shell"
+msgstr "インストールsystemback"
+
+#: /home/ubuntu/commands/common/shell/install_test_shell.sh:18
+msgid "Install test shell"
+msgstr "インストール测试脚本"
+
+#: /home/ubuntu/commands/common/shell/install_vpn_clash.sh:18
+msgid "Install vpn clash"
+msgstr "インストールvpn clash"
+
+#: /home/ubuntu/commands/common/shell/install_vscode.sh:18
+msgid "Install vscode"
+msgstr "インストールvscode"
+
+#: /home/ubuntu/commands/common/shell/install_wireguard_client.sh:19
+msgid "Install wireguard client"
+msgstr "インストールwireguard客户端"
+
+#: /home/ubuntu/commands/common/shell/install_wireguard_server_firewall.sh:19
+msgid "Install wireguard server firewall"
+msgstr "インストールwireguard服务端防火墙"
+
+#: /home/ubuntu/commands/common/shell/install_wireguard_server.sh:19
+msgid "Install wireguard server"
+msgstr "インストールwireguard服务端"
+
+#: /home/ubuntu/commands/common/shell/remove_unuse_tools.sh:17
+msgid "Remove unuse tools"
+msgstr "未使用のツールを削除"
+
+#: /home/ubuntu/commands/common/shell/remove_zsys.sh:17
+msgid "Remove zsys"
+msgstr "zsys を削除"
+
+#: /home/ubuntu/commands/common/shell/sd_system_backup.sh:18
+msgid "SD system backup"
+msgstr "SD システムのバックアップ"
+
+#: /home/ubuntu/commands/common/shell/sd_system_recover.sh:18
+msgid "SD system recover"
+msgstr "SD システム リカバリ"
+
+#: /home/ubuntu/commands/common/shell/update_docker_source.sh:17
+msgid "Update docker source"
+msgstr "Docker ソースを更新"
+
+#: /home/ubuntu/commands/common/shell/update_python_source_shell.sh:17
+msgid "Update python source shell"
+msgstr "python ソースシェルを更新"
+
+#: /home/ubuntu/commands/common/shell/update_rosdep_tsinghua.sh:17
+msgid "Update rosdep tsinghua"
+msgstr "rosdep tsinghua を更新"
+
+#: /home/ubuntu/commands/common/shell/update_system_simple.sh:17
+msgid "Update system mirrors shell 2"
+msgstr "システムミラーシェル 2 を更新"
+
+#: /home/ubuntu/commands/common/shell/update_system_mirrors.sh:17
+msgid "Update system mirrors"
+msgstr "システムミラーを更新"
+
+#: /home/ubuntu/commands/common_nvidia/shell/install_nvidia_docker_20.04.sh:18
+msgid "Install nvidia docker 20.04"
+msgstr "インストールNavidia Docker 20.04版本"
+
+#: /home/ubuntu/commands/common_wsl2/shell/check_wsl2.sh:18
+msgid "Check wsl2 system"
+msgstr "wsl2 システムをチェック"
+
+#: /home/ubuntu/commands/common_wsl2/shell/config_snap_wsl2.sh:19
+msgid "Config snap for wsl2"
+msgstr "配置wsl2的snap"
+
+#: /home/ubuntu/commands/common_wsl2/shell/install_cuda_12_wsl_ubuntu.sh:19
+msgid "Install cuda 12.0 wsl2 ubuntu"
+msgstr "インストールwsl2版cuda 12.0版本"
+
+#: /home/ubuntu/commands/common_wsl2/shell/install_wsl2_bridge.sh:19
+msgid "Install wsl2 bridge"
+msgstr "インストールwsl2版网卡桥接"
+
+#: /home/ubuntu/commands/common_wsl2/shell/install_wsl2_xfce4.sh:19
+msgid "Install wsl2 xface4"
+msgstr "インストールwsl2下桌面程序xface4"
+
+#: /home/ubuntu/commands/ros1/shell/config_date_shell.sh:18
+msgid "Config date shell"
+msgstr "配置日期同步"
+
+#: /home/ubuntu/commands/ros1/shell/config_ros1_network_shell.sh:18
+msgid "Config ros1 network shell"
+msgstr "配置ROS1主从网络"
+
+#: /home/ubuntu/commands/ros1/shell/install_flutter_keyboard.sh:18
+msgid "Install flutter keyboard"
+msgstr "インストールflutter键盘控制APP"
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic_arm.sh:15
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic.sh:16
+msgid "Install ROS1 Noetic"
+msgstr "インストールROS1 Noetic"
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic_cartographer.sh:15
+msgid "Install ROS1 Noetic Cartographer"
+msgstr "インストールROS1 Noetic Cartographer"
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic_rosbridge.sh:15
+msgid "Install ros-noetic-rosbridge-suite"
+msgstr "インストールros-noetic-rosbridge-suite软件包"
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_tutorials_source.sh:19
+msgid "Install ros tutorials source"
+msgstr "源码インストールros教程"
+
+#: /home/ubuntu/commands/ros1/shell/launch_turtlesim_node.sh:15
+msgid "Launch turtlesim"
+msgstr "启动turtlesim小乌龟程序"
+
+#: /home/ubuntu/commands/ros1/shell/launch_turtlesim_teleop_key.sh:15
+msgid "Launch turtlesim teleop key"
+msgstr "启动turtlesim小乌龟程键盘控制"
+
+#: /home/ubuntu/commands/ros1/shell/update_ros1_source.sh:15
+msgid "Update ROS1 Source"
+msgstr "更新ROS1源"
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_cartographer_apt.sh:18
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_cartographer_apt.sh:18
+msgid "Install cartographer apt version"
+msgstr "インストールcartographer的APT版本"
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_cartographer_source.sh:15
+msgid "Install ROS1 Noetic Cartographer source version"
+msgstr "インストールROS1 Noetic Cartographer源码版本"
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_cv_camera.sh:18
+msgid "Install cv camera"
+msgstr "インストールOPENCV相机驱动"
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_dso_noetic_source.sh:15
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_orbslam2_noetic_source.sh:15
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_orbslam2_ros1_source.sh:15
+msgid "Install ROS1 Noetic ORB_SLAM2"
+msgstr "インストールROS1 Noetic版ORB_SLAM2"
+
+#: /home/ubuntu/commands/ros1_sensor/shell/install_imu_m0_shell.sh:18
+msgid "Install imu m0 shell"
+msgstr "インストールROS1版razor IMU M0驱动"
+
+#: /home/ubuntu/commands/ros1_sensor/shell/install_ublox_gps.sh:18
+msgid "Install ublox GPS"
+msgstr "インストールROS1版ublox GPS驱动"
+
+#: /home/ubuntu/commands/ros1_tb3/shell/install_tb3_noetic_apt.sh:18
+msgid "Install turtlebot3 ROS1 noetic apt"
+msgstr "APTインストールROS1 noetic turtlebot3"
+
+#: /home/ubuntu/commands/ros1_tb3/shell/install_tb3_noetic_source.sh:18
+msgid "Install turtlebot3 ROS1 noetic source"
+msgstr "源码インストールROS1 noetic turtlebot3"
+
+#: /home/ubuntu/commands/ros1_tb3_gazebo/shell/download_gazebo_model_shell.sh:18
+msgid "Download gazebo model shell"
+msgstr "下载gazebo模型"
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_foxy_arm.sh:15
+#: /home/ubuntu/commands/ros2/shell/install_ros2_galactic_arm.sh:15
+msgid "Install ROS2 Foxy ARM version"
+msgstr "インストールARM版本的ROS2 Foxy"
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_foxy.sh:15
+#: /home/ubuntu/commands/ros2/shell/install_ros2_galactic.sh:15
+msgid "Install ROS2 Foxy AMD version"
+msgstr "インストールADM版本ROS2 Foxy"
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_humble_arm.sh:15
+msgid "Install ROS2 Humble ARM version"
+msgstr "インストールARM版的ROS2 humble"
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_humble.sh:15
+msgid "Install ROS2 Humble AMD version"
+msgstr "インストールAMD版的ROS2 Humble"
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_turtorials_source.sh:19
+msgid "Install ROS2 turtorials source"
+msgstr "インストールROS2官方教程源码"
+
+#: /home/ubuntu/commands/ros2/shell/launch_turtlesim_node.sh:15
+msgid "Launch ROS2 turtlesim"
+msgstr "启动ROS2版小乌龟"
+
+#: /home/ubuntu/commands/ros2/shell/launch_turtlesim_teleop_key.sh:15
+msgid "Launch ROS2 turtlesim teleop key"
+msgstr "启动ROS2版小乌龟键盘控制"
+
+#: /home/ubuntu/commands/ros2/shell/update_ros2_source.sh:15
+msgid "Update ROS2 Source"
+msgstr "更新ROS2源"
+
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_cartographer_source.sh:15
+msgid "Install ROS2 cartographer source version"
+msgstr "源码インストールROS2版cartographer"
+
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_multirobot_map_merge.sh:19
+msgid "Install ROS2 multirobot map merge"
+msgstr "インストールROS2版multirobot map merge包"
+
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_navigation2_source.sh:18
+msgid "Install ROS2 navigation2 source version"
+msgstr "源码インストールROS2版navigation2软件包"
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_ade.sh:18
+msgid "Install ade"
+msgstr "インストールade"
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_autoware_ade.sh:18
+msgid "Install autoware ade version"
+msgstr "インストールROS2版autoware的ade版"
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_autoware_source_ade.sh:18
+msgid "Install autoware source version"
+msgstr "インストールROS2版autoware源码版"
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_autoware_source_foxy.sh:18
+msgid "Install autoware source foxy version"
+msgstr "インストールROS2 Foxy版autoware"
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_google_benchmark.sh:18
+msgid "Install google benchmark"
+msgstr "インストールgoogle benchmark"
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_osqp.sh:18
+msgid "Install osqp"
+msgstr "インストールosqp"
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_barista_ros2_navigation.sh:18
+msgid "Install barista_ros2 navigation branch"
+msgstr "インストール多机仿真barista_ros2的navigation分支"
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_barista_ros2_startbots.sh:18
+msgid "Install barista_ros2 startbots branch"
+msgstr "インストール多机仿真barista_ros2的startbots分支"
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_box_bot.sh:19
+msgid "Install box_bot"
+msgstr "インストール多机仿真box_bot"
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_dolly.sh:18
+msgid "Install dolly simulator"
+msgstr "インストール仿真dolly"
+
+#: /home/ubuntu/commands/ros2_ignition/shell/install_ignition_galactic.sh:18
+msgid "Install ROS2 ignition shell"
+msgstr "インストールROS2 ignition"
+
+#: /home/ubuntu/commands/ros2_ignition/shell/install_ignition_humble_apt.sh:18
+msgid "Install ignition humble apt version"
+msgstr "aptインストールROS2 ignition humble"
+
+#: /home/ubuntu/commands/ros2_ignition/shell/install_ignition_humble_source.sh:18
+msgid "Install ignition humble source version"
+msgstr "源码インストールROS2 ignition humble"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_free_fleet_barista.sh:18
+msgid "Install barista ros2 source version"
+msgstr "源码インストールbarista ros2"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_burger_maps.sh:19
+msgid "Install rmf burger maps"
+msgstr "インストールrmf burger maps包"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_foxy_apt.sh:18
+msgid "Install ROS2 rmf source shell"
+msgstr "源码インストールROS2 rmf"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_free_fleet.sh:19
+msgid "Install ROS2 rmf web 22.04"
+msgstr "インストールROS2 rmf web 22.04 "
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_galactic_apt.sh:18
+msgid "Install ROS2 galactic rmf apt version"
+msgstr "aptインストールROS2 galactic版rmf"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_galactic_devel.sh:18
+msgid "Install ROS2 galactic rmf source version"
+msgstr "源码インストールROS2 galactic版rmf"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_galactic_source.sh:18
+msgid "Install ROS2 galactic rmf source version 21.09 branch"
+msgstr "源码インストールROS2 galactic版rmf 21.09"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_humble_apt.sh:18
+msgid "Install ROS2 humble rmf apt version"
+msgstr "aptインストールROS2 humble版rmf"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_humble_main.sh:18
+msgid "Install ROS2 humble rmf apt version humble-main branch"
+msgstr "aptインストールROS2 humble版rmf的main分支"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_humble_source.sh:19
+msgid "Install ROS2 humble rmf apt version humble branch"
+msgstr "aptインストールROS2 humble版rmf的humble分支"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_model.sh:18
+msgid "Install ros2 rmf model shell"
+msgstr "インストールROS2 rmf模型"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_panel.sh:19
+msgid "Install rmf web panel"
+msgstr "インストールRMF-WEB Panel"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_traffic_editor_apt.sh:18
+msgid "Install rmf traffic editor apt version"
+msgstr "aptインストールRMF traffic editor "
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_traffic_editor_source.sh:18
+msgid "Install rmf traffic editor source version"
+msgstr "源码インストールrmf traffic editor"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_web_galactic.sh:18
+msgid "Install ROS2 galactic RMF-web 20.04 source version"
+msgstr "源码インストールROS2 galactic版RMF-web 20.04"
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_web_humble.sh:19
+msgid "Install ROS2 humble RMF-web 22.04 source version"
+msgstr "源码インストールROS2 galactic版RMF-web 22.04"
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_pointcloud_to_laserscan.sh:18
+msgid "Install ROS2 pointcloud_to_laserscan"
+msgstr "インストールROS2版pointcloud_to_laserscan软件包"
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_rpicamera_ros2.sh:18
+msgid "Install ROS2 rpicamera_ros2"
+msgstr "インストールROS2版rpicamera_ros2软件包"
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_rplidar_ros.sh:18
+msgid "Install ROS2 rplidar_ros2"
+msgstr "インストールROS2版rplidar_ros2软件包"
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_sllidar_ros2.sh:18
+msgid "Install ROS2 sllidar_ros2"
+msgstr "インストールROS2版sllidar_ros2软件包"
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_velodyne.sh:18
+msgid "Install ROS2 velodyne"
+msgstr "インストールROS2版velodyne软件包"
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_foxy_apt.sh:16
+msgid "Install ROS2 Foxy Turtlebot3 apt version"
+msgstr "aptインストールROS2 Foxy版turtlebot3"
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_foxy_source.sh:19
+msgid "Install ROS2 Foxy turtlebot3 source version"
+msgstr "源码インストールROS2 Foxy版turtlebot3"
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_galactic_apt.sh:16
+msgid "Install ROS2 Galactic turtlebot3 apt version"
+msgstr "aptインストールROS2 Galactic版turtlebot3"
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_galactic_source.sh:19
+msgid "Install ROS2 Galactic turtlebot3 source version"
+msgstr "源码インストールROS2 Galactic版turtlebot3"
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_humble_apt.sh:16
+msgid "Install ROS2 humble turtlebot3 apt version"
+msgstr "aptインストールROS2 humble版turtlebot3"
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_humble_source.sh:19
+msgid "Install ROS2 humble turtlebot3 source version"
+msgstr "源码インストールROS2 humble版turtlebot3"
+
+#: /home/ubuntu/commands/ros2_tb3_gazebo/shell/download_gazebo_model_shell.sh:18
+msgid "Download ROS2 gazebo model shell"
+msgstr "下载ROS2版gazebo模型"
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_galactic_apt.sh:18
+msgid "Install ROS2 galactic turtlebot4 ignition apt version"
+msgstr "aptインストールROS2 galactic版turtlebot4和ignition"
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_galactic_source.sh:18
+msgid "Install ROS2 galactic turtlebot4 and ignition source version"
+msgstr "源码インストールROS2 galactic版turtlebot4和ignition"
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_humble_apt.sh:18
+msgid "Install ROS2 humble turtlebot4 and ignition apt version"
+msgstr "aptインストールROS2 humble版turtlebot4和ignition"
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_humble_source.sh:18
+msgid "Install ROS2 humble turtlebot4 and ignition source version"
+msgstr "源码インストールROS2 humble版turtlebot4和ignition"
+
+#: /home/ubuntu/commands/ros2_tb4_ignition/shell/download_ignition_model_SubT.sh:18
+msgid "Download ROS2 ignition model shell "
+msgstr "下载ROS2版ignition模型"
+
+#: /home/ubuntu/commands/ros2_webots/shell/install_webots_galactic_apt.sh:18
+msgid "Install ROS2 galactic webots apt version"
+msgstr "aptインストールROS2 galactic版webots"
+
+#: /home/ubuntu/commands/ros2_webots/shell/install_webots_humble_apt.sh:18
+msgid "Install ROS2 humble webots  apt version"
+msgstr "aptインストールROS2 humble版webots"
+
+#: /home/ubuntu/commands/ros_easy/shell/init_free_fleet.sh:18
+msgid "Init free fleet"
+msgstr "初始化free fleet"
+
+#: /home/ubuntu/commands/ros_easy/shell/init_rmf.sh:18
+msgid "Init rmf"
+msgstr "初始化RMF"
+
+#: /home/ubuntu/commands/ros_easy/shell/init_ros1.sh:18
+msgid "Init ROS1"
+msgstr "初始化ROS1"
+
+#: /home/ubuntu/commands/ros_easy/shell/init_ros2.sh:19
+msgid "Init ROS2"
+msgstr "初始化ROS2"
+
+#: /home/ubuntu/commands/ros_easy/shell/init_tb3.sh:18
+msgid "Init turtlebot3"
+msgstr "初始化turtlebot3"
+
+#: /home/ubuntu/commands/ros_easy/shell/init_tb4.sh:18
+msgid "Init turtlebot4"
+msgstr "初始化turtlebot4"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_20.04.sh:18
+msgid "Install ros2 easy 20.04"
+msgstr "インストールROS2-EASY 20.04脚本"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_22.04.sh:18
+msgid "Install ros2 easy 22.04"
+msgstr "インストールROS2-EASY 22.04脚本"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_arm_20.04.sh:18
+msgid "Install ros2 easy arm 20.04"
+msgstr "インストールROS2-EASY arm版20.04脚本"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_arm_22.04.sh:18
+msgid "Install ros2 easy arm 22.04"
+msgstr "インストールROS2-EASY arm版22.04脚本"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_turtorial_ros2_code_ws.sh:18
+msgid "Install tutorial ros2 code ws"
+msgstr "インストールROS2版编程教程工作空间"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_turtorial_ros2_launch_ws.sh:18
+msgid "Install tutorial ros2 launch ws"
+msgstr "インストールROS2版luanch教程工作空间"
+
+#: /home/ubuntu/commands/ros_easy/shell/install_turtorial_ros2_tf2_ws.sh:18
+msgid "Install turtorial ros2 tf2 ws"
+msgstr "インストールROS2版TF教程工作空间"
+
+#: /home/ubuntu/commands/ros_easy/shell/load_free_fleet.sh:18
+msgid "Load free fleet"
+msgstr "加载free fleet工作空间"
+
+#: /home/ubuntu/commands/ros_easy/shell/load_rmf.sh:18
+msgid "Load RMF"
+msgstr "加载RMF工作空间"
+
+#: /home/ubuntu/commands/ros_easy/shell/load_ros1.sh:18
+msgid "Load ROS1"
+msgstr "加载ROS1环境"
+
+#: /home/ubuntu/commands/ros_easy/shell/load_ros2.sh:18
+msgid "Load ROS2"
+msgstr "加载ROS2环境"
+
+#: /home/ubuntu/commands/ros_easy/shell/load_tb3.sh:18
+msgid "Load turtlebot3"
+msgstr "加载turtlebot3工作空间"
+
+#: /home/ubuntu/commands/ros_easy/shell/load_tb4.sh:18
+msgid "Load turtlebot4"
+msgstr "加载turtlebot4工作空间"
+
+#: /home/ubuntu/commands/walking_application/shell/install_walking_application.sh:19
+msgid "Install ROS2 walking_application"
+msgstr "インストールROS2 galactic版walking_application"

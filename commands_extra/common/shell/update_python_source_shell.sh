@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : update_python_source_shell.sh                              
+# Function : Update python source shell  
+# Desc     : 用于更新Python源的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-24 15:17:32                            
@@ -11,51 +12,97 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Update python source shell")"         
 
 #run mkdir
 
 # 新建目录
 if [ ! -f ~/.pip/pip.conf ];then
-
     if [ ! -d ~/.pip ];then 
         mkdir ~/.pip
     fi 
+fi
 
-    #run touch
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+SKYBLUE='\033[0;36m'
+PLAIN='\033[0m'
 
-    # 新建文件
-    if [ ! -f ~/.pip/pip.conf ];then 
-        touch ~/.pip/pip.conf 
-    fi
+setDefault()
+{
+	if [[ -f ~/.pip/pip.conf.bak ]]; then
+		echo -e " ${GREEN}pip.conf.bak exists${PLAIN}"
+	else
+		mv ~/.pip/pip.conf{,.bak}
+	fi    
 
-    #run echo
+    echo "[global]" > ~/.pip/pip.conf
+    echo "index-url=https://pypi.org/simple" >> ~/.pip/pip.conf
+    echo "[install]" >> ~/.pip/pip.conf
+    echo "trusted-host=pypi.org" >> ~/.pip/pip.conf
+}
 
-    # 添加内容
+setDouban()
+{
+    sed -i 's/pypi.org/pypi.doubanio.com/'g ~/.pip/pip.conf
+}
 
-    echo "[global]" >> ~/.pip/pip.conf 
+setTsinghua(){
+	sed -i 's/pypi.org/pypi.tuna.tsinghua.edu.cn/'g ~/.pip/pip.conf
+}
 
-    #run echo
+setUstc(){
+	sed -i 's/pypi.org/pypi.mirrors.ustc.edu.cn/'g ~/.pip/pip.conf
+}
 
-    # 添加内容
+setAliyun(){
+    echo "[global]" > ~/.pip/pip.conf
+    echo "index-url=https://mirrors.aliyun.com/pypi/simple" >> ~/.pip/pip.conf
+    echo "[install]" >> ~/.pip/pip.conf
+    echo "trusted-host=mirrors.aliyun.com" >> ~/.pip/pip.conf
+}
 
-    echo "index-url = http://pypi.douban.com/simple" >> ~/.pip/pip.conf 
+restore(){
+	if [ -f ~/.pip/pip.conf ]; then
+		rm ~/.pip/pip.conf
+		mv ~/.pip/pip.conf.bak ~/.pip/pip.conf
+	fi
+}
 
-    #run echo
+setSources(){
+	echo "请问你需要变更Python源吗? 不需要的话，直接回车即可"
+	echo "Pypi官方源请输入 - pypi"
+	echo "豆瓣源请输入 - douban"
+	echo "清华大学源请输入 - tsinghua"
+	echo "中国科学技术大学源请输入 - ustc"
+	echo "阿里云源请输入 - aliyun"
+	echo "恢复到上一次 - restore"
+	CHOICE_A=$(echo -e "\n Please input source ：")
+	read -p "${CHOICE_A}" para			
+	case $para in
+		'pypi'|'-pypi'|'--pypi' )
+			setDefault;;
+		'ustc'|'-ustc'|'--ustc' )
+			setDefault;setUstc;;
+		'tsinghua'|'-tsinghua'|'--tsinghua' )
+			setDefault;setTsinghua;;		
+		'douban'|'-douban'|'--douban' )
+			setDefault;setDouban;;	              	
+		'aliyun'|'-aliyun'|'--aliyun' )
+			setDefault;setAliyun;;	
+		'restore'|'-restore'|'--restore' )
+			restore;;
+		*);;
+	esac
 
-    # 添加内容
+    echo "Have changed to :"
+    pip3 config list   
+}
 
-    echo "[install] " >> ~/.pip/pip.conf
+para=$1
+setSources
 
-    #run echo
-
-    # 添加内容
-
-    echo "trusted-host=pypi.douban.com" >> ~/.pip/pip.conf
-
-    echo "add pip.conf successfull"
-
-else
-    echo "pip.conf is configured , don't need do it again!"
-
-fi 
+echo -e "${GREEN}Done${PLAIN}"

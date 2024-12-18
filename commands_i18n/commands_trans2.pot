@@ -1,0 +1,19 @@
+Init rmf
+Init ROS1
+Init ROS2
+Init turtlebot3
+Init turtlebot4
+Install ros2 easy 20.04
+Install ros2 easy 22.04
+Install ros2 easy arm 20.04
+Install ros2 easy arm 22.04
+Install tutorial ros2 code ws
+Install tutorial ros2 launch ws
+Install turtorial ros2 tf2 ws
+Load free fleet
+Load RMF
+Load ROS1
+Load ROS2
+Load turtlebot3
+Load turtlebot4
+Install ROS2 walking_application

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs.sh                              
+# Function : Install nvm  
+# Desc     : 用于安装nodejs管理工具NVM的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            
@@ -11,8 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
-echo "install nvm and nodejs "
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install nvm")" 
 
 #https://github.com/nvm-sh/nvm
 if  [ -d $HOME/.nvm ]; then 
@@ -21,8 +23,7 @@ else
 
     echo "install nvm"
     sudo apt update && sudo apt install curl
-    curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
+    curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh  | sed  "s/https:\/\//https:\/\/ghproxy.com\/https:\/\//"g | bash 
     echo "Congratulations, nvm have successfully installed"
 
 fi

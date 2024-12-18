@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_pyinstaller_shell.sh                              
+# Function : Install pyinstaller shell  
+# Desc     : 用于安装python打包软件pyinstaller的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 16:17:10                            
@@ -11,7 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install pyinstaller shell")"        
 
 #run download pyinstaller
 
@@ -25,7 +28,7 @@ mkdir ~/tools/
 
 cd ~/tools/
 
-git clone https://ghproxy.com/https://github.com/pyinstaller/pyinstaller
+git clone https://github.com/pyinstaller/pyinstaller
 
 #run cd
 

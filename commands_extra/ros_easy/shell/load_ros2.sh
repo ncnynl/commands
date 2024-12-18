@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_ros2.sh                              
+# Function : Load ROS2  
+# Desc     : 用于加载ROS2的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            
@@ -12,8 +13,30 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Load ROS2")"
 
-. ~/commands/common/shell/check_linux_version.sh
+# . ~/commands/common/shell/check_linux_version.sh
+release=""
+version=""
+function get_system(){
+    if cat /etc/issue | grep -Eqi "ubuntu"; then
+        release="ubuntu"
+    elif cat /proc/version | grep  -Eqi  "ubuntu"; then
+        release="ubuntu"
+    fi
+    # echo "release:$release"
+}
+get_system
+
+function get_system_version(){
+    if [ $1 == "ubuntu" ]; then
+        version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+    fi
+    # echo "version:$version"
+}
+get_system_version $release
 
 # echo $release
 # echo $version 
@@ -24,8 +47,13 @@ case $version in
         ros2_distro=humble
         ;;
     "20.04")
-        ros2_distro=galactic
-        # ros2_distro=foxy
+        # ros2_distro=galactic
+        #if galactic exits , use first, if always use foxy, please change it
+        if [ -d /opt/ros/galactic ]; then
+            ros2_distro=galactic 
+        else
+            ros2_distro=foxy
+        fi 
         ;;
     *);;
 esac

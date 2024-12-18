@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_robots_ros_org.sh                              
+# Function : Install robots ros org  
+# Desc     : 用于搭建robots.ros.org网站的脚本                                 
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                            
@@ -12,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install robots ros org")"          
 # https://robots.ros.org/contributing/
 
 #####Procedure
@@ -43,7 +46,7 @@ sudo apt install python3-empy
 #download https://github.com/ros-infrastructure/robots.ros.org
 if [ ! -d ~/tools/robots.ros.org ]; then
     cd ~/tools/
-    git clone https://ghproxy.com/https://github.com/ros-infrastructure/robots.ros.org
+    git clone https://github.com/ros-infrastructure/robots.ros.org
 fi 
 
 #start

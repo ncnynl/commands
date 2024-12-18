@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : load_rmf.sh                              
+# Function : Load RMF 
+# Desc     : 用于加载RMF的脚本                                 
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            
@@ -12,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Load RMF")"
 
 if [ -d ~/ros2_rmf_ws ]; then
     source ~/ros2_rmf_ws/install/local_setup.bash

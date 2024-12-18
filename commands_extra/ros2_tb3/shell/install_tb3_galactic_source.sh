@@ -1,6 +1,8 @@
 #!/bin/bash
 ################################################
-# Function : install_turtlebot3_ros2_galactic.sh                              
+# Function : Install ROS2 Galactic turtlebot3 source version   
+# Desc     : 用于源码方式安装ROS2 Galactic版Turtlebot3的脚本    
+# Website  : https://www.ncnynl.com/archives/202210/5574.html                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-30 15:25:09                            
@@ -12,6 +14,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 Galactic turtlebot3 source version")"
+
 #run ros2_tb3_ws
 
 
@@ -21,7 +27,7 @@ if [ -d ~/ros2_tb3_ws/src ]; then
 else    
     # install dep
 
-    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
+    sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git libudev-dev
     sudo apt-get install ros-galactic-gazebo-* ros-galactic-cartographer ros-galactic-cartographer-ros ros-galactic-nav2-bringup ros-galactic-navigation2 ros-galactic-slam-toolbox
 
     # 新建工作空间
@@ -37,7 +43,7 @@ else
 
     # 获取仓库列表
 
-    # wget https://ghproxy.com/https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3/galactic-devel/turtlebot3.repos
+    # wget https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3/galactic-devel/turtlebot3.repos
 
     #run import
     echo "this will take 10-30 min to download"
@@ -45,20 +51,22 @@ else
     # 下载仓库
     echo "Dowload from turtlebot3 "
 
-    git clone -b galactic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3.git
+    git clone -b galactic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 
     echo "Dowload from turtlebot3_msgs "
-    git clone -b galactic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    git clone -b galactic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 
     echo "Dowload from turtlebot3_simulations "
-    git clone -b galactic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+    git clone -b galactic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 
     echo "Dowload from DynamixelSDK "
-    git clone -b galactic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    git clone -b galactic-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
     echo "Dowload from hls_lfcd_lds_driver "
-    git clone -b galactic-devel https://ghproxy.com/https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
+    git clone -b galactic-devel https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
 
+    echo "Dowload from ld08_driver "
+    git clone -b ros2-devel https://github.com/ROBOTIS-GIT/ld08_driver.git
 
     #run colcon
 

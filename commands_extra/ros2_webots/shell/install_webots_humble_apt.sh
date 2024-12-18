@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_webots_galactic_apt.sh                              
+# Function : Install ROS2 humble webots  apt version   
+# Desc     : 用于APT方式安装ROS2 humble版仿真软件webots的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 02:39:30                            
@@ -12,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble webots  apt version")"    
 
 # 添加webots源
 

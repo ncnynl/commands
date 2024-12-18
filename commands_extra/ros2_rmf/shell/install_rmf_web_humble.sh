@@ -1,6 +1,8 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_rmf_web_22.04.sh                              
+# Function : Install ROS2 humble RMF-web 22.04 source version  
+# Desc     : 用于源码方式安装RMF-WEB 22.04/humble版的脚本   
+# Website  : https://www.ncnynl.com/archives/202212/5775.html                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            
@@ -12,46 +14,62 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-echo "Not Yet Supported!"
-exit 0
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble RMF-web 22.04 source version")"
+
+# echo "Not Yet Supported!"
+# exit 0
 #基于ubuntu22.04 humble版本安装需要指的版本
 #安装nvm和nodejs
-# sudo apt update && sudo apt install curl
-# curl -o- https://ghproxy.com/https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-# nvm install 16
+#install nodejs and npm
+if [ ! -d /usr/share/nodejs ];then
+    sh -c "~/commands/common/shell/install_nvm.sh"
+    sh -c "~/commands/common/shell/install_nodejs.sh"
+fi
 
-#设置国内源
+
+# #设置国内源
 # npm config set registry https://registry.npm.taobao.org
 
-#安装pnpm
-# curl -fsSL https://get.pnpm.io/install.sh | bash -
-# pnpm env use --global 16
+# #安装pnpm
+if  [ ! -f $HOME/.local/share/pnpm/pnpm ]; then 
+    sh -c "~/commands/common/shell/install_pnpm.sh"
+fi 
 
-#source 
-source ~/.bashrc 
 
-#Install dependencies
-# sudo apt install python3-venv
+# #Install dependencies
+sudo apt install -y python3-venv
+sudo apt install -y libpango1.0-dev
+python3 -m pip install tortoise
 
-#Install PostgreSQL
-# sudo apt install postgresql postgresql-contrib -y
+# #Install PostgreSQL
+sudo apt install postgresql postgresql-contrib -y
 # Set a default password
-# sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
-# sudo systemctl restart postgresql
+sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+sudo systemctl restart postgresql
 
 # interactive prompt
 # sudo -i -u postgres
 #To manually reset the database:
-#sudo -u postgres bash -c "dropdb postgres; createdb postgres"
+# sudo -u postgres bash -c "dropdb postgres; createdb postgres"
 
 #downlaod
+#commit dbdfb532b653642bb91ea3ed553c399d60220c0c
 cd ~/ros2_rmf_ws/
-git clone https://ghproxy.com/https://github.com/open-rmf/rmf-web
-cd rmf-web
+git clone -b main https://github.com/open-rmf/rmf-web
+
 #安装，需要花一定时间安装
 cd ~/ros2_rmf_ws/rmf-web
+
+# pnpm
+export PNPM_HOME="~/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+pnpm env use --global 18
 pnpm install
 
 # launch
 # cd packages/dashboard
+# export NODE_OPTIONS='--openssl-legacy-provider'
 # pnpm start

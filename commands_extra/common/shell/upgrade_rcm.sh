@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : upgrade_rcm.sh                              
+# Function : Upgrade RCM   
+# Desc     : 用于升级RCM的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-22                       
@@ -11,7 +12,10 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Upgrade RCM")"  
+
 #version compare
 function version_gt() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" != "$1"; }
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" == "$1"; }

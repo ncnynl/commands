@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_ros2_rmf_source_shell.sh                              
+# Function : Install ros2 rmf model shell  
+# Desc     : 用于配置RMF模型的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            
@@ -12,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ros2 rmf model shell")"
+
 #base on 22.09 branch 
 # https://github.com/open-rmf/rmf_demos.git
 # echo "Not Yet Supported!"

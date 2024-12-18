@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_sllidar_ros2.sh                         
+# Function : Install ROS2 sllidar_ros2 
+# Desc     : 用于源码方式安装ROS2版单线激光雷达sllidar驱动的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                             
@@ -12,9 +13,13 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 sllidar_ros2")"
+
 #      
-echo "Not Yet Supported!"
-exit 0      
+# echo "Not Yet Supported!"
+# exit 0      
 workspace=ros2_sensor_ws
 
 #workspace is exits ?
@@ -26,9 +31,12 @@ if [ -d ~/$workspace/src/sllidar_ros2 ];then
     echo "sllidar_ros2 have installed" && exit 0
 fi 
 
+echo "Configure git proxy"
+# git config --global url."https://ghproxy.com/https://github.com".insteadof https://github.com
+
 # 下载源码
 cd ~/$workspace/src
-git clone https://github.com/ncnynl/sllidar_ros2 
+git clone https://github.com/Slamtec/sllidar_ros2
 
 # 编译代码
 cd ~/$workspace/

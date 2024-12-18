@@ -1,0 +1,816 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-07 17:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:164
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:223
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:405
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:475
+msgid "Whether to execute the script"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:519
+msgid "Please select the script ID to be executed"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:696
+msgid "Welcome to ROS Commands Manager CLI"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:699
+msgid "Author"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:700
+msgid "Email"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:701
+msgid "Website"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:702
+msgid "Date"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:703
+msgid "QQ Qun B"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:704
+msgid "QQ Qun C"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:705
+msgid "QQ Qun D"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:728
+msgid "The following script will be executed"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:736
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:749
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:825
+msgid "Alternative scripts"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:755
+msgid "Install"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:761
+msgid "Remove"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:767
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:819
+#: /home/ubuntu/commands/common/shell/upgrade_rcm.sh:17
+msgid "Upgrade RCM"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:774
+msgid "Current RCM Version"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:779
+msgid "Edit File"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:785
+msgid "View File Content"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:791
+msgid "Build install script"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:797
+msgid "select language"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:803
+msgid "command interface to the RCM tools"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:805
+msgid "Usage"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:807
+msgid "List of available options"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:809
+msgid "Print this help text"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:810
+msgid "Search the script file by keyword"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:811
+msgid "Search the script file and install rightnow"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:812
+msgid "List all script files and serial numbers"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:813
+msgid "Select language with zh_CN, en"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:814
+msgid "Install apt packages"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:815
+msgid "Remove apt packages"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:816
+msgid "Edit script through vim"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:817
+msgid "Check script through cat"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:818
+msgid "Build install script through template"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:820
+msgid "Show RCM version"
+msgstr ""
+
+#: /home/ubuntu/tools/commands/commands_extra/cs.sh:821
+msgid "Provide the serial number to install"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:18
+msgid "Check echo shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:22
+msgid "Test First"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:28
+msgid "Test Second"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:34
+msgid "Test Three"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:40
+msgid "Test Four"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:46
+msgid "Test Five"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:52
+msgid "Test Six"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_echo_shell.sh:56
+msgid "Test Seven"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_linux_version.sh:17
+msgid "Check linux Version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/check_python_version.sh:17
+msgid "Check Python Version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/close_commands.sh:17
+#: /home/ubuntu/commands/ros2/shell/close_template.sh:17
+msgid "Close Commands"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/close_template.sh:17
+msgid "Close Commands tempalte"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_anaconda3.sh:19
+msgid "Install Anaconda3-2022.10-Linux-x86_64"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_arduino.sh:17
+msgid "Install arduino"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_balenaEtcher.sh:18
+msgid "Install balenaEtcher"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_base_tools.sh:17
+msgid "Install base tools"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_boot_repair.sh:17
+msgid "Install boot repair"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_chrome.sh:18
+msgid "Install chrome linux version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_cubic.sh:18
+msgid "Install cubic"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_docker_compose.sh:18
+msgid "Install docker compose"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_docker.sh:18
+msgid "Install docker"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_electron.sh:17
+msgid "Install electron"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_example_shell.sh:18
+msgid "Install example shell template"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_flutter_snap.sh:18
+msgid "Install flutter snap version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_flutter_source.sh:20
+msgid "Install flutter linux source version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_foxglove.sh:17
+msgid "Install foxglove"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_GitHubDesktop_shell.sh:17
+msgid "Install GitHubDesktop shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_gitlfs.sh:17
+msgid "Install gitlfs"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_googlepinyin_shell.sh:18
+msgid "Install googlepinyin shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_mosquitto.sh:18
+msgid "Install mosquitto"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_n2n.sh:20
+msgid "Install n2n"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_nodejs_16.sh:17
+msgid "Install nodejs 16 version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_nodejs_18.12.1.sh:17
+msgid "Install nodejs 18.12.1 version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_nodejs_18.2.1.sh:17
+msgid "Install nodejs 18.2.1 version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_nodejs.sh:17
+msgid "Install nodejs newest version"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_nomachine.sh:17
+msgid "Install nomachine"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_nvm.sh:17
+msgid "Install nvm"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_pnpm.sh:17
+msgid "Install pnpm"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_pyinstaller_shell.sh:17
+msgid "Install pyinstaller shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_robots_ros_org.sh:18
+msgid "Install robots ros org"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_ros2_documentation.sh:18
+msgid "Install ros2 documentation"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_systemback_shell.sh:18
+msgid "Install systemback shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_test_shell.sh:18
+msgid "Install test shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_vpn_clash.sh:18
+msgid "Install vpn clash"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_vscode.sh:18
+msgid "Install vscode"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_wireguard_client.sh:19
+msgid "Install wireguard client"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_wireguard_server_firewall.sh:19
+msgid "Install wireguard server firewall"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/install_wireguard_server.sh:19
+msgid "Install wireguard server"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/remove_unuse_tools.sh:17
+msgid "Remove unuse tools"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/remove_zsys.sh:17
+msgid "Remove zsys"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/sd_system_backup.sh:18
+msgid "SD system backup"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/sd_system_recover.sh:18
+msgid "SD system recover"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/update_docker_source.sh:17
+msgid "Update docker source"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/update_python_source_shell.sh:17
+msgid "Update python source shell"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/update_rosdep_tsinghua.sh:17
+msgid "Update rosdep tsinghua"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/update_system_simple.sh:17
+msgid "Update system mirrors shell 2"
+msgstr ""
+
+#: /home/ubuntu/commands/common/shell/update_system_mirrors.sh:17
+msgid "Update system mirrors"
+msgstr ""
+
+#: /home/ubuntu/commands/common_nvidia/shell/install_nvidia_docker_20.04.sh:18
+msgid "Install nvidia docker 20.04"
+msgstr ""
+
+#: /home/ubuntu/commands/common_wsl2/shell/check_wsl2.sh:18
+msgid "Check wsl2 system"
+msgstr ""
+
+#: /home/ubuntu/commands/common_wsl2/shell/config_snap_wsl2.sh:19
+msgid "Config snap for wsl2"
+msgstr ""
+
+#: /home/ubuntu/commands/common_wsl2/shell/install_cuda_12_wsl_ubuntu.sh:19
+msgid "Install cuda 12.0 wsl2 ubuntu"
+msgstr ""
+
+#: /home/ubuntu/commands/common_wsl2/shell/install_wsl2_bridge.sh:19
+msgid "Install wsl2 bridge"
+msgstr ""
+
+#: /home/ubuntu/commands/common_wsl2/shell/install_wsl2_xfce4.sh:19
+msgid "Install wsl2 xface4"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/config_date_shell.sh:18
+msgid "Config date shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/config_ros1_network_shell.sh:18
+msgid "Config ros1 network shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/install_flutter_keyboard.sh:18
+msgid "Install flutter keyboard"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic_arm.sh:15
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic.sh:16
+msgid "Install ROS1 Noetic"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic_cartographer.sh:15
+msgid "Install ROS1 Noetic Cartographer"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_noetic_rosbridge.sh:15
+msgid "Install ros-noetic-rosbridge-suite"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/install_ros1_tutorials_source.sh:19
+msgid "Install ros tutorials source"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/launch_turtlesim_node.sh:15
+msgid "Launch turtlesim"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/launch_turtlesim_teleop_key.sh:15
+msgid "Launch turtlesim teleop key"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1/shell/update_ros1_source.sh:15
+msgid "Update ROS1 Source"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_cartographer_apt.sh:18
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_cartographer_apt.sh:18
+msgid "Install cartographer apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_cartographer_source.sh:15
+msgid "Install ROS1 Noetic Cartographer source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_cv_camera.sh:18
+msgid "Install cv camera"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_dso_noetic_source.sh:15
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_orbslam2_noetic_source.sh:15
+#: /home/ubuntu/commands/ros1_algorithm/shell/install_orbslam2_ros1_source.sh:15
+msgid "Install ROS1 Noetic ORB_SLAM2"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_sensor/shell/install_imu_m0_shell.sh:18
+msgid "Install imu m0 shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_sensor/shell/install_ublox_gps.sh:18
+msgid "Install ublox GPS"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_tb3/shell/install_tb3_noetic_apt.sh:18
+msgid "Install turtlebot3 ROS1 noetic apt"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_tb3/shell/install_tb3_noetic_source.sh:18
+msgid "Install turtlebot3 ROS1 noetic source"
+msgstr ""
+
+#: /home/ubuntu/commands/ros1_tb3_gazebo/shell/download_gazebo_model_shell.sh:18
+msgid "Download gazebo model shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_foxy_arm.sh:15
+#: /home/ubuntu/commands/ros2/shell/install_ros2_galactic_arm.sh:15
+msgid "Install ROS2 Foxy ARM version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_foxy.sh:15
+#: /home/ubuntu/commands/ros2/shell/install_ros2_galactic.sh:15
+msgid "Install ROS2 Foxy AMD version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_humble_arm.sh:15
+msgid "Install ROS2 Humble ARM version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_humble.sh:15
+msgid "Install ROS2 Humble AMD version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/install_ros2_turtorials_source.sh:19
+msgid "Install ROS2 turtorials source"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/launch_turtlesim_node.sh:15
+msgid "Launch ROS2 turtlesim"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/launch_turtlesim_teleop_key.sh:15
+msgid "Launch ROS2 turtlesim teleop key"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2/shell/update_ros2_source.sh:15
+msgid "Update ROS2 Source"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_cartographer_source.sh:15
+msgid "Install ROS2 cartographer source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_multirobot_map_merge.sh:19
+msgid "Install ROS2 multirobot map merge"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_algorithm/shell/install_navigation2_source.sh:18
+msgid "Install ROS2 navigation2 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_ade.sh:18
+msgid "Install ade"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_autoware_ade.sh:18
+msgid "Install autoware ade version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_autoware_source_ade.sh:18
+msgid "Install autoware source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_autoware_source_foxy.sh:18
+msgid "Install autoware source foxy version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_google_benchmark.sh:18
+msgid "Install google benchmark"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_autoware/shell/install_osqp.sh:18
+msgid "Install osqp"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_barista_ros2_navigation.sh:18
+msgid "Install barista_ros2 navigation branch"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_barista_ros2_startbots.sh:18
+msgid "Install barista_ros2 startbots branch"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_box_bot.sh:19
+msgid "Install box_bot"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_gazebo/shell/install_dolly.sh:18
+msgid "Install dolly simulator"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_ignition/shell/install_ignition_galactic.sh:18
+msgid "Install ROS2 ignition shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_ignition/shell/install_ignition_humble_apt.sh:18
+msgid "Install ignition humble apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_ignition/shell/install_ignition_humble_source.sh:18
+msgid "Install ignition humble source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_free_fleet_barista.sh:18
+msgid "Install barista ros2 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_burger_maps.sh:19
+msgid "Install rmf burger maps"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_foxy_apt.sh:18
+msgid "Install ROS2 rmf source shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_free_fleet.sh:19
+msgid "Install ROS2 rmf web 22.04"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_galactic_apt.sh:18
+msgid "Install ROS2 galactic rmf apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_galactic_devel.sh:18
+msgid "Install ROS2 galactic rmf source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_galactic_source.sh:18
+msgid "Install ROS2 galactic rmf source version 21.09 branch"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_humble_apt.sh:18
+msgid "Install ROS2 humble rmf apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_humble_main.sh:18
+msgid "Install ROS2 humble rmf apt version humble-main branch"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_humble_source.sh:19
+msgid "Install ROS2 humble rmf apt version humble branch"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_model.sh:18
+msgid "Install ros2 rmf model shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_panel.sh:19
+msgid "Install rmf web panel"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_traffic_editor_apt.sh:18
+msgid "Install rmf traffic editor apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_traffic_editor_source.sh:18
+msgid "Install rmf traffic editor source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_web_galactic.sh:18
+msgid "Install ROS2 galactic RMF-web 20.04 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_rmf/shell/install_rmf_web_humble.sh:19
+msgid "Install ROS2 humble RMF-web 22.04 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_pointcloud_to_laserscan.sh:18
+msgid "Install ROS2 pointcloud_to_laserscan"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_rpicamera_ros2.sh:18
+msgid "Install ROS2 rpicamera_ros2"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_rplidar_ros.sh:18
+msgid "Install ROS2 rplidar_ros2"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_sllidar_ros2.sh:18
+msgid "Install ROS2 sllidar_ros2"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_sensor/shell/install_velodyne.sh:18
+msgid "Install ROS2 velodyne"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_foxy_apt.sh:16
+msgid "Install ROS2 Foxy Turtlebot3 apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_foxy_source.sh:19
+msgid "Install ROS2 Foxy turtlebot3 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_galactic_apt.sh:16
+msgid "Install ROS2 Galactic turtlebot3 apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_galactic_source.sh:19
+msgid "Install ROS2 Galactic turtlebot3 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_humble_apt.sh:16
+msgid "Install ROS2 humble turtlebot3 apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3/shell/install_tb3_humble_source.sh:19
+msgid "Install ROS2 humble turtlebot3 source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb3_gazebo/shell/download_gazebo_model_shell.sh:18
+msgid "Download ROS2 gazebo model shell"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_galactic_apt.sh:18
+msgid "Install ROS2 galactic turtlebot4 ignition apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_galactic_source.sh:18
+msgid "Install ROS2 galactic turtlebot4 and ignition source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_humble_apt.sh:18
+msgid "Install ROS2 humble turtlebot4 and ignition apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb4/shell/install_tb4_humble_source.sh:18
+msgid "Install ROS2 humble turtlebot4 and ignition source version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_tb4_ignition/shell/download_ignition_model_SubT.sh:18
+msgid "Download ROS2 ignition model shell "
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_webots/shell/install_webots_galactic_apt.sh:18
+msgid "Install ROS2 galactic webots apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros2_webots/shell/install_webots_humble_apt.sh:18
+msgid "Install ROS2 humble webots  apt version"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/init_free_fleet.sh:18
+msgid "Init free fleet"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/init_rmf.sh:18
+msgid "Init rmf"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/init_ros1.sh:18
+msgid "Init ROS1"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/init_ros2.sh:19
+msgid "Init ROS2"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/init_tb3.sh:18
+msgid "Init turtlebot3"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/init_tb4.sh:18
+msgid "Init turtlebot4"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_20.04.sh:18
+msgid "Install ros2 easy 20.04"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_22.04.sh:18
+msgid "Install ros2 easy 22.04"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_arm_20.04.sh:18
+msgid "Install ros2 easy arm 20.04"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_ros2_easy_os_arm_22.04.sh:18
+msgid "Install ros2 easy arm 22.04"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_turtorial_ros2_code_ws.sh:18
+msgid "Install tutorial ros2 code ws"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_turtorial_ros2_launch_ws.sh:18
+msgid "Install tutorial ros2 launch ws"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/install_turtorial_ros2_tf2_ws.sh:18
+msgid "Install turtorial ros2 tf2 ws"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/load_free_fleet.sh:18
+msgid "Load free fleet"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/load_rmf.sh:18
+msgid "Load RMF"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/load_ros1.sh:18
+msgid "Load ROS1"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/load_ros2.sh:18
+msgid "Load ROS2"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/load_tb3.sh:18
+msgid "Load turtlebot3"
+msgstr ""
+
+#: /home/ubuntu/commands/ros_easy/shell/load_tb4.sh:18
+msgid "Load turtlebot4"
+msgstr ""
+
+#: /home/ubuntu/commands/walking_application/shell/install_walking_application.sh:19
+msgid "Install ROS2 walking_application"
+msgstr ""

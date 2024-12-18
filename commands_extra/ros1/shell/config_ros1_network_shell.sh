@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : config_ros1_network_shell.sh                              
+# Function : Config ros1 network shell   
+# Desc     : 用于配置ROS1主从的脚本，默认localhost                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 22:15:39                            
@@ -12,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Config ros1 network shell")"
 
 #run echo 
 
@@ -30,7 +33,7 @@ echo "export ROS_MASTER_URI=http://localhost:11311">> ~/.bashrc
 
 # 
 
-echo "export ROS_HOSTNAME=192.168.0.101">> ~/.bashrc
+echo "export ROS_HOSTNAME=localhost">> ~/.bashrc
 
 #run echo 
 

@@ -1,6 +1,8 @@
 #!/bin/bash
 ################################################
-# Function : install_rmf_panel.sh                              
+# Function : Install rmf web panel 
+# Desc     : 用于安装RMF WEB管理rmf-panel-js的脚本
+# Website  : https://www.ncnynl.com/archives/202211/5666.html
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-06 18:22:04                            
@@ -12,6 +14,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install rmf web panel")"
         
 #ubuntu20.04 have tested 
 #ubuntu22.04 not yet

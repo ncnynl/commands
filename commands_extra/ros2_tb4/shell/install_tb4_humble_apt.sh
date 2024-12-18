@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_tb4_ignition_humble_apt.sh                              
+# Function : Install ROS2 humble turtlebot4 and ignition apt version   
+# Desc     : 用于APT方式安装ROS2 humble版ignition仿真及TB4仿真程序的脚本                           
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-02 02:39:30                            
@@ -12,42 +13,36 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-echo "Not Yet Supported!" 
-exit 0
+# https://raw.githubusercontent.com/turtlebot/turtlebot4_setup/humble/scripts/turtlebot4_setup.sh
 
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 humble turtlebot4 and ignition apt version")"
+
+# echo "Not Yet Supported!" 
+# exit 0
+ros_distro="humble"
 #run install dep
-
-#  安装依赖
-
-sudo apt install -y  wget python3-colcon-common-extensions python3-rosdep  python3-vcstool
-
-#run add gazebo source
-
-# 添加gazebo源
-
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-
-#run add gazebo key
-
-#  添加gazebo key
-
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
-#run install ignition
-
-# 安装ignition-edifice
-
-sudo apt-get update && sudo apt-get install ignition-fortress
-
-#run update
-
-# 更新软件源
-
+echo "Install TurtleBot 4 deps"
 sudo apt update
+sudo apt install -y  wget python3-colcon-common-extensions python3-rosdep  python3-vcstool ros-dev-tools socat network-manager chrony
 
-#run install turtlebot4 simulator
+# 安装turtlebot
+echo "Install TurtleBot 4 Common"
+sudo apt install ros-${ros_distro}-turtlebot4-description \
+ros-${ros_distro}-turtlebot4-msgs \
+ros-${ros_distro}-turtlebot4-setup \
+ros-${ros_distro}-turtlebot4-robot \
+ros-${ros_distro}-irobot-create-control \
+ros-${ros_distro}-turtlebot4-navigation \
+ros-${ros_distro}-turtlebot4-node
 
-# 安装turtlebot4_simulator
+echo "Install TurtleBot 4 Desktop"
+sudo apt install ros-${ros_distro}-turtlebot4-desktop
 
-sudo apt install ros-humble-turtlebot4-simulator ros-humble-irobot-create-nodes
+echo "Install RPLIDAR A1M8"
+sudo apt install ros-${ros_distro}-rplidar-ros
+
+echo "Install OAK-D"
+sudo apt install ros-${ros_distro}-depthai-ros
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_nomachine.sh                              
+# Function : Install nomachine  
+# Desc     : 用于安装远程桌面软件nomachine的脚本                             
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            
@@ -11,6 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install nomachine")" 
 
 if [ -f /etc/NX ];then 
     echo "nomachine have installed!!" 

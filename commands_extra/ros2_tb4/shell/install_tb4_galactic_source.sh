@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_tb4_ignition_source.sh                              
+# Function : Install ROS2 galactic turtlebot4 and ignition source version  
+# Desc     : 用于源码方式安装ROS2 Galactic版ignition仿真及TB4仿真程序的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-10-31                           
@@ -12,6 +13,10 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 galactic turtlebot4 and ignition source version")"
+
 #run ros2_tb4_ignition
 
 
@@ -37,7 +42,7 @@ else
 
     # 获取仓库列表
 
-    git clone https://ghproxy.com/https://github.com/turtlebot/turtlebot4_simulator.git
+    git clone https://github.com/turtlebot/turtlebot4_simulator.git
 
     #run import
     echo "this will take 10-30 min to download"
@@ -45,19 +50,19 @@ else
     # 下载仓库
     echo "Dowload from irobot_create_msgs "
 
-    git clone -b galactic https://ghproxy.com/https://github.com/iRobotEducation/irobot_create_msgs.git
+    git clone -b galactic https://github.com/iRobotEducation/irobot_create_msgs.git
 
     echo "Dowload from create3_sim "
-    git clone -b galactic https://ghproxy.com/https://github.com/iRobotEducation/create3_sim.git
+    git clone -b galactic https://github.com/iRobotEducation/create3_sim.git
 
     echo "Dowload from turtlebot4 "
-    git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot4.git
+    git clone -b galactic https://github.com/turtlebot/turtlebot4.git
 
     echo "Dowload from turtlebot4_desktop "
-    git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot4_desktop.git
+    git clone -b galactic https://github.com/turtlebot/turtlebot4_desktop.git
 
     echo "Dowload from turtlebot4_tutorials "
-    git clone -b galactic https://ghproxy.com/https://github.com/turtlebot/turtlebot4_tutorials.git
+    git clone -b galactic https://github.com/turtlebot/turtlebot4_tutorials.git
 
 
     #run colcon

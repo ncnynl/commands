@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install nodejs.sh                              
+# Function : Install gitlfs       
+# Desc     : 用于安装github大文件管理gitlfs的脚本                       
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-06-25 17:12:05                            
@@ -11,7 +12,9 @@
 # QQ Qun: 创客智造C群:937347681                                  
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install gitlfs")"
 
 #https://github.com/git-lfs/git-lfs
 # https://github.com/git-lfs/git-lfs/releases
@@ -26,7 +29,7 @@ filename="git-lfs-linux-amd64-v3.2.0.tar.gz"
 
 cd ~/tools 
 
-wget https://ghproxy.com/https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
+wget https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
 
 tar -zxvf git-lfs-linux-amd64-v3.2.0.tar.gz
 

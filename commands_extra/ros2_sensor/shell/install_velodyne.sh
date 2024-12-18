@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_velodyne.sh                         
+# Function : Install ROS2 velodyne 
+# Desc     : 用于源码方式安装ROS2版多线激光雷达velodyne驱动的脚本                         
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-29                          
@@ -12,6 +13,11 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install ROS2 velodyne")"
+
+
 #        
 echo "Not Yet Supported!"
 exit 0    
@@ -32,6 +38,7 @@ sudo apt install libpcap0.8-dev
 
 # 下载源码
 cd ~/$workspace/src
+cs -si update_rosdep_tsinghua
 git clone -b galactic-devel https://github.com/ros-drivers/velodyne.git
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 

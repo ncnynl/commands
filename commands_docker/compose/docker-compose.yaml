@@ -1,0 +1,5 @@
+version: '3'
+services:
+  rcm:
+    image: rcm:latest
+    build: ../

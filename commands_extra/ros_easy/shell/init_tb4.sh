@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : init_tb4.sh                              
+# Function : Init turtlebot4  
+# Desc     : 用于初始化Turtlebot4环境的脚本                            
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-11-21                            
@@ -12,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Init turtlebot4")"
 
 if ! grep -Fq "load_tb4.sh" ~/.bashrc
 then

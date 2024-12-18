@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_systemback_shell.sh                              
+# Function : Install systemback shell  
+# Desc     : 用于安装系统备份软件systemback的脚本                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-10-29 17:17:58                            
@@ -12,7 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
-        
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install systemback shell")"         
 
 #run repository
 

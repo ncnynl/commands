@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "cd ~/commands/walking_application;./shell/install_walking_application.sh",
+            "desc": "",
+            "id": 1,
+            "link": "",
+            "name": "install_walking_application.sh"
+        }
+    ],
+    "time": [
+        {
+            "datetime": "2024-07-04"
+        }
+    ]
+}

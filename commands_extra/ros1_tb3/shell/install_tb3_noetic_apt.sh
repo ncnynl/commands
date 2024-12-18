@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################################
-# Function : install_turtlebot3_ros1_noetic_apt.sh                              
+# Function : Install turtlebot3 ROS1 noetic apt
+# Desc     : 用于APT方式安装ROS1版本Turtlebot3的脚本                                
 # Platform : ubuntu                                
 # Version  : 1.0                               
 # Date     : 2022-07-05 01:50:53                            
@@ -12,6 +13,9 @@
 # QQ Qun: 创客智造C群:937347681                               
 # QQ Qun: 创客智造D群:562093920                               
 ################################################
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=commands        
+echo "$(gettext "Install turtlebot3 ROS1 noetic apt")"
 
 #instal dep
 sudo apt-get install -y ros-noetic-joy ros-noetic-teleop-twist-joy \
