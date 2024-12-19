@@ -1,5 +1,11 @@
 ################# commands工具更新日志 #############
 
+2.2.1 (2024-12-19)
+- 清除多余文件
+- 优化web版本，使用gunicorn启动
+- 手工启动: cd ~/tools/commands/commands_web/ && ./app.sh
+- 运行rcm-web自动打开浏览器
+
 2.2.0 (2024-12-09)
 - 增加web版本, 通过http://localhost:5051访问
 - 手工启动: cd ~/tools/commands/commands_web/ && python3 app.py 
