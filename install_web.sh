@@ -30,9 +30,13 @@ function install_package(){
 
     #install service
     cd ~/tools/commands/commands_web/config
+    ./remove_server_webapi.sh
     ./install_server_webapi.sh
+    
+    #ln
+    sudo ln -s $HOME/tools/commands/commands_web/rcm-web.sh /usr/bin/rcm-web
 }
-install_package()
+install_package
 
 echo -e "Install package succesfully!"
 
