@@ -72,7 +72,7 @@ else
         mkdir -p ~/$workspace/src
     fi
     cd ~/$workspace/src
-    git clone -b catkin https://ghproxy.com/https://github.com/JakobEngel/dso_ros
+    git clone -b catkin https://github.com/JakobEngel/dso_ros
     cd ..
     catkin_make
 
