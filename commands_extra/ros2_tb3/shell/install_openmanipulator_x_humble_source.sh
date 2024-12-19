@@ -29,6 +29,8 @@ if [ -d ~/ros2_openmanipulatorx_ws/src ]; then
 else
     # install dep
 
+    sudo apt update
+
     sudo apt install \
     ros-humble-dynamixel-sdk \
     ros-humble-ros2-control \
@@ -43,13 +45,7 @@ else
     ros-humble-hardware-interface \
     ros-humble-xacro
 
-    #rosdep update
-    sudo apt install python3-rosdep -y
-    . ~/commands/common/shell/update_rosdep_tsinghua.sh
-    # rosdep update
-    cs -si update_rosdep_tsinghua
-
-
+    sudo apt upgrade ros-humble-realtime-tools ros-humble-ros2-control
     # 新建工作空间
     mkdir -p ~/ros2_openmanipulatorx_ws/src
 
