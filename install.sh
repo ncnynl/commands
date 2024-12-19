@@ -71,6 +71,9 @@ config_python3_source
 #install bash completion
 ~/tools/commands/install_completion.sh
 
+#instll web
+~/tools/commands/install_web.sh
+
 echo -e "All Install Finished"
 
 

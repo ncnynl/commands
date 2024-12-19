@@ -1,9 +1,0 @@
-{
-    "commands": [
-        {
-            "command": "ros2 launch walking_tools test_imu.launch.py",
-            "id": "1",
-            "name": "1-imu"
-        }
-    ]
-}

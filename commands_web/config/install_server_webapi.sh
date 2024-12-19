@@ -42,7 +42,7 @@ After=network.target graphical.target
 Environment=DISPLAY=:0
 Type=simple
 WorkingDirectory=$FLASK_APP_PATH
-ExecStart=/bin/bash -c 'source ~/.bashrc && /usr/bin/python3 $FLASK_APP_PATH/app.py'
+ExecStart=/bin/bash -c 'source $HOME/.bashrc && $FLASK_APP_PATH/app.sh'
 Restart=always
 
 [Install]
@@ -71,7 +71,7 @@ if [ -f $SERVICE_FILE ]; then
     systemctl --user start $SERVICE_NAME
 
     # 显示服务状态
-    systemctl --user status $SERVICE_NAME
+    # systemctl --user status $SERVICE_NAME
 
     #启用用户级别的 systemd
     loginctl enable-linger $USERNAME
