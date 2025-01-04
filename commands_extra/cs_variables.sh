@@ -46,6 +46,7 @@ update_ros1_source.sh
 update_ros2_source.sh
 update_docker_source.sh
 update_swap.sh
+update_hostname.sh
 )
 
 # fixed for docker 
