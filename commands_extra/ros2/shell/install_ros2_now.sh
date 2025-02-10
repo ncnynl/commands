@@ -78,7 +78,9 @@ case $ros_ver in
             echo "Your cpu release is aarch64, please install ARM version "
             arch="arm"
         fi
-
+        
+	echo $arch
+	echo $ros_ver
         cs -si install_ros2_common.sh $ros_ver $arch
 
         exit
@@ -98,4 +100,4 @@ case $ros_ver in
 esac
 
 #install rosdep 
-cs -si update_rosdep_tsinghua
+#cs -si update_rosdep_tsinghua
