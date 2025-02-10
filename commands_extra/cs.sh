@@ -246,6 +246,8 @@ function proxy_handle_before_install()
                 echo "when system proxy set, you can check if usefull"
                 echo "rcm -s check_github"
                 echo ""
+                rcm -np
+                exit 0
             fi
         fi
     fi

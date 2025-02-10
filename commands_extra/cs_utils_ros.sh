@@ -14,7 +14,7 @@ source ${HOME}/commands/cs_variables.sh
 
 # ros var 
 ROS1LIST=('kinetic' 'melodic' 'noetic')
-ROS2LIST=('foxy' 'galactic' 'humble' 'iron' 'rolling')
+ROS2LIST=('foxy' 'galactic' 'humble' 'iron' 'rolling' 'jazzy')
 
 
 function have_tested(){
