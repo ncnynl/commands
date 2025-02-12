@@ -30,7 +30,7 @@ else
     # git clone https://github.com/Project-MANAS/slam_gmapping
     # https://github.com/charlielito/slam_gmapping/tree/feature/namespace_launch
     # git clone https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
-    git clone https://github.com/ncnynl/slam_gmapping.git
+    git clone https://gitee.com/ncnynl/slam_gmapping.git
 
     cd ~/$workspace/
     # rosdep update
