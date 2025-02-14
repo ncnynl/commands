@@ -27,9 +27,9 @@ else
     {
         link=""
         if [[ $release == "ubuntu"  && $cpu_release == "amd64" ]] ; then 
-            link="https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_amd64.deb"
+            link="https://download.nomachine.com/download/8.16/Linux/nomachine_8.16.1_1_amd64.deb"
         elif [[ $release == "ubuntu"  && $cpu_release == "aarch64"  ]]; then 
-            link="https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_arm64.deb"
+            link="https://download.nomachine.com/download/8.16/Arm/nomachine_8.16.1_1_arm64.deb"
         fi
         echo $link
     }
