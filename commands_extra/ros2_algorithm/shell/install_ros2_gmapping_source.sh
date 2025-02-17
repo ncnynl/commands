@@ -26,11 +26,19 @@ else
         mkdir -p ~/$workspace/src
     fi
 
-    cd ~/$workspace/src
-    # git clone https://github.com/Project-MANAS/slam_gmapping
-    # https://github.com/charlielito/slam_gmapping/tree/feature/namespace_launch
-    # git clone https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
-    git clone https://gitee.com/ncnynl/slam_gmapping.git
+    version=$(printenv ROS_DISTRO)
+    if [ $version == "jazzy" ]; then
+        echo "Choose the $version branch"
+        cd ~/$workspace/src
+        git clone -b jazzy https://gitee.com/ncnynl/slam_gmapping.git            
+    else
+        cd ~/$workspace/src
+        # git clone https://github.com/Project-MANAS/slam_gmapping
+        # https://github.com/charlielito/slam_gmapping/tree/feature/namespace_launch
+        # git clone https://github.com/charlielito/slam_gmapping.git --branch feature/namespace_launch
+        git clone https://gitee.com/ncnynl/slam_gmapping.git
+    fi
+
 
     cd ~/$workspace/
     # rosdep update
