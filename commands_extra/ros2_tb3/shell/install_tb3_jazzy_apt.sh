@@ -17,8 +17,11 @@ echo "$(gettext "Install ROS2 jazzy turtlebot3 apt version")"
 
 ros2_distro=jazzy
 
-echo "Start to install turtlebot3 ROS2 $ros2_distro version"
+echo "Not Yet Supported!"
+exit 0
 
-sudo apt install -y ros-$ros2_distro-turtlebot3 ros-$ros2_distro-turtlebot3-bringup ros-$ros2_distro-turtlebot3-simulations ros-$ros2_distro-turtlebot3-teleop ros-$ros2_distro-turtlebot3-example
+#echo "Start to install turtlebot3 ROS2 $ros2_distro version"
 
-echo "ROS 2 $ros2_distro installed successfully"
+#sudo apt install -y ros-$ros2_distro-turtlebot3 ros-$ros2_distro-turtlebot3-bringup ros-$ros2_distro-turtlebot3-simulations ros-$ros2_distro-turtlebot3-teleop ros-$ros2_distro-turtlebot3-example
+
+#echo "ROS 2 $ros2_distro installed successfully"
