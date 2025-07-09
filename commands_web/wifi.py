@@ -170,7 +170,7 @@ def set_wifi():
         message = f"Failed to connect to {ssid}."
         message_type = "danger"  # Bootstrap danger alert
     
-    return render_template('admin/wifi_result.html', message=message, message_type=message_type)
+    return render_template('wifi_result.html', message=message, message_type=message_type)
 
 @wifi_bp.route('/set_wifi_api', methods=['POST'])
 def set_wifi_api_route():
