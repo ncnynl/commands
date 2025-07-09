@@ -14,7 +14,7 @@ from flask import Blueprint, Flask, render_template, request, jsonify
 
 #########################var##############################
 # Blueprint
-admin_wifi_bp = Blueprint('wifi', __name__)
+wifi_bp = Blueprint('wifi', __name__)
 
 # 缓存的 Wi-Fi 列表
 cached_wifi_list = ""
@@ -130,13 +130,13 @@ def connect_wifi(ssid, password, ip, gateway, dns):
 
 
 ####################route####################
-@admin_wifi_bp.route('/wifi')
+@wifi_bp.route('/wifi')
 def index():
     wifi_list = scan_wifi()
     wifi_info = get_current_wifi_info()
-    return render_template('admin/wifi.html', wifi_list=wifi_list,  wifi_info=wifi_info)
+    return render_template('wifi.html', wifi_list=wifi_list,  wifi_info=wifi_info)
 
-@admin_wifi_bp.route('/wifi_status')
+@wifi_bp.route('/wifi_status')
 def wifi_status_route():
     try:
         wifi_info = get_current_wifi_info()
@@ -144,7 +144,7 @@ def wifi_status_route():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     
-@admin_wifi_bp.route('/wifi_list')
+@wifi_bp.route('/wifi_list')
 def wifi_list_route():
     try:
         wifi_list = scan_wifi()
@@ -153,7 +153,7 @@ def wifi_list_route():
         return jsonify({'error': str(e)}), 500
 
 
-@admin_wifi_bp.route('/set_wifi', methods=['POST'])
+@wifi_bp.route('/set_wifi', methods=['POST'])
 def set_wifi():
     ssid = request.form['ssid']
     password = request.form['password']
@@ -172,7 +172,7 @@ def set_wifi():
     
     return render_template('admin/wifi_result.html', message=message, message_type=message_type)
 
-@admin_wifi_bp.route('/set_wifi_api', methods=['POST'])
+@wifi_bp.route('/set_wifi_api', methods=['POST'])
 def set_wifi_api_route():
     ssid = request.form['ssid']
     password = request.form['password']
