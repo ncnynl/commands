@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+    <div class="container">
+        <h1 class="my-4 text-center">Current Wi-Fi Information</h1>
+        <div class="mb-3 form-group">
+            {% if wifi_info %}
+                <div class="form-label"><strong>SSID:</strong> {{ wifi_info.ssid }}</div>
+                <div class="form-label"><strong>BSSID:</strong> {{ wifi_info.bssid }}</div>
+                <div class="form-label"><strong>Signal Strength:</strong> {{ wifi_info.signal_strength }}%</div>
+                <div class="form-label"><strong>Device:</strong> {{ wifi_info.device }}</div>
+                <div class="form-label"><strong>ip_address:</strong> {{ wifi_info.ip_address }}</div>
+            {% else %}
+                <p>No Wi-Fi connection found.</p>
+            {% endif %}
+        </div> 
+
+        <h1 class="my-4 text-center">Wi-Fi Manager</h1>
+        <form action="/set_wifi" method="POST" class="form-group">
+            <div class="mb-3">
+                <label for="ssid" class="form-label">Select Wi-Fi:</label>
+                <select id="ssid" name="ssid" class="form-select">
+                    {% for wifi in wifi_list %}
+                        <option value="{{ wifi }}">{{ wifi }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+            </div>
+            <div class="mb-3">
+                <label for="ip" class="form-label">Static IP:</label>
+                <input type="text" id="ip" name="ip" class="form-control" placeholder="192.168.0.212">
+            </div>
+            <div class="mb-3">
+                <label for="gateway" class="form-label">Gateway:</label>
+                <input type="text" id="gateway" name="gateway" class="form-control" placeholder="192.168.0.1">
+            </div>
+            <div class="mb-3">
+                <label for="dns" class="form-label">DNS:</label>
+                <input type="text" id="dns" name="dns" class="form-control" placeholder="202.96.128.86">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Connect</button>
+        </form>
+    </div>
+
+
+{% endblock %}
