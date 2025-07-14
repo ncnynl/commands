@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ################################################
-# Function : Update system mirrors shell 2
+# Function : Update system mirrors shell simple
 # Desc     : 用于简化版更新系统源的脚本2                              
 # Platform : ubuntu                                
 # Version  : 1.0                               
@@ -14,7 +14,7 @@
 ################################################
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
-echo "$(gettext "Update system mirrors shell 2")"  
+echo "$(gettext "Update system mirrors shell simple")"  
 
 #
 # Copyright (C) 2017 - 2018 Oldking <oooldking@gmail.com>
@@ -122,6 +122,7 @@ setUbuntu(){
 	[ "$ubuntuVersion" == '20.04' ] && sed -i 's/xenial/focal/'g /etc/apt/sources.list
 	[ "$ubuntuVersion" == '21.04' ] && sed -i 's/xenial/hirsute/'g /etc/apt/sources.list
 	[ "$ubuntuVersion" == '22.04' ] && sed -i 's/xenial/jammy/'g /etc/apt/sources.list
+	[ "$ubuntuVersion" == '24.04' ] && sed -i 's/xenial/noble/'g /etc/apt/sources.list
 }
 
 setAWS(){
