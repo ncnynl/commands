@@ -34,16 +34,16 @@ function build_gui()
     cd ~/tools/commands/commands_gui
 
     echo -e "Install python3 deps for commands"
-    sudo apt install python3-venv -y
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    # version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
-    # if [ ${version} == "24.04" ]; then
-    #     pip3 install -r requiments.txt --break-system-packages --no-warn-script-location
-    # else
-    #     pip3 install -r requiments.txt 
-    # fi 
+    # sudo apt install python3-venv -y
+    # python3 -m venv venv
+    # source venv/bin/activate
+    # pip install -r requirements.txt
+    version=$(awk -F'[= "]' '/VERSION_ID/{print $3}' /etc/os-release)
+    if [ ${version} == "24.04" ]; then
+        pip3 install -r requirements.txt --break-system-packages --no-warn-script-location
+    else
+        pip3 install -r requirements.txt 
+    fi 
 
     #build 
     export PATH=${HOME}/.local/bin:$PATH

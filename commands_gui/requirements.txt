@@ -2,7 +2,8 @@ altgraph>=0.17.2
 #pkg_resources>=0.0.0
 pyinstaller>=5.1
 pyinstaller-hooks-contrib>=2022.5
-#PyQt5>=5.15.6
-#PyQt5-Qt5>=5.15.2
+PyQt5>=5.15.6
+PyQt5-Qt5>=5.15.2
 PyQt5-sip>=12.10.1
 beautifulsoup4>=4.12.3
+requests
