@@ -46,12 +46,12 @@ function build_gui()
     fi 
 
     #build 
-    export PATH=${HOME}/.local/bin:$PATH
-    ./build.sh 
+    # export PATH=${HOME}/.local/bin:$PATH
+    # ./build.sh 
     #if succes?
-    if [ -f ~/tools/commands/commands_gui/dist/commands ]; then
+    # if [ -f ~/tools/commands/commands_gui/dist/commands ]; then
         echo -e "Build src success!"
-    fi     
+    # fi     
     
 }
 build_gui
@@ -71,13 +71,13 @@ function install_package(){
     # if [ ! -d /usr/local/commands/ ]; then
     #     sudo mkdir -p /usr/local/commands/
     # fi 
-    if [ ! -f ~/tools/commands/commands_gui/dist/commands ]; then
-        # sudo rm /usr/local/commands/commands
-        # sudo cp ~/tools/commands/commands_gui/dist/commands /usr/local/commands/commands
-    # else
-        echo -e "~/tools/commands/commands_gui/dist/commands file is not found!"
-        return 0
-    fi 
+    # if [ ! -f ~/tools/commands/commands_gui/dist/commands ]; then
+    #     # sudo rm /usr/local/commands/commands
+    #     # sudo cp ~/tools/commands/commands_gui/dist/commands /usr/local/commands/commands
+    # # else
+    #     echo -e "~/tools/commands/commands_gui/dist/commands file is not found!"
+    #     return 0
+    # fi 
 
     sudo cp ~/tools/commands/commands.png /usr/local/commands/commands.png
     # sudo chown -R $USER:$USER /usr/local/commands/
