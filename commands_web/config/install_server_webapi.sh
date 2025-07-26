@@ -35,14 +35,14 @@ fi
 
 # 创建 systemd 服务文件
 echo "[Unit]
-Description=Walking Flutter API Flask Application
+Description=RCM WEB Flask Application
 After=network.target graphical.target
 
 [Service]
 Environment=DISPLAY=:0
 Type=simple
 WorkingDirectory=$FLASK_APP_PATH
-ExecStart=/bin/bash -c 'source $HOME/.bashrc && $FLASK_APP_PATH/app.sh'
+ExecStart=$FLASK_APP_PATH/config/start.sh
 Restart=always
 
 [Install]
