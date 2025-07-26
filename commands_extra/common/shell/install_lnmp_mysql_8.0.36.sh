@@ -87,17 +87,14 @@ echo "🔍 初始化 MySQL 数据..."
 echo "🔍 GET MySQL INIT password ..."
 grep 'A temporary password' $INSTALL_DIR/mysql-error.log
 
-echo "🔍 将 socket 链接到默认路径 /tmp/mysql.sock"
-sudo ln -s $INSTALL_DIR/mysql.sock /tmp/mysql.sock
-
 echo "📝 创建 my.cnf 配置文件..."
 cat > "$MY_CNF" <<EOF
 [mysqld]
 basedir=$INSTALL_DIR
 datadir=$DATA_DIR
 port=3306
-socket=$INSTALL_DIR/mysql.sock
-pid-file=$INSTALL_DIR/mysql.pid
+socket=/tmp/mysql.sock
+pid-file=/tmp/mysql.pid
 log-error=$INSTALL_DIR/mysql-error.log
 secure-file-priv=NULL
 EOF

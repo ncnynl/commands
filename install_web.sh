@@ -22,10 +22,10 @@
 #    echo to stdout
 #######################################
 function install_package(){
-    echo -e "Build venv for commands!"
+    echo -e "Install commands_web!"
     cd ~/tools/commands/commands_web
 
-    echo -e "Install python3 deps for commands"
+    echo -e "Install python3 deps for commands_web"
     pip3 install -r requiments.txt 
 
     #install service
@@ -38,6 +38,6 @@ function install_package(){
 }
 install_package
 
-echo -e "Install package succesfully!"
+echo -e "Install commands_web succesfully!"
 
 
