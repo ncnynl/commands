@@ -30,7 +30,7 @@ function install_desktop(){
         mkdir -p $HOME/.local/share/applications/
     fi
     cp commands.desktop $HOME/.local/share/applications/commands.desktop
-
+    sudo cp commands.png /usr/local/commands/commands.png
     echo 0
 }
 re=$(install_desktop)

@@ -20,4 +20,4 @@ fi
 
 #launch commands
 # /usr/local/commands/commands
-/usr/local/commands/rcm-gui
+/usr/bin/rcm-gui
