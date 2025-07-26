@@ -7,6 +7,8 @@ commands_src/build/
 commands_src/dist/
 commands_gui/build/
 commands_gui/dist/
+commands_gui/venv/
+commands_web/venv/
 venv/
 package.json
 package-lock.json

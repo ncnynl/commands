@@ -26,7 +26,7 @@ function install_package(){
     cd ~/tools/commands/commands_web
 
     echo -e "Install python3 deps for commands_web"
-    sudo apt install python3-venv
+    sudo apt install python3-venv -y
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt  # 或你需要的库
