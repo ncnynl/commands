@@ -26,7 +26,13 @@ function install_package(){
     cd ~/tools/commands/commands_web
 
     echo -e "Install python3 deps for commands_web"
+
+    sudo apt install python3-requests
+    sudo apt install python3-flask
+
     pip3 install -r requiments.txt 
+
+
 
     #install service
     cd ~/tools/commands/commands_web/config
