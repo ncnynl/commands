@@ -79,7 +79,7 @@ function install_package(){
     #     return 0
     # fi 
 
-
+    sudo cp ~/tools/commands/commands.png /usr/local/commands/commands.png
     # sudo chown -R $USER:$USER /usr/local/commands/
     #rm 
     if [ -f /usr/bin/commands ]; then
