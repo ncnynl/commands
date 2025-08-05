@@ -8,6 +8,7 @@ commands_src/dist/
 commands_gui/build/
 commands_gui/dist/
 commands_gui/venv/
+commands_gui/__pycache__/
 commands_web/venv/
 venv/
 package.json
