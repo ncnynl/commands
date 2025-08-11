@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置变量
-SERVICE_NAME="server_webapi.service"
+SERVICE_NAME="rcm_webapi.service"
 
 
 # 获取当前 Python 包的位置
@@ -20,7 +20,7 @@ if [ -f $SERVICE_FILE ]; then
 
     systemctl --user start $SERVICE_NAME
 
-    echo "server_webapi.service 已经重启"
+    echo "rcm_webapi.service 已经重启"
 else
-    echo "server_webapi.service 不存在"   
+    echo "rcm_webapi.service 不存在"   
 fi 

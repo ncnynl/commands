@@ -2,7 +2,7 @@
 
 
 # 设置变量
-SERVICE_NAME="server_webapi.service"
+SERVICE_NAME="rcm_webapi.service"
 
 # SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME"
 if [ ! -d $HOME/.config/systemd/user ]; then 
@@ -79,11 +79,11 @@ if [ -f $SERVICE_FILE ]; then
     #首次安装生成数据库，并导入默认数据
     cd $FLASK_APP_PATH
 
-    echo "server_webapi.service 已成功创建并启动。"
+    echo "rcm_webapi.service 已成功创建并启动。"
 else
-    echo "server_webapi.service 创建失败。"   
+    echo "rcm_webapi.service 创建失败。"   
 fi 
 
 #查看日志
-# journalctl --user -u server_webapi.service
-# journalctl --user -u server_webapi.service -f
+# journalctl --user -u rcm_webapi.service
+# journalctl --user -u rcm_webapi.service -f

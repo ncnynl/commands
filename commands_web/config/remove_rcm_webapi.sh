@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置变量
-SERVICE_NAME="server_webapi.service"
+SERVICE_NAME="rcm_webapi.service"
 
 
 # 获取当前 Python 包的位置
