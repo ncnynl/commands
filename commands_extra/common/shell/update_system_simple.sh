@@ -125,6 +125,24 @@ setUbuntu(){
 	[ "$ubuntuVersion" == '24.04' ] && sed -i 's/xenial/noble/'g /etc/apt/sources.list
 }
 
+setRaspberryPi(){
+	if [[ -f /etc/apt/sources.list.bak ]]; then
+    	echo -e "${GREEN}sources.list.bak exists, overwriting${PLAIN}"
+    	rm -f /etc/apt/sources.list.bak
+	else
+		mv /etc/apt/sources.list{,.bak}
+	fi
+	[ -f /etc/apt/sources.list ] && rm /etc/apt/sources.list
+
+	# Raspberry Pi key
+	if [ ! -f /usr/share/keyrings/raspbian-archive-keyring.gpg ]; then
+		curl -fsSL http://raspbian.raspberrypi.org/raspbian.public.key | gpg --dearmor | sudo tee /usr/share/keyrings/raspbian-archive-keyring.gpg > /dev/null
+	fi
+
+	echo "deb [signed-by=/usr/share/keyrings/raspbian-archive-keyring.gpg] http://raspbian.raspberrypi.org/raspbian/ bookworm main contrib non-free rpi" >> /etc/apt/sources.list
+	echo "deb http://archive.raspberrypi.org/debian/ bookworm main" >> /etc/apt/sources.list
+}
+
 setAWS(){
 	sed -i 's/archive.ubuntu.com/cdn-aws.deb.debian.org/'g /etc/apt/sources.list
 }
@@ -186,6 +204,7 @@ setSources(){
 	echo "腾讯云源请输入 - tencent"
 	echo "163源请输入 - 163"
 	echo "aws源请输入 - aws"
+	echo "树莓派官方源请输入 - rpi"
 	echo "恢复到上一次 - restore"
 	CHOICE_A=$(echo -e "\n Please input source ：")
 	read -p "${CHOICE_A}" para			
@@ -205,7 +224,9 @@ setSources(){
 		'tencent'|'-tencent'|'--tencent' )
 			setUbuntu;setTencent;;			
 		'aws'|'-aws'|'--aws' )
-			setUbuntu;setAWS;;			
+			setUbuntu;setAWS;;	
+		'rpi'|'-rpi'|'--rpi') 
+			setRaspberryPi;;		
 		'restore'|'-restore'|'--restore' )
 			restore;;
 		*);;
