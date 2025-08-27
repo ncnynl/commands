@@ -7,6 +7,7 @@ import os
 import signal
 import threading
 from models import Service
+import shutil
 
 ##############################VAR###################################  
 
@@ -152,8 +153,16 @@ def terminate_process_by_filename(filename):
 
 def run_command_in_background(command, service_name):
     """在后台运行指定的命令"""
-    command_start = "gnome-terminal -- bash -c 'source $HOME/.bashrc && "
-    command_end   = "; exec bash'"
+    # 判断是否有 gnome-terminal
+    if shutil.which("gnome-terminal"):
+        command_start = "gnome-terminal -- bash -c 'source $HOME/.bashrc && "
+        command_end   = "; exec bash'"
+    else:
+        # 如果没有 gnome-terminal，就直接用 bash
+        command_start = "bash -c 'source $HOME/.bashrc && "
+        command_end   = "'"
+    # command_start = "gnome-terminal -- bash -c 'source $HOME/.bashrc && "
+    # command_end   = "; exec bash'"
     full_command = command_start + command + command_end
     proc = subprocess.Popen(full_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     # 将 proc 存储到共享的字典中
