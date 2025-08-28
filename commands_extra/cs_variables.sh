@@ -47,6 +47,7 @@ update_ros2_source.sh
 update_docker_source.sh
 update_swap.sh
 update_hostname.sh
+install_mdns.sh
 )
 
 # fixed for docker 
