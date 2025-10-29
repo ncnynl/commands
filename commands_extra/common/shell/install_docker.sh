@@ -16,32 +16,35 @@
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=commands        
 echo "$(gettext "Install docker")"
-        
-echo "Install Curl"
-sudo apt install curl -y 
 
-echo "安装最新版本的docker"
-curl sSL https://get.docker.com | sh -
+set -e  # 遇到错误时终止脚本
 
-echo "无root 权限能否使用 docker"
-sudo groupadd docker			# 有则不用创建
-sudo usermod -aG docker $USER	# USER 为加入 docker 组的用户
-newgrp docker					# 刷新 docker 组    
+echo "===== 安装 curl ====="
+sudo apt update
+sudo apt install -y curl
 
-echo "Install Docker compose"
-rcm common install_docker_compose
+echo "===== 安装最新版本 Docker ====="
+curl -fsSL https://get.docker.com | sh
 
-sudo service docker start
+echo "===== 启动并开机自启 Docker ====="
+sudo systemctl enable --now docker
 
-echo "Check Docker version"
-docker --version 
+echo "===== 配置当前用户无 root 使用 docker ====="
+sudo groupadd docker || true  # 如果已存在则忽略错误
+sudo usermod -aG docker $USER
+newgrp docker
 
-# docker run hello-world			# 测试无 root 权限能否使用 docker
+echo "===== 检查 Docker 版本 ====="
+docker --version
 
+echo "===== 检查 Docker Compose 版本 ====="
+docker compose version || echo "docker compose 尚未安装（可执行下一步手动安装）"
 
-# 检查dockerd进程启动
-# service docker status
-# ps aux|grep docker
-# # 检查拉取镜像等正常
-# docker pull busybox
-# docker images
+echo "===== 如果 docker-compose 没安装，可执行以下命令 ====="
+echo "sudo apt install -y docker-compose-plugin"
+
+echo "===== 测试 Docker 是否正常工作 ====="
+docker run hello-world
+
+echo "✅ Docker 安装完成！请重新登录或执行 newgrp docker 后再使用。"
+
