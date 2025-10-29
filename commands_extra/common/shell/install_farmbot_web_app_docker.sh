@@ -29,7 +29,9 @@ if ! command -v docker compose &> /dev/null; then
 fi
 
 # === 克隆代码仓库 ===
-
+if [ ! -d ~/docker ]; then
+  mkdir -p ~/docker
+fi
 cd ~/docker/
 
 if [ ! -d "Farmbot-Web-App" ]; then
