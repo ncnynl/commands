@@ -13,12 +13,12 @@
 
 function sync_gitee()
 {
+    cd ~/tools/commands/
     echo "Begin to sync gitee "
     git pull origin master 
 
     echo "Install extra"
-    ./install_extra.sh 
-
+    ./install_extra.sh
     echo "Sync Done!! "
 }
 sync_gitee

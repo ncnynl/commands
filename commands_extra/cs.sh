@@ -1309,6 +1309,9 @@ function commands() {
         # echo -e '#####################################################'
         # select_id       
         ;;   
+    '-sg'|'sync_gitee')
+        . ~/tools/commands/sync_gitee.sh    
+        ;; 
     '-p'|'proxy')
         proxy_add_prefix $*
         ;;  
@@ -1341,6 +1344,12 @@ function commands() {
         echo -e "########$(gettext "Install") $2 "
         echo -e '#####################################################'    
         sudo apt install $2
+        ;;
+    '-ie'|'install_extra')
+        echo -e '#####################################################'
+        echo -e "########$(gettext "install_extra") $2 "
+        echo -e '#####################################################'    
+        . ~/tools/commands/install_extra.sh
         ;;     
     '-r'|'remove')
         echo -e '#####################################################'
