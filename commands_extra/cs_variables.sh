@@ -48,6 +48,7 @@ update_docker_source.sh
 update_swap.sh
 update_hostname.sh
 install_mdns.sh
+install_lnmp_mysql_8.0.36.sh
 )
 
 # fixed for docker 
