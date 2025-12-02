@@ -33,16 +33,6 @@ else
     echo "目录 $IDF_PATH 已存在，跳过克隆。"
 fi
 
-echo "=== 创建独立 Python 环境 ==="
-mkdir -p "$(dirname "$IDF_PYENV")"
-python3 -m venv "$IDF_PYENV"
-
-echo "=== 激活独立环境 ==="
-source "$IDF_PYENV/bin/activate"
-
-echo "=== 升级 pip / setuptools ==="
-pip install --upgrade pip setuptools wheel
-
 echo "=== 安装 ESP-IDF 工具链（使用 venv） ==="
 cd "$IDF_PATH"
 ./install.sh
