@@ -27,6 +27,3 @@ sudo apt update
 
 echo "Install boot-repair"
 sudo apt install boot-repair
-
-
-

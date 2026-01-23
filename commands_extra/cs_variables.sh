@@ -51,6 +51,7 @@ install_mdns.sh
 install_lnmp_mysql_8.0.36.sh
 install_zenoh_from_source.sh
 install_zenoh_from_binary.sh
+install_frp.sh
 )
 
 # fixed for docker 
