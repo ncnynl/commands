@@ -4,3 +4,5 @@ flask_sqlalchemy
 flask_migrate 
 flask_cors
 gunicorn
+psutil
+user-agents

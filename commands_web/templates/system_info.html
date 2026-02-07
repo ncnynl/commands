@@ -1,0 +1,58 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- 系统信息标题 -->
+    <h2 class="mb-4 text-success fw-bold">系统信息</h2>
+
+    <div class="row">
+
+        <!-- 服务器信息 -->
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white fw-bold">服务器信息</div>
+                <div class="card-body">
+                    <p><strong>主机名：</strong> {{ hw_info.hostname }}</p>
+                    <p><strong>操作系统：</strong> {{ hw_info.os }}</p>
+                    <p><strong>IP 地址：</strong> {{ hw_info.ip }}</p>
+                    <p><strong>CPU 架构：</strong> {{ hw_info.arch }}</p>
+                    {% if hw_info.pi_model %}
+                        <p><strong>树莓派型号：</strong> {{ hw_info.pi_model }}</p>
+                    {% endif %}
+
+                    <!-- 内存 -->
+                    <p><strong>内存总量：</strong> {{ hw_info.total_mem_gb }} GB</p>
+                    <p><strong>可用内存：</strong> {{ hw_info.available_mem_gb }} GB</p>
+                    <div class="progress mb-2">
+                        {% set mem_used = hw_info.total_mem_gb - hw_info.available_mem_gb %}
+                        {% set mem_percent = (mem_used / hw_info.total_mem_gb * 100) | round(1) %}
+                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ mem_percent }}%;" aria-valuenow="{{ mem_percent }}" aria-valuemin="0" aria-valuemax="100">{{ mem_percent }}%</div>
+                    </div>
+
+                    <!-- 磁盘 -->
+                    <p><strong>磁盘总量：</strong> {{ hw_info.disk.total_gb }} GB</p>
+                    <p><strong>已用磁盘：</strong> {{ hw_info.disk.used_gb }} GB</p>
+                    <p><strong>剩余磁盘：</strong> {{ hw_info.disk.free_gb }} GB</p>
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ hw_info.disk.percent }}%;" aria-valuenow="{{ hw_info.disk.percent }}" aria-valuemin="0" aria-valuemax="100">{{ hw_info.disk.percent }}%</div>
+                    </div>
+
+                    <!-- 温度 -->
+                    {% if hw_info.temps %}
+                        <p><strong>温度信息：</strong></p>
+                        <ul>
+                        {% for sensor, readings in hw_info.temps.items() %}
+                            <li>{{ sensor }}: {{ readings | join(', ') }} ℃</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+

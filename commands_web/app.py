@@ -3,6 +3,8 @@ from extensions import db  # 导入共享的 db 实例
 
 from wifi import wifi_bp
 from service import service_bp
+from system_bp import system_bp
+
 import threading
 from flask_cors import CORS
 import os 
@@ -27,6 +29,7 @@ migrate = Migrate(app, db)
 #admin
 app.register_blueprint(service_bp, url_prefix='/')  # service模块路由
 app.register_blueprint(wifi_bp, url_prefix='/')  # WIFI模块路由
+app.register_blueprint(system_bp)
 
 # 创建数据库表
 with app.app_context():

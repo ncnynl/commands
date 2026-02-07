@@ -255,6 +255,39 @@ def stop_service(service_name):
     status_dict[service_name] = '停止'
     return f'{service_name} stopped successfully!'
 
+def get_hardware_info():
+    # CPU 架构
+    arch = platform.machine()  # x86_64, armv7l, aarch64 等
+
+    # CPU 型号
+    if hasattr(platform, "processor"):
+        cpu_model = platform.processor()
+    else:
+        cpu_model = "未知 CPU"
+
+    # 内存
+    mem = psutil.virtual_memory()
+    total_mem_gb = round(mem.total / (1024 ** 3), 2)
+
+    # 树莓派专用: 尝试读取 /proc/cpuinfo
+    pi_model = ""
+    if "arm" in arch.lower() or "aarch" in arch.lower():
+        try:
+            with open("/proc/cpuinfo") as f:
+                for line in f:
+                    if line.startswith("Model"):
+                        pi_model = line.split(":")[1].strip()
+                        break
+        except:
+            pi_model = ""
+
+    return {
+        "arch": arch,
+        "cpu_model": cpu_model,
+        "total_mem_gb": total_mem_gb,
+        "pi_model": pi_model
+    }
+
 #############################route###############################
 # 服务列表页面
 @service_bp.route('/service')
